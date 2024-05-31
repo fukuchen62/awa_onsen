@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+/* タイトル */
+hr {
+    border: dashed 2px #DBF500;
+}
