@@ -1,1 +1,89 @@
 @charset "utf8";
+
+/* タイトル */
+h4 {
+    font-size: 1.25rem;
+    width: fit-content;
+    position: relative;
+}
+
+h4::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 15%;
+    width: 105%;
+    /*   display: inline-block; */
+    border-bottom-color: #dbf500;
+    border-bottom-style: dashed;
+    border-bottom-width: 10px;
+}
+
+/* テキスト */
+p {
+    font-size: 1.25rem;
+}
+
+/* 入力 */
+.form_item input {
+    background-color: rgb(228, 228, 228);
+}
+
+.form_item textarea {
+    background-color: rgb(228, 228, 228);
+}
+
+/* レスポンシブ */
+.sp-none {
+    display: block;
+}
+
+.tb-none {
+    display: none;
+}
+
+.pc-none {
+    display: none;
+}
+
+/* tablet */
+@media(width>=757px) {
+    .sp-none {
+        display: none;
+    }
+
+    .tb-none {
+        display: block;
+    }
+
+    .pc-none {
+        display: none;
+    }
+
+}
+
+/* ---------- */
+/* pc */
+@media(width>=1201px) {
+    .sp-none {
+        display: none;
+    }
+
+    .tb-none {
+        display: none;
+    }
+
+    .pc-none {
+        display: block;
+    }
+}
+
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+}
