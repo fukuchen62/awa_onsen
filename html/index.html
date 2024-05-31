@@ -7,12 +7,48 @@
     <!-- 概要入れる -->
     <meta name="description" content="">
     <title>あわあわ温泉ぶらり</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <!-- slick CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
 </head>
 
 <body>
     <!-- header -->
     <header class="header_wrap">
-        <!-- nav -->
+        <!-- headerの左側 -->
+        <div class="header_left">
+            <!-- 常時表示サイトロゴ -->
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="あわあわ温泉ぶらり">
+            </div>
+            <!-- 上にスクロールするボタン -->
+            <div class="top_button">
+                <div class="circle">
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        </div>
+        <!-- sp&tbnav -->
+        <div class="header_right">
+            <div class="hamburger">
+                <img src="../assets/images/hamburger.png" alt="メニュー">
+            </div>
+            <ul class="navlist">
+                <li class="nav_bg"></li>
+                <li class="navlist_item"><a href="#">TOP</a></li>
+                <li class="navlist_item"><a href="#">温泉一覧</a></li>
+                <li class="navlist_item"><a href="#">周辺一覧</a></li>
+                <li class="navlist_item"><a href="#">モデルコース</a></li>
+                <li class="navlist_item"><a href="#">サ活</a></li>
+                <li class="navlist_item"><a href="#">コラム</a></li>
+                <li class="navlist_item"><a href="#">検索</a></li>
+                <li class="navlist_item"><a href="#">マイページ</a></li>
+                <li class="nav_bg"></li>
+            </ul>
+        </div>
+        <!-- pcnav -->
         <ul class="navlist">
             <li class="nav_bg"></li>
             <li class="navlist_item"><a href="#">TOP</a></li>
@@ -34,12 +70,15 @@
                 <img src="" alt="あわあわ温泉ぶらり">
             </h1>
             <!-- 泡 -->
-            <div class="bubble">
-            </div>
+                <ul class="bubble">
+                    <li></li>
+                    <li></li>
+                </ul>
         </section>
         <div class="inner">
-            <!-- 概要、新着情報 -->
-            <section class="section-wrap">
+            <!-- 概要 -->
+            <section class="section-wrap about">
+                <!-- 付箋はafter疑似要素で入れる -->
                 <div class="sticky_note">
                     <h2>湯ったりほっと！</h2>
                 </div>
@@ -47,31 +86,40 @@
                     <h3>あわあわ温泉ぶらりとは</h3>
                     <!-- サイトの説明 -->
                     <p></p>
+                    <div class="about_img">
+                        <img src="../assets/images/onsen_saru.jpg" alt="おさる">
+                    </div>
+                    <button><a href="#">もっと詳しく<i class="fa-solid fa-list"></i></a></button>
                 </div>
-                <div class="news">
-                    <h3>新着情報</h3>
-                    <ul class="news_list">
-                        <li class="news_item">
-                            <!-- 左上のnewsのマーク -->
-                            <span>NEW</span>
-                            <!-- 日付 -->
-                            <p>2024.05.27</p>
-                            <!-- 内容 -->
-                            <p>温泉情報が追加されました。</p>
-                        </li>
-                        <li class="news_item">
-                            <span>NEW</span>
-                            <p>2024.05.27</p>
-                            <p>温泉情報が追加されました。</p>
-                        </li>
-                        <li class="news_item">
-                            <span>NEW</span>
-                            <p>2024.05.27</p>
-                            <p>温泉情報が追加されました。</p>
-                        </li>
-                    </ul>
-                    <button><a href="#">お知らせ一覧へ</a></button>
+            </section>
+            <section class="section-wrap news">
+                <div class="sticky_note">
+                    <h2>新着情報</h2>
                 </div>
+                <ul class="news_list">
+                    <li class="news_item">
+                        <!-- 左上のnewsのマーク -->
+                        <span>NEW</span>
+                        <!-- 日付 -->
+                        <p>2024.05.27</p>
+                        <!-- 内容 -->
+                        <p>温泉情報が追加されました。</p>
+                        <button><a href="#">#温泉</a></button>
+                    </li>
+                    <li class="news_item">
+                        <span>NEW</span>
+                        <p>2024.05.27</p>
+                        <p>温泉情報が追加されました。</p>
+                        <button><a href="#">#温泉</a></button>
+                    </li>
+                    <li class="news_item">
+                        <span>NEW</span>
+                        <p>2024.05.27</p>
+                        <p>温泉情報が追加されました。</p>
+                        <button><a href="#">#温泉</a></button>
+                    </li>
+                </ul>
+                <button><a href="#">お知らせ一覧へ</a></button>
             </section>
             <!-- 温泉 -->
             <section class="section-wrap">
