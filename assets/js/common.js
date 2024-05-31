@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 "use strict";
 document.addEventListener('DOMContentLoaded', () => {
     // コンテナを指定
-    const section = document.querySelector('.bubble-background');
+    const section = document.querySelector('.bubble_background');
 
     // アヒルを生成する関数
     const createDuck = () => {
