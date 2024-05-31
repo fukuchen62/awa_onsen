@@ -5,6 +5,78 @@ html {
     z-index: -100;
 }
 
+/* =================================
+共通設定
+================================= */
+
+/* フォント(Googleフォント) */
+
+
+
+img {
+    max-width: 100%;
+}
+
+a {
+    display: block;
+}
+
+.shadow {
+    box-shadow: 4px 4px 6px 0 #343a3e33;
+}
+
+/* レスポンシブ */
+.sp-none {
+    display: block;
+}
+
+.tb-none {
+    display: none;
+}
+
+.pc-none {
+    display: none;
+}
+
+/* tablet */
+@media(width>=757px) {
+    .tb-none {
+        display: block;
+    }
+
+    .pc-none {
+        display: none;
+    }
+
+    .sp-none {
+        display: none;
+    }
+}
+
+/* ---------- */
+/* pc */
+@media(width>=1201px) {
+    .sp-none {
+        display: none;
+    }
+
+    .pc-none {
+        display: block;
+    }
+
+    .tb-none {
+        display: none;
+    }
+}
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+}
+
+
 /* 本サイトの共通スタイルシート */
 .bubble-background {
     position: relative;
