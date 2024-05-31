@@ -1,45 +1,6 @@
 @charset "utf-8";
 
 /* タイトル */
-h3 {
-    font-size: 2rem;
-    width: fit-content;
-    position: relative;
-}
-
-h3::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    bottom: 15%;
-    width: 105%;
-    /*   display: inline-block; */
-    border-bottom-color: #dbf500;
-    border-bottom-style: dashed;
-    border-bottom-width: 10px;
-}
-
-/* セクションごとのタイトル */
-.lined-title {
-    display: flex;
-    align-items: center;
-}
-
-.lined-title::before,
-.lined-title::after {
-    content: "";
-    flex: 1;
-    border-bottom-color: #eb97a8;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-}
-
-.lined-title::before {
-    margin-right: 10px;
-}
-
-.lined-title::after {
-    margin-left: 10px;
+hr {
+    border: dashed 2px #DBF500;
 }
