@@ -1,2 +1,174 @@
 @charset "utf8";
+
+html {
+    background-color: #328ef0;
+    z-index: -100;
+}
+
 /* 本サイトの共通スタイルシート */
+.bubble-background {
+    position: relative;
+    /* background-color: #328ef0; */
+    /* height: 100%; */
+    width: 790px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* 泡の見た目 */
+.bubble {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    /* position: absolute; */
+    bottom: -50px;
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.937);
+    animation: bubble 8s linear infinite;
+
+}
+
+
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateY(-30vh) translateX(-50px);
+        /* -50～50pxの間でランダムな値を代入 */
+    }
+
+    /* 60% のキーフレーム */
+    60% {
+        /* transform: translateY(-60vh) translateX(50px); */
+        transform: translateY(-60vh) translateX(50px);
+
+    }
+
+    90% {
+        transform: translateY(-100vh) translateX(10px);
+
+    }
+
+    /* 100% のキーフレーム */
+    100% {
+        transform: translateY(-110vh) translateX(10px);
+        /* -100～100pxの間でランダムな値を代入 */
+    }
+}
+
+
+
+/* 泡（横）の見た目 */
+.bubble_edge {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    /* position: absolute; */
+    bottom: -50px;
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    /* box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.2); */
+    box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.937);
+    animation: bubble_edge 8s linear infinite;
+
+}
+
+
+
+@keyframes bubble_edge {
+    0% {
+        transform: translateY(-60vh) translateX(-100vw);
+
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateY(-60vh) translateX(-60vw);
+        opacity: 0.2;
+    }
+
+    /* 60% のキーフレーム */
+    50% {
+
+        transform: translateY(-60vh) translateX(-30vw);
+        opacity: 0.2;
+    }
+
+
+    /* 100% のキーフレーム */
+    100% {
+        transform: translateY(-60vh) translateX(0vw);
+        /* -100～100pxの間でランダムな値を代入 */
+        opacity: 0;
+    }
+}
+
+
+/* ----------------アヒル ---------------------------*/
+
+.duck {
+
+    display: block;
+    position: fixed;
+    z-index: -1;
+    bottom: -50px;
+    animation: duck 8s linear infinite;
+}
+
+@keyframes duck {
+    0% {
+        transform: translateY(0);
+
+        opacity: 1;
+    }
+
+    10% {
+        transform: translateY(-10vh) rotate(20deg);
+
+
+
+    }
+
+    30% {
+        transform: translateY(-30vh) translateX(20px) rotate(-20deg);
+
+
+    }
+
+    40% {
+        transform: translateY(-40vh) translateX(20px) rotate(-360deg);
+
+
+    }
+
+    50% {
+        transform: translateY(-50vh) rotate(20deg);
+
+
+    }
+
+    70% {
+        transform: translateY(-70vh) translateX(-20px) rotate(360deg);
+
+
+    }
+
+    90% {
+        transform: translateY(-98vh) translateX(20px) rotate(-20deg);
+
+
+    }
+
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0.3;
+    }
+}
