@@ -46,7 +46,7 @@ h3::after {
     border-radius: 50px;
 }
 
-
+/* クリック後にJavaScriptでactiveクラスが付与 */
 .news_tag.active,
 .gourmet_tag.active,
 .play_tag.active,
@@ -56,13 +56,13 @@ h3::after {
 }
 
 
-
 /* 記事 */
 .news_list {
     margin-top: 50px;
     display: none;
 }
 
+/* li要素をクリック後にJavaScriptでshowクラスが付与 */
 .news.show,
 .gourmet.show,
 .play.show,
