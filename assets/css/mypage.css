@@ -1,17 +1,32 @@
 @charset "UTF-8";
 
 /* -----------------------
+header
+-------------------------- */
+.logo {
+    width: 100px;
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+/* -----------------------
 タイトル
 -------------------------- */
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
 h3 {
     text-align: center;
 }
 
 .under_line {
-    font-size: 2rem;
+    font-size: 1.25rem;
     width: fit-content;
     position: relative;
-    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 50px;
 }
 
 .under_line::after {
@@ -25,7 +40,26 @@ h3 {
     /*   display: inline-block; */
     border-bottom-color: #dbf500;
     border-bottom-style: dashed;
-    border-bottom-width: 10px;
+    border-bottom-width: 5px;
+}
+
+/* -----------------------
+マイページについて
+-------------------------- */
+.mypage_container {
+    background-color: #D9D9D9;
+    width: 264px;
+    height: 404px;
+    margin-bottom: 33px;
+}
+
+.mypage_container h3 {
+    margin-top: 50px;
+    margin-bottom: 38px;
+}
+
+.mypage_container p {
+    margin: 30px 10px;
 }
 
 /* -----------------------
@@ -149,4 +183,62 @@ tabのcss
 /* クラス名orangeはjsと被るため使用不可 */
 .daidai h3 {
     background-color: #F5A200;
+}
+
+/* -----------------------
+topボタン
+-------------------------- */
+.circle,
+.line .circle {
+    cursor: pointer;
+    width: 50px;
+    /* サイズを必要に応じて調整 */
+    height: 50px;
+    /* サイズを必要に応じて調整 */
+    border-radius: 50%;
+    border-style: solid;
+    border-color: gold;
+    /* border-width:要素の境界の幅を設定 */
+    border-width: 3px;
+    /* 円の色 */
+    display: flex;
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    top: 45%;
+    width: 30px;
+    height: 5px;
+    background-color: gold;
+    border-radius: 5px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.circle .line:nth-child(1) {
+    left: 32%;
+    transform: rotate(-57deg);
+}
+
+.circle .line:nth-child(2) {
+    transform: rotate(57deg);
+    right: 32%;
+}
+
+.circle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+/* -----------------------
+menuボタン
+-------------------------- */
+.menu_btn {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }

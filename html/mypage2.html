@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>マイページ</title>
+    <!-- googlefont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
     <!-- cssの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
@@ -12,22 +16,31 @@
 <body>
     <div class="bubble_background">
         <div class="haikei">
-            <header></header>
+            <header>
+                <a href="#">
+                    <img class="logo" src="../assets/images/logo.svg" alt="ロゴ">
+                </a>
+            </header>
             <main>
 
-                <h3 class="under_line">マイページ</h3>
-                <!-- パンくずリスト -->
-                <div class="mypage_container">
-                    <h3>マイページについて</h3>
-                    <p>本マイページは温泉詳細や周辺詳細でブックマークした情報が表示されます。</p>
-                    <p>ブックマークにはcookieを使用しています。</p>
-                    <p>cookieの削除に伴いブックマークした情報も削除されます。</p>
+                <div class="flex">
+                    <h3 class="under_line zen-maru-gothic-regular">マイページ</h3>
                 </div>
+                <!-- パンくずリスト -->
+                <div class="flex">
+                    <div class="mypage_container zen-maru-gothic-regular">
+                        <h3>マイページについて</h3>
+                        <p>・本マイページは温泉詳細や周辺詳細でブックマークした情報が表示されます。</p>
+                        <p>・ブックマークにはcookieを使用しています。</p>
+                        <p>・cookieの削除に伴いブックマークした情報も削除されます。</p>
+                    </div>
+                </div>
+
                 <!-- タブメニュー始まり -->
                 <div class="tab_container">
                     <ul class="tab">
-                        <li><a href="#onsen">温泉</a></li>
-                        <li><a class="orange" href="#facility">周辺施設</a></li>
+                        <li><a class="zen-maru-gothic-regular" href="#onsen">温泉</a></li>
+                        <li><a class="orange zen-maru-gothic-regular" href="#facility">周辺施設</a></li>
                     </ul>
                     <!-- 温泉 -->
                     <div id="onsen" class="area is-active">
@@ -69,6 +82,15 @@
                     </div>
                 </div>
                 <!-- タブメニュー終わり -->
+                <!-- topに戻るボタン -->
+                <div class="circle">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <!-- メニューボタン -->
+                <a class="menu_btn" href="#">
+                    <img src="../assets/images/hamburger.svg" alt="menuボタン">
+                </a>
             </main>
             <footer></footer>
         </div>
