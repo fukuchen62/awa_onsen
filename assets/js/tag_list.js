@@ -8,12 +8,12 @@ function showList(listClass) {
     hideAllLists();
     const targetList = document.querySelector(`.news_list.${listClass}`);
     if (targetList) {
-        targetList.style.display = 'block';
+        targetList.classList.add('show');
     }
 }
 
 function hideAllLists() {
-    newsLists.forEach(list => list.style.display = 'none');
+    newsLists.forEach(list => list.classList.remove('show'));
 }
 
 function initializeActiveTag() {
