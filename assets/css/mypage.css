@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+/* -----------------------
+タイトル
+-------------------------- */
+h3 {
+    text-align: center;
+}
+
+.under_line {
+    font-size: 2rem;
+    width: fit-content;
+    position: relative;
+    margin: 0 auto;
+}
+
+.under_line::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 5%;
+    width: 105%;
+    /*   display: inline-block; */
+    border-bottom-color: #dbf500;
+    border-bottom-style: dashed;
+    border-bottom-width: 10px;
+}
+
+/* -----------------------
+背景(仮)
+-------------------------- */
+.bubble_background {
+    width: 100%;
+}
+
+.haikei {
+    /* background-color: white; */
+    /* opacity: 0.5; */
+}
+
+/* -----------------------
+tabのcss
+-------------------------- */
+
+/*tabの形状*/
+.tab {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tab li a {
+    display: block;
+    background: #ddd;
+    margin: 0 2px;
+    padding: 10px 40px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a {
+    background: #EB97A8;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.orange {
+    background: #F5A200;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+/*エリアの表示非表示と形状*/
+.area {
+    display: none;
+    /*はじめは非表示*/
+    /* opacity: 0; */
+    /*透過0*/
+    /* background: #328ef0; */
+    padding: 50px 20px;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;
+}
+
+/* -----------------------
+カードのcss
+-------------------------- */
+
+.card {
+    max-width: 475px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.card div {
+    max-width: 420px;
+    margin: 7.5%;
+    position: relative;
+}
+
+.card img {
+    position: relative;
+    object-fit: cover;
+    object-position: center center;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+.card img:hover {
+    transform: translate(-3.1%, 3.3%);
+}
+
+.card span {
+    display: block;
+    /* z-index: -1; */
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    left: -3%;
+    background-color: #eb97a8;
+    transition: 1s;
+}
+
+/* クラス名orangeはjsと被るため使用不可 */
+.daidai span {
+    background-color: #F5A200;
+}
+
+.card h3 {
+    margin-top: 13%;
+    border-radius: 6px;
+    color: white;
+    background-color: #eb97a8;
+    text-align: center;
+    padding: 8px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* クラス名orangeはjsと被るため使用不可 */
+.daidai h3 {
+    background-color: #F5A200;
+}
