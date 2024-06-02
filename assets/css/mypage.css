@@ -54,11 +54,13 @@ h3 {
 }
 
 .mypage_container h3 {
+    font-size: 1.25rem;
     margin-top: 50px;
     margin-bottom: 38px;
 }
 
 .mypage_container p {
+    font-size: 1rem;
     margin: 30px 10px;
 }
 
@@ -69,10 +71,7 @@ h3 {
     width: 100%;
 }
 
-.haikei {
-    /* background-color: white; */
-    /* opacity: 0.5; */
-}
+
 
 /* -----------------------
 tabのcss
@@ -218,11 +217,11 @@ topボタン
 
 .circle .line:nth-child(1) {
     left: 32%;
-    transform: rotate(-57deg);
+    transform: rotate(57deg);
 }
 
 .circle .line:nth-child(2) {
-    transform: rotate(57deg);
+    transform: rotate(-57deg);
     right: 32%;
 }
 
@@ -241,4 +240,143 @@ menuボタン
     position: fixed;
     bottom: 20px;
     right: 20px;
+}
+
+/* -----------------------
+レスポンシブ
+-------------------------- */
+.tb_only {
+    display: none;
+}
+
+.pc_only {
+    display: none;
+}
+
+/* -----------------------
+レスポンシブ tablet
+-------------------------- */
+@media(width>=757px) {
+    .sp_only {
+        display: none;
+    }
+
+    .tb_only {
+        display: block;
+    }
+
+    .pc_only {
+        display: none;
+    }
+
+    /* 白背景 */
+    .context {
+        background-color: white;
+        width: 686px;
+        margin: 0 auto;
+    }
+
+    /* マイページについて */
+    .mypage_container {
+        width: 646px;
+        height: 404px;
+    }
+
+    /* topに戻るボタン */
+    .circle {
+        /* bottom: ; */
+        left: 50px;
+    }
+
+    /* menuボタン */
+    .menu_btn {
+        right: 51px;
+    }
+
+    /* タイトル */
+    .under_line {
+        z-index: 5;
+    }
+
+}
+
+/* -----------------------
+レスポンシブ pc
+-------------------------- */
+@media(width>=1201px) {
+    .sp_only {
+        display: none;
+    }
+
+    .tb_only {
+        display: none;
+    }
+
+    .pc_only {
+        display: block;
+    }
+
+    /* 白背景 */
+    .context {
+        background-color: white;
+        width: 793px;
+        margin: 0;
+        position: relative;
+        left: 18.75%;
+    }
+
+    /* マイページについて */
+    .mypage_container {
+        width: 675px;
+    }
+
+    /* カードの位置 */
+    .pc_flex {
+        display: flex;
+    }
+
+    /* カードの大きさ */
+    .card.daidai {
+        margin: 20px;
+    }
+
+    .card.pink {
+        margin: 20px;
+    }
+
+    /* topに戻るボタン */
+    .circle {
+        /* bottom: ; */
+        left: 84px;
+    }
+
+    /* menuボタン */
+    .menu_btn {
+        display: none;
+    }
+
+}
+
+/* -----------------------
+レスポンシブ フォントサイズのみ
+-------------------------- */
+@media(width>=757px) {
+
+    /* ここは各自のCSSファイルで設定（サンプル） */
+    /* フォントサイズ */
+    .under_line {
+        font-size: 2.25rem;
+    }
+
+    .mypage_container h3 {
+        font-size: 2.25rem;
+    }
+
+    .mypage_container p {
+        font-size: 1.25rem;
+    }
+
+    .tab li {
+        font-size: 1.25rem;
+    }
 }
