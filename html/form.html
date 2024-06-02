@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- リセットCSS -->
     <link rel="stylesheet" href="../assets/css/reset.css">
-    <!-- <link rel="stylesheet" href="../assets/css/common.css"> -->
+    <!-- 共通CSS -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- 個別CSS -->
     <link rel="stylesheet" href="../assets/css/form.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>お問い合わせフォーム</title>
 </head>
@@ -13,8 +21,23 @@
     <div class="bubble_background">
         <!-- header -->
         <header class="header_wrap">
+            <!-- headerの左側 -->
+            <div class="header_left">
+                <!-- 常時表示サイトロゴ -->
+                <div class="logo"><a href="../html/index.html">
+                        <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり"></a>
+                </div>
+                <!-- 上にスクロールするボタン -->
+                <div class="top_button">
+                    <div class="circle">
+                        <div class="triangle"></div>
+                    </div>
+                </div>
+            </div>
+
+
             <!-- nav -->
-            <ul class="navlist">
+            <ul class="pc_only">
                 <li class="nav_bg"></li>
                 <li class="navlist_item"><a href="index.html">TOP</a></li>
                 <li class="navlist_item"><a href="spa_list.html">温泉一覧</a></li>
@@ -30,48 +53,51 @@
         <main>
 
             <!-- ページの見出し -->
-            <section>
 
-                <h4>お問い合わせフォーム<br>（企業のお客様）</h4>
+            <div class="inner">
+                <section>
 
-                <p>法人のみの対応とさせていただいております。予めご了承ください。<br>※は必須項目です。</p>
-            </section>
-            <!-- お問い合わせフォーム -->
-            <div class="content_form">
-                <div class="form_item">
-                    <p><label>企業様名/施設様名</label>
+                    <h4>お問い合わせフォーム<br>（企業のお客様）</h4>
+
+                    <p>法人のみの対応とさせていただいております。予めご了承ください。<br><small>※</small>は必須項目です。</p>
+                </section>
+                <!-- お問い合わせフォーム -->
+                <div class="content_form">
+                    <div class="form_item">
+                        <p><label>企業様名/施設様名</label>
                         <small>※</small></p>
 
-                    <span><input type="text" placeholder="AWA温泉" required></span>
-                </div>
-                <div class="form_item">
-                    <p><label>ご担当様氏名</label>
+                        <span><input type="text" placeholder="AWA温泉" required></span>
+                    </div>
+                    <div class="form_item">
+                        <p><label>ご担当様氏名</label>
                     <small>※</small></p>
-                    <input type="text" placeholder="泉　猿彦" required>
+                        <input type="text" placeholder="泉　猿彦" required>
 
-                </div>
-                <div class="form_item">
-                    <p><label>メールアドレス</label>
+                    </div>
+                    <div class="form_item">
+                        <p><label>メールアドレス</label>
                     <small>※</small></p>
-                    <p><input type="email"  placeholder="AWA-onsen@email.com" required></p>
-                </div>
-                <div class="form_item">
-                    <p><label>電話番号</label>
+                        <p><input type="email"  placeholder="AWA-onsen@email.com" required></p>
+                    </div>
+                    <div class="form_item">
+                        <p><label>電話番号</label>
                     <small>※</small></p>
-                    <p><input type="tel"  placeholder="000-000-0000"></p>
-                </div>
-                <div class="form_item">
-                    <p><label>お問い合わせ内容</label>
-                <small>※</small></p>
-                    <p><textarea name="message"  rows="10" cols="33" required></textarea></p>
-                </div>
-            </div>
-            <!-- 個人情報・同意 -->
-            <p>個人情報の取り扱いに関しては、<a href="privacypolicy.html">プライバシーポリシー</a>をお読みいただき、ご同意の上お問い合わせください。</p>
-            <p><input type="checkbox" >
+                        <p><input type="tel"  placeholder="000-000-0000"></p>
+                    </div>
+                    <div class="form_item">
+                        <p><label>お問い合わせ内容</label><small>※</small></p>
+                        <p><textarea name="message"  rows="10" cols="33" required></textarea></p>
+                    </div>
+
+                    <!-- 個人情報・同意 -->
+                    <p>個人情報の取り扱いに関しては、<a href="privacypolicy.html">プライバシーポリシー</a>をお読みいただき、ご同意の上お問い合わせください。</p>
+                    <p><input type="checkbox" >
         プライバシーポリシー・免責事項に同意する。</p>
-            <p><input id="submit_button" type="submit" value="確認画面へ"></p>
+                    <p><input id="submit_button" type="submit" value="確認画面へ"></p>
+                </div>
         </main>
+
         <footer>
             <ul>
                 <li><span></span><a href="news_list.html">新着情報一覧へ</a></li>
@@ -79,9 +105,12 @@
                 <li><span></span><a href="form.html">お問い合わせ(企業様)</a></li>
             </ul>
             <p>&copy;あわあわ温泉めぐり  All Rights Reserved.</p>
+
         </footer>
-        <!-- <script src="../assets/js/common.js"></script> -->
 
     </div>
+    <script src="../assets/js/common.js"></script>
+
+
 </body>
 </html>

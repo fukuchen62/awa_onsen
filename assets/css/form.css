@@ -1,10 +1,25 @@
 @charset "utf8";
 
+.inner {
+    border: 2px solid yellow;
+    background-color: #ffffff11;
+    position: relative;
+    top: 100px;
+    /* height: auto; */
+    text-align: center;
+}
+
 /* タイトル */
+
+
 h4 {
+    border: 2px solid #fff;
+    margin: 0px auto;
     font-size: 1.25rem;
     width: fit-content;
     position: relative;
+
+    /* left: 50%; */
 }
 
 h4::after {
@@ -21,9 +36,18 @@ h4::after {
     border-bottom-width: 10px;
 }
 
+.content_form {
+    text-align: left;
+}
+
+
 /* テキスト */
 p {
     font-size: 1.25rem;
+}
+
+small {
+    color: #ECC1C9;
 }
 
 /* 入力 */
