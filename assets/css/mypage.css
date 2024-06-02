@@ -185,6 +185,20 @@ tabのcss
 }
 
 /* -----------------------
+お気に入り
+-------------------------- */
+.mypage_favorite {
+    font-size: 1.25rem;
+}
+
+.mypage_nofavorite {
+    text-align: center;
+    margin-top: 60px;
+    padding-bottom: 141px;
+    font-size: 1rem;
+}
+
+/* -----------------------
 topボタン
 -------------------------- */
 .circle,
@@ -377,6 +391,14 @@ menuボタン
     }
 
     .tab li {
+        font-size: 1.25rem;
+    }
+
+    .mypage_favorite {
+        font-size: 2.25rem;
+    }
+
+    .mypage_nofavorite {
         font-size: 1.25rem;
     }
 }
