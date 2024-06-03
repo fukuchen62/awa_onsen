@@ -95,6 +95,12 @@ font-size: 0.7rem;
   aspect-ratio: 1/1;
     object-fit: cover;
 }
+.museum_map{
+ width: 100%;
+}
+.museum_map img{
+  width:100;
+}
 /* 基本情報 */
 .basic_information dl{
     background-color: white;
@@ -108,9 +114,9 @@ border-bottom-style: dotted;
     background-color: #EB97A8;
 }
 .basic_information table tr+tr{
-    border-bottom-style: dotted;
-    border-bottom-color: #EB97A8;
-    border-bottom-width:2px ;
+    border-top-style: dotted;
+    border-top-color: #EB97A8;
+    border-top-width:2px ;
 }
 .basic_information table{
   width: 100%;
@@ -121,10 +127,9 @@ border-bottom-style: dotted;
 .basic_information table td {
   width: 70%;
 }
-
-
-
-
+.basic_information dl>dd:nth-child(7){
+  text-align: start;
+}
 iframe{
     width: 100%;
 }
