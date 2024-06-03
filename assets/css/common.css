@@ -87,10 +87,9 @@ a {
 /* 本サイトの共通スタイルシート */
 .bubble_background {
     position: relative;
-    <<<<<<< Updated upstream
-    /* background_color: #328ef0; */
-    /* height: 100%; */
-    =======>>>>>>>Stashed changes width: 790px;
+
+    width: 790px;
+
     overflow: hidden;
     margin: 0 auto;
 }
