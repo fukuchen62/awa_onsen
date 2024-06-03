@@ -21,7 +21,6 @@ html {
 
 /*========== キービジュアル ==========*/
 .kv {
-    width: 100vw;
     height: 100vh;
     background-image: url(../images/kv.jpg);
     background-position: center center;
@@ -42,7 +41,7 @@ html {
 }
 
 .kv_bubble {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -490,3 +489,135 @@ button {
 }
 
 /* ==================== */
+
+
+/*========== header ==========*/
+.header_wrap {
+    width: 100vw;
+    height: 100vh;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    /* position: fixed; */
+    z-index: 10;
+
+    /* 検証ツールが見にくいときこれをオンにしてください */
+    /* display: none; */
+}
+
+.header_left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+}
+
+/* topへ戻るボタン */
+.top_button {
+    width: 50px;
+}
+
+.circle,
+.line .circle {
+    cursor: pointer;
+    /* サイズを必要に応じて調整 */
+    width: 50px;
+    /* サイズを必要に応じて調整 */
+    height: 50px;
+    border: 3px solid #DBF500;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    top: 45%;
+    width: 16px;
+    height: 3px;
+    background-color: #DBF500;
+    border-radius: 5px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.circle .line:nth-child(1) {
+    left: 20%;
+    transform: rotate(-45deg);
+}
+
+.circle .line:nth-child(2) {
+    transform: rotate(45deg);
+    right: 20%;
+}
+
+.header_right {
+    position: relative;
+}
+
+.hamburger {
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+/* header中身 */
+.navlist{
+    width: 250px;
+    color: #fff;
+    background-color: #4272A2;
+    border: 4px dashed #fff;
+}
+.nav_bg{
+    width: 200px;
+    height: 38px;
+    margin: 16px auto;
+    background-image: url(../images/nav_bg.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.nav_bg:last-child{
+    transform: rotate(180deg);
+}
+.navlist_item{
+    
+}
+
+/* ==================== */
+/* ========== footer ========== */
+
+.footer_container {
+    color: #fff;
+    background-color: #4272A2;
+    border: 4px dashed #fff;
+    border-radius: 12px;
+    padding: 72px 0;
+    margin: 0 8px 8px 8px;
+}
+.footer_list{
+    width: 240px;
+    margin: 0 auto;
+}
+.footer_item{
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    display: inline-block;
+}
+.footer_item span{
+    margin-right: 8px;
+}
+.footer_item:nth-child(3){
+    display: flex;
+}
+.footer_wrap p{
+    font-size: 0.8rem;
+    text-align: center;
+}
