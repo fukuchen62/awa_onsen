@@ -2,16 +2,40 @@
 section+section{
     margin-bottom: 20px;
 }
+
 .icon_list {
   text-align: center;
   display: grid;
   gap: 5px;
   grid-template-columns: repeat(5, 1fr);
 }
+
 .icon_list li {
   aspect-ratio: 1/1;
-  border: 1px solid red;
+  border: 5px solid #328ef0;
+  background-color: aliceblue;
+  border-radius: 20%;
+  font-size: 2.5vw;
+  vertical-align: bottom;
 }
+.icon_list span{
+font-size: 10vw;
+}
+@media(width>=757px) {
+  .icon_list{
+    max-width: 470px;
+    margin: 0 auto;
+  }
+.icon_list li{
+width: 90px;
+font-size: 0.7rem;
+}
+.icon_list span {
+  font-size:50px;
+}
+
+}
+
 .img_box {
   position: relative;
 }
@@ -58,7 +82,6 @@ section+section{
   display:flex;
   flex-wrap: wrap;
   gap: 16px;
-
 }
 
 /* 基本情報 */
@@ -71,10 +94,9 @@ border-bottom-style: dotted;
 
 }
 .basic_information dt{
-    background-color: #EB97A8;]
-
+    background-color: #EB97A8;
 }
-.basic_information tr{
+.basic_information table tr+tr{
     border-bottom-style: dotted;
     border-bottom-color: #EB97A8;
     border-bottom-width:2px ;
