@@ -47,7 +47,7 @@ small {
 
 .form_item textarea {
     background-color: rgb(228, 228, 228);
-    width: 90%;
+    width: 100%;
 }
 
 /* 注意書き */
@@ -66,12 +66,12 @@ small {
     height: 24px;
     width: 24px;
     margin: 4px;
-    border: 1px solid #8b98a5;
+    border: 1px solid #000000;
     border-radius: 4px;
 }
 
 #privacy:checked {
-    border: 1px solid #8b98a5;
+    border: 1px solid #000000;
     background-color: #15679e;
 }
 
