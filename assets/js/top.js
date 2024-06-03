@@ -16,5 +16,10 @@ $(function () {
         $(".sp_nav .navlist").toggleClass("isactive");
         $(this).toggleClass("isactive");
     });
+    $(".navlist_item").click(function(){
+        $(".hamburger").removeClass("active");
+        $(".sp_nav .navlist").removeClass("isactive");
+        $(".hamburger").removeClass("isactive");
+    });
 
 });
