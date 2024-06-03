@@ -14,6 +14,7 @@ $(function () {
     $(".hamburger").click(function(){
         $(this).toggleClass("active");
         $(".sp_nav .navlist").toggleClass("isactive");
+        $(this).toggleClass("isactive");
     });
 
 });
