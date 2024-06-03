@@ -8,16 +8,14 @@
 /* タグ */
 .info_tag {
     margin: 50px auto 0;
-    max-width: 300px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .info_tag li {
     font-size: 1.25rem;
-    line-height: 40px;
+    height: 40px;
+    /* line-height: 40px; */
     width: 136px;
     height: 40px;
     text-align: center;
@@ -35,12 +33,9 @@
 }
 
 @media (width>=757px) {
-    .info_tag {
-        max-width: 100%;
-    }
-
     .info_tag li {
         border-radius: 30px 30px 0 0;
+        height: 80px;
     }
 }
 

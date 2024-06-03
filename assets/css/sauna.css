@@ -50,3 +50,43 @@ h3 {
     border-bottom-style: dashed;
     border-bottom-width: 5px;
 }
+
+/* 小見出しの下のライン */
+.sauna_line {
+    position: relative;
+    width: 100px;
+    background-color: black;
+    height: 1px;
+    /* display: inline-block; */
+    /* margin: 10px; */
+}
+
+.sauna_line::before {
+    /* display: inline-block; */
+    /* margin: 0 3px 0 8px; */
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+    top: -4px;
+    bottom: 0;
+    /* right: 100px; */
+    left: 0;
+}
+
+.sauna_line::after {
+    /* display: inline-block; */
+    /* margin: 0 3px 0 8px; */
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+    top: -4px;
+    bottom: 0;
+    /* right: 100px; */
+    left: 100px;
+}
