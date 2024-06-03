@@ -490,3 +490,25 @@ a {
 .news_card .title {
     margin-bottom: 4px;
 }
+ /* セクションごとのタイトル */
+.lined-title {
+    display: flex;
+    align-items: center;
+}
+
+.lined-title::before,
+.lined-title::after {
+    content: "";
+    flex: 1;
+    border-bottom-color: #eb97a8;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.lined-title::before {
+    margin-right: 10px;
+}
+
+.lined-title::after {
+    margin-left: 10px;
+}
