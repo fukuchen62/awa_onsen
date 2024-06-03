@@ -44,6 +44,16 @@ html {
     width: 100%;
 }
 
+.kv_bg{
+    width: 100%;
+    aspect-ratio: 1 / 0.174479916666666666;
+    background-image: url(../images/kv_bg.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+}
+
 .kv_bubble {
     width: 100%;
     display: flex;
@@ -676,7 +686,7 @@ button {
     margin-right: 8px;
 }
 
-.footer_item:nth-child(3) {
+.footer_item:nth-child(3) a {
     display: flex;
 }
 
