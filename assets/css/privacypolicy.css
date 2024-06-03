@@ -1,5 +1,20 @@
 @charset "utf-8";
 
-/* hr {
-    border: dashed 2px #DBF500;
-} */
+/* タイトル */
+h3 {
+    font-size: 2.25rem;
+    width: fit-content;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+/* 小見出し */
+h4 {
+    font-size: 1.5rem;
+}
+
+/* 区切り線 */
+hr {
+    border: 2px dashed #dbf500;
+}
