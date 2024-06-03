@@ -99,7 +99,7 @@ font-size: 0.7rem;
  width: 100%;
 }
 .museum_map img{
-  width:100;
+  width:100%;
 }
 /* 基本情報 */
 .basic_information dl{
@@ -127,8 +127,8 @@ border-bottom-style: dotted;
 .basic_information table td {
   width: 70%;
 }
-.basic_information dl>dd:nth-child(7){
-  text-align: start;
+.test{
+  text-align: left;
 }
 iframe{
     width: 100%;
