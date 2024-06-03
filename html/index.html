@@ -33,27 +33,65 @@
 <body>
     <!-- header -->
     <header class="header_wrap">
-        <!-- headerの左側 -->
-        <div class="header_left">
-            <!-- 常時表示サイトロゴ -->
-            <div class="logo">
-                <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
+        <div class="header_container">
+            <!-- headerの左側 -->
+            <div class="header_left">
+                <!-- 常時表示サイトロゴ -->
+                <div class="logo">
+                    <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
+                </div>
+                <!-- 上にスクロールするボタン -->
+                <div class="top_button">
+                    <div class="circle">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
             </div>
-            <!-- 上にスクロールするボタン -->
-            <div class="top_button">
-                <div class="circle">
-                    <div class="line"></div>
-                    <div class="line"></div>
+
+            <!-- headerの右側 -->
+            <!-- sp&tbnav -->
+            <div class="header_right sp_tb_only">
+                <div class="hamburger">
+                    <img src="../assets/images/hamburger.svg" alt="メニュー">
                 </div>
             </div>
         </div>
-
-        <!-- headerの右側 -->
-        <!-- sp&tbnav -->
-        <div class="header_right">
-            <div class="hamburger">
-                <img src="../assets/images/hamburger.svg" alt="メニュー">
-            </div>
+        <!-- menu -->
+        <nav class="sp_nav sp_tb_only">
+            <ul class="navlist">
+                <li class="nav_bg"></li>
+                <div class="navlist_container">
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                bubble_chart
+                            </span>TOP</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                bath_outdoor
+                            </span>温泉一覧</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                pin_drop
+                            </span>周辺一覧</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                directions_walk
+                            </span>モデルコース</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                sauna
+                            </span>サ活</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                border_color
+                            </span>コラム</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                search
+                            </span>検索</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                home
+                            </span>マイページ</a></li>
+                </div>
+                <li class="nav_bg"></li>
+            </ul>
+        </nav>
+        <!-- pcnav -->
+        <nav class="g_nav pc_only">
             <ul class="navlist">
                 <li class="nav_bg"></li>
                 <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
@@ -82,36 +120,7 @@
                         </span>マイページ</a></li>
                 <li class="nav_bg"></li>
             </ul>
-        </div>
-        <!-- pcnav -->
-        <ul class="navlist pc_only">
-            <li class="nav_bg"></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        bubble_chart
-                    </span>TOP</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        bath_outdoor
-                    </span>温泉一覧</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        pin_drop
-                    </span>周辺一覧</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        directions_walk
-                    </span>モデルコース</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        sauna
-                    </span>サ活</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        border_color
-                    </span>コラム</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        search
-                    </span>検索</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        home
-                    </span>マイページ</a></li>
-            <li class="nav_bg"></li>
-        </ul>
+        </nav>
     </header>
 
     <main>
@@ -628,7 +637,9 @@
                     </span>お知らせ一覧へ</li>
                 <li class="footer_item"><span class="material-symbols-outlined">
                         verified_user
-                    </span><div>免責事項・<br>プライバシーポリシー</div></li>
+                    </span>
+                    <div>免責事項・<br>プライバシーポリシー</div>
+                </li>
                 <li class="footer_item"><span class="material-symbols-outlined">
                         mail
                     </span>お問い合わせ(企業様)</li>
