@@ -33,8 +33,9 @@ font-size: 0.7rem;
 .icon_list span {
   font-size:50px;
 }
-
 }
+
+
 
 .img_box {
   position: relative;
@@ -84,6 +85,16 @@ font-size: 0.7rem;
   gap: 16px;
 }
 
+/* 写真スリック */
+
+.slider img{
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.thumbnail img{
+  aspect-ratio: 1/1;
+    object-fit: cover;
+}
 /* 基本情報 */
 .basic_information dl{
     background-color: white;
