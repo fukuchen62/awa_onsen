@@ -4,21 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>マイページ</title>
+    <!-- googlefont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <!-- cssの読み込み -->
+    <link rel="stylesheet" href="../assets/css/destyle.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/mypage.css">
 </head>
 <body>
-    <header></header>
-    <main>
-        <h3>マイページ</h3>
-        <!-- パンくずリスト -->
-        <div class="mypage_container">
-            <h3>マイページについて</h3>
-            <p>本マイページは温泉詳細や周辺詳細でブックマークした情報が表示されます。</p>
-            <p>ブックマークにはcookieを使用しています。</p>
-            <p>cookieの削除に伴いブックマークした情報も削除されます。</p>
+    <div class="bubble_background">
+        <div class="context">
+            <header>
+                <a href="#">
+                    <img class="logo" src="../assets/images/logo.svg" alt="ロゴ">
+                </a>
+            </header>
+            <main>
+                <div class="flex">
+                    <h3 class="under_line zen-maru-gothic-regular">マイページ</h3>
+                </div>
+                <!-- パンくずリスト -->
+                <div class="flex">
+                    <div class="mypage_container zen-maru-gothic-regular">
+                        <h3>マイページについて</h3>
+                        <p>・本マイページは温泉詳細や周辺詳細でブックマークした情報が表示されます。</p>
+                        <p>・ブックマークにはcookieを使用しています。</p>
+                        <p>・cookieの削除に伴いブックマークした情報も削除されます。</p>
+                    </div>
+                </div>
+                <h3 class="mypage_favorite zen-maru-gothic-regular">お気に入り一覧</h3>
+                <p class="mypage_nofavorite zen-maru-gothic-regular">お気に入りがありません</p>
+                <!-- topに戻るボタン -->
+                <a href="#">
+                    <div class="circle">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </a>
+                <!-- メニューボタン -->
+                <a class="menu_btn" href="#">
+                    <img src="../assets/images/hamburger.svg" alt="menuボタン">
+                </a>
+            </main>
+            <footer></footer>
         </div>
-        <h3 class="mypage_favorite">お気に入り一覧</h3>
-        <p>お気に入りがありません</p>
-    </main>
-    <footer></footer>
+
+    </div>
+    <!-- javascriptの読み込み -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="../assets/js/common.js"></script>
 </body>
 </html>

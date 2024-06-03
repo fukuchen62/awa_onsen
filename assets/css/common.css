@@ -86,8 +86,11 @@ a {
 /* 本サイトの共通スタイルシート */
 .bubble_background {
     position: relative;
+<<<<<<< Updated upstream
     /* background_color: #328ef0; */
     /* height: 100%; */
+=======
+>>>>>>> Stashed changes
     width: 790px;
     overflow: hidden;
     margin: 0 auto;
@@ -98,8 +101,7 @@ a {
     display: block;
     position: fixed;
     z-index: -1;
-    /* position: absolute; */
-    bottom: -50px;
+    bottom: -10px;
     background-color: transparent;
     border-radius: 50%;
     pointer-events: none;
@@ -124,7 +126,6 @@ a {
 
     /* 60% のキーフレーム */
     60% {
-        /* transform: translateY(-60vh) translateX(50px); */
         transform: translateY(-60vh) translateX(50px);
 
     }
