@@ -23,33 +23,65 @@
     <link rel="stylesheet" href="../assets/css/news.css">
 </head>
 <body>
-    <div class="container">
-        <header></header>
-        <main>
-            <div class="ttl">
-                <h2>道の駅すみれを追加しました</h2>
-                <small>2024.06.01.23:05</small>
-            </div>
+    <div class="bubble_background">
+        <div class="container">
+            <header></header>
+            <main>
+                <section>
+                    <div class="ttl">
+                        <h2 class="under_line">道の駅すみれを追加しました</h2>
+                        <small>2024.06.01.23:05</small>
+                    </div>
 
-            <img src="" alt="">
+                    <img src="../assets/images/roadside_station.jpg" alt="">
 
-            <div class="tag_area">
-                <small></small>
-                <small></small>
-                <small></small>
-                <small></small>
-                <small></small>
-                <small></small>
-                <small></small>
-                <small></small>
-            </div>
+                    <div class="tag_area">
+                        <small></small>
+                        <small></small>
+                        <small></small>
+                        <small></small>
+                        <small></small>
+                        <small></small>
+                        <small></small>
+                        <small></small>
+                    </div>
 
-            <p>ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。(396文字)</p>
+                    <p>ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。(396文字)</p>
 
+                </section>
+                <!-- コメント欄 -->
+                <section class="comment_area">
+                    <h3>コメント入力欄</h3>
 
+                    <!-- コメント入力フォーム -->
+                    <form id="comment-form">
+                        <table>
+                            <tr>
+                                <td><label for="comment-name">名前:</label></td>
+                                <td><input type="text" id="comment-name" name="name" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="comment-text">コメント:</label></td>
+                                <td><textarea id="comment-text" name="comment" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><button type="submit">送信</button></td>
+                            </tr>
+                        </table>
+                    </form>
 
-        </main>
-        <footer></footer>
+                    <!-- コメント一覧 -->
+                    <div id="comment-list">
+                        <!-- JavaScriptでコメントを動的に追加 -->
+                    </div>
+                </section>
+
+            </main>
+            <footer></footer>
+        </div>
     </div>
+    <script src="../assets/js/vendor/jquery-3.6.0.min.js"></script>
+
+    <script src="../assets/js/common.js"></script>
 </body>
 </html>
