@@ -87,9 +87,6 @@ a {
 /* 本サイトの共通スタイルシート */
 .bubble_background {
     position: relative;
-
-    width: 790px;
-
     overflow: hidden;
     margin: 0 auto;
 }
