@@ -284,13 +284,14 @@ a {
 }
 
 /* 各ページタイトル */
+
 .under_line {
     width: fit-content;
     position: relative;
     margin: 0 auto;
 }
 
-.under_line::after {
+.under_line::before {
     content: "";
     z-index: -1;
     position: absolute;
