@@ -10,6 +10,20 @@ html {
 ================================= */
 
 /* フォント(Googleフォント) */
+/* メイン */
+.zen-maru-gothic-regular {
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* コラム日付 */
+.fugaz-one-regular {
+    font-family: "Fugaz One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 
 
@@ -27,25 +41,25 @@ a {
 
 /* レスポンシブ */
 
-.tb_none {
+.tb_only {
     display: none;
 }
 
-.pc_none {
+.pc_only {
     display: none;
 }
 
 /* tablet */
 @media(width>=757px) {
-    .sp_none {
+    .sp_only {
         display: none;
     }
 
-    .tb_none {
+    .tb_only {
         display: block;
     }
 
-    .pc_none {
+    .pc_only {
         display: none;
     }
 
@@ -54,15 +68,15 @@ a {
 /* ---------- */
 /* pc */
 @media(width>=1201px) {
-    .sp_none {
+    .sp_only {
         display: none;
     }
 
-    .tb_none {
+    .tb_only {
         display: none;
     }
 
-    .pc_none {
+    .pc_only {
         display: block;
     }
 }
@@ -240,4 +254,40 @@ a {
         transform: translateY(-110vh);
         opacity: 0.3;
     }
+}
+
+/* header */
+.header_wrap {
+    width: 100vw;
+    height: 100vh;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+}
+
+.header_left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 100px;
+}
+
+.top_button {
+    width: 100px;
+}
+
+.header_right {
+    position: relative;
+}
+
+.hamburger {
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
