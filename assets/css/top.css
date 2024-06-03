@@ -115,6 +115,7 @@ html {
 .section_btn:hover a,
 .section_btn:hover i {
     color: #fff;
+    transition: all 0.7s;
 }
 
 .section_btn i {
@@ -268,6 +269,11 @@ html {
     width: 100%;
     cursor: pointer;
 }
+
+.slider_content a:hover>.slider_img img {
+    transform: translate(-3%, 3%);
+}
+
 
 .slider_img {
     width: 55%;
@@ -458,6 +464,10 @@ button {
     z-index: 2;
 }
 
+.sauna_content a:hover .sauna_img img {
+    transform: translate(-3%, 3%);
+}
+
 .sauna_img span {
     background-color: #F31E49;
     display: block;
@@ -471,22 +481,26 @@ button {
     z-index: 1;
 }
 
-.sauna_content h3 {
-    background-color: #F31E49;
-}
-
 /* サ活とはボタン */
 .sauna_btn {
-    border: 3px solid #F31E49;
-}
-
-.sauna_btn a,
-.sauna_btn i {
+    width: 80%;
+    height: 40px;
+    font-size: 1.25rem;
+    font-weight: bold;
     color: #F31E49;
+    border-radius: 24px;
+    border: 3px solid #F31E49;
+    margin-top: 32px;
 }
 
-.sauna_btn:hover {
+.sauna_btn i {
+    margin-left: 4px;
+}
+
+.sauna_content a:hover>.sauna_btn{
+    color: #fff;
     background-color: #F31E49;
+    transition: all 0.7s;
 }
 
 /* ==================== */
