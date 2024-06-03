@@ -101,7 +101,7 @@ a {
 .bubble {
     display: block;
     position: fixed;
-    z-index: -1;
+    z-index: -20;
     bottom: -10px;
     background-color: transparent;
     border-radius: 50%;
@@ -149,7 +149,7 @@ a {
 .bubble_edge {
     display: block;
     position: fixed;
-    z-index: -1;
+    z-index: -20;
     /* position: absolute; */
     bottom: -50px;
     background-color: transparent;
@@ -198,7 +198,7 @@ a {
 
     display: block;
     position: fixed;
-    z-index: -1;
+    z-index: -20;
     bottom: -50px;
     animation: duck 8s linear infinite;
 }
@@ -255,6 +255,7 @@ a {
 
 /* バックグラウンドの設定 */
 .container {
+    z-index: -10;
     min-height: 100vh;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 0 5%;
@@ -263,6 +264,7 @@ a {
 
 @media (width>=757px) {
     .container {
+        z-index: -10;
         background-color: white;
         width: 90%;
     }
@@ -272,6 +274,7 @@ a {
 /* pc */
 @media (width>=1201px) {
     .container {
+        z-index: -10;
         width: 792px;
         margin-left: 18.75%;
         /* width: 62.5%; */
@@ -430,7 +433,7 @@ a {
     text-align: center;
 }
 
-各ページタイトル
+/* 各ページタイトル */
 .under_line {
     font-size: 2rem;
     width: fit-content;
