@@ -11,7 +11,7 @@
     max-width: 300px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    /* gap: 5px; */
 }
 
 .info_tag li {
