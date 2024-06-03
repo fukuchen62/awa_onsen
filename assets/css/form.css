@@ -22,6 +22,7 @@
 p {
     font-size: 1.25rem;
     /* 幅８０％ */
+    overflow-wrap: normal;
 }
 
 small {
@@ -49,15 +50,15 @@ small {
 }
 
 .privacypolicy a {
-    /* border: 2px solid #000; */
 
+    text-decoration: underline;
 }
 
 
 /* ボタン */
 #submit_button {
     border: 2px solid #fff;
-    margin: 25px;
+    margin: 20px;
 }
 
 .confirmation {
@@ -66,9 +67,9 @@ small {
     background-color: #DBF500;
     border-radius: 25px;
     text-align: center;
-    width: 10vw;
+    width: 50%;
     height: 10vh;
-    margin: auto;
+    margin: 20px auto;
 }
 
 /* レスポンシブ */
@@ -115,11 +116,12 @@ small {
         display: block;
     }
 
-    h4 {
-        font-size: 1.5rem;
-        width: fit-content;
-        position: relative;
+    .content_form {
+        border: 2px solid red;
+        /* text-align: left; */
+        margin: 0;
     }
+
 }
 
 
