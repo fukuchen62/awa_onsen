@@ -42,7 +42,8 @@
             <!-- 上にスクロールするボタン -->
             <div class="top_button">
                 <div class="circle">
-                    <div class="triangle"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
                 </div>
             </div>
         </div>
@@ -116,13 +117,13 @@
     <main>
         <!-- キービジュアルはbgで表示 -->
         <section class="kv">
-            <h1>
+            <h1 class="top_ttl">
                 <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
             </h1>
             <!-- 泡 -->
-            <ul class="bubble">
-                <li></li>
-                <li></li>
+            <ul class="kv_bubble">
+                <li class="kv_bubble_left"></li>
+                <li class="kv_bubble_right"></li>
             </ul>
         </section>
         <div class="inner">
@@ -130,396 +131,510 @@
             <section class="section-wrap about">
                 <!-- 付箋はafter疑似要素で入れる -->
                 <div class="sticky_note">
-                    <h2>湯ったりほっと！</h2>
+                    <h2 class="section_ttl">湯ったりほっと！</h2>
                 </div>
-                <div class="about">
-                    <h3>あわあわ温泉ぶらりとは</h3>
-                    <!-- サイトの説明 -->
-                    <p>ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。
-                    </p>
-                    <div class="about_img">
-                        <img src="../assets/images/onsen_saru.svg" alt="おさる">
+                <div class="section_content">
+                    <div class="content_inner">
+                        <h3>あわあわ温泉ぶらり<span>とは</span><span>？</span></h3>
+                        <!-- サイトの説明 -->
+                        <p>ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。ここにサイトの説明が入ります。
+                        </p>
+                        <div class="about_img">
+                            <img src="../assets/images/onsen_saru.svg" alt="おさる">
+                        </div>
+                        <button class="about_btn btn shadow section_btn"><a href="#">もっと詳しく<i
+                                    class="fa-solid fa-list"></i></a></button>
                     </div>
-                    <button class="about_btn btn"><a href="#">もっと詳しく<i class="fa-solid fa-list"></i></a></button>
                 </div>
             </section>
 
             <section class="section-wrap news">
                 <div class="sticky_note">
-                    <h2>新着情報</h2>
+                    <h2 class="section_ttl">新着情報</h2>
                 </div>
-                <ul class="card2_list news_list">
-                    <li class="card2_item news_item">
-                        <!-- 画像 -->
-                        <div class="card2_img news_img">
-                            <img src="../assets/images/onsen_img.jpg" alt="温泉">
-                        </div>
-                        <!-- 日付 -->
-                        <p>2024.05.27</p>
-                        <!-- 内容 -->
-                        <p>温泉情報が追加されました。</p>
-                        <button><a href="#">#温泉</a></button>
-                    </li>
-                    <li class="card2_item news_item">
-                        <!-- 画像 -->
-                        <div class="card2_img news_img">
-                            <img src="../assets/images/onsen_img.jpg" alt="温泉">
-                        </div>
-                        <!-- 日付 -->
-                        <p>2024.05.27</p>
-                        <!-- 内容 -->
-                        <p>温泉情報が追加されました。</p>
-                        <button><a href="#">#温泉</a></button>
-                    </li>
-                    <li class="card2_item news_item">
-                        <!-- 画像 -->
-                        <div class="card2_img news_img">
-                            <img src="../assets/images/onsen_img.jpg" alt="温泉">
-                        </div>
-                        <!-- 日付 -->
-                        <p>2024.05.27</p>
-                        <!-- 内容 -->
-                        <p>温泉情報が追加されました。</p>
-                        <button><a href="#">#温泉</a></button>
-                    </li>
-                </ul>
-                <!-- お知らせ一覧ボタン -->
-                <button class="news_btn btn"><a href="#">お知らせ一覧へ<i class="fa-solid fa-list"></i></a></button>
-
+                <div class="section_content">
+                    <div class="content_inner">
+                        <ul class="news_list">
+                            <!-- カード型 -->
+                            <li class="card2_item news_card">
+                                <a href="#">
+                                    <!-- 画像 -->
+                                    <div class="news_img">
+                                        <img src="../assets/images/onsen_img.jpg" alt="温泉">
+                                    </div>
+                                    <div class="news_contents">
+                                        <p class="date fugaz-one-regular">2024.05.24 10:00</p>
+                                        <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
+                                        <div class="hashtag_list .flex">
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- カード型 -->
+                            <li class="card2_item news_card">
+                                <a href="#">
+                                    <!-- 画像 -->
+                                    <div class="card2_img news_img">
+                                        <img src="../assets/images/onsen_img.jpg" alt="温泉">
+                                    </div>
+                                    <div class="news_contents">
+                                        <p class="date fugaz-one-regular">2024.05.24 10:00</p>
+                                        <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
+                                        <div class="hashtag_list .flex">
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- カード型 -->
+                            <li class="card2_item news_card">
+                                <a href="#">
+                                    <!-- 画像 -->
+                                    <div class="card2_img news_img">
+                                        <img src="../assets/images/onsen_img.jpg" alt="温泉">
+                                    </div>
+                                    <div class="news_contents">
+                                        <p class="date fugaz-one-regular">2024.05.24 10:00</p>
+                                        <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
+                                        <div class="hashtag_list .flex">
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- お知らせ一覧ボタン -->
+                        <button class="about_btn btn shadow section_btn"><a href="#">お知らせ一覧へ<i
+                                    class="fa-solid fa-list"></i></a></button>
+                    </div>
+                </div>
             </section>
+
             <!-- 温泉 -->
             <section class="section-wrap spa">
                 <div class="sticky_note">
-                    <h2>温泉を探そ</h2>
+                    <h2 class="section_ttl">温泉を探そ</h2>
                 </div>
-                <ul class="slider">
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 温泉の写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/onsen_img.jpg" alt="温泉">
-                            </div>
-                            <!-- 温泉の名前 -->
-                            <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 温泉の写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/kv.jpg" alt="温泉">
-                            </div>
-                            <!-- 温泉の名前 -->
-                            <h3>安岡温泉</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 温泉の写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/onsen_img.jpg" alt="温泉">
-                            </div>
-                            <!-- 温泉の名前 -->
-                            <h3>松尾温泉</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 温泉の写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/kv.jpg" alt="温泉">
-                            </div>
-                            <!-- 温泉の名前 -->
-                            <h3>いまむー温泉</h3>
-                        </a>
-                    </li>
-                </ul>
-                <!-- 温泉情報一覧ボタン -->
-                <button class="spa_btn btn"><a href="#">温泉情報一覧へ<i class="fa-solid fa-list"></i></a></button>
+                <div class="section_content">
+                    <ul class="slider">
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 温泉の写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/onsen_img.jpg" alt="温泉">
+                                    <span></span>
+                                </div>
+                                <!-- 温泉の名前 -->
+                                <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 温泉の写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/kv.jpg" alt="温泉">
+                                    <span></span>
+                                </div>
+                                <!-- 温泉の名前 -->
+                                <h3>安岡温泉</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 温泉の写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/onsen_img.jpg" alt="温泉">
+                                    <span></span>
+                                </div>
+                                <!-- 温泉の名前 -->
+                                <h3>松尾温泉</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 温泉の写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/kv.jpg" alt="温泉">
+                                    <span></span>
+                                </div>
+                                <!-- 温泉の名前 -->
+                                <h3>いまむー温泉</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 温泉情報一覧ボタン -->
+                    <button class="spa_btn btn shadow section_btn"><a href="#">温泉情報一覧へ<i
+                                class="fa-solid fa-list"></i></a></button>
+                </div>
             </section>
 
             <!-- 遊ぶ -->
-            <section class="section-wrap hobby">
+            <section class="section-wrap hobby facility">
                 <div class="sticky_note">
-                    <h2>遊ぶ！</h2>
+                    <h2 class="section_ttl">遊ぶ！</h2>
                 </div>
-                <ul class="slider">
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 遊ぶ写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/river.jpg" alt="ラフティング">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>吉野川でラフティング</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 遊ぶ写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/bike.jpg" alt="ツーリング">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>自然を感じてツーリング</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 遊ぶ写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/river.jpg" alt="ラフティング">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>吉野川と思ったら穴吹川でラフティング</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 遊ぶ写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/bike.jpg" alt="ツーリング">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>尾花さんが休日に楽しんでツーリング</h3>
-                        </a>
-                    </li>
-                </ul>
-                <!-- 周辺情報一覧へボタン -->
-                <button class="hobby_btn btn"><a href="#">周辺情報一覧へ<i class="fa-solid fa-list"></i></a></button>
+                <div class="section_content">
+                    <ul class="slider">
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 遊ぶ写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/river.jpg" alt="ラフティング">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>吉野川でラフティング</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 遊ぶ写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/bike.jpg" alt="ツーリング">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>自然を感じてツーリング</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 遊ぶ写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/river.jpg" alt="ラフティング">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>吉野川と思ったら穴吹川でラフティング</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 遊ぶ写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/bike.jpg" alt="ツーリング">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>尾花さんが休日に楽しんでツーリング</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 周辺情報一覧へボタン -->
+                    <button class="facility_btn btn shadow section_btn"><a href="#">周辺情報一覧へ<i
+                                class="fa-solid fa-list"></i></a></button>
+                </div>
             </section>
 
             <!-- 食べる -->
-            <section class="section-wrap food">
+            <section class="section-wrap food facility">
                 <div class="sticky_note">
-                    <h2>食べる！</h2>
+                    <h2 class="section_ttl">食べる！</h2>
                 </div>
-                <ul class="slider">
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- グルメ写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/bike.jpg" alt="グルメ">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>おいしいお蕎麦屋さん</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- グルメ写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/river.jpg" alt="グルメ">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>ちょっとおいしい焼き鳥屋さん</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- グルメ写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/bike.jpg" alt="グルメ">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>居酒屋　晴れ屋</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- グルメ写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/river.jpg" alt="グルメ">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>定食屋橘</h3>
-                        </a>
-                    </li>
-                </ul>
-                <!-- 周辺情報一覧ボタン -->
-                <button class="food_btn btn"><a href="#">周辺情報一覧へ<i class="fa-solid fa-list"></i></a></button>
+                <div class="section_content">
+                    <ul class="slider">
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- グルメ写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/bike.jpg" alt="グルメ">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>おいしいお蕎麦屋さん</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- グルメ写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/river.jpg" alt="グルメ">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>ちょっとおいしい焼き鳥屋さん</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- グルメ写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/bike.jpg" alt="グルメ">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>居酒屋　晴れ屋</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- グルメ写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/river.jpg" alt="グルメ">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>定食屋橘</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 周辺情報一覧ボタン -->
+                    <button class="facility_btn btn shadow section_btn"><a href="#">周辺情報一覧へ<i
+                                class="fa-solid fa-list"></i></a></button>
+                </div>
             </section>
 
             <!-- 映え -->
-            <section class="section-wrap photo">
+            <section class="section-wrap photo facility">
                 <div class="sticky_note">
-                    <h2>映え</h2>
+                    <h2 class="section_ttl">映え</h2>
                 </div>
-                <ul class="slider">
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/bike.jpg" alt="映え写真">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>インスタ映えするスポット</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/river.jpg" alt="映え写真">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>おしゃれな写真</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/bike.jpg" alt="映え写真">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>インスタ映えするスポット</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/river.jpg" alt="映える写真">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>おしゃれな写真</h3>
-                        </a>
-                    </li>
-                </ul>
-                <!-- 周辺情報一覧ボタン -->
-                <button class="photo_btn btn"><a href="#">周辺情報一覧へ<i class="fa-solid fa-list"></i></a></button>
+                <div class="section_content">
+                    <ul class="slider">
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/bike.jpg" alt="映え写真">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>インスタ映えするスポット</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/river.jpg" alt="映え写真">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>おしゃれな写真</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/bike.jpg" alt="映え写真">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>インスタ映えするスポット</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/river.jpg" alt="映える写真">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>おしゃれな写真</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 周辺情報一覧ボタン -->
+                    <button class="facility_btn btn shadow section_btn"><a href="#">周辺情報一覧へ<i
+                                class="fa-solid fa-list"></i></a></button>
+                </div>
             </section>
 
             <!-- モデルコース -->
             <section class="section-wrap course">
                 <div class="sticky_note">
-                    <h2>モデルコース</h2>
+                    <h2 class="section_ttl">モデルコース</h2>
                 </div>
-                <ul class="slider">
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/bike.jpg" alt="ツーリング">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>県南ツーリングコース</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/river.jpg" alt="ラフティング">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>大自然ラフティングコース</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/bike.jpg" alt="ツーリング">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>県南ツーリングコース</h3>
-                        </a>
-                    </li>
-                    <li class="slider_content">
-                        <a href="#">
-                            <!-- 写真 -->
-                            <div class="card_img">
-                                <img src="../assets/images/river.jpg" alt="ラフティング">
-                            </div>
-                            <!-- 名前 -->
-                            <h3>大自然ラフティングコース</h3>
-                        </a>
-                    </li>
-                </ul>
-                <!-- モデルコース一覧へ -->
-                <button class="course_btn btn"><a href="#">モデルコース一覧へ<i class="fa-solid fa-list"></i></a></button>
+                <div class="section_content">
+                    <ul class="slider">
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/bike.jpg" alt="ツーリング">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>県南ツーリングコース</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/river.jpg" alt="ラフティング">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>大自然ラフティングコース</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/bike.jpg" alt="ツーリング">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>県南ツーリングコース</h3>
+                            </a>
+                        </li>
+                        <li class="slider_content">
+                            <a href="#">
+                                <!-- 写真 -->
+                                <div class="slider_img">
+                                    <img src="../assets/images/river.jpg" alt="ラフティング">
+                                    <span></span>
+                                </div>
+                                <!-- 名前 -->
+                                <h3>大自然ラフティングコース</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- モデルコース一覧へ -->
+                    <button class="course_btn btn shadow section_btn"><a href="#">モデルコース一覧へ<i
+                                class="fa-solid fa-list"></i></a></button>
+                </div>
             </section>
 
             <!-- サウナ -->
             <section class="section-wrap sauna">
                 <div class="sticky_note">
-                    <h2>整う！</h2>
+                    <h2 class="section_ttl">整う！</h2>
                 </div>
-                <div class="sauna">
-                    <!-- サル -->
-                    <div class="card_img">
-                        <img src="../assets/images/sauna_saru.jpg" alt="サウナ">
+                <div class="section_content">
+                    <div class="sauna_content">
+                        <!-- サル -->
+                        <div class="slider_img sauna_img">
+                            <img src="../assets/images/sauna_saru.jpg" alt="サウナ">
+                            <span></span>
+                        </div>
+                        <h3>サ活！</h3>
                     </div>
-                    <h3>サ活！</h3>
+                    <button class="sauna_btn btn shadow section_btn"><a href="#">サ活とは？<i
+                                class="fa-solid fa-list"></i></a></button>
                 </div>
-                <button class="sauna_btn btn"><a href="#">サ活とは？<i class="fa-solid fa-list"></i></a></button>
             </section>
 
             <!-- コラム -->
             <section class="section-wrap column">
                 <div class="sticky_note">
-                    <h2>コラム</h2>
+                    <h2 class="section_ttl">コラム</h2>
                 </div>
-                <ul class="card2_list column_list">
-                    <li class="card2_item column_item">
-                        <!-- 画像 -->
-                        <div class="card2_img column_img">
-                            <img src="../assets/images/onsen_img.jpg" alt="温泉">
-                        </div>
-                        <!-- 日付 -->
-                        <p>2024.05.27</p>
-                        <!-- 内容 -->
-                        <p>温泉情報が追加されました。</p>
-                        <button><a href="#">#温泉</a></button>
-                    </li>
-                    <li class="card2_item column_item">
-                        <!-- 画像 -->
-                        <div class="card2_img column_img">
-                            <img src="../assets/images/onsen_img.jpg" alt="温泉">
-                        </div>
-                        <!-- 日付 -->
-                        <p>2024.05.27</p>
-                        <!-- 内容 -->
-                        <p>温泉情報が追加されました。</p>
-                        <button><a href="#">#温泉</a></button>
-                    </li>
-                    <li class="card2_item column_item">
-                        <!-- 画像 -->
-                        <div class="card2_img column_img">
-                            <img src="../assets/images/onsen_img.jpg" alt="温泉">
-                        </div>
-                        <!-- 日付 -->
-                        <p>2024.05.27</p>
-                        <!-- 内容 -->
-                        <p>温泉情報が追加されました。</p>
-                        <button><a href="#">#温泉</a></button>
-                    </li>
-                </ul>
-                <!-- コラム一覧へボタン -->
-                <button class="column_btn btn"><a href="#">コラム一覧へ<i class="fa-solid fa-list"></i></a></button>
+                <div class="section_content">
+                    <div class="content_inner">
+                        <ul class="news_list">
+                            <!-- カード型 -->
+                            <li class="card2_item news_card">
+                                <a href="#">
+                                    <!-- 画像 -->
+                                    <div class="news_img">
+                                        <img src="../assets/images/onsen_img.jpg" alt="温泉">
+                                    </div>
+                                    <div class="news_contents">
+                                        <p class="date fugaz-one-regular">2024.05.24 10:00</p>
+                                        <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
+                                        <div class="hashtag_list .flex">
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- カード型 -->
+                            <li class="card2_item news_card">
+                                <a href="#">
+                                    <!-- 画像 -->
+                                    <div class="card2_img news_img">
+                                        <img src="../assets/images/onsen_img.jpg" alt="温泉">
+                                    </div>
+                                    <div class="news_contents">
+                                        <p class="date fugaz-one-regular">2024.05.24 10:00</p>
+                                        <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
+                                        <div class="hashtag_list .flex">
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- カード型 -->
+                            <li class="card2_item news_card">
+                                <a href="#">
+                                    <!-- 画像 -->
+                                    <div class="card2_img news_img">
+                                        <img src="../assets/images/onsen_img.jpg" alt="温泉">
+                                    </div>
+                                    <div class="news_contents">
+                                        <p class="date fugaz-one-regular">2024.05.24 10:00</p>
+                                        <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
+                                        <div class="hashtag_list .flex">
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                            <object>
+                                                <a href="#" class="hashtag">#温泉</a>
+                                            </object>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- お知らせ一覧ボタン -->
+                        <button class="column_btn btn shadow section_btn"><a href="#">お知らせ一覧へ<i
+                                    class="fa-solid fa-list"></i></a></button>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
 
     <!-- footer -->
-    <footer>
-        <ul class="footer_wrap">
-            <li class="footer_item"><span class="material-symbols-outlined">
-                    bubble_chart
-                </span>このサイトについて</li>
-            <li class="footer_item"><span class="material-symbols-outlined">
-                    fiber_new
-                </span>お知らせ一覧へ</li>
-            <li class="footer_item"><span class="material-symbols-outlined">
-                    verified_user
-                </span>免責事項・プライバシーポリシー</li>
-            <li class="footer_item"><span class="material-symbols-outlined">
-                    mail
-                </span>お問い合わせ(企業様)</li>
-        </ul>
-        <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+    <footer class="footer_wrap">
+        <div class="footer_container">
+            <ul class="footer_list">
+                <li class="footer_item"><span class="material-symbols-outlined">
+                        bubble_chart
+                    </span>このサイトについて</li>
+                <li class="footer_item"><span class="material-symbols-outlined">
+                        fiber_new
+                    </span>お知らせ一覧へ</li>
+                <li class="footer_item"><span class="material-symbols-outlined">
+                        verified_user
+                    </span><div>免責事項・<br>プライバシーポリシー</div></li>
+                <li class="footer_item"><span class="material-symbols-outlined">
+                        mail
+                    </span>お問い合わせ(企業様)</li>
+            </ul>
+            <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+        </div>
     </footer>
     <!-- jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"

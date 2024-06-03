@@ -1,51 +1,329 @@
 @charset "utf-8";
 
-.kv{
+/* フォント(Googleフォント) */
+/* メイン */
+.zen-maru-gothic-regular {
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* コラム日付 */
+.fugaz-one-regular {
+    font-family: "Fugaz One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    font-family: "Zen Maru Gothic", serif;
+}
+
+/*========== キービジュアル ==========*/
+.kv {
     width: 100vw;
     height: 100vh;
     background-image: url(../images/kv.jpg);
+    background-position: center center;
+    position: relative;
+    margin-bottom: 72px;
 }
 
-
-
-
-
-
-
-
-.slider {
-    margin: 0 auto;
-    max-width: 500px;
+.top_ttl {
     width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.slider-img img {
-    height: auto;
+.top_ttl img {
     width: 100%;
 }
 
+.kv_bubble {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 95%;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+.kv_bubble_left {
+    width: 150px;
+    height: 150px;
+    background-image: url(../images/bubble_left.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.kv_bubble_right {
+    width: 150px;
+    height: 150px;
+    background-image: url(../images/bubble_right.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/*========== inner ==========*/
+.inner {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*========== sectionの指定 ==========*/
+.section-wrap {
+    margin-bottom: 40px;
+    text-align: center;
+}
+.section-wrap:last-child{
+    margin-bottom: 72px;
+}
+
+.section_btn {
+    width: 80%;
+    height: 40px;
+    border-radius: 24px;
+    margin-top: 32px;
+}
+
+.section_btn a,
+.section_btn i {
+    font-size: 1.25rem;
+}
+
+.section_btn a {
+    font-weight: bold;
+}
+
+.section_btn:hover a,
+.section_btn:hover i {
+    color: #fff;
+}
+.section_btn i{
+    margin-left: 4px;
+}
+
+/* 付箋 */
+.sticky_note {
+    width: 200px;
+    height: 41px;
+    background-image: url(../images/sticky_note.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(-7deg) translateY(50%);
+    position: relative;
+    margin-left: 24px;
+}
+
+.section_ttl {
+    width: 100%;
+    font-weight: bold;
+}
+
+.section_ttl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-43%, -50%);
+    letter-spacing: -1px;
+}
+
+/* コンテンツ */
+.section_content {
+    background-color: #fff;
+    padding: 40px 0;
+    border-radius: 50px;
+}
+
+.content_inner {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* ==================== */
+
+/* about */
+.about .section_content {
+    border: 8px solid #eb97a8;
+}
+
+.content_inner h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #DBF500;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.content_inner span:nth-child(1) {
+    font-size: 1rem;
+}
+
+.content_inner span:nth-child(2) {
+    transform: rotate(18deg);
+    display: inline-block;
+}
+
+.content_inner p {
+    text-align: left;
+}
+
+/* 温泉に入ったおさるさん */
+.about_img {
+    padding-top: 32px;
+}
+
+/* 一覧ボタン */
+.about_btn {
+    border: 3px solid #538FCB;
+}
+
+.about_btn a,
+.about_btn i {
+    color: #538FCB;
+}
+
+.about_btn:hover {
+    background-color: #538FCB;
+}
+
+/*========== 新着＆コラムカード共通指定 ==========*/
+.news_card {
+    width: 100%;
+    padding: 14px 0;
+    border-bottom-color: #538FCB;
+    border-bottom-style: dashed;
+    border-bottom-width: 4px;
+}
+
+.news_card a {
+    display: flex;
+    align-items: center;
+}
+
+.news_img {
+    max-width: 23%;
+    height: 100%;
+    border-radius: 16px;
+    margin-right: 8px;
+}
+
+.news_img img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 16px;
+}
+
+.news_card .date {
+    color: transparent;
+    -webkit-text-stroke: 1px #538FCB;
+    margin-bottom: 4px;
+}
+
+.news_card .title {
+    font-size: 0.8rem;
+}
+
+.news_card .hashtag_list {
+    display: flex;
+    gap: 5px;
+}
+
+.hashtag {
+    font-size: 0.65rem;
+    background-color: #d9d9d9;
+    padding: 0 8px;
+    border-radius: 15px;
+}
+
+/* ==================== */
+
+/* news */
+.news .section_content {
+    border: 8px solid #F5A200;
+}
+
+/*========== slider共通 ==========*/
+
+.slider_content {
+    width: 100%;
+    cursor: pointer;
+}
+
+.slider_img {
+    width: 55%;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.slider_img img {
+    position: relative;
+    object-fit: cover;
+    object-position: center center;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+.slider_img span {
+    display: block;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    left: -3%;
+    transition: 1s;
+    z-index: -1;
+}
+
+/* 施設名 */
+.slider_content h3,
+.sauna_content h3 {
+    font-weight: bold;
+    width: 80%;
+    height: 56px;
+    color: #fff;
+    border-radius: 24px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0 4px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* sliderの矢印 */
 .slide-arrow {
-    background-color: #333;
     bottom: 0;
     height: 0;
     margin: auto;
     position: absolute;
-    top: 0;
+    bottom: -25px;
     width: 0;
 }
 
 .prev-arrow {
-    left: -25px;
-}
-.prev-arrow::before{
-    content: url(../images/arrow_back_ios_20dp_FILL0_wght400_GRAD0_opsz20.svg);
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/arrow_back.svg);
+    background-size: contain;
+    left: 10%;
 }
 
 .next-arrow {
-    right: -25px;
-}
-.next-arrow::before{
-    content: url(../images/arrow_forward_ios_20dp_FILL0_wght400_GRAD0_opsz20.svg);
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/arrow_forward.svg);
+    background-size: contain;
+    right: 10%;
 }
 
 button {
@@ -55,3 +333,160 @@ button {
     outline: none;
     padding: 0;
 }
+
+/* sliderのドット */
+.slick-dots li.slick-active button:before {
+    color: #DBF500;
+}
+
+/* ==================== */
+
+/*========== spa ==========*/
+.spa .section_content {
+    border: 8px solid #DBF500;
+}
+
+/* カード型 */
+.spa .slider_img span{
+    background-color: #eb97a8;
+}
+.spa .slider_content h3{
+    background-color: #eb97a8;
+}
+/* 温泉一覧ボタン */
+.spa_btn {
+    border: 3px solid #eb97a8;
+}
+
+.spa_btn a,
+.spa_btn i {
+    color: #eb97a8;
+}
+
+.spa_btn:hover {
+    background-color: #eb97a8;
+}
+
+/* ==================== */
+
+/*========== 周辺施設共通 ==========*/
+.facility .section_content {
+    border: 8px solid #6BDE4E;
+}
+
+/* カード型 */
+.facility .slider_img span{
+    background-color: #F5A200;
+}
+.facility .slider_content h3{
+    background-color: #F5A200;
+}
+
+/* 周辺一覧ボタン */
+.facility_btn {
+    border: 3px solid #F5A200;
+}
+
+.facility_btn a,
+.facility_btn i {
+    color: #F5A200;
+}
+
+.facility_btn:hover {
+    background-color: #F5A200;
+}
+
+/* ==================== */
+
+/*========== モデルコース ==========*/
+.course .section_content {
+    border: 8px solid #eb97a8;
+}
+
+/* カード型 */
+.course .slider_img span{
+    background-color: #6BDE4E;
+}
+.course .slider_content h3{
+    background-color: #6BDE4E;
+}
+
+/* モデルコース一覧ボタン */
+.course_btn {
+    border: 3px solid #6BDE4E;
+    letter-spacing: -1px;
+}
+
+.course_btn a,
+.course_btn i {
+    color: #6BDE4E;
+}
+
+.course_btn:hover {
+    background-color: #6BDE4E;
+}
+
+/* ==================== */
+
+/*========== サ活 ==========*/
+.sauna .section_content {
+    border: 8px solid #F5A200;
+}
+
+/* カード型 */
+.sauna_img img{
+    border: 5px solid #F31E49;
+    z-index: 2;
+}
+.sauna_img span {
+    background-color: #F31E49;
+    display: block;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    left: -3%;
+    transition: 1s;
+    z-index: 1;
+}
+.sauna_content h3{
+    background-color: #F31E49;
+}
+
+/* サ活とはボタン */
+.sauna_btn {
+    border: 3px solid #F31E49;
+}
+
+.sauna_btn a,
+.sauna_btn i {
+    color: #F31E49;
+}
+
+.sauna_btn:hover {
+    background-color: #F31E49;
+}
+
+/* ==================== */
+
+/*========== コラム ==========*/
+.column .section_content {
+    border: 8px solid #DBF500;
+}
+
+/* コラム一覧ボタン */
+.column_btn {
+    border: 3px solid #F5A200;
+}
+
+.column_btn a,
+.column_btn i {
+    color: #F5A200;
+}
+
+.column_btn:hover {
+    background-color: #F5A200;
+}
+
+/* ==================== */
