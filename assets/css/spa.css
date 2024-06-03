@@ -56,29 +56,42 @@ section+section{
 
 .hashtag_list {
   display:flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
 
 }
 
-dl{
+/* 基本情報 */
+.basic_information dl{
     background-color: white;
-    border-bottom-style: dotted;
-      border-bottom-color: #EB97A8;
-      border-bottom-width: 2px;
+border-bottom-style: dotted;
+  border-bottom-color: #EB97A8;
+  border-bottom-width: 2px;
       text-align: center;
 
 }
-dt{
+.basic_information dt{
     background-color: #EB97A8;]
 
 }
-tr{
+.basic_information tr{
     border-bottom-style: dotted;
     border-bottom-color: #EB97A8;
     border-bottom-width:2px ;
 }
+.basic_information table{
+  width: 100%;
+}
+.basic_information table th{
+  width: 30%;
+}
+.basic_information table td {
+  width: 70%;
+}
+
+
+
+
 iframe{
     width: 100%;
 }
