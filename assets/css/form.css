@@ -1,6 +1,5 @@
 @charset "utf8";
 
-<<<<<<< Updated upstream
 .inner {
     border: 2px solid yellow;
     background-color: #ffffff11;
@@ -21,15 +20,6 @@ h4 {
     position: relative;
 
     /* left: 50%; */
-=======
-
-/* タイトル */
-h4 {
-    font-size: 1.25rem;
-
-    width: fit-content;
-    position: relative;
->>>>>>> Stashed changes
 }
 
 h4::after {
@@ -46,7 +36,6 @@ h4::after {
     border-bottom-width: 10px;
 }
 
-<<<<<<< Updated upstream
 .content_form {
     text-align: left;
 }
@@ -60,11 +49,13 @@ p {
 
 small {
     color: #ECC1C9;
-=======
+}
+
 /* 文章 */
 p {
     font-size: 1.125rem;
->>>>>>> Stashed changes
+
+
 }
 
 small {
@@ -73,7 +64,6 @@ small {
 
 /* 入力 */
 .form_item input {
-<<<<<<< Updated upstream
     background-color: rgb(228, 228, 228);
 }
 
@@ -176,9 +166,7 @@ small {
         height: 70px;
     }
 }
-=======
-    background-color: rgb(222, 222, 222);
-}
+
 
 .form_item textarea {
     background-color: rgb(222, 222, 222);
@@ -189,4 +177,3 @@ small {
 @media screen and (max-width: 640px) {}
 
 @media screen and (max-width: 400px) {}
->>>>>>> Stashed changes
