@@ -87,9 +87,6 @@ a {
 /* 本サイトの共通スタイルシート */
 .bubble_background {
     position: relative;
-
-    width: 790px;
-
     overflow: hidden;
     margin: 0 auto;
 }
@@ -361,4 +358,19 @@ a {
 
 .lined-title::after {
     margin-left: 10px;
+}
+
+
+/* ハッシュタグ */
+.hashtag_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.hashtag {
+    font-size: 1rem;
+    background-color: #d9d9d9;
+    padding: 5px 10px;
+    border-radius: 15px;
 }

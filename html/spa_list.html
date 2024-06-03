@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 概要入れる -->
     <meta name="description" content="">
-    <title>お知らせ一覧</title>
+    <title>温泉一覧</title>
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,29 @@
     <main>
         <h3 class="under_line">温泉一覧</h3>
 
-        <!-- ハンバーガー -->
+        <!-- アコーディオン -->
+        <details class="details">
+            <summary class="details-summary">
+                Summary
+                <span class="btn"></span>
+            </summary>
+            <div class="details-content">
+                <p>This is the content of the accordion.</p>
+            </div>
+        </details>
+        <!-- トリガーの部分 -->
+        <p class="nav-open">クリックで開閉</p>
+        <!-- メニューの部分 -->
+        <nav>
+            <ul>
+                <li>HOME</li>
+                <li>会社案内</li>
+                <li>事業内容</li>
+                <li>新着情報</li>
+                <li>お問い合わせ</li>
+            </ul>
+        </nav>
+        <!-- ハンバーガー
         <details class="details js-details">
             <summary class="details-summary js-details-summary"><span class="btn"></span>東部</summary>
             <section class="details-content js-details-content">
@@ -63,7 +85,7 @@
                     <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
                 </article>
             </section>
-        </details>
+        </details> -->
 
 
     </main>

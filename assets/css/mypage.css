@@ -71,8 +71,6 @@ h3 {
     width: 100%;
 }
 
-
-
 /* -----------------------
 tabのcss
 -------------------------- */
@@ -85,40 +83,55 @@ tabのcss
 }
 
 .tab li a {
-    display: block;
+    /* background: #ddd; */
+    /* padding: 10px 40px; */
+    /* border-top-right-radius: 30px; */
+    /* border-top-left-radius: 30px; */
+}
+
+.onsen {
     background: #ddd;
-    margin: 0 2px;
     padding: 10px 40px;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
 }
 
-/*liにactiveクラスがついた時の形状*/
-.tab li.active a {
-    background: #EB97A8;
+.facility {
+    background: #ddd;
+    padding: 10px 40px;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
 }
 
-.orange {
-    background: #F5A200;
+/* クリックされたら(温泉) */
+.onsen.active {
+    background-color: #EB97A8;
+    padding: 10px 40px;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
 }
 
-/*エリアの表示非表示と形状*/
+.onsen.active a {
+    color: #fff;
+}
+
+/* クリックされたら(周辺施設) */
+.facility.active {
+    background-color: #F5A200;
+    padding: 10px 40px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.facility.active a {
+    color: #fff;
+}
+
+
+
+/*エリアの形*/
 .area {
-    display: none;
-    /*はじめは非表示*/
-    /* opacity: 0; */
-    /*透過0*/
-    /* background: #328ef0; */
     padding: 50px 20px;
-}
-
-/*areaにis-activeというクラスがついた時の形状*/
-.area.is-active {
-    display: block;
 }
 
 /* -----------------------
