@@ -18,107 +18,110 @@
     <link rel="stylesheet" href="../assets/css/column.css">
 </head>
 <body>
-    <div class="container bubble_background">
-        <!-- header -->
-        <header>
-            <a href="#">
-                <img class="logo" src="../assets/images/logo.svg" alt="サイトロゴ">
-            </a>
-        </header>
+    <div class="bubble_background">
+        <div class="container">
+            <!-- header -->
+            <header>
+                <a href="#">
+                    <img class="logo" src="../assets/images/logo.svg" alt="サイトロゴ">
+                </a>
+            </header>
 
-        <main>
-            <!-- パンくず -->
-            <h3 class="under_line">コラムタイトル</h3>
+            <main>
+                <!-- パンくず -->
+                <h3 class="under_line">コラムタイトル</h3>
 
-            <article>
-                <p>2024.05.31(Fri)</p>
-
-                <!-- コラム写真 -->
-                <div>
-                    <img src="../assets/images/onsen_img.jpg" alt="">
-                </div>
-
-                <!-- ハッシュタグ -->
-                <div class="hashtag_list">
-                    <a class="hashtag" href="#">#ああああああ</a>
-                    <a class="hashtag" href="#">#ああああああ</a>
-                    <a class="hashtag" href="#">#ああああああ</a>
-                    <a class="hashtag" href="#">#ああああああ</a>
-                </div>
-
-
-                <!-- コラム内容 -->
-                <p>ここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入ります</p>
-
-            </article>
-
-            <section>
-                <!-- コメント入力欄 -->
-                <form action="">
-                    <div class="item comment">
-                        <label for="comment">コメント入力欄</label>
-                        <textarea rows="10" cols="80" name="" id="comment"></textarea><br>
-                    </div>
-
-                    <div class="item">
-                        <input type="submit" value="コメントを送信">
-                    </div>
-
-                    <div class="item comment_content">
-                        <!-- アイコン -->
-                        <img src="" alt="アイコン画像">
-                        <!-- コメント者名 -->
-                        <p>matsuo saki</p>
-                        <!-- コメント内容 -->
-                        <p>肌すべすべになりました★</p>
-                    </div>
-                    <div class="item comment_content">
-                        <!-- アイコン -->
-                        <img src="" alt="アイコン画像">
-                        <!-- コメント者名 -->
-                        <p>yamashita sawaka</p>
-                        <!-- コメント内容 -->
-                        <p>ゆったりできました～</p>
-                    </div>
-                    <div class="item comment_content">
-                        <!-- アイコン -->
-                        <img src="" alt="アイコン画像">
-                        <!-- コメント者名 -->
-                        <p>sakuragi sumire</p>
-                        <!-- コメント内容 -->
-                        <p>最高です！</p>
-                    </div>
-                    <div class="item more_button">
-                        <a href="#">もっと見る▼</a>
-                    </div>
-
-                </form>
-            </section>
-
-            <section>
-
-                <!-- 関連情報 -->
                 <article>
+                    <p>2024.05.31(Fri)</p>
+
+                    <!-- コラム写真 -->
                     <div>
-                        <img src="assets/img/IMG_4384.jpg" alt="">
-                        <span></span>
+                        <img src="../assets/images/onsen_img.jpg" alt="">
                     </div>
-                    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+
+                    <!-- ハッシュタグ -->
+                    <div class="hashtag_list">
+                        <a class="hashtag" href="#">#ああああああ</a>
+                        <a class="hashtag" href="#">#ああああああ</a>
+                        <a class="hashtag" href="#">#ああああああ</a>
+                        <a class="hashtag" href="#">#ああああああ</a>
+                    </div>
+
+
+                    <!-- コラム内容 -->
+                    <p>ここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入ります</p>
 
                 </article>
-            </section>
 
-            <a href="">＜＜前の記事</a>
-            <a href="">次の記事＞＞</a>
-            <br>
-            <button class="back_btn" onclick="history.back">
-                <p><i class="fa-solid fa-arrow-left"></i>back</p>
-            </button>
+                <section>
+                    <!-- コメント入力欄 -->
+                    <form action="">
+                        <div class="item">
+                            <label class="comment" for="comment">コメント入力欄</label>
+                            <textarea rows="10" cols="80" name="" id="comment"></textarea><br>
+                        </div>
 
-        </main>
-        </bubble_background>
+                        <div class="item">
+                            <input type="submit" value="コメントを送信">
+                        </div>
 
-        <!-- javascriptの読み込み -->
-        <script src="../assets/js/common.js"></script>
+                        <div class="item comment_content">
+                            <!-- アイコン -->
+                            <img src="" alt="アイコン画像">
+                            <!-- コメント者名 -->
+                            <p>matsuo saki</p>
+                            <!-- コメント内容 -->
+                            <p>肌すべすべになりました★</p>
+                        </div>
+                        <div class="item comment_content">
+                            <!-- アイコン -->
+                            <img src="" alt="アイコン画像">
+                            <!-- コメント者名 -->
+                            <p>yamashita sawaka</p>
+                            <!-- コメント内容 -->
+                            <p>ゆったりできました～</p>
+                        </div>
+                        <div class="item comment_content">
+                            <!-- アイコン -->
+                            <img src="" alt="アイコン画像">
+                            <!-- コメント者名 -->
+                            <p>sakuragi sumire</p>
+                            <!-- コメント内容 -->
+                            <p>最高です！</p>
+                        </div>
+                        <div class="item more_button">
+                            <a href="#">もっと見る▼</a>
+                        </div>
+
+                    </form>
+                </section>
+
+                <section>
+
+                    <!-- 関連情報 -->
+                    <article>
+                        <div>
+                            <img src="assets/img/IMG_4384.jpg" alt="">
+                            <span></span>
+                        </div>
+                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+
+                    </article>
+                </section>
+
+                <a href="">＜＜前の記事</a>
+                <a href="">次の記事＞＞</a>
+                <br>
+                <button class="back_btn" onclick="history.back">
+                    <p><i class="fa-solid fa-arrow-left"></i>back</p>
+                </button>
+
+            </main>
+        </div>
+
+        <footer></footer>
+    </div>
+    <!-- javascriptの読み込み -->
+    <script src="../assets/js/common.js"></script>
 </body>
 </html>
