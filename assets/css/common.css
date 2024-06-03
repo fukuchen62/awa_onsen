@@ -87,9 +87,6 @@ a {
 /* 本サイトの共通スタイルシート */
 .bubble_background {
     position: relative;
-
-    width: 790px;
-
     overflow: hidden;
     margin: 0 auto;
 }
@@ -255,7 +252,7 @@ a {
     z-index: -10;
     min-height: 100vh;
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 0 5%;
+    padding: 100px 5%;
     margin: auto;
 }
 
@@ -286,7 +283,7 @@ a {
     font-size: 2rem;
     width: fit-content;
     position: relative;
-    margin: 100px auto 0;
+    margin: 0 auto;
 }
 
 .under_line::after {
@@ -339,7 +336,8 @@ a {
 .news_card .title {
     margin-bottom: 4px;
 }
- /* セクションごとのタイトル */
+
+/* セクションごとのタイトル */
 .lined-title {
     display: flex;
     align-items: center;
@@ -360,4 +358,19 @@ a {
 
 .lined-title::after {
     margin-left: 10px;
+}
+
+
+/* ハッシュタグ */
+.hashtag_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.hashtag {
+    font-size: 1rem;
+    background-color: #d9d9d9;
+    padding: 5px 10px;
+    border-radius: 15px;
 }

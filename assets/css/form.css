@@ -1,42 +1,19 @@
 @charset "utf8";
 
-.inner {
-    border: 2px solid yellow;
-    background-color: #ffffff11;
-    position: relative;
-    top: 100px;
-    /* height: auto; */
-    text-align: center;
-}
-
 /* タイトル */
-
-
-h4 {
-    border: 2px solid #fff;
-    margin: 0px auto;
-    font-size: 1.25rem;
-    width: fit-content;
-    position: relative;
-
-    /* left: 50%; */
-}
-
-h4::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    bottom: 15%;
-    width: 105%;
-    /*   display: inline-block; */
-    border-bottom-color: #dbf500;
-    border-bottom-style: dashed;
-    border-bottom-width: 10px;
+.inner {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
 }
 
 .content_form {
+    border: 2px solid red;
+    /* text-align: left; */
+    margin: 0 10vw;
+}
+
+.form_item {
     text-align: left;
 }
 
@@ -52,11 +29,6 @@ small {
 }
 
 /* 文章 */
-p {
-    font-size: 1.125rem;
-
-
-}
 
 small {
     color: #ECC1C9;
@@ -76,20 +48,27 @@ small {
     margin: 30px;
 }
 
-/* ボタン */
-.button {
+.privacypolicy a {
     /* border: 2px solid #000; */
-    text-align: center;
+
 }
 
-.button input {
-    /* border: 2px solid #fff; */
+
+/* ボタン */
+#submit_button {
+    border: 2px solid #fff;
+    margin: 25px;
+}
+
+.confirmation {
+    border: 2px solid #fff;
     font-size: 1.125rem;
     background-color: #DBF500;
     border-radius: 25px;
     text-align: center;
-    width: 200px;
-    height: 70px;
+    width: 10vw;
+    height: 10vh;
+    margin: auto;
 }
 
 /* レスポンシブ */
@@ -137,7 +116,7 @@ small {
     }
 
     h4 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         width: fit-content;
         position: relative;
     }
