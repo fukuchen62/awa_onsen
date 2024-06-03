@@ -1,31 +1,22 @@
 @charset "UTF-8";
 
 /* -----------------------
-logo
+base
 -------------------------- */
-
+/* デベロッパーツール対策 */
 .container {
-    position: relative;
+    z-index: 1;
 }
 
-.logo {
-    width: 100px;
-    position: fixed;
-    top: 32px;
-    left: 32px;
+/* タイトルのライン長さ */
+.under_line::before {
+    width: 200%;
 }
 
-/* -----------------------
-小見出し下のライン
--------------------------- */
+/* タイトルのmargin */
 .under_line {
     margin-bottom: 16px;
 }
-
-
-/* -----------------------
-小見出し下のライン
--------------------------- */
 
 /* 小見出しの下のライン */
 .sauna_ttl {
@@ -33,6 +24,10 @@ logo
     width: 200px;
     padding-bottom: 5px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+    margin-bottom: 16px;
 }
 
 .sauna_ttl::before,
@@ -55,4 +50,29 @@ logo
 
 .sauna_ttl::after {
     right: -3%;
+}
+
+/* 小見出しとpタグの位置 */
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box p {
+    margin-bottom: 16px;
+}
+
+/* -----------------------
+logo
+-------------------------- */
+
+.container {
+    position: relative;
+}
+
+.logo {
+    width: 100px;
+    top: 32px;
+    left: 32px;
 }
