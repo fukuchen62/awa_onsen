@@ -7,18 +7,17 @@
 }
 
 .card span {
-    background-color: pink;
+    background-color: #EB97A8;
 }
 
 .card h3 {
-    background-color: pink;
+    background-color: #EB97A8;
 
 }
 
 /* ============================== */
 
 /* アコーディオン */
-
 
 .accordion-container {
     margin: 0 auto;
@@ -33,10 +32,10 @@
     height: 48px;
     background: #FDC75F;
     cursor: pointer;
-    font-size: 16px;
-    /* padding: 20px 40px; */
+    font-size: 18px;
     position: relative;
     text-align: center;
+    line-height: 48px;
 }
 
 .accordion-title:before {
@@ -71,9 +70,6 @@
 }
 
 .accordion-text {
-    border-left: 1px solid #DDD;
-    border-right: 1px solid #DDD;
-    border-bottom: 1px solid #DDD;
     display: none;
     padding: 20px 40px;
 }
