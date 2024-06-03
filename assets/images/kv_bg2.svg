@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="kv_bg" xmlns="http://www.w3.org/2000/svg" width="1920" height="335.21" viewBox="0 0 1920 335.21">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #538fcb;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M0,335.21h960C597.06,335.21,263.41,209.82,0,0v335.21Z"/>
+  <path class="cls-1" d="M960,335.21h960V0c-263.41,209.82-597.06,335.21-960,335.21Z"/>
+</svg>

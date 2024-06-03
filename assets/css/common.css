@@ -1,7 +1,7 @@
 @charset "utf8";
 
 html {
-    background-color: #328ef0;
+    background-color: #538FCB;
     z-index: -100;
     font-family: "Zen Maru Gothic", serif;
 }
@@ -32,6 +32,11 @@ a {
 
 .shadow {
     box-shadow: 4px 4px 6px 0 #343a3e33;
+}
+
+.article_hover:hover {
+    opacity: 0.7;
+    transition: all 0.7s;
 }
 
 /* レスポンシブ */
@@ -279,14 +284,14 @@ a {
 }
 
 /* 各ページタイトル */
+
 .under_line {
-    font-size: 2rem;
     width: fit-content;
     position: relative;
     margin: 0 auto;
 }
 
-.under_line::after {
+.under_line::before {
     content: "";
     z-index: -1;
     position: absolute;
@@ -335,6 +340,68 @@ a {
 
 .news_card .title {
     margin-bottom: 4px;
+}
+
+/* カード型（丸形）の設定 */
+.card {
+    max-width: 475px;
+    justify-content: center;
+    cursor: pointer;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.card div {
+    max-width: 420px;
+    margin: 7.5%;
+    position: relative;
+}
+
+.card img {
+    position: relative;
+    object-fit: cover;
+    object-position: center center;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+.card a:hover>div img {
+    transform: translate(-3%, 3%);
+}
+
+.card span {
+    display: block;
+    /* z-index: -1; */
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    left: -3%;
+
+    /* ここはそれぞれのカラー指定 */
+    /* background-color: #A7E099; */
+    transition: 0.7s;
+}
+
+.card h3 {
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+    height: 56px;
+    color: #fff;
+    border-radius: 24px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0 4px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ここはそれぞれのカラー指定 */
+    /* background-color: #6BDE4E; */
 }
 
 /* セクションごとのタイトル */

@@ -33,27 +33,58 @@
 <body>
     <!-- header -->
     <header class="header_wrap">
-        <!-- headerの左側 -->
-        <div class="header_left">
-            <!-- 常時表示サイトロゴ -->
-            <div class="logo">
-                <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
-            </div>
-            <!-- 上にスクロールするボタン -->
-            <div class="top_button">
-                <div class="circle">
-                    <div class="line"></div>
-                    <div class="line"></div>
+        <div class="header_container">
+            <!-- headerの左側 -->
+                <!-- 常時表示サイトロゴ -->
+                <div class="logo">
+                    <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
                 </div>
-            </div>
-        </div>
+                <!-- 上にスクロールするボタン -->
+                <div class="top_button">
+                    <div class="circle">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
 
-        <!-- headerの右側 -->
-        <!-- sp&tbnav -->
-        <div class="header_right">
-            <div class="hamburger">
-                <img src="../assets/images/hamburger.svg" alt="メニュー">
-            </div>
+            <!-- sp&tbnav -->
+                <div class="hamburger sp_tb_only"></div>
+        </div>
+        <!-- menu -->
+        <nav class="sp_nav sp_tb_only">
+            <ul class="navlist">
+                <li class="nav_bg"></li>
+                <div class="navlist_container">
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                bubble_chart
+                            </span>TOP</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                bath_outdoor
+                            </span>温泉一覧</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                pin_drop
+                            </span>周辺一覧</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                directions_walk
+                            </span>モデルコース</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                sauna
+                            </span>サ活</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                border_color
+                            </span>コラム</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                search
+                            </span>検索</a></li>
+                    <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
+                                home
+                            </span>マイページ</a></li>
+                </div>
+                <li class="nav_bg"></li>
+            </ul>
+        </nav>
+        <!-- pcnav -->
+        <nav class="g_nav pc_only">
             <ul class="navlist">
                 <li class="nav_bg"></li>
                 <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
@@ -82,36 +113,7 @@
                         </span>マイページ</a></li>
                 <li class="nav_bg"></li>
             </ul>
-        </div>
-        <!-- pcnav -->
-        <ul class="navlist pc_only">
-            <li class="nav_bg"></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        bubble_chart
-                    </span>TOP</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        bath_outdoor
-                    </span>温泉一覧</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        pin_drop
-                    </span>周辺一覧</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        directions_walk
-                    </span>モデルコース</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        sauna
-                    </span>サ活</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        border_color
-                    </span>コラム</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        search
-                    </span>検索</a></li>
-            <li class="navlist_item"><a href="#"><span class="material-symbols-outlined">
-                        home
-                    </span>マイページ</a></li>
-            <li class="nav_bg"></li>
-        </ul>
+        </nav>
     </header>
 
     <main>
@@ -154,15 +156,15 @@
                 </div>
                 <div class="section_content">
                     <div class="content_inner">
-                        <ul class="news_list">
+                        <ul class="top_news_list">
                             <!-- カード型 -->
-                            <li class="card2_item news_card">
+                            <li class="top_news_card article_hover">
                                 <a href="#">
                                     <!-- 画像 -->
-                                    <div class="news_img">
+                                    <div class="top_news_img">
                                         <img src="../assets/images/onsen_img.jpg" alt="温泉">
                                     </div>
-                                    <div class="news_contents">
+                                    <div class="top_news_contents">
                                         <p class="date fugaz-one-regular">2024.05.24 10:00</p>
                                         <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
                                         <div class="hashtag_list .flex">
@@ -177,13 +179,13 @@
                                 </a>
                             </li>
                             <!-- カード型 -->
-                            <li class="card2_item news_card">
+                            <li class="top_news_card article_hover">
                                 <a href="#">
                                     <!-- 画像 -->
-                                    <div class="card2_img news_img">
+                                    <div class="top_news_img">
                                         <img src="../assets/images/onsen_img.jpg" alt="温泉">
                                     </div>
-                                    <div class="news_contents">
+                                    <div class="top_news_contents">
                                         <p class="date fugaz-one-regular">2024.05.24 10:00</p>
                                         <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
                                         <div class="hashtag_list .flex">
@@ -198,13 +200,13 @@
                                 </a>
                             </li>
                             <!-- カード型 -->
-                            <li class="card2_item news_card">
+                            <li class="top_news_card article_hover">
                                 <a href="#">
                                     <!-- 画像 -->
-                                    <div class="card2_img news_img">
+                                    <div class="top_news_img">
                                         <img src="../assets/images/onsen_img.jpg" alt="温泉">
                                     </div>
-                                    <div class="news_contents">
+                                    <div class="top_news_contents">
                                         <p class="date fugaz-one-regular">2024.05.24 10:00</p>
                                         <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
                                         <div class="hashtag_list .flex">
@@ -542,15 +544,15 @@
                 </div>
                 <div class="section_content">
                     <div class="content_inner">
-                        <ul class="news_list">
+                        <ul class="top_news_list">
                             <!-- カード型 -->
-                            <li class="card2_item news_card">
+                            <li class="top_news_card article_hover">
                                 <a href="#">
                                     <!-- 画像 -->
-                                    <div class="news_img">
+                                    <div class="top_news_img">
                                         <img src="../assets/images/onsen_img.jpg" alt="温泉">
                                     </div>
-                                    <div class="news_contents">
+                                    <div class="top_news_contents">
                                         <p class="date fugaz-one-regular">2024.05.24 10:00</p>
                                         <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
                                         <div class="hashtag_list .flex">
@@ -565,13 +567,13 @@
                                 </a>
                             </li>
                             <!-- カード型 -->
-                            <li class="card2_item news_card">
+                            <li class="top_news_card article_hover">
                                 <a href="#">
                                     <!-- 画像 -->
-                                    <div class="card2_img news_img">
+                                    <div class="top_news_img">
                                         <img src="../assets/images/onsen_img.jpg" alt="温泉">
                                     </div>
-                                    <div class="news_contents">
+                                    <div class="top_news_contents">
                                         <p class="date fugaz-one-regular">2024.05.24 10:00</p>
                                         <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
                                         <div class="hashtag_list .flex">
@@ -586,13 +588,13 @@
                                 </a>
                             </li>
                             <!-- カード型 -->
-                            <li class="card2_item news_card">
+                            <li class="top_news_card article_hover">
                                 <a href="#">
                                     <!-- 画像 -->
-                                    <div class="card2_img news_img">
+                                    <div class="card2_img top_news_img">
                                         <img src="../assets/images/onsen_img.jpg" alt="温泉">
                                     </div>
-                                    <div class="news_contents">
+                                    <div class="top_news_contents">
                                         <p class="date fugaz-one-regular">2024.05.24 10:00</p>
                                         <p class="title">温泉情報に「安岡温泉」が追加されました。</p>
                                         <div class="hashtag_list .flex">
@@ -620,18 +622,35 @@
     <footer class="footer_wrap">
         <div class="footer_container">
             <ul class="footer_list">
-                <li class="footer_item"><span class="material-symbols-outlined">
-                        bubble_chart
-                    </span>このサイトについて</li>
-                <li class="footer_item"><span class="material-symbols-outlined">
-                        fiber_new
-                    </span>お知らせ一覧へ</li>
-                <li class="footer_item"><span class="material-symbols-outlined">
-                        verified_user
-                    </span><div>免責事項・<br>プライバシーポリシー</div></li>
-                <li class="footer_item"><span class="material-symbols-outlined">
-                        mail
-                    </span>お問い合わせ(企業様)</li>
+                <li class="footer_item">
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            bubble_chart
+                        </span>このサイトについて
+                    </a>
+                </li>
+                <li class="footer_item">
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            fiber_new
+                        </span>お知らせ一覧へ
+                    </a>
+                </li>
+                <li class="footer_item">
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            verified_user
+                        </span>
+                        <div>免責事項・<br>プライバシーポリシー</div>
+                    </a>
+                </li>
+                <li class="footer_item">
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            mail
+                        </span>お問い合わせ(企業様)
+                    </a>
+                </li>
             </ul>
             <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
         </div>

@@ -82,13 +82,6 @@ tabのcss
     justify-content: center;
 }
 
-.tab li a {
-    /* background: #ddd; */
-    /* padding: 10px 40px; */
-    /* border-top-right-radius: 30px; */
-    /* border-top-left-radius: 30px; */
-}
-
 .onsen {
     background: #ddd;
     padding: 10px 40px;
@@ -177,7 +170,6 @@ tabのcss
     transition: 1s;
 }
 
-/* クラス名orangeはjsと被るため使用不可 */
 .daidai span {
     background-color: #F5A200;
 }
@@ -192,7 +184,6 @@ tabのcss
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* クラス名orangeはjsと被るため使用不可 */
 .daidai h3 {
     background-color: #F5A200;
 }
@@ -296,13 +287,6 @@ menuボタン
         display: none;
     }
 
-    /* 白背景 */
-    .context {
-        background-color: white;
-        width: 686px;
-        margin: 0 auto;
-    }
-
     /* マイページについて */
     .mypage_container {
         width: 646px;
@@ -341,15 +325,6 @@ menuボタン
 
     .pc_only {
         display: block;
-    }
-
-    /* 白背景 */
-    .context {
-        background-color: white;
-        width: 793px;
-        margin: 0;
-        position: relative;
-        left: 18.75%;
     }
 
     /* マイページについて */
