@@ -7,6 +7,7 @@
 
 /* タグ */
 .info_tag {
+    height: 40px;
     margin: 50px auto 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -32,7 +33,7 @@
 
 @media (width>=757px) {
     .info_tag {
-        max-width: 100%;
+        height: 80px;
     }
 
     .info_tag li {
