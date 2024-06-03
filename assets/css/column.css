@@ -43,3 +43,7 @@ input[type="submit"] {
 .comment_content {
     border-bottom: 1px solid #D9D9D9;
 }
+
+.more_button {
+    border-bottom: 1px solid #D9D9D9;
+}
