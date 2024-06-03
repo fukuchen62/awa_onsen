@@ -429,3 +429,61 @@ a {
     font-size: 0.8rem;
     text-align: center;
 }
+
+各ページタイトル
+.under_line {
+    font-size: 2rem;
+    width: fit-content;
+    position: relative;
+}
+
+.under_line::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 5%;
+    width: 105%;
+    /*   display: inline-block; */
+    border-bottom-color: #dbf500;
+    border-bottom-style: dashed;
+    border-bottom-width: 10px;
+}
+
+
+
+
+/* 店舗ごとのカード型の設定 */
+.news_card {
+    max-width: 625px;
+    font-size: 1.5rem;
+    padding: 14px 0;
+    border-bottom-color: #dbf500;
+    border-bottom-style: dashed;
+    border-bottom-width: 4px;
+    /* border-right:10px ; */
+}
+
+.news_card a {
+    display: flex;
+}
+
+.news_card img {
+    aspect-ratio: 1/1;
+    max-width: 140px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 16px;
+    margin-right: 22px;
+}
+
+.news_card .date {
+    color: transparent;
+    -webkit-text-stroke: 1px #dbf500;
+    margin-bottom: 4px;
+}
+
+.news_card .title {
+    margin-bottom: 4px;
+}
