@@ -4,69 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>コラム詳細</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="../assets/css/destyle.css">
+    <!-- 共通CSS -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- 個別CSS -->
+    <link rel="stylesheet" href="../assets/css/column.css">
 </head>
 <body>
-    <main>
-        <!-- パンくず(1201px～) -->
-        <h3>コラムタイトル</h3>
-        <article>
+    <div class="container">
+        <!-- header -->
+        <header>
+            <a href="#">
+                <img class="logo" src="../assets/images/logo.svg" alt="サイトロゴ">
+            </a>
+        </header>
 
-            <p>2024.05.31(Fri)</p>
-            <!-- パンくず(757px～) -->
+        <main>
+            <!-- パンくず -->
+            <h3 class="under_line">コラムタイトル</h3>
+            <article>
 
-            <!-- ハッシュタグ -->
-            <div class="hashtag"></div>
+                <p>2024.05.31(Fri)</p>
 
-            <!-- コラム写真 -->
-            <div>
-                <img src="../assets/images/onsen_img.jpg" alt="">
-            </div>
+                <!-- ハッシュタグ -->
+                <div class="hashtag"></div>
 
-            <!-- コラム内容 -->
-            <p>ここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入ります</p>
-
-        </article>
-
-        <section class="comment">
-            <!-- コメント入力欄 -->
-            <form action="">
-                <span>コメント入力欄</span><br>
-                <textarea rows="10" cols="80" name="" id=""></textarea><br>
-                <input type="submit" value="コメントを送信">
-
-                <div class="comment_content">
-                    <!-- アイコン -->
-                    <img src="" alt="アイコン画像">
-                    <!-- コメント者名 -->
-                    <p>コメント者名</p>
-                    <!-- コメント内容 -->
-                    <p>コメント内容</p>
-                    <div class="more_button">
-                        <a href="#">もっと見る▼</a>
-                    </div>
-                </div>
-            </form>
-        </section>
-
-        <section>
-            <!-- 関連情報 -->
-
-            <article class="card">
+                <!-- コラム写真 -->
                 <div>
-                    <img src="assets/img/IMG_4384.jpg" alt="">
-                    <span></span>
+                    <img src="../assets/images/onsen_img.jpg" alt="">
                 </div>
-                <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+
+                <!-- コラム内容 -->
+                <p>ここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入ります</p>
 
             </article>
-        </section>
 
-        <a href="">＜＜前の記事</a>
-        <a href="">次の記事＞＞</a>
-        <br>
-        <button class="back_btn" onclick="history.back">
-            <p><i class="fa-solid fa-arrow-left"></i>back</p>
-        </button>
+            <section class="comment">
+                <!-- コメント入力欄 -->
+                <form action="">
+                    <span>コメント入力欄</span><br>
+                    <textarea rows="10" cols="80" name="" id=""></textarea><br>
+                    <input type="submit" value="コメントを送信">
+
+                    <div class="comment_content">
+                        <!-- アイコン -->
+                        <img src="" alt="アイコン画像">
+                        <!-- コメント者名 -->
+                        <p>コメント者名</p>
+                        <!-- コメント内容 -->
+                        <p>コメント内容</p>
+                        <div class="more_button">
+                            <a href="#">もっと見る▼</a>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section>
+                <!-- 関連情報 -->
+
+                <article class="card">
+                    <div>
+                        <img src="assets/img/IMG_4384.jpg" alt="">
+                        <span></span>
+                    </div>
+                    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+
+                </article>
+            </section>
+
+            <a href="">＜＜前の記事</a>
+            <a href="">次の記事＞＞</a>
+            <br>
+            <button class="back_btn" onclick="history.back">
+                <p><i class="fa-solid fa-arrow-left"></i>back</p>
+            </button>
+    </div>
     </main>
 </body>
 </html>

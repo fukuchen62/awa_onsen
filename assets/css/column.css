@@ -1,1 +1,31 @@
 @charset "utf-8";
+
+/* header */
+.logo {
+    width: 100px;
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+/* タイトル */
+.under_line {
+    font-size: 2.25rem;
+    width: fit-content;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.under_line::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 5%;
+    width: 105%;
+    /*   display: inline-block; */
+    border-bottom-color: #dbf500;
+    border-bottom-style: dashed;
+    border-bottom-width: 10px;
+}
