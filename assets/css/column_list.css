@@ -4,6 +4,16 @@
     border: 1px solid red;
 }
 
+/* フォントサイズのみ */
+@media(width>=431px) {
+    .under_line {}
+}
+
+/* ページタイトル */
+.under_line {
+    font-size: ;
+}
+
 
 /* タグ */
 .info_tag {
