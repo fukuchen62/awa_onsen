@@ -6,13 +6,16 @@
     margin: 0 auto;
 }
 
+h2 {
+    font-size: 20px;
+}
+
 .card span {
     background-color: #EB97A8;
 }
 
 .card h3 {
     background-color: #EB97A8;
-
 }
 
 /* ============================== */
@@ -72,4 +75,16 @@
 .accordion-text {
     display: none;
     padding: 20px 40px;
+}
+
+@media(width>=757px) {
+
+    .container {
+        width: 80%;
+        background-color: white;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
 }
