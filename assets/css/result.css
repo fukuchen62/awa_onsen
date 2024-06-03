@@ -1,1 +1,162 @@
 @charset "utf8";
+
+/* タイトル */
+.inner {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+section p {
+    margin: 10px;
+}
+
+.content_form {
+    border: 2px solid red;
+    /* text-align: left; */
+    margin: 20px 10vw;
+}
+
+.form_item {
+    text-align: left;
+}
+
+
+/* テキスト */
+p {
+    font-size: 1.25rem;
+    /* 幅８０％ */
+    overflow-wrap: normal;
+}
+
+
+
+/* 文章 */
+
+
+/* 入力 */
+.form_item input {
+    background-color: rgb(228, 228, 228);
+}
+
+.form_item textarea {
+    background-color: rgb(228, 228, 228);
+}
+
+/* 注意書き */
+.consent_text {
+    margin: 30px;
+}
+
+.privacypolicy a {
+
+    text-decoration: underline;
+}
+
+
+/* ボタン */
+.button {
+    border: 2px solid #000;
+}
+
+.button li {
+    border: 2px solid #DBF500;
+    font-size: 1.125rem;
+    border-radius: 25px;
+    text-align: center;
+    width: 200px;
+    height: 70px;
+    margin: 20px;
+    color: #fff;
+}
+
+.send {
+
+    background-color: #DBF500;
+}
+
+.back {
+
+    -webkit-text-stroke: 0.1px #DBF500;
+    text-stroke: 0.1px #DBF500;
+
+}
+
+/* レスポンシブ */
+.sp-none {
+    display: block;
+}
+
+.tb-none {
+    display: none;
+}
+
+.pc-none {
+    display: none;
+}
+
+/* tablet */
+@media(width>=757px) {
+    .sp-none {
+        display: none;
+    }
+
+    .tb-none {
+        display: block;
+    }
+
+    .pc-none {
+        display: none;
+    }
+
+}
+
+/* ---------- */
+/* pc */
+@media(width>=1201px) {
+    .sp-none {
+        display: none;
+    }
+
+    .tb-none {
+        display: none;
+    }
+
+    .pc-none {
+        display: block;
+    }
+
+    .content_form {
+        border: 2px solid red;
+        /* text-align: left; */
+        margin: 0;
+    }
+
+}
+
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+    h4 {
+        font-size: 1.25rem;
+        width: fit-content;
+        position: relative;
+    }
+
+
+}
+
+
+.form_item textarea {
+    background-color: rgb(222, 222, 222);
+}
+
+/* ~1201px 1200px~757px 756px~ */
+/*640px以下の場合のレイアウト調整用*/
+@media screen and (max-width: 640px) {}
+
+@media screen and (max-width: 400px) {}

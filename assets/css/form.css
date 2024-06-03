@@ -7,14 +7,21 @@
     margin: 10px;
 }
 
+/* メイン */
+section p {
+    margin: 10px;
+}
+
+
 .content_form {
     border: 2px solid red;
-    /* text-align: left; */
-    margin: 0 10vw;
+
+    margin: 20px 10vw;
 }
 
 .form_item {
     text-align: left;
+    margin: 10px;
 }
 
 
@@ -25,9 +32,7 @@ p {
     overflow-wrap: normal;
 }
 
-small {
-    color: #ECC1C9;
-}
+
 
 /* 文章 */
 
@@ -42,6 +47,7 @@ small {
 
 .form_item textarea {
     background-color: rgb(228, 228, 228);
+    width: 90%;
 }
 
 /* 注意書き */
@@ -54,36 +60,56 @@ small {
     text-decoration: underline;
 }
 
+/* チェックボックス */
+#privacy {
+    appearance: none;
+    height: 24px;
+    width: 24px;
+    margin: 4px;
+    border: 1px solid #8b98a5;
+    border-radius: 4px;
+}
+
+#privacy:checked {
+    border: 1px solid #8b98a5;
+    background-color: #15679e;
+}
+
+#privacy:checked::before {
+    content: "";
+    display: block;
+    position: relative;
+    left: 7.4px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+#privacy:focus-visible {
+    outline: 2px solid #15679e;
+    outline-offset: 2px;
+}
 
 /* ボタン */
 #submit_button {
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
+    color: #fff;
     margin: 20px;
-}
-
-.confirmation {
-    border: 2px solid #fff;
-    font-size: 1.125rem;
     background-color: #DBF500;
     border-radius: 25px;
-    text-align: center;
-    width: 50%;
+    width: 55%;
     height: 10vh;
-    margin: 20px auto;
+    font-size: 2.25rem;
+    /* font-size: 36px; */
 }
+
+
 
 /* レスポンシブ */
-.sp-none {
-    display: block;
-}
 
-.tb-none {
-    display: none;
-}
-
-.pc-none {
-    display: none;
-}
 
 /* tablet */
 @media(width>=757px) {
@@ -99,26 +125,28 @@ small {
         display: none;
     }
 
+    /* ボタン */
+    #submit_button {
+        border: 2px solid #fff;
+        color: #fff;
+        margin: 20px;
+        background-color: #538FCB;
+        border-radius: 25px;
+        width: 50%;
+        height: 10vh;
+        /* margin: 20px auto; */
+    }
+
+
 }
 
 /* ---------- */
 /* pc */
 @media(width>=1201px) {
-    .sp-none {
-        display: none;
-    }
 
-    .tb-none {
-        display: none;
-    }
-
-    .pc-none {
-        display: block;
-    }
-
+    /* 入力欄幅 */
     .content_form {
-        border: 2px solid red;
-        /* text-align: left; */
+
         margin: 0;
     }
 
@@ -137,15 +165,7 @@ small {
         position: relative;
     }
 
-    .button input {
-        /* border: 2px solid #fff; */
-        font-size: 1.125rem;
-        background-color: #DBF500;
-        border-radius: 25px;
-        text-align: center;
-        width: 200px;
-        height: 70px;
-    }
+
 }
 
 
