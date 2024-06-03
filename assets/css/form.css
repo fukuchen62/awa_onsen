@@ -3,10 +3,13 @@
 .inner {
     border: 2px solid yellow;
     background-color: #ffffff11;
-    position: relative;
-    top: 100px;
-    /* height: auto; */
     text-align: center;
+    margin: 100px 30px 0px 30px;
+}
+
+.canter {
+    text-align: center;
+    margin: 0 30px;
 }
 
 /* タイトル */
@@ -37,7 +40,9 @@ h4::after {
 }
 
 .content_form {
+    border: 2px solid red;
     text-align: left;
+    margin: 0 30vw;
 }
 
 
@@ -77,19 +82,20 @@ small {
 }
 
 /* ボタン */
-.button {
-    /* border: 2px solid #000; */
-    text-align: center;
+#submit_button {
+    border: 2px solid #fff;
+    margin: 10px;
 }
 
-.button input {
-    /* border: 2px solid #fff; */
+.confirmation {
+    border: 2px solid #fff;
     font-size: 1.125rem;
     background-color: #DBF500;
     border-radius: 25px;
     text-align: center;
-    width: 200px;
-    height: 70px;
+    width: 100vw;
+    height: 10vh;
+    margin: auto;
 }
 
 /* レスポンシブ */
@@ -137,7 +143,7 @@ small {
     }
 
     h4 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         width: fit-content;
         position: relative;
     }
