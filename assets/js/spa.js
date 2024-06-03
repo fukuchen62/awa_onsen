@@ -7,7 +7,7 @@ $(".slider").slick({
 });
     $(".thumbnail").slick({
     arrows: false,
-    slidesToShow: 3,
+    slidesToShow: 4,
     asNavFor: ".slider",
     focusOnSelect: true,
 });
