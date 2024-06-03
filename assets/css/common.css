@@ -87,11 +87,6 @@ a {
 /* 本サイトの共通スタイルシート */
 .bubble_background {
     position: relative;
-<<<<<<< Updated upstream
-    /* background_color: #328ef0; */
-    /* height: 100%; */
-=======
->>>>>>> Stashed changes
     width: 790px;
     overflow: hidden;
     margin: 0 auto;
@@ -414,21 +409,26 @@ a {
     border-radius: 12px;
     padding: 72px 0;
 }
-.footer_list{
+
+.footer_list {
     margin: 0 auto;
 }
-.footer_item{
+
+.footer_item {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 40px;
 }
-.footer_item span{
+
+.footer_item span {
     margin-right: 8px;
 }
-.footer_item:nth-child(3){
+
+.footer_item:nth-child(3) {
     display: flex;
 }
-.footer_wrap p{
+
+.footer_wrap p {
     font-size: 0.8rem;
     text-align: center;
 }
