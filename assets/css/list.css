@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 
@@ -52,6 +52,7 @@
 .card h3 {
     /* ここはそれぞれのカラー指定 */
     background-color: #6BDE4E;
+    text-align: center;
 }
 
 .pagination {
