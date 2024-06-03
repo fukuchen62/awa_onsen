@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/* -----------------------
+logo
+-------------------------- */
+
+.container {
+    position: relative;
+}
+
+.logo {
+    width: 100px;
+    position: fixed;
+    top: 32px;
+    left: 32px;
+}
+
+/* -----------------------
+タイトル
+-------------------------- */
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.under_line {
+    font-size: 1.25rem;
+    width: fit-content;
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 50px;
+    /* ↓あとでONにする */
+    /* z-index: 5; */
+}
+
+.under_line::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 5%;
+    width: 105%;
+    /*   display: inline-block; */
+    border-bottom-color: #dbf500;
+    border-bottom-style: dashed;
+    border-bottom-width: 5px;
+}
