@@ -8,18 +8,37 @@ base
     z-index: 1;
 }
 
-/* タイトルのライン長さ */
-.under_line::before {
-    width: 200%;
-}
+/* -----------------------
+タイトル
+-------------------------- */
 
 /* タイトルのmargin */
 .under_line {
     margin-bottom: 16px;
+    /* font */
+    font-size: 1.25rem;
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 900;
+    font-style: normal;
 }
 
-/* 小見出しのfontサイズ */
-.sauna_ttl h3 {}
+/* タイトル下ライン */
+.under_line::before {
+    bottom: -15%;
+}
+
+/* -----------------------
+サ活説明
+-------------------------- */
+
+/* fontサイズ */
+.sauna_ttl {
+    font-size: 1.125rem;
+}
+
+.box p {
+    font-size: 1rem;
+}
 
 /* 小見出しの下のライン */
 .sauna_ttl {
@@ -43,7 +62,7 @@ base
     background-color: black;
     border-radius: 50%;
     position: absolute;
-    bottom: -35%;
+    bottom: -30%;
     transform: translate(-50%, -50%);
 }
 
@@ -66,16 +85,133 @@ base
     margin-bottom: 16px;
 }
 
+/* サウナのある温泉ボタン */
+.square {
+    background-color: #DBF500;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 43px;
+    margin-bottom: 60px;
+}
+
 /* -----------------------
 logo
 -------------------------- */
-
-.container {
-    position: relative;
-}
-
 .logo {
+    position: absolute;
     width: 100px;
     top: 32px;
     left: 32px;
+}
+
+/* -----------------------
+レスポンシブ tablet 1200-757
+-------------------------- */
+@media(width>=757px) {
+
+    /* ページタイトル */
+    .under_line {
+        font-size: 2.5rem;
+        margin-bottom: 100px;
+    }
+
+    /* 小見出し */
+    .sauna_ttl {
+        font-size: 1.25rem;
+        margin-top: 89px;
+    }
+
+    /* 文章 */
+    .box p {
+        font-size: 1.25rem;
+        margin-bottom: 140px;
+    }
+
+    /* サウナのある温泉ボタン */
+    .square {
+        width: 615px;
+        height: 125px;
+    }
+
+    .square a {
+        font-size: 2.25rem;
+    }
+
+    /* 写真 */
+    .sauna_photo {
+        width: 864px;
+        height: 486px;
+    }
+
+    /* タイトル下ライン */
+    .under_line::before {
+        z-index: 1;
+    }
+}
+
+/* -----------------------
+レスポンシブ 1201-
+-------------------------- */
+@media(width>=1201px) {
+
+    /* ページタイトル */
+    .under_line {}
+
+    /* 小見出し */
+    .sauna_ttl {}
+
+    /* 文章 */
+    .box p {
+        font-size: 1.25rem;
+        width: 283px;
+    }
+
+    /* sauna_boxのflex */
+    .box {
+        display: flex;
+    }
+
+    .right {
+        flex-direction: row-reverse;
+    }
+
+    .left {
+        flex-direction: row;
+    }
+
+    /* サウナのある温泉ボタン */
+    .square {
+        font-size: 2.25rem;
+    }
+
+    .square a {}
+
+    /* 写真 */
+    .sauna_photo {
+        width: 339px;
+        height: 320px;
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    .margin_left {
+        margin-left: 0;
+    }
+
+    .margin_right {
+        margin-right: 0;
+    }
+
+    /* タイトル下ライン */
+    .under_line::before {
+        z-index: 1;
+    }
 }
