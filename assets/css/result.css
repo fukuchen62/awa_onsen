@@ -9,7 +9,7 @@
 }
 
 h4 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-family: "Zen Maru Gothic", serif;
 }
 
@@ -66,7 +66,7 @@ p {
 
 .button li {
     border: 2px solid #DBF500;
-    font-size: 2.25rem;
+    font-size: 1.125em;
     border-radius: 25px;
     text-align: center;
     width: 200px;
@@ -173,21 +173,7 @@ p {
 
 /* ---------- */
 /* pc */
-@media(width>=1201px) {
-    .sp-none {
-        display: none;
-    }
-
-    .tb-none {
-        display: none;
-    }
-
-    .pc-none {
-        display: block;
-    }
-
-
-}
+@media(width>=1201px) {}
 
 
 /* フォントサイズのみ */
@@ -197,12 +183,17 @@ p {
 ここは各自のCSSファイルで設定（サンプル）
 ================================= */
     h4 {
-        font-size: 1.25rem;
-        width: fit-content;
-        position: relative;
+        font-size: 1.5rem;
     }
 
+    p {
+        font-size: 1rem;
+    }
 
+    .button {
+
+        font-size: 1.125rem;
+    }
 }
 
 
