@@ -6,6 +6,13 @@
     margin: 0 auto;
 }
 
+@media(width>=1201px) {
+    .inner {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
 .card span {
     background-color: #EB97A8;
 }

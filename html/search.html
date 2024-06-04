@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet" />
 </head>
 <body>
-
+<div class="bubble_background">
   <div class="container">
     <main>
       <h2 class="under_line">検索</h2>
@@ -27,24 +27,26 @@
           <li>モデルコース</li>
         </ul>
 		<section>
-<h3></h3>
+<h4>地域</h4>
 <div class="area">
   <label class="checkbox-item">
-    <input type="checkbox" name="options" value="美肌">
+    <input type="checkbox" name="options" value="東部">
     <span>東部</span>
   </label>
   <label class="checkbox-item">
-    <input type="checkbox" name="options" value="冷え性">
+    <input type="checkbox" name="options" value="西部">
     <span>西部</span>
   </label>
   <label class="checkbox-item">
-    <input type="checkbox" name="options" value="肩こり">
+    <input type="checkbox" name="options" value="南部">
     <span>南部</span>
   </label>
 
 </div>
 </section>
-<div class="list">
+<section>
+  <h4>効能</h4>
+  <div class="list">
     <label class="checkbox-item">
       <input type="checkbox" name="options" value="美肌">
       <span>美肌</span>
@@ -70,19 +72,92 @@
       <span>神経痛</span>
     </label>
 </div>
+</section>
+
 
 
 
 <div class="btn">
-  <input type="reset" value="リセット">
-  <input type="submit" value="検索">
+  <label class="reset"><input type="reset" value=""><span>リセット</span></label>
+  <label class="submit"><input type="submit" value=""><span><i class="fa-solid fa-magnifying-glass"></i>検索</span></label>
       </div>
-	</div>
+
 
 </form>
-      <h4 class="lined-title">検索結果</h4>
+<section><h4 class="lined-title">検索結果</h4>
+<article class="card">
+  <a href="#">
+    <div>
+      <span></span>
+      <img src="../assets/images/onsen_img.jpg" alt="" />
+    </div>
+    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+  </a>
+</article><article class="card">
+  <a href="#">
+    <div>
+      <span></span>
+      <img src="../assets/images/onsen_img.jpg" alt="" />
+    </div>
+    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+  </a>
+</article><article class="card">
+  <a href="#">
+    <div>
+      <span></span>
+      <img src="../assets/images/onsen_img.jpg" alt="" />
+    </div>
+    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+  </a>
+</article></section>
+
     </main>
   </div>
-  <script type="module" src="../assets/js/search.js"></script>
-</body>
-</html>
+    <!-- footer -->
+    <footer class="footer_wrap">
+      <div class="footer_container">
+        <ul class="footer_list">
+          <li class="footer_item">
+            <a href="about.html">
+              <span class="material-symbols-outlined">
+                bubble_chart
+              </span>このサイトについて
+            </a>
+          </li>
+          <li class="footer_item">
+            <a href="news_list.html">
+              <span class="material-symbols-outlined">
+                fiber_new
+              </span>お知らせ一覧へ
+            </a>
+          </li>
+          <li class="footer_item">
+            <a href="privacypolicy.html">
+              <span class="material-symbols-outlined">
+                verified_user
+              </span>
+              <div>免責事項・<br>プライバシーポリシー</div>
+            </a>
+          </li>
+          <li class="footer_item">
+            <a href="form.html">
+              <span class="material-symbols-outlined">
+                mail
+              </span>お問い合わせ(企業様)
+            </a>
+          </li>
+        </ul>
+        <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+      </div>
+    </footer>
+</div>
+
+  <!-- jquery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <!-- top.js -->
+
+  <script src="../assets/js/common.js"></script>
+  </body>
+  </body>
+  </html>
