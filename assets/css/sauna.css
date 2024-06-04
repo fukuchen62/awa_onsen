@@ -18,6 +18,9 @@ base
     margin-bottom: 16px;
 }
 
+/* 小見出しのfontサイズ */
+.sauna_ttl h3 {}
+
 /* 小見出しの下のライン */
 .sauna_ttl {
     border-bottom: 1px solid black;
