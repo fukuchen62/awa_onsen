@@ -8,40 +8,37 @@
 }
 
 h4 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-family: "Zen Maru Gothic", serif;
 }
 
 /* メイン */
 section p {
-    margin: 30px;
+    /* border: 2px solid red; */
+    padding: 10px;
+    margin: 30px auto;
     text-align: left;
-    /* font-family: "Noto Sans JP", sans-serif; */
 }
 
 
 .content_form {
     /* border: 2px solid red; */
-    /* display: inline; */
-    margin: 23px 10vw;
-
+    margin: 20px 0;
 }
 
 .form_item {
     /* border: 2px solid black; */
-    /* margin: 10px; */
     text-align: left;
 }
 
 
 /* テキスト */
 p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     overflow-wrap: normal;
     margin: 10px;
     text-align: left;
 }
-
 
 
 /* 文章 */
@@ -71,8 +68,9 @@ small {
     /* text-align: left; */
 }
 
-.privacypolicy a {
+.privacypolicy a {}
 
+.privacypolicy a {
     text-decoration: underline;
     display: inline;
 }
@@ -126,16 +124,17 @@ small {
 }
 
 /* ボタン */
+
 .confirmation {
-    /* border: 2px solid #DBF500; */
+    /* border: 2px solid #000; */
     text-align: center;
-    display: inline;
 }
 
 #submit_button {
     /* border: 2px solid #DBF500; */
     background: #DBF500;
     font-size: 1.125rem;
+    /* font-size: 18px; */
     border-radius: 25px;
     text-align: center;
     width: 200px;
@@ -147,6 +146,7 @@ small {
 #submit_button[disabled] {
     background-color: #ccc;
     cursor: not-allowed;
+    text-decoration: line-through;
     /* クリック不可のカーソルを表示 */
 }
 
@@ -156,7 +156,7 @@ small {
 /* tablet */
 @media(width>=757px) {
     #submit_button {
-
+        font-size: 2rem;
         background: #538FCB;
         color: #fff;
     }
@@ -187,11 +187,14 @@ small {
         font-size: 1.5rem;
     }
 
-    #submit_button {
+    p {
+        font-size: 1.25rem;
+    }
+
+    .button {
 
         font-size: 2rem;
     }
-
 
 }
 

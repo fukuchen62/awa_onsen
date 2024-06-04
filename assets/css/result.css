@@ -5,46 +5,44 @@
     /* border: 2px solid red; */
     padding: 10px;
     margin: 10px;
-    font-family: "Noto Sans JP", sans-serif;
 }
 
 h4 {
-    font-size: 1.25rem;
-    font-family: "Zen Maru Gothic", serif;
+    font-size: 1.125rem;
 }
 
 section p {
-    margin: 10px;
-}
-
-.form_item {
-
-    margin: 10px;
+    border: 2px solid red;
+    padding: 10px;
+    margin: 30px auto;
+    text-align: left;
 }
 
 .content_form {
-    /* border: 2px solid red; */
-    margin: 20px 10vw;
-    text-align: center;
-
+    border: 2px solid red;
+    margin: 20px 0;
 }
+
+.form_item {
+    margin: 10px;
+}
+
 
 .dummy {
     text-align: left;
     background-color: rgb(228, 228, 228);
+
+
 }
 
 
 /* テキスト */
 p {
     font-size: 1.25rem;
-    /* 幅８０％ */
     overflow-wrap: normal;
+    margin: 10px;
     text-align: left;
-    /* background-color: rgb(228, 228, 228); */
 }
-
-
 
 
 
@@ -53,80 +51,50 @@ p {
     margin: 30px;
 }
 
-.privacypolicy a {
-
-    text-decoration: underline;
-}
-
 
 /* ボタン */
 .button {
     /* border: 2px solid #000; */
+    margin: 30px;
 }
 
 .button li {
     border: 2px solid #DBF500;
-    font-size: 2.25rem;
+    font-size: 1.125rem;
     border-radius: 25px;
     text-align: center;
-    width: 200px;
-    height: 70px;
     margin: 20px auto;
     color: #fff;
 }
 
 #send_button {
     /* border: 2px solid #FFF; */
-    width: 200px;
     height: 70px;
-
 }
 
 .send {
     border: 2px solid #FFF;
     background-color: #DBF500;
+    width: 35vw;
     margin: 20px;
 }
 
 #back_button {
     /* border: 2px solid #FFF; */
-    width: 200px;
     height: 70px;
 }
 
 .back {
-
+    width: 35vw;
     -webkit-text-stroke: 0.1px #DBF500;
     text-stroke: 0.1px #DBF500;
     margin: 20px;
 }
 
 /* レスポンシブ */
-.sp-none {
-    display: block;
-}
-
-.tb-none {
-    display: none;
-}
-
-.pc-none {
-    display: none;
-}
 
 /* tablet */
 @media(width>=757px) {
-    .sp-none {
-        display: none;
-    }
-
-    .tb-none {
-        display: block;
-    }
-
-    .pc-none {
-        display: none;
-    }
 
     .content_form {
         margin: 0;
@@ -134,20 +102,11 @@ p {
 
     .button li {
         border: 2px solid #538FCB;
-        font-size: 2.25rem;
-        border-radius: 25px;
-        text-align: center;
-        width: 200px;
-        height: 70px;
-        margin: 20px auto;
         color: #fff;
     }
 
     #send_button {
         /* border: 2px solid #FFF; */
-        width: 200px;
-        height: 70px;
-
     }
 
     .send {
@@ -158,14 +117,14 @@ p {
 
     #back_button {
         /* border: 2px solid #FFF; */
-        width: 200px;
+        /* width: 200px; */
         height: 70px;
+        color: #538FCB;
     }
 
     .back {
-
-        -webkit-text-stroke: 0.6px #538FCB;
-        text-stroke: 0.6px #538FCB;
+        -webkit-text-stroke: 0.1px #538FCB;
+        text-stroke: 0.1px #538FCB;
         margin: 20px;
     }
 
@@ -174,16 +133,17 @@ p {
 /* ---------- */
 /* pc */
 @media(width>=1201px) {
-    .sp-none {
-        display: none;
+
+    /* 入力欄幅 */
+    .content_form {
+
+        margin: 0;
     }
 
-    .tb-none {
-        display: none;
-    }
+    #submit_button {
 
-    .pc-none {
-        display: block;
+        background: #538FCB;
+        color: #fff;
     }
 
 
@@ -197,18 +157,27 @@ p {
 ここは各自のCSSファイルで設定（サンプル）
 ================================= */
     h4 {
+        font-size: 1.5rem;
+    }
+
+    p {
         font-size: 1.25rem;
-        width: fit-content;
-        position: relative;
+        overflow-wrap: normal;
+    }
+
+    #submit_button {
+
+        font-size: 2rem;
+    }
+
+    .button li {
+        font-size: 2rem;
+
     }
 
 
 }
 
-
-.form_item textarea {
-    background-color: rgb(222, 222, 222);
-}
 
 /* ~1201px 1200px~757px 756px~ */
 /*640px以下の場合のレイアウト調整用*/

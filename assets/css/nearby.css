@@ -92,3 +92,11 @@ dt {
 iframe {
   width: 100%;
 }
+
+.card span {
+  background-color: #f5a200;
+}
+
+.card h3 {
+  background-color: #f5a200;
+}
