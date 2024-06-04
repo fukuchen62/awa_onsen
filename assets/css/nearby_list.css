@@ -7,13 +7,35 @@
 }
 
 .card span {
-    background-color: #EB97A8;
+    background-color: #F5A200;
 }
 
 .card h3 {
-    background-color: #EB97A8;
+    background-color: #F5A200;
 }
 
+/* =========フォントサイズ========= */
+
+h2 {
+    font-size: 1.25rem;
+}
+
+dt>h3 {
+    font-size: 1.13rem;
+    color: white;
+}
+
+@media(width>=431px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    dt>h3 {
+        font-size: 2.25rem;
+    }
+}
+
+/* ============================== */
 /* タグ */
 .info_tag {
     margin: 50px auto 0;
@@ -30,8 +52,16 @@
     height: 40px;
     font-size: 1.125rem;
     text-align: center;
-    background-color: #D9D9D9;
+    background-color: #FDC75F;
     border-radius: 50px;
+}
+
+.shopping_tag.active,
+.gourmet_tag.active,
+.play_tag.active,
+.stay_tag.active {
+    background-color: #F5A200;
+    color: #fff;
 }
 
 /* ============================== */
@@ -64,7 +94,7 @@
     right: 25px;
     height: 2px;
     width: 15px;
-    background: #333;
+    background: white;
     transform: rotate(90deg);
     transition: all .3s ease-in-out;
 }
@@ -76,22 +106,22 @@
     right: 25px;
     height: 2px;
     width: 15px;
-    background: #333;
+    background: white;
     transition: all .3s ease-in-out;
 }
 
 .accordion-title.open:before {
     transform: rotate(180deg);
-    background: white;
+    background: #DBF500;
 }
 
 .accordion-title.open:after {
     opacity: 0;
-    background: white;
+    background: #DBF500;
 }
 
 .accordion-title.open h3 {
-    color: white;
+    color: #DBF500;
 }
 
 .accordion-text {
@@ -126,5 +156,3 @@
     }
 
 }
-
-@media (width>=1201px) {}
