@@ -137,17 +137,7 @@ small {
 
 /* tablet */
 @media(width>=757px) {
-    .sp-none {
-        display: none;
-    }
 
-    .tb-none {
-        display: block;
-    }
-
-    .pc-none {
-        display: none;
-    }
 
     /* ボタン */
     #submit_button {
@@ -185,8 +175,7 @@ small {
 ================================= */
     h4 {
         font-size: 1.5rem;
-        width: fit-content;
-        position: relative;
+
     }
 
     p {
@@ -202,10 +191,6 @@ small {
 
 }
 
-
-.form_item textarea {
-    background-color: rgb(222, 222, 222);
-}
 
 /* ~1201px 1200px~757px 756px~ */
 /*640px以下の場合のレイアウト調整用*/
