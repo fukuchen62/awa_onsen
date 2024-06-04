@@ -5,8 +5,6 @@ section {
     margin-top: 100px;
 }
 
-
-
 /* header */
 .logo {
     width: 100px;
@@ -16,7 +14,7 @@ section {
 
 /* タイトル */
 h2 {
-    font-size: 2.5rem;
+    font-size: 1.25rem;
 }
 
 .under_line {
@@ -38,6 +36,12 @@ h2 {
     border-bottom-color: #dbf500;
     border-bottom-style: dashed;
     border-bottom-width: 10px;
+}
+
+/* コラム内容 */
+p.date,
+p.column_text {
+    font-size: 1rem;
 }
 
 /* コメント欄 */
@@ -71,7 +75,6 @@ input[type="submit"] {
 }
 
 .comment_content {
-    /* border: 1px solid red; */
     padding: 5px;
     border-bottom: 1px solid #D9D9D9;
 }
@@ -80,9 +83,28 @@ input[type="submit"] {
     text-decoration: underline 1px #D9D9D9;
 }
 
+/* カード */
+.card span {
+    background-color: #EB97A8;
+}
+
+.card h3 {
+    background-color: #EB97A8;
+}
+
+/* ナビゲーション */
+.nav-links {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links a {
+    margin: 20px;
+}
+
 /* フォントサイズのみ */
 @media(width>=431px) {
-    .under_line {
+    h2 {
         font-size: 2.5rem;
     }
 
