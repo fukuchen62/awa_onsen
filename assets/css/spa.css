@@ -165,3 +165,20 @@ border-bottom-style: dotted;
 iframe{
     width: 100%;
 }
+
+/* おすすめ一覧 */
+h5{
+  background-image: url;
+}
+.card span {
+  background-color: #EB97A8;
+}
+
+.card h3 {
+  background-color: #EB97A8;
+}
+@media (width>=1201px) {
+.recommend_list{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}}
