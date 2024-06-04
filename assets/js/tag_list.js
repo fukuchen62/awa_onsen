@@ -1,46 +1,38 @@
 "use strict";
 
-// ▼タグクリックでカテゴリー切り替え▼
-// info_tag内のli要素を取得して配列newsTagsに代入。
-let newsTags = document.querySelectorAll('.news_tag, .gourmet_tag, .play_tag, .others_tag');
+let favoriteTags = document.querySelectorAll('.favorite_tag li');
+// .favorite_tag li 要素を全て取得
 
-// news_listの要素を取得して変数newsListsに代入。
-let newsLists = document.querySelectorAll('.news_list');
+let favoriteLists = document.querySelectorAll('.favorite_list');
+// .favorite_list 要素を全て取得
 
-function showList(listClass) {
-    hideAllLists();  // すべてのnewsListsを非表示。
-    let targetList = document.querySelector(`.news_list.${listClass}`); // 対応するnews_listの要素を取得。
-    if (targetList) {
-        targetList.classList.add('show');  // news_listに'show'クラスを追加し、表示。
-    }
-}
+// デフォルトで onsen_tag が選択された状態
+favoriteTags[0].classList.add('active');
+// 最初の favoriteTags に active クラスを追加
+favoriteLists[0].classList.add('show');
+// 最初の favoriteLists に show クラスを追加
 
-function hideAllLists() {
-    newsLists.forEach(list => list.classList.remove('show'));  // すべてのnews_listから'show'クラスを削除し、非表示に。
-}
+favoriteTags.forEach(function (tag) {
+    // favoriteTags 各要素に対して実行
+    tag.addEventListener('click', function () {
+        // クリックイベントがあった場合に実行
 
-function initializeActiveTag() {
-    let newsTag = document.querySelector('.news_tag');  // 初期値のタグ要素（news_tag）を取得
-    if (newsTag) {
-        newsTag.classList.add('active');  // 初期値のタグ要素（news_tag）に'active'クラスを追加
-    }
-}
+        // 全ての tag から active クラスを削除
+        favoriteTags.forEach(function (t) {
+            t.classList.remove('active');
+        });
 
-// ▼newsTags配列の各要素に対しての処理▼
-newsTags.forEach(tag => {
-    tag.addEventListener('click', () => {
-        // タグのactiveクラスをリセット
-        newsTags.forEach(tag => tag.classList.remove('active'));
-        // クリックしたタグにactiveクラスを追加
-        tag.classList.add('active');
+        // 全ての favorite_list から show クラスを削除
+        favoriteLists.forEach(function (list) {
+            list.classList.remove('show');
+        });
 
+        // クリックされた tag に active クラスを追加
+        this.classList.add('active');
 
-        //クリックされたタグから、対応するニュースリストのnews_listを取得
-        let listClass = tag.classList[0].replace('_tag', '');  //info_tag内li要素のクラス名「_tag」を空文字に置き換えてnews_listに紐づける
-        showList(listClass);
+        // クリックされた tag に対応する favorite_list に show クラスを追加
+        let listIndex = Array.from(favoriteTags).indexOf(this);
+        // クリックされた tag の index を取得
+        favoriteLists[listIndex].classList.add('show');
     });
 });
-
-// 初期値として「news_tag」を表示
-initializeActiveTag();   // 最初のタグ「news_tag」にアクティブクラスを設定します
-showList('news');  // デフォルトでnewsを表示します
