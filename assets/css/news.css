@@ -8,3 +8,34 @@
 h2 {
     font-size: 1.25rem;
 }
+
+.ttl {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.ttl small {
+    display: block;
+    text-align: right;
+    margin-bottom: 32px;
+}
+
+.tag_area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    margin-top: 32px;
+}
+
+.tag_area span {
+    display: block;
+    text-align: center;
+    border-radius: 16px;
+    background-color: #D9D9D9;
+}
+
+section p {
+    margin-top: 32px;
+}
