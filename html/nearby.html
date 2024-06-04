@@ -15,24 +15,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <div class="bubble_background">
   <div class="container">
     <main>
       <h2 class="under_line">峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h2>
       <!-- パンくず -->
       <!-- 外観写真 -->
-      <section class="img_box">
+      <div class="img_box">
         <img src="../assets/images/bike.jpg" alt="" />
-        <div class="favorite_btn"><i class="fa-regular fa-heart"></i></div>
-        <div class="nice_btn"><i class="fa-regular fa-thumbs-up"></i></div>
-      </section>
+        <label class="checkbox-item">
+          <input type="checkbox" name="options" value="nice">
+          <span class="nice_btn">
+            <i class="fa-regular fa-thumbs-up"></i><br>
+          <span>11</span>
+        </span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="options" value="favorite">
+          <span class="favorite_btn"><i class="fa-solid fa-heart"></i>
+            <i class="fa-regular fa-heart"></i></span>
+        </label>
+      </div>
+
       <!-- ハッシュタグ -->
-      <section>
+
         <div class="hashtag_list">
           <a href="https://www.yahoo.co.jp/" class="hashtag">#温泉</a>
 
           <a href="https://www.yahoo.co.jp/" class="hashtag">#温泉</a><a href="https://www.yahoo.co.jp/" class="hashtag">#温泉</a><a href="https://www.yahoo.co.jp/" class="hashtag">#温泉あ</a><a href="https://www.yahoo.co.jp/" class="hashtag">#温泉あ</a><a href="https://www.yahoo.co.jp/" class="hashtag">#温泉ああ</a><a href="https://www.yahoo.co.jp/" class="hashtag">#温泉ああああ</a><a href="https://www.yahoo.co.jp/" class="hashtag">#温泉</a><a href="https://www.yahoo.co.jp/" class="hashtag">#温泉あああ</a>
         </div>
-      </section>
+
       <section>
         <h4 class="lined-title">店舗情報</h4>
         <dl>
@@ -69,9 +81,17 @@
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.221094626687!2d133.7570318764172!3d33.883959273220945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35518a492b743649%3A0xa0fe41f208f8b1d0!2z5bOh6LC344Gu5rmv5a6_IOWkp-atqeWNseWzoeOBvuOCk-OBquOBiw!5e0!3m2!1sja!2sjp!4v1717034648209!5m2!1sja!2sjp" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
       <section>
-        <!-- こちらもいかがでしょうか？ -->
+        <h3>こちらもいかがでしょうか？</h3><!-- こちらもいかがでしょうか？ -->
       </section>
     </main>
+    </div>
   </div>
+  <!-- jquery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <!-- top.js -->
+
+  <script src="../assets/js/common.js"></script>
+  </body>
 </body>
 </html>

@@ -6,9 +6,11 @@
     margin: 0 auto;
 }
 
-h2 {
-    font-size: 1.25rem;
-    margin: 100px auto;
+@media(width>=1201px) {
+    .inner {
+        margin: 0 auto;
+        width: 100%;
+    }
 }
 
 .card span {
@@ -17,6 +19,29 @@ h2 {
 
 .card h3 {
     background-color: #EB97A8;
+}
+
+/* ============================== */
+
+/* =========フォントサイズ========= */
+
+h2 {
+    font-size: 1.25rem;
+}
+
+dt>h3 {
+    font-size: 1.13rem;
+    color: white;
+}
+
+@media(width>=431px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    dt>h3 {
+        font-size: 2.25rem;
+    }
 }
 
 /* ============================== */
@@ -34,7 +59,7 @@ h2 {
 .accordion-title {
     margin: 32px auto 0;
     height: 48px;
-    background: #FDC75F;
+    background: #538FCB;
     cursor: pointer;
     font-size: 18px;
     position: relative;
@@ -49,7 +74,7 @@ h2 {
     right: 25px;
     height: 2px;
     width: 15px;
-    background: #333;
+    background: white;
     transform: rotate(90deg);
     transition: all .3s ease-in-out;
 }
@@ -61,16 +86,22 @@ h2 {
     right: 25px;
     height: 2px;
     width: 15px;
-    background: #333;
+    background: white;
     transition: all .3s ease-in-out;
 }
 
 .accordion-title.open:before {
     transform: rotate(180deg);
+    background: #DBF500;
 }
 
 .accordion-title.open:after {
     opacity: 0;
+    background: #DBF500;
+}
+
+.accordion-title.open h3 {
+    color: #DBF500;
 }
 
 .accordion-text {
@@ -78,15 +109,4 @@ h2 {
     padding: 20px 40px;
 }
 
-@media(width>=757px) {
-
-
-    h2 {
-        font-size: 2.5rem;
-    }
-
-    p {
-        font-size: 2rem;
-    }
-
-}
+/* アコーディオン終わり */
