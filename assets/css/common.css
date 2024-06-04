@@ -20,12 +20,6 @@ html {
 }
 
 
-
-
-img {
-    max-width: 100%;
-}
-
 a {
     display: block;
 }
@@ -49,7 +43,7 @@ a {
     display: none;
 }
 
-.sp_tb_only{
+.sp_tb_only {
     display: block;
 }
 
@@ -84,7 +78,7 @@ a {
         display: block;
     }
 
-    .sp_tb_only{
+    .sp_tb_only {
         display: none;
     }
 }
@@ -372,7 +366,7 @@ a {
     aspect-ratio: 1/1;
     width: 100%;
     border-radius: 50%;
-    transition: 1s;
+    transition: 0.7s;
 }
 
 .card a:hover>div img {

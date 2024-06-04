@@ -5,6 +5,14 @@ section {
     margin-top: 100px;
 }
 
+.flex {
+    display: flex;
+}
+
+.flex_item {
+    margin-left: 20px;
+}
+
 /* header */
 .logo {
     width: 100px;
