@@ -3,25 +3,27 @@
 /* タイトル */
 .inner {
     text-align: center;
-    padding: 10px;
-    margin: 10px;
+    margin: 20px;
+    font-family: "Noto Sans JP", sans-serif;
 }
 
 h4 {
     font-size: 1.25rem;
+    font-family: "Zen Maru Gothic", serif;
 }
 
 /* メイン */
 section p {
-    margin: 10px;
+    margin: 30px;
     text-align: left;
+    /* font-family: "Noto Sans JP", sans-serif; */
 }
 
 
 .content_form {
     /* border: 2px solid red; */
     /* display: inline; */
-    /* margin: 20px 10vw; */
+    margin: 23px 10vw;
 
 }
 
@@ -66,7 +68,7 @@ small {
 
 .privacypolicy p {
     font-size: 0.8rem;
-    text-align: left;
+    /* text-align: left; */
 }
 
 .privacypolicy a {
@@ -75,8 +77,8 @@ small {
     display: inline;
 }
 
-.agree {
-    border: 1px solid #000000;
+.agree p {
+    /* border: 1px solid #000000; */
     text-align: center;
 
 }
