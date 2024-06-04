@@ -1,1 +1,126 @@
 @charset "utf-8";
+
+/* ==============共通============== */
+.inner {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.card span {
+    background-color: #EB97A8;
+}
+
+.card h3 {
+    background-color: #EB97A8;
+}
+
+/* タグ */
+.info_tag {
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.info_tag li {
+    font-size: 1.25rem;
+    line-height: 40px;
+    height: 40px;
+    font-size: 1.125rem;
+    text-align: center;
+    background-color: #D9D9D9;
+    border-radius: 50px;
+}
+
+/* ============================== */
+
+/* アコーディオン */
+
+.accordion-container {
+    margin: 0 auto;
+}
+
+.accordion-list:not(:first-child) {
+    margin-top: 10px;
+}
+
+.accordion-title {
+    margin: 32px auto 0;
+    height: 48px;
+    background: #FDC75F;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    text-align: center;
+    line-height: 48px;
+}
+
+.accordion-title:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: 25px;
+    height: 2px;
+    width: 15px;
+    background: #333;
+    transform: rotate(90deg);
+    transition: all .3s ease-in-out;
+}
+
+.accordion-title:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: 25px;
+    height: 2px;
+    width: 15px;
+    background: #333;
+    transition: all .3s ease-in-out;
+}
+
+.accordion-title.open:before {
+    transform: rotate(180deg);
+}
+
+.accordion-title.open:after {
+    opacity: 0;
+}
+
+.accordion-text {
+    display: none;
+    padding: 20px 40px;
+}
+
+@media(width>=757px) {
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    .info_tag {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    .info_tag li {
+        border-radius: 30px 30px 0 0;
+        height: 80px;
+        line-height: 80px;
+    }
+
+}
+
+@media (width>=1201px) {}

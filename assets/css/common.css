@@ -49,6 +49,10 @@ a {
     display: none;
 }
 
+.sp_tb_only{
+    display: block;
+}
+
 /* tablet */
 @media(width>=757px) {
     .sp_only {
@@ -78,6 +82,10 @@ a {
 
     .pc_only {
         display: block;
+    }
+
+    .sp_tb_only{
+        display: none;
     }
 }
 

@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet" />
 </head>
 <body>
+
   <div class="container">
     <main>
       <h2 class="under_line">検索</h2>
@@ -25,16 +26,59 @@
           <li>周辺施設</li>
           <li>モデルコース</li>
         </ul>
+		<section>
+<h3></h3>
 <div class="area">
-      <p>地域</p>
-      <input type="checkbox" name="chkform" id="east_area"/><label for="east_area">東部</label>
-     <input type="checkbox" name="chkform" id="west_area" /> <label for="west_area">西部</label>
-      <input type="checkbox" name="chkform" id="north_area" /><label for="north_area">南部</label>
+  <label class="checkbox-item">
+    <input type="checkbox" name="options" value="美肌">
+    <span>東部</span>
+  </label>
+  <label class="checkbox-item">
+    <input type="checkbox" name="options" value="冷え性">
+    <span>西部</span>
+  </label>
+  <label class="checkbox-item">
+    <input type="checkbox" name="options" value="肩こり">
+    <span>南部</span>
+  </label>
+
 </div>
+</section>
+<div class="list">
+    <label class="checkbox-item">
+      <input type="checkbox" name="options" value="美肌">
+      <span>美肌</span>
+    </label>
+    <label class="checkbox-item">
+      <input type="checkbox" name="options" value="冷え性">
+      <span>冷え性</span>
+    </label>
+    <label class="checkbox-item">
+      <input type="checkbox" name="options" value="肩こり">
+      <span>肩こり</span>
+    </label>
+    <label class="checkbox-item">
+      <input type="checkbox" name="options" value="筋肉痛">
+      <span>筋肉痛</span>
+    </label>
+    <label class="checkbox-item">
+      <input type="checkbox" name="options" value="リウマチ">
+      <span>リウマチ</span>
+    </label>
+    <label class="checkbox-item">
+      <input type="checkbox" name="options" value="神経痛">
+      <span>神経痛</span>
+    </label>
+</div>
+
+
+
 <div class="btn">
   <input type="reset" value="リセット">
   <input type="submit" value="検索">
       </div>
+	</div>
+
 </form>
       <h4 class="lined-title">検索結果</h4>
     </main>
