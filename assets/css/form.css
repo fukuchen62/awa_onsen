@@ -8,6 +8,10 @@
     margin: 10px;
 }
 
+h4 {
+    font-size: 1.125rem;
+}
+
 /* メイン */
 section p {
     /* border: 2px solid red; */
@@ -30,7 +34,7 @@ section p {
 
 /* テキスト */
 p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     overflow-wrap: normal;
     font-family: "Noto Sans JP", sans-serif;
 }
@@ -180,9 +184,13 @@ small {
 ここは各自のCSSファイルで設定（サンプル）
 ================================= */
     h4 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         width: fit-content;
         position: relative;
+    }
+
+    p {
+        font-size: 1.25rem;
     }
 
     #submit_button {
