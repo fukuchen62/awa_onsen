@@ -1,5 +1,6 @@
 @charset "utf8";
 
+<<<<<<< Updated upstream
 h4 {
     font-size: 1.125rem;
     /* font-family: "Zen Maru Gothic", serif; */
@@ -27,4 +28,81 @@ p {
         font-size: 1.25rem;
     }
 
+=======
+/* タイトル */
+.inner {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+>>>>>>> Stashed changes
 }
+
+h4 {
+    font-size: 1.125rem;
+}
+
+/* メイン */
+section p {
+    margin: 10px;
+    text-align: left;
+}
+
+
+.content_form {
+    /* border: 2px solid red; */
+
+    margin: 20px 10vw;
+}
+
+.form_item {
+    text-align: left;
+    margin: 10px;
+}
+
+
+/* テキスト */
+p {
+    font-size: 1rem;
+    overflow-wrap: normal;
+    text-align: left;
+}
+
+
+
+
+/* レスポンシブ */
+
+
+/* tablet */
+@media(width>=757px) {}
+
+/* ---------- */
+/* pc */
+@media(width>=1201px) {}
+
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+        overflow-wrap: normal;
+    }
+
+}
+
+
+
+/* ~1201px 1200px~757px 756px~ */
+/*640px以下の場合のレイアウト調整用*/
+@media screen and (max-width: 640px) {}
+
+@media screen and (max-width: 400px) {}
