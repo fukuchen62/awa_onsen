@@ -2,43 +2,39 @@
 
 /* タイトル */
 .inner {
+    /* border: 2px solid black; */
     text-align: center;
-    margin: 20px;
-    font-family: "Noto Sans JP", sans-serif;
-}
 
-h4 {
-    font-size: 1.125rem;
-    font-family: "Zen Maru Gothic", serif;
+    margin: 10px;
 }
 
 /* メイン */
 section p {
     /* border: 2px solid red; */
-    padding: 10px;
-    margin: 30px auto;
     text-align: left;
+    margin: 30px 0;
 }
 
 
 .content_form {
     /* border: 2px solid red; */
+    /* text-align: left; */
     margin: 20px 0;
 }
 
 .form_item {
-    /* border: 2px solid black; */
     text-align: left;
+    margin: 10px 0;
 }
 
 
 /* テキスト */
 p {
-    font-size: 1rem;
+    font-size: 1.25rem;
     overflow-wrap: normal;
-    margin: 10px;
-    text-align: left;
+    font-family: "Noto Sans JP", sans-serif;
 }
+
 
 
 /* 文章 */
@@ -51,36 +47,31 @@ small {
 .form_item input {
     background-color: rgb(228, 228, 228);
     width: 100%;
+    margin: 10px 0;
 }
+
 
 .form_item textarea {
     background-color: rgb(228, 228, 228);
     width: 100%;
+    margin: 10px 0;
 }
 
 /* 注意書き */
-.consent_text {
-    margin: 30px;
-}
-
 .privacypolicy p {
-    font-size: 0.8rem;
-    /* text-align: left; */
+    font-size: 1rem;
+    text-align: left;
+    margin: 30px 0;
 }
-
-.privacypolicy a {}
 
 .privacypolicy a {
+
     text-decoration: underline;
-    display: inline;
 }
 
 .agree p {
-    /* border: 1px solid #000000; */
     text-align: center;
-
 }
-
 
 /* チェックボックス */
 #privacy {
@@ -90,7 +81,6 @@ small {
     margin: 4px;
     border: 1px solid #000000;
     border-radius: 4px;
-    text-align: center;
 }
 
 #privacy:checked {
@@ -119,47 +109,55 @@ small {
 #submit_button[disabled] {
     background-color: #ccc;
     cursor: not-allowed;
-    /* クリック不可のカーソルを表示 */
-    text-decoration: line-through
-}
-
-/* ボタン */
-
-.confirmation {
-    /* border: 2px solid #000; */
-    text-align: center;
-}
-
-#submit_button {
-    /* border: 2px solid #DBF500; */
-    background: #DBF500;
-    font-size: 1.125rem;
-    /* font-size: 18px; */
-    border-radius: 25px;
-    text-align: center;
-    width: 200px;
-    height: 70px;
-    margin: 20px auto;
-    color: #fff;
-}
-
-#submit_button[disabled] {
-    background-color: #ccc;
-    cursor: not-allowed;
     text-decoration: line-through;
     /* クリック不可のカーソルを表示 */
 }
+
+/* ボタン */
+#submit_button {
+    /* border: 2px solid #fff; */
+    color: #fff;
+    margin: 20px;
+    background-color: #DBF500;
+    border-radius: 25px;
+    width: 55%;
+    height: 10vh;
+    font-size: 1.125rem;
+    /* font-size: 36px; */
+}
+
+
 
 /* レスポンシブ */
 
 
 /* tablet */
 @media(width>=757px) {
-    #submit_button {
-        font-size: 2rem;
-        background: #538FCB;
-        color: #fff;
+    .sp-none {
+        display: none;
     }
+
+    .tb-none {
+        display: block;
+    }
+
+    .pc-none {
+        display: none;
+    }
+
+    /* ボタン */
+    #submit_button {
+        border: 2px solid #fff;
+        color: #fff;
+        margin: 20px;
+        background-color: #538FCB;
+        border-radius: 25px;
+        width: 50%;
+        height: 10vh;
+        /* margin: 20px auto; */
+    }
+
+
 }
 
 /* ---------- */
@@ -172,7 +170,6 @@ small {
         margin: 0;
     }
 
-
 }
 
 
@@ -182,23 +179,25 @@ small {
     /* =================================
 ここは各自のCSSファイルで設定（サンプル）
 ================================= */
-
     h4 {
-        font-size: 1.5rem;
-    }
-
-    p {
         font-size: 1.25rem;
+        width: fit-content;
+        position: relative;
     }
 
-    .button {
+    #submit_button {
 
         font-size: 2rem;
+
     }
+
 
 }
 
 
+.form_item textarea {
+    background-color: rgb(222, 222, 222);
+}
 
 /* ~1201px 1200px~757px 756px~ */
 /*640px以下の場合のレイアウト調整用*/
