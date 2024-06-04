@@ -20,6 +20,7 @@
 <body>
     <div class="bubble_background">
         <div class="container">
+
             <!-- header -->
             <header>
                 <a href="#">
@@ -28,15 +29,17 @@
             </header>
 
             <main>
-                <!-- パンくず -->
+
                 <h2 class="under_line">コラムタイトル</h2>
 
                 <article>
                     <p>2024.05.31(Fri)</p>
 
+                    <!-- パンくず -->
+
                     <!-- コラム写真 -->
                     <div>
-                        <img src="../assets/images/onsen_img.jpg" alt="">
+                        <img src="../assets/images/column.jpg" alt="">
                     </div>
 
                     <!-- ハッシュタグ -->
@@ -67,27 +70,39 @@
 
                         <div class="item comment_content">
                             <!-- アイコン -->
-                            <img src="" alt="アイコン画像">
-                            <!-- コメント者名 -->
-                            <p>matsuo saki</p>
-                            <!-- コメント内容 -->
-                            <p>肌すべすべになりました★</p>
+                            <div class="flex">
+                                <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
+                                <div class="flex_item">
+                                    <!-- コメント者名 -->
+                                    <p>matsuo saki</p>
+                                    <!-- コメント内容 -->
+                                    <p>整いました★</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="item comment_content">
                             <!-- アイコン -->
-                            <img src="" alt="アイコン画像">
-                            <!-- コメント者名 -->
-                            <p>yamashita sawaka</p>
-                            <!-- コメント内容 -->
-                            <p>ゆったりできました～</p>
+                            <div class="flex">
+                                <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
+                                <div class="flex_item">
+                                    <!-- コメント者名 -->
+                                    <p>yamashita sawaka</p>
+                                    <!-- コメント内容 -->
+                                    <p>ゆったりできました～</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="item comment_content">
                             <!-- アイコン -->
-                            <img src="" alt="アイコン画像">
-                            <!-- コメント者名 -->
-                            <p>sakuragi sumire</p>
-                            <!-- コメント内容 -->
-                            <p>最高です！</p>
+                            <div class="flex">
+                                <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
+                                <div class="flex_item">
+                                    <!-- コメント者名 -->
+                                    <p>sakuragi sumire</p>
+                                    <!-- コメント内容 -->
+                                    <p>最高です！</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="item more_button">
                             <a href="#">もっと見る▼</a>
@@ -98,15 +113,17 @@
 
                 <section>
 
-                    <!-- 関連情報 -->
-                    <article>
-                        <div>
-                            <img src="assets/img/IMG_4384.jpg" alt="">
-                            <span></span>
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-
+                    <!-- こちらもいかがでしょうか？ -->
+                    <article class="card">
+                        <a href="#">
+                            <div>
+                                <span></span>
+                                <img src="../assets/images/onsen_img.jpg" alt="" />
+                            </div>
+                            <h3>すんごい温泉めちゃすごの湯</h3>
+                        </a>
                     </article>
+
                 </section>
 
                 <a href="">＜＜前の記事</a>
@@ -115,7 +132,6 @@
                 <button class="back_btn" onclick="history.back">
                     <p><i class="fa-solid fa-arrow-left"></i>back</p>
                 </button>
-
 
             </main>
         </div>

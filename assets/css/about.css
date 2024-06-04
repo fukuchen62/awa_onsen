@@ -8,8 +8,11 @@
 }
 
 /* タイトル */
+h2 {
+    font-size: 1.25rem;
+}
+
 .under_line {
-    font-size: 2.5rem;
     width: fit-content;
     position: relative;
     margin: 0 auto;
@@ -28,4 +31,21 @@
     border-bottom-color: #dbf500;
     border-bottom-style: dashed;
     border-bottom-width: 10px;
+}
+
+/* 本文 */
+p {
+    font-size: 1.25rem;
+    margin-top: 32px;
+}
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
 }
