@@ -2,7 +2,8 @@
 
 /* タイトル */
 .inner {
-    text-align: center;
+    /* border: 2px solid red; */
+    /* text-align: center; */
     padding: 10px;
     margin: 10px;
 }
@@ -11,13 +12,21 @@ section p {
     margin: 10px;
 }
 
+.form_item {
+
+    margin: 10px;
+}
+
 .content_form {
     /* border: 2px solid red; */
     margin: 20px 10vw;
+    text-align: center;
+
 }
 
-.form_item {
+.dummy {
     text-align: left;
+    background-color: rgb(228, 228, 228);
 }
 
 
@@ -26,21 +35,13 @@ p {
     font-size: 1.25rem;
     /* 幅８０％ */
     overflow-wrap: normal;
+    text-align: left;
+    /* background-color: rgb(228, 228, 228); */
 }
 
 
 
-/* 文章 */
 
-
-/* 入力 */
-.form_item input {
-    background-color: rgb(228, 228, 228);
-}
-
-.form_item textarea {
-    background-color: rgb(228, 228, 228);
-}
 
 /* 注意書き */
 .consent_text {
@@ -60,7 +61,7 @@ p {
 
 .button li {
     border: 2px solid #DBF500;
-    font-size: 1.125rem;
+    font-size: 2.25rem;
     border-radius: 25px;
     text-align: center;
     width: 200px;
@@ -128,7 +129,7 @@ p {
 
     .button li {
         border: 2px solid #538FCB;
-        font-size: 1.125rem;
+        font-size: 2.25rem;
         border-radius: 25px;
         text-align: center;
         width: 200px;
