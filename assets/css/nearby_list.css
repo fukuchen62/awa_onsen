@@ -6,10 +6,6 @@
     margin: 0 auto;
 }
 
-h2 {
-    font-size: 24px;
-}
-
 .card span {
     background-color: #EB97A8;
 }
@@ -53,7 +49,7 @@ h2 {
 .accordion-title {
     margin: 32px auto 0;
     height: 48px;
-    background: #FDC75F;
+    background: #538FCB;
     cursor: pointer;
     font-size: 18px;
     position: relative;
@@ -86,16 +82,24 @@ h2 {
 
 .accordion-title.open:before {
     transform: rotate(180deg);
+    background: white;
 }
 
 .accordion-title.open:after {
     opacity: 0;
+    background: white;
+}
+
+.accordion-title.open h3 {
+    color: white;
 }
 
 .accordion-text {
     display: none;
     padding: 20px 40px;
 }
+
+/* アコーディオン終わり */
 
 @media(width>=757px) {
 
