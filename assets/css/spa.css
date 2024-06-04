@@ -1,6 +1,6 @@
 @charset "utf-8";
-section+section{
-    margin-bottom: 20px;
+h2 {
+  font-size: 2.5rem;
 }
 
 .icon_list {
@@ -45,15 +45,6 @@ font-size: 0.7rem;
   object-fit: cover;
   aspect-ratio: 16/9;
 }
-.favorite_btn {
-  position: absolute;
-  top: 0;
-  right: 5px;
-  width: 55px;
-  height: 76px;
-  clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 70%, 0% 100%);
-  background-color: rgba(235, 151, 168, 0.5);
-}
 .favorite_btn i {
   position: absolute;
   top: 40%;
@@ -61,6 +52,11 @@ font-size: 0.7rem;
   transform: translate(-50%, -50%);
   font-size: 1.6rem;
 }
+
+.favorite_btn i:nth-child(1) {
+  color: aliceblue;
+}
+
 .nice_btn {
   position: absolute;
   background-color: #d9d9d9;
@@ -68,15 +64,51 @@ font-size: 0.7rem;
   right: 65px;
   width: 55px;
   height: 55px;
+  padding: 5px;
   border-radius: 50%;
+  text-align: center;
 }
 
 .nice_btn i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 1.6rem;
+}
+
+.nice_btn div p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+checkbox-item {
+  background-color: white;
+  text-align: center;
+  position: relative;
+}
+
+.checkbox-item input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-item input[type="checkbox"]:checked+.favorite_btn {
+  /*      border: 5px solid black; */
+  background-color: rgba(235, 151, 168, 1);
+}
+
+.checkbox-item input[type="checkbox"]:checked+.favorite_btn i:nth-child(1) {
+  color: red;
+}
+
+.checkbox-item .favorite_btn {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  display: block;
+  width: 55px;
+  height: 76px;
+  clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 70%, 0% 100%);
+  background-color: rgba(235, 151, 168, 0.5);
 }
 
 .hashtag_list {

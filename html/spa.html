@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
 <body>
+    <div class="bubble_background">
     <div class="container">
         <main>
             <h2 class="under_line">峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h2>
@@ -60,8 +61,18 @@
             <!-- 外観写真 -->
             <div class="img_box">
                 <img src="../assets/images/onsen_img.jpg" alt="" />
-                <div class="favorite_btn"><i class="fa-regular fa-heart"></i></div>
-                <div class="nice_btn"><i class="fa-regular fa-thumbs-up"></i></div>
+            <label class="checkbox-item">
+                <input type="checkbox" name="options" value="nice">
+                <span class="nice_btn">
+                    <i class="fa-regular fa-thumbs-up"></i><br>
+                    <span>11</span>
+                </span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="options" value="favorite">
+                <span class="favorite_btn"><i class="fa-solid fa-heart"></i>
+                    <i class="fa-regular fa-heart"></i></span>
+            </label>
             </div>
             <!-- ハッシュタグ -->
                 <div class="hashtag_list">
@@ -177,30 +188,46 @@
 
             </section>
         </main>
+        </div>
     </div>
+<!-- footer -->
 <!-- footer -->
 <footer class="footer_wrap">
     <div class="footer_container">
         <ul class="footer_list">
-            <li class="footer_item"><span class="material-symbols-outlined">
-                    bubble_chart
-                </span>このサイトについて</li>
-            <li class="footer_item"><span class="material-symbols-outlined">
-                    fiber_new
-                </span>お知らせ一覧へ</li>
-            <li class="footer_item"><span class="material-symbols-outlined">
-                    verified_user
-                </span>
-                <div>免責事項・<br>プライバシーポリシー</div>
+            <li class="footer_item">
+                <a href="about.html">
+                    <span class="material-symbols-outlined">
+                        bubble_chart
+                    </span>このサイトについて
+                </a>
             </li>
-            <li class="footer_item"><span class="material-symbols-outlined">
-                    mail
-                </span>お問い合わせ(企業様)</li>
+            <li class="footer_item">
+                <a href="news_list.html">
+                    <span class="material-symbols-outlined">
+                        fiber_new
+                    </span>お知らせ一覧へ
+                </a>
+            </li>
+            <li class="footer_item">
+                <a href="privacypolicy.html">
+                    <span class="material-symbols-outlined">
+                        verified_user
+                    </span>
+                    <div>免責事項・<br>プライバシーポリシー</div>
+                </a>
+            </li>
+            <li class="footer_item">
+                <a href="form.html">
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>お問い合わせ(企業様)
+                </a>
+            </li>
         </ul>
         <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
     </div>
 </footer>
-
 <!-- jquery CDN -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <!-- slick js -->
@@ -208,6 +235,7 @@
 </script>
 <!-- top.js -->
 <script src="../assets/js/spa.js"></script>
+<script src="../assets/js/common.js"></script>
 </body>
 
 </html>
