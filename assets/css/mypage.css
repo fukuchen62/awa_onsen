@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 /* -----------------------
@@ -74,6 +74,19 @@ tabのcss
 /* showクラスが付与されたら表示 */
 .favorite_list.show {
     display: block;
+
+}
+
+
+
+@media (width>=1201px) {
+    .article_all {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
 }
 
 
