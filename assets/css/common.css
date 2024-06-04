@@ -444,3 +444,21 @@ img {
     padding: 5px 10px;
     border-radius: 15px;
 }
+
+/* おすすめ一覧 */
+h5 {
+
+    height: 87px;
+    text-align: center;
+    line-height: 50px;
+    background-repeat: no-repeat;
+    background-image: url(../images/recommend.png);
+    background-position: center center;
+    background-size: contain;
+}
+
+@media(width>=757px) {
+    h5 {
+        font-size: 1.5rem;
+    }
+}
