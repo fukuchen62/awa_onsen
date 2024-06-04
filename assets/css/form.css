@@ -9,21 +9,14 @@
 
 h4 {
     font-size: 1.125rem;
-<<<<<<< Updated upstream
     font-family: "Zen Maru Gothic", serif;
-=======
->>>>>>> Stashed changes
 }
 
 /* メイン */
 section p {
-<<<<<<< Updated upstream
     /* border: 2px solid red; */
     padding: 10px;
     margin: 30px auto;
-=======
-    margin: 10px;
->>>>>>> Stashed changes
     text-align: left;
 }
 
@@ -43,10 +36,7 @@ section p {
 p {
     font-size: 1rem;
     overflow-wrap: normal;
-<<<<<<< Updated upstream
     margin: 10px;
-=======
->>>>>>> Stashed changes
     text-align: left;
 }
 
@@ -75,15 +65,10 @@ small {
 
 .privacypolicy p {
     font-size: 0.8rem;
-<<<<<<< Updated upstream
     /* text-align: left; */
 }
 
-.privacypolicy a {
-=======
->>>>>>> Stashed changes
-
-}
+.privacypolicy a {}
 
 .privacypolicy a {
     text-decoration: underline;
@@ -139,18 +124,10 @@ small {
 }
 
 /* ボタン */
-<<<<<<< Updated upstream
-.confirmation {
-    /* border: 2px solid #DBF500; */
-    text-align: center;
-    display: inline;
-
-=======
 
 .confirmation {
     /* border: 2px solid #000; */
     text-align: center;
->>>>>>> Stashed changes
 }
 
 #submit_button {
@@ -177,7 +154,6 @@ small {
 
 
 /* tablet */
-<<<<<<< Updated upstream
 @media(width>=757px) {
     #submit_button {
         font-size: 2rem;
@@ -185,9 +161,6 @@ small {
         color: #fff;
     }
 }
-=======
-@media(width>=757px) {}
->>>>>>> Stashed changes
 
 /* ---------- */
 /* pc */
@@ -216,17 +189,9 @@ small {
 
     p {
         font-size: 1.25rem;
-<<<<<<< Updated upstream
     }
 
     .button {
-=======
-        /* 幅８０％ */
-        overflow-wrap: normal;
-    }
-
-    #submit_button {
->>>>>>> Stashed changes
 
         font-size: 2rem;
     }

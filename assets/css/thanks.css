@@ -1,6 +1,5 @@
 @charset "utf8";
 
-<<<<<<< Updated upstream
 h4 {
     font-size: 1.125rem;
     /* font-family: "Zen Maru Gothic", serif; */
@@ -28,13 +27,6 @@ p {
         font-size: 1.25rem;
     }
 
-=======
-/* タイトル */
-.inner {
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
->>>>>>> Stashed changes
 }
 
 h4 {
