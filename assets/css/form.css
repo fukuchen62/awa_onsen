@@ -14,22 +14,20 @@ h4 {
 
 /* メイン */
 section p {
-    margin: 30px;
+    /* border: 2px solid red; */
+    padding: 10px;
+    margin: 30px auto;
     text-align: left;
-    /* font-family: "Noto Sans JP", sans-serif; */
 }
 
 
 .content_form {
     /* border: 2px solid red; */
-    /* display: inline; */
-    margin: 23px 10vw;
-
+    margin: 20px 0;
 }
 
 .form_item {
     /* border: 2px solid black; */
-    /* margin: 10px; */
     text-align: left;
 }
 
@@ -136,8 +134,8 @@ small {
 #submit_button {
     /* border: 2px solid #DBF500; */
     background: #DBF500;
-    /* font-size: 1.125rem; */
-    font-size: 18px;
+    font-size: 1.125rem;
+    /* font-size: 18px; */
     border-radius: 25px;
     text-align: center;
     width: 200px;
@@ -158,7 +156,7 @@ small {
 /* tablet */
 @media(width>=757px) {
     #submit_button {
-
+        font-size: 2rem;
         background: #538FCB;
         color: #fff;
     }
@@ -190,14 +188,13 @@ small {
     }
 
     p {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 
-    #submit_button {
+    .button {
 
         font-size: 2rem;
     }
-
 
 }
 

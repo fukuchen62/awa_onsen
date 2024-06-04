@@ -1,6 +1,30 @@
 @charset "utf8";
 
+h4 {
+    font-size: 1.125rem;
+    /* font-family: "Zen Maru Gothic", serif; */
+}
 
 p {
-    margin: 30px;
+    font-size: 1rem;
+    overflow-wrap: normal;
+    margin: 10px;
+    text-align: left;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
 }
