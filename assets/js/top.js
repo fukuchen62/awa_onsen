@@ -16,6 +16,7 @@ $(function () {
         $(".sp_nav .navlist").toggleClass("isactive");
         $(this).toggleClass("isactive");
     });
+    // メニューの中をクリックしたら、メニューを閉じる
     $(".navlist_item").click(function(){
         $(".hamburger").removeClass("active");
         $(".sp_nav .navlist").removeClass("isactive");
