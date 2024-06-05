@@ -8,11 +8,6 @@ a {
     display: block;
 }
 
-/* ページタイトル */
-.under_line {
-    font-size: 1.25rem;
-}
-
 /* タグ */
 .info_tag {
     margin: 50px auto 0;
