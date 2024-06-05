@@ -144,6 +144,22 @@ a {
 
 
 /*========== inner ==========*/
+.pc_inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px red solid;
+    /* position: relative; */
+}
+
+.pc_menu {
+    /* width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px red solid;
+    position: relative; */
+}
+
 .inner {
     width: 90%;
     margin: 0 auto;
@@ -157,10 +173,12 @@ a {
 }
 
 @media(width>=1201px) {
-    .pc_inner {
+    /* .pc_inner {
+        width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-    }
+        border: 1px red solid;
+    } */
 
     .inner {
         width: 66%;
@@ -850,6 +868,20 @@ button {
     background-image: url(../images/close.svg);
 }
 
+.logo{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0.7s;
+}
+
+.logo.isactive{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
+}
+
 /* header中身 */
 .navlist {
     width: 250px;
@@ -970,60 +1002,39 @@ button {
 }
 
 @media(width>=1201px) {
-    .pc_nav_inner {
-        width: 1200px;
-        height: 100%;
-        margin: 0 auto;
-    }
 
-    .pc_g_nav {
-        width:100%;
-        color: #fff;
-        background-color: #4272A2;
-        border: 4px dashed #fff;
-        border-radius: 12px;
-        z-index: 20;
-        position: fixed;
-    }
+.top_button {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0.7s;
+}
 
-    .pc_navlist_item {
-        font-size: 1.5rem;
-    }
-
+.top_button.isactive{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
+}
     #pc_nav {
-        /* width: 100%;
         display: flex;
-        justify-content: flex-end; */
+        justify-content: end;
     }
 
-    .pc_navlist {
-        /* bottom: 50%;
-        transform: translateY(50%); */
-        /* right: -120%; */
-        /* transition: right 0.7s ease; */
-        /* top: 10%;
-        color: #fff;
-        background-color: #4272A2;
-        border: 4px dashed #fff;
-        border-radius: 12px;
-        z-index: 20;
-        position: fixed; */
-        /* display: none; */
-        /* transition: all 1s 0s ease; */
+    .navlist {
+        bottom: 50%;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%) translateY(50%);
+        transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0.7s;
     }
 
-    /* #pc_nav.isactive{
-        animation: slide 0.7s forwards;
-        display: block;
+    .navlist.isactive {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0) translateY(50%);
+        transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
     }
-    @keyframes slide {
-        from{
-            transform: translateX(100%);
-        }
-        to{
-            transform: translateX(0);
-        }
-    } */
 
 }
 
