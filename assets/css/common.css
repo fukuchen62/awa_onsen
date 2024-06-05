@@ -311,6 +311,7 @@ img {
 
 
 
+
 /* 店舗ごとのカード型の設定 */
 .news_card {
     max-width: 625px;
@@ -435,7 +436,7 @@ img {
 .hashtag_list {
     display: flex;
     flex-wrap: wrap;
-    gap:16px;
+    gap: 16px;
 }
 
 .hashtag {
