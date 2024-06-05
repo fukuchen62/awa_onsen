@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 h2 {
     font-size: 2.5rem;
 }
@@ -13,21 +14,24 @@ h4 {
     h4 {
         margin: 16px;
     }
-   form{
-    font-size: 1.5rem;
-   }
+
+    form {
+        font-size: 1.5rem;
+    }
 }
-form{
+
+form {
     font-weight: bolder;
 }
-.info_tag {
+
+.tag {
     margin: 50px auto 0;
     display: grid;
-margin-bottom: 20px;
+    margin-bottom: 20px;
     gap: 10px;
 }
 
-.info_tag li {
+.tag li {
     font-size: 1.125rem;
     line-height: 40px;
     text-align: center;
@@ -35,88 +39,105 @@ margin-bottom: 20px;
     border-radius: 50px;
     padding: 10px 0;
 }
-.info_tag .is_active{
+
+.tag .active {
     background-color: #EB97A8;
 }
 
+.contents {
+    display: none;
+}
+
+.contents.active {
+    display: block;
+}
+
 @media (width>=757px) {
-    .info_tag {
+    .tag {
         grid-template-columns: repeat(3, 1fr);
         max-width: 100%;
         gap: 1px;
 
     }
 
-    .info_tag li {
-        border-radius: 30px 30px 0 0;font-size: 1.5rem;
+    .tag li {
+        border-radius: 30px 30px 0 0;
+        font-size: 1.5rem;
     }
 }
 
 
-.area{
+.area {
     display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 
 }
+
 @media (width>=757px) {
-    .area , .list{ padding: 0 50px;
-    }}
 
-  .list {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap:20px;
-
-  }
-
- .checkbox-item {
-     background-color: white;
-     text-align: center;
-     position: relative;
- }
-
- .checkbox-item input[type="checkbox"] {
-     position: absolute;
-     opacity: 0;
-     cursor: pointer;
- }
-
- .checkbox-item input[type="checkbox"]:checked+span {
-     border: 5px solid black;
- }
-
- .checkbox-item span {
-     display: block;
-     border: 5px dashed #d6d6d6;
-     padding: 20px 0;
-     box-sizing: border-box;
- }
-
- /* 送信リセットボタン */
-
-
-.btn{
-    margin: 30px auto;
-display: flex;
-flex-wrap:nowrap;
-max-width: 320px;
-justify-content: space-between;
+    .area,
+    .list {
+        padding: 0 50px;
+    }
 }
 
-.btn label{
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+}
+
+.checkbox-item {
+    background-color: white;
+    text-align: center;
+    position: relative;
+}
+
+.checkbox-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-item input[type="checkbox"]:checked+span {
+    border: 5px solid black;
+}
+
+.checkbox-item span {
+    display: block;
+    border: 5px dashed #d6d6d6;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/* 送信リセットボタン */
+
+
+.btn {
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 320px;
+    justify-content: space-between;
+}
+
+.btn label {
     width: 150px;
     padding: 20px 0;
     text-align: center;
     border-radius: 100px;
 }
-.btn .reset{
+
+.btn .reset {
     background-color: #d9d9d9;
 }
 
-.btn .submit{
+.btn .submit {
     background-color: #EB97A8;
 }
+
 /* 検索結果 */
 .card span {
     background-color: #EB97A8;
