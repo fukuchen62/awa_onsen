@@ -3,7 +3,6 @@
 /* タイトル */
 .inner {
     /* border: 2px solid red; */
-    /* padding: 10px; */
     margin: 10px;
 }
 
@@ -63,6 +62,7 @@ p {
     font-size: 1.125rem;
     border-radius: 25px;
     text-align: center;
+    width: 55%;
     margin: 20px auto;
     color: #fff;
 }
@@ -70,22 +70,24 @@ p {
 #send_button {
     /* border: 2px solid #FFF; */
     height: 70px;
+    width: 100%;
+
 }
 
 .send {
     border: 2px solid #FFF;
     background-color: #DBF500;
-    width: 35vw;
     margin: 20px;
+
 }
 
 #back_button {
     /* border: 2px solid #FFF; */
     height: 70px;
+    width: 100%;
 }
 
 .back {
-    width: 35vw;
     -webkit-text-stroke: 0.1px #DBF500;
     text-stroke: 0.1px #DBF500;
     margin: 20px;
@@ -103,21 +105,25 @@ p {
     .button li {
         border: 2px solid #538FCB;
         color: #fff;
+        width: 55%;
     }
 
     #send_button {
         /* border: 2px solid #FFF; */
+        width: 100%;
+
     }
 
     .send {
-        border: 2px solid #FFF;
+        /* border: 2px solid #FFF; */
         background-color: #538FCB;
         margin: 20px;
+
     }
 
     #back_button {
         /* border: 2px solid #FFF; */
-        /* width: 200px; */
+        width: 100%;
         height: 70px;
         color: #538FCB;
     }
