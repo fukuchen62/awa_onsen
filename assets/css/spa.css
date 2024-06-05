@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 h2 {
   font-size: 2.5rem;
 }
@@ -141,6 +142,9 @@ checkbox-item {
   width:100%;
 }
 /* 基本情報 */
+.basic_information dt{
+  padding: 3px;
+}
 .basic_information dl{
     background-color: white;
 border-bottom-style: dotted;
@@ -152,6 +156,9 @@ border-bottom-style: dotted;
 .basic_information dt{
     background-color: #EB97A8;
 }
+.basic_information table th{
+ text-align: center;
+}
 .basic_information table tr+tr{
     border-top-style: dotted;
     border-top-color: #EB97A8;
@@ -162,6 +169,7 @@ border-bottom-style: dotted;
 }
 .basic_information table th{
   width: 30%;
+
 }
 .basic_information table td {
   width: 70%;

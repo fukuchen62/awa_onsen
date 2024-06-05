@@ -36,7 +36,8 @@ h2 {
 /* 本文 */
 p {
     font-size: 1rem;
-    margin-top: 32px;
+    width: 80px;
+    margin: 32px auto;
 }
 
 /* フォントサイズのみ */
