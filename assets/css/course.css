@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+html {
+    background-color: rgb(69, 69, 144);
+}
+
+/* -----------------------
+base
+-------------------------- */
 /* タイトル */
 .under_line {
     font-size: 1.25rem;
@@ -11,9 +18,25 @@
     margin-bottom: 32px;
 }
 
-/* Summaryの形 */
+/* タグ */
+.hashtag_list {
+    margin-bottom: 16px;
+}
+
+/* Bold */
+h3 {
+    font-weight: 900;
+}
+
+h4 {
+    font-weight: 900;
+}
+
+/* Summary */
 .course_day_summary {
     position: relative;
+    margin-top: 44px;
+    margin-bottom: 31px;
 }
 
 .course_day_summary::before,
@@ -35,17 +58,19 @@
     left: 135px;
 }
 
-/* DAY1の形 */
+/* DAY1 */
 .flex {
     display: flex;
     justify-content: center;
+    align-items: center;
     /* gap: 20px; */
 }
 
 .course_day {
     font-size: 1.125rem;
     position: relative;
-    margin: 16px 0;
+    margin-top: 65px;
+    margin-bottom: 16px;
 }
 
 .course_day::before,
@@ -67,46 +92,122 @@
     left: 110px;
 }
 
-/* 小見出しナンバー */
-.course_num {
-    font-size: 1.5rem;
-    color: white;
-    margin-top: 19px;
-    margin-right: 30px;
-    margin-bottom: 16px;
+/* photo */
+.photo {
+    width: 256px;
+    height: 231px;
+    margin: auto;
+    display: block;
+}
+
+/* -----------------------
+DAY1/DAY2
+-------------------------- */
+.position {
     position: relative;
 }
 
-.course_num::before {
-    content: '';
-    background-color: #F5A200;
-    height: 35px;
-    width: 35px;
+.clock {
+    font-weight: 900;
     position: absolute;
-    z-index: -1;
-    right: -12px;
+    top: 25px;
+    right: 60px;
+    z-index: 333;
 }
 
-/* 小見出しライン */
-.course_ttl {
-    position: relative;
-    margin-top: 21px;
-}
-
-.course_ttl::before {
-    content: '';
-    background-color: #F5A200;
-    height: 2px;
-    width: 200px;
+.square_white {
     position: absolute;
-    bottom: 8px;
-    left: -12px;
+    background-color: #fff;
+    width: 115px;
+    height: 64px;
+    border-radius: 20px;
+    top: 10px;
+    right: 26px;
+    z-index: 2;
 }
 
-/* 車で５分 */
-.course_car {
+.photo {
+    z-index: 1;
+}
+
+.time {
+    color: #fff;
+    background-color: #6BDE4E;
+    width: 85px;
+    height: 69px;
+    border-radius: 5px;
+    padding: 22px 24px;
+}
+
+div p,
+div h4 {
+    margin-left: 15px;
+}
+
+.flex {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.square_green {
+    /* display: inline; */
+    background-color: #6BDE4E;
+    width: 10px;
+    height: 10px;
+    margin-left: 15px;
+    margin-right: 3px;
+    border-radius: 3px;
+}
+
+.flex_car {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.car_tx {
+    margin-left: 0;
+}
+
+/* カード */
+.card.orange span {
+    background-color: #F5A200;
+}
+
+.card.orange h3 {
+    background-color: #F5A200;
+}
+
+.card.pink span {
+    background-color: #EB97A8;
+}
+
+.card.pink h3 {
+    background-color: #EB97A8;
+}
+
+/* 車で10分アイコン */
+.car_green {
     background-image: url(../images/fa6-solid_car-side.png);
-    background-color: black;
-    width: 100px;
-    height: 100px;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    position: relative;
 }
+
+.car_green::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #6BDE4E;
+    z-index: -1;
+    bottom: 5px;
+    left: -4px;
+}
+
+/* -----------------------
+レスポンシブ
+-------------------------- */
