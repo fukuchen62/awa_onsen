@@ -15,11 +15,11 @@ base
 /* タイトルのmargin */
 .under_line {
     margin-bottom: 16px;
-    /* font */
     font-size: 1.25rem;
+    /* font */
     font-family: "Zen Maru Gothic", serif;
     font-weight: 900;
-    font-style: normal;
+    font-style: normal
 }
 
 /* タイトル下ライン */

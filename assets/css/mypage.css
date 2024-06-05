@@ -9,6 +9,10 @@
 -------------------------- */
 .under_line {
     font-size: 1.25rem;
+    /* font */
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 900;
+    font-style: normal;
 }
 
 /* -----------------------

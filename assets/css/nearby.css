@@ -2,6 +2,13 @@
 h2{
   font-size: 2.5rem;
 }
+h4{
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+.img_box,.shop_information{
+  margin: 30px 0;
+}
 .lined-title::before,
 .lined-title::after {
   border-bottom-color: #f5a200;
@@ -81,6 +88,9 @@ color: red;
   flex-wrap: wrap;
   gap: 16px;
 }
+dt,dd{
+  padding: 3px;
+}
 dl {
   background-color: white;
   border-bottom: 2px dotted #f5a200;
@@ -91,8 +101,11 @@ dt {
 }
 iframe {
   width: 100%;
+  aspect-ratio: 16/9;
 }
-
+h5{
+  margin-top: 30px;
+}
 .card span {
   background-color: #f5a200;
 }

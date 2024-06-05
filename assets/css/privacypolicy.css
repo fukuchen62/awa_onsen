@@ -51,6 +51,8 @@ h4.privacy_title {
 
 p.privacy_text {
     font-size: 1rem;
+    width: 80%;
+    margin: 32px auto;
 }
 
 /* 区切り線 */
