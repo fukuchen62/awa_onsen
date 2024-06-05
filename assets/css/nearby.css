@@ -1,18 +1,38 @@
 @charset "utf-8";
-h2{
-  font-size: 2.5rem;
-}
-h4{
+
+h2 {
   font-size: 1.25rem;
+}
+
+.lined-title {
+  font-size: 1.125rem;
   margin-bottom: 10px;
 }
-.img_box,.shop_information{
+
+/* メディアクエリ */
+
+@media(width>=757px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .lined-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+}
+
+.img_box,
+.shop_information {
   margin: 30px 0;
 }
+
 .lined-title::before,
 .lined-title::after {
   border-bottom-color: #f5a200;
 }
+
 .img_box {
   position: relative;
 }
@@ -23,6 +43,8 @@ h4{
   aspect-ratio: 16/9;
 }
 
+/* お気に入り登録 */
+
 .favorite_btn i {
   position: absolute;
   top: 40%;
@@ -30,9 +52,13 @@ h4{
   transform: translate(-50%, -50%);
   font-size: 1.6rem;
 }
-.favorite_btn i:nth-child(1){
+
+.favorite_btn i:nth-child(1) {
   color: aliceblue;
 }
+
+/* いいねボタン */
+
 .nice_btn {
   position: absolute;
   background-color: #d9d9d9;
@@ -48,9 +74,10 @@ h4{
 .nice_btn i {
   font-size: 1.6rem;
 }
-.nice_btn div p{
-font-size: 1rem;
-text-align: center;
+
+.nice_btn div p {
+  font-size: 1rem;
+  text-align: center;
 }
 
 
@@ -70,46 +97,74 @@ checkbox-item {
   /*      border: 5px solid black; */
   background-color: rgba(235, 151, 168, 1);
 }
-.checkbox-item input[type="checkbox"]:checked+.favorite_btn i:nth-child(1){
-color: red;
+
+.checkbox-item input[type="checkbox"]:checked+.favorite_btn i:nth-child(1) {
+  color: red;
 }
+
 .checkbox-item .favorite_btn {
-    position: absolute;
-    top: 0;
-    right: 5px;
+  position: absolute;
+  top: 0;
+  right: 5px;
   display: block;
   width: 55px;
   height: 76px;
   clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 70%, 0% 100%);
   background-color: rgba(235, 151, 168, 0.5);
 }
+
 .hashtag_list {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
-dt,dd{
+
+
+/* 店舗情報 */
+
+dt,
+dd {
   padding: 3px;
 }
+
 dl {
   background-color: white;
   border-bottom: 2px dotted #f5a200;
   text-align: center;
 }
+
 dt {
   background-color: #f5a200;
+  color: white;
 }
+
 iframe {
   width: 100%;
   aspect-ratio: 16/9;
 }
-h5{
+
+h5 {
   margin-top: 30px;
 }
+
 .card span {
   background-color: #f5a200;
 }
 
 .card h3 {
   background-color: #f5a200;
+}
+
+
+/* 戻るボタン */
+.back_btn {
+  display: none;
+}
+
+
+/* タブレット */
+@media(width>=757px) {
+  .back_btn {
+    display: inline;
+  }
 }
