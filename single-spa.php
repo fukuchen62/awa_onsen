@@ -46,6 +46,7 @@
 </head>
 
 <body>
+    <?php wp_head(); ?>
     <div class="container">
         <main>
             <?php
@@ -404,6 +405,7 @@
 
         </main>
     </div>
+    <?php wp_footer(); ?>
     <!-- footer -->
     <footer class="footer_wrap">
         <div class="footer_container">

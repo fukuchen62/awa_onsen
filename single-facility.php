@@ -19,7 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
 </head>
 
+
 <body>
+    <?php wp_head(); ?>
     <div class="bubble_background">
         <div class="container">
             <main>
@@ -28,7 +30,9 @@
                     while (have_posts()) : the_post(); ?>
 
                         <h2 class="under_line"><?php the_title(); ?></h2>
+
                         <!-- パンくず -->
+                        <?php get_template_part('template-parts/breadcrumb') ?>
 
                         <!-- 外観写真 -->
                         <div class="img_box">
@@ -228,6 +232,7 @@
             </main>
         </div>
     </div>
+    <?php wp_footer(); ?>
     <!-- jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
