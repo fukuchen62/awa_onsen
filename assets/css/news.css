@@ -50,6 +50,10 @@ h2 {
     background-color: #A7E099;
 }
 
+h5 {
+    letter-spacing: 1rem;
+}
+
 .mt32 {
     margin-top: 32px;
 }

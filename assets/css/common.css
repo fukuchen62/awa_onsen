@@ -435,7 +435,7 @@ img {
 .hashtag_list {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap:16px;
 }
 
 .hashtag {
@@ -455,9 +455,10 @@ h5 {
     background-image: url(../images/recommend.png);
     background-position: center center;
     background-size: contain;
+    font-size: 5vw;
 }
 
-@media(width>=757px) {
+@media(width>=527px) {
     h5 {
         font-size: 1.5rem;
     }
