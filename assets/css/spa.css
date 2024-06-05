@@ -233,10 +233,16 @@ iframe {
 
 /* メディアクエリ */
 
+/* 戻るボタン */
+.back_btn {
+  display: none;
+}
+
+
 /* タブレット */
 @media(width>=757px) {
   .back_btn {
-    display: none;
+    display: inline;
   }
 }
 
