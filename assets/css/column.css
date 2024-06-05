@@ -1,9 +1,8 @@
 @charset "utf-8";
 
 /* 共通 */
-
 section {
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 p {
@@ -20,12 +19,13 @@ p {
 /* タイトル */
 h2 {
     font-size: 1.25rem;
+    margin-top: 100px;
 }
 
 .under_line {
     width: fit-content;
     position: relative;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     margin-top: 100px;
 }
 
@@ -55,8 +55,7 @@ h2 {
     margin-top: 32px;
 }
 
-/* コメント欄 */
-
+/* コメントフォーム */
 .flex {
     display: flex;
 }
@@ -101,16 +100,24 @@ h5 {
     letter-spacing: 1rem;
 }
 
-/* カード */
-.card span {
+/* カード(丸形) */
+.card.onsen span {
+    background-color: #ECC1C9;
+}
+
+.card.onsen h3 {
     background-color: #EB97A8;
 }
 
-.card h3 {
-    background-color: #EB97A8;
+.card.nearby span {
+    background-color: #FDC75F;
 }
 
-/* ナビゲーション */
+.card.nearby h3 {
+    background-color: #F5A200;
+}
+
+/* ページナビゲーション */
 .nav-links {
     display: flex;
     justify-content: center;
@@ -126,18 +133,9 @@ h5 {
         font-size: 2.5rem;
     }
 
-    p {
-        font-size: 1.25rem;
-    }
-
-    .comment {
-        font-size: 1.25rem;
-    }
-
-    input[type="submit"] {
-        font-size: 1.25rem;
-    }
-
+    p,
+    .comment,
+    input[type="submit"],
     .more_button {
         font-size: 1.25rem;
     }

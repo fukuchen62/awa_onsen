@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- リセットCSS -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <!-- 共通CSS -->
@@ -57,87 +60,90 @@
 
                 </article>
 
-                <section>
+                <!-- コメントフォーム -->
+                <div class="comment_form">
                     <!-- コメント入力欄 -->
-                    <form action="">
-                        <div class="item">
-                            <label class="comment" for="comment">コメント入力欄</label>
-                            <textarea rows="10" cols="80" name="" id="comment"></textarea><br>
-                        </div>
+                    <div class="item">
+                        <label class="comment" for="comment">コメント入力欄</label>
+                        <textarea rows="10" cols="80" name="comment" id="comment"></textarea><br>
+                    </div>
 
-                        <div class="item">
-                            <input type="submit" value="コメントを送信">
-                        </div>
+                    <!-- 送信ボタン -->
+                    <div class="item">
+                        <input type="submit" value="コメントを送信">
+                    </div>
 
-                        <div class="item comment_content">
-                            <!-- アイコン -->
-                            <div class="flex">
-                                <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
-                                <div class="flex_item">
-                                    <!-- コメント者名 -->
-                                    <p>matsuo saki</p>
-                                    <!-- コメント内容 -->
-                                    <p>整いました★</p>
-                                </div>
+                    <div class="item comment_content">
+                        <!-- アイコン -->
+                        <div class="flex">
+                            <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
+                            <div class="flex_item">
+                                <!-- コメント者名 -->
+                                <p>matsuo saki</p>
+                                <!-- コメント内容 -->
+                                <p>整いました★</p>
                             </div>
                         </div>
-                        <div class="item comment_content">
-                            <!-- アイコン -->
-                            <div class="flex">
-                                <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
-                                <div class="flex_item">
-                                    <!-- コメント者名 -->
-                                    <p>yamashita sawaka</p>
-                                    <!-- コメント内容 -->
-                                    <p>ゆったりできました～</p>
-                                </div>
+                    </div>
+                    <div class="item comment_content">
+                        <!-- アイコン -->
+                        <div class="flex">
+                            <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
+                            <div class="flex_item">
+                                <!-- コメント者名 -->
+                                <p>yamashita sawaka</p>
+                                <!-- コメント内容 -->
+                                <p>ゆったりできました～</p>
                             </div>
                         </div>
-                        <div class="item comment_content">
-                            <!-- アイコン -->
-                            <div class="flex">
-                                <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
-                                <div class="flex_item">
-                                    <!-- コメント者名 -->
-                                    <p>sakuragi sumire</p>
-                                    <!-- コメント内容 -->
-                                    <p>最高です！</p>
-                                </div>
+                    </div>
+                    <div class="item comment_content">
+                        <!-- アイコン -->
+                        <div class="flex">
+                            <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
+                            <div class="flex_item">
+                                <!-- コメント者名 -->
+                                <p>sakuragi sumire</p>
+                                <!-- コメント内容 -->
+                                <p>最高です！</p>
                             </div>
                         </div>
-                        <div class="item more_button">
-                            <a href="#">もっと見る▼</a>
-                        </div>
+                    </div>
 
-                    </form>
-                </section>
+                    <!-- もっと見るボタン -->
+                    <div class="item more_button">
+                        <a href="#">もっと見る▼</a>
+                    </div>
+
+                </div>
 
                 <section>
 
                     <!-- 関連情報 -->
                     <h5>関連情報</h5>
-                    <article class="card">
+                    <article class="card onsen">
                         <a href="#">
                             <div>
                                 <span></span>
-                                <img src="../assets/images/onsen_img.jpg" alt="" />
+                                <img src="../assets/images/onsen_img.jpg" alt="温泉情報" />
                             </div>
                             <h3>すんごい温泉めちゃすごの湯</h3>
                         </a>
                     </article>
 
-                    <article class="card">
+                    <article class="card nearby">
                         <a href="#">
                             <div>
                                 <span></span>
-                                <img src="../assets/images/onsen_img.jpg" alt="" />
+                                <img src="../assets/images/onsen_img.jpg" alt="周辺施設情報" />
                             </div>
                             <h3>周辺施設</h3>
                         </a>
                     </article>
-
-                    <!-- ナビゲーション -->
                 </section>
+
+                <!-- ナビゲーション -->
+
                 <div class="nav-links">
                     <a class="nav-previous" href="">＜＜前の記事</a>
                     <a class="nav-next" href="">次の記事＞＞</a>
@@ -146,7 +152,9 @@
 
                 <!-- 前に戻るボタン -->
                 <button class="back_btn" onclick="history.back">
-                    <p><i class="fa-solid fa-arrow-left"></i>back</p>
+                    <span>
+                        <i class="fa-solid fa-arrow-left"></i>back
+                    </span>
                 </button>
 
             </main>
@@ -154,7 +162,9 @@
 
         <footer></footer>
     </div>
+
     <!-- javascriptの読み込み -->
     <script src="../assets/js/common.js"></script>
+
 </body>
 </html>

@@ -34,10 +34,13 @@ base
 /* fontサイズ */
 .sauna_ttl {
     font-size: 1.125rem;
+    margin: auto;
 }
 
 .box p {
     font-size: 1rem;
+    /* width: 80%; */
+    margin: 32px auto;
 }
 
 /* 小見出しの下のライン */
@@ -93,6 +96,7 @@ base
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.25rem;
 }
 
 .btn {
@@ -139,11 +143,9 @@ logo
     .square {
         width: 615px;
         height: 125px;
-    }
-
-    .square a {
         font-size: 2.25rem;
     }
+
 
     /* 写真 */
     .sauna_photo {
@@ -181,6 +183,7 @@ logo
         margin-bottom: 0;
         margin-top: 17px;
         margin-bottom: 50px;
+        font-size: 1.25rem;
     }
 
     /* sauna_boxのflex */
