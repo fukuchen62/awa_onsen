@@ -81,14 +81,6 @@ img {
     .sp_tb_only {
         display: none;
     }
-
-    .article_all {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 16px;
-        grid-row-gap: 0px;
-    }
 }
 
 /* フォントサイズのみ */
@@ -352,10 +344,6 @@ img {
     border-bottom-width: 10px;
 }
 
-
-
-
-
 /* 店舗ごとのカード型の設定 */
 .news_card {
     max-width: 625px;
@@ -450,6 +438,16 @@ img {
     justify-content: center;
     /* ここはそれぞれのカラー指定 */
     /* background-color: #6BDE4E; */
+}
+
+@media(width>=1201px) {
+    .article_all {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 16px;
+        grid-row-gap: 0px;
+    }
 }
 
 /* セクションごとのタイトル */
