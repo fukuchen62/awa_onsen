@@ -34,8 +34,6 @@
 
 h2 {
     font-size: 1.25rem;
-    /* フォント太さ */
-    font-weight: 900
 }
 
 dt>h3 {
@@ -115,7 +113,7 @@ dt>h3 {
 
 .accordion-text {
     display: none;
-    padding: 20px 40px;
+    /* padding: 20px 40px; */
 }
 
 /* アコーディオン終わり */
