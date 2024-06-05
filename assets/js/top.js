@@ -31,41 +31,30 @@ $(function () {
 
 
 
-    $(window).scroll(function() {
-        // 画面が1201pxを超えているかどうかを確認
-        if ($(window).width() > 1200) {
-            let nav = $("#pc_nav");
-            let aboutSection = $(".about");
-            let threshold = aboutSection.offset().top - 50; // ナビゲーションを表示するセクションの位置
-
-            // スクロール位置が閾値を超えたら、ナビゲーションをスライドさせて表示
-            if ($(window).scrollTop() >= threshold) {
-                nav.css("right", "0");
-            } else {
-                nav.css("right", "-120%"); // スライドメニューを再び画面外に移動
-            }
-        }
-    });
-
-
-    // $(window).scroll(function() {
+    // $(window).scroll(function () {
     //     // 画面が1201pxを超えているかどうかを確認
     //     if ($(window).width() > 1200) {
-    //         var nav = $(".navlist");
-    //         var aboutSection = $(".about");
-    //         var pcInner = $(".pc_inner");
-    //         var threshold = aboutSection.offset().top - 50; // ナビゲーションを表示するセクションの位置
+    //         let nav = $(".pc_navlist");
+    //         let aboutSection = $(".about");
+    //         let threshold = aboutSection.offset().top - 50; // ナビゲーションを表示するセクションの位置
 
-    //         // スクロール位置が閾値を超えたら、ナビゲーションを表示する
+    //         // スクロール位置が閾値を超えたら、ナビゲーションをスライドさせて表示
     //         if ($(window).scrollTop() >= threshold) {
-    //             nav.appendTo(pcInner); // pc_innerの中に移動
-    //             nav.css({
-    //                 "right": "0"
-    //             });
+    //             nav.css("display", "block");
     //         } else {
-    //             nav.appendTo("body"); // bodyの直下に移動
-    //             nav.css("right", "-120%"); // スライドメニューを再び画面外に移動
+    //             nav.css("display", "none"); // スライドメニューを再び画面外に移動
     //         }
+    //     }
+    // });
+
+    // $(window).scroll(function () {
+    //     let nav = $(".pc_navlist");
+    //     let aboutSection = $(".about");
+    //     let threshold = aboutSection.offset().top - 50; // ナビゲーションを表示するセクションの位置
+    //     if ($(window).scrollTop() >= threshold) {
+    //         nav.addClass("isactive");
+    //     } else {
+    //         nav.css("display", "none"); // スライドメニューを再び画面外に移動
     //     }
     // });
 

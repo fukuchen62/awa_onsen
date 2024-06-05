@@ -1,46 +1,9 @@
 @charset "utf-8";
 
 /* 共通 */
-section {
-    margin-top: 100px;
-}
 
 p {
     font-size: 1rem;
-}
-
-/* header */
-.logo {
-    width: 100px;
-    margin-top: 32px;
-    margin-left: 32px;
-}
-
-/* タイトル */
-h2 {
-    font-size: 1.25rem;
-    margin-top: 100px;
-}
-
-.under_line {
-    width: fit-content;
-    position: relative;
-    /* margin: 0 auto; */
-    margin-top: 100px;
-}
-
-.under_line::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    bottom: 5%;
-    width: 105%;
-    /*   display: inline-block; */
-    border-bottom-color: #dbf500;
-    border-bottom-style: dashed;
-    border-bottom-width: 10px;
 }
 
 /* コラム内容 */
@@ -50,7 +13,7 @@ h2 {
 }
 
 .column_img,
-.coiumn_text,
+.column_text,
 .hashtag_list {
     margin-top: 32px;
 }
@@ -145,13 +108,3 @@ h5 {
         font-size: 1.25rem;
     }
 }
-
-/* @media (width>=1201px) {
-    .article_all {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 16px;
-        grid-row-gap: 0px;
-    }
-} */

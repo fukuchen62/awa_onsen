@@ -231,6 +231,21 @@ iframe {
   background-color: #EB97A8;
 }
 
+/* メディアクエリ */
+
+/* 戻るボタン */
+.back_btn {
+  display: none;
+}
+
+
+/* タブレット */
+@media(width>=757px) {
+  .back_btn {
+    display: inline;
+  }
+}
+
 @media (width>=1201px) {
   .recommend_list {
     display: grid;
