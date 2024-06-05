@@ -1,7 +1,11 @@
 @charset "utf-8";
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+
+a {
+    display: block;
 }
 
 /* ページタイトル */
@@ -47,9 +51,14 @@
     margin-top: 50px;
 }
 
-.news_card {
+/* .news_card {
     margin: 0 auto;
     font-size: 1rem;
+} */
+
+.hashtag_list a:nth-child(1) {
+    gap: 0;
+    margin-right: 16px;
 }
 
 
