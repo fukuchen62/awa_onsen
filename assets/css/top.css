@@ -970,19 +970,61 @@ button {
 }
 
 @media(width>=1201px) {
+    .pc_nav_inner {
+        width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .pc_g_nav {
+        width:100%;
+        color: #fff;
+        background-color: #4272A2;
+        border: 4px dashed #fff;
+        border-radius: 12px;
+        z-index: 20;
+        position: fixed;
+    }
+
+    .pc_navlist_item {
+        font-size: 1.5rem;
+    }
 
     #pc_nav {
+        /* width: 100%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-end; */
     }
 
-    .navlist {
-        width: 24%;
-        bottom: 50%;
-        transform: translateY(50%);
-        /* right: -120%;
-        transition: right 0.7s ease; */
+    .pc_navlist {
+        /* bottom: 50%;
+        transform: translateY(50%); */
+        /* right: -120%; */
+        /* transition: right 0.7s ease; */
+        /* top: 10%;
+        color: #fff;
+        background-color: #4272A2;
+        border: 4px dashed #fff;
+        border-radius: 12px;
+        z-index: 20;
+        position: fixed; */
+        /* display: none; */
+        /* transition: all 1s 0s ease; */
     }
+
+    /* #pc_nav.isactive{
+        animation: slide 0.7s forwards;
+        display: block;
+    }
+    @keyframes slide {
+        from{
+            transform: translateX(100%);
+        }
+        to{
+            transform: translateX(0);
+        }
+    } */
+
 }
 
 /* ========== footer ========== */
