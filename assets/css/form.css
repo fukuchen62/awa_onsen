@@ -4,7 +4,6 @@
 .inner {
     /* border: 2px solid black; */
     text-align: center;
-
     margin: 10px;
 }
 
@@ -70,7 +69,9 @@ p {
     /* =================================
 ここは各自のCSSファイルで設定（サンプル）
 ================================= */
-
+    h4 {
+        font-size: 1.5rem;
+    }
 
     p {
         font-size: 1.25rem;

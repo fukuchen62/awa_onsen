@@ -10,8 +10,26 @@ h2 {
     font-size: 1.25rem;
 }
 
+/* レスポンシブ */
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+    h2 {
+        font-size: 2.5rem;
+
+    }
+
+}
+
+/* メイン */
+
 h4 {
     font-size: 1.125rem;
+    font-family: "Noto Sans JP", sans-serif;
 }
 
 section p {
@@ -40,14 +58,32 @@ section p {
 
 /* テキスト */
 p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     overflow-wrap: normal;
     margin: 10px 0;
     text-align: left;
     font-family: "Noto Sans JP", sans-serif;
 }
 
+/* レスポンシブ */
 
+/* フォントサイズのみ */
+@media(width>=431px) {
+
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+
+
+}
 
 /* 注意書き */
 .consent_text {
@@ -98,6 +134,22 @@ p {
 }
 
 /* レスポンシブ */
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+
+
+
+    .button li {
+        font-size: 2rem;
+
+    }
+
+}
 
 /* tablet */
 @media(width>=757px) {
@@ -160,33 +212,7 @@ p {
 }
 
 
-/* フォントサイズのみ */
-@media(width>=431px) {
 
-    /* =================================
-ここは各自のCSSファイルで設定（サンプル）
-================================= */
-    h4 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1.25rem;
-
-    }
-
-    #submit_button {
-
-        font-size: 2rem;
-    }
-
-    .button li {
-        font-size: 2rem;
-
-    }
-
-
-}
 
 
 /* ~1201px 1200px~757px 756px~ */
