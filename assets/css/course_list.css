@@ -29,6 +29,13 @@ h2 {
     border-radius: 50px;
 }
 
+li>a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+}
+
 /* 選択されたタブ（active）*/
 .touring_tag.active,
 .rafting_tag.active,
@@ -48,6 +55,10 @@ h2 {
     }
 
     .info_tag li {
+        border-radius: 30px 30px 0 0;
+    }
+
+    li>a {
         border-radius: 30px 30px 0 0;
     }
 

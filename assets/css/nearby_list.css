@@ -13,10 +13,7 @@
         width: 100%;
     }
 
-    .flex {
-        display: flex;
-        flex-wrap: wrap;
-    }
+
 
     .card {
         flex: 1 0 50%;
@@ -93,6 +90,13 @@ dt>h3 {
     border-radius: 50px;
 }
 
+li>a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+}
+
 .shopping_tag.active,
 .gourmet_tag.active,
 .play_tag.active,
@@ -117,6 +121,9 @@ dt>h3 {
         font-size: 1.5rem
     }
 
+    li>a {
+        border-radius: 30px 30px 0 0;
+    }
 }
 
 /* アコーディオン */
