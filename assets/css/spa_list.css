@@ -12,11 +12,6 @@
         width: 100%;
     }
 
-    .flex {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
     .card {
         flex: 1 0 50%;
         padding: 10px;
@@ -118,7 +113,12 @@ dt>h3 {
 
 .accordion-text {
     display: none;
-    padding: 20px 40px;
+    /* padding: 20px 40px; */
 }
 
 /* アコーディオン終わり */
+
+/* backボタン */
+.back_btn {
+    margin: 50px 0;
+}
