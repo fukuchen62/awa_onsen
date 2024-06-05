@@ -11,6 +11,30 @@
     margin-bottom: 32px;
 }
 
+/* Summaryの形 */
+.course_day_summary {
+    position: relative;
+}
+
+.course_day_summary::before,
+.course_day_summary::after {
+    content: '';
+    background-color: black;
+    width: 50px;
+    height: 2px;
+    position: absolute;
+}
+
+.course_day_summary::before {
+    top: 12px;
+    right: 135px;
+}
+
+.course_day_summary::after {
+    top: 12px;
+    left: 135px;
+}
+
 /* DAY1の形 */
 .flex {
     display: flex;
@@ -22,29 +46,25 @@
     font-size: 1.125rem;
     position: relative;
     margin: 16px 0;
-    /* font */
-    font-family: "Zen Maru Gothic", serif;
-    font-weight: 900;
-    font-style: normal
 }
 
 .course_day::before,
 .course_day::after {
     content: '';
     background-color: black;
-    width: 100px;
+    width: 50px;
     height: 2px;
     position: absolute;
 }
 
 .course_day::before {
     top: 12px;
-    right: 50px;
+    right: 110px;
 }
 
 .course_day::after {
     top: 12px;
-    left: 50px;
+    left: 110px;
 }
 
 /* 小見出しナンバー */

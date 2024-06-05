@@ -1,21 +1,10 @@
 @charset "utf-8";
 
 /* 共通 */
-section {
-    margin-top: 100px;
-}
 
 p {
     font-size: 1rem;
 }
-
-/* header */
-.logo {
-    width: 100px;
-    margin-top: 32px;
-    margin-left: 32px;
-}
-
 
 /* コラム内容 */
 .date {
@@ -24,7 +13,7 @@ p {
 }
 
 .column_img,
-.coiumn_text,
+.column_text,
 .hashtag_list {
     margin-top: 32px;
 }
