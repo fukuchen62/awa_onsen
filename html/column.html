@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- リセットCSS -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
@@ -32,11 +32,10 @@
             </header>
 
             <main>
+                <section>
+                    <h2 class="under_line">コラムタイトル</h2>
 
-                <h2 class="under_line">コラムタイトル</h2>
-
-                <!-- コラム内容 -->
-                <article>
+                    <!-- コラム内容 -->
                     <p class="date">2024.05.31(Fri)</p>
 
                     <!-- パンくず -->
@@ -58,10 +57,10 @@
                     <!-- 記事内容 -->
                     <p class="coiumn_text">ここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入ります</p>
 
-                </article>
+                </section>
 
                 <!-- コメントフォーム -->
-                <section>
+                <div class="comment_form">
                     <!-- コメント入力欄 -->
                     <div class="item">
                         <label class="comment" for="comment">コメント入力欄</label>
@@ -85,6 +84,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="item comment_content">
                         <!-- アイコン -->
                         <div class="flex">
@@ -97,6 +97,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="item comment_content">
                         <!-- アイコン -->
                         <div class="flex">
@@ -115,34 +116,36 @@
                         <a href="#">もっと見る▼</a>
                     </div>
 
-                </section>
+                </div>
 
+                <!-- 関連情報 -->
                 <section>
-
-                    <!-- 関連情報 -->
                     <h5>関連情報</h5>
-                    <article class="card onsen">
-                        <a href="#">
-                            <div>
-                                <span></span>
-                                <img src="../assets/images/onsen_img.jpg" alt="" />
-                            </div>
-                            <h3>すんごい温泉めちゃすごの湯</h3>
-                        </a>
-                    </article>
+                    <div class="article_all">
+                        <article class="card onsen">
+                            <a href="#">
+                                <div>
+                                    <span></span>
+                                    <img src="../assets/images/onsen_img.jpg" alt="温泉情報">
+                                </div>
+                                <h3>すんごい温泉めちゃすごの湯</h3>
+                            </a>
+                        </article>
 
-                    <article class="card nearby">
-                        <a href="#">
-                            <div>
-                                <span></span>
-                                <img src="../assets/images/onsen_img.jpg" alt="" />
-                            </div>
-                            <h3>周辺施設</h3>
-                        </a>
-                    </article>
-
-                    <!-- ナビゲーション -->
+                        <article class="card nearby">
+                            <a href="#">
+                                <div>
+                                    <span></span>
+                                    <img src="../assets/images/onsen_img.jpg" alt="周辺施設情報">
+                                </div>
+                                <h3>周辺施設</h3>
+                            </a>
+                        </article>
+                    </div>
                 </section>
+
+                <!-- ナビゲーション -->
+
                 <div class="nav-links">
                     <a class="nav-previous" href="">＜＜前の記事</a>
                     <a class="nav-next" href="">次の記事＞＞</a>
@@ -151,7 +154,9 @@
 
                 <!-- 前に戻るボタン -->
                 <button class="back_btn" onclick="history.back">
-                    <p><i class="fa-solid fa-arrow-left"></i>back</p>
+                    <span>
+                        <i class="fa-solid fa-arrow-left"></i>back
+                    </span>
                 </button>
 
             </main>
