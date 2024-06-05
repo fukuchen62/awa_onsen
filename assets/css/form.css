@@ -17,9 +17,6 @@ h2 {
 /* フォントサイズのみ */
 @media(width>=431px) {
 
-    /* =================================
-ここは各自のCSSファイルで設定（サンプル）
-================================= */
     h2 {
         font-size: 2.5rem;
 
@@ -35,25 +32,6 @@ h4 {
     font-family: "Noto Sans JP", sans-serif;
 }
 
-section p {
-    /* border: 2px solid red; */
-    text-align: left;
-    margin: 30px 0;
-}
-
-
-.content_form {
-    /* border: 2px solid red; */
-    /* text-align: left; */
-    margin: 20px 0;
-}
-
-.form_item {
-    text-align: left;
-    margin: 10px 0;
-}
-
-
 /* テキスト */
 p {
     font-size: 1rem;
@@ -61,14 +39,23 @@ p {
     font-family: "Noto Sans JP", sans-serif;
 }
 
+section p {
+    /* border: 2px solid red; */
+    text-align: left;
+    margin: 30px 0;
+}
+
+
+
+
+
+
 /* レスポンシブ */
 
 /* フォントサイズのみ */
 @media(width>=431px) {
 
-    /* =================================
-ここは各自のCSSファイルで設定（サンプル）
-================================= */
+
     h4 {
         font-size: 1.5rem;
     }
@@ -81,13 +68,25 @@ p {
 
 }
 
-/* 文章 */
+/* -入力欄- */
 
+.content_form {
+    /* border: 2px solid red; */
+    /* text-align: left; */
+    margin: 20px 0;
+}
+
+.form_item {
+    text-align: left;
+    margin: 10px 0;
+}
+
+/* 文章 */
 small {
     color: #ECC1C9;
 }
 
-/* 入力 */
+/* 入力部 */
 .form_item input {
     background-color: rgb(228, 228, 228);
     width: 100%;
@@ -181,9 +180,6 @@ small {
 /* フォントサイズのみ */
 @media(width>=431px) {
 
-    /* =================================
-ここは各自のCSSファイルで設定（サンプル）
-================================= */
 
     #submit_button {
 
