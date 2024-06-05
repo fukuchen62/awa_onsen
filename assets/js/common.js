@@ -17,6 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 泡を生成する関数
     const createBubble = () => {
+        // スクリーン幅を取得
+        const screenWidth = window.innerWidth;
+
+        // 757px以下なら出現率を低く設定
+        if (screenWidth <= 757) {
+            // 出現率を50%にする
+            if (Math.random() > 0.5) {
+                return;
+            }
+        }
         const bubbleEl = document.createElement('span');
         bubbleEl.className = 'bubble';
         // 最小値、最大値

@@ -1,8 +1,13 @@
 @charset "utf-8";
 
 /* 共通 */
+
 section {
     margin-top: 100px;
+}
+
+p {
+    font-size: 1rem;
 }
 
 /* header */
@@ -39,9 +44,15 @@ h2 {
 }
 
 /* コラム内容 */
-p.date,
-p.column_text {
-    font-size: 1rem;
+.date {
+    margin-top: 32px;
+    text-align: right;
+}
+
+.column_img,
+.coiumn_text,
+.hashtag_list {
+    margin-top: 32px;
 }
 
 /* コメント欄 */
@@ -59,7 +70,7 @@ p.column_text {
 }
 
 .comment {
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 textarea {
@@ -68,10 +79,10 @@ textarea {
 }
 
 input[type="submit"] {
-    font-size: 1.25rem;
+    font-size: 1rem;
     border-radius: 5px;
     background: #D9D9D9;
-    padding: 10px 20px;
+    padding: 5px 10px;
 }
 
 .comment_content {
@@ -80,7 +91,13 @@ input[type="submit"] {
 }
 
 .more_button {
+    font-size: 1rem;
     text-decoration: underline 1px #D9D9D9;
+}
+
+/* 関連情報 */
+h5 {
+    letter-spacing: 1rem;
 }
 
 /* カード */
@@ -109,6 +126,18 @@ input[type="submit"] {
     }
 
     p {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .comment {
+        font-size: 1.25rem;
+    }
+
+    input[type="submit"] {
+        font-size: 1.25rem;
+    }
+
+    .more_button {
+        font-size: 1.25rem;
     }
 }
