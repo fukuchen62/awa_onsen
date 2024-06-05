@@ -435,7 +435,7 @@ img {
 .hashtag_list {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap:16px;
 }
 
 .hashtag {
