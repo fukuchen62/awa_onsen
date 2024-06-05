@@ -53,13 +53,6 @@ h5 {
     }
 }
 
-@media (width>=757px) {
-    .tag_area {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-    }
-}
-
 @media (width>=1201px) {
     .article_all {
         display: grid;
