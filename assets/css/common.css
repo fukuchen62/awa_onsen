@@ -298,7 +298,6 @@ h2 {
 }
 
 .under_line {
-
     width: fit-content;
     position: relative;
     z-index: 10;
@@ -311,7 +310,7 @@ h2 {
     transform: translateX(-50%);
     left: 50%;
     bottom: 5%;
-    width: 105%;
+    width: calc(100% + 20px);
     /*   display: inline-block; */
     border-bottom-color: #dbf500;
     border-bottom-style: dashed;
@@ -415,7 +414,7 @@ h2 {
     /* background-color: #6BDE4E; */
 }
 
-@media(width>=1201px) {
+@media (width>=1201px) {
     .article_all {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
