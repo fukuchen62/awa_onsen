@@ -303,11 +303,12 @@ img {
     border-radius: 30px;
 }
 
-.back_btn div {
+.back_btn span {
     position: relative;
+    display: block;
 }
 
-.back_btn div i {
+.back_btn span i {
     position: absolute;
     top: -15px;
     left: -15px;
@@ -319,6 +320,7 @@ img {
     border-width: 5px;
     border-radius: 30px;
 }
+
 /* 各ページタイトル */
 
 .under_line {
