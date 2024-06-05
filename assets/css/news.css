@@ -42,12 +42,8 @@ h5 {
     margin-top: 32px;
 }
 
-@media (width>=757px) {
-    .tag_area {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-    }
-
+/* フォントサイズのみ */
+@media(width>=431px) {
     .under_line {
         font-size: 2.5rem;
     }
