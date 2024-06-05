@@ -2,15 +2,23 @@
 h2 {
   font-size: 2.5rem;
 }
-
+h4{
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+.icon_list,.hashtag_list,.other_img,.museum_map,iframe{
+margin: 32px 0;
+}
 .icon_list {
   text-align: center;
   display: grid;
   gap: 5px;
   grid-template-columns: repeat(5, 1fr);
+  margin: 16px 0;
 }
 
 .icon_list li {
+
   aspect-ratio: 1/1;
   border: 5px solid #328ef0;
   background-color: aliceblue;
@@ -24,7 +32,7 @@ font-size: 10vw;
 @media(width>=757px) {
   .icon_list{
     max-width: 470px;
-    margin: 0 auto;
+    margin:16px auto;
   }
 .icon_list li{
 width: 90px;
@@ -111,17 +119,16 @@ checkbox-item {
   background-color: rgba(235, 151, 168, 0.5);
 }
 
-.hashtag_list {
-  display:flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
 
+.hashtag_list{
+  margin: 16px 0 32px 0;
+}
 /* 写真スリック */
 
 .slider img{
   aspect-ratio: 4/3;
   object-fit: cover;
+  width: 100%;
 }
 .thumbnail img{
   aspect-ratio: 1/1;
@@ -164,6 +171,7 @@ border-bottom-style: dotted;
 }
 iframe{
     width: 100%;
+    aspect-ratio: 16/9;
 }
 
 
