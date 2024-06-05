@@ -1,12 +1,11 @@
 @charset "utf-8";
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
-/* ページタイトル */
-.under_line {
-    font-size: 1.25rem;
+a {
+    display: block;
 }
 
 /* タグ */
@@ -25,7 +24,7 @@
     font-size: 1.125rem;
     text-align: center;
     background-color: #D9D9D9;
-    border-radius: 50px;
+    border-radius: 30px;
 }
 
 .info_tag li:nth-child(2) {
@@ -46,12 +45,6 @@
 .news_list {
     margin-top: 50px;
 }
-
-.news_card {
-    margin: 0 auto;
-    font-size: 1rem;
-}
-
 
 /* ページネーション */
 .pagination {
