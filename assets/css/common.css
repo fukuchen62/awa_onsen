@@ -303,11 +303,11 @@ img {
     border-radius: 30px;
 }
 
-.back_btn p {
+.back_btn div {
     position: relative;
 }
 
-.back_btn p i {
+.back_btn div i {
     position: absolute;
     top: -15px;
     left: -15px;
