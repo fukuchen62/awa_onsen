@@ -13,10 +13,7 @@
         width: 100%;
     }
 
-    .flex {
-        display: flex;
-        flex-wrap: wrap;
-    }
+
 
     .card {
         flex: 1 0 50%;
