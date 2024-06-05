@@ -60,6 +60,11 @@
     text-align: center;
 }
 
+
+.clearfix {
+    clear: both;
+}
+
 /* フォントサイズのみ */
 @media(width>=431px) {
     .under_line {
@@ -94,3 +99,6 @@
 
     }
 }
+
+
+.hashtag_list {}
