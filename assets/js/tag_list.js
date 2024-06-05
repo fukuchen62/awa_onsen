@@ -23,7 +23,10 @@ tags.forEach((tag, index) => {
         tags.forEach(tag => tag.classList.remove('active'));
 
         // クリックされたタグに対応するコンテンツをアクティブにする
-        contents[index].classList.add('active');
+        const selectedContent = contents[index];
+        if (selectedContent) {
+            selectedContent.classList.add('active');
+        }
 
         // クリックされたタグにクラスを付与
         tag.classList.add('active');

@@ -1,8 +1,13 @@
 @charset "utf8";
 
+h2 {
+    font-size: 1.25rem;
+}
+
+
 h4 {
     font-size: 1.125rem;
-
+    font-family: "Noto Sans JP", sans-serif;
 }
 
 p {
@@ -19,6 +24,11 @@ p {
     /* =================================
 ここは各自のCSSファイルで設定（サンプル）
 ================================= */
+    h2 {
+        font-size: 2.5rem;
+    }
+
+
     h4 {
         font-size: 1.5rem;
     }

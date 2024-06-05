@@ -1,14 +1,15 @@
 @charset "UTF-8";
 
-* {
-    /* border: 1px solid red; */
-}
 
 /* -----------------------
 タイトル
 -------------------------- */
 .under_line {
     font-size: 1.25rem;
+    /* font */
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 900;
+    font-style: normal;
 }
 
 /* -----------------------
@@ -129,7 +130,7 @@ tabのcss
 /* -----------------------
 レスポンシブ フォントサイズのみ
 -------------------------- */
-@media(width>=757px) {
+@media(width>=431px) {
 
     /* ここは各自のCSSファイルで設定（サンプル） */
     /* フォントサイズ */

@@ -12,6 +12,16 @@
         margin: 0 auto;
         width: 100%;
     }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 1 0 50%;
+        padding: 10px;
+    }
 }
 
 /* カード型背景 */

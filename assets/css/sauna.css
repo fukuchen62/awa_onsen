@@ -15,11 +15,11 @@ base
 /* タイトルのmargin */
 .under_line {
     margin-bottom: 16px;
-    /* font */
     font-size: 1.25rem;
+    /* font */
     font-family: "Zen Maru Gothic", serif;
     font-weight: 900;
-    font-style: normal;
+    font-style: normal
 }
 
 /* タイトル下ライン */
@@ -34,10 +34,13 @@ base
 /* fontサイズ */
 .sauna_ttl {
     font-size: 1.125rem;
+    margin: auto;
 }
 
 .box p {
     font-size: 1rem;
+    /* width: 80%; */
+    margin: 32px auto;
 }
 
 /* 小見出しの下のライン */
@@ -93,6 +96,7 @@ base
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.25rem;
 }
 
 .btn {
@@ -139,11 +143,9 @@ logo
     .square {
         width: 615px;
         height: 125px;
-    }
-
-    .square a {
         font-size: 2.25rem;
     }
+
 
     /* 写真 */
     .sauna_photo {
@@ -162,19 +164,33 @@ logo
 -------------------------- */
 @media(width>=1201px) {
 
-    /* ページタイトル */
-    .under_line {}
+    /* タイトル下ライン */
+    .under_line::before {
+        z-index: 1;
+    }
 
-    /* 小見出し */
-    .sauna_ttl {}
+    /* containerの幅調節 */
+    .container {
+        padding-left: 30px;
+        padding-right: 32px;
+    }
 
     /* 文章 */
     .box p {
+        font-size: 1rem;
+        width: 370px;
+        height: 300px;
+        margin-bottom: 0;
+        margin-top: 17px;
+        margin-bottom: 50px;
         font-size: 1.25rem;
-        width: 283px;
     }
 
     /* sauna_boxのflex */
+    .sauna_box h3 {
+        margin: 0 auto;
+    }
+
     .box {
         display: flex;
     }
@@ -187,31 +203,23 @@ logo
         flex-direction: row;
     }
 
+    /* 写真 */
+    .sauna_photo {
+        width: 340px;
+        height: 340px;
+    }
+
+    .margin_left {
+        margin-right: 20px;
+    }
+
+    .margin_right {
+        margin-left: 20px;
+    }
+
     /* サウナのある温泉ボタン */
     .square {
         font-size: 2.25rem;
     }
 
-    .square a {}
-
-    /* 写真 */
-    .sauna_photo {
-        width: 339px;
-        height: 320px;
-        margin-right: 30px;
-        margin-left: 30px;
-    }
-
-    .margin_left {
-        margin-left: 0;
-    }
-
-    .margin_right {
-        margin-right: 0;
-    }
-
-    /* タイトル下ライン */
-    .under_line::before {
-        z-index: 1;
-    }
 }

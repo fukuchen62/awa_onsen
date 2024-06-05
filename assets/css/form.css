@@ -4,15 +4,37 @@
 .inner {
     /* border: 2px solid black; */
     text-align: center;
-
     margin: 10px;
 }
 
-h4 {
-    font-size: 1.125rem;
+h2 {
+    font-size: 1.25rem;
 }
 
+
+/* レスポンシブ */
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+    h2 {
+        font-size: 2.5rem;
+
+    }
+
+}
+
+
+
 /* メイン */
+h4 {
+    font-size: 1.125rem;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
 section p {
     /* border: 2px solid red; */
     text-align: left;
@@ -39,7 +61,25 @@ p {
     font-family: "Noto Sans JP", sans-serif;
 }
 
+/* レスポンシブ */
 
+/* フォントサイズのみ */
+@media(width>=431px) {
+
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+
+
+}
 
 /* 文章 */
 
@@ -61,6 +101,10 @@ small {
     margin: 10px 0;
 }
 
+
+
+
+
 /* 注意書き */
 .privacypolicy p {
     font-size: 1rem;
@@ -71,6 +115,10 @@ small {
 .privacypolicy a {
 
     text-decoration: underline;
+}
+
+.agree label {
+    font-size: 1.125rem;
 }
 
 .agree p {
@@ -113,7 +161,6 @@ small {
 #submit_button[disabled] {
     background-color: #ccc;
     cursor: not-allowed;
-    text-decoration: line-through;
     /* クリック不可のカーソルを表示 */
 }
 
@@ -127,10 +174,24 @@ small {
     width: 55%;
     height: 10vh;
     font-size: 1.125rem;
-    /* font-size: 36px; */
 }
 
+/* レスポンシブ */
 
+/* フォントサイズのみ */
+@media(width>=431px) {
+
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+
+    #submit_button {
+
+        font-size: 2rem;
+
+    }
+
+}
 
 /* レスポンシブ */
 
@@ -151,7 +212,9 @@ small {
         /* margin: 20px auto; */
     }
 
-
+    .agree label {
+        font-size: 1.25rem;
+    }
 }
 
 /* ---------- */
@@ -164,32 +227,10 @@ small {
         margin: 0;
     }
 
-}
-
-
-/* フォントサイズのみ */
-@media(width>=431px) {
-
-    /* =================================
-ここは各自のCSSファイルで設定（サンプル）
-================================= */
-    h4 {
-        font-size: 1.5rem;
-
-    }
-
-    p {
-        font-size: 1.25rem;
-    }
-
-    #submit_button {
-
-        font-size: 2rem;
-
-    }
-
 
 }
+
+
 
 
 /* ~1201px 1200px~757px 756px~ */
