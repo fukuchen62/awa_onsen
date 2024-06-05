@@ -8,6 +8,10 @@
     margin: 10px;
 }
 
+h4 {
+    font-size: 1.125rem;
+}
+
 /* メイン */
 section p {
     /* border: 2px solid red; */
@@ -30,7 +34,7 @@ section p {
 
 /* テキスト */
 p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     overflow-wrap: normal;
     font-family: "Noto Sans JP", sans-serif;
 }
@@ -133,17 +137,7 @@ small {
 
 /* tablet */
 @media(width>=757px) {
-    .sp-none {
-        display: none;
-    }
 
-    .tb-none {
-        display: block;
-    }
-
-    .pc-none {
-        display: none;
-    }
 
     /* ボタン */
     #submit_button {
@@ -180,9 +174,12 @@ small {
 ここは各自のCSSファイルで設定（サンプル）
 ================================= */
     h4 {
+        font-size: 1.5rem;
+
+    }
+
+    p {
         font-size: 1.25rem;
-        width: fit-content;
-        position: relative;
     }
 
     #submit_button {
@@ -194,10 +191,6 @@ small {
 
 }
 
-
-.form_item textarea {
-    background-color: rgb(222, 222, 222);
-}
 
 /* ~1201px 1200px~757px 756px~ */
 /*640px以下の場合のレイアウト調整用*/

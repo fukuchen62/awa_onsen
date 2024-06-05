@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* タイトル */
+.under_line {
+    font-size: 1.25rem;
+    /* font */
+    font-size: 1.25rem;
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 900;
+    font-style: normal;
+    margin-bottom: 32px;
+}
+
+/* DAY1 */
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.course_day {
+    font-size: 1.125rem;
+    position: relative;
+}
+
+.course_day::before,
+.course_day::after {
+    content: '';
+    background-color: black;
+    width: 100px;
+    height: 1px;
+    position: absolute;
+}
+
+.course_day::before {
+    top: 12px;
+    right: 50px;
+}
+
+.course_day::after {
+    top: 12px;
+    left: 50px;
+}
