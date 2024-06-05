@@ -74,6 +74,7 @@ h2 {
 }
 
 textarea {
+    width: 100%;
     border-top: 1px solid #D9D9D9;
     border: 1px solid #D9D9D9;
 }
