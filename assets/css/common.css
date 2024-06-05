@@ -292,7 +292,7 @@ img {
 /* 各ページタイトル */
 /* タイトル */
 h2 {
- font-size: 1.25rem;
+    font-size: 1.25rem;
     margin: auto;
     font-weight: bold;
 }
@@ -342,6 +342,7 @@ h2 {
     margin-right: 22px;
 }
 
+/* 日付 */
 .news_card .date {
     color: transparent;
     -webkit-text-stroke: 1px #dbf500;
@@ -377,7 +378,7 @@ h2 {
     transition: 0.7s;
 }
 
-.card a:hover > div img {
+.card a:hover>div img {
     transform: translate(-3%, 3%);
 }
 
