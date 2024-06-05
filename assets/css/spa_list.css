@@ -34,6 +34,8 @@
 
 h2 {
     font-size: 1.25rem;
+    /* フォント太さ */
+    font-weight: 900
 }
 
 dt>h3 {
@@ -117,3 +119,8 @@ dt>h3 {
 }
 
 /* アコーディオン終わり */
+
+/* backボタン */
+.back_btn {
+    margin: 50px 0;
+}
