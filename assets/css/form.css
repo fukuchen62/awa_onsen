@@ -8,7 +8,7 @@
     margin: 10px;
 }
 
-h4 {
+h2 {
     font-size: 1.125rem;
 }
 
@@ -63,7 +63,7 @@ small {
 
 /* 注意書き */
 .privacypolicy p {
-    font-size: 1.125rem;
+    font-size: 1rem;
     text-align: left;
     margin: 30px 0;
 }
@@ -71,6 +71,10 @@ small {
 .privacypolicy a {
 
     text-decoration: underline;
+}
+
+.agree label {
+    font-size: 1.125rem;
 }
 
 .agree p {
@@ -113,7 +117,6 @@ small {
 #submit_button[disabled] {
     background-color: #ccc;
     cursor: not-allowed;
-    text-decoration: line-through;
     /* クリック不可のカーソルを表示 */
 }
 
@@ -150,7 +153,9 @@ small {
         /* margin: 20px auto; */
     }
 
-
+    .agree label {
+        font-size: 1.25rem;
+    }
 }
 
 /* ---------- */
@@ -163,6 +168,7 @@ small {
         margin: 0;
     }
 
+
 }
 
 
@@ -172,7 +178,7 @@ small {
     /* =================================
 ここは各自のCSSファイルで設定（サンプル）
 ================================= */
-    h4 {
+    h2 {
         font-size: 1.5rem;
 
     }
