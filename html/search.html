@@ -2,22 +2,111 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="../assets/css/destyle.css" media="all" />
-  <link rel="stylesheet" href="../assets/css/common.css" media="all" />
-  <link rel="stylesheet" href="../assets/css/search.css" media="all" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>あわあわ温泉ぶらり</title>
+  <link rel="stylesheet" href="../assets/css/destyle.css" media="all">
+  <link rel="stylesheet" href="../assets/css/common.css" media="all">
+  <link rel="stylesheet" href="../assets/css/search.css" media="all">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="bubble_background">
-    <div class="container">
-      <main>
+    <!-- header -->
+    <header class="header_wrap">
+      <div class="header_container">
+        <!-- headerの左側 -->
+        <!-- 常時表示サイトロゴ -->
+        <a class="logo" href="index.html">
+          <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
+        </a>
+        <!-- 上にスクロールするボタン -->
+        <div class="top_button">
+          <div class="circle">
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <!-- sp&tbnav -->
+        <div class="hamburger sp_tb_only"></div>
+      </div>
+      <!-- menu -->
+      <nav class="sp_nav sp_tb_only">
+        <ul class="navlist">
+          <li class="nav_bg"></li>
+          <ul class="navlist_container">
+            <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                  bubble_chart
+                </span>TOP</a></li>
+            <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                  bath_outdoor
+                </span>温泉一覧</a></li>
+            <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                  pin_drop
+                </span>周辺一覧</a></li>
+            <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                  directions_walk
+                </span>モデルコース</a></li>
+            <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                  sauna
+                </span>サ活</a></li>
+            <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                  border_color
+                </span>コラム</a></li>
+            <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                  search
+                </span>検索</a></li>
+            <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
+                  home
+                </span>マイページ</a></li>
+          </ul>
+          <li class="nav_bg"></li>
+        </ul>
+      </nav>
+      <!-- pcnav -->
+      <div class="pc_inner">
+        <nav class="g_nav pc_only" id="pc_nav">
+          <ul class="navlist">
+            <li class="nav_bg"></li>
+            <ul class="navlist_container">
+              <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                    bubble_chart
+                  </span>TOP</a></li>
+              <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                    bath_outdoor
+                  </span>温泉一覧</a></li>
+              <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                    pin_drop
+                  </span>周辺一覧</a></li>
+              <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                    directions_walk
+                  </span>モデルコース</a></li>
+              <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                    sauna
+                  </span>サ活</a></li>
+              <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                    border_color
+                  </span>コラム</a></li>
+              <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                    search
+                  </span>検索</a></li>
+              <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
+                    home
+                  </span>マイページ</a></li>
+            </ul>
+            <li class="nav_bg"></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+
         <h2 class="under_line">検索</h2>
         <!-- パンくず -->
         <form action="" method="post">
@@ -29,7 +118,7 @@
 
           <div class="contents">
             <section>
-              <h4>地域</h4>
+              <h3>地域</h3>
               <div class="area">
                 <label class="checkbox-item">
                   <input type="checkbox" name="options" value="東部">
@@ -47,7 +136,7 @@
               </div>
             </section>
             <section>
-              <h4>効能</h4>
+              <h3>効能</h3>
               <div class="list">
                 <label class="checkbox-item">
                   <input type="checkbox" name="options" value="美肌">
@@ -79,7 +168,7 @@
 
           <div class="contents">
             <section>
-              <h4>地域</h4>
+              <h3>地域</h3>
               <div class="area">
                 <label class="checkbox-item">
                   <input type="checkbox" name="options" value="東部">
@@ -97,7 +186,7 @@
               </div>
             </section>
             <section>
-              <h4>分類</h4>
+              <h3>分類</h3>
               <div class="list">
                 <label class="checkbox-item">
                   <input type="checkbox" name="options" value="ショッピング">
@@ -121,7 +210,7 @@
 
           <div class="contents">
             <section>
-              <h4>地域</h4>
+              <h3>地域</h3>
               <div class="area">
                 <label class="checkbox-item">
                   <input type="checkbox" name="options" value="東部">
@@ -139,7 +228,7 @@
               </div>
             </section>
             <section>
-              <h4>分類</h4>
+              <h3>分類</h3>
               <div class="list">
                 <label class="checkbox-item">
                   <input type="checkbox" name="options" value="映える">
@@ -167,44 +256,46 @@
             <label class="reset"><input type="reset" value=""><span>リセット</span></label>
             <label class="submit"><input type="submit" value=""><span><i class="fa-solid fa-magnifying-glass"></i>検索</span></label>
           </div>
-
-
         </form>
+        <!-- 検索結果 -->
         <section>
           <h4 class="lined-title">検索結果</h4>
-          <article class="card">
-            <a href="#">
-              <div>
-                <span></span>
-                <img src="../assets/images/onsen_img.jpg" alt="" />
-              </div>
-              <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#">
-              <div>
-                <span></span>
-                <img src="../assets/images/onsen_img.jpg" alt="" />
-              </div>
-              <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#">
-              <div>
-                <span></span>
-                <img src="../assets/images/onsen_img.jpg" alt="" />
-              </div>
-              <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-            </a>
-          </article>
+          <div class="article_all">
+            <article class="card">
+              <a href="#">
+                <div>
+                  <span></span>
+                  <img src="../assets/images/onsen_img.jpg" alt="">
+                </div>
+                <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+              </a>
+            </article>
+            <article class="card">
+              <a href="#">
+                <div>
+                  <span></span>
+                  <img src="../assets/images/onsen_img.jpg" alt="">
+                </div>
+                <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+              </a>
+            </article>
+            <article class="card">
+              <a href="#">
+                <div>
+                  <span></span>
+                  <img src="../assets/images/onsen_img.jpg" alt="">
+                </div>
+                <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+              </a>
+            </article>
+          </div>
         </section>
         <button class="back_btn" onclick="history.back">
-    <span><i class="fa-solid fa-arrow-left"></i>back</span>
-</button>
-      </main>
-    </div>
+          <span><i class="fa-solid fa-arrow-left"></i>back</span>
+        </button>
+      </div>
+    </main>
+
     <!-- footer -->
     <footer class="footer_wrap">
       <div class="footer_container">
@@ -253,6 +344,6 @@
   <!-- タブの切り替えJS -->
   <script src="../assets/js/tag_list.js"></script>
 
-</body>
+
 </body>
 </html>
