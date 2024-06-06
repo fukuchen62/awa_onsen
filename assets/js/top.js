@@ -10,17 +10,16 @@ $(function () {
         nextArrow: '<button class="slide-arrow next-arrow"></button>'
     });
 
+    let nav = $(".navlist");
+    let logo = $(".logo");
+    let top = $(".top_button");
+    let aboutSection = $(".about");
+    let threshold = aboutSection.offset().top - 50; // ナビゲーションを表示するセクションの位置
+    let columnSection = $(".footer_wrap");
+    let threshold2 = columnSection.offset().top - 500;
+
     // メニューのアニメーション
     $(window).scroll(function () {
-
-        let nav = $(".navlist");
-        let logo = $(".logo");
-        let top = $(".top_button");
-        let aboutSection = $(".about");
-        let threshold = aboutSection.offset().top - 50; // ナビゲーションを表示するセクションの位置
-        let columnSection = $(".footer_wrap");
-        let threshold2 = columnSection.offset().top - 500;
-
         if ($(window).scrollTop() >= threshold) {
             logo.addClass("isactive");
             top.addClass("isactive");
@@ -33,7 +32,7 @@ $(function () {
         if ($(window).width() > 1200) {
             if ($(window).scrollTop() >= threshold2) {
                 nav.removeClass("isactive");
-            } else if($(window).scrollTop() >= threshold){
+            } else if ($(window).scrollTop() >= threshold) {
                 nav.addClass("isactive");
                 logo.addClass("isactive");
                 top.addClass("isactive");
