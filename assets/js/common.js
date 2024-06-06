@@ -5,9 +5,13 @@ $(function () {
 
     // ハンバーガーメニューをクリックしたらメニューを表示させる
     $(".hamburger").click(function () {
-        $(this).toggleClass("active");
         $(".sp_nav .navlist").toggleClass("isactive");
-        $(this).toggleClass("isactive");
+
+        if($(".sp_nav .navlist").hasClass("isactive")){
+            $(".hamburger").addClass("isactive");
+        } else {
+            $(".hamburger").removeClass("isactive");
+        }
     });
     // メニューの中をクリックしたら、メニューを閉じる
     $(".navlist_item").click(function () {
@@ -22,28 +26,7 @@ $(function () {
         return false;
     });
 
-    // メニューのアニメーション
-    $(document).ready(function () {
-        if ($(window).width() > 1200) {
-            let nav = $(".navlist");
-            nav.addClass("isactive");
-
-            $(window).scroll(function () {
-                let columnSection = $(".footer_wrap");
-                let threshold2 = columnSection.offset().top - 500;
-
-                if ($(window).scrollTop() >= threshold2) {
-                    nav.removeClass("isactive");
-                } else {
-                    nav.addClass("isactive");
-                }
-            });
-        }
-    });
-
 });
-
-
 
 
 // 泡の出現
