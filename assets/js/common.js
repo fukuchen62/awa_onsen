@@ -19,11 +19,7 @@ $(function () {
         $(".hamburger").removeClass("isactive");
     });
 
-    // スクロールトップの設定
-    $('.top_button').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 'smooth');
-        return false;
-    });
+    $(".top_button").on("click", function(e) { e.preventDefault();  $("html, body").animate({    scrollTop: 0  }, 2200); });
 
 });
 
