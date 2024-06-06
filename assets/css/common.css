@@ -585,20 +585,6 @@ h5 {
     background-image: url(../images/close.svg);
 }
 
-.logo {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-100%);
-    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0.7s;
-}
-
-.logo.isactive {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
-}
-
 /* header中身 */
 .navlist {
     width: 250px;
@@ -719,20 +705,6 @@ h5 {
 }
 
 @media(width>=1201px) {
-
-    .top_button {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(-100%);
-        transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0.7s;
-    }
-
-    .top_button.isactive {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
-        transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
-    }
 
     #pc_nav {
         display: flex;
