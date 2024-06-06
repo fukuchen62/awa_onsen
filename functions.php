@@ -80,8 +80,10 @@ function fs_script_files()
     wp_enqueue_script('top-script', get_template_directory_uri() . '/assets/js/top.js');
 
     // フロントページ用のCSSとJSを読み込む
-    if (is_front_page()) {
-    }
+    // if (is_front_page()) {
+    //     wp_enqueue_style('top-style', get_template_directory_uri() . '/assets/css/top.css');
+    //     wp_enqueue_script('top-script', get_template_directory_uri() . '/assets/js/top.js');
+    // }
 
     // 詳細ページ用のCSSとJSの読み込み
     if (is_singular('spa')) { // 温泉詳細のCSS,JSの読み込み

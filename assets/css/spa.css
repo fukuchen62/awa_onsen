@@ -2,9 +2,6 @@
 .navlist_item:nth-child(2) {
     color: #dbf500;
 }
-h2 {
-    font-size: 1.25rem;
-}
 
 h4 {
     font-size: 1.125rem;
@@ -23,9 +20,6 @@ iframe {
 /* メディアクエリ */
 
 @media (width>=757px) {
-    h2 {
-        font-size: 2.5rem;
-    }
 
     h4 {
         font-size: 1.5rem;
@@ -113,14 +107,16 @@ checkbox-item {
 /* 写真スリック */
 
 .slider img {
-    aspect-ratio: 4/3;
+    aspect-ratio: 16/9;
     object-fit: cover;
     width: 100%;
+    padding: 5px;
 }
 
 .thumbnail img {
     aspect-ratio: 1/1;
     object-fit: cover;
+    padding: 5px;
 }
 
 .museum_map {
