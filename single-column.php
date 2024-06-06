@@ -3,7 +3,7 @@
 <!------------------------>
 <!-- ここからメインだよ -->
 <!------------------------>
-<main>
+<main class="container">
     <!-- パンくず -->
     <?php get_template_part('template-parts/breadcrumb'); ?>
 
@@ -11,10 +11,10 @@
 
     <article>
         <!-- 公開日を出力 -->
-        <p><?php echo esc_html(get_post_time('Y.m.d.(D)')); ?></p>
+        <p class="date"><?php echo esc_html(get_post_time('Y.m.d.(D)')); ?></p>
 
         <!-- コラム写真 -->
-        <div>
+        <div class="column_img">
             <!-- コラム画像ここから -->
             <?php
             $pic = get_field('column_pic');
@@ -29,65 +29,62 @@
         <!------------------------>
 
         <div class="hashtag_list">
+            <a class="hashtag">
+                <?php
+                // 現在の投稿のIDを取得
+                $post_id = get_the_ID();
 
-            <?php
-            // 現在の投稿のIDを取得
-            $post_id = get_the_ID();
+                // 投稿タイプを取得
+                $post_type = get_post_type($post_id);
 
-            // 投稿タイプを取得
-            $post_type = get_post_type($post_id);
+                // 投稿タイプに関連するタクソノミーを取得
+                $taxonomies = get_object_taxonomies($post_type);
 
-            // 投稿タイプに関連するタクソノミーを取得
-            $taxonomies = get_object_taxonomies($post_type);
+                if (!empty($taxonomies)) {
+                    foreach ($taxonomies as $taxonomy) {
+                        // タクソノミーに関連するタームを取得
+                        $terms = get_the_terms($post_id, $taxonomy);
 
-            if (!empty($taxonomies)) {
-                foreach ($taxonomies as $taxonomy) {
-                    // タクソノミーに関連するタームを取得
-                    $terms = get_the_terms($post_id, $taxonomy);
-
-                    if ($terms && !is_wp_error($terms)) {
-                        echo '<ul>';
-                        foreach ($terms as $term) {
-                            echo '<li>';
-                            echo '# ' . esc_html($term->name) . '<br>';
-                            echo '</li>';
+                        if ($terms && !is_wp_error($terms)) {
+                            echo '<ul>';
+                            foreach ($terms as $term) {
+                                echo '<li>';
+                                echo '# ' . esc_html($term->name) . '<br>';
+                                echo '</li>';
+                            }
+                            echo '</ul>';
+                        } else {
+                            echo '<p>この投稿に関連するタームはありません。</p>';
                         }
-                        echo '</ul>';
-                    } else {
-                        echo '<p>この投稿に関連するタームはありません。</p>';
                     }
+                } else {
+                    echo '<p>この投稿に関連するタクソノミーはありません。</p>';
                 }
-            } else {
-                echo '<p>この投稿に関連するタクソノミーはありません。</p>';
-            }
-            ?>
+                ?></a>
 
-
-            <!-- <a class="hashtag" href="#">#ああああああ</a>
-                        <a class="hashtag" href="#">#ああああああ</a>
-                        <a class="hashtag" href="#">#ああああああ</a>
-                        <a class="hashtag" href="#">#ああああああ</a> -->
         </div>
 
 
         <!-- コラム内容 -->
-        <p><?php the_content(); ?></p><br>
+        <p class="column_text"><?php the_content(); ?></p><br>
         <p><?php the_field('column_description'); ?></p>
 
     </article>
 
     <section>
-        <!-- コメント入力欄 -->
-        <!-- <form action=""> -->
-        <div class="item">
+        <!-- コメントフォーム -->
+        <div class="comment_form">
+            <!-- コメント入力欄 -->
+            <!-- <form action=""> -->
+            <div class="item">
 
-            <!-- コメント入力フォームとコメントリスト -->
-            <?php comments_template(); ?>
+                <!-- コメント入力フォームとコメントリスト -->
+                <?php comments_template(); ?>
 
-            <!-- <label class="comment" for="comment">コメント入力欄</label>
+                <!-- <label class="comment" for="comment">コメント入力欄</label>
                         <textarea rows="10" cols="80" name="" id="comment"></textarea><br> -->
+            </div>
         </div>
-
 
         <!--
                         <div class="item">
@@ -220,12 +217,12 @@
         </article>
     </section>
 
-    <!-- <a href="">＜＜前の記事</a>
-                <a href="">次の記事＞＞</a>
-                <br>
-                <button class="back_btn" onclick="history.back">
-                    <p><i class="fa-solid fa-arrow-left"></i>back</p>
-                </button> -->
+    <a href="">＜＜前の記事</a>
+    <a href="">次の記事＞＞</a>
+    <br>
+    <button class="back_btn" onclick="history.back">
+        <p><i class="fa-solid fa-arrow-left"></i>back</p>
+    </button>
 
 
 </main>
