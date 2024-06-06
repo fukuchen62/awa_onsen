@@ -71,7 +71,6 @@ function fs_script_files()
     wp_enqueue_style("awa-onsen-destyle", get_template_directory_uri() . "/assets/css/destyle.css");
     wp_enqueue_style("awa-onsen-common", get_template_directory_uri() . "/assets/css/common.css");
 
-
     // jQueryライブラリを読み込む
     wp_enqueue_script("jquery");
 
