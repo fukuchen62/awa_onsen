@@ -55,9 +55,6 @@ a {
 
 /* フォントサイズのみ */
 @media(width>=431px) {
-    .under_line {
-        font-size: 2.5rem;
-    }
 
     .info_tag li {
         font-size: 1.5rem;
