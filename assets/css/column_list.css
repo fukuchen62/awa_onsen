@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-* {
-    /* border: 1px solid red; */
-}
-
 a {
     display: block;
 }
@@ -86,6 +82,3 @@ a {
     }
 
 }
-
-
-.hashtag_list {}

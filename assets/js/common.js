@@ -16,7 +16,6 @@ $(function () {
     // メニューの中をクリックしたら、メニューを閉じる
     $(".navlist_item").click(function () {
         $(".hamburger").removeClass("active");
-        $(".sp_nav .navlist").removeClass("isactive");
         $(".hamburger").removeClass("isactive");
     });
 
