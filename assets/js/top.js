@@ -37,12 +37,12 @@ $(function () {
     //             top.removeClass("isactive");
     //         }
 
-    //         let columnSection = $(".column");
-    //         let threshold2 = columnSection.offset().top;
+    //         // let columnSection = $(".column");
+    //         // let threshold2 = columnSection.offset().top;
 
-    //         if ($(window).scrollTop() >= threshold2) {
-    //             nav.removeClass("isactive");
-    //         }
+    //         // if ($(window).scrollTop() >= threshold2) {
+    //         //     nav.removeClass("isactive");
+    //         // }
 
     //     }
     // });
