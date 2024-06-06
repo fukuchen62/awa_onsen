@@ -10,6 +10,11 @@ h2 {
 }
 
 h3 {
+    /* font-size: 1.125rem; */
+    margin: 13px;
+}
+
+h4 {
     font-size: 1.125rem;
     margin: 13px;
 }
@@ -25,24 +30,7 @@ form {
     }
 }
 
-/* フォントサイズのみ */
-@media(width>=431px) {
-    h2 {
-        font-size: 2.5rem;
-    }
 
-    h3 {
-        font-size: 2.25rem;
-    }
-
-    form {
-        font-size: 1.5rem;
-    }
-
-    .tag li {
-        font-size: 1.5rem;
-    }
-}
 
 .tag {
     margin: 50px auto 0;
@@ -68,6 +56,10 @@ form {
     display: none;
 }
 
+.contents h3 {
+    font-size: 1.125rem;
+}
+
 .contents.active {
     display: block;
 }
@@ -83,7 +75,6 @@ form {
         border-radius: 30px 30px 0 0;
     }
 }
-
 
 .area {
     display: grid;
@@ -163,4 +154,31 @@ form {
 
 .card h3 {
     background-color: #EB97A8;
+}
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .contents h3 {
+        font-size: 2.25rem;
+    }
+
+    /* h3 {
+        font-size: 2.25rem;
+    } */
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        font-size: 1.5rem;
+    }
+
+    .tag li {
+        font-size: 1.5rem;
+    }
 }
