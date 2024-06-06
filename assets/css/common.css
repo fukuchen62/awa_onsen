@@ -341,13 +341,13 @@ h2 {
 }
 
 /* 日付 */
-.news_card .date {
+/* .news_card .date {
     color: transparent;
     -webkit-text-stroke: 1px #dbf500;
     margin-bottom: 4px;
-}
+} */
 
-.news_card .title {
+/* .news_card .title {
     margin-bottom: 4px;
 } */
 
