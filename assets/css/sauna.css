@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.navlist_item:nth-child(5) {
+    color: #DBF500;
+}
+
 /* -----------------------
 base
 -------------------------- */
