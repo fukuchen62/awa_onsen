@@ -113,14 +113,16 @@ checkbox-item {
 /* 写真スリック */
 
 .slider img {
-    aspect-ratio: 4/3;
+    aspect-ratio: 16/9;
     object-fit: cover;
     width: 100%;
+    padding: 5px;
 }
 
 .thumbnail img {
     aspect-ratio: 1/1;
     object-fit: cover;
+    padding: 5px;
 }
 
 .museum_map {
