@@ -23,39 +23,21 @@ $(function () {
     });
 
     // メニューのアニメーション
-    $(window).scroll(function () {
-
-        let nav = $(".navlist");
-        let logo = $(".logo");
-        let top = $(".top_button");
-        let aboutSection = $(".about");
-        let threshold = aboutSection.offset().top - 50; // ナビゲーションを表示するセクションの位置
-
-        if ($(window).scrollTop() >= threshold) {
-            logo.addClass("isactive");
-        } else {
-            logo.removeClass("isactive");
-        }
-
-        // 1200px超えたときの指定
+    $(document).ready(function () {
         if ($(window).width() > 1200) {
-            if ($(window).scrollTop() >= threshold) {
-                nav.addClass("isactive");
-                logo.addClass("isactive");
-                top.addClass("isactive");
-            } else {
-                nav.removeClass("isactive");
-                logo.removeClass("isactive");
-                top.removeClass("isactive");
-            }
+            let nav = $(".navlist");
+            nav.addClass("isactive");
 
-            let columnSection = $(".column");
-            let threshold2 = columnSection.offset().top;
+            $(window).scroll(function () {
+                let columnSection = $(".footer_wrap");
+                let threshold2 = columnSection.offset().top - 500;
 
-            if ($(window).scrollTop() >= threshold2) {
-                nav.removeClass("isactive");
-            }
-
+                if ($(window).scrollTop() >= threshold2) {
+                    nav.removeClass("isactive");
+                } else {
+                    nav.addClass("isactive");
+                }
+            });
         }
     });
 
