@@ -1,24 +1,18 @@
 <!-- header.phpを読み込む -->
 <?php get_header(); ?>
 
-<main>
-    <section class="section">
-        <div class="section_inner">
-            <div class="section_header">
-                <h2 class="heading heading-primary"><span>エラー</span>404 Not Found</h2>
-            </div>
-
-            <div class="section_body">
-                <div class="content">
-
-                    <p>お探しのページが見つかりませんでした。</p>
-                    <p>申し訳ございませんが、<a href="<?php echo home_url('/'); ?>">こちらのリンク</a>からトップページにお戻りください。</p>
-
-                </div>
-            </div>
-        </div>
+<main class="container">
+    <section>
+        <h2 class="under_line">404 Not Found</h2>
+        <span></span>
+        <p>お探しのページが<br>
+            見つかりません</p>
     </section>
+    <button class="back_btn" onclick="history.back">
+        <span><i class="fa-solid fa-arrow-left"></i>back</span>
+    </button>
 </main>
+
 
 <!-- footer.phpを読み込む -->
 <?php get_footer(); ?>
