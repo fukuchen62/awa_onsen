@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 section p {
@@ -13,7 +13,7 @@ section p {
     border-radius: 10px;
     font-size: 1.125rem;
     font-weight: bold;
-    margin: 50px auto 0;
+    margin: 50px auto;
 }
 
 @media (width>=757px) {
