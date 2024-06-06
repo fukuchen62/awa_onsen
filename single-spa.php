@@ -13,13 +13,21 @@
         ?>
         <img src="<?php echo $pic_url; ?>" alt="メイン画像">
         <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/onsen_img.jpg" alt="" /> -->
-        <div class="favorite_btn"><i class="fa-regular fa-heart"></i></div>
-        <div class="nice_btn"><i class="fa-regular fa-thumbs-up"></i></div>
+        <label class="checkbox-item">
+            <input type="checkbox" name="options" value="nice" />
+            <span class="nice_btn">
+                <i class="fa-regular fa-thumbs-up"></i><br />
+                <span>11</span>
+            </span>
+        </label>
+        <label class="checkbox-item">
+            <input type="checkbox" name="options" value="favorite" />
+            <span class="favorite_btn"><i class="fa-solid fa-heart"></i> <i class="fa-regular fa-heart"></i></span>
+        </label>
     </div>
 
 
     <!-- ハッシュタグ -->
-
     <div class="hashtag_list">
         <?php
         // 現在の投稿のIDを取得
