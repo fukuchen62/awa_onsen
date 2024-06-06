@@ -1,11 +1,15 @@
 @charset "utf-8";
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 a {
     display: block;
+}
+
+.navlist_item:nth-child(6) {
+    color: #DBF500;
 }
 
 /* タグ */
@@ -81,11 +85,6 @@ a {
         padding-top: 15px;
     }
 
-    .news_card .date {
-
-        -webkit-text-stroke: 1px #538fcb;
-
-    }
 }
 
 
