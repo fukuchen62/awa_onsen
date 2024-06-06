@@ -23,6 +23,10 @@ p {
 
 }
 
+.back_btn {
+    margin: 50px;
+}
+
 /* フォントサイズのみ */
 @media(width>=431px) {
 
