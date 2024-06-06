@@ -5,9 +5,7 @@
     color: #DBF500;
 }
 
-h2 {
-    font-size: 1.25rem;
-}
+
 
 h3 {
     margin: 13px;
@@ -152,9 +150,6 @@ form {
 
 /* フォントサイズのみ */
 @media(width>=431px) {
-    h2 {
-        font-size: 2.5rem;
-    }
 
     .contents h3 {
         font-size: 2.25rem;
