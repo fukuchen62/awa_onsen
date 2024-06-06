@@ -19,10 +19,6 @@
 
 /* =========フォントサイズ========= */
 
-h2 {
-    font-size: 1.25rem;
-}
-
 dt>h3 {
     font-size: 1.13rem;
     color: white;
@@ -33,9 +29,6 @@ dt>h3 {
 }
 
 @media(width>=431px) {
-    h2 {
-        font-size: 2.5rem;
-    }
 
     dt>h3 {
         font-size: 2.25rem;
