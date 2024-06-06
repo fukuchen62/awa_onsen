@@ -28,9 +28,6 @@ $(function () {
         }
 
         // 1200px超えたときの指定
-
-
-
         if ($(window).width() > 1200) {
             if ($(window).scrollTop() >= threshold) {
                 nav.addClass("isactive");
