@@ -54,11 +54,56 @@ add_filter(
 
 function fs_script_files()
 {
+
+    // Google Material Iconsの読み込み
+    wp_enqueue_style(
+        'google-material-icons',
+        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200'
+    );
+
+    // Slick CarouselのCSSの読み込み
+    wp_enqueue_style(
+        'slick-carousel',
+        'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css'
+    );
+
+    // Slick CarouselのテーマCSSの読み込み
+    wp_enqueue_style(
+        'slick-carousel-theme',
+        'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css'
+    );
+
     // font-awesomeを読み込む
     wp_enqueue_style(
         "font-awesome",
         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     );
+
+    // Google Fontsのプリコネクトを設定
+    wp_enqueue_style(
+        'google-fonts-preconnect1',
+        'https://fonts.googleapis.com',
+        array(),
+        null
+    );
+    // Google Fontsの読み込み
+
+    wp_enqueue_style(
+        'google-fonts-preconnect2',
+        'https://fonts.gstatic.com',
+        array(),
+        null,
+        'crossorigin="anonymous"'
+    );
+
+    // Google Fontsの読み込み
+    wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap',
+        array(),
+        null
+    );
+
 
     // google-web-fontsを読み込む
     wp_enqueue_style(
@@ -84,12 +129,20 @@ function fs_script_files()
     // フロントページ用のCSSとJSを読み込む
     if (is_front_page()) {
         wp_enqueue_style('top-style', get_template_directory_uri() . '/assets/css/top.css');
+        wp_enqueue_script(
+            "slick-carousel",
+            "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+        );
         wp_enqueue_script('top-script', get_template_directory_uri() . '/assets/js/top.js');
     }
 
     // 詳細ページ用のCSSとJSの読み込み
     if (is_singular('spa')) { // 温泉詳細のCSS,JSの読み込み
         wp_enqueue_style('awa-onsen-spa', get_template_directory_uri() . '/assets/css/spa.css');
+        wp_enqueue_script(
+            "slick-carousel",
+            "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+        );
         wp_enqueue_script('food-science-spa', get_template_directory_uri() . '/assets/js/spa.js');
     }
 
@@ -116,7 +169,6 @@ function fs_script_files()
 
     if (is_tax('column_type')) { // コラムの一覧ページのCSSとJSの読み込み
         wp_enqueue_style('awa-onsen-column-list', get_template_directory_uri() . '/assets/css/column_list.css');
-        wp_enqueue_script('food-science-top', get_template_directory_uri() . '/assets/js/vendor/jquery-3.6.0.min.js');
     }
 
     if (is_tax('course_type')) { // モデルコース一覧のCSSの読み込み
