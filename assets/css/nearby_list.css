@@ -128,16 +128,20 @@ li>a {
 }
 
 /* アコーディオン */
+.details {
+    margin-bottom: 32px;
+}
 
 .details-summary {
     position: relative;
     display: block;
     padding: 20px;
-    color: #fff;
+    color: #000000;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
     background-color: #538FCB;
+    margin-top: 32px;
 
     &:hover {
         cursor: pointer;
@@ -156,7 +160,7 @@ li>a {
         &:before,
         &:after {
             content: "";
-            background-color: #fff;
+            background-color: #000;
             border-radius: 10px;
             width: 18px;
             height: 4px;
@@ -171,13 +175,24 @@ li>a {
             height: 18px;
             top: 0;
             right: 7px;
+            background-color: black;
         }
     }
 
     &.is-active {
+        .acco_title {
+            color: #DBF500;
+        }
+
         .btn {
             -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg);
+
+
+
+            &:after {
+                background-color: #DBF500;
+            }
 
             &:before {
                 content: none;
