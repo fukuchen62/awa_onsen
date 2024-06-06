@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
+    <!-- googleicon CDN -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <!-- リセットCSS -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <!-- 共通css -->
@@ -19,24 +22,152 @@
 </head>
 <body>
     <div class="bubble_background">
-        <div class="container">
 
-            <main>
-                <h2 class="under_line">このサイトについて</h2>
+        <header class="header_wrap">
+            <div class="header_container">
+                <!-- headerの左側 -->
+                <!-- 常時表示サイトロゴ -->
+                <a class="logo" href="index.html">
+                    <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
+                </a>
+                <!-- 上にスクロールするボタン -->
+                <div class="top_button">
+                    <div class="circle">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
 
-                <!-- パンくず -->
+                <!-- sp&tbnav -->
+                <div class="hamburger sp_tb_only"></div>
+            </div>
+            <!-- menu -->
+            <nav class="sp_nav sp_tb_only">
+                <div class="navlist">
+                    <div class="nav_bg"></div>
+                    <ul class="navlist_container">
+                        <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                                    bubble_chart
+                                </span>TOP</a></li>
+                        <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                                    bath_outdoor
+                                </span>温泉一覧</a></li>
+                        <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                                    pin_drop
+                                </span>周辺一覧</a></li>
+                        <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                                    directions_walk
+                                </span>モデルコース</a></li>
+                        <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                                    sauna
+                                </span>サ活</a></li>
+                        <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                                    border_color
+                                </span>コラム</a></li>
+                        <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                                    search
+                                </span>検索</a></li>
+                        <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
+                                    home
+                                </span>マイページ</a></li>
+                    </ul>
+                    <div class="nav_bg"></div>
+                </div>
+            </nav>
+            <!-- pcnav -->
+            <div class="pc_inner">
+                <nav class="g_nav pc_only" id="pc_nav">
+                    <div class="navlist">
+                        <div class="nav_bg"></div>
+                        <ul class="navlist_container">
+                            <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                                        bubble_chart
+                                    </span>TOP</a></li>
+                            <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                                        bath_outdoor
+                                    </span>温泉一覧</a></li>
+                            <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                                        pin_drop
+                                    </span>周辺一覧</a></li>
+                            <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                                        directions_walk
+                                    </span>モデルコース</a></li>
+                            <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                                        sauna
+                                    </span>サ活</a></li>
+                            <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                                        border_color
+                                    </span>コラム</a></li>
+                            <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                                        search
+                                    </span>検索</a></li>
+                            <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
+                                        home
+                                    </span>マイページ</a></li>
+                        </ul>
+                        <div class="nav_bg"></div>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
-                <p>このサイトは国の求職者支援制度に基づく、株式会社QLIP クリッププログラミングスクール・WEBシステム開発実践科Ⅱ第8期生、『集（つどい）』班が、2024年に制作したウェブサイトです。</p>
+        <!-- main -->
+        <main class="container">
+            <h2 class="under_line">このサイトについて</h2>
 
-                <h2 class="under_line">サイト制作の経緯</h2>
+            <!-- パンくず -->
 
-                <p>徳島県には多くの温泉がありますが、多くの県民または県外客には存在が知られていなかったり、温泉だけのために遠くまで足を運ぶ事が面倒といったイメージを持つ方が多いように感じます。県民だけでなく近隣県の方に徳島の温泉の魅力とその周辺情報を発信して、少しでも徳島に興味を抱いて、来県していただくことにより地域の活性化に貢献したいとの思いで「あわあわ温泉ぶらり」のサイトを企画しました。</p>
-            </main>
+            <p>このサイトは国の求職者支援制度に基づく、株式会社QLIP クリッププログラミングスクール・WEBシステム開発実践科Ⅱ第8期生、『集（つどい）』班が、2024年に制作したウェブサイトです。</p>
 
-        </div>
-        <footer></footer>
+            <h2 class="under_line">サイト制作の経緯</h2>
+
+            <p>徳島県には多くの温泉がありますが、多くの県民または県外客には存在が知られていなかったり、温泉だけのために遠くまで足を運ぶ事が面倒といったイメージを持つ方が多いように感じます。県民だけでなく近隣県の方に徳島の温泉の魅力とその周辺情報を発信して、少しでも徳島に興味を抱いて、来県していただくことにより地域の活性化に貢献したいとの思いで「あわあわ温泉ぶらり」のサイトを企画しました。</p>
+        </main>
+
+        <!-- footer -->
+        <footer class="footer_wrap">
+            <div class="footer_container">
+                <ul class="footer_list">
+                    <li class="footer_item">
+                        <a href="about.html">
+                            <span class="material-symbols-outlined">
+                                bubble_chart
+                            </span>このサイトについて
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="news_list.html">
+                            <span class="material-symbols-outlined">
+                                fiber_new
+                            </span>お知らせ一覧へ
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="privacypolicy.html">
+                            <span class="material-symbols-outlined">
+                                verified_user
+                            </span>
+                            <div>免責事項・<br>プライバシーポリシー</div>
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="form.html">
+                            <span class="material-symbols-outlined">
+                                mail
+                            </span>お問い合わせ(企業様)
+                        </a>
+                    </li>
+                </ul>
+                <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+            </div>
+        </footer>
     </div>
+
+    <!-- jquery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <!-- javascriptの読み込み -->
     <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/menu.js"></script>
 </body>
 </html>

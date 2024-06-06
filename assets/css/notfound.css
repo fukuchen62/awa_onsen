@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+* {
+    /* border: 1px solid red; */
+}
+
+section p {
+    width: 80%;
+    background-color: white;
+    color: #538FCB;
+    text-align: center;
+    padding: 20%;
+    border-radius: 10px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 50px auto;
+}
+
+@media (width>=757px) {
+    section p {
+        background-color: #538FCB;
+        color: white;
+    }
+}

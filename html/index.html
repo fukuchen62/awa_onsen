@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 概要入れる -->
-    <meta name="description" content="">
     <title>あわあわ温泉ぶらり</title>
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,9 +35,9 @@
             <div class="header_container">
                 <!-- headerの左側 -->
                 <!-- 常時表示サイトロゴ -->
-                <div class="logo">
+                <a class="logo" href="index.html">
                     <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
-                </div>
+                </a>
                 <!-- 上にスクロールするボタン -->
                 <div class="top_button">
                     <div class="circle">
@@ -53,8 +51,8 @@
             </div>
             <!-- menu -->
             <nav class="sp_nav sp_tb_only">
-                <ul class="navlist">
-                    <li class="nav_bg"></li>
+                <div class="navlist">
+                    <div class="nav_bg"></div>
                     <ul class="navlist_container">
                         <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
                                     bubble_chart
@@ -81,42 +79,42 @@
                                     home
                                 </span>マイページ</a></li>
                     </ul>
-                    <li class="nav_bg"></li>
-                </ul>
+                    <div class="nav_bg"></div>
+                </div>
             </nav>
             <!-- pcnav -->
-            <div class="pc_nav_inner">
-                <nav class="pc_g_nav pc_only">
-                    <ul class="pc_navlist">
-                        <li class="pc_nav_bg"></li>
-                        <ul class="pc_navlist_container">
-                            <li class="pc_navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+            <div class="pc_inner">
+                <nav class="g_nav pc_only" id="pc_nav">
+                    <div class="navlist">
+                        <div class="nav_bg"></div>
+                        <ul class="navlist_container">
+                            <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
                                         bubble_chart
                                     </span>TOP</a></li>
-                            <li class="pc_navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
                                         bath_outdoor
                                     </span>温泉一覧</a></li>
-                            <li class="pc_navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
                                         pin_drop
                                     </span>周辺一覧</a></li>
-                            <li class="pc_navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
                                         directions_walk
                                     </span>モデルコース</a></li>
-                            <li class="pc_navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
                                         sauna
                                     </span>サ活</a></li>
-                            <li class="pc_navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
                                         border_color
                                     </span>コラム</a></li>
-                            <li class="pc_navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
                                         search
                                     </span>検索</a></li>
-                            <li class="pc_navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
                                         home
                                     </span>マイページ</a></li>
                         </ul>
-                        <li class="pc_nav_bg"></li>
-                    </ul>
+                        <div class="nav_bg"></div>
+                    </div>
                 </nav>
             </div>
         </header>
@@ -154,8 +152,8 @@
                             <div class="about_img">
                                 <img src="../assets/images/onsen_saru.svg" alt="おさる">
                             </div>
-                            <button class="about_btn btn shadow section_btn"><a href="about.html">もっと詳しく<i
-                                        class="fa-solid fa-list"></i></a></button>
+                            <a class="about_btn btn shadow section_btn" href="about.html">もっと詳しく<i
+                                        class="fa-solid fa-list"></i></a>
                         </div>
                     </section>
 
@@ -223,8 +221,8 @@
                                 </ul>
                             </div>
                             <!-- お知らせ一覧ボタン -->
-                            <button class="about_btn btn shadow section_btn"><a href="news_list.html">お知らせ一覧へ<i
-                                        class="fa-solid fa-list"></i></a></button>
+                            <a class="about_btn btn shadow section_btn" href="news_list.html">お知らせ一覧へ<i
+                                        class="fa-solid fa-list"></i></a>
                         </div>
                     </section>
 
@@ -281,8 +279,8 @@
                                 </li>
                             </ul>
                             <!-- 温泉情報一覧ボタン -->
-                            <button class="spa_btn btn shadow section_btn"><a href="spa_list.html">温泉情報一覧へ<i
-                                        class="fa-solid fa-list"></i></a></button>
+                            <a class="spa_btn btn shadow section_btn" href="spa_list.html">温泉情報一覧へ<i
+                                        class="fa-solid fa-list"></i></a>
                         </div>
                     </section>
 
@@ -339,8 +337,8 @@
                                 </li>
                             </ul>
                             <!-- 周辺情報一覧へボタン -->
-                            <button class="facility_btn btn shadow section_btn"><a href="nearby_list.html">周辺情報一覧へ<i
-                                        class="fa-solid fa-list"></i></a></button>
+                            <a class="facility_btn btn shadow section_btn" href="nearby_list.html">周辺情報一覧へ<i
+                                        class="fa-solid fa-list"></i></a>
                         </div>
                     </section>
 
@@ -397,8 +395,8 @@
                                 </li>
                             </ul>
                             <!-- 周辺情報一覧ボタン -->
-                            <button class="facility_btn btn shadow section_btn"><a href="nearby_list.html">周辺情報一覧へ<i
-                                        class="fa-solid fa-list"></i></a></button>
+                            <a class="facility_btn btn shadow section_btn" href="nearby_list.html">周辺情報一覧へ<i
+                                        class="fa-solid fa-list"></i></a>
                         </div>
                     </section>
 
@@ -455,8 +453,8 @@
                                 </li>
                             </ul>
                             <!-- 周辺情報一覧ボタン -->
-                            <button class="facility_btn btn shadow section_btn"><a href="nearby_list.html">周辺情報一覧へ<i
-                                        class="fa-solid fa-list"></i></a></button>
+                            <a class="facility_btn btn shadow section_btn" href="nearby_list.html">周辺情報一覧へ<i
+                                        class="fa-solid fa-list"></i></a>
                         </div>
                     </section>
 
@@ -513,8 +511,8 @@
                                 </li>
                             </ul>
                             <!-- モデルコース一覧へ -->
-                            <button class="course_btn btn shadow section_btn"><a href="course_list.html">モデルコース一覧へ<i
-                                        class="fa-solid fa-list"></i></a></button>
+                            <a class="course_btn btn shadow section_btn" href="course_list.html">モデルコース一覧へ<i
+                                        class="fa-solid fa-list"></i></a>
                         </div>
                     </section>
 
@@ -531,7 +529,7 @@
                                         <img src="../assets/images/sauna_saru.jpg" alt="サウナ">
                                         <span></span>
                                     </div>
-                                    <button class="sauna_btn btn shadow">サ活とは？<i class="fa-solid fa-list"></i></button>
+                                    <a class="sauna_btn btn shadow">サ活とは？<i class="fa-solid fa-list"></i></a>
                             </div>
                             </a>
                         </div>
@@ -602,8 +600,8 @@
                                 </ul>
                             </div>
                             <!-- お知らせ一覧ボタン -->
-                            <button class="column_btn btn shadow section_btn"><a href="column_list.html">コラム一覧へ<i
-                                        class="fa-solid fa-list"></i></a></button>
+                            <a class="column_btn btn shadow section_btn" href="column_list.html">コラム一覧へ<i
+                                        class="fa-solid fa-list"></i></a>
                         </div>
                     </section>
                 </div>
