@@ -465,9 +465,10 @@ h2 {
 
 /* おすすめ一覧 */
 h5 {
+    font-weight: bold;
     height: 87px;
     text-align: center;
-    line-height: 50px;
+    line-height: 65px;
     background-repeat: no-repeat;
     background-image: url(../images/recommend.png);
     background-position: center center;
@@ -477,6 +478,7 @@ h5 {
 
 @media (width>=527px) {
     h5 {
+         line-height: 50px;
         font-size: 1.5rem;
     }
 }
