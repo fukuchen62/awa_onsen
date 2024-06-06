@@ -90,7 +90,6 @@
                             }
                             ?>
                         </div>
-
                         <section class="shop_information">
                             <h3 class="lined-title">店舗情報</h3>
                             <dl>
@@ -220,8 +219,6 @@
                                         <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
                                     </a>
                                 </article>
-
-
                             </div>
                         </section>
                         <button class="back_btn" onclick="history.back">
