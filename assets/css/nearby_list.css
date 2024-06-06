@@ -112,6 +112,7 @@ li>a {
         grid-template-rows: 1fr;
         grid-column-gap: 5px;
         grid-row-gap: 5px;
+        margin-bottom: 32px;
     }
 
     .info_tag li {
@@ -127,6 +128,67 @@ li>a {
 }
 
 /* アコーディオン */
+
+.details-summary {
+    position: relative;
+    display: block;
+    padding: 20px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #538FCB;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    .btn {
+        position: absolute;
+        top: 37%;
+        right: 10%;
+        width: 18px;
+        height: 18px;
+        transform-origin: center center;
+        transition-duration: 0.2s;
+
+        &:before,
+        &:after {
+            content: "";
+            background-color: #fff;
+            border-radius: 10px;
+            width: 18px;
+            height: 4px;
+            position: absolute;
+            top: 7px;
+            right: 0;
+            transform-origin: center center;
+        }
+
+        &:before {
+            width: 4px;
+            height: 18px;
+            top: 0;
+            right: 7px;
+        }
+    }
+
+    &.is-active {
+        .btn {
+            -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+
+            &:before {
+                content: none;
+            }
+        }
+    }
+}
+
+.details-summary::-webkit-details-marker {
+    display: none;
+}
 
 .accordion-container {
     margin: 0 auto;

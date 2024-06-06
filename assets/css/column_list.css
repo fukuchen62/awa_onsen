@@ -4,9 +4,8 @@
     /* border: 1px solid red; */
 }
 
-/* ページタイトル */
-.under_line {
-    font-size: 1.25rem;
+a {
+    display: block;
 }
 
 /* タグ */
@@ -47,12 +46,6 @@
 .news_list {
     margin-top: 50px;
 }
-
-.news_card {
-    margin: 0 auto;
-    font-size: 1rem;
-}
-
 
 /* ページネーション */
 .pagination {

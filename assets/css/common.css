@@ -318,14 +318,13 @@ h2 {
 }
 
 /* 店舗ごとのカード型の設定 */
-.news_card {
+/* .news_card {
     max-width: 625px;
     font-size: 1.5rem;
     padding: 14px 0;
     border-bottom-color: #dbf500;
     border-bottom-style: dashed;
     border-bottom-width: 4px;
-    /* border-right:10px ; */
 }
 
 .news_card a {
@@ -350,6 +349,36 @@ h2 {
 
 .news_card .title {
     margin-bottom: 4px;
+} */
+
+
+/* カード型テスト */
+.news_card {
+    display: flex;
+    align-items: center;
+    border-bottom-color: #dbf500;
+    border-bottom-style: dashed;
+    border-bottom-width: 4px;
+    margin-bottom: 16px;
+}
+
+.news_card img {
+    aspect-ratio: 1/1;
+    max-width: 140px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 16px;
+    margin: 0 22px 16px 0;
+    /* 画像とコンテンツの間の余白 */
+}
+
+.news_contents {
+    flex: 1;
+    /* コンテンツ部分を残りの領域で可変に広がるように設定 */
+}
+
+.news_contents h6 {
+    margin-bottom: 10px;
 }
 
 /* カード型（丸形）の設定 */
