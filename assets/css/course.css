@@ -16,6 +16,7 @@ iframe {
 /* タグ */
 .hashtag_list {
     margin-bottom: 16px;
+    justify-content: flex-start;
 }
 
 /* Bold */
@@ -213,6 +214,10 @@ div h4 {
     z-index: 1;
 }
 
+.flex.greencar {
+    margin: 10%;
+}
+
 /* 黄緑の四角 */
 .yellowgreen_square {
     width: 90%;
@@ -289,6 +294,14 @@ div h4 {
         display: block;
     }
 
+    .clock {
+        display: none;
+    }
+
+    .photo::before {
+        display: none;
+    }
+
     /* タイムスケジュール */
     .flow12 {
         margin: 0;
@@ -306,15 +319,15 @@ div h4 {
 
     /* それぞれの線の長さ */
     .flow12>li:nth-child(1) {
-        padding-bottom: 500px;
+        padding-bottom: 500%;
     }
 
     .flow12>li:nth-child(2) {
-        padding-bottom: 500px;
+        padding-bottom: 535%;
     }
 
     .flow12>li:nth-child(3) {
-        padding-bottom: 500px;
+        padding-bottom: 460%;
     }
 
     .flow12>li:nth-of-type(even)::after {
@@ -381,13 +394,9 @@ div h4 {
         width: 100%;
     }
 
-    .clock {
-        right: 10%;
-    }
-
     .yellowgreen_square::before,
     .yellowgreen_square::after {
-        width: 30%;
+        width: 20%;
     }
 
     /* フォントサイズ */
@@ -436,4 +445,17 @@ div h4 {
     /* =================================
 ここは各自のCSSファイルで設定（サンプル）
 ================================= */
+}
+
+.sp_nav .navlist.isactive {
+    right: 0;
+}
+
+@media (width >=1201px) {
+    .navlist.isactive {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0) translateY(50%);
+        transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
+    }
 }
