@@ -36,6 +36,8 @@
 .mypage_list {
     font-size: 1.125rem;
     text-align: center;
+    margin-top: 100px;
+    text-decoration: underline solid #000;
 }
 
 /* -----------------------
