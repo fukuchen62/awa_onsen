@@ -301,6 +301,7 @@ h2 {
     width: fit-content;
     position: relative;
     z-index: 10;
+    font-size: 1.25rem;
 }
 
 .under_line::after {
@@ -316,6 +317,14 @@ h2 {
     border-bottom-style: dashed;
     border-bottom-width: 10px;
 }
+
+/* フォントサイズのみ */
+@media (width>=431px) {
+    .under_line {
+        font-size: 2.5rem;
+    }
+}
+
 
 /* 一覧のカード型の設定 */
 .news_card {
@@ -478,7 +487,7 @@ h5 {
 
 @media (width>=527px) {
     h5 {
-         line-height: 50px;
+        line-height: 50px;
         font-size: 1.5rem;
     }
 }

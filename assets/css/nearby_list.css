@@ -25,10 +25,6 @@ dt>h3 {
     color: white;
 }
 
-.acco_title {
-    font-size: 1.125rem;
-}
-
 @media(width>=431px) {
     h2 {
         font-size: 2.5rem;
@@ -39,11 +35,7 @@ dt>h3 {
     }
 
     .info_tag li {
-        font-size: 1.5rem
-    }
-
-    .acco_title {
-        font-size: 2.25rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -75,7 +67,7 @@ dt>h3 {
     height: 40px;
     font-size: 1.125rem;
     text-align: center;
-    background-color: #D9D9D9;
+    background-color: #FDC75F;
     border-radius: 50px;
 }
 
@@ -122,7 +114,6 @@ li>a {
 }
 
 .details-summary {
-    border: 2px solid #fff;
     position: relative;
     display: block;
     padding: 20px;
@@ -194,8 +185,3 @@ li>a {
 .details-summary::-webkit-details-marker {
     display: none;
 }
-
-@media(width>=757px) {
-    .details-summary {
-        border: none;
-    }
