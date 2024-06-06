@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 概要入れる -->
-    <meta name="description" content="">
-    <title>お知らせ詳細</title>
+    <title>サウナのある温泉</title>
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- googleicon CDN -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+    <!-- slick CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <!-- リセットCSS -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <!-- common.css -->
     <link rel="stylesheet" href="../assets/css/common.css">
-    <!-- news.css -->
-    <link rel="stylesheet" href="../assets/css/news.css">
+    <!-- top.css -->
+    <link rel="stylesheet" href="../assets/css/sauna_search.css">
 </head>
+
 <body>
     <div class="bubble_background">
+        <!-- header -->
         <header class="header_wrap">
             <div class="header_container">
                 <!-- headerの左側 -->
@@ -113,55 +115,167 @@
             </div>
         </header>
         <main class="container">
-            <section>
-                <div class="ttl">
-                    <h2 class="under_line">道の駅すみれを追加しました</h2>
-                    <p>2024.06.01.23:05</p>
+            <h2 class="under_line">サウナのある温泉</h2>
+
+            <!-- アコーディオン -->
+            <details class="details js-details">
+                <summary class="details-summary js-details-summary"><span class="btn"></span>
+                    <h3 class="acco_title">東部</h3>
+                </summary>
+                <div class="details-content js-details-content">
+                    <div class="article_all">
+                        <!-- カード型 -->
+                        <article class="card">
+                            <a href="#">
+                                <div>
+                                    <span></span>
+                                    <img src="../assets/images/onsen_img.jpg" alt="" />
+                                </div>
+                                <h3>すんごい温泉めちゃすごの湯</h3>
+                            </a>
+                        </article>
+                        <!-- カード型 -->
+                        <article class="card">
+                            <a href="#">
+                                <div>
+                                    <span></span>
+                                    <img src="../assets/images/onsen_img.jpg" alt="" />
+                                </div>
+                                <h3>すんごい温泉めちゃすごの湯</h3>
+                            </a>
+                        </article>
+                        <!-- カード型 -->
+                        <article class="card">
+                            <a href="#">
+                                <div>
+                                    <span></span>
+                                    <img src="../assets/images/onsen_img.jpg" alt="" />
+                                </div>
+                                <h3>すんごい温泉めちゃすごの湯</h3>
+                            </a>
+                        </article>
+                        <!-- カード型 -->
+                        <article class="card">
+                            <a href="#">
+                                <div>
+                                    <span></span>
+                                    <img src="../assets/images/onsen_img.jpg" alt="" />
+                                </div>
+                                <h3>すんごい温泉めちゃすごの湯</h3>
+                            </a>
+                        </article>
+                    </div>
                 </div>
-
-                <img src="../assets/images/roadside_station.jpg" alt="" class="mt32">
-
-                <div class="hashtag_list mt32">
-
-                    <a href="#" class="hashtag">#東部</a>
-                    <a href="#" class="hashtag">#温泉</a>
-                    <a href="#" class="hashtag">#ショッピング</a>
-                    <a href="#" class="hashtag">#お知らせ</a>
-
-                </div>
-
-                <p class="mt32">ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。ここにお知らせの詳細内容が入ります。(396文字)</p>
-
-            </section>
-
-            <section>
-                <h5 class="mt32">関連情報</h5>
+            </details>
+            <details class="details js-details">
+                <summary class="details-summary js-details-summary"><span class="btn"></span>
+                    <h3 class="acco_title">西部</h3>
+                </summary>
                 <div class="article_all">
-                    <article class="card onsen">
-                        <a href="https://translate.google.co.jp/?hl=ja&tab=TT&sl=auto&tl=en&op=translate">
+                    <!-- カード型 -->
+                    <article class="card">
+                        <a href="#">
                             <div>
                                 <span></span>
                                 <img src="../assets/images/onsen_img.jpg" alt="" />
                             </div>
-                            <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+                            <h3>すんごい温泉めちゃすごの湯</h3>
                         </a>
                     </article>
-                    <article class="card modelcourse">
-                        <a href="https://translate.google.co.jp/?hl=ja&tab=TT&sl=auto&tl=en&op=translate">
+                    <!-- カード型 -->
+                    <article class="card">
+                        <a href="#">
                             <div>
                                 <span></span>
                                 <img src="../assets/images/onsen_img.jpg" alt="" />
                             </div>
-                            <h3>最南端！！空と海を感じるツーリングコース！！！</h3>
+                            <h3>すんごい温泉めちゃすごの湯</h3>
+                        </a>
+                    </article>
+                    <!-- カード型 -->
+                    <article class="card">
+                        <a href="#">
+                            <div>
+                                <span></span>
+                                <img src="../assets/images/onsen_img.jpg" alt="" />
+                            </div>
+                            <h3>すんごい温泉めちゃすごの湯</h3>
+                        </a>
+                    </article>
+                    <!-- カード型 -->
+                    <article class="card">
+                        <a href="#">
+                            <div>
+                                <span></span>
+                                <img src="../assets/images/onsen_img.jpg" alt="" />
+                            </div>
+                            <h3>すんごい温泉めちゃすごの湯</h3>
                         </a>
                     </article>
                 </div>
-            </section>
+
+                <div class="details-content js-details-content">
+
+                </div>
+            </details>
+            <details class="details js-details">
+                <summary class="details-summary js-details-summary"><span class="btn"></span>
+                    <h3 class="acco_title">南部</h3>
+                </summary>
+                <div class="article_all">
+                    <!-- カード型 -->
+                    <article class="card">
+                        <a href="#">
+                            <div>
+                                <span></span>
+                                <img src="../assets/images/onsen_img.jpg" alt="" />
+                            </div>
+                            <h3>すんごい温泉めちゃすごの湯</h3>
+                        </a>
+                    </article>
+                    <!-- カード型 -->
+                    <article class="card">
+                        <a href="#">
+                            <div>
+                                <span></span>
+                                <img src="../assets/images/onsen_img.jpg" alt="" />
+                            </div>
+                            <h3>すんごい温泉めちゃすごの湯</h3>
+                        </a>
+                    </article>
+                    <!-- カード型 -->
+                    <article class="card">
+                        <a href="#">
+                            <div>
+                                <span></span>
+                                <img src="../assets/images/onsen_img.jpg" alt="" />
+                            </div>
+                            <h3>すんごい温泉めちゃすごの湯</h3>
+                        </a>
+                    </article>
+                    <!-- カード型 -->
+                    <article class="card">
+                        <a href="#">
+                            <div>
+                                <span></span>
+                                <img src="../assets/images/onsen_img.jpg" alt="" />
+                            </div>
+                            <h3>すんごい温泉めちゃすごの湯</h3>
+                        </a>
+                    </article>
+                </div>
+                <div class="details-content js-details-content">
+
+                </div>
+            </details>
+
 
             <button class="back_btn" onclick="history.back">
                 <span><i class="fa-solid fa-arrow-left"></i>back</span>
             </button>
         </main>
+
+        <!-- footer -->
         <footer class="footer_wrap">
             <div class="footer_container">
                 <ul class="footer_list">
@@ -198,9 +312,18 @@
                 <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
             </div>
         </footer>
+        <!-- jquery CDN -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <!-- slick js -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
+        </script>
+        <!-- common.js -->
+        <script src="../assets/js/common.js"></script>
+        <!-- top.js -->
+        <script src="../assets/js/accordion.js"></script>
+        <script src="../assets/js/menu.js"></script>
+
     </div>
-    <script src="../assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="../assets/js/common.js"></script>
-    <script src="../assets/js/menu.js"></script>
 </body>
+
 </html>
