@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 a {
@@ -53,10 +53,6 @@ a {
     text-align: center;
 }
 
-
-.clearfix {
-    clear: both;
-}
 
 /* フォントサイズのみ */
 @media(width>=431px) {
