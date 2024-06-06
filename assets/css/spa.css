@@ -11,35 +11,15 @@ h4 {
     margin-bottom: 16px;
 }
 
-.icon_list,
+h2,
+.img_box,
 .hashtag_list,
+section,
 .other_img,
-.museum_map,
-iframe {
-    margin: 32px 0;
+.museum_map.basic_information,
+iframe{
+    margin-bottom: 30px;
 }
-
-.icon_list {
-    text-align: center;
-    display: grid;
-    gap: 5px;
-    grid-template-columns: repeat(5, 1fr);
-    margin: 16px 0;
-}
-
-.icon_list li {
-    aspect-ratio: 1/1;
-    border: 5px solid #328ef0;
-    background-color: aliceblue;
-    border-radius: 20%;
-    font-size: 2.5vw;
-    vertical-align: bottom;
-}
-
-.icon_list span {
-    font-size: 10vw;
-}
-
 /* メディアクエリ */
 
 @media (width>=757px) {
@@ -49,20 +29,6 @@ iframe {
 
     h4 {
         font-size: 1.5rem;
-    }
-
-    .icon_list {
-        max-width: 470px;
-        margin: 16px auto;
-    }
-
-    .icon_list li {
-        width: 90px;
-        font-size: 0.7rem;
-    }
-
-    .icon_list span {
-        font-size: 50px;
     }
 }
 
@@ -212,6 +178,27 @@ checkbox-item {
 iframe {
     width: 100%;
     aspect-ratio: 16/9;
+}
+
+.icon_list {
+    margin-bottom: 60px;
+    text-align: center;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.icon_list li {
+    aspect-ratio: 1/1;
+    width: 80px;
+    border: 5px solid #328ef0;
+    background-color: aliceblue;
+    border-radius: 20%;
+    vertical-align: bottom;
+}
+
+.icon_list span {
+    font-size: 3rem;
 }
 
 .card span {
