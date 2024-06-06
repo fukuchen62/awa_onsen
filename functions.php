@@ -60,6 +60,31 @@ function fs_script_files()
         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     );
 
+    // Google Fontsのプリコネクトを設定
+    wp_enqueue_style(
+        'google-fonts-preconnect1',
+        'https://fonts.googleapis.com',
+        array(),
+        null
+    );
+
+    wp_enqueue_style(
+        'google-fonts-preconnect2',
+        'https://fonts.gstatic.com',
+        array(),
+        null,
+        'crossorigin="anonymous"'
+    );
+
+    // Google Fontsの読み込み
+    wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap',
+        array(),
+        null
+    );
+
+
     // google-web-fontsを読み込む
     wp_enqueue_style(
         "google-web-fonts",
@@ -116,7 +141,6 @@ function fs_script_files()
 
     if (is_tax('column_type')) { // コラムの一覧ページのCSSとJSの読み込み
         wp_enqueue_style('awa-onsen-column-list', get_template_directory_uri() . '/assets/css/column_list.css');
-        wp_enqueue_script('food-science-top', get_template_directory_uri() . '/assets/js/vendor/jquery-3.6.0.min.js');
     }
 
     if (is_tax('course_type')) { // モデルコース一覧のCSSの読み込み
