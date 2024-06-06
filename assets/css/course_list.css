@@ -4,6 +4,10 @@
     /* border: 1px solid red; */
 }
 
+.navlist_item:nth-child(4) {
+    color: #DBF500;
+}
+
 /* タグ */
 .info_tag {
     margin: 50px auto 0;

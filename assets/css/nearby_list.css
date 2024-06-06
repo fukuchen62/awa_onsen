@@ -1,24 +1,7 @@
 @charset "utf-8";
 
-/* inner */
-
-.inner {
-    width: 80%;
-    margin: 0 auto;
-}
-
-@media(width>=1201px) {
-    .inner {
-        margin: 0 auto;
-        width: 100%;
-    }
-
-
-
-    .card {
-        flex: 1 0 50%;
-        padding: 10px;
-    }
+.navlist_item:nth-child(3) {
+    color: #DBF500;
 }
 
 /* カード型背景 */
