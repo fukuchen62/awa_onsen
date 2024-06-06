@@ -6,19 +6,26 @@
 
 section p {
     width: 80%;
-    background-color: white;
-    color: #538FCB;
+    /* line-height: 100px; */
+    /* background-color: white; */
+    color: #DBF500;
     text-align: center;
-    padding: 20%;
+    height: 300px;
+    /* padding: 20%; */
     border-radius: 10px;
     font-size: 1.125rem;
     font-weight: bold;
     margin: 50px auto;
+    background-image: url(../images/notfound.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
 }
+
 
 @media (width>=757px) {
     section p {
-        background-color: #538FCB;
-        color: white;
+        /* background-color: #538FCB; */
+        color: #DBF500;
     }
 }
