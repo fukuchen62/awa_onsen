@@ -4,9 +4,7 @@
 }
 /* タイトル */
 
-h2 {
-    font-size: 1.25rem;
-}
+
 
 .lined-title {
     font-size: 1.125rem;
@@ -16,9 +14,7 @@ h2 {
 /* メディアクエリ */
 
 @media (width>=757px) {
-    h2 {
-        font-size: 2.5rem;
-    }
+  
 
     .lined-title {
         font-size: 1.5rem;

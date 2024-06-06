@@ -101,10 +101,6 @@ h5 {
 
 /* フォントサイズのみ */
 @media(width>=431px) {
-    h2 {
-        font-size: 2.5rem;
-    }
-
     p,
     .comment,
     input[type="submit"],

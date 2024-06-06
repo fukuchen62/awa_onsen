@@ -35,10 +35,8 @@ dt>h3 {
     }
 
     .info_tag li {
-        font-size: 1.5rem
+        font-size: 1.5rem;
     }
-
-    ;
 }
 
 @media(width>=757px) {
