@@ -128,16 +128,20 @@ li>a {
 }
 
 /* アコーディオン */
+.details {
+    margin-bottom: 32px;
+}
 
 .details-summary {
     position: relative;
     display: block;
     padding: 20px;
-    color: #fff;
+    color: #000000;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
     background-color: #538FCB;
+    margin-top: 32px;
 
     &:hover {
         cursor: pointer;
@@ -156,7 +160,7 @@ li>a {
         &:before,
         &:after {
             content: "";
-            background-color: #fff;
+            background-color: #000;
             border-radius: 10px;
             width: 18px;
             height: 4px;
@@ -171,13 +175,24 @@ li>a {
             height: 18px;
             top: 0;
             right: 7px;
+            background-color: black;
         }
     }
 
     &.is-active {
+        .acco_title {
+            color: #DBF500;
+        }
+
         .btn {
             -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg);
+
+
+
+            &:after {
+                background-color: #DBF500;
+            }
 
             &:before {
                 content: none;
@@ -188,65 +203,4 @@ li>a {
 
 .details-summary::-webkit-details-marker {
     display: none;
-}
-
-.accordion-container {
-    margin: 0 auto;
-}
-
-.accordion-list:not(:first-child) {
-    margin-top: 10px;
-}
-
-.accordion-title {
-    margin: 32px auto 0;
-    height: 48px;
-    background: #538FCB;
-    cursor: pointer;
-    font-size: 18px;
-    position: relative;
-    text-align: center;
-    line-height: 48px;
-}
-
-.accordion-title:before {
-    position: absolute;
-    content: '';
-    top: 50%;
-    right: 25px;
-    height: 2px;
-    width: 15px;
-    background: white;
-    transform: rotate(90deg);
-    transition: all .3s ease-in-out;
-}
-
-.accordion-title:after {
-    position: absolute;
-    content: '';
-    top: 50%;
-    right: 25px;
-    height: 2px;
-    width: 15px;
-    background: white;
-    transition: all .3s ease-in-out;
-}
-
-.accordion-title.open:before {
-    transform: rotate(180deg);
-    background: #DBF500;
-}
-
-.accordion-title.open:after {
-    opacity: 0;
-    background: #DBF500;
-}
-
-.accordion-title.open h3 {
-    color: #DBF500;
-}
-
-.accordion-text {
-    display: none;
-    padding: 20px 40px;
 }
