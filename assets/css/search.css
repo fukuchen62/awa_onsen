@@ -10,7 +10,6 @@ h2 {
 }
 
 h3 {
-    /* font-size: 1.125rem; */
     margin: 13px;
 }
 
@@ -29,8 +28,6 @@ form {
         margin: 16px;
     }
 }
-
-
 
 .tag {
     margin: 50px auto 0;
@@ -95,7 +92,6 @@ form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-
 }
 
 .checkbox-item {
@@ -122,8 +118,6 @@ form {
 }
 
 /* 送信リセットボタン */
-
-
 .btn {
     margin: 30px auto;
     display: flex;
@@ -165,10 +159,6 @@ form {
     .contents h3 {
         font-size: 2.25rem;
     }
-
-    /* h3 {
-        font-size: 2.25rem;
-    } */
 
     h4 {
         font-size: 1.5rem;
