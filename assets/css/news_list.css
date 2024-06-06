@@ -1,6 +1,8 @@
 @charset "utf-8";
 
-
+a {
+    display: block;
+}
 
 /* タグ */
 .info_tag {
@@ -47,11 +49,6 @@ li>a {
 .news_card {
     margin: 0 auto;
 }
-
-.news_contents p {
-    font-size: 1rem;
-}
-
 
 
 /* ページネーション */
