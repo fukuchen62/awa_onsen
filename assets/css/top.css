@@ -181,18 +181,16 @@ a {
 
 .section_btn {
     width: 80%;
-    height: 40px;
+    font-size: 1.25rem;
+    font-weight: bold;
     border-radius: 24px;
+    margin: 0 auto;
     margin-top: 32px;
+    padding: 8px 0;
 }
 
-.section_btn a,
 .section_btn i {
     font-size: 1.25rem;
-}
-
-.section_btn a {
-    font-weight: bold;
 }
 
 .section_btn:hover a,
@@ -219,6 +217,7 @@ a {
 
 .section_ttl {
     width: 100%;
+    font-size: 1rem;
     font-weight: bold;
     position: absolute;
     top: 50%;
@@ -248,29 +247,25 @@ a {
     .section_btn {
         width: 60%;
         height: auto;
-        padding: 8px 0;
-    }
-
-    .section_btn a {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .section_btn i {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .sticky_note {
-        width: 445px;
-        height: 100px;
+        width: 300px;
+        height: 62px;
         margin-left: 24px;
     }
 
     .section_ttl {
-        font-size: 2rem;
+        font-size: 1.25rem;
     }
 
     .section_content {
-        padding: 80px 0;
+        padding: 40px 0;
         border-radius: 100px;
     }
 
@@ -328,7 +323,7 @@ a {
     border: 3px solid #538FCB;
 }
 
-.about_btn a,
+.about_btn,
 .about_btn i {
     color: #538FCB;
 }
@@ -345,8 +340,8 @@ a {
     }
 
     .content_inner h3 {
-        font-size: 2.5rem;
-        margin-bottom: 40px;
+        font-size: 2rem;
+        margin-bottom: 24px;
     }
 
     .content_inner span:nth-child(1) {
@@ -358,8 +353,8 @@ a {
     }
 
     .about_img {
-        width: 60%;
-        padding-top: 40px;
+        width: 40%;
+        padding-top: 24px;
     }
 }
 
@@ -370,11 +365,8 @@ a {
     border-bottom-color: #538FCB;
     border-bottom-style: dashed;
     border-bottom-width: 4px;
-}
-
-.top_news_card a {
     display: flex;
-    align-items: center;
+    text-align: left;
 }
 
 .top_news_img {
@@ -397,12 +389,8 @@ a {
     margin-bottom: 4px;
 }
 
-.top_category,
-.tax {
-    background-color: #d9d9d9;
-    padding: 8px;
+.hashtag_list{
     margin-top: 8px;
-    border-radius: 15px;
 }
 
 /*=========== 新着とコラム共通メディアクエリ ========== */
@@ -410,19 +398,16 @@ a {
 @media(width>=757px) {
 
     .top_news_card {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .top_news_img {
+        max-width: 16%;
         margin-right: 40px;
     }
 
     .top_news_card .date {
-        font-size: 1.5rem;
-    }
-
-    .news_title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .top_category,
@@ -509,7 +494,7 @@ a {
 .slide-arrow {
     margin: auto;
     position: absolute;
-    bottom: -25px;
+    bottom: -16px;
     width: 0;
     z-index: 10;
 }
@@ -539,6 +524,11 @@ button {
 }
 
 /* sliderのドット */
+
+.slick-dots {
+    /* position: absolute; */
+    transform: translateY(-8px);
+}
 .slick-dots li.slick-active button:before {
     color: #DBF500;
 }
@@ -547,7 +537,8 @@ button {
 
 @media(width>=757px) {
     .slider_img {
-        margin-bottom: 56px;
+        width: 40%;
+        margin-bottom: 32px;
     }
 
     .slider_content h3 {
@@ -558,7 +549,7 @@ button {
     }
 
     .slide-arrow {
-        bottom: -32px;
+        bottom: -25px;
     }
 
     .prev-arrow {
@@ -593,7 +584,7 @@ button {
     border: 3px solid #eb97a8;
 }
 
-.spa_btn a,
+.spa_btn,
 .spa_btn i {
     color: #eb97a8;
 }
@@ -628,7 +619,7 @@ button {
     border: 3px solid #F5A200;
 }
 
-.facility_btn a,
+.facility_btn,
 .facility_btn i {
     color: #F5A200;
 }
@@ -665,7 +656,7 @@ button {
     letter-spacing: -1px;
 }
 
-.course_btn a,
+.course_btn,
 .course_btn i {
     color: #6BDE4E;
 }
@@ -712,12 +703,13 @@ button {
 /* サ活とはボタン */
 .sauna_btn {
     width: 80%;
-    height: 40px;
     font-size: 1.25rem;
     font-weight: bold;
     color: #F31E49;
     border-radius: 24px;
     border: 3px solid #F31E49;
+    padding: 8px 0;
+    margin: 0 auto;
     margin-top: 32px;
 }
 
@@ -760,7 +752,7 @@ button {
     border: 3px solid #F5A200;
 }
 
-.column_btn a,
+.column_btn,
 .column_btn i {
     color: #F5A200;
 }
