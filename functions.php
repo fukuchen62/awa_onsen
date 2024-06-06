@@ -212,7 +212,7 @@ function fs_script_files()
     }
 
     // 新着情報のCSSの読み込み
-    if (is_single()) {
+    if (is_single() && get_post_type() == 'post') {
         wp_enqueue_style('news-style', get_template_directory_uri() . '/assets/css/news.css');
     }
 }
