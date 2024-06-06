@@ -34,11 +34,6 @@ dt>h3 {
 }
 
 @media(width>=757px) {
-
-    h2 {
-        font-size: 2.5rem;
-    }
-
     p {
         font-size: 2rem;
     }
