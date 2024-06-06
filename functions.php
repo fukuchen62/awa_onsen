@@ -27,6 +27,24 @@ function fs_theme_setup()
 }
 add_action('after_setup_theme', 'fs_theme_setup');
 
+/**
+ * fs_document_title_separator function
+ * タイトルの区切り文字を変更する
+ *
+ * @param string $separator
+ * @return string
+ */
+function fs_document_title_separator(string $separator): string
+{
+    $separator = '|';
+    return $separator;
+}
+// add_filter('関数の呼び出すタイミング', '呼び出す関数名');
+add_filter(
+    'document_title_separator',     //関数の呼び出すタイミング
+    'fs_document_title_separator'  //呼び出す関数名
+);
+
 
 /**
  * Scriptファイルを読みこむ処理
@@ -226,3 +244,27 @@ function fs_script_files()
     }
 }
 add_action('wp_enqueue_scripts', 'fs_script_files');
+
+/**
+ * Contact form 7のときには、整形機能をOffにする
+ *
+ * @return void
+ */
+function fs_wpcf7_autop()
+{
+    return false;
+}
+add_filter(
+    'wpcf7_autop_or_not',     //関数の呼び出すタイミング
+    'fs_wpcf7_autop'  //呼び出す関数名
+);
+
+function the_company_name()
+{
+    echo "株式会社ＱＬＩＰインタナショナル";
+}
+
+function get_company_name()
+{
+    return "株式会社ＱＬＩＰインタナショナル";
+}

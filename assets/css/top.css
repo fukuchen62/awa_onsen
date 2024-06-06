@@ -145,19 +145,8 @@ a {
 
 /*========== inner ==========*/
 .pc_inner {
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    border: 1px red solid;
-    /* position: relative; */
-}
-
-.pc_menu {
-    /* width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    border: 1px red solid;
-    position: relative; */
 }
 
 .inner {
@@ -173,12 +162,6 @@ a {
 }
 
 @media(width>=1201px) {
-    /* .pc_inner {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        border: 1px red solid;
-    } */
 
     .inner {
         width: 66%;
@@ -791,217 +774,21 @@ button {
     border: 10px solid #DBF500;
 }
 
-/*========== header ==========*/
 
-.header_container {
-    position: fixed;
-    z-index: 10;
-}
 
-.logo {
-    width: 100px;
-    cursor: pointer;
-    position: fixed;
-    top: 16px;
-    left: 16px;
-}
-
-/* topへ戻るボタン */
-.top_button {
-    width: 50px;
-    position: fixed;
-    bottom: 16px;
-    left: 16px;
-}
-
-.circle,
-.line .circle {
-    cursor: pointer;
-    /* サイズを必要に応じて調整 */
-    width: 50px;
-    /* サイズを必要に応じて調整 */
-    height: 50px;
-    border: 3px solid #DBF500;
-    border-radius: 50%;
-    display: flex;
-    position: relative;
-}
-
-.line {
-    position: absolute;
-    top: 45%;
-    width: 16px;
-    height: 3px;
-    background-color: #DBF500;
-    border-radius: 5px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-}
-
-.circle .line:nth-child(1) {
-    left: 20%;
-    transform: rotate(-45deg);
-}
-
-.circle .line:nth-child(2) {
-    transform: rotate(45deg);
-    right: 20%;
-}
-
-.header_right {
-    position: relative;
-}
-
-.hamburger {
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    cursor: pointer;
-    background-image: url(../images/hamburger.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.hamburger.isactive {
-    background-image: url(../images/close.svg);
-}
-
-.logo{
+/* .logo {
     opacity: 0;
     visibility: hidden;
     transform: translateX(-100%);
     transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0.7s;
-}
+} */
 
-.logo.isactive{
+/* .logo.isactive {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
     transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
 }
-
-/* header中身 */
-.navlist {
-    width: 250px;
-    color: #fff;
-    background-color: #4272A2;
-    border: 4px dashed #fff;
-    border-radius: 12px;
-    z-index: 20;
-    position: fixed;
-    bottom: 72px;
-}
-
-.sp_nav .navlist {
-    right: -120%;
-    transition: all 0.7s;
-}
-
-.sp_nav .navlist.isactive {
-    right: 0;
-}
-
-.nav_bg {
-    width: 200px;
-    height: 38px;
-    margin: 16px auto;
-    background-image: url(../images/nav_bg.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.nav_bg:last-child {
-    transform: rotate(180deg);
-}
-
-.navlist_container {
-    width: 160px;
-    margin: 0 auto;
-}
-
-.navlist_item {
-    font-size: 1.25rem;
-    margin-bottom: 24px;
-}
-
-.navlist_item span {
-    vertical-align: bottom;
-}
-
-.navlist_item:hover {
-    color: #eb97a8;
-    transition: all 0.7s;
-}
-
-.navlist_item:last-child {
-    margin-bottom: 0;
-}
-
-.navlist_item span {
-    margin-right: 8px;
-}
-
-/* ========== headerメディアクエリ ========== */
-
-@media(width>=757px) {
-    .logo {
-        width: 120px;
-        top: 32px;
-        left: 32px;
-    }
-
-    .top_button {
-        width: 80px;
-        bottom: 32px;
-        left: 32px;
-    }
-
-    .circle,
-    .line .circle {
-        /* サイズを必要に応じて調整 */
-        width: 80px;
-        /* サイズを必要に応じて調整 */
-        height: 80px;
-        border: 4px solid #DBF500;
-    }
-
-    .line {
-        width: 26px;
-        height: 4px;
-    }
-
-    .hamburger {
-        width: 80px;
-        height: 80px;
-        bottom: 32px;
-        right: 32px;
-    }
-
-    .navlist {
-        width: 280px;
-        bottom: 110px;
-    }
-
-    .nav_bg {
-        width: 230px;
-        height: 43px;
-        margin: 24px auto;
-    }
-
-    .navlist_container {
-        width: 180px;
-        margin: 0 auto;
-    }
-
-    .navlist_item {
-        font-size: 1.5rem;
-    }
-
-}
-
-@media(width>=1201px) {
 
 .top_button {
     opacity: 0;
@@ -1010,100 +797,13 @@ button {
     transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0.7s;
 }
 
-.top_button.isactive{
+.top_button.isactive {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
     transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
-}
-    #pc_nav {
-        display: flex;
-        justify-content: end;
-    }
-
-    .navlist {
-        bottom: 50%;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(100%) translateY(50%);
-        transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0.7s;
-    }
-
-    .navlist.isactive {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0) translateY(50%);
-        transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
-    }
-
-}
-
-/* ========== footer ========== */
-
-.footer_container {
-    color: #fff;
-    background-color: #4272A2;
-    border: 4px dashed #fff;
-    border-radius: 12px;
-    padding: 72px 0;
-    margin: 0 8px 8px 8px;
-}
-
-.footer_list {
-    width: 240px;
-    margin: 0 auto;
-}
-
-.footer_item {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 40px;
-    display: inline-block;
-}
-
-.footer_item:hover {
-    color: #eb97a8;
-    transition: all 0.7s;
-}
-
-.footer_item span {
-    vertical-align: bottom;
-    margin-right: 8px;
-}
-
-.footer_item:nth-child(3) a {
-    display: flex;
-}
-
-.footer_wrap p {
-    text-align: center;
-}
-
-/* ========== footerメディアクエリ ========== */
-
-@media(width>=757px) {
-
-    .footer_container {
-        padding: 64px 0;
-        margin: 0 16px 16px 16px;
-    }
-
-    .footer_list {
-        width: 280px;
-        margin: 0 auto;
-    }
-
-    .footer_item {
-        font-size: 1.5rem;
-        margin-bottom: 40px;
-    }
-
-    .footer_wrap p {
-        font-size: 1.25rem;
-    }
-}
-
-/* ==================== */
+} */
+/* ======== ナビのtopを黄色にする ========== */
 .navlist_item:nth-child(1) {
     color: #DBF500;
 }

@@ -1,10 +1,47 @@
 "use strict";
 
-// ヘッダー
+// header
+$(function () {
 
+    // ハンバーガーメニューをクリックしたらメニューを表示させる
+    $(".hamburger").click(function () {
+        $(this).toggleClass("active");
+        $(".sp_nav .navlist").toggleClass("isactive");
+        $(this).toggleClass("isactive");
+    });
+    // メニューの中をクリックしたら、メニューを閉じる
+    $(".navlist_item").click(function () {
+        $(".hamburger").removeClass("active");
+        $(".sp_nav .navlist").removeClass("isactive");
+        $(".hamburger").removeClass("isactive");
+    });
 
+    // スクロールトップの設定
+    $('.top_button').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 'smooth');
+        return false;
+    });
 
-// フッター
+    // メニューのアニメーション
+    $(document).ready(function () {
+        if ($(window).width() > 1200) {
+            let nav = $(".navlist");
+            nav.addClass("isactive");
+
+            $(window).scroll(function () {
+                let columnSection = $(".footer_wrap");
+                let threshold2 = columnSection.offset().top - 500;
+
+                if ($(window).scrollTop() >= threshold2) {
+                    nav.removeClass("isactive");
+                } else {
+                    nav.addClass("isactive");
+                }
+            });
+        }
+    });
+
+});
 
 
 
