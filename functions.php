@@ -70,20 +70,19 @@ function fs_script_files()
     wp_enqueue_style("awa-onsen-reset", get_template_directory_uri() . "/assets/css/reset.css");
     wp_enqueue_style("awa-onsen-destyle", get_template_directory_uri() . "/assets/css/destyle.css");
     wp_enqueue_style("awa-onsen-common", get_template_directory_uri() . "/assets/css/common.css");
-    wp_enqueue_style('top-style', get_template_directory_uri() . '/assets/css/top.css');
 
     // jQueryライブラリを読み込む
     wp_enqueue_script("jquery");
 
     // JSの読み込み
     wp_enqueue_script("awa-onsen-common", get_template_directory_uri() . "/assets/js/common.js");
-    wp_enqueue_script('top-script', get_template_directory_uri() . '/assets/js/top.js');
+
 
     // フロントページ用のCSSとJSを読み込む
-    // if (is_front_page()) {
-    //     wp_enqueue_style('top-style', get_template_directory_uri() . '/assets/css/top.css');
-    //     wp_enqueue_script('top-script', get_template_directory_uri() . '/assets/js/top.js');
-    // }
+    if (is_front_page()) {
+        wp_enqueue_style('top-style', get_template_directory_uri() . '/assets/css/top.css');
+        wp_enqueue_script('top-script', get_template_directory_uri() . '/assets/js/top.js');
+    }
 
     // 詳細ページ用のCSSとJSの読み込み
     if (is_singular('spa')) { // 温泉詳細のCSS,JSの読み込み
