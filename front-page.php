@@ -47,6 +47,7 @@
                     <div class="content_inner">
                         <div class="top_news_list">
                             <!-- カード型 -->
+
                             <article class="top_news_card">
                                 <a class="top_news_img" href="#"><img src="<?php echo get_template_directory_uri() ?>./assets/images/bike.jpg" alt="バイク"></a>
                                 <div class="top_news_contents">

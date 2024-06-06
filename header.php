@@ -4,13 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- googleicon CDN -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-    <!-- slick CDN -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
     <?php wp_head(); ?>
 </head>
 
@@ -41,28 +34,28 @@
                 <div class="navlist">
                     <div class="nav_bg"></div>
                     <ul class="navlist_container">
-                        <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url(); ?>"><span class="material-symbols-outlined">
                                     bubble_chart
                                 </span>TOP</a></li>
-                        <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
-                                    bath_outdoor
+                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>">
+                                bath_outdoor
                                 </span>温泉一覧</a></li>
-                        <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                     pin_drop
                                 </span>周辺一覧</a></li>
-                        <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                     directions_walk
                                 </span>モデルコース</a></li>
-                        <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                     sauna
                                 </span>サ活</a></li>
-                        <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                     border_color
                                 </span>コラム</a></li>
-                        <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                     search
                                 </span>検索</a></li>
-                        <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                     home
                                 </span>マイページ</a></li>
                     </ul>
@@ -75,28 +68,28 @@
                     <div class="navlist">
                         <div class="nav_bg"></div>
                         <ul class="navlist_container">
-                            <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url(); ?>"><span class="material-symbols-outlined">
                                         bubble_chart
                                     </span>TOP</a></li>
-                            <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                         bath_outdoor
                                     </span>温泉一覧</a></li>
-                            <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                         pin_drop
                                     </span>周辺一覧</a></li>
-                            <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                         directions_walk
                                     </span>モデルコース</a></li>
-                            <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                         sauna
                                     </span>サ活</a></li>
-                            <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                         border_color
                                     </span>コラム</a></li>
-                            <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                         search
                                     </span>検索</a></li>
-                            <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                         home
                                     </span>マイページ</a></li>
                         </ul>
