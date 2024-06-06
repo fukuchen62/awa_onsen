@@ -340,6 +340,7 @@ h2 {
     margin-right: 22px;
 }
 
+/* 日付 */
 .news_card .date {
     color: transparent;
     -webkit-text-stroke: 1px #dbf500;
