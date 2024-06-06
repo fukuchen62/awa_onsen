@@ -40,22 +40,22 @@
                         <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>">
                                 bath_outdoor
                                 </span>温泉一覧</a></li>
-                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('/facility_type/shopping/'); ?>"><span class="material-symbols-outlined">
                                     pin_drop
                                 </span>周辺一覧</a></li>
-                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('/course_type/tour/'); ?>"><span class="material-symbols-outlined">
                                     directions_walk
                                 </span>モデルコース</a></li>
-                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('//'); ?>"><span class="material-symbols-outlined">
                                     sauna
                                 </span>サ活</a></li>
-                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('/column_type/spa-column/'); ?>"><span class="material-symbols-outlined">
                                     border_color
                                 </span>コラム</a></li>
-                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('//'); ?>"><span class="material-symbols-outlined">
                                     search
                                 </span>検索</a></li>
-                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                        <li class="navlist_item"><a href="<?php echo home_url('/mypage/'); ?>"><span class="material-symbols-outlined">
                                     home
                                 </span>マイページ</a></li>
                     </ul>
@@ -74,22 +74,22 @@
                             <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
                                         bath_outdoor
                                     </span>温泉一覧</a></li>
-                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('facility_type/shopping/'); ?>"><span class="material-symbols-outlined">
                                         pin_drop
                                     </span>周辺一覧</a></li>
-                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('/course_type/tour/'); ?>"><span class="material-symbols-outlined">
                                         directions_walk
                                     </span>モデルコース</a></li>
-                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('//'); ?>"><span class="material-symbols-outlined">
                                         sauna
                                     </span>サ活</a></li>
-                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('column_type/spa-column/'); ?>"><span class="material-symbols-outlined">
                                         border_color
                                     </span>コラム</a></li>
-                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('//'); ?>"><span class="material-symbols-outlined">
                                         search
                                     </span>検索</a></li>
-                            <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                            <li class="navlist_item"><a href="<?php echo home_url('/mypage/'); ?>"><span class="material-symbols-outlined">
                                         home
                                     </span>マイページ</a></li>
                         </ul>
