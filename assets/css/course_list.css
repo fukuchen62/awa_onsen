@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-* {
-    /* border: 1px solid red; */
-}
 
 .navlist_item:nth-child(4) {
     color: #DBF500;
@@ -65,9 +62,6 @@ li>a {
 
 /* フォントサイズのみ */
 @media(width>=431px) {
-    h2 {
-        font-size: 2.5rem;
-    }
 
     .info_tag li {
         font-size: 1.5rem;
