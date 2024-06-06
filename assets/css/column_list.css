@@ -47,6 +47,71 @@ a {
     margin-top: 50px;
 }
 
+
+/* 店舗ごとのカード型の設定 */
+.news_card {
+    display: flex;
+    max-width: 625px;
+    font-size: 1.5rem;
+    padding: 14px 0;
+    border-bottom-color: #dbf500;
+    border-bottom-style: dashed;
+    border-bottom-width: 4px;
+}
+
+.news_card a {
+    display: flex;
+    flex-direction: column;
+}
+
+.news_card img {
+    aspect-ratio: 1/1;
+    max-width: 140px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 16px;
+    margin-right: 22px;
+}
+
+/* 日付 */
+.news_card .date {
+    color: transparent;
+    -webkit-text-stroke: 1px #dbf500;
+    margin-bottom: 4px;
+}
+
+.news_card .title {
+    margin-bottom: 4px;
+}
+
+
+/* カード型テスト */
+/* .news_card {
+    display: flex;
+    align-items: center;
+    border-bottom-color: #dbf500;
+    border-bottom-style: dashed;
+    border-bottom-width: 4px;
+    margin-bottom: 16px;
+} */
+
+/* .news_card img {
+    aspect-ratio: 1/1;
+    max-width: 140px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 16px;
+    margin: 0 22px 16px 0;
+} */
+
+/* .news_contents {
+    flex: 1;
+} */
+
+/* .news_contents h6 {
+    margin-bottom: 10px;
+} */
+
 /* ページネーション */
 .pagination {
     margin: 50px;
