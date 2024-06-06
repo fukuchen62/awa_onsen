@@ -510,6 +510,11 @@ h5 {
 
 /*========== header ==========*/
 
+.pc_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .header_container {
     position: fixed;
     z-index: 10;
