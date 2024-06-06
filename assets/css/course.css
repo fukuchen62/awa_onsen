@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 html {
-    background-color: rgb(69, 69, 144);
+    /* background-color: rgb(69, 69, 144); */
 }
 
 /* -----------------------
@@ -92,17 +92,29 @@ h4 {
     left: 110px;
 }
 
-/* photo */
+/* photo/photoの白四角の設定 */
 .photo {
+    background-image: url(../images/tooling.jpg);
+    background-size: cover;
+    position: relative;
     width: 256px;
     height: 231px;
     margin: auto;
-    display: block;
+    z-index: 1;
 }
 
-/* -----------------------
-DAY1/DAY2
--------------------------- */
+.photo::before {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    width: 115px;
+    height: 64px;
+    border-radius: 20px;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
 .position {
     position: relative;
 }
@@ -110,25 +122,19 @@ DAY1/DAY2
 .clock {
     font-weight: 900;
     position: absolute;
-    top: 25px;
-    right: 60px;
+    top: 10%;
+    right: 16%;
     z-index: 333;
 }
 
-.square_white {
-    position: absolute;
-    background-color: #fff;
-    width: 115px;
-    height: 64px;
-    border-radius: 20px;
-    top: 10px;
-    right: 26px;
-    z-index: 2;
-}
+/* -----------------------
+DAY1/DAY2
+-------------------------- */
 
-.photo {
-    z-index: 1;
-}
+
+
+
+
 
 .time {
     color: #fff;
@@ -188,7 +194,7 @@ div h4 {
 
 /* 車で10分アイコン */
 .car_green {
-    background-image: url(../images/fa6-solid_car-side.png);
+    background-image: url(../images/car_icon.svg);
     background-repeat: no-repeat;
     width: 50px;
     height: 50px;
@@ -199,15 +205,228 @@ div h4 {
 .car_green::before {
     content: '';
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: #6BDE4E;
     z-index: -1;
-    bottom: 5px;
+    bottom: -5px;
     left: -4px;
+}
+
+/* 黄緑の四角 */
+.yellowgreen_square {
+    width: 90%;
+    height: auto;
+    background-color: #A7E099;
+    border-radius: 20px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.yellowgreen_square h4 {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 0;
+    padding-top: 35px;
+}
+
+.yellowgreen_square::before,
+.yellowgreen_square::after {
+    content: '';
+    background-color: white;
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    top: 45px;
+}
+
+.yellowgreen_square::before {
+    right: 10px;
+}
+
+.yellowgreen_square::after {
+    left: 10px;
+}
+
+.yellowgreen_square p {
+    margin-left: 0;
+    text-align: center;
+    padding: 0 28px;
+    padding-bottom: 34px;
 }
 
 /* -----------------------
 レスポンシブ
 -------------------------- */
+/* レスポンシブ */
+
+.tb_only {
+    display: none;
+}
+
+.pc_only {
+    display: none;
+}
+
+.sp_tb_only {
+    display: block;
+}
+
+/* -----------------------
+レスポンシブ tablet
+-------------------------- */
+@media (width>=757px) {
+    .sp_only {
+        display: none;
+    }
+
+    .tb_only {
+        display: block;
+    }
+
+    .pc_only {
+        display: none;
+    }
+
+    /* タイムスケジュール */
+    .flow12 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .flow12>li {
+        list-style-type: none;
+        position: relative;
+        padding-bottom: 50px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .flow12>li:nth-of-type(even)::after {
+        content: "";
+        position: absolute;
+        left: 50px;
+        top: 0;
+        width: 0;
+        height: 100%;
+        border-left: 4px dotted #d4d4d4;
+    }
+
+    .flow12>li:nth-of-type(odd)::before {
+        content: "";
+        position: absolute;
+        left: 50px;
+        top: -40px;
+        width: 20%;
+        height: 40px;
+    }
+
+    .flow12>li:nth-of-type(odd)::after {
+        content: "";
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        width: 20%;
+        height: calc(100% - 50px);
+        border-left: 4px dotted #d4d4d4;
+    }
+
+    .flow12>li:first-of-type::before,
+    .flow12>li:last-of-type::after {
+        content: unset;
+    }
+
+    .flow12>li dl {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(100% - 130px);
+    }
+
+    .flow12>li .icon12 {
+        display: inline-block;
+        margin: 0;
+        width: 100px;
+        height: auto;
+        margin-right: 20px;
+        text-align: center;
+        font-weight: bold;
+        vertical-align: middle;
+        font-size: 2rem;
+        line-height: 100px;
+        background: #B058D6;
+        color: #fff;
+        border-radius: 100vh;
+        position: relative;
+        z-index: 1;
+    }
+
+    .flow12>li dt {
+        display: inline-block;
+        margin: 1rem 0 0.5rem;
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1.5;
+        letter-spacing: .1em;
+    }
+
+    .flow12>li dd {
+        max-width: 550px;
+        margin: 0;
+        font-weight: normal;
+        line-height: 2;
+        letter-spacing: .1em;
+    }
+
+    @media screen and (min-width: 960px) {
+        .flow12>li:nth-of-type(even) {
+            margin-left: 20%;
+            padding-top: 20px;
+        }
+
+        .flow12>li:nth-of-type(odd)::after {
+            border-bottom: 4px dotted #d4d4d4;
+        }
+
+        .flow12>li:nth-of-type(odd)::before {
+            border-top: 4px dotted #d4d4d4;
+            border-left: 4px dotted #d4d4d4;
+        }
+
+        .flow12>li:nth-of-type(even)::after {
+            height: calc(100% - 40px);
+        }
+    }
+}
+
+/* -----------------------
+レスポンシブ pc
+-------------------------- */
+@media (width>=1201px) {
+    .sp_only {
+        display: none;
+    }
+
+    .tb_only {
+        display: none;
+    }
+
+    .pc_only {
+        display: block;
+    }
+
+    .sp_tb_only {
+        display: none;
+    }
+}
+
+/* -----------------------
+レスポンシブ フォントサイズのみ
+-------------------------- */
+/* フォントサイズのみ */
+@media (width>=431px) {
+    /* =================================
+ここは各自のCSSファイルで設定（サンプル）
+================================= */
+}

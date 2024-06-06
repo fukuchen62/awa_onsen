@@ -1,27 +1,30 @@
 @charset "utf-8";
 
-h2 {
-    font-size: 2.5rem;
+/* ヘッダー */
+.navlist_item:nth-child(7) {
+    color: #DBF500;
 }
 
-h4 {
-    font-size: 1.5rem;
+
+
+h3 {
     margin: 13px;
 }
 
-@media(width>=757px) {
-
-    h4 {
-        margin: 16px;
-    }
-
-    form {
-        font-size: 1.5rem;
-    }
+h4 {
+    font-size: 1.125rem;
+    margin: 13px;
 }
 
 form {
+    font-size: 1rem;
     font-weight: bolder;
+}
+
+@media(width>=757px) {
+    h3 {
+        margin: 16px;
+    }
 }
 
 .tag {
@@ -48,6 +51,10 @@ form {
     display: none;
 }
 
+.contents h3 {
+    font-size: 1.125rem;
+}
+
 .contents.active {
     display: block;
 }
@@ -57,15 +64,12 @@ form {
         grid-template-columns: repeat(3, 1fr);
         max-width: 100%;
         gap: 1px;
-
     }
 
     .tag li {
         border-radius: 30px 30px 0 0;
-        font-size: 1.5rem;
     }
 }
-
 
 .area {
     display: grid;
@@ -86,7 +90,6 @@ form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-
 }
 
 .checkbox-item {
@@ -113,8 +116,6 @@ form {
 }
 
 /* 送信リセットボタン */
-
-
 .btn {
     margin: 30px auto;
     display: flex;
@@ -145,4 +146,24 @@ form {
 
 .card h3 {
     background-color: #EB97A8;
+}
+
+/* フォントサイズのみ */
+@media(width>=431px) {
+
+    .contents h3 {
+        font-size: 2.25rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        font-size: 1.5rem;
+    }
+
+    .tag li {
+        font-size: 1.5rem;
+    }
 }

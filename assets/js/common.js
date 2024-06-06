@@ -1,12 +1,31 @@
 "use strict";
 
-// ヘッダー
+// header
+$(function () {
 
+    // ハンバーガーメニューをクリックしたらメニューを表示させる
+    $(".hamburger").click(function () {
+        $(".sp_nav .navlist").toggleClass("isactive");
 
+        if($(".sp_nav .navlist").hasClass("isactive")){
+            $(".hamburger").addClass("isactive");
+        } else {
+            $(".hamburger").removeClass("isactive");
+        }
+    });
+    // メニューの中をクリックしたら、メニューを閉じる
+    $(".navlist_item").click(function () {
+        $(".hamburger").removeClass("active");
+        $(".hamburger").removeClass("isactive");
+    });
 
-// フッター
+    // スクロールトップの設定
+    $('.top_button').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 'smooth');
+        return false;
+    });
 
-
+});
 
 
 // 泡の出現

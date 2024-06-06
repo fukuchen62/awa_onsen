@@ -1,11 +1,11 @@
 @charset "utf-8";
 
-* {
-    /* border: 1px solid red; */
-}
-
 a {
     display: block;
+}
+
+.navlist_item:nth-child(6) {
+    color: #DBF500;
 }
 
 /* タグ */
@@ -41,7 +41,6 @@ a {
     color: #fff;
 }
 
-
 /* 記事 */
 .news_list {
     margin-top: 50px;
@@ -53,10 +52,6 @@ a {
     text-align: center;
 }
 
-
-.clearfix {
-    clear: both;
-}
 
 /* フォントサイズのみ */
 @media(width>=431px) {
@@ -86,12 +81,4 @@ a {
         padding-top: 15px;
     }
 
-    .news_card .date {
-
-        -webkit-text-stroke: 1px #538fcb;
-
-    }
 }
-
-
-.hashtag_list {}

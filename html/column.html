@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
+    <!-- googleicon CDN -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
@@ -22,145 +25,272 @@
 </head>
 <body>
     <div class="bubble_background">
-        <div class="container">
 
-            <!-- header -->
-            <main>
-                <section>
-                    <h2 class="under_line">コラムタイトル</h2>
-
-                    <!-- コラム内容 -->
-                    <p class="date">2024.05.31(Fri)</p>
-
-                    <!-- パンくず -->
-
-                    <!-- コラム写真 -->
-                    <div class="column_img">
-                        <img src="../assets/images/column.jpg" alt="">
+        <!-- header -->
+        <header class="header_wrap">
+            <div class="header_container">
+                <!-- headerの左側 -->
+                <!-- 常時表示サイトロゴ -->
+                <a class="logo" href="index.html">
+                    <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
+                </a>
+                <!-- 上にスクロールするボタン -->
+                <div class="top_button">
+                    <div class="circle">
+                        <div class="line"></div>
+                        <div class="line"></div>
                     </div>
-
-                    <!-- ハッシュタグ -->
-                    <div class="hashtag_list">
-                        <a class="hashtag" href="#">#ああああああ</a>
-                        <a class="hashtag" href="#">#ああああああ</a>
-                        <a class="hashtag" href="#">#ああああああ</a>
-                        <a class="hashtag" href="#">#ああああああ</a>
-                    </div>
-
-
-                    <!-- 記事内容 -->
-                    <p class="column_text">ここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入ります</p>
-
-                </section>
-
-                <!-- コメントフォーム -->
-                <div class="comment_form">
-                    <!-- コメント入力欄 -->
-                    <div class="item">
-                        <label class="comment" for="comment">コメント入力欄</label>
-                        <textarea rows="10" cols="80" name="comment" id="comment"></textarea><br>
-                    </div>
-
-                    <!-- 送信ボタン -->
-                    <div class="item">
-                        <input type="submit" value="コメントを送信">
-                    </div>
-
-                    <div class="item comment_content">
-                        <!-- アイコン -->
-                        <div class="flex">
-                            <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
-                            <div class="flex_item">
-                                <!-- コメント者名 -->
-                                <p>matsuo saki</p>
-                                <!-- コメント内容 -->
-                                <p>整いました★</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item comment_content">
-                        <!-- アイコン -->
-                        <div class="flex">
-                            <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
-                            <div class="flex_item">
-                                <!-- コメント者名 -->
-                                <p>yamashita sawaka</p>
-                                <!-- コメント内容 -->
-                                <p>ゆったりできました～</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item comment_content">
-                        <!-- アイコン -->
-                        <div class="flex">
-                            <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
-                            <div class="flex_item">
-                                <!-- コメント者名 -->
-                                <p>sakuragi sumire</p>
-                                <!-- コメント内容 -->
-                                <p>最高です！</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- もっと見るボタン -->
-                    <div class="item more_button">
-                        <a href="#">もっと見る▼</a>
-                    </div>
-
                 </div>
 
-                <!-- 関連情報 -->
-                <section>
-                    <h5>関連情報</h5>
-                    <div class="article_all">
-                        <article class="card onsen">
-                            <a href="#">
-                                <div>
-                                    <span></span>
-                                    <img src="../assets/images/onsen_img.jpg" alt="温泉情報">
-                                </div>
-                                <h3>すんごい温泉めちゃすごの湯</h3>
-                            </a>
-                        </article>
-
-                        <article class="card nearby">
-                            <a href="#">
-                                <div>
-                                    <span></span>
-                                    <img src="../assets/images/onsen_img.jpg" alt="周辺施設情報">
-                                </div>
-                                <h3>周辺施設</h3>
-                            </a>
-                        </article>
-                    </div>
-                </section>
-
-                <!-- ナビゲーション -->
-
-                <div class="nav-links">
-                    <a class="nav-previous" href="">＜＜前の記事</a>
-                    <a class="nav-next" href="">次の記事＞＞</a>
+                <!-- sp&tbnav -->
+                <div class="hamburger sp_tb_only"></div>
+            </div>
+            <!-- menu -->
+            <nav class="sp_nav sp_tb_only">
+                <div class="navlist">
+                    <div class="nav_bg"></div>
+                    <ul class="navlist_container">
+                        <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                                    bubble_chart
+                                </span>TOP</a></li>
+                        <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                                    bath_outdoor
+                                </span>温泉一覧</a></li>
+                        <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                                    pin_drop
+                                </span>周辺一覧</a></li>
+                        <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                                    directions_walk
+                                </span>モデルコース</a></li>
+                        <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                                    sauna
+                                </span>サ活</a></li>
+                        <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                                    border_color
+                                </span>コラム</a></li>
+                        <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                                    search
+                                </span>検索</a></li>
+                        <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
+                                    home
+                                </span>マイページ</a></li>
+                    </ul>
+                    <div class="nav_bg"></div>
                 </div>
-                <br>
+            </nav>
+            <!-- pcnav -->
+            <div class="pc_inner">
+                <nav class="g_nav pc_only" id="pc_nav">
+                    <div class="navlist">
+                        <div class="nav_bg"></div>
+                        <ul class="navlist_container">
+                            <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                                        bubble_chart
+                                    </span>TOP</a></li>
+                            <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                                        bath_outdoor
+                                    </span>温泉一覧</a></li>
+                            <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                                        pin_drop
+                                    </span>周辺一覧</a></li>
+                            <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                                        directions_walk
+                                    </span>モデルコース</a></li>
+                            <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                                        sauna
+                                    </span>サ活</a></li>
+                            <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                                        border_color
+                                    </span>コラム</a></li>
+                            <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                                        search
+                                    </span>検索</a></li>
+                            <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
+                                        home
+                                    </span>マイページ</a></li>
+                        </ul>
+                        <div class="nav_bg"></div>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
-                <!-- 前に戻るボタン -->
-                <button class="back_btn" onclick="history.back">
-                    <span>
-                        <i class="fa-solid fa-arrow-left"></i>back
-                    </span>
-                </button>
+        <!-- main -->
+        <main class="container">
+            <section>
+                <h2 class="under_line">コラムタイトル</h2>
 
-            </main>
-        </div>
+                <!-- コラム内容 -->
+                <p class="date">2024.05.31(Fri)</p>
 
-        <footer></footer>
+                <!-- パンくず -->
+
+                <!-- コラム写真 -->
+                <div class="column_img">
+                    <img src="../assets/images/column.jpg" alt="">
+                </div>
+
+                <!-- ハッシュタグ -->
+                <div class="hashtag_list">
+                    <a class="hashtag" href="#">#ああああああ</a>
+                    <a class="hashtag" href="#">#ああああああ</a>
+                    <a class="hashtag" href="#">#ああああああ</a>
+                    <a class="hashtag" href="#">#ああああああ</a>
+                </div>
+
+
+                <!-- 記事内容 -->
+                <p class="column_text">ここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入りますここにコラムの内容が入ります</p>
+
+            </section>
+
+            <!-- コメントフォーム -->
+            <div class="comment_form">
+                <!-- コメント入力欄 -->
+                <div class="item">
+                    <label class="comment" for="comment">コメント入力欄</label>
+                    <textarea rows="10" cols="80" name="comment" id="comment"></textarea><br>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="item">
+                    <input type="submit" value="コメントを送信">
+                </div>
+
+                <div class="item comment_content">
+                    <!-- アイコン -->
+                    <div class="flex">
+                        <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
+                        <div class="flex_item">
+                            <!-- コメント者名 -->
+                            <p>matsuo saki</p>
+                            <!-- コメント内容 -->
+                            <p>整いました★</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item comment_content">
+                    <!-- アイコン -->
+                    <div class="flex">
+                        <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
+                        <div class="flex_item">
+                            <!-- コメント者名 -->
+                            <p>yamashita sawaka</p>
+                            <!-- コメント内容 -->
+                            <p>ゆったりできました～</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item comment_content">
+                    <!-- アイコン -->
+                    <div class="flex">
+                        <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
+                        <div class="flex_item">
+                            <!-- コメント者名 -->
+                            <p>sakuragi sumire</p>
+                            <!-- コメント内容 -->
+                            <p>最高です！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- もっと見るボタン -->
+                <div class="item more_button">
+                    <a href="#">もっと見る▼</a>
+                </div>
+
+            </div>
+
+            <!-- 関連情報 -->
+            <section>
+                <h5>関連情報</h5>
+                <div class="article_all">
+                    <article class="card onsen">
+                        <a href="#">
+                            <div>
+                                <span></span>
+                                <img src="../assets/images/onsen_img.jpg" alt="温泉情報">
+                            </div>
+                            <h3>すんごい温泉めちゃすごの湯</h3>
+                        </a>
+                    </article>
+
+                    <article class="card nearby">
+                        <a href="#">
+                            <div>
+                                <span></span>
+                                <img src="../assets/images/onsen_img.jpg" alt="周辺施設情報">
+                            </div>
+                            <h3>周辺施設</h3>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ナビゲーション -->
+
+            <div class="nav-links">
+                <a class="nav-previous" href="">＜＜前の記事</a>
+                <a class="nav-next" href="">次の記事＞＞</a>
+            </div>
+            <br>
+
+            <!-- 前に戻るボタン -->
+            <button class="back_btn" onclick="history.back">
+                <span>
+                    <i class="fa-solid fa-arrow-left"></i>back
+                </span>
+            </button>
+
+        </main>
+
+        <!-- footer -->
+        <footer class="footer_wrap">
+            <div class="footer_container">
+                <ul class="footer_list">
+                    <li class="footer_item">
+                        <a href="about.html">
+                            <span class="material-symbols-outlined">
+                                bubble_chart
+                            </span>このサイトについて
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="news_list.html">
+                            <span class="material-symbols-outlined">
+                                fiber_new
+                            </span>お知らせ一覧へ
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="privacypolicy.html">
+                            <span class="material-symbols-outlined">
+                                verified_user
+                            </span>
+                            <div>免責事項・<br>プライバシーポリシー</div>
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="form.html">
+                            <span class="material-symbols-outlined">
+                                mail
+                            </span>お問い合わせ(企業様)
+                        </a>
+                    </li>
+                </ul>
+                <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+            </div>
+        </footer>
     </div>
+
+    <!-- jquery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- javascriptの読み込み -->
     <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/menu.js"></script>
 
 </body>
 </html>

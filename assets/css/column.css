@@ -1,7 +1,11 @@
 @charset "utf-8";
 
-/* 共通 */
+/* header */
+.navlist_item:nth-child(6) {
+    color: #DBF500;
+}
 
+/* 共通 */
 p {
     font-size: 1rem;
 }
@@ -97,10 +101,6 @@ h5 {
 
 /* フォントサイズのみ */
 @media(width>=431px) {
-    h2 {
-        font-size: 2.5rem;
-    }
-
     p,
     .comment,
     input[type="submit"],
