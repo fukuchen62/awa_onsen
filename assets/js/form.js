@@ -1,16 +1,19 @@
-// 「同意する」のチェックボックスを取得
-const agreeCheckbox = document.getElementById("privacy");
-// 送信ボタンを取得
-const submitBtn = document.getElementById("submit_button");
 
-// チェックボックスをクリックした時
-agreeCheckbox.addEventListener("click", () => {
-    // チェックされている場合
-    if (agreeCheckbox.checked === true) {
-        submitBtn.disabled = false; // disabledを外す
-    }
-    // チェックされていない場合
-    else {
-        submitBtn.disabled = true; // disabledを付与
-    }
+$(function () {
+    // チェックボックスの要素を取得
+    const $agreeCheckbox = $("#privacy");
+    // 送信ボタンの要素を取得
+    const $submitBtn = $("#submit_button");
+
+    // チェックボックスが変更されたとき
+    $agreeCheckbox.on("change", function () {
+        // チェックされている場合
+        if ($(this).prop("checked")) {
+            // 送信ボタンを有効にする
+            $submitBtn.prop("disabled", false);
+        } else {
+            // 送信ボタンを無効にする
+            $submitBtn.prop("disabled", true);
+        }
+    });
 });
