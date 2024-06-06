@@ -1,12 +1,5 @@
 @charset "utf-8";
 
-/* header */
-.logo {
-    width: 100px;
-    margin-top: 32px;
-    margin-left: 32px;
-}
-
 /* タイトル */
 h2 {
     font-size: 1.25rem;
