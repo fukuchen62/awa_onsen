@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 html {
-    background-color: rgb(69, 69, 144);
+    /* background-color: rgb(69, 69, 144); */
 }
 
 /* -----------------------
@@ -92,17 +92,29 @@ h4 {
     left: 110px;
 }
 
-/* photo */
+/* photo/photoの白四角の設定 */
 .photo {
+    background-image: url(../images/tooling.jpg);
+    background-size: cover;
+    position: relative;
     width: 256px;
     height: 231px;
     margin: auto;
-    display: block;
+    z-index: 1;
 }
 
-/* -----------------------
-DAY1/DAY2
--------------------------- */
+.photo::before {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    width: 115px;
+    height: 64px;
+    border-radius: 20px;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
 .position {
     position: relative;
 }
@@ -110,25 +122,19 @@ DAY1/DAY2
 .clock {
     font-weight: 900;
     position: absolute;
-    top: 25px;
-    right: 60px;
+    top: 10%;
+    right: 16%;
     z-index: 333;
 }
 
-.square_white {
-    position: absolute;
-    background-color: #fff;
-    width: 115px;
-    height: 64px;
-    border-radius: 20px;
-    top: 10px;
-    right: 26px;
-    z-index: 2;
-}
+/* -----------------------
+DAY1/DAY2
+-------------------------- */
 
-.photo {
-    z-index: 1;
-}
+
+
+
+
 
 .time {
     color: #fff;
@@ -206,6 +212,49 @@ div h4 {
     z-index: -1;
     bottom: 5px;
     left: -4px;
+}
+
+/* 黄緑の四角 */
+.yellowgreen_square {
+    width: 90%;
+    height: auto;
+    background-color: #A7E099;
+    border-radius: 20px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.yellowgreen_square h4 {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 0;
+    padding-top: 35px;
+}
+
+.yellowgreen_square::before,
+.yellowgreen_square::after {
+    content: '';
+    background-color: white;
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    top: 45px;
+}
+
+.yellowgreen_square::before {
+    right: 10px;
+}
+
+.yellowgreen_square::after {
+    left: 10px;
+}
+
+.yellowgreen_square p {
+    margin-left: 0;
+    text-align: center;
+    padding: 0 28px;
+    padding-bottom: 34px;
 }
 
 /* -----------------------
