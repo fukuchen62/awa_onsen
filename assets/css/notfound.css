@@ -6,20 +6,22 @@
 
 section p {
     width: 80%;
-    /* line-height: 100px; */
-    /* background-color: white; */
     color: #DBF500;
     text-align: center;
     height: 300px;
-    /* padding: 20%; */
-    border-radius: 10px;
     font-size: 1.125rem;
     font-weight: bold;
     margin: 50px auto;
+
+}
+
+section span {
     background-image: url(../images/notfound.svg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
+    width: 200px;
+    height: 200px;
 }
 
 
