@@ -21,25 +21,13 @@ $(function () {
 
     let nav = $(".navlist");
 
+    // ハンバーガーメニューがアクティブじゃないときにメニューを非表示にする
     nav.addClass("isactive");
     if ($('.hamburger').hasClass('isactive')){
         nav.addClass("isactive");
     } else {
         nav.removeClass("isactive");
     }
-
-    function updateMenu(){
-        if($(window).width() > 1200) {
-            $("#pc_nav .navlist").addClass("isactive");
-        } else {
-            $("#pc_nav .navlist").removeClass("isactive");
-        }
-    }
-
-    updateMenu();
-    $(window).resize(function(){
-        updateMenu();
-    });
 
     // topへボタンをクリックしたら上までスクロールさせる
     $(".top_button").on("click", function (e) { e.preventDefault(); $("html, body").animate({ scrollTop: 0 }, 2200); });

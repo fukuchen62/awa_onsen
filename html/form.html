@@ -23,62 +23,30 @@
 </head>
 <body>
     <div class="bubble_background">
+        <div class="pc_inner">
 
-        <!-- header -->
-        <header class="header_wrap">
-            <div class="header_container">
-                <!-- headerの左側 -->
-                <!-- 常時表示サイトロゴ -->
-                <a class="logo" href="index.html">
-                    <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
-                </a>
-                <!-- 上にスクロールするボタン -->
-                <div class="top_button">
-                    <div class="circle">
-                        <div class="line"></div>
-                        <div class="line"></div>
+
+            <!-- header -->
+            <header class="header_wrap">
+                <div class="header_container">
+                    <!-- headerの左側 -->
+                    <!-- 常時表示サイトロゴ -->
+                    <a class="logo" href="index.html">
+                        <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
+                    </a>
+                    <!-- 上にスクロールするボタン -->
+                    <div class="top_button">
+                        <div class="circle">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- sp&tbnav -->
-                <div class="hamburger sp_tb_only"></div>
-            </div>
-            <!-- menu -->
-            <nav class="sp_nav sp_tb_only">
-                <div class="navlist">
-                    <div class="nav_bg"></div>
-                    <ul class="navlist_container">
-                        <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
-                                    bubble_chart
-                                </span>TOP</a></li>
-                        <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
-                                    bath_outdoor
-                                </span>温泉一覧</a></li>
-                        <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
-                                    pin_drop
-                                </span>周辺一覧</a></li>
-                        <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
-                                    directions_walk
-                                </span>モデルコース</a></li>
-                        <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
-                                    sauna
-                                </span>サ活</a></li>
-                        <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
-                                    border_color
-                                </span>コラム</a></li>
-                        <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
-                                    search
-                                </span>検索</a></li>
-                        <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
-                                    home
-                                </span>マイページ</a></li>
-                    </ul>
-                    <div class="nav_bg"></div>
+                    <!-- sp&tbnav -->
+                    <div class="hamburger sp_tb_only"></div>
                 </div>
-            </nav>
-            <!-- pcnav -->
-            <div class="pc_inner">
-                <nav class="g_nav pc_only" id="pc_nav">
+                <!-- menu -->
+                <nav class="sp_nav sp_tb_only">
                     <div class="navlist">
                         <div class="nav_bg"></div>
                         <ul class="navlist_container">
@@ -110,49 +78,83 @@
                         <div class="nav_bg"></div>
                     </div>
                 </nav>
-            </div>
-        </header>
-
-
-        <main class="container">
-
-            <section>
-                <h2 class="under_line">お問い合わせフォーム<br>（企業のお客様）</h2>
-
-                <!-- パンくず -->
-
-                <p>法人のみの対応とさせていただいております。予めご了承ください。<br><small>※</small>は必須項目です。</p>
-            </section>
-            <!-- お問い合わせフォーム -->
-            <div class="content_form">
-                <div class="form_item">
-                    <h4><label>企業様名/施設様名</label><small>※</small></h4>
-                    <p><input type="text" placeholder="AWA温泉" required></p>
-
+                <!-- pcnav -->
+                <div class="pc_inner">
+                    <nav class="g_nav pc_only" id="pc_nav">
+                        <div class="navlist">
+                            <div class="nav_bg"></div>
+                            <ul class="navlist_container">
+                                <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                                            bubble_chart
+                                        </span>TOP</a></li>
+                                <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                                            bath_outdoor
+                                        </span>温泉一覧</a></li>
+                                <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                                            pin_drop
+                                        </span>周辺一覧</a></li>
+                                <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                                            directions_walk
+                                        </span>モデルコース</a></li>
+                                <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                                            sauna
+                                        </span>サ活</a></li>
+                                <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                                            border_color
+                                        </span>コラム</a></li>
+                                <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                                            search
+                                        </span>検索</a></li>
+                                <li class="navlist_item"><a href="mypage1.html"><span class="material-symbols-outlined">
+                                            home
+                                        </span>マイページ</a></li>
+                            </ul>
+                            <div class="nav_bg"></div>
+                        </div>
+                    </nav>
                 </div>
-                <div class="form_item">
-                    <h4><label>ご担当様氏名</label><small>※</small></h4>
-                    <p><input type="text" placeholder="温泉 サル彦" required></p>
-                </div>
-                <div class="form_item">
-                    <h4><label>メールアドレス</label><small>※</small></h4>
-                    <p><input type="email"  placeholder="AWA-onsen@email.com" required></p>
-                </div>
-                <div class="form_item">
-                    <h4><label>電話番号</label><small>※</small></h4>
-                    <p><input type="tel"  placeholder="000-000-0000"  required></p>
-                </div>
-                <div class="form_item">
-                    <h4><label>お問い合わせ内容</label><small>※</small></h4>
-                    <p><textarea name="message"  rows="10" cols="20" required></textarea></p>
-                </div>
+            </header>
 
-                <!-- 個人情報・同意 -->
-                <div class="privacypolicy">
-                    <p>個人情報の取り扱いに関しては、<a href="privacypolicy.html" >プライバシーポリシー</a>をお読みいただき、ご同意の上お問い合わせください。</p>
-                    <div class="agree">
-                        <p><input type="checkbox" value="privacy" id="privacy"><label for="privacy">プライバシーポリシー・免責事項に同意する。</label></p>
-                        <p class="confirmation"><input id="submit_button" type="submit" value="確認画面へ" disabled>
+
+            <main class="container">
+
+                <section>
+                    <h2 class="under_line">お問い合わせフォーム<br>（企業のお客様）</h2>
+
+                    <!-- パンくず -->
+
+                    <p>法人のみの対応とさせていただいております。予めご了承ください。<br><small>※</small>は必須項目です。</p>
+                </section>
+                <!-- お問い合わせフォーム -->
+                <div class="content_form">
+                    <div class="form_item">
+                        <h4><label>企業様名/施設様名</label><small>※</small></h4>
+                        <p><input type="text" placeholder="AWA温泉" required></p>
+
+                    </div>
+                    <div class="form_item">
+                        <h4><label>ご担当様氏名</label><small>※</small></h4>
+                        <p><input type="text" placeholder="温泉 サル彦" required></p>
+                    </div>
+                    <div class="form_item">
+                        <h4><label>メールアドレス</label><small>※</small></h4>
+                        <p><input type="email"  placeholder="AWA-onsen@email.com" required></p>
+                    </div>
+                    <div class="form_item">
+                        <h4><label>電話番号</label><small>※</small></h4>
+                        <p><input type="tel"  placeholder="000-000-0000"  required></p>
+                    </div>
+                    <div class="form_item">
+                        <h4><label>お問い合わせ内容</label><small>※</small></h4>
+                        <p><textarea name="message"  rows="10" cols="20" required></textarea></p>
+                    </div>
+
+                    <!-- 個人情報・同意 -->
+                    <div class="privacypolicy">
+                        <p>個人情報の取り扱いに関しては、<a href="privacypolicy.html" >プライバシーポリシー</a>をお読みいただき、ご同意の上お問い合わせください。</p>
+                        <div class="agree">
+                            <p><input type="checkbox" value="privacy" id="privacy"><label for="privacy">プライバシーポリシー・免責事項に同意する。</label></p>
+                            <p class="confirmation"><input id="submit_button" type="submit" value="確認画面へ" disabled>
                     </div>
                 </div>
 
@@ -161,7 +163,7 @@
                 <span><i class="fa-solid fa-arrow-left"></i>back</span>
             </button>
         </main>
-
+        </div>
         <!-- footer -->
         <footer class="footer_wrap">
             <div class="footer_container">
@@ -197,18 +199,18 @@
                     </li>
                 </ul>
                 <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+                        </div>
+                        </footer>
+
+                        <!-- JQuery -->
+                        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+                        <!-- 共通ｊｓ -->
+                        <script src="../assets/js/common.js"></script>
+                        <script src="../assets/js/menu.js"></script>
+
+
+                        <!-- 個別ｊｓ -->
+                        <script src="../assets/js/form.js"></script>
                     </div>
-                    </footer>
-
-                    <!-- JQuery -->
-                    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-                    <!-- 共通ｊｓ -->
-                    <script src="../assets/js/common.js"></script>
-                    <script src="../assets/js/menu.js"></script>
-
-
-                    <!-- 個別ｊｓ -->
-                    <script src="../assets/js/form.js"></script>
-                </div>
 </body>
 </html>
