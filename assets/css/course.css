@@ -264,6 +264,11 @@ DAY1/DAY2
     padding-bottom: 34px;
 }
 
+/* メニューの文字色 */
+.navlist_item:nth-child(4) {
+    color: #DBF500;
+}
+
 /* -----------------------
 レスポンシブ
 -------------------------- */
@@ -318,15 +323,15 @@ DAY1/DAY2
 
     /* それぞれの線の長さ */
     .flow12>li:nth-child(1) {
-        padding-bottom: 500%;
+        padding-bottom: 520%;
     }
 
     .flow12>li:nth-child(2) {
-        padding-bottom: 535%;
+        padding-bottom: 550%;
     }
 
     .flow12>li:nth-child(3) {
-        padding-bottom: 460%;
+        padding-bottom: 470%;
     }
 
     .flow12>li:nth-of-type(even)::after {
