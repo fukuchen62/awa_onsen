@@ -100,6 +100,8 @@ get_header();
                 'current' => max(1, get_query_var('paged')),
                 'prev_text' => '<<',
                 'next_text' => '>>',
+                'end_size' => 1,
+                'mid_size' => 2,
             );
             echo paginate_links($pagination_args);
             ?>
