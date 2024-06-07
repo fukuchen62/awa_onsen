@@ -19,6 +19,29 @@ $(function () {
         $(".hamburger").removeClass("isactive");
     });
 
+    let nav = $(".navlist");
+
+    nav.addClass("isactive");
+    if ($('.hamburger').hasClass('isactive')){
+        nav.addClass("isactive");
+    } else {
+        nav.removeClass("isactive");
+    }
+
+    function updateMenu(){
+        if($(window).width() > 1200) {
+            $("#pc_nav .navlist").addClass("isactive");
+        } else {
+            $("#pc_nav .navlist").removeClass("isactive");
+        }
+    }
+
+    updateMenu();
+    $(window).resize(function(){
+        updateMenu();
+    });
+
+    // topへボタンをクリックしたら上までスクロールさせる
     $(".top_button").on("click", function (e) { e.preventDefault(); $("html, body").animate({ scrollTop: 0 }, 2200); });
 
 });
@@ -131,7 +154,7 @@ $(document).ready(function () {
             height: `${size}px`
         });
 
-        const $img = $('<img>').attr('src', '../assets/images/duck.png').attr('alt', 'アヒルの画像').css({
+        const $img = $('<img>').attr('src', '../assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
             width: '100%',
             height: '100%'
         });
