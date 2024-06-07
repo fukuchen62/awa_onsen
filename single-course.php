@@ -121,8 +121,8 @@
                 <div class="square_white"></div>
 
 
-                <div class="flex">
-                    <div class="time">60分</div>
+                <div class="flex"><!-- 滞在時間1 -->
+                    <div class="time"><?php the_field('stay_time1_1'); ?></div>
                     <div>
                         <p>苔や植物で癒される</p>
                         <h4>こんまい屋</h4>
