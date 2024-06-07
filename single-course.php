@@ -1,7 +1,7 @@
 <!-- header.phpを読み込む -->
 <?php get_header(); ?>
 
-<main>
+<main class="container">
     <!-- タイトル -->
     <div class="flex">
         <h2 class="under_line"><?php the_title(); ?></h2>
