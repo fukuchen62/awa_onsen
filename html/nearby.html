@@ -16,6 +16,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet" />
+        <!-- slick CDN -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     </head>
     <body>
         <div class="bubble_background">
@@ -113,7 +116,20 @@
 
                 <!-- 外観写真 -->
                 <div class="img_box">
-                    <img src="../assets/images/bike.jpg" alt="" />
+                    <ul class="slider">
+                        <li class="slider-img">
+                            <img src="../assets/images/sauna_saru.jpg" alt="" />
+                        </li>
+                        <li class="slider-img">
+                            <img src="../assets/images/onsen_img.jpg" alt="" />
+                        </li>
+                        <li class="slider-img">
+                            <img src="../assets/images/river.jpg" alt="" />
+                        </li>
+                        <li class="slider-img">
+                            <img src="../assets/images/test.png" alt="" />
+                        </li>
+                    </ul>
                     <label class="checkbox-item">
                         <input type="checkbox" name="options" value="nice" />
                         <span class="nice_btn">
@@ -251,10 +267,12 @@
         </div>
         <!-- jquery CDN -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
+        <!-- slick js -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <!-- top.js -->
 
         <script src="../assets/js/common.js"></script>
         <script src="../assets/js/menu.js"></script>
+        <script src="../assets/js/nearby.js"></script>
     </body>
 </html>
