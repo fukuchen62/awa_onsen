@@ -58,7 +58,8 @@ h4 {
     justify-content: center;
     align-items: center;
     margin-bottom: 32px;
-    /* gap: 20px; */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .course_day {
@@ -160,11 +161,6 @@ DAY1/DAY2
     line-height: 69px;
 }
 
-.flex {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .square_green {
     /* display: inline; */
     background-color: #6BDE4E;
@@ -213,7 +209,7 @@ DAY1/DAY2
     z-index: 1;
 }
 
-.flex.greencar {
+.greencar {
     margin: 10%;
 }
 
@@ -311,11 +307,6 @@ DAY1/DAY2
     }
 
     /* タイムスケジュール */
-    .flow12 {
-        margin: 0;
-        padding: 0;
-    }
-
     .flow12>li {
         list-style-type: none;
         position: relative;
