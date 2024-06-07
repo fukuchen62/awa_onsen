@@ -47,9 +47,7 @@ get_header();
                 <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="mt32">
             <?php endif; ?>
 
-
             <p class="mt32"><?php the_content(); ?></p>
-
 
             <section>
                 <h5 class="mt32">関連情報</h5>
