@@ -119,7 +119,7 @@ function fs_script_files()
     wp_deregister_script('jquery');
 
     // jQueryのCDNを登録
-    wp_register_script(
+    wp_enqueue_script(
         'jquery',
         'https://code.jquery.com/jquery-3.7.1.min.js',
         array(),
@@ -128,7 +128,7 @@ function fs_script_files()
     );
 
     // jQueryをエンキュー（読み込み）
-    wp_enqueue_script('jquery');
+    // wp_enqueue_script('jquery');
 
 
     // // // JSの読み込み
@@ -208,6 +208,15 @@ function fs_script_files()
 
     if (is_page('contact')) { // お問い合わせページのCSSの読み込み
         wp_enqueue_style('awa-onsen-form', get_template_directory_uri() . '/assets/css/form.css');
+        wp_enqueue_script(
+            'food-science-contact',
+            get_template_directory_uri() . '/assets/js/form.js',
+            null,
+            null,
+            true
+        );
+        // wp_enqueue_script('food-science-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
+
     }
 
     if (is_page('confirm')) { // お問合せ確認のCSSの読み込み
