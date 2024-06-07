@@ -193,7 +193,7 @@ a {
     font-size: 1.25rem;
 }
 
-.section_btn:hover a,
+.section_btn:hover,
 .section_btn:hover i {
     color: #fff;
     transition: all 0.7s;
@@ -683,7 +683,7 @@ button {
     z-index: 2;
 }
 
-.sauna_content a:hover .sauna_img img {
+.sauna_content:hover .sauna_img img {
     transform: translate(-3%, 3%);
 }
 
@@ -717,7 +717,7 @@ button {
     margin-left: 4px;
 }
 
-.sauna_content a:hover>.sauna_btn {
+.sauna_content:hover .sauna_btn {
     color: #fff;
     background-color: #F31E49;
     transition: all 0.7s;

@@ -13,13 +13,21 @@
         ?>
         <img src="<?php echo $pic_url; ?>" alt="メイン画像">
         <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/onsen_img.jpg" alt="" /> -->
-        <div class="favorite_btn"><i class="fa-regular fa-heart"></i></div>
-        <div class="nice_btn"><i class="fa-regular fa-thumbs-up"></i></div>
+        <label class="checkbox-item">
+            <input type="checkbox" name="options" value="nice" />
+            <span class="nice_btn">
+                <i class="fa-regular fa-thumbs-up"></i><br />
+                <span>11</span>
+            </span>
+        </label>
+        <label class="checkbox-item">
+            <input type="checkbox" name="options" value="favorite" />
+            <span class="favorite_btn"><i class="fa-solid fa-heart"></i> <i class="fa-regular fa-heart"></i></span>
+        </label>
     </div>
 
 
     <!-- ハッシュタグ -->
-
     <div class="hashtag_list">
         <?php
         // 現在の投稿のIDを取得
@@ -157,77 +165,75 @@
                 <table>
                     <tr>
                         <th>基本</th>
-                        <td><?php the_field('business_time'); ?></td>
+                        <td>
+                            <?php echo esc_html(get_field('business_time')); ?>
+                        </td>
                     </tr>
                     <tr>
                         <th>定休日</th>
-                        <td><?php the_field('closed'); ?></td>
+                        <td>
+                            <?php echo esc_html(get_field('closed')); ?>
+                        </td>
                     </tr>
-                    <!-- <tr>
-                                <th>冬季特別</th>
-                                <td>6:00~23:00</td>
-                            </tr> -->
                 </table>
             </dd>
             <dt>基本料金</dt>
             <dd>
-                <?php the_field('price'); ?>
+                <?php echo esc_html(get_field('price')); ?>
             </dd>
             <dt>決済方法</dt>
             <dd>
-                <?php the_field('payment_description'); ?>
+                <?php echo esc_html(get_field('payment_description')); ?>
             </dd>
             <dt>予約</dt>
             <dd>
-                <?php the_field('reserve_description'); ?>
+                <?php echo esc_html(get_field('reserve_description')); ?>
             </dd>
             <dt>トイレ</dt>
             <dd>
-                <?php the_field('toilet_description'); ?>
+                <?php echo esc_html(get_field('toilet_description')); ?>
             </dd>
             <dt>分煙</dt>
             <dd>
-                <?php the_field('smoking_description'); ?>
+                <?php echo esc_html(get_field('smoking_description')); ?>
             </dd>
             <dt>駐車場</dt>
             <dd>
-                <?php the_field('parking_description'); ?>
+                <?php echo esc_html(get_field('parking_description')); ?>
             </dd>
             <dt>Wi-Fi</dt>
             <dd>
-                <?php the_field('wifi_description'); ?>
+                <?php echo esc_html(get_field('wifi_description')); ?>
             </dd>
             <dt>浴室小物</dt>
             <dd>
-                <?php the_field('facility'); ?>
+                <?php echo esc_html(get_field('facility')); ?>
+
             </dd>
             <dt>住所</dt>
             <dd>
-                <?php the_field('address1'); ?>
+                <?php echo esc_html(get_field('address1')); ?>
+                <?php echo esc_html(get_field('address2')); ?>
             </dd>
             <dt>TEL</dt>
             <dd>
-                <?php the_field('tel'); ?>
+                <?php echo esc_html(get_field('tel')); ?>
             </dd>
             <dt>FAX</dt>
             <dd>
-                <?php the_field('fax'); ?>
+                <?php echo esc_html(get_field('fax')); ?>
             </dd>
             <dt>Email</dt>
             <dd>
-                <?php the_field('email'); ?>
+                <?php echo esc_html(get_field('email')); ?>
             </dd>
             <dt>最寄り駅</dt>
             <dd>
-                <?php the_field('station'); ?>
+                <?php echo esc_html(get_field('station')); ?>
             </dd>
             <dt>SNS</dt>
             <dd>
-                <?php the_field('sns_url'); ?>
-            </dd>
-            <dt>備考</dt>
-            <dd class="test">
-                夏季と冬季によって営業時間が異なります。<br>詳細は公式HPよりご確認ください
+                <?php echo esc_html(get_field('sns_url')); ?>
             </dd>
             <dt>公式ホームページ</dt>
             <dd><a href="<?php the_field('official_url'); ?>"><?php echo get_field('official_url') ?></a></dd>
@@ -247,24 +253,6 @@
     }
     ?>
     <ul class="icon_list">
-        <!-- <?php if (get_field('cash')) : ?>
-            <li>
-                <span class="material-symbols-outlined">currency_yen</span>
-                <p>現金</p>
-            </li>
-        <?php endif; ?>
-        <?php if (get_field('credit')) : ?>
-            <li>
-                <span class="material-symbols-outlined">credit_card</span>
-                <p>クレジット</p>
-            </li>
-        <?php endif; ?>
-        <?php if (get_field('e_money')) : ?>
-            <li>
-                <span class="material-symbols-outlined">qr_code_2</span>
-                <p>電子マネー</p>
-            </li>
-        <?php endif; ?> -->
         <?php if (get_field('reserve')) : ?>
             <li>
                 <span class="material-symbols-outlined">calendar_month</span>
@@ -304,53 +292,60 @@
     </ul>
     <section>
         <h3>こちらもいかがでしょうか？</h3>
-        <!-- <?php
-                // スラッグ名を指定
-                // $slug = 'facility_url'; // ここにカスタムフィールドの値が入る
-                // $slug = 'play_url'; // ここにカスタムフィールドの値が入る
-                // $slug = 'shopping_url'; // ここにカスタムフィールドの値が入る
-                // $slug = 'rest_url'; // ここにカスタムフィールドの値が入る
-                // $slug = 'course_url'; // ここにカスタムフィールドの値が入る
-                // $slug = 'column_url'; // ここにカスタムフィールドの値が入る
-                // すべてのカスタム投稿タイプを取得
-                $custom_post_types = get_post_types(array('_builtin' => false));
-
-                // カスタムクエリで投稿を検索
-                $args = array(
-                    'name' => $slug,
-                    'post_type' => $custom_post_types,
-                    'post_status' => 'publish',
-                    'numberposts' => 1
-                );
-
-                $posts = get_posts($args);
-
-                if (!empty($posts)) {
-                    $post = $posts[0]; // 最初の投稿を取得
-                    setup_postdata($post);
-
-                    // 投稿情報を取得
-                    $post_id = $post->ID;
-                    $post_title = get_the_title($post_id);
-                    $post_link = get_permalink($post_id);
-                    $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
-
-                    // 投稿情報を表示
-                    if ($post_thumbnail) {
-                        echo '<a href="' . esc_url($post_link) . '">' . $post_thumbnail . '</a>';
-                    }
-                    echo '<h1><a href="' . esc_url($post_link) . '">' . esc_html($post_title) . '</a></h1>';
-
-
-                    wp_reset_postdata();
-                }
-                ?> -->
-
+        <div class="recommend_list">
+            <article class="card">
+                <a href="#">
+                    <div>
+                        <span></span>
+                        <img src="../assets/images/onsen_img.jpg" alt="" />
+                    </div>
+                    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+                </a>
+            </article>
+            <article class="card">
+                <a href="#">
+                    <div>
+                        <span></span>
+                        <img src="../assets/images/onsen_img.jpg" alt="" />
+                    </div>
+                    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+                </a>
+            </article>
+            <article class="card">
+                <a href="#">
+                    <div>
+                        <span></span>
+                        <img src="../assets/images/onsen_img.jpg" alt="" />
+                    </div>
+                    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+                </a>
+            </article>
+            <article class="card">
+                <a href="#">
+                    <div>
+                        <span></span>
+                        <img src="../assets/images/onsen_img.jpg" alt="" />
+                    </div>
+                    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+                </a>
+            </article>
+            <article class="card">
+                <a href="#">
+                    <div>
+                        <span></span>
+                        <img src="../assets/images/onsen_img.jpg" alt="" />
+                    </div>
+                    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+                </a>
+            </article>
+        </div>
+    </section>
+    <button class="back_btn" onclick="history.back">
+        <span><i class="fa-solid fa-arrow-left"></i>back</span>
+    </button>
     </section>
 
 </main>
-
-
 
 <!-- footer.phpを読み込む -->
 <?php get_footer(); ?>

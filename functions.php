@@ -117,6 +117,12 @@ function fs_script_files()
     wp_enqueue_style("awa-onsen-common", get_template_directory_uri() . "/assets/css/common.css");
 
 
+    // jQueryライブラリを読み込む
+    // wp_enqueue_script("jquery");
+
+    // jQueryライブラリの読み込みをやめる
+    wp_deregister_script("jquery");
+
     // JSの読み込み
     wp_enqueue_script(
         'jquery-local',
@@ -212,8 +218,12 @@ function fs_script_files()
     }
 
     // 新着情報のCSSの読み込み
-    if (is_single()) {
+    if (is_single() && get_post_type() == 'post') {
         wp_enqueue_style('news-style', get_template_directory_uri() . '/assets/css/news.css');
+    }
+
+    if (is_404()) { // 404のCSSの読み込み
+        wp_enqueue_style('awa-onsen-404', get_template_directory_uri() . '/assets/css/notfound.css');
     }
 }
 

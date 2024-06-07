@@ -1,3 +1,4 @@
+"use strict";
 
 $(function () {
     // チェックボックスの要素を取得
