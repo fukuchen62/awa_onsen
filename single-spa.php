@@ -12,7 +12,6 @@
         $pic_url = $pic['sizes']['large'];
         ?>
         <img src="<?php echo $pic_url; ?>" alt="メイン画像">
-        <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/onsen_img.jpg" alt="" /> -->
         <label class="checkbox-item">
             <input type="checkbox" name="options" value="nice" />
             <span class="nice_btn">
@@ -74,7 +73,6 @@
                 $pic_url = $pic['sizes']['large'];
                 ?>
                 <img src="<?php echo $pic_url; ?>" alt="スライド画像1">
-                <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/sauna_saru.jpg" alt="" /> -->
             </li>
             <li class="slider-img">
                 <?php
@@ -89,7 +87,6 @@
                 $pic_url = $pic['sizes']['large'];
                 ?>
                 <img src="<?php echo $pic_url; ?>" alt="スライド画像3">
-                <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/river.jpg" alt="" /> -->
             </li>
             <li class="slider-img">
                 <?php
@@ -97,7 +94,6 @@
                 $pic_url = $pic['sizes']['large'];
                 ?>
                 <img src="<?php echo $pic_url; ?>" alt="スライド画像4">
-                <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/test.png" alt="" /> -->
             </li>
         </ul>
         <ul class="thumbnail">
@@ -107,7 +103,6 @@
                 $pic_url = $pic['sizes']['thumbnail'];
                 ?>
                 <img src="<?php echo $pic_url; ?>" alt="サムネイル画像1">
-                <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/sauna_saru.jpg" alt="" /> -->
             </li>
             <li class="thumbnail-img">
                 <?php
@@ -115,7 +110,6 @@
                 $pic_url = $pic['sizes']['thumbnail'];
                 ?>
                 <img src="<?php echo $pic_url; ?>" alt="サムネイル画像2">
-                <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/onsen_img.jpg" alt="" /> -->
             </li>
             <li class="thumbnail-img">
                 <?php
@@ -123,7 +117,6 @@
                 $pic_url = $pic['sizes']['thumbnail'];
                 ?>
                 <img src="<?php echo $pic_url; ?>" alt="サムネイル画像3">
-                <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/river.jpg" alt="" /> -->
             </li>
             <li class="thumbnail-img">
                 <?php
@@ -131,7 +124,6 @@
                 $pic_url = $pic['sizes']['thumbnail'];
                 ?>
                 <img src="<?php echo $pic_url; ?>" alt="サムネイル画像4">
-                <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/test.png" alt="" /> -->
             </li>
         </ul>
     </div>

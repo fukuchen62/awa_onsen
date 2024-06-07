@@ -3,7 +3,7 @@
 <!------------------------>
 <!-- ここからメインだよ -->
 <!------------------------>
-<main>
+<main class="container">
     <!-- パンくず -->
     <?php get_template_part('template-parts/breadcrumb'); ?>
 
@@ -11,10 +11,10 @@
 
     <article>
         <!-- 公開日を出力 -->
-        <p><?php echo esc_html(get_post_time('Y.m.d.(D)')); ?></p>
+        <p class="date"><?php echo esc_html(get_post_time('Y.m.d.(D)')); ?></p>
 
         <!-- コラム写真 -->
-        <div>
+        <div class="column_img">
             <!-- コラム画像ここから -->
             <?php
             $pic = get_field('column_pic');
@@ -29,65 +29,62 @@
         <!------------------------>
 
         <div class="hashtag_list">
+            <a class="hashtag">
+                <?php
+                // 現在の投稿のIDを取得
+                $post_id = get_the_ID();
 
-            <?php
-            // 現在の投稿のIDを取得
-            $post_id = get_the_ID();
+                // 投稿タイプを取得
+                $post_type = get_post_type($post_id);
 
-            // 投稿タイプを取得
-            $post_type = get_post_type($post_id);
+                // 投稿タイプに関連するタクソノミーを取得
+                $taxonomies = get_object_taxonomies($post_type);
 
-            // 投稿タイプに関連するタクソノミーを取得
-            $taxonomies = get_object_taxonomies($post_type);
+                if (!empty($taxonomies)) {
+                    foreach ($taxonomies as $taxonomy) {
+                        // タクソノミーに関連するタームを取得
+                        $terms = get_the_terms($post_id, $taxonomy);
 
-            if (!empty($taxonomies)) {
-                foreach ($taxonomies as $taxonomy) {
-                    // タクソノミーに関連するタームを取得
-                    $terms = get_the_terms($post_id, $taxonomy);
-
-                    if ($terms && !is_wp_error($terms)) {
-                        echo '<ul>';
-                        foreach ($terms as $term) {
-                            echo '<li>';
-                            echo '# ' . esc_html($term->name) . '<br>';
-                            echo '</li>';
+                        if ($terms && !is_wp_error($terms)) {
+                            echo '<ul>';
+                            foreach ($terms as $term) {
+                                echo '<li>';
+                                echo '# ' . esc_html($term->name) . '<br>';
+                                echo '</li>';
+                            }
+                            echo '</ul>';
+                        } else {
+                            echo '<p>この投稿に関連するタームはありません。</p>';
                         }
-                        echo '</ul>';
-                    } else {
-                        echo '<p>この投稿に関連するタームはありません。</p>';
                     }
+                } else {
+                    echo '<p>この投稿に関連するタクソノミーはありません。</p>';
                 }
-            } else {
-                echo '<p>この投稿に関連するタクソノミーはありません。</p>';
-            }
-            ?>
+                ?></a>
 
-
-            <!-- <a class="hashtag" href="#">#ああああああ</a>
-                        <a class="hashtag" href="#">#ああああああ</a>
-                        <a class="hashtag" href="#">#ああああああ</a>
-                        <a class="hashtag" href="#">#ああああああ</a> -->
         </div>
 
 
         <!-- コラム内容 -->
-        <p><?php the_content(); ?></p><br>
+        <p class="column_text"><?php the_content(); ?></p><br>
         <p><?php the_field('column_description'); ?></p>
 
     </article>
 
     <section>
-        <!-- コメント入力欄 -->
-        <!-- <form action=""> -->
-        <div class="item">
+        <!-- コメントフォーム -->
+        <div class="comment_form">
+            <!-- コメント入力欄 -->
+            <!-- <form action=""> -->
+            <div class="item">
 
-            <!-- コメント入力フォームとコメントリスト -->
-            <?php comments_template(); ?>
+                <!-- コメント入力フォームとコメントリスト -->
+                <?php comments_template(); ?>
 
-            <!-- <label class="comment" for="comment">コメント入力欄</label>
+                <!-- <label class="comment" for="comment">コメント入力欄</label>
                         <textarea rows="10" cols="80" name="" id="comment"></textarea><br> -->
+            </div>
         </div>
-
 
         <!--
                         <div class="item">
@@ -157,6 +154,7 @@
                     setup_postdata($post);
                     // 投稿情報を取得
                     $post_id = $post->ID;
+                    // $name = $terms->$term;
                     $post_title = get_the_title($post_id);
                     $post_link = get_permalink($post_id);
                     $post_thumbnail = get_the_post_thumbnail($post_id, 'thumbnail'); // フルサイズのアイキャッチ画像を取得
@@ -172,60 +170,126 @@
                 }
 
                 ?>
-                <?php
-                //---------------------------
-                // カスタムフィールドの外部URL
-                //---------------------------
 
-                // スラッグ名を指定
-                $slug = the_field('slag'); // ここにカスタムフィールドの値が入る
+                <!-- 関連情報 -->
+                <section>
+                    <h5>関連情報</h5>
+                    <div class="article_all">
+                        <article class="card onsen">
+                            <?php
+                            //---------------------------
+                            // カスタムフィールドの外部URL
+                            //---------------------------
+                            // 関連リンク1
+                            // スラッグ名を指定
+                            $slug = the_field('slug'); // ここにカスタムフィールドの値が入る
 
-                // すべてのカスタム投稿タイプを取得
-                $custom_post_types = get_post_types(array('_builtin' => false));
+                            // すべてのカスタム投稿タイプを取得
+                            $custom_post_types = get_post_types(array('_builtin' => false));
 
-                // カスタムクエリで投稿を検索
-                $args = array(
-                    'name' => $slug,
-                    'post_type' => $custom_post_types,
-                    'post_status' => 'publish',
-                    'numberposts' => 1
-                );
+                            // カスタムクエリで投稿を検索
+                            $args = array(
+                                'name' => $slug,
+                                'post_type' => $custom_post_types,
+                                'post_status' => 'publish',
+                                'numberposts' => 1
+                            );
 
-                $posts = get_posts($args);
+                            $posts = get_posts($args);
 
-                if (!empty($posts)) {
-                    $post = $posts[0]; // 最初の投稿を取得
-                    setup_postdata($post);
-                    // 投稿情報を取得
-                    $post_id = $post->ID;
-                    $post_title = get_the_title($post_id);
-                    $post_link = get_permalink($post_id);
-                    $post_thumbnail = get_the_post_thumbnail($post_id, 'thumbnail'); // アイキャッチ画像を取得
+                            if (!empty($posts)) {
+                                $post = $posts[0]; // 最初の投稿を取得
+                                setup_postdata($post);
+                                // 投稿情報を取得
+                                $name = $slug;
+                                $post_id = $post->ID;
+                                $post_title = get_the_title($post_id);
+                                $post_link = get_permalink($post_id);
+                                $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // アイキャッチ画像を取得
 
-                    // 投稿情報を表示
-                    if ($post_thumbnail) {
-                        echo '<a href="' . esc_url($post_link) . '">' . $post_thumbnail . '</a>';
-                    }
-                    echo '<h1><a href="' . esc_url($post_link) . '">' . esc_html($post_title) . '</a></h1>';
+                                //クラス名を設定
+                                $class = 'card onsen';
+                            ?>
+                                <article class="<?php echo esc_attr($class); ?>">
+                                    <a href="<?php echo esc_url($post_link); ?>">
+                                        <div>
+                                            <span></span>
+                                            <?php if ($post_thumbnail) {
+                                                $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full'); // フルサイズのURLを取得
+                                                $post_title = get_the_tags($post_id); //何を出したいのか
+                                                echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr($post_title) . '" />';
+                                            }
+                                            ?>
 
+                                        </div>
+                                        <h3><?php echo esc_html($post_title); ?></h3>
+                                    </a>
+                                </article>
+                            <?php
+                                wp_reset_postdata();
+                            }
 
-                    wp_reset_postdata();
-                }
+                            ?>
+                            <?php
+                            // 関連リンク2
+                            $slug = the_field('post_url2'); // ここにカスタムフィールドの値が入る
 
-                ?>
+                            // カスタムクエリで投稿を検索
+                            $args = array(
+                                'name' => $slug,
+                                'post_type' => $custom_post_types,
+                                'post_status' => 'publish',
+                                'numberposts' => 1
+                            );
 
-            </div>
-            <!-- <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3> -->
+                            $posts = get_posts($args);
+
+                            if (!empty($posts)) {
+                                $post = $posts[0]; // 最初の投稿を取得
+                                setup_postdata($post);
+
+                                // 投稿情報を取得
+                                $post_id = $post->ID;
+                                $post_title = get_the_title($post_id);
+                                $post_link = get_permalink($post_id);
+                                $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+
+                                // クラス名を設定
+                                $class = 'card nearby';
+
+                                // 投稿情報を表示
+                            ?>
+                                <article class="<?php echo esc_attr($class); ?>">
+                                    <a href="<?php echo esc_url($post_link); ?>">
+                                        <div>
+                                            <span></span>
+                                            <?php if ($post_thumbnail) {
+                                                $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full'); // フルサイズのURLを取得
+                                                $post_title = get_the_title($post_id); // 投稿タイトルを取得
+                                                echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr($post_title) . '" />';
+                                            }
+                                            ?>
+                                        </div>
+                                        <h3><?php echo esc_html($post_title); ?></h3>
+                                    </a>
+                                </article>
+                            <?php
+                                wp_reset_postdata();
+                            }
+                            ?>
+
+                    </div>
+                    <!-- <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3> -->
 
         </article>
     </section>
 
-    <!-- <a href="">＜＜前の記事</a>
-                <a href="">次の記事＞＞</a>
-                <br>
-                <button class="back_btn" onclick="history.back">
-                    <p><i class="fa-solid fa-arrow-left"></i>back</p>
-                </button> -->
+    <a href="">＜＜前の記事</a>
+    <a href="">次の記事＞＞</a>
+    <br>
+    <button class="back_btn" onclick="history.back">
+        <span><i class="fa-solid fa-arrow-left"></i>back</span>
+    </button>
 
 
 </main>
