@@ -2,11 +2,11 @@
 
 $(function () {
 
+    let nav = $("#pc_nav .navlist");
+    nav.addClass("isactive");
+
     // メニューのアニメーション
     if ($(window).width() > 1200) {
-        let nav = $(".navlist");
-        nav.addClass("isactive");
-
         $(window).scroll(function () {
             let columnSection = $(".footer_wrap");
             let threshold2 = columnSection.offset().top - 500;
