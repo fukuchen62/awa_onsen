@@ -229,25 +229,26 @@ img {
     min-height: 100vh;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 100px 5%;
-    margin: auto;
+    margin: 0 auto;
 }
 
 @media (width>=757px) {
     .container {
-        width: 1200px;
         z-index: -10;
         background-color: white;
-        /* width: 90%; */
+        width: 90%;
     }
 }
+
 
 /* ---------- */
 /* pc */
 @media (width>=1201px) {
     .container {
         z-index: -10;
-        width: 792px;
-        margin-left: 18.75%;
+        width: 75%;
+        margin: 0 auto 0 0;
+        /* margin-left: 18.75%; */
         /* width: 62.5%; */
         /* padding: 18.75%; */
         /* position: absolute; */
@@ -480,6 +481,7 @@ h2 {
     margin: 50px auto 0;
     display: grid;
     gap: 5px;
+    font-weight: bolder;
 }
 
 .tag li {
@@ -547,6 +549,7 @@ h5 {
 .pc_inner {
     max-width: 1200px;
     margin: 0 auto;
+    border: 1px solid red;
 }
 
 .header_container {
