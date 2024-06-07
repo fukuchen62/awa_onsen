@@ -112,7 +112,7 @@ function fs_script_files()
     );
 
     // CSSファイルの読み込み
-    wp_enqueue_style("awa-onsen-reset", get_template_directory_uri() . "/assets/css/reset.css");
+    // wp_enqueue_style("awa-onsen-reset", get_template_directory_uri() . "/assets/css/reset.css");
     wp_enqueue_style("awa-onsen-destyle", get_template_directory_uri() . "/assets/css/destyle.css");
     wp_enqueue_style("awa-onsen-common", get_template_directory_uri() . "/assets/css/common.css");
 

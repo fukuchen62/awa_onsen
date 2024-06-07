@@ -1,7 +1,7 @@
 <!-- header.phpを読み込む -->
 <?php get_header(); ?>
 
-<main>
+<main class="container">
     <!-- タイトル -->
     <div class="flex">
         <h2 class="under_line"><?php the_title(); ?></h2>
@@ -10,54 +10,66 @@
     <!-- パンくずリスト -->
     <?php get_template_part('template-parts/breadcrumb') ?>
 
-    <!-- タグ -->
-    <?php
-
-    // 現在の投稿のIDを取得
-    $post_id = get_the_ID();
-
-    // 投稿タイプを取得
-    $post_type = get_post_type($post_id);
-
-    // 投稿タイプに関連するタクソノミーを取得
-    $taxonomies = get_object_taxonomies($post_type);
-
-    if (!empty($taxonomies)) {
-        foreach ($taxonomies as $taxonomy) {
-            // タクソノミーに関連するタームを取得
-            $terms = get_the_terms($post_id, $taxonomy);
-
-            if ($terms && !is_wp_error($terms)) {
-                echo '<p>';
-                foreach ($terms as $term) {
-                    echo '<p>';
-                    echo '＃' . esc_html($term->name) . '<br>';
-                    echo '</p>';
-                }
-                echo '</p>';
-            } else {
-                echo '<p>この投稿に関連するタームはありません。</p>';
-            }
-        }
-    } else {
-        echo '<p>この投稿に関連するタクソノミーはありません。</p>';
-    };
-    ?>
-
     <!-- タイムスケジュール始まり -->
 
     <!-- タグ -->
     <div class="hashtag_list">
-        <a class="hashtag">#ああああああ</a>
-        <a class="hashtag">#ああああああ</a>
-        <a class="hashtag">#ああああああ</a>
-        <a class="hashtag">#ああああああ</a>
+        <?php
+        function display_post_terms()
+        {
+            // 現在の投稿のIDを取得
+            $post_id = get_the_ID();
+
+            // 投稿タイプを取得
+            $post_type = get_post_type($post_id);
+
+            // 投稿タイプに関連するタクソノミーを取得
+            $taxonomies = get_object_taxonomies($post_type);
+
+            ob_start(); // 出力バッファリングを開始
+
+            if (!empty($taxonomies)) {
+                foreach ($taxonomies as $taxonomy) {
+                    // タクソノミーに関連するタームを取得
+                    $terms = get_the_terms($post_id, $taxonomy);
+
+                    if ($terms && !is_wp_error($terms)) {
+                        echo '<p>';
+                        foreach ($terms as $term) {
+                            echo '<p>';
+                            echo '＃' . esc_html($term->name) . '<br>';
+                            echo '</p>';
+                        }
+                        echo '</p>';
+                    } else {
+                        echo '<p>この投稿に関連するタームはありません。</p>';
+                    }
+                }
+            } else {
+                echo '<p>この投稿に関連するタクソノミーはありません。</p>';
+            }
+
+            return ob_get_clean(); // バッファの内容を返し、出力バッファリングを終了
+        }
+
+        // ショートコードを登録
+        function register_shortcodes()
+        {
+            add_shortcode('post_terms', 'display_post_terms');
+        }
+        add_action('init', 'register_shortcodes');
+        ?>
+
+        <a class="hashtag"></a>
+        <a class="hashtag"></a>
+        <a class="hashtag"></a>
+        <a class="hashtag"></a>
     </div>
     <!-- Summary -->
     <div class="flex">
         <h3 class="course_day_summary">Summary</h3>
     </div>
-    <p>ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。</p>
+    <p><?php the_field('course_description'); ?></p>
 
     <!-- マップ -->
     <iframe src="<?php
@@ -82,36 +94,20 @@
             <div class="time_schedule tb_only pc_only">
                 <div class="flow_design12">
                     <ul class="flow12">
-                        <li>
+                        <li><!-- 開始時刻1 -->
                             <p class="icon12"><?php the_field('start_time1_1'); ?><br>START</p>
-                            <!-- <dl>
-                                                    <dt>お申し込み</dt>
-                                                    <dd>SEOコンテンツ無料相談フォームから調査内容を記入いただき送信をお願いします。</dd>
-                                                </dl> -->
                         </li>
-
-                        <li>
+                        <li> <!-- 開始時刻2 -->
                             <p class="icon12"><?php the_field('start_time1_2'); ?></p>
-                            <!-- <dl>
-                                                    <dt>調査</dt>
-                                                    <dd>調査結果をお伝えするため、事前に日程調整のご連絡を差し上げます。</dd>
-                                                </dl> -->
                         </li>
-
-                        <li>
+                        <li> <!-- 開始時刻3 -->
                             <p class="icon12"><?php the_field('start_time1_3'); ?></p>
-                            <!-- <dl>
-                                                    <dt>結果報告</dt>
-                                                    <dd>お約束した日時にzoomにて調査結果をお伝えします。</dd>
-                                                </dl> -->
                         </li>
-
-                        <li>
+                        <li> <!-- 開始時刻4 -->
                             <p class="icon12"><?php the_field('start_time1_4'); ?></p>
-                            <!-- <dl>
-                                                    <dt>結果報告</dt>
-                                                    <dd>お約束した日時にzoomにて調査結果をお伝えします。</dd>
-                                                </dl> -->
+                        </li>
+                        <li> <!-- 開始時刻5 -->
+                            <p class="icon12"><?php the_field('start_time1_5'); ?></p>
                         </li>
                     </ul>
                 </div>
@@ -119,8 +115,8 @@
             </div>
             <div class="model_course1">
                 <!-- 1 -->
-                <div class="photo">
-                    <div class="clock">10 : 30<br>START</div>
+                <div class="photo"><!-- 開始時刻1 -->
+                    <div class="clock"><?php the_field('start_time1_1'); ?><br>START</div>
                 </div>
                 <div class="square_white"></div>
 
