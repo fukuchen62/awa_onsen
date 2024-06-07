@@ -98,19 +98,6 @@ h4 {
     z-index: 1;
 }
 
-/*
-.photo::before {
-    content: '';
-    position: absolute;
-    background-color: #fff;
-    width: 115px;
-    height: 64px;
-    border-radius: 20px;
-    top: 10px;
-    right: 10px;
-    z-index: 2;
-} */
-
 .position {
     position: relative;
 }
@@ -145,12 +132,6 @@ h4 {
 /* -----------------------
 DAY1/DAY2
 -------------------------- */
-
-
-
-
-
-
 .time {
     color: #fff;
     background-color: #6BDE4E;
