@@ -3,11 +3,9 @@
 get_header();
 ?>
 
-
-
 <main class="container">
     <section>
-        <h2 class="under_line"><?php single_cat_title(); ?></h2>
+        <h2 class="under_line">お知らせ一覧</h2>
 
         <!-- パンくずリスト -->
         <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
