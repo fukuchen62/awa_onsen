@@ -12,8 +12,7 @@ li>a {
     border-radius: 50px;
 }
 
-
-.modelcourse_list {
+.article_all {
     margin-top: 50px;
 }
 
@@ -34,12 +33,10 @@ li>a {
 
 /* フォントサイズのみ */
 @media(width>=431px) {
-
     .news_card {
         font-size: 1.5rem;
     }
 }
-
 
 @media (width>=757px) {
 
@@ -49,15 +46,5 @@ li>a {
 
     .tag li:nth-child(2) {
         letter-spacing: -0.1rem;
-    }
-}
-
-@media (width>=1201px) {
-    .modelcourse_list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 16px;
-        grid-row-gap: 0px;
     }
 }
