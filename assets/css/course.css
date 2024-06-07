@@ -92,8 +92,7 @@ h4 {
     background-image: url(../images/tooling.jpg);
     background-size: cover;
     position: relative;
-    width: 256px;
-    height: 231px;
+    aspect-ratio: 16/9;
     margin: auto;
     z-index: 1;
 }
