@@ -7,12 +7,15 @@
 
         <!-- パンくずリスト -->
         <?php get_template_part('template-parts/breadcrumb') ?>
+
         <!-- タグ -->
-        <ul class="info_tag">
-            <li class="touring_tag">ツーリング</li>
-            <li class="rafting_tag">ラフティング</li>
-            <li class="lookpretty_tag">映える</li>
-            <li class="hiking_tag">ハイキング</li>
+        <ul class="tag element04">
+            <li class="active"><a href="#">ツーリング</a></li>
+            <li><a href="#">ラフティング</a></li>
+            <li><a href="#">映える</a></li>
+            <li><a href="#">ハイキング</a></li>
+        </ul>
+
         </ul>
 
         <!-- 一覧 -->
@@ -27,6 +30,7 @@
                     <h3>最南端！！空と海を感じるツーリングコース！！！</h3>
                 </a>
             </article>
+
             <article class="card">
                 <a href="https://translate.google.co.jp/?hl=ja&tab=TT&sl=auto&tl=en&op=translate">
                     <div>
