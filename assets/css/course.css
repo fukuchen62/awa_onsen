@@ -221,6 +221,10 @@ DAY1/DAY2
     margin-left: 15px;
 }
 
+.margintop {
+    margin-top: 10px;
+}
+
 /* 黄緑の四角 */
 .yellowgreen_square {
     width: 90%;
