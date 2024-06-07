@@ -81,11 +81,11 @@ h4 {
 }
 
 .course_day::before {
-    right: 110%;
+    right: 120%;
 }
 
 .course_day::after {
-    left: 110%;
+    left: 120%;
 }
 
 /* photo/photoの白四角の設定 */
