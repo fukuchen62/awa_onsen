@@ -3,9 +3,9 @@
     <?php
     // フォームのカスタマイズ
     $comment_form_args = [
-        'title_reply' => 'コメント投稿フォーム',
-        'comment_notes_before' => 'コメントを入力して、「コメント送信」ボタンをクリックして送信してください。',
-        'comment_notes_after' => 'コメントありがとうございました。',
+        'title_reply' => 'コメント入力欄',
+        'comment_notes_before' => '',
+
     ];
     // コメント投稿フォームを読み込む
     comment_form($comment_form_args);
