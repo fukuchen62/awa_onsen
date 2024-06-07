@@ -60,18 +60,18 @@
     <p>ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。</p>
 
     <!-- マップ -->
-    <iframe src="<?php
-                    if (function_exists('get_field')) {
-                        $iframe_code = get_field('iframe'); // 'iframe' フィールド名を指定
-                        if ($iframe_code) {
-                            echo $iframe_code;
-                        } else {
-                            echo 'カスタムフィールドが見つかりませんでした。';
-                        }
-                    } else {
-                        echo 'get_field 関数が見つかりませんでした。';
-                    }
-                    ?>" width="288" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <?php
+    if (function_exists('get_field')) {
+        $iframe_code = get_field('iframe'); // 'iframe' フィールド名を指定
+        if ($iframe_code) {
+            echo $iframe_code;
+        } else {
+            echo 'カスタムフィールドが見つかりませんでした。';
+        }
+    } else {
+        echo 'get_field 関数が見つかりませんでした。';
+    }
+    ?>
 
     <!-- DAY1 -->
     <section class="day1">
