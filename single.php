@@ -51,6 +51,7 @@
             <section>
                 <h5 class="mt32">関連情報</h5>
                 <div class="article_all">
+
                     <?php
                     // 関連リンク1
                     $slug = get_field('post_url1'); // ここにカスタムフィールドの値が入る
