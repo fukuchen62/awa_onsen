@@ -160,11 +160,6 @@ DAY1/DAY2
     line-height: 69px;
 }
 
-div p,
-div h4 {
-    /* margin-left: 15px; */
-}
-
 .flex {
     margin-top: 10px;
     margin-bottom: 10px;
