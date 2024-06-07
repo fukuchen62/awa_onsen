@@ -8,6 +8,7 @@ base
 iframe {
     width: 100%;
     aspect-ratio: 16/9;
+    margin-top: 32px;
 }
 
 /* タグ */
@@ -76,15 +77,14 @@ h4 {
     width: 200%;
     height: 2px;
     position: absolute;
+    top: 12px;
 }
 
 .course_day::before {
-    top: 12px;
     right: 110%;
 }
 
 .course_day::after {
-    top: 12px;
     left: 110%;
 }
 
@@ -158,10 +158,6 @@ DAY1/DAY2
     margin: 0;
 }
 
-.car_tx {
-    margin-left: 0;
-}
-
 /* カード */
 .card.orange span {
     background-color: #F5A200;
@@ -179,7 +175,7 @@ DAY1/DAY2
     background-color: #EB97A8;
 }
 
-/* 車で10分アイコン */
+/* 車移動時間アイコン */
 .car_green {
     background-image: url(../images/car.svg);
     background-size: cover;
@@ -251,34 +247,9 @@ DAY1/DAY2
 }
 
 /* -----------------------
-レスポンシブ
--------------------------- */
-/* レスポンシブ */
-
-.tb_only {
-    display: none;
-}
-
-.pc_only {
-    display: none;
-}
-
-.sp_tb_only {
-    display: block;
-}
-
-/* -----------------------
 レスポンシブ tablet
 -------------------------- */
 @media (width>=757px) {
-    .sp_only {
-        display: none;
-    }
-
-    .tb_only {
-        display: block;
-    }
-
     .clock {
         display: none;
     }
@@ -396,21 +367,6 @@ DAY1/DAY2
 レスポンシブ pc
 -------------------------- */
 @media (width>=1201px) {
-    .sp_only {
-        display: none;
-    }
-
-    .tb_only {
-        display: none;
-    }
-
-    .pc_only {
-        display: block;
-    }
-
-    .sp_tb_only {
-        display: none;
-    }
 
     /* フォントサイズ */
     .course_day_summary {
