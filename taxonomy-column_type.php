@@ -27,7 +27,7 @@
                         <a href="https://ebookjapan.yahoo.co.jp/">
                             <img src="../assets/images/onsen_img.jpg" alt="" />
                             <div class="news_contents">
-                                <p class="date fugaz-one-regular"><?php the_time('Y-m-d-H:i'); ?>2024.05.31 10:00</p>
+                                <p class="date fugaz-one-regular"><?php the_time('Y-m-d-H:i'); ?></p>
                                 <p class="title"><?php the_title(); ?></p>
                                 <div class="hashtag_list .flex">
                                     <object>

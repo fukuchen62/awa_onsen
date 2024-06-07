@@ -121,9 +121,11 @@ function fs_script_files()
     // wp_enqueue_script("jquery");
 
     // jQueryライブラリの読み込みをやめる
-    wp_deregister_script("jquery");
+    // wp_deregister_script("jquery");
 
-    // JSの読み込み
+
+
+    // // JSの読み込み
     wp_enqueue_script(
         'jquery-local',
         get_template_directory_uri() . '/assets/js/vendor/jquery-3.6.0.min.js'
@@ -230,6 +232,33 @@ function fs_script_files()
 add_action('wp_enqueue_scripts', 'fs_script_files');
 ?>
 
+
+<?php
+// function fs_pre_get_posts($query)
+// {
+//     // 管理画面とメインクエリでない場合を処理対象外とする
+//     if (is_admin() || !$query->is_main_query()) {
+//         return;
+//     }
+
+//     // トップページの場合は
+//     if (is_home()) {
+//         $query->set('posts_per_page', 3);
+//         $query->set('category_name', 'news');
+//         return;
+//     }
+
+//     // 検索ページの場合は、固定ページを対象外とし、投稿のみに
+//     if (is_search()) {
+//         $query->set('post_type', 'post');
+//         return;
+//     }
+// }
+// add_action(
+//     'pre_get_posts', //関数の呼び出すタイミング
+//     'fs_pre_get_posts' //呼び出す関数名
+// );
+?>
 
 <?php
 /**
