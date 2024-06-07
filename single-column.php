@@ -154,6 +154,7 @@
                     setup_postdata($post);
                     // 投稿情報を取得
                     $post_id = $post->ID;
+                    // $name = $terms->$term;
                     $post_title = get_the_title($post_id);
                     $post_link = get_permalink($post_id);
                     $post_thumbnail = get_the_post_thumbnail($post_id, 'thumbnail'); // フルサイズのアイキャッチ画像を取得
@@ -169,50 +170,116 @@
                 }
 
                 ?>
-                <?php
-                //---------------------------
-                // カスタムフィールドの外部URL
-                //---------------------------
 
-                // スラッグ名を指定
-                $slug = the_field('slag'); // ここにカスタムフィールドの値が入る
+                <!-- 関連情報 -->
+                <section>
+                    <h5>関連情報</h5>
+                    <div class="article_all">
+                        <article class="card onsen">
+                            <?php
+                            //---------------------------
+                            // カスタムフィールドの外部URL
+                            //---------------------------
+                            // 関連リンク1
+                            // スラッグ名を指定
+                            $slug = the_field('slug'); // ここにカスタムフィールドの値が入る
 
-                // すべてのカスタム投稿タイプを取得
-                $custom_post_types = get_post_types(array('_builtin' => false));
+                            // すべてのカスタム投稿タイプを取得
+                            $custom_post_types = get_post_types(array('_builtin' => false));
 
-                // カスタムクエリで投稿を検索
-                $args = array(
-                    'name' => $slug,
-                    'post_type' => $custom_post_types,
-                    'post_status' => 'publish',
-                    'numberposts' => 1
-                );
+                            // カスタムクエリで投稿を検索
+                            $args = array(
+                                'name' => $slug,
+                                'post_type' => $custom_post_types,
+                                'post_status' => 'publish',
+                                'numberposts' => 1
+                            );
 
-                $posts = get_posts($args);
+                            $posts = get_posts($args);
 
-                if (!empty($posts)) {
-                    $post = $posts[0]; // 最初の投稿を取得
-                    setup_postdata($post);
-                    // 投稿情報を取得
-                    $post_id = $post->ID;
-                    $post_title = get_the_title($post_id);
-                    $post_link = get_permalink($post_id);
-                    $post_thumbnail = get_the_post_thumbnail($post_id, 'thumbnail'); // アイキャッチ画像を取得
+                            if (!empty($posts)) {
+                                $post = $posts[0]; // 最初の投稿を取得
+                                setup_postdata($post);
+                                // 投稿情報を取得
+                                $name = $slug;
+                                $post_id = $post->ID;
+                                $post_title = get_the_title($post_id);
+                                $post_link = get_permalink($post_id);
+                                $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // アイキャッチ画像を取得
 
-                    // 投稿情報を表示
-                    if ($post_thumbnail) {
-                        echo '<a href="' . esc_url($post_link) . '">' . $post_thumbnail . '</a>';
-                    }
-                    echo '<h1><a href="' . esc_url($post_link) . '">' . esc_html($post_title) . '</a></h1>';
+                                //クラス名を設定
+                                $class = 'card onsen';
+                            ?>
+                                <article class="<?php echo esc_attr($class); ?>">
+                                    <a href="<?php echo esc_url($post_link); ?>">
+                                        <div>
+                                            <span></span>
+                                            <?php if ($post_thumbnail) {
+                                                $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full'); // フルサイズのURLを取得
+                                                $post_title = get_the_tags($post_id); //何を出したいのか
+                                                echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr($post_title) . '" />';
+                                            }
+                                            ?>
 
+                                        </div>
+                                        <h3><?php echo esc_html($post_title); ?></h3>
+                                    </a>
+                                </article>
+                            <?php
+                                wp_reset_postdata();
+                            }
 
-                    wp_reset_postdata();
-                }
+                            ?>
+                            <?php
+                            // 関連リンク2
+                            $slug = the_field('post_url2'); // ここにカスタムフィールドの値が入る
 
-                ?>
+                            // カスタムクエリで投稿を検索
+                            $args = array(
+                                'name' => $slug,
+                                'post_type' => $custom_post_types,
+                                'post_status' => 'publish',
+                                'numberposts' => 1
+                            );
 
-            </div>
-            <!-- <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3> -->
+                            $posts = get_posts($args);
+
+                            if (!empty($posts)) {
+                                $post = $posts[0]; // 最初の投稿を取得
+                                setup_postdata($post);
+
+                                // 投稿情報を取得
+                                $post_id = $post->ID;
+                                $post_title = get_the_title($post_id);
+                                $post_link = get_permalink($post_id);
+                                $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+
+                                // クラス名を設定
+                                $class = 'card nearby';
+
+                                // 投稿情報を表示
+                            ?>
+                                <article class="<?php echo esc_attr($class); ?>">
+                                    <a href="<?php echo esc_url($post_link); ?>">
+                                        <div>
+                                            <span></span>
+                                            <?php if ($post_thumbnail) {
+                                                $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full'); // フルサイズのURLを取得
+                                                $post_title = get_the_title($post_id); // 投稿タイトルを取得
+                                                echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr($post_title) . '" />';
+                                            }
+                                            ?>
+                                        </div>
+                                        <h3><?php echo esc_html($post_title); ?></h3>
+                                    </a>
+                                </article>
+                            <?php
+                                wp_reset_postdata();
+                            }
+                            ?>
+
+                    </div>
+                    <!-- <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3> -->
 
         </article>
     </section>
@@ -221,7 +288,7 @@
     <a href="">次の記事＞＞</a>
     <br>
     <button class="back_btn" onclick="history.back">
-        <p><i class="fa-solid fa-arrow-left"></i>back</p>
+        <span><i class="fa-solid fa-arrow-left"></i>back</span>
     </button>
 
 
