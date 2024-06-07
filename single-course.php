@@ -1,7 +1,7 @@
 <!-- header.phpを読み込む -->
 <?php get_header(); ?>
 
-<main>
+<main class="container">
     <!-- タイトル -->
     <div class="flex">
         <h2 class="under_line"><?php the_title(); ?></h2>
@@ -57,21 +57,21 @@
     <div class="flex">
         <h3 class="course_day_summary">Summary</h3>
     </div>
-    <p>ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。ここにモデルコースの概要が入ります。</p>
+    <p><?php the_field('course_description'); ?></p>
 
     <!-- マップ -->
-    <iframe src="<?php
-                    if (function_exists('get_field')) {
-                        $iframe_code = get_field('iframe'); // 'iframe' フィールド名を指定
-                        if ($iframe_code) {
-                            echo $iframe_code;
-                        } else {
-                            echo 'カスタムフィールドが見つかりませんでした。';
-                        }
-                    } else {
-                        echo 'get_field 関数が見つかりませんでした。';
-                    }
-                    ?>" width="288" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <?php
+    if (function_exists('get_field')) {
+        $iframe_code = get_field('iframe'); // 'iframe' フィールド名を指定
+        if ($iframe_code) {
+            echo $iframe_code;
+        } else {
+            echo 'カスタムフィールドが見つかりませんでした。';
+        }
+    } else {
+        echo 'get_field 関数が見つかりませんでした。';
+    }
+    ?>
 
     <!-- DAY1 -->
     <section class="day1">
@@ -84,49 +84,38 @@
                     <ul class="flow12">
                         <li>
                             <p class="icon12"><?php the_field('start_time1_1'); ?><br>START</p>
-                            <!-- <dl>
-                                                    <dt>お申し込み</dt>
-                                                    <dd>SEOコンテンツ無料相談フォームから調査内容を記入いただき送信をお願いします。</dd>
-                                                </dl> -->
                         </li>
 
                         <li>
                             <p class="icon12"><?php the_field('start_time1_2'); ?></p>
-                            <!-- <dl>
-                                                    <dt>調査</dt>
-                                                    <dd>調査結果をお伝えするため、事前に日程調整のご連絡を差し上げます。</dd>
-                                                </dl> -->
                         </li>
 
                         <li>
                             <p class="icon12"><?php the_field('start_time1_3'); ?></p>
-                            <!-- <dl>
-                                                    <dt>結果報告</dt>
-                                                    <dd>お約束した日時にzoomにて調査結果をお伝えします。</dd>
-                                                </dl> -->
                         </li>
 
                         <li>
                             <p class="icon12"><?php the_field('start_time1_4'); ?></p>
-                            <!-- <dl>
-                                                    <dt>結果報告</dt>
-                                                    <dd>お約束した日時にzoomにて調査結果をお伝えします。</dd>
-                                                </dl> -->
+                        </li>
+
+                        <li>
+                            <p class="icon12"><?php the_field('start_time1_5'); ?></p>
                         </li>
                     </ul>
                 </div>
 
+                <!-- スマホ版 -->
             </div>
             <div class="model_course1">
                 <!-- 1 -->
                 <div class="photo">
-                    <div class="clock">10 : 30<br>START</div>
+                    <div class="clock"><?php the_field('start_time1_1'); ?><br>START</div>
                 </div>
                 <div class="square_white"></div>
 
-
+                <!-- 滞在時間 -->
                 <div class="flex">
-                    <div class="time">60分</div>
+                    <div class="time"><?php the_field('stay_time1_1'); ?></div>
                     <div>
                         <p>苔や植物で癒される</p>
                         <h4>こんまい屋</h4>

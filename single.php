@@ -1,53 +1,52 @@
-<?php
-get_header();
-?>
+<!DOCTYPE html>
+<html lang="ja">
 
-<!-- <div class="bubble_background"> -->
-<div class="container">
-    <main>
-        <section>
-            <div class="ttl">
-                <h2 class="under_line"><?php the_title(); ?></h2>
-                <p><?php the_time('Y.m.d H:i'); ?></p>
-            </div>
+<head>
+    <?php get_header(); ?>
+</head>
 
-            <!-- パンくずリスト CSS未適用 -->
-            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-                <?php if (function_exists('bcn_display')) {
-                    bcn_display();
-                } ?>
-            </div>
+<body>
+    <div class="container">
+        <main>
+            <section>
+                <div class="ttl">
+                    <h2 class="under_line"><?php the_title(); ?></h2>
+                    <p><?php the_time('Y.m.d H:i'); ?></p>
+                </div>
 
-            <div class="hashtag_list mt32">
-                <?php
+                <!-- パンくずリスト CSS未適用 -->
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+                    <?php if (function_exists('bcn_display')) {
+                        bcn_display();
+                    } ?>
+                </div>
 
-                // 現在の投稿のIDを取得 CSS未適用
-                $post_id = get_the_ID();
+                <?php if (has_post_thumbnail()) : ?>
+                    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="mt32">
+                <?php endif; ?>
 
-                // カテゴリーに関連するタームを取得
-                $categories = get_the_category($post_id);
+                <div class="hashtag_list mt32">
+                    <?php
+                    // 現在の投稿のIDを取得
+                    $post_id = get_the_ID();
 
-                if (!empty($categories)) {
-                    echo '<ul>';
-                    foreach ($categories as $category) {
-                        echo '<li class="hashtag">';
-                        echo esc_html($category->name) . '<br>';
-                        echo '</li>';
-                    }
-                    echo '</ul>';
-                } else {
-                    echo '<p>この投稿に関連するカテゴリーはありません。</p>';
-                }
+                    // カテゴリーに関連するタームを取得
+                    $categories = get_the_category($post_id);
+                    ?>
 
-                ?>
-            </div>
+                    <?php if (!empty($categories)) : ?>
+                        <ul>
+                            <?php foreach ($categories as $category) : ?>
+                                <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+                                    <li class="hashtag"><?php echo esc_html($category->name); ?></li>
+                                </a>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </div>
 
-
-            <?php if (has_post_thumbnail()) : ?>
-                <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="mt32">
-            <?php endif; ?>
-
-            <p class="mt32"><?php the_content(); ?></p>
+                <p class="mt32"><?php the_content(); ?></p>
+            </section>
 
             <section>
                 <h5 class="mt32">関連情報</h5>
@@ -81,20 +80,14 @@ get_header();
 
                         // クラス名を設定
                         $class = 'card onsen';
-
-                        // 投稿情報を表示
                     ?>
                         <article class="<?php echo esc_attr($class); ?>">
                             <a href="<?php echo esc_url($post_link); ?>">
                                 <div>
                                     <span></span>
-                                    <?php if ($post_thumbnail) {
-                                        $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full'); // フルサイズのURLを取得
-                                        $post_title = get_the_title($post_id); // 投稿タイトルを取得
-                                        echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr($post_title) . '" />';
-                                    }
-                                    ?>
-
+                                    <?php if ($post_thumbnail) : ?>
+                                        <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                    <?php endif; ?>
                                 </div>
                                 <h3><?php echo esc_html($post_title); ?></h3>
                             </a>
@@ -128,19 +121,14 @@ get_header();
 
                         // クラス名を設定
                         $class = 'card modelcourse';
-
-                        // 投稿情報を表示
                     ?>
                         <article class="<?php echo esc_attr($class); ?>">
                             <a href="<?php echo esc_url($post_link); ?>">
                                 <div>
                                     <span></span>
-                                    <?php if ($post_thumbnail) {
-                                        $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full'); // フルサイズのURLを取得
-                                        $post_title = get_the_title($post_id); // 投稿タイトルを取得
-                                        echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr($post_title) . '" />';
-                                    }
-                                    ?>
+                                    <?php if ($post_thumbnail) : ?>
+                                        <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                    <?php endif; ?>
                                 </div>
                                 <h3><?php echo esc_html($post_title); ?></h3>
                             </a>
@@ -151,15 +139,16 @@ get_header();
                     ?>
                 </div>
             </section>
-            <button class="back_btn" onclick="history.back">
-                <span><i class="fa-solid fa-arrow-left"></i>back</span>
+
+            <button class="back_btn" onclick="history.back()">
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                    <span><i class="fa-solid fa-arrow-left"></i>back</span>
+                </a>
             </button>
-    </main>
-</div>
+        </main>
+    </div>
 
+    <?php get_footer(); ?>
+</body>
 
-<!-- </div> -->
-
-<?php
-get_footer();
-?>
+</html>

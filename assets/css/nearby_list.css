@@ -28,9 +28,6 @@ dt>h3 {
         font-size: 2.25rem;
     }
 
-    .tag li {
-        font-size: 1.5rem;
-    }
 }
 
 @media(width>=757px) {
