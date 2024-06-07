@@ -7,20 +7,16 @@ html {
 /* -----------------------
 base
 -------------------------- */
-/* タイトル */
-.under_line {
-    font-size: 1.25rem;
-    /* font */
-    font-size: 1.25rem;
-    font-family: "Zen Maru Gothic", serif;
-    font-weight: 900;
-    font-style: normal;
-    margin-bottom: 32px;
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
 }
 
 /* タグ */
 .hashtag_list {
     margin-bottom: 16px;
+    justify-content: flex-start;
 }
 
 /* Bold */
@@ -34,6 +30,7 @@ h4 {
 
 /* Summary */
 .course_day_summary {
+    font-size: 1.125rem;
     position: relative;
     margin-top: 44px;
     margin-bottom: 31px;
@@ -50,12 +47,12 @@ h4 {
 
 .course_day_summary::before {
     top: 12px;
-    right: 70px;
+    right: 110%;
 }
 
 .course_day_summary::after {
     top: 12px;
-    left: 70px;
+    left: 110%;
 }
 
 /* DAY1 */
@@ -84,12 +81,12 @@ h4 {
 
 .course_day::before {
     top: 12px;
-    right: 50px;
+    right: 110%;
 }
 
 .course_day::after {
     top: 12px;
-    left: 50px;
+    left: 110%;
 }
 
 /* photo/photoの白四角の設定 */
@@ -127,6 +124,19 @@ h4 {
     z-index: 333;
 }
 
+.block>* {
+    padding-bottom: 10px;
+}
+
+.flex_left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex_left div {
+    padding-top: 5px;
+}
+
 /* -----------------------
 DAY1/DAY2
 -------------------------- */
@@ -142,7 +152,8 @@ DAY1/DAY2
     width: 85px;
     height: 69px;
     border-radius: 5px;
-    padding: 22px 24px;
+    text-align: center;
+    line-height: 3;
 }
 
 div p,
@@ -194,24 +205,17 @@ div h4 {
 
 /* 車で10分アイコン */
 .car_green {
-    background-image: url(../images/car_icon.svg);
-    background-repeat: no-repeat;
+    background-image: url(../images/car.svg);
+    background-size: cover;
+    position: relative;
     width: 50px;
     height: 50px;
-    margin-top: 10px;
-    position: relative;
+    margin: 0;
+    z-index: 1;
 }
 
-.car_green::before {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #6BDE4E;
-    z-index: -1;
-    bottom: -5px;
-    left: -4px;
+.flex.greencar {
+    margin: 10%;
 }
 
 /* 黄緑の四角 */
@@ -236,7 +240,7 @@ div h4 {
 .yellowgreen_square::after {
     content: '';
     background-color: white;
-    width: 30%;
+    width: 10%;
     height: 3px;
     position: absolute;
     top: 45px;
@@ -290,6 +294,14 @@ div h4 {
         display: block;
     }
 
+    .clock {
+        display: none;
+    }
+
+    .photo::before {
+        display: none;
+    }
+
     /* タイムスケジュール */
     .flow12 {
         margin: 0;
@@ -307,15 +319,15 @@ div h4 {
 
     /* それぞれの線の長さ */
     .flow12>li:nth-child(1) {
-        padding-bottom: 500px;
+        padding-bottom: 500%;
     }
 
     .flow12>li:nth-child(2) {
-        padding-bottom: 500px;
+        padding-bottom: 535%;
     }
 
     .flow12>li:nth-child(3) {
-        padding-bottom: 500px;
+        padding-bottom: 460%;
     }
 
     .flow12>li:nth-of-type(even)::after {
@@ -352,12 +364,6 @@ div h4 {
         content: unset;
     }
 
-    .flow12>li dl {
-        /* display: inline-block; */
-        /* vertical-align: top; */
-        /* width: calc(100% - 130px); */
-    }
-
     .flow12>li .icon12 {
         display: inline-block;
         margin: 0;
@@ -369,34 +375,15 @@ div h4 {
         font-weight: bold;
         vertical-align: middle;
         font-size: 1rem;
-        /* line-height: 100px; */
         background: #fff;
         border: 10px solid #D9D9D9;
-        /* color: #fff; */
-        /* border-radius: 100vh; */
         position: relative;
         z-index: 1;
     }
 
-    .flow12>li dt {
-        /* display: inline-block; */
-        /* margin: 1rem 0 0.5rem; */
-        /* font-size: 2rem; */
-        /* font-weight: bold; */
-        /* line-height: 1.5; */
-        /* letter-spacing: .1em; */
-    }
-
-    .flow12>li dd {
-        /* max-width: 550px; */
-        /* margin: 0; */
-        /* font-weight: normal; */
-        /* line-height: 2; */
-        /* letter-spacing: .1em; */
-    }
-
     .layer {
         display: flex;
+        justify-content: center
     }
 
     .model_course1 {
@@ -407,8 +394,20 @@ div h4 {
         width: 100%;
     }
 
-    .clock {
-        right: 10%;
+    .yellowgreen_square::before,
+    .yellowgreen_square::after {
+        width: 20%;
+    }
+
+    /* フォントサイズ */
+    .course_day,
+    .course_day_summary,
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    .container p {
+        font-size: 1.25rem;
     }
 }
 
@@ -431,6 +430,11 @@ div h4 {
     .sp_tb_only {
         display: none;
     }
+
+    /* フォントサイズ */
+    .course_day_summary {
+        font-size: 1.5rem;
+    }
 }
 
 /* -----------------------
@@ -441,4 +445,17 @@ div h4 {
     /* =================================
 ここは各自のCSSファイルで設定（サンプル）
 ================================= */
+}
+
+.sp_nav .navlist.isactive {
+    right: 0;
+}
+
+@media (width >=1201px) {
+    .navlist.isactive {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0) translateY(50%);
+        transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
+    }
 }
