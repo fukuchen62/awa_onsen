@@ -187,64 +187,68 @@
                 </dd>
                 <dt>基本料金</dt>
                 <dd>
-                    <?php echo esc_html(get_field('price')); ?>
+                    <?php echo nl2br(esc_html(get_field('price'))); ?>
                 </dd>
                 <dt>決済方法</dt>
                 <dd>
-                    <?php echo esc_html(get_field('payment_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('ayment_description'))); ?>
                 </dd>
                 <dt>予約</dt>
                 <dd>
-                    <?php echo esc_html(get_field('reserve_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('reserve_description'))); ?>
                 </dd>
                 <dt>トイレ</dt>
                 <dd>
-                    <?php echo esc_html(get_field('toilet_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('toilet_description'))); ?>
                 </dd>
                 <dt>分煙</dt>
                 <dd>
-                    <?php echo esc_html(get_field('smoking_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('smoking_description'))); ?>
                 </dd>
                 <dt>駐車場</dt>
                 <dd>
-                    <?php echo esc_html(get_field('parking_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('parking_description'))); ?>
                 </dd>
                 <dt>Wi-Fi</dt>
                 <dd>
-                    <?php echo esc_html(get_field('wifi_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('wifi_description'))); ?>
+
                 </dd>
                 <dt>浴室小物</dt>
                 <dd>
-                    <?php echo esc_html(get_field('facility')); ?>
-
+                    <?php echo nl2br(esc_html(get_field('facility'))); ?>
                 </dd>
                 <dt>住所</dt>
                 <dd>
-                    <?php echo esc_html(get_field('address1')); ?>
-                    <?php echo esc_html(get_field('address2')); ?>
+                    <?php echo nl2br(esc_html(get_field('address1'))); ?>
+                    <?php echo nl2br(esc_html(get_field('address2'))); ?>
                 </dd>
                 <dt>TEL</dt>
                 <dd>
-                    <?php echo esc_html(get_field('tel')); ?>
+                    <?php echo nl2br(esc_html(get_field('tel'))); ?>
                 </dd>
                 <dt>FAX</dt>
                 <dd>
-                    <?php echo esc_html(get_field('fax')); ?>
+                    <?php echo nl2br(esc_html(get_field('fax'))); ?>
                 </dd>
                 <dt>Email</dt>
                 <dd>
-                    <?php echo esc_html(get_field('email')); ?>
+                    <?php echo nl2br(esc_html(get_field('email'))); ?>
                 </dd>
                 <dt>最寄り駅</dt>
                 <dd>
-                    <?php echo esc_html(get_field('station')); ?>
+                    <?php echo nl2br(esc_html(get_field('station'))); ?>
                 </dd>
                 <dt>SNS</dt>
                 <dd>
-                    <?php echo esc_html(get_field('sns_url')); ?>
+                    <?php echo nl2br(esc_html(get_field('sns_url'))); ?>
                 </dd>
                 <dt>公式ホームページ</dt>
-                <dd><a href="<?php the_field('official_url'); ?>"><?php echo get_field('official_url') ?></a></dd>
+                <dd>
+                    <a href="<?php the_field('official_url'); ?>">
+                        <?php echo get_field('official_url') ?>
+                    </a>
+                </dd>
             </dl>
         </section>
         <?php

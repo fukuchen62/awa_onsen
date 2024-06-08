@@ -12,7 +12,7 @@
         <div class="img_box">
             <ul class="slider">
                 <?php if ($pic = get_field('facility_pic1')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
+                    <?php $pic_url = $pic['sizes']['medium']; ?>
                     <?php if ($pic_url) : ?>
                         <li class="slider-img">
                             <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像1">
@@ -20,7 +20,7 @@
                     <?php endif; ?>
                 <?php endif; ?>
                 <?php if ($pic = get_field('facility_pic2')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
+                    <?php $pic_url = $pic['sizes']['medium']; ?>
                     <?php if ($pic_url) : ?>
                         <li class="slider-img">
                             <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像2">
@@ -28,7 +28,7 @@
                     <?php endif; ?>
                 <?php endif; ?>
                 <?php if ($pic = get_field('facility_pic3')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
+                    <?php $pic_url = $pic['sizes']['medium']; ?>
                     <?php if ($pic_url) : ?>
                         <li class="slider-img">
                             <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像3">
@@ -36,7 +36,7 @@
                     <?php endif; ?>
                 <?php endif; ?>
                 <?php if ($pic = get_field('facility_pic4')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
+                    <?php $pic_url = $pic['sizes']['medium']; ?>
                     <?php if ($pic_url) : ?>
                         <li class="slider-img">
                             <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像4">
@@ -44,7 +44,7 @@
                     <?php endif; ?>
                 <?php endif; ?>
                 <?php if ($pic = get_field('facility_pic5')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
+                    <?php $pic_url = $pic['sizes']['medium']; ?>
                     <?php if ($pic_url) : ?>
                         <li class="slider-img">
                             <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像5">
@@ -107,7 +107,7 @@
                 </dd>
                 <dt>施設紹介</dt>
                 <dd>
-                    <?php echo esc_html(get_field('facility_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('facility_description'))); ?>
                 </dd>
                 <dt>住所</dt>
                 <dd>
@@ -122,7 +122,7 @@
                 </dd>
                 <dt>営業時間</dt>
                 <dd>
-                    <?php echo esc_html(get_field('business_time')); ?>
+                    <?php echo nl2br(esc_html(get_field('business_time'))); ?>
                 </dd>
                 <dt>定休日</dt>
                 <dd>
@@ -130,31 +130,31 @@
                 </dd>
                 <dt>料金</dt>
                 <dd>
-                    <?php echo esc_html(get_field('price')); ?>
+                    <?php echo nl2br(esc_html(get_field('price'))); ?>
                 </dd>
                 <dt>決済方法</dt>
                 <dd>
-                    <?php echo esc_html(get_field('payment_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('payment_description'))); ?>
                 </dd>
                 <dt>予約</dt>
                 <dd>
-                    <?php echo esc_html(get_field('reserve_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('reserve_description'))); ?>
                 </dd>
                 <dt>トイレ</dt>
                 <dd>
-                    <?php echo esc_html(get_field('toilet_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('toilet_description'))); ?>
                 </dd>
                 <dt>分煙</dt>
                 <dd>
-                    <?php echo esc_html(get_field('smoking_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('smoking_description'))); ?>
                 </dd>
                 <dt>駐車場</dt>
                 <dd>
-                    <?php echo esc_html(get_field('parking_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('parking_description'))); ?>
                 </dd>
                 <dt>Wi-Fi</dt>
                 <dd>
-                    <?php echo esc_html(get_field('wifi_description')); ?>
+                    <?php echo nl2br(esc_html(get_field('wifi_description'))); ?>
                 </dd>
                 <dt>公式ホームページ</dt>
                 <dd>
