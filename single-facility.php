@@ -19,7 +19,6 @@
                         </li>
                     <?php endif; ?>
                 <?php endif; ?>
-
                 <?php if ($pic = get_field('facility_pic2')) : ?>
                     <?php $pic_url = $pic['sizes']['large']; ?>
                     <?php if ($pic_url) : ?>
@@ -28,7 +27,6 @@
                         </li>
                     <?php endif; ?>
                 <?php endif; ?>
-
                 <?php if ($pic = get_field('facility_pic3')) : ?>
                     <?php $pic_url = $pic['sizes']['large']; ?>
                     <?php if ($pic_url) : ?>
@@ -37,7 +35,6 @@
                         </li>
                     <?php endif; ?>
                 <?php endif; ?>
-
                 <?php if ($pic = get_field('facility_pic4')) : ?>
                     <?php $pic_url = $pic['sizes']['large']; ?>
                     <?php if ($pic_url) : ?>
@@ -46,7 +43,6 @@
                         </li>
                     <?php endif; ?>
                 <?php endif; ?>
-
                 <?php if ($pic = get_field('facility_pic5')) : ?>
                     <?php $pic_url = $pic['sizes']['large']; ?>
                     <?php if ($pic_url) : ?>
@@ -181,7 +177,7 @@
 
         <section>
             <h5>こちらもいかがでしょうか？</h5>
-            <div class="recommend_list">
+            <!-- <div class="recommend_list">
                 <article class="card">
                     <a href="#">
                         <div>
@@ -227,7 +223,7 @@
                         <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
                     </a>
                 </article>
-            </div>
+            </div> -->
         </section>
         <button class="back_btn" onclick="history.back">
             <span><i class="fa-solid fa-arrow-left"></i>back</span>
