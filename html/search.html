@@ -20,7 +20,6 @@
     </head>
     <body>
         <div class="bubble_background">
-            <!-- header -->
             <header class="header_wrap">
                 <div class="header_container">
                     <!-- headerの左側 -->
@@ -108,216 +107,217 @@
                     </nav>
                 </div>
             </header>
-            <main class="container">
-                <h2 class="under_line">検索</h2>
-                <!-- パンくず -->
-                <form action="" method="post">
-                    <ul class="tag">
-                        <li>温泉</li>
-                        <li>周辺施設</li>
-                        <li>モデルコース</li>
-                    </ul>
+            <main class="pc_inner">
+                <div class="container">
+                    <h2 class="under_line">検索</h2>
+                    <!-- パンくず -->
+                    <form action="" method="post">
+                        <ul class="tag element03">
+                            <li class="active">温泉</li>
+                            <li>周辺施設</li>
+                            <li>モデルコース</li>
+                        </ul>
 
-                    <div class="contents">
-                        <section>
-                            <h3>地域</h3>
-                            <div class="area">
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="東部" />
-                                    <span>東部</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="西部" />
-                                    <span>西部</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="南部" />
-                                    <span>南部</span>
-                                </label>
-                            </div>
-                        </section>
-                        <section>
-                            <h3>効能</h3>
-                            <div class="list">
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="美肌" />
-                                    <span>美肌</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="冷え性" />
-                                    <span>冷え性</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="肩こり" />
-                                    <span>肩こり</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="筋肉痛" />
-                                    <span>筋肉痛</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="リウマチ" />
-                                    <span>リウマチ</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="神経痛" />
-                                    <span>神経痛</span>
-                                </label>
-                            </div>
-                        </section>
-                    </div>
-
-                    <div class="contents">
-                        <section>
-                            <h3>地域</h3>
-                            <div class="area">
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="東部" />
-                                    <span>東部</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="西部" />
-                                    <span>西部</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="南部" />
-                                    <span>南部</span>
-                                </label>
-                            </div>
-                        </section>
-                        <section>
-                            <h3>分類</h3>
-                            <div class="list">
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="ショッピング" />
-                                    <span>ショッピング</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="グルメ" />
-                                    <span>グルメ</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="遊ぶ" />
-                                    <span>遊ぶ</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="泊まる" />
-                                    <span>泊まる</span>
-                                </label>
-                            </div>
-                        </section>
-                    </div>
-
-                    <div class="contents">
-                        <section>
-                            <h3>地域</h3>
-                            <div class="area">
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="東部" />
-                                    <span>東部</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="西部" />
-                                    <span>西部</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="南部" />
-                                    <span>南部</span>
-                                </label>
-                            </div>
-                        </section>
-                        <section>
-                            <h3>分類</h3>
-                            <div class="list">
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="映える" />
-                                    <span>映える</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="ツーリング" />
-                                    <span>ツーリング</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="ラフティング" />
-                                    <span>ラフティング</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="options" value="ハイキング" />
-                                    <span>ハイキング</span>
-                                </label>
-                            </div>
-                        </section>
-                    </div>
-
-                    <div class="btn">
-                        <label class="reset"><input type="reset" value="" /><span>リセット</span></label>
-                        <label class="submit"
-                            ><input type="submit" value="" /><span><i class="fa-solid fa-magnifying-glass"></i>検索</span></label
-                        >
-                    </div>
-                </form>
-                <!-- 検索結果 -->
-                <section>
-                    <h4 class="lined-title">検索結果</h4>
-                    <div class="article_all">
-                        <article class="card">
-                            <a href="#">
-                                <div>
-                                    <span></span>
-                                    <img src="../assets/images/onsen_img.jpg" alt="" />
+                        <div class="contents">
+                            <section>
+                                <h3>地域</h3>
+                                <div class="area">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="東部" />
+                                        <span>東部</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="西部" />
+                                        <span>西部</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="南部" />
+                                        <span>南部</span>
+                                    </label>
                                 </div>
-                                <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                            </a>
-                        </article>
-                        <article class="card">
-                            <a href="#">
-                                <div>
-                                    <span></span>
-                                    <img src="../assets/images/onsen_img.jpg" alt="" />
+                            </section>
+                            <section>
+                                <h3>効能</h3>
+                                <div class="list">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="美肌" />
+                                        <span>美肌</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="冷え性" />
+                                        <span>冷え性</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="肩こり" />
+                                        <span>肩こり</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="筋肉痛" />
+                                        <span>筋肉痛</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="リウマチ" />
+                                        <span>リウマチ</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="神経痛" />
+                                        <span>神経痛</span>
+                                    </label>
                                 </div>
-                                <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                            </a>
-                        </article>
-                        <article class="card">
-                            <a href="#">
-                                <div>
-                                    <span></span>
-                                    <img src="../assets/images/onsen_img.jpg" alt="" />
-                                </div>
-                                <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                            </a>
-                        </article>
-                    </div>
-                </section>
-                <button class="back_btn" onclick="history.back">
-                    <span><i class="fa-solid fa-arrow-left"></i>back</span>
-                </button>
-            </main>
+                            </section>
+                        </div>
 
-            <!-- footer -->
-            <footer class="footer_wrap">
-                <div class="footer_container">
-                    <ul class="footer_list">
-                        <li class="footer_item">
-                            <a href="about.html"> <span class="material-symbols-outlined"> bubble_chart </span>このサイトについて </a>
-                        </li>
-                        <li class="footer_item">
-                            <a href="news_list.html"> <span class="material-symbols-outlined"> fiber_new </span>お知らせ一覧へ </a>
-                        </li>
-                        <li class="footer_item">
-                            <a href="privacypolicy.html">
-                                <span class="material-symbols-outlined"> verified_user </span>
-                                <div>免責事項・<br />プライバシーポリシー</div>
-                            </a>
-                        </li>
-                        <li class="footer_item">
-                            <a href="form.html"> <span class="material-symbols-outlined"> mail </span>お問い合わせ(企業様) </a>
-                        </li>
-                    </ul>
-                    <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+                        <div class="contents">
+                            <section>
+                                <h3>地域</h3>
+                                <div class="area">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="東部" />
+                                        <span>東部</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="西部" />
+                                        <span>西部</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="南部" />
+                                        <span>南部</span>
+                                    </label>
+                                </div>
+                            </section>
+                            <section>
+                                <h3>分類</h3>
+                                <div class="list">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="ショッピング" />
+                                        <span>ショッピング</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="グルメ" />
+                                        <span>グルメ</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="遊ぶ" />
+                                        <span>遊ぶ</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="泊まる" />
+                                        <span>泊まる</span>
+                                    </label>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="contents">
+                            <section>
+                                <h3>地域</h3>
+                                <div class="area">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="東部" />
+                                        <span>東部</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="西部" />
+                                        <span>西部</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="南部" />
+                                        <span>南部</span>
+                                    </label>
+                                </div>
+                            </section>
+                            <section>
+                                <h3>分類</h3>
+                                <div class="list">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="映える" />
+                                        <span>映える</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="ツーリング" />
+                                        <span>ツーリング</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="ラフティング" />
+                                        <span>ラフティング</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="options" value="ハイキング" />
+                                        <span>ハイキング</span>
+                                    </label>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="btn">
+                            <label class="reset"><input type="reset" value="" /><span>リセット</span></label>
+                            <label class="submit"
+                                ><input type="submit" value="" /><span><i class="fa-solid fa-magnifying-glass"></i>検索</span></label
+                            >
+                        </div>
+                    </form>
+                    <!-- 検索結果 -->
+                    <section>
+                        <h4 class="lined-title">検索結果</h4>
+                        <div class="article_all">
+                            <article class="card">
+                                <a href="#">
+                                    <div>
+                                        <span></span>
+                                        <img src="../assets/images/onsen_img.jpg" alt="" />
+                                    </div>
+                                    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+                                </a>
+                            </article>
+                            <article class="card">
+                                <a href="#">
+                                    <div>
+                                        <span></span>
+                                        <img src="../assets/images/onsen_img.jpg" alt="" />
+                                    </div>
+                                    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+                                </a>
+                            </article>
+                            <article class="card">
+                                <a href="#">
+                                    <div>
+                                        <span></span>
+                                        <img src="../assets/images/onsen_img.jpg" alt="" />
+                                    </div>
+                                    <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
+                                </a>
+                            </article>
+                        </div>
+                    </section>
+                    <button class="back_btn" onclick="history.back">
+                        <span><i class="fa-solid fa-arrow-left"></i>back</span>
+                    </button>
                 </div>
-            </footer>
+            </main>
         </div>
+        <!-- footer -->
+        <footer class="footer_wrap">
+            <div class="footer_container">
+                <ul class="footer_list">
+                    <li class="footer_item">
+                        <a href="about.html"> <span class="material-symbols-outlined"> bubble_chart </span>このサイトについて </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="news_list.html"> <span class="material-symbols-outlined"> fiber_new </span>お知らせ一覧へ </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="privacypolicy.html">
+                            <span class="material-symbols-outlined"> verified_user </span>
+                            <div>免責事項・<br />プライバシーポリシー</div>
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="form.html"> <span class="material-symbols-outlined"> mail </span>お問い合わせ(企業様) </a>
+                    </li>
+                </ul>
+                <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+            </div>
+        </footer>
 
         <!-- jquery CDN -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

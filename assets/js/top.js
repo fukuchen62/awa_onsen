@@ -10,7 +10,7 @@ $(function () {
         nextArrow: '<button class="slide-arrow next-arrow"></button>'
     });
 
-    let nav = $(".navlist");
+    let nav = $("#pc_nav .navlist");
     let logo = $(".logo");
     let top = $(".top_button");
     let aboutSection = $(".about");

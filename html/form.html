@@ -24,6 +24,8 @@
 <body>
     <div class="bubble_background">
 
+
+
         <!-- header -->
         <header class="header_wrap">
             <div class="header_container">
@@ -114,45 +116,46 @@
         </header>
 
 
-        <main class="container">
+        <main class="pc_inner">
+            <div class="container">
 
-            <section>
-                <h2 class="under_line">お問い合わせフォーム<br>（企業のお客様）</h2>
+                <section>
+                    <h2 class="under_line">お問い合わせフォーム<br>（企業のお客様）</h2>
 
-                <!-- パンくず -->
+                    <!-- パンくず -->
 
-                <p>法人のみの対応とさせていただいております。予めご了承ください。<br><small>※</small>は必須項目です。</p>
-            </section>
-            <!-- お問い合わせフォーム -->
-            <div class="content_form">
-                <div class="form_item">
-                    <h4><label>企業様名/施設様名</label><small>※</small></h4>
-                    <p><input type="text" placeholder="AWA温泉" required></p>
+                    <p>法人のみの対応とさせていただいております。予めご了承ください。<br><small>※</small>は必須項目です。</p>
+                </section>
+                <!-- お問い合わせフォーム -->
+                <div class="content_form">
+                    <div class="form_item">
+                        <h4><label>企業様名/施設様名</label><small>※</small></h4>
+                        <p><input type="text" placeholder="AWA温泉" required></p>
 
-                </div>
-                <div class="form_item">
-                    <h4><label>ご担当様氏名</label><small>※</small></h4>
-                    <p><input type="text" placeholder="温泉 サル彦" required></p>
-                </div>
-                <div class="form_item">
-                    <h4><label>メールアドレス</label><small>※</small></h4>
-                    <p><input type="email"  placeholder="AWA-onsen@email.com" required></p>
-                </div>
-                <div class="form_item">
-                    <h4><label>電話番号</label><small>※</small></h4>
-                    <p><input type="tel"  placeholder="000-000-0000"  required></p>
-                </div>
-                <div class="form_item">
-                    <h4><label>お問い合わせ内容</label><small>※</small></h4>
-                    <p><textarea name="message"  rows="10" cols="20" required></textarea></p>
-                </div>
+                    </div>
+                    <div class="form_item">
+                        <h4><label>ご担当様氏名</label><small>※</small></h4>
+                        <p><input type="text" placeholder="温泉 サル彦" required></p>
+                    </div>
+                    <div class="form_item">
+                        <h4><label>メールアドレス</label><small>※</small></h4>
+                        <p><input type="email"  placeholder="AWA-onsen@email.com" required></p>
+                    </div>
+                    <div class="form_item">
+                        <h4><label>電話番号</label><small>※</small></h4>
+                        <p><input type="tel"  placeholder="000-000-0000"  required></p>
+                    </div>
+                    <div class="form_item">
+                        <h4><label>お問い合わせ内容</label><small>※</small></h4>
+                        <p><textarea name="message"  rows="10" cols="20" required></textarea></p>
+                    </div>
 
-                <!-- 個人情報・同意 -->
-                <div class="privacypolicy">
-                    <p>個人情報の取り扱いに関しては、<a href="privacypolicy.html" >プライバシーポリシー</a>をお読みいただき、ご同意の上お問い合わせください。</p>
-                    <div class="agree">
-                        <p><input type="checkbox" value="privacy" id="privacy"><label for="privacy">プライバシーポリシー・免責事項に同意する。</label></p>
-                        <p class="confirmation"><input id="submit_button" type="submit" value="確認画面へ" disabled>
+                    <!-- 個人情報・同意 -->
+                    <div class="privacypolicy">
+                        <p>個人情報の取り扱いに関しては、<a href="privacypolicy.html" >プライバシーポリシー</a>をお読みいただき、ご同意の上お問い合わせください。</p>
+                        <div class="agree">
+                            <p><input type="checkbox" value="privacy" id="privacy"><label for="privacy">プライバシーポリシー・免責事項に同意する。</label></p>
+                            <p class="confirmation"><input id="submit_button" type="submit" value="確認画面へ" disabled>
                     </div>
                 </div>
 
@@ -160,6 +163,7 @@
             <button class="back_btn" onclick="history.back">
                 <span><i class="fa-solid fa-arrow-left"></i>back</span>
             </button>
+        </div>
         </main>
 
         <!-- footer -->
@@ -197,18 +201,18 @@
                     </li>
                 </ul>
                 <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+                        </div>
+                        </footer>
+
+                        <!-- JQuery -->
+                        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+                        <!-- 共通ｊｓ -->
+                        <script src="../assets/js/common.js"></script>
+                        <script src="../assets/js/menu.js"></script>
+
+
+                        <!-- 個別ｊｓ -->
+                        <script src="../assets/js/form.js"></script>
                     </div>
-                    </footer>
-
-                    <!-- JQuery -->
-                    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-                    <!-- 共通ｊｓ -->
-                    <script src="../assets/js/common.js"></script>
-                    <script src="../assets/js/menu.js"></script>
-
-
-                    <!-- 個別ｊｓ -->
-                    <script src="../assets/js/form.js"></script>
-                </div>
 </body>
 </html>

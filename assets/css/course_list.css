@@ -5,26 +5,6 @@
     color: #DBF500;
 }
 
-/* タグ */
-.info_tag {
-    margin: 50px auto 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-}
-
-.info_tag li {
-    font-size: 1.25rem;
-    line-height: 40px;
-    height: 40px;
-    font-size: 1.125rem;
-    text-align: center;
-    background-color: #D9D9D9;
-    border-radius: 50px;
-}
-
 li>a {
     display: block;
     height: 100%;
@@ -32,16 +12,7 @@ li>a {
     border-radius: 50px;
 }
 
-/* 選択されたタブ（active）*/
-.touring_tag.active,
-.rafting_tag.active,
-.lookpretty_tag.active,
-.hiking_tag.active {
-    background-color: #EB97A8;
-    color: #fff;
-}
-
-.modelcourse_list {
+.article_all {
     margin-top: 50px;
 }
 
@@ -62,47 +33,18 @@ li>a {
 
 /* フォントサイズのみ */
 @media(width>=431px) {
-
-    .info_tag li {
-        font-size: 1.5rem;
-    }
-
     .news_card {
         font-size: 1.5rem;
     }
 }
 
-
 @media (width>=757px) {
-    .info_tag {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 5px;
-        grid-row-gap: 5px;
-    }
-
-    .info_tag li {
-        border-radius: 30px 30px 0 0;
-        height: 80px;
-        line-height: 80px;
-    }
 
     li>a {
         border-radius: 30px 30px 0 0;
     }
 
-    .info_tag li:nth-child(2) {
+    .tag li:nth-child(2) {
         letter-spacing: -0.1rem;
-    }
-}
-
-@media (width>=1201px) {
-    .modelcourse_list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 16px;
-        grid-row-gap: 0px;
     }
 }

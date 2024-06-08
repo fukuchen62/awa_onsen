@@ -10,6 +10,7 @@
         <div class="courseCard_body">
             <h4 class="courseCard_title"><?php the_title(); ?></h4>
             <p class="courseCard_link"><?php the_field('slug'); ?></p>
+            <p><?php the_excerpt(); ?></p>
         </div>
     </a>
 </div>

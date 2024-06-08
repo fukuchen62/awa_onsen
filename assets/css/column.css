@@ -101,10 +101,18 @@ h5 {
 
 /* フォントサイズのみ */
 @media(width>=431px) {
+
     p,
     .comment,
     input[type="submit"],
     .more_button {
         font-size: 1.25rem;
     }
+}
+
+.clock_bg {
+    border-radius: 3px;
+    background-color: white;
+    height: 40px;
+    width: 65px;
 }

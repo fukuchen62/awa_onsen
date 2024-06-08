@@ -1,38 +1,30 @@
 "use strict";
 
-// タグクリックイベントを設定
-const tags = document.querySelectorAll('.tag li');
-const contents = document.querySelectorAll('.contents');
+$(function () {
+    // タグとコンテンツの要素を取得
+    let $tags = $('.tag li');
+    let $contents = $('.contents');
 
-// 初期表示設定
-contents[0].classList.add('active');
-tags[0].classList.add('active');
-for (let i = 1; i < contents.length; i++) {
-    contents[i].classList.remove('active');
-}
+    // 初期表示設定
+    $contents.eq(0).addClass('active');
+    $tags.eq(0).addClass('active');
+    $contents.slice(1).removeClass('active');
 
-// タグクリックイベントハンドラ
-tags.forEach((tag, index) => {
-    tag.addEventListener('click', () => {
+    // タグクリックイベントハンドラ
+    $tags.on('click', function () {
         // 全てのコンテンツを非アクティブにする
-        contents.forEach(content => {
-            content.classList.remove('active');
-        });
+        $contents.removeClass('active');
 
         // 選択中のクラスを解除
-        tags.forEach(tag => tag.classList.remove('active'));
+        $tags.removeClass('active');
+
+        // クリックされたタグのインデックスを取得
+        let index = $tags.index(this);
 
         // クリックされたタグに対応するコンテンツをアクティブにする
-        const selectedContent = contents[index];
-        if (selectedContent) {
-            selectedContent.classList.add('active');
-        }
+        $contents.eq(index).addClass('active');
 
         // クリックされたタグにクラスを付与
-        tag.classList.add('active');
+        $(this).addClass('active');
     });
 });
-
-// お気に入り情報の取得と表示
-// ここで、お気に入り情報を取得するAPIを呼び出し、
-// データを元に各コンテンツを構築する処理を記述します。

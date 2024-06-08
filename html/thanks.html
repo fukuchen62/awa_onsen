@@ -23,6 +23,7 @@
 </head>
 <body>
     <div class="bubble_background">
+
         <!-- header -->
         <header class="header_wrap">
             <div class="header_container">
@@ -112,20 +113,24 @@
             </div>
         </header>
 
-        <main class="container">
-            <div class="inner">
-                <section>
-                    <!-- 見出し -->
-                    <h2 class="under_line">送信完了</h2>
-                    <!-- パンくず -->
-                    <!-- コメント -->
-                    <p>送信が完了しました。<br>確認次第返信いたしますので、しばらくお待ちください。</p>
-                </section>
+        <main class="pc_inner">
+            <div class="container">
+                <div class="inner">
+                    <section>
+                        <!-- 見出し -->
+                        <h2 class="under_line">送信完了</h2>
+                        <!-- パンくず -->
+                        <!-- コメント -->
+                        <p>送信が完了しました。<br>確認次第返信いたしますので、しばらくお待ちください。</p>
+                    </section>
+                </div>
+                <button class="back_btn" onclick="history.back">
+                    <span><i class="fa-solid fa-arrow-left"></i>back</span>
+                </button>
             </div>
-            <button class="back_btn" onclick="history.back">
-                <span><i class="fa-solid fa-arrow-left"></i>back</span>
-            </button>
+
         </main>
+
         <!-- footer -->
         <footer class="footer_wrap">
             <div class="footer_container">
@@ -162,13 +167,16 @@
                 </ul>
                 <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
             </div>
+
         </footer>
-        <!-- JQuery -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <!-- 共通js -->
-        <script src="../assets/js/menu.js"></script>
-        <script src="../assets/js/common.js"></script>
     </div>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- 共通js -->
+    <script src="../assets/js/menu.js"></script>
+    <script src="../assets/js/common.js"></script>
+
+
 
 </body>
 </html>

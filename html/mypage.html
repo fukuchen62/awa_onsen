@@ -10,8 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
     <!-- googleicon CDN -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- cssの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
@@ -110,63 +111,63 @@
             </div>
         </header>
 
-        <main class="container">
-            <section>
-                <h2 class="under_line">マイページ</h2>
+        <main class="pc_inner">
+            <div class="container">
+                <section>
+                    <h2 class="under_line">マイページ</h2>
 
-                <!-- パンくずリスト -->
-                <div class="mypage_container">
-                    <h3>マイページについて</h3>
-                    <p>・本マイページは温泉詳細や周辺詳細でブックマークした情報が表示されます。</p>
-                    <p>・ブックマークにはcookieを使用しています。</p>
-                    <p>・cookieの削除に伴いブックマークした情報も削除されます。</p>
-                </div>
-
-                <h3 class="mypage_list">お気に入り一覧</h3>
-
-                <!-- タグ -->
-                <ul class="tag">
-                    <li>温泉</li>
-                    <li>周辺施設</li>
-                </ul>
-
-                <!-- 温泉お気に入り一覧 -->
-                <div class="contents onsen">
-                    <p>現在お気に入り登録<br class="sp_only">されている温泉</p>
-                    <div class="article_all">
-                        <article class="card">
-                            <a href="https://translate.google.co.jp/?hl=ja&tab=TT&sl=auto&tl=en&op=translate">
-                                <div>
-                                    <span></span>
-                                    <img src="../assets/images/onsen_img.jpg" alt="">
-                                </div>
-                                <h3>最南端！！空と海を感じるツーリングコース！！！</h3>
-                            </a>
-                        </article>
-                        <article class="card">
-                            <a href="https://translate.google.co.jp/?hl=ja&tab=TT&sl=auto&tl=en&op=translate">
-                                <div>
-                                    <span></span>
-                                    <img src="../assets/images/onsen_img.jpg" alt="">
-                                </div>
-                                <h3>最南端！！空と海を感じるツーリングコース！！！</h3>
-                            </a>
-                        </article>
+                    <!-- パンくずリスト -->
+                    <div class="mypage_container">
+                        <h3>マイページについて</h3>
+                        <p>・本マイページは温泉詳細や周辺詳細でブックマークした情報が表示されます。</p>
+                        <p>・ブックマークにはcookieを使用しています。</p>
+                        <p>・cookieの削除に伴いブックマークした情報も削除されます。</p>
                     </div>
-                </div>
 
-                <!-- 周辺施設お気に入り一覧 -->
-                <div class="contents facility">
-                    <p>現在お気に入り施設情報は<br class="sp_only">ありません。</p>
-                    <div class="article_all">
+                    <h3 class="mypage_list">お気に入り一覧</h3>
+
+                    <!-- タグ -->
+                    <ul class="tag element02">
+                        <li class="active">温泉</li>
+                        <li>周辺施設</li>
+                    </ul>
+
+                    <!-- 温泉お気に入り一覧 -->
+                    <div class="contents onsen">
+                        <p>現在お気に入り登録<br class="sp_only">されている温泉</p>
+                        <div class="article_all">
+                            <article class="card">
+                                <a href="https://translate.google.co.jp/?hl=ja&tab=TT&sl=auto&tl=en&op=translate">
+                                    <div>
+                                        <span></span>
+                                        <img src="../assets/images/onsen_img.jpg" alt="">
+                                    </div>
+                                    <h3>最南端！！空と海を感じるツーリングコース！！！</h3>
+                                </a>
+                            </article>
+                            <article class="card">
+                                <a href="https://translate.google.co.jp/?hl=ja&tab=TT&sl=auto&tl=en&op=translate">
+                                    <div>
+                                        <span></span>
+                                        <img src="../assets/images/onsen_img.jpg" alt="">
+                                    </div>
+                                    <h3>最南端！！空と海を感じるツーリングコース！！！</h3>
+                                </a>
+                            </article>
+                        </div>
                     </div>
-                </div>
 
-
-
-
-
-            </section>
+                    <!-- 周辺施設お気に入り一覧 -->
+                    <div class="contents facility">
+                        <p>現在お気に入り施設情報は<br class="sp_only">ありません。</p>
+                        <div class="article_all">
+                        </div>
+                    </div>
+                </section>
+                <button class="back_btn" onclick="history.back">
+                    <span><i class="fa-solid fa-arrow-left"></i>back</span>
+                </button>
+            </div>
         </main>
 
         <!-- footer -->
@@ -210,8 +211,7 @@
 
 
     <!-- javascriptの読み込み -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/menu.js"></script>
     <script src="../assets/js/tag_list.js"></script>

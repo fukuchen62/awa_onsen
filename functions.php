@@ -112,16 +112,31 @@ function fs_script_files()
     );
 
     // CSSファイルの読み込み
-    wp_enqueue_style("awa-onsen-reset", get_template_directory_uri() . "/assets/css/reset.css");
     wp_enqueue_style("awa-onsen-destyle", get_template_directory_uri() . "/assets/css/destyle.css");
     wp_enqueue_style("awa-onsen-common", get_template_directory_uri() . "/assets/css/common.css");
 
+    // デフォルトのjQueryを解除
+    wp_deregister_script('jquery');
 
-    // JSの読み込み
+    // jQueryのCDNを登録
     wp_enqueue_script(
-        'jquery-local',
-        get_template_directory_uri() . '/assets/js/vendor/jquery-3.6.0.min.js'
+        'jquery',
+        'https://code.jquery.com/jquery-3.7.1.min.js',
+        array(),
+        null,
+        true
     );
+
+    // jQueryをエンキュー（読み込み）
+    // wp_enqueue_script('jquery');
+
+
+    // // // JSの読み込み
+    // wp_enqueue_script(
+    //     'jquery-local',
+    //     get_template_directory_uri() . '/assets/js/vendor/jquery-3.6.0.min.js'
+    // );
+
     wp_enqueue_script("awa-onsen-common", get_template_directory_uri() . "/assets/js/common.js");
     wp_enqueue_script("awa-onsen-menu", get_template_directory_uri() . "/assets/js/menu.js");
 
@@ -193,6 +208,15 @@ function fs_script_files()
 
     if (is_page('contact')) { // お問い合わせページのCSSの読み込み
         wp_enqueue_style('awa-onsen-form', get_template_directory_uri() . '/assets/css/form.css');
+        wp_enqueue_script(
+            'food-science-contact',
+            get_template_directory_uri() . '/assets/js/form.js',
+            null,
+            null,
+            true
+        );
+        // wp_enqueue_script('food-science-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
+
     }
 
     if (is_page('confirm')) { // お問合せ確認のCSSの読み込み
@@ -224,6 +248,33 @@ function fs_script_files()
 add_action('wp_enqueue_scripts', 'fs_script_files');
 ?>
 
+
+<?php
+// function fs_pre_get_posts($query)
+// {
+//     // 管理画面とメインクエリでない場合を処理対象外とする
+//     if (is_admin() || !$query->is_main_query()) {
+//         return;
+//     }
+
+//     // トップページの場合は
+//     if (is_home()) {
+//         $query->set('posts_per_page', 3);
+//         $query->set('category_name', 'news');
+//         return;
+//     }
+
+//     // 検索ページの場合は、固定ページを対象外とし、投稿のみに
+//     if (is_search()) {
+//         $query->set('post_type', 'post');
+//         return;
+//     }
+// }
+// add_action(
+//     'pre_get_posts', //関数の呼び出すタイミング
+//     'fs_pre_get_posts' //呼び出す関数名
+// );
+?>
 
 <?php
 /**
