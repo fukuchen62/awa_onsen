@@ -72,6 +72,11 @@ function fs_script_files()
         'slick-carousel-theme',
         'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css'
     );
+    // Slick CarouselのJSの読み込み
+    wp_enqueue_script(
+        "slick-carousel",
+        "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    );
 
     // font-awesomeを読み込む
     wp_enqueue_style(
@@ -154,15 +159,12 @@ function fs_script_files()
     // 詳細ページ用のCSSとJSの読み込み
     if (is_singular('spa')) { // 温泉詳細のCSS,JSの読み込み
         wp_enqueue_style('awa-onsen-spa', get_template_directory_uri() . '/assets/css/spa.css');
-        wp_enqueue_script(
-            "slick-carousel",
-            "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-        );
-        wp_enqueue_script('food-science-spa', get_template_directory_uri() . '/assets/js/spa.js');
+        wp_enqueue_script('awa-onsen-spa', get_template_directory_uri() . '/assets/js/spa.js');
     }
 
-    if (is_singular('facility')) { // 周辺施設詳細のCSSの読み込み
+    if (is_singular('facility')) { // 周辺施設詳細のCSSとJSの読み込み
         wp_enqueue_style('awa-onsen-nearby', get_template_directory_uri() . '/assets/css/nearby.css');
+        wp_enqueue_script('awa-onsen-nearby', get_template_directory_uri() . '/assets/js/nearby.js');
     }
 
     if (is_singular('column')) { // コラムの詳細ページのCSSの読み込み
@@ -178,11 +180,11 @@ function fs_script_files()
         wp_enqueue_style('awa-onsen-spa_list', get_template_directory_uri() . '/assets/css/spa_list.css');
     }
 
-    if (is_tax('facility_type')) { // 周辺施設一覧のCSSの読み込み
+    if (is_tax('facility_type')) { // 周辺施設一覧のCSSとJSの読み込み
         wp_enqueue_style('awa-onsen-nearby_list', get_template_directory_uri() . '/assets/css/nearby_list.css');
     }
 
-    if (is_tax('column_type')) { // コラムの一覧ページのCSSとJSの読み込み
+    if (is_tax('column_type')) { // コラムの一覧ページのCSSの読み込み
         wp_enqueue_style('awa-onsen-column-list', get_template_directory_uri() . '/assets/css/column_list.css');
     }
 
@@ -203,7 +205,7 @@ function fs_script_files()
     // 固定ページ用のCSSとJSの読み込み
     if (is_page('mypage')) { // マイページのCSS,JSの読み込み
         wp_enqueue_style('awa-onsen-mypage', get_template_directory_uri() . '/assets/css/mypage.css');
-        wp_enqueue_script('food-science-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
+        wp_enqueue_script('awa-onsen-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
     }
 
     if (is_page('contact')) { // お問い合わせページのCSSの読み込み
