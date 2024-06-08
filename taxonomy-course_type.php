@@ -10,45 +10,65 @@
             <?php get_template_part('template-parts/breadcrumb') ?>
 
             <!-- タグ -->
-            <ul class="tag element04">
-                <li class="active"><a href="<?php echo home_url('/course_type/tour/'); ?>">ツーリング</a></li>
-                <li class="active"><a href="<?php echo home_url('/course_type/rafting/'); ?>">ラフティング</a></li>
-                <li class="active"><a href="<?php echo home_url('/course_type/photogenic/'); ?>">映える</a></li>
-                <li class="active"><a href="<?php echo home_url('/course_type/hiking/'); ?>">ハイキング</a></li>
-            </ul>
+            <?php
+            // 特定のタクソノミーを指定
+            $taxonomy = 'course_type'; // ここにタクソノミーの名前を指定
 
-        <!-- 一覧 -->
-        <div class="article_all">
-            <article class="card">
-                <!-- WordPressのルールの開始 -->
-                <?php if (have_posts()) : ?>
-                    <?php while (have_posts()) : ?>
-                    <?php the_post(); ?>
+            // タクソノミーに属するすべてのタームを取得
+            $terms = get_terms(array(
+                'taxonomy' => $taxonomy,
+                'hide_empty' => false,
+            ));
 
-                    <!-- カード型の開始 -->
-                    <?php get_template_part('template-parts/loop', 'course'); ?>
-                    <!-- カード型の終了 -->
+            if (!empty($terms) && !is_wp_error($terms)) :
+            ?>
+                <ul class="tag element04">
+                    <?php foreach ($terms as $term) :
+                        // タームのリンクを取得
+                        $term_link = get_term_link($term);
+                        // 現在のタームと一致するか確認
+                        $is_active = (is_tax($taxonomy, $term->term_id)) ? 'active' : '';
+                    ?>
+                        <li class="<?php echo esc_attr($is_active); ?>">
+                            <a href="<?php echo esc_url($term_link); ?>"><?php echo esc_html($term->name); ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php
+            endif;
+            ?>
 
-                    <!-- WordPressのルールの終了 -->
-                    <?php endwhile; ?>
+            <!-- 一覧 -->
+            <div class="article_all">
+                <article class="card">
+                    <!-- WordPressのルールの開始 -->
+                    <?php if (have_posts()) : ?>
+                        <?php while (have_posts()) : ?>
+                            <?php the_post(); ?>
+
+                            <!-- カード型の開始 -->
+                            <?php get_template_part('template-parts/loop', 'course'); ?>
+                            <!-- カード型の終了 -->
+
+                            <!-- WordPressのルールの終了 -->
+                        <?php endwhile; ?>
                     <?php endif; ?>
-            </article>
-
-
-            
-
-            </div>
+                </article>
 
         </section>
+    </div>
+
+
 
     <!-- ぺージナビゲーション -->
     <?php if (function_exists('wp_pagenavi')) : ?>
-                    <div class="pagination">
-                        <?php wp_pagenavi(); ?>
-                    </div>
-                    <button class="back_btn" onclick="history.back">
-                    <span><i class="fa-solid fa-arrow-left"></i>back</span>
-                    </button>
+        <div class="pagination">
+            <?php wp_pagenavi(); ?>
+        </div>
+    <?php endif; ?>
+    <button class="back_btn" onclick="history.back">
+        <span><i class="fa-solid fa-arrow-left"></i>back</span>
+    </button>
 
     </div>
 </main>
