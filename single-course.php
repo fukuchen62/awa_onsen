@@ -11,48 +11,39 @@
     <?php get_template_part('template-parts/breadcrumb') ?>
 
     <!-- タグ -->
-    <?php
-
-    // 現在の投稿のIDを取得
-    $post_id = get_the_ID();
-
-    // 投稿タイプを取得
-    $post_type = get_post_type($post_id);
-
-    // 投稿タイプに関連するタクソノミーを取得
-    $taxonomies = get_object_taxonomies($post_type);
-
-    if (!empty($taxonomies)) {
-        foreach ($taxonomies as $taxonomy) {
-            // タクソノミーに関連するタームを取得
-            $terms = get_the_terms($post_id, $taxonomy);
-
-            if ($terms && !is_wp_error($terms)) {
-                echo '<p>';
-                foreach ($terms as $term) {
-                    echo '<p>';
-                    echo '＃' . esc_html($term->name) . '<br>';
-                    echo '</p>';
-                }
-                echo '</p>';
-            } else {
-                echo '<p>この投稿に関連するタームはありません。</p>';
-            }
-        }
-    } else {
-        echo '<p>この投稿に関連するタクソノミーはありません。</p>';
-    };
-    ?>
-
-    <!-- タイムスケジュール始まり -->
-
-    <!-- タグ -->
     <div class="hashtag_list">
-        <a class="hashtag">#ああああああ</a>
-        <a class="hashtag">#ああああああ</a>
-        <a class="hashtag">#ああああああ</a>
-        <a class="hashtag">#ああああああ</a>
+        <?php
+        // 現在の投稿のIDを取得
+        $post_id = get_the_ID();
+
+        // 投稿タイプを取得
+        $post_type = get_post_type($post_id);
+
+        // 投稿タイプに関連するタクソノミーを取得
+        $taxonomies = get_object_taxonomies($post_type);
+
+        if (!empty($taxonomies)) {
+            foreach ($taxonomies as $taxonomy) {
+                // タクソノミーに関連するタームを取得
+                $terms = get_the_terms($post_id, $taxonomy);
+
+                if ($terms && !is_wp_error($terms)) {
+                    echo '<ul>';
+                    foreach ($terms as $term) {
+                        // echo '<li>';
+        ?>
+                        <a href="https://www.yahoo.co.jp/" class="hashtag"><?php echo '#' . esc_html($term->name); ?></a>
+        <?php
+                    }
+                    echo '</ul>';
+                } else {
+                }
+            }
+        } else {
+        }
+        ?>
     </div>
+    <!-- タイムスケジュール始まり -->
     <!-- Summary -->
     <div class="flex">
         <h3 class="course_day_summary">Summary</h3>
@@ -113,11 +104,11 @@
                 </div>
                 <div class="square_white"></div>
 
-                <!-- 滞在時間 -->
+                <!-- 滞在時間1 -->
                 <div class="flex">
                     <div class="time"><?php the_field('stay_time1_1'); ?></div>
                     <div>
-                        <p>苔や植物で癒される</p>
+                        <!-- <p>苔や植物で癒される</p> ※コンテンツ班に要確認-->
                         <h4>こんまい屋</h4>
                     </div>
                 </div>
