@@ -73,6 +73,7 @@
             <div class="layer">
                 <div class="time_schedule tb_only pc_only">
                     <div class="flow_design12">
+                        <!-- 開始時刻1～5 -->
                         <ul class="flow12">
                             <li>
                                 <p class="icon12"><?php the_field('start_time1_1'); ?><br>START</p>
@@ -110,11 +111,11 @@
                         <div class="time"><?php the_field('stay_time1_1'); ?></div>
                         <div>
                             <!-- <p>苔や植物で癒される</p> ※コンテンツ班に要確認-->
-                            <h4>こんまい屋</h4>
+                            <!-- <h4><?php the_field('関数が必要？'); ?></h4> -->
                         </div>
                     </div>
                     <p>
-                        ここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
+                        <!-- 詳細から文章を持ってくる -->
                     </p>
                     <div class="flex_car">
                         <div class="square_green"></div>
