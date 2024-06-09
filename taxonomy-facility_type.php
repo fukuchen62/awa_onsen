@@ -43,7 +43,8 @@
                             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                     <article class="card">
                                         <a href="<?php the_permalink(); ?>">
-                                            <div class="card-image">
+                                            <div>
+                                                <span></span>
                                                 <?php if (has_post_thumbnail()) : ?>
                                                     <?php the_post_thumbnail('medium'); ?>
                                                 <?php else : ?>
@@ -84,7 +85,8 @@
                             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                     <article class="card">
                                         <a href="<?php the_permalink(); ?>">
-                                            <div class="card-image">
+                                            <div>
+                                                <span></span>
                                                 <?php if (has_post_thumbnail()) : ?>
                                                     <?php the_post_thumbnail('medium'); ?>
                                                 <?php else : ?>
@@ -100,7 +102,6 @@
                         </div>
                     </div>
                 </details>
-
             <?php endforeach; ?>
             <?php
             // カテゴリーごとに投稿を表示
@@ -123,7 +124,8 @@
                             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                     <article class="card">
                                         <a href="<?php the_permalink(); ?>">
-                                            <div class="card-image">
+                                            <div>
+                                                <span></span>
                                                 <?php if (has_post_thumbnail()) : ?>
                                                     <?php the_post_thumbnail('medium'); ?>
                                                 <?php else : ?>
