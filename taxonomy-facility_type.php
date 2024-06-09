@@ -43,7 +43,8 @@
                             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                     <article class="card">
                                         <a href="<?php the_permalink(); ?>">
-                                            <div class="card-image">
+                                            <div>
+                                                <span></span>
                                                 <?php if (has_post_thumbnail()) : ?>
                                                     <?php the_post_thumbnail('medium'); ?>
                                                 <?php else : ?>
@@ -84,7 +85,8 @@
                             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                     <article class="card">
                                         <a href="<?php the_permalink(); ?>">
-                                            <div class="card-image">
+                                            <div>
+                                                <span></span>
                                                 <?php if (has_post_thumbnail()) : ?>
                                                     <?php the_post_thumbnail('medium'); ?>
                                                 <?php else : ?>
@@ -100,7 +102,6 @@
                         </div>
                     </div>
                 </details>
-
             <?php endforeach; ?>
             <?php
             // カテゴリーごとに投稿を表示
@@ -123,7 +124,8 @@
                             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                     <article class="card">
                                         <a href="<?php the_permalink(); ?>">
-                                            <div class="card-image">
+                                            <div>
+                                                <span></span>
                                                 <?php if (has_post_thumbnail()) : ?>
                                                     <?php the_post_thumbnail('medium'); ?>
                                                 <?php else : ?>
@@ -143,10 +145,36 @@
             <?php endforeach; ?>
 
         </div>
+        <?php
+        // 現在のページのURLを取得
+        $current_url = home_url(add_query_arg(array(), $wp->request));
 
-        <button class="back_btn" onclick="history.back">
-            <span><i class="fa-solid fa-arrow-left"></i>back</span>
-        </button>
+        // リファラー(前のページ)のURLを取得
+        $referer_url = wp_get_referer();
+
+        // back_btnを表示するかどうかのフラグ
+        $show_back_btn = false;
+
+        // リファラーのURLが取得できた場合
+        if ($referer_url) {
+            // リファラーのURLとの比較
+            if (strpos($referer_url, home_url()) !== false) {
+                // リファラーのURLがサイト内のURLだった場合
+                $back_url = $referer_url;
+                $show_back_btn = true;
+            }
+        }
+
+        // back_btnを表示する場合のみ出力
+        if ($show_back_btn) {
+        ?>
+            <button class="back_btn" onclick="window.location.href='<?php echo $back_url; ?>'">
+                <span><i class="fa-solid fa-arrow-left"></i>back</span>
+            </button>
+        <?php
+        }
+        ?>
+
     </div>
 </main>
 
