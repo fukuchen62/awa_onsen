@@ -40,35 +40,60 @@
 
             <!-- 一覧 -->
             <div class="article_all">
-                <article class="card">
-                    <!-- WordPressのルールの開始 -->
-                    <?php if (have_posts()) : ?>
-                        <?php while (have_posts()) : ?>
-                            <?php the_post(); ?>
+                <!-- WordPressのルールの開始 -->
+                <?php if (have_posts()) : ?>
+                    <?php while (have_posts()) : ?>
+                        <?php the_post(); ?>
 
-                            <!-- カード型の開始 -->
-                            <?php get_template_part('template-parts/loop', 'course'); ?>
-                            <!-- カード型の終了 -->
+                        <!-- カード型の開始 -->
+                        <?php get_template_part('template-parts/loop', 'course'); ?>
+                        <!-- カード型の終了 -->
 
-                            <!-- WordPressのルールの終了 -->
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                </article>
+                        <!-- WordPressのルールの終了 -->
+                    <?php endwhile;
+                    wp_reset_postdata(); ?>
+                <?php endif; ?>
+            </div>
 
         </section>
-    </div>
 
+        <!-- ぺージナビゲーション -->
+        <?php if (function_exists('wp_pagenavi')) : ?>
+            <div class="pagination">
+                <?php wp_pagenavi(); ?>
+            </div>
+        <?php endif; ?>
 
+        <!-- バックボタン -->
+        <?php
+        // 現在のページのURLを取得
+        $current_url = home_url(add_query_arg(array(), $wp->request));
 
-    <!-- ぺージナビゲーション -->
-    <?php if (function_exists('wp_pagenavi')) : ?>
-        <div class="pagination">
-            <?php wp_pagenavi(); ?>
-        </div>
-    <?php endif; ?>
-    <button class="back_btn" onclick="history.back">
-        <span><i class="fa-solid fa-arrow-left"></i>back</span>
-    </button>
+        // リファラー(前のページ)のURLを取得
+        $referer_url = wp_get_referer();
+
+        // back_btnを表示するかどうかのフラグ
+        $show_back_btn = false;
+
+        // リファラーのURLが取得できた場合
+        if ($referer_url) {
+            // リファラーのURLとの比較
+            if (strpos($referer_url, home_url()) !== false) {
+                // リファラーのURLがサイト内のURLだった場合
+                $back_url = $referer_url;
+                $show_back_btn = true;
+            }
+        }
+
+        // back_btnを表示する場合のみ出力
+        if ($show_back_btn) {
+        ?>
+            <button class="back_btn" onclick="window.location.href='<?php echo $back_url; ?>'">
+                <span><i class="fa-solid fa-arrow-left"></i>back</span>
+            </button>
+        <?php
+        }
+        ?>
 
     </div>
 </main>
