@@ -175,9 +175,10 @@ function fs_script_files()
         wp_enqueue_style('awa-onsen-course', get_template_directory_uri() . '/assets/css/course.css');
     }
 
-    // 一覧ページ用のCSSの読み込み
+    // 一覧ページ用のCSSとJSの読み込み
     if (is_post_type_archive('spa')) { // 温泉一覧のCSSの読み込み
         wp_enqueue_style('awa-onsen-spa_list', get_template_directory_uri() . '/assets/css/spa_list.css');
+        wp_enqueue_script('awa-onsen-spa_list', get_template_directory_uri() . '/assets/js/accordion.js');
     }
 
     if (is_tax('facility_type')) { // 周辺施設一覧のCSSとJSの読み込み
