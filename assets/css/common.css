@@ -571,6 +571,11 @@ h5 {
     }
 }
 
+/* 関連するコラム、お知らせ */
+.connection_column {
+    margin-top: 80px;
+}
+
 /*========== header ==========*/
 
 .pc_inner {
