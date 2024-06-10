@@ -11,7 +11,7 @@
             <!-- パンくずリスト -->
             <?php get_template_part('template-parts/breadcrumb') ?>
 
-            <!-- タグメニュー -->
+            <!-- タグメニュー(更新松尾) -->
             <ul class="tag element04">
                 <li><a href="<?php echo home_url('/facility_type/shopping/'); ?>">ショッピング</a></li>
                 <li><a href="<?php echo home_url('/facility_type/gourmet/'); ?>">グルメ</a></li>
