@@ -19,11 +19,16 @@ get_header();
         $categories = get_categories(array('hide_empty' => false)); ?>
 
         <?php if (!empty($categories)) : ?>
-            <ul class="info_tag">
-
+            <ul class="tag element04">
                 <?php foreach ($categories as $category) : ?>
-                    <li class="<?php echo $category->slug; ?>">
-                        <a href="<?php  ?>"><?php echo esc_html($category->name); ?></a>
+                    <?php
+                    // カテゴリーのリンクを取得
+                    $category_link = get_category_link($category->term_id);
+                    // 現在のカテゴリーと一致するか確認
+                    $is_active = (is_category($category->term_id) || (is_singular('post') && has_category($category->term_id))) ? 'active' : '';
+                    ?>
+                    <li class="<?php echo esc_attr($is_active); ?>">
+                        <a href="<?php echo esc_url($category_link); ?>"><?php echo esc_html($category->name); ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
