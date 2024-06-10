@@ -12,11 +12,11 @@
             <?php get_template_part('template-parts/breadcrumb') ?>
 
             <!-- タグメニュー -->
-            <ul class="tag element04">
-                <li><a href="<?php echo home_url('/facility_type/shopping/'); ?>">ショッピング</a></li>
-                <li><a href="<?php echo home_url('/facility_type/gourmet/'); ?>">グルメ</a></li>
-                <li><a href="<?php echo home_url('/facility_type/play/'); ?>">遊ぶ</a></li>
-                <li><a href="<?php echo home_url('/facility_type/stay/'); ?>">泊まる</a></li>
+            <ul class="info_tag">
+                <li class="shopping_tag"><a href="<?php echo home_url('/facility_type/shopping/'); ?>">ショッピング</a></li>
+                <li class="gourmet_tag"><a href="<?php echo home_url('/facility_type/gourmet/'); ?>">グルメ</a></li>
+                <li class="play_tag"><a href="<?php echo home_url('/facility_type/play/'); ?>">遊ぶ</a></li>
+                <li class="stay_tag"><a href="<?php echo home_url('/facility_type/stay/'); ?>">泊まる</a></li>
             </ul>
 
             <!-- アコーディオン -->

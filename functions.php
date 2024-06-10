@@ -157,6 +157,8 @@ function fs_script_files()
             "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
         );
         wp_enqueue_script('top-script', get_template_directory_uri() . '/assets/js/top.js');
+    } else {
+        wp_enqueue_script("awa-onsen-menu", get_template_directory_uri() . "/assets/js/menu.js");
     }
 
     // 詳細ページ用のCSSとJSの読み込み
