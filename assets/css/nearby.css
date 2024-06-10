@@ -4,18 +4,16 @@
 }
 /* タイトル */
 
-
-
 .lined-title {
     font-size: 1.125rem;
     margin-bottom: 10px;
 }
-
+.container > * {
+    margin-bottom: 30px;
+}
 /* メディアクエリ */
 
 @media (width>=757px) {
-  
-
     .lined-title {
         font-size: 1.5rem;
         margin-bottom: 10px;
