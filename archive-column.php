@@ -12,43 +12,28 @@
             <!-- パンくずリスト -->
             <?php get_template_part('template-parts/breadcrumb'); ?>
 
-
-
             <!-- WordPressのルールの開始 -->
             <?php if (have_posts()) : ?>
 
-
-
                 <!-- タグ -->
                 <?php
-                // 特定のタクソノミーを指定
-                $taxonomy = 'column_type'; // ここにタクソノミーの名前を指定
-
-                // タクソノミーに属するすべてのタームを取得
-                $terms = get_terms(array(
-                    'taxonomy' => $taxonomy,
+                $args = [
+                    'taxonomy' => 'menu',
+                    'orderby' => 'count',
                     'order' => 'DESC',
                     'hide_empty' => false,
-                ));
+                ];
+                $menu_terms = get_terms($args);
+                print_r($menu_terms);
+                ?>
 
 
-                if (!empty($terms) && !is_wp_error($terms)) :
-                ?>
-                    <ul class="tag element03">
-                        <?php foreach ($terms as $term) :
-                            // タームのリンクを取得
-                            $term_link = get_term_link($term);
-                            // 現在のタームと一致するか確認
-                            $is_active = (is_tax($taxonomy, $term->term_id)) ? 'active' : '';
-                        ?>
-                            <li class="<?php echo esc_attr($is_active); ?>">
-                                <a href="<?php echo esc_url($term_link); ?>"><?php echo esc_html($term->name); ?></a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php
-                endif;
-                ?>
+                <ul class="tag element03">
+                    <li class="active"><a href="#"><?php single_term_title(); ?>
+                            <span><?php echo strtoupper($menu->slug); ?></span></a></li>
+                    <li><a href="#">温泉周辺<br>施設紹介</a></li>
+                    <li><a href="#">お役立ち</a></li>
+                </ul>
 
                 <!-- 一覧 -->
                 <div class="news_list">
@@ -71,7 +56,8 @@
                                 <p class="date fugaz-one-regular"><?php echo get_post_time('Y.m.d.D H:i'); ?></p>
                                 <h6 class="title"><?php the_title(); ?></h6>
                             </a>
-                            <!-- ハッシュタグ取得記述をする -->
+
+
                             <!-- ハッシュタグ -->
                             <div class="hashtag_list">
                                 <?php
@@ -106,10 +92,12 @@
                                 ?>
                             </div>
 
-
                         </article>
                     <?php endwhile; ?>
                     <!-- 一つの記事ここまで -->
+
+
+
 
                 </div>
         </section>
@@ -118,7 +106,7 @@
 
     <!-- ページネーション -->
     <?php if (function_exists('wp_pagenavi')) : ?>
-        <div class="pagination flex"><?php wp_pagenavi(); ?></div>
+        <p class="pagination"><?php wp_pagenavi(); ?> &lt;&lt; 1　2　3　4　5 &gt;&gt; </p>
     <?php endif; ?>
     <button class="back_btn" onclick="history.back">
         <span><i class="fa-solid fa-arrow-left"></i>back</span>

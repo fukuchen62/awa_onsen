@@ -109,7 +109,7 @@
                             <?php endif; ?>
                             <h4><?php the_title(); ?></h4>
                             <!-- スポットの説明 -->
-                            <p><?php the_post_excerpt(); ?></p>
+                            <p><?php the_excerpt(); ?></p>
                         </a>
                     </div>
 

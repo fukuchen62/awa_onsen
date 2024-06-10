@@ -8,6 +8,12 @@
 ">
     <meta name="keywords" content="徳島県,温泉,映え,遊ぶ,宿泊,サウナ,ツーリング,ラフティング,ハイキング,登山,キャンプ">
 
+    <!-- 「get_template_directory_uri();」を変数「path」に代入 -->
+    <script>
+        var path = "<?php echo get_template_directory_uri(); ?>";
+    </script>
+
+
     <?php wp_head(); ?>
 </head>
 
@@ -20,7 +26,7 @@
                 <!-- headerの左側 -->
                 <!-- 常時表示サイトロゴ -->
                 <a class="logo" href="<?php echo home_url(); ?>">
-                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/logo.svg" alt="あわあわ温泉ぶらり">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/logo.svg" alt="あわあわ温泉ぶらり">
                 </a>
                 <!-- 上にスクロールするボタン -->
                 <div class="top_button"></div>
