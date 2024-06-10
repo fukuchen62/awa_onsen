@@ -69,8 +69,6 @@
                                             <!-- 画像の表示 -->
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="path/to/default-image.jpg" alt="Default Image" />
                                             <?php endif; ?>
                                         </a>
                                         <div class="top_news_contents">
@@ -141,8 +139,6 @@
                                         <div class="slider_img">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="path/to/default-image.jpg" alt="Default Image" />
                                             <?php endif; ?>
                                             <span></span>
                                         </div>
@@ -199,8 +195,6 @@
                                         <div class="slider_img">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="path/to/default-image.jpg" alt="Default Image" />
                                             <?php endif; ?>
                                             <span></span>
                                         </div>
@@ -256,8 +250,6 @@
                                         <div class="slider_img">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="path/to/default-image.jpg" alt="Default Image" />
                                             <?php endif; ?>
                                             <span></span>
                                         </div>
@@ -313,8 +305,6 @@
                                         <div class="slider_img">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="path/to/default-image.jpg" alt="Default Image" />
                                             <?php endif; ?>
                                             <span></span>
                                         </div>
@@ -361,8 +351,6 @@
                                         <div class="slider_img">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="path/to/default-image.jpg" alt="Default Image" />
                                             <?php endif; ?>
                                             <span></span>
                                         </div>
@@ -428,8 +416,6 @@
                                             <!-- 画像の表示 -->
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="path/to/default-image.jpg" alt="Default Image" />
                                             <?php endif; ?>
                                         </a>
                                         <div class="top_news_contents">
