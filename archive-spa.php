@@ -4,7 +4,8 @@
 <main class="pc_inner">
     <div class="container">
         <h2 class="under_line">温泉一覧</h2>
-
+        <!-- パンくず -->
+        <?php get_template_part('template-parts/breadcrumb') ?>
         <!-- アコーディオン -->
         <?php
         // カテゴリーごとに投稿を表示

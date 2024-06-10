@@ -3,7 +3,10 @@
 
 <main class="pc_inner">
     <div class="container">
-        <h2 class="under_line">サウナ一覧</h2>
+        <h2 class="under_line">サウナのある温泉一覧</h2>
+
+        <!-- パンくずリスト -->
+        <?php get_template_part('template-parts/breadcrumb') ?>
 
         <!-- アコーディオン -->
         <?php
