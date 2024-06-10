@@ -116,6 +116,13 @@ function fs_script_files()
         "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
     );
 
+
+    // 日付に使用するフォントの読み込み
+    wp_enqueue_style(
+        "google-web-fonts-Fugaz",
+        "https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
+    );
+
     // CSSファイルの読み込み
     wp_enqueue_style("awa-onsen-destyle", get_template_directory_uri() . "/assets/css/destyle.css");
     wp_enqueue_style("awa-onsen-common", get_template_directory_uri() . "/assets/css/common.css");
@@ -184,6 +191,11 @@ function fs_script_files()
         wp_enqueue_script('awa-onsen-spa_list', get_template_directory_uri() . '/assets/js/accordion.js');
     }
 
+    if (is_tax('sauna_type')) { // サウナのある温泉一覧のCSSの読み込み
+        wp_enqueue_style('awa-onsen-sauna_spa_list', get_template_directory_uri() . '/assets/css/sauna_search.css');
+        wp_enqueue_script('awa-onsen-sauna_spa_list', get_template_directory_uri() . '/assets/js/accordion.js');
+    }
+
     if (is_tax('facility_type')) { // 周辺施設一覧のCSSとJSの読み込み
         wp_enqueue_style('awa-onsen-nearby_list', get_template_directory_uri() . '/assets/css/nearby_list.css');
     }
@@ -204,56 +216,59 @@ function fs_script_files()
     if (is_search()) {
         wp_enqueue_style('search-style', get_template_directory_uri() . '/assets/css/search.css');
         wp_enqueue_script('tag-list-script', get_template_directory_uri() . '/assets/js/tag_list.js');
-    }
-
-    // 固定ページ用のCSSとJSの読み込み
-    if (is_page('mypage')) { // マイページのCSS,JSの読み込み
-        wp_enqueue_style('awa-onsen-mypage', get_template_directory_uri() . '/assets/css/mypage.css');
-        wp_enqueue_script('awa-onsen-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
-    }
-
-    if (is_page('contact')) { // お問い合わせページのCSSの読み込み
-        wp_enqueue_style('awa-onsen-form', get_template_directory_uri() . '/assets/css/form.css');
-        wp_enqueue_script(
-            'awa-onsen-contact-script',
-            get_template_directory_uri() . '/assets/js/form.js',
-            null,
-            null,
-            true
-        );
-        // wp_enqueue_script('food-science-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
-
-    }
-
-    if (is_page('confirm')) { // お問合せ確認のCSSの読み込み
-        wp_enqueue_style('awa-onsen-result', get_template_directory_uri() . '/assets/css/result.css');
-    }
-
-    if (is_page('thanks')) { // お問合せ完了のCSSの読み込み
-        wp_enqueue_style('awa-onsen-thanks', get_template_directory_uri() . '/assets/css/thanks.css');
-    }
-
-    if (is_page('about')) { // 自己紹介ページのCSSの読み込み
-        wp_enqueue_style('awa-onsen-about', get_template_directory_uri() . '/assets/css/about.css');
-    }
-
-    if (is_page('sauna')) { // サ活のページのCSSの読み込み
-        wp_enqueue_style('awa-onsen-sauna', get_template_directory_uri() . '/assets/css/sauna.css');
-    }
-
-    if (is_page('privacypolicy')) { // プライバシーポリシーのCSSの読み込み
-        wp_enqueue_style('awa-onsen-privacypolicy', get_template_directory_uri() . '/assets/css/privacypolicy.css');
-    }
-
-    // 新着情報のCSSの読み込み
-    if (is_single() && get_post_type() == 'post') {
-        wp_enqueue_style('news-style', get_template_directory_uri() . '/assets/css/news.css');
-    }
-
-    if (is_404()) { // 404のCSSの読み込み
-        wp_enqueue_style('awa-onsen-404', get_template_directory_uri() . '/assets/css/notfound.css');
+        wp_enqueue_script('form-script', get_template_directory_uri() . '/assets/js/form.js');
+        wp_enqueue_script('search-form-script', get_template_directory_uri() . '/assets/js/search_form.js');
     }
 }
+
+// 固定ページ用のCSSとJSの読み込み
+if (is_page('mypage')) { // マイページのCSS,JSの読み込み
+    wp_enqueue_style('awa-onsen-mypage', get_template_directory_uri() . '/assets/css/mypage.css');
+    wp_enqueue_script('awa-onsen-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
+}
+
+if (is_page('contact')) { // お問い合わせページのCSSの読み込み
+    wp_enqueue_style('awa-onsen-form', get_template_directory_uri() . '/assets/css/form.css');
+    wp_enqueue_script(
+        'awa-onsen-contact-script',
+        get_template_directory_uri() . '/assets/js/form.js',
+        null,
+        null,
+        true
+    );
+    // wp_enqueue_script('food-science-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
+
+}
+
+if (is_page('confirm')) { // お問合せ確認のCSSの読み込み
+    wp_enqueue_style('awa-onsen-result', get_template_directory_uri() . '/assets/css/result.css');
+}
+
+if (is_page('thanks')) { // お問合せ完了のCSSの読み込み
+    wp_enqueue_style('awa-onsen-thanks', get_template_directory_uri() . '/assets/css/thanks.css');
+}
+
+if (is_page('about')) { // 自己紹介ページのCSSの読み込み
+    wp_enqueue_style('awa-onsen-about', get_template_directory_uri() . '/assets/css/about.css');
+}
+
+if (is_page('sauna')) { // サ活のページのCSSの読み込み
+    wp_enqueue_style('awa-onsen-sauna', get_template_directory_uri() . '/assets/css/sauna.css');
+}
+
+if (is_page('privacypolicy')) { // プライバシーポリシーのCSSの読み込み
+    wp_enqueue_style('awa-onsen-privacypolicy', get_template_directory_uri() . '/assets/css/privacypolicy.css');
+}
+
+// 新着情報のCSSの読み込み
+if (is_single() && get_post_type() == 'post') {
+    wp_enqueue_style('news-style', get_template_directory_uri() . '/assets/css/news.css');
+}
+
+if (is_404()) { // 404のCSSの読み込み
+    wp_enqueue_style('awa-onsen-404', get_template_directory_uri() . '/assets/css/notfound.css');
+}
+
 
 add_action('wp_enqueue_scripts', 'fs_script_files');
 ?>
