@@ -375,11 +375,6 @@ h2 {
 }
 
 /* カード型（丸形）の設定 */
-
-* {
-    border: 1px solid red;
-}
-
 .card {
     max-width: 475px;
     justify-content: center;
