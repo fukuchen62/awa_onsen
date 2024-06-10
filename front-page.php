@@ -125,7 +125,7 @@
                         $args = array(
                             "post_type" => "spa", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
-                            "order" => "rand", //日付順に並べる
+                            "order" => "rand", //ランダム
                         );
 
                         //WP_Queryオブジェクトを作成
@@ -137,7 +137,7 @@
 
                                 <li class="slider_content">
                                     <a href="<?php the_permalink(); ?>">
-                                        <!-- 温泉の写真 -->
+                                        <!-- 施設の写真 -->
                                         <div class="slider_img">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
@@ -146,7 +146,7 @@
                                             <?php endif; ?>
                                             <span></span>
                                         </div>
-                                        <!-- 温泉の名前 -->
+                                        <!-- 施設の名前 -->
                                         <h3><?php the_title(); ?></h3>
                                     </a>
                                 </li>
@@ -154,6 +154,7 @@
                             endwhile;
                         endif;
                         ?>
+
                     </ul>
                     <!-- 温泉情報一覧ボタン -->
                     <a class="spa_btn btn shadow section_btn" href="<?php echo home_url('/spa/'); ?>">温泉情報一覧へ<i class="fa-solid fa-list"></i></a>
@@ -173,14 +174,14 @@
                         $args = array(
                             "post_type" => "facility", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
-                            "order" => "rand", //日付順に並べる
+                            "order" => "rand", //ランダム
                         );
 
                         // メニューの種類で絞り込む
                         $taxquerysp = ["relation" => "AND"];
                         $taxquerysp[] = [
-                            "taxonomy" => "play",
-                            "terms" => $play->slug,
+                            "taxonomy" => "facility_type",
+                            "terms" => 'play',
                             "field" => "slug",
                         ];
 
@@ -230,21 +231,19 @@
                         $args = array(
                             "post_type" => "facility", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
-                            "order" => "rand", //日付順に並べる
+                            "order" => "rand", //ランダム
                         );
 
                         // メニューの種類で絞り込む
                         $taxquerysp = ["relation" => "AND"];
                         $taxquerysp[] = [
-                            "taxonomy" => "gourmet",
-                            "terms" => $gourmet->slug,
+                            "taxonomy" => "facility_type",
+                            "terms" => 'gourmet',
                             "field" => "slug",
                         ];
 
-                        $args["tax_query"] = $taxquerysp;
-                        $the_query = new WP_Query($args);
-
                         //WP_Queryオブジェクトを作成
+                        $args["tax_query"] = $taxquerysp;
                         $the_query = new WP_Query($args);
                         ?>
 
@@ -276,57 +275,57 @@
                 </div>
             </section>
 
-            <!-- 映え -->
+            <!-- ショッピング -->
             <section class="section-wrap photo facility">
                 <div class="sticky_note">
                     <h2 class="section_ttl">ショッピング</h2>
                 </div>
                 <div class="section_content">
                     <ul class="slider">
-                        <li class="slider_content">
-                            <a href="#">
-                                <!-- 写真 -->
-                                <div class="slider_img">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/bike.jpg" alt="映え写真">
-                                    <span></span>
-                                </div>
-                                <!-- 名前 -->
-                                <h3>インスタ映えするスポット</h3>
-                            </a>
-                        </li>
-                        <li class="slider_content">
-                            <a href="#">
-                                <!-- 写真 -->
-                                <div class="slider_img">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/river.jpg" alt="映え写真">
-                                    <span></span>
-                                </div>
-                                <!-- 名前 -->
-                                <h3>おしゃれな写真</h3>
-                            </a>
-                        </li>
-                        <li class="slider_content">
-                            <a href="#">
-                                <!-- 写真 -->
-                                <div class="slider_img">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/bike.jpg" alt="映え写真">
-                                    <span></span>
-                                </div>
-                                <!-- 名前 -->
-                                <h3>インスタ映えするスポット</h3>
-                            </a>
-                        </li>
-                        <li class="slider_content">
-                            <a href="#">
-                                <!-- 写真 -->
-                                <div class="slider_img">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/river.jpg" alt="映える写真">
-                                    <span></span>
-                                </div>
-                                <!-- 名前 -->
-                                <h3>おしゃれな写真</h3>
-                            </a>
-                        </li>
+
+                        <!-- カード型 -->
+                        <?php
+                        $args = array(
+                            "post_type" => "facility", //通常の投稿タイプ
+                            "posts_per_page" => 4, //表示する投稿数
+                            "order" => "rand", //ランダム
+                        );
+
+                        // メニューの種類で絞り込む
+                        $taxquerysp = ["relation" => "AND"];
+                        $taxquerysp[] = [
+                            "taxonomy" => "facility_type",
+                            "terms" => 'shopping',
+                            "field" => "slug",
+                        ];
+
+                        //WP_Queryオブジェクトを作成
+                        $args["tax_query"] = $taxquerysp;
+                        $the_query = new WP_Query($args);
+                        ?>
+
+                        <?php if ($the_query->have_posts()) : ?>
+                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+                                <li class="slider_content">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <!-- 温泉の写真 -->
+                                        <div class="slider_img">
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                            <?php else : ?>
+                                                <img src="path/to/default-image.jpg" alt="Default Image" />
+                                            <?php endif; ?>
+                                            <span></span>
+                                        </div>
+                                        <!-- 温泉の名前 -->
+                                        <h3><?php the_title(); ?></h3>
+                                    </a>
+                                </li>
+                        <?php
+                            endwhile;
+                        endif;
+                        ?>
                     </ul>
                     <!-- 周辺情報一覧ボタン -->
                     <a class="facility_btn btn shadow section_btn" href="<?php echo home_url('facility_type/photogenic/'); ?>">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
@@ -340,50 +339,42 @@
                 </div>
                 <div class="section_content">
                     <ul class="slider">
-                        <li class="slider_content">
-                            <a href="#">
-                                <!-- 写真 -->
-                                <div class="slider_img">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/bike.jpg" alt="ツーリング">
-                                    <span></span>
-                                </div>
-                                <!-- 名前 -->
-                                <h3>県南ツーリングコース</h3>
-                            </a>
-                        </li>
-                        <li class="slider_content">
-                            <a href="#">
-                                <!-- 写真 -->
-                                <div class="slider_img">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/river.jpg" alt="ラフティング">
-                                    <span></span>
-                                </div>
-                                <!-- 名前 -->
-                                <h3>大自然ラフティングコース</h3>
-                            </a>
-                        </li>
-                        <li class="slider_content">
-                            <a href="#">
-                                <!-- 写真 -->
-                                <div class="slider_img">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/bike.jpg" alt="ツーリング">
-                                    <span></span>
-                                </div>
-                                <!-- 名前 -->
-                                <h3>県南ツーリングコース</h3>
-                            </a>
-                        </li>
-                        <li class="slider_content">
-                            <a href="#">
-                                <!-- 写真 -->
-                                <div class="slider_img">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/river.jpg" alt="ラフティング">
-                                    <span></span>
-                                </div>
-                                <!-- 名前 -->
-                                <h3>大自然ラフティングコース</h3>
-                            </a>
-                        </li>
+
+                        <!-- カード型 -->
+                        <?php
+                        $args = array(
+                            "post_type" => "course", //通常の投稿タイプ
+                            "posts_per_page" => 4, //表示する投稿数
+                            "order" => "rand", //ランダム
+                        );
+
+                        //WP_Queryオブジェクトを作成
+                        $the_query = new WP_Query($args);
+                        ?>
+
+                        <?php if ($the_query->have_posts()) : ?>
+                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+                                <li class="slider_content">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <!-- 施設の写真 -->
+                                        <div class="slider_img">
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                            <?php else : ?>
+                                                <img src="path/to/default-image.jpg" alt="Default Image" />
+                                            <?php endif; ?>
+                                            <span></span>
+                                        </div>
+                                        <!-- 施設の名前 -->
+                                        <h3><?php the_title(); ?></h3>
+                                    </a>
+                                </li>
+                        <?php
+                            endwhile;
+                        endif;
+                        ?>
+
                     </ul>
                     <!-- モデルコース一覧へ -->
                     <a class="course_btn btn shadow section_btn" href="<?php echo home_url('facility_type/tour/'); ?>">モデルコース一覧へ<i class="fa-solid fa-list"></i></a>
@@ -415,45 +406,64 @@
                 <div class="section_content">
                     <div class="content_inner">
                         <div class="top_news_list">
+
                             <!-- カード型 -->
-                            <article class="top_news_card">
-                                <a class="top_news_img" href="#"><img src="<?php echo get_template_directory_uri() ?>/assets/images/bike.jpg" alt="バイク"></a>
-                                <div class="top_news_contents">
-                                    <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
-                                        <p class="date">2024.06.05.mon 10:00</p>
-                                        <h6 class="title">講習会管理システムのログイン画面にいきません！</h6>
-                                    </a>
-                                    <div class="hashtag_list">
-                                        <a href="https://fontawesome.com/" class="hashtag">お知らせ</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- カード型 -->
-                            <article class="top_news_card">
-                                <a class="top_news_img" href="#"><img src="<?php echo get_template_directory_uri() ?>/assets/images/bike.jpg" alt="バイク"></a>
-                                <div class="top_news_contents">
-                                    <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
-                                        <p class="date">2024.06.05.mon 10:00</p>
-                                        <h6 class="title">講習会管理システムのログイン画面にいきません！</h6>
-                                    </a>
-                                    <div class="hashtag_list">
-                                        <a href="https://fontawesome.com/" class="hashtag">お知らせ</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- カード型 -->
-                            <article class="top_news_card">
-                                <a class="top_news_img" href="#"><img src="<?php echo get_template_directory_uri() ?>/assets/images/bike.jpg" alt="バイク"></a>
-                                <div class="top_news_contents">
-                                    <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
-                                        <p class="date">2024.06.05.mon 10:00</p>
-                                        <h6 class="title">講習会管理システムのログイン画面にいきません！</h6>
-                                    </a>
-                                    <div class="hashtag_list">
-                                        <a href="https://fontawesome.com/" class="hashtag">お知らせ</a>
-                                    </div>
-                                </div>
-                            </article>
+                            <?php
+                            $args = array(
+                                "post_type" => "column", //通常の投稿タイプ
+                                "posts_per_page" => 3, //表示する投稿数
+                                "order" => "date", //日付順に並べる
+                                "orderby" => "DESC" //降順（新しい順）
+                            );
+
+                            //WP_Queryオブジェクトを作成
+                            $the_query = new WP_Query($args);
+                            ?>
+
+                            <?php if ($the_query->have_posts()) : ?>
+                                <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+                                    <article class="top_news_card">
+                                        <a class="top_news_img" href="<?php the_permalink(); ?>">
+                                            <!-- 画像の表示 -->
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                            <?php else : ?>
+                                                <img src="path/to/default-image.jpg" alt="Default Image" />
+                                            <?php endif; ?>
+                                        </a>
+                                        <div class="top_news_contents">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <!-- 日付の表示。曜日は英語で表記する -->
+                                                <p class="date"><?php echo get_the_date("Y.m.d") . "" . date("D H:i", strtotime(get_the_date("Y-m-d H:i:s"))); ?></p>
+                                                <p class="title"><?php the_title(); ?></p>
+                                            </a>
+                                            <div class="hashtag_list">
+                                                <!-- カテゴリーの表示 -->
+                                                <?php
+                                                $categories = get_the_category();
+                                                if (!empty($categories)) {
+                                                    foreach ($categories as $category) {
+                                                        echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="hashtag">' . esc_html($category->name) . '</a> ';
+                                                    }
+                                                }
+
+                                                $tags = get_the_tags();
+                                                if (!empty($tags)) {
+                                                    foreach ($tags as $tag) {
+                                                        echo '<a href="' . esc_url(get_tag_link($tag->term_id)) . '" class="hashtag">' . esc_html($tag->name) . '</a> ';
+                                                    }
+                                                }
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </article>
+                            <?php
+                                endwhile;
+                            wp_reset_postdata();
+                            endif;
+                            ?>
+
                         </div>
                     </div>
                     <!-- お知らせ一覧ボタン -->
