@@ -87,6 +87,15 @@ img {
 ================================= */
 }
 
+/* パンくずリストの設定 */
+.breadcrumb_inner span {
+    display: inline-block;
+}
+
+.breadcrumb_inner {
+    display: flex
+}
+
 /* 本サイトの共通スタイルシート */
 .bubble_background {
     position: relative;

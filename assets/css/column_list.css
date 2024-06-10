@@ -28,3 +28,19 @@ a {
         font-size: 1.5rem;
     }
 }
+
+.wp-pagenavi {
+    width: 300px;
+    margin: auto;
+    display: flex;
+    /* grid-template-columns: repeat(7, 1fr);*/
+    justify-content: center;
+}
+
+.wp-pagenavi a {
+    border: 1px;
+}
+
+span.current {
+    border: 1px;
+}

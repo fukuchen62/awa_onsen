@@ -142,11 +142,13 @@ $(document).ready(function () {
             height: `${size}px`
         });
 
-        const $img = $('<img>').attr('src', '../assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
+        const $img = $('<img>').attr('src', path + '/assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
             width: '100%',
             height: '100%'
         });
         $duckEl.append($img);
+
+        console.log("duck:" + $img);
 
         $duckEl.css({
             left: Math.random() * window.innerWidth + 'px'

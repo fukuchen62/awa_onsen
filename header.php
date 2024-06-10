@@ -8,6 +8,12 @@
 ">
     <meta name="keywords" content="徳島県,温泉,映え,遊ぶ,宿泊,サウナ,ツーリング,ラフティング,ハイキング,登山,キャンプ">
 
+    <!-- 「get_template_directory_uri();」を変数「path」に代入 -->
+    <script>
+        var path = "<?php echo get_template_directory_uri(); ?>";
+    </script>
+
+
     <?php wp_head(); ?>
 </head>
 

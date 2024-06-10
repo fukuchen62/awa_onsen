@@ -16,7 +16,8 @@
         <ol class="commentlist">
             <?php
             $wp_list_comments_args = [
-                'avatar_size' => '50',
+                'avatar_size' => '30',
+                'reply_text' => '',
             ];
             wp_list_comments($wp_list_comments_args);
             ?>

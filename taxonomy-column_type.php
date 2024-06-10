@@ -27,6 +27,7 @@
                 // タクソノミーに属するすべてのタームを取得
                 $terms = get_terms(array(
                     'taxonomy' => $taxonomy,
+                    'order' => 'DESC',
                     'hide_empty' => false,
                 ));
 
@@ -71,84 +72,44 @@
                                 <h6 class="title"><?php the_title(); ?></h6>
                             </a>
                             <!-- ハッシュタグ取得記述をする -->
+                            <!-- ハッシュタグ -->
+                            <div class="hashtag_list">
+                                <?php
+                                // 現在の投稿のIDを取得
+                                $post_id = get_the_ID();
 
-                            <?php
-                            $categories = get_the_category();
-                            if ($categories) : ?>
+                                // 投稿タイプを取得
+                                $post_type = get_post_type($post_id);
 
-                                <div class="hashtag_list">
+                                // 投稿タイプに関連するタクソノミーを取得
+                                $taxonomies = get_object_taxonomies($post_type);
 
-                                    <?php foreach ($categories as $category) : ?>
+                                if (!empty($taxonomies)) {
+                                    foreach ($taxonomies as $taxonomy) {
+                                        // タクソノミーに関連するタームを取得
+                                        $terms = get_the_terms($post_id, $taxonomy);
 
-                                        <a href="https://fontawesome.com/" class="hashtag"><?php echo $category->name; ?></a>
-                                        <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
-                                        <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
+                                        if ($terms && !is_wp_error($terms)) {
+                                            echo '<ul>';
+                                            foreach ($terms as $term) {
+                                                // echo '<li>';
+                                ?>
+                                                <a href="https://www.yahoo.co.jp/" class="hashtag"><?php echo '#' . esc_html($term->name); ?></a>
+                                <?php
+                                            }
+                                            echo '</ul>';
+                                        } else {
+                                        }
+                                    }
+                                } else {
+                                }
+                                ?>
+                            </div>
+
+
                         </article>
                     <?php endwhile; ?>
                     <!-- 一つの記事ここまで -->
-
-
-
-                    <article class="news_card">
-                        <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92"><img src="../assets/images/bike.jpg" alt=""></a>
-                        <div class="news_cintents">
-                            <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
-                                <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
-                                <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
-                            </a>
-                            <div class="hashtag_list">
-                                <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
-                                <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
-                                <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="news_card">
-                        <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92"><img src="../assets/images/bike.jpg" alt=""></a>
-                        <div class="news_cintents">
-                            <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
-                                <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
-                                <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
-                            </a>
-                            <div class="hashtag_list">
-                                <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
-                                <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
-                                <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="news_card">
-                        <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92"><img src="../assets/images/bike.jpg" alt=""></a>
-                        <div class="news_cintents">
-                            <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
-                                <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
-                                <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
-                            </a>
-                            <div class="hashtag_list">
-                                <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
-                                <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
-                                <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="news_card">
-                        <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92"><img src="../assets/images/bike.jpg" alt=""></a>
-                        <div class="news_cintents">
-                            <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
-                                <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
-                                <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
-                            </a>
-                            <div class="hashtag_list">
-                                <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
-                                <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
-                                <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
-                            </div>
-                        </div>
-                    </article>
 
                 </div>
         </section>
@@ -157,7 +118,7 @@
 
     <!-- ページネーション -->
     <?php if (function_exists('wp_pagenavi')) : ?>
-        <p class="pagination"><?php wp_pagenavi(); ?> &lt;&lt; 1　2　3　4　5 &gt;&gt; </p>
+        <div class="pagination flex"><?php wp_pagenavi(); ?></div>
     <?php endif; ?>
     <button class="back_btn" onclick="history.back">
         <span><i class="fa-solid fa-arrow-left"></i>back</span>

@@ -304,120 +304,147 @@
         </ul>
         <section>
             <h3>こちらもいかがでしょうか？</h3>
-            <div class="recommend_list">
-                <article class="card spa">
-                    <a href="#">
-                        <div>
-                            <span></span>
-                            <img src="../assets/images/onsen_img.jpg" alt="" />
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                    </a>
-                </article>
-                <article class="card spa">
-                    <a href="#">
-                        <div>
-                            <span></span>
-                            <img src="../assets/images/onsen_img.jpg" alt="" />
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                    </a>
-                </article>
-                <article class="card course">
-                    <a href="#">
-                        <div>
-                            <span></span>
-                            <img src="../assets/images/onsen_img.jpg" alt="" />
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                    </a>
-                </article>
-                <article class="card facility">
-                    <a href="#">
-                        <div>
-                            <span></span>
-                            <img src="../assets/images/onsen_img.jpg" alt="" />
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                    </a>
-                </article>
-                <article class="card facility">
-                    <a href="#">
-                        <div>
-                            <span></span>
-                            <img src="../assets/images/onsen_img.jpg" alt="" />
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                    </a>
-                </article>
-            </div>
+            <?php
+            // ループの回数を定義
+            $loop_count = 10;
+
+            // すべてのカスタム投稿タイプを取得
+            $custom_post_types = get_post_types(array('_builtin' => false));
+
+            for ($i = 1; $i <= $loop_count; $i++) {
+                // カスタムフィールドの名前を生成
+                $field_name = 'url' . $i;
+                $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
+
+                if ($slug) {
+                    // カスタムクエリで投稿を検索
+                    $args = array(
+                        'name' => $slug,
+                        'post_type' => $custom_post_types,
+                        'post_status' => 'publish',
+                        'numberposts' => 1
+                    );
+
+                    $posts = get_posts($args);
+
+                    if (!empty($posts)) {
+                        $post = $posts[0]; // 最初の投稿を取得
+                        setup_postdata($post);
+
+                        // 投稿情報を取得
+                        $post_id = $post->ID;
+                        $post_title = get_the_title($post_id);
+                        $post_link = get_permalink($post_id);
+                        $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+            ?>
+                        <article class="card">
+                            <a href="<?php echo esc_url($post_link); ?>">
+                                <div>
+                                    <span></span>
+                                    <?php if ($post_thumbnail) : ?>
+                                        <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                    <?php endif; ?>
+                                </div>
+                                <h3><?php echo esc_html($post_title); ?></h3>
+                            </a>
+                        </article>
+            <?php
+                        wp_reset_postdata();
+                    }
+                }
+            }
+            ?>
         </section>
 
         <!-- 関連するコラム、お知らせ -->
         <section class="connection_column">
             <h5>関連コラム、情報
             </h5>
-            <article class="news_card column">
-                <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
-                    <img src="<?php echo get_template_directory_uri() ?>" alt=""></a>
-                <div class="news_cintents">
-                    <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
-                        <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
-                        <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
-                    </a>
-                    <div class="hashtag_list">
-                        <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
-                        <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
-                        <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
-                    </div>
-                </div>
-            </article>
-            <article class="news_card news">
-                <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92"><img src="<?php echo get_template_directory_uri() ?>" alt=""></a>
-                <div class="news_cintents">
-                    <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
-                        <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
-                        <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
-                    </a>
-                    <div class="hashtag_list">
-                        <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
-                        <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
-                        <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
-                    </div>
-                </div>
-            </article>
-        </section>
+
+            <?php
+            // カスタム投稿タイプ 'column' から投稿を取得
+            $args = array(
+                'post_type' => 'column', // カスタム投稿タイプ 'column'
+                'posts_per_page' => -1, // すべての投稿を取得
+            );
+            $column_query = new WP_Query($args);
+
+            if ($column_query->have_posts()) :
+                while ($column_query->have_posts()) : $column_query->the_post();
+                    // アイキャッチ画像のURLを取得
+                    $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); // サムネイルサイズを小さく設定
+                    // 投稿の日付を取得
+                    $post_date = get_the_date('Y.m.d D H:i');
+                    // 投稿のタイトルを取得
+                    $post_title = get_the_title();
+                    // 投稿のパーマリンクを取得
+                    $post_permalink = get_permalink();
+                    // 投稿のタグとカテゴリを取得
+                    // $terms = get_the_terms(get_the_ID(), array('post_tag', 'category'));
+
+            ?>
+
+                    <article class="news_card news">
+                        <a href="<?php echo esc_url($post_permalink); ?>">
+                            <?php if ($thumbnail_url) : ?>
+                                <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($post_title); ?>">
+                            <?php else : ?>
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/path/to/default-image.jpg" alt="<?php echo esc_attr($post_title); ?>">
+                            <?php endif; ?>
+                        </a>
+                        <div class="news_cintents">
+                            <a href="<?php echo esc_url($post_permalink); ?>">
+                                <p class="date fugaz-one-regular"><?php echo esc_html($post_date); ?></p>
+                                <h6 class="title"><?php echo esc_html($post_title); ?></h6>
+                            </a>
+                            <!-- <div class="hashtag_list">
+                                <?php if ($terms && !is_wp_error($terms)) : ?>
+                                    <?php foreach ($terms as $term) : ?>
+                                        <a href="<?php echo esc_url(get_term_link($term)); ?>" class="hashtag">#<?php echo esc_html($term->name); ?></a>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div> -->
+                        </div>
+                    </article>
+
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+                echo '<p>コラムの投稿がありません。</p>';
+            endif;
+            ?>
 
 
-        <?php
-        // 現在のページのURLを取得
-        $current_url = home_url(add_query_arg(array(), $wp->request));
+            <?php
+            // 現在のページのURLを取得
+            $current_url = home_url(add_query_arg(array(), $wp->request));
 
-        // リファラー(前のページ)のURLを取得
-        $referer_url = wp_get_referer();
+            // リファラー(前のページ)のURLを取得
+            $referer_url = wp_get_referer();
 
-        // back_btnを表示するかどうかのフラグ
-        $show_back_btn = false;
+            // back_btnを表示するかどうかのフラグ
+            $show_back_btn = false;
 
-        // リファラーのURLが取得できた場合
-        if ($referer_url) {
-            // リファラーのURLとの比較
-            if (strpos($referer_url, home_url()) !== false) {
-                // リファラーのURLがサイト内のURLだった場合
-                $back_url = $referer_url;
-                $show_back_btn = true;
+            // リファラーのURLが取得できた場合
+            if ($referer_url) {
+                // リファラーのURLとの比較
+                if (strpos($referer_url, home_url()) !== false) {
+                    // リファラーのURLがサイト内のURLだった場合
+                    $back_url = $referer_url;
+                    $show_back_btn = true;
+                }
             }
-        }
 
-        // back_btnを表示する場合のみ出力
-        if ($show_back_btn) {
-        ?>
-            <button class="back_btn" onclick="window.location.href='<?php echo $back_url; ?>'">
-                <span><i class="fa-solid fa-arrow-left"></i>back</span>
-            </button>
-        <?php
-        }
-        ?>
+            // back_btnを表示する場合のみ出力
+            if ($show_back_btn) {
+            ?>
+                <button class="back_btn" onclick="window.location.href='<?php echo $back_url; ?>'">
+                    <span><i class="fa-solid fa-arrow-left"></i>back</span>
+                </button>
+            <?php
+            }
+            ?>
 
         </section>
     </div>

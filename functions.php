@@ -191,6 +191,11 @@ function fs_script_files()
         wp_enqueue_script('awa-onsen-spa_list', get_template_directory_uri() . '/assets/js/accordion.js');
     }
 
+    if (is_tax('sauna_type')) { // サウナのある温泉一覧のCSSの読み込み
+        wp_enqueue_style('awa-onsen-sauna_spa_list', get_template_directory_uri() . '/assets/css/sauna_search.css');
+        wp_enqueue_script('awa-onsen-sauna_spa_list', get_template_directory_uri() . '/assets/js/accordion.js');
+    }
+
     if (is_tax('facility_type')) { // 周辺施設一覧のCSSとJSの読み込み
         wp_enqueue_style('awa-onsen-nearby_list', get_template_directory_uri() . '/assets/css/nearby_list.css');
     }
