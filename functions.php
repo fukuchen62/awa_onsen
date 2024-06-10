@@ -72,6 +72,11 @@ function fs_script_files()
         'slick-carousel-theme',
         'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css'
     );
+    // Slick CarouselのJSの読み込み
+    wp_enqueue_script(
+        "slick-carousel",
+        "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    );
 
     // font-awesomeを読み込む
     wp_enqueue_style(
@@ -112,7 +117,6 @@ function fs_script_files()
     );
 
     // CSSファイルの読み込み
-    wp_enqueue_style("awa-onsen-reset", get_template_directory_uri() . "/assets/css/reset.css");
     wp_enqueue_style("awa-onsen-destyle", get_template_directory_uri() . "/assets/css/destyle.css");
     wp_enqueue_style("awa-onsen-common", get_template_directory_uri() . "/assets/css/common.css");
 
@@ -120,7 +124,7 @@ function fs_script_files()
     wp_deregister_script('jquery');
 
     // jQueryのCDNを登録
-    wp_register_script(
+    wp_enqueue_script(
         'jquery',
         'https://code.jquery.com/jquery-3.7.1.min.js',
         array(),
@@ -129,7 +133,7 @@ function fs_script_files()
     );
 
     // jQueryをエンキュー（読み込み）
-    wp_enqueue_script('jquery');
+    // wp_enqueue_script('jquery');
 
 
     // // // JSの読み込み
@@ -155,15 +159,12 @@ function fs_script_files()
     // 詳細ページ用のCSSとJSの読み込み
     if (is_singular('spa')) { // 温泉詳細のCSS,JSの読み込み
         wp_enqueue_style('awa-onsen-spa', get_template_directory_uri() . '/assets/css/spa.css');
-        wp_enqueue_script(
-            "slick-carousel",
-            "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-        );
-        wp_enqueue_script('food-science-spa', get_template_directory_uri() . '/assets/js/spa.js');
+        wp_enqueue_script('awa-onsen-spa', get_template_directory_uri() . '/assets/js/spa.js');
     }
 
-    if (is_singular('facility')) { // 周辺施設詳細のCSSの読み込み
+    if (is_singular('facility')) { // 周辺施設詳細のCSSとJSの読み込み
         wp_enqueue_style('awa-onsen-nearby', get_template_directory_uri() . '/assets/css/nearby.css');
+        wp_enqueue_script('awa-onsen-nearby', get_template_directory_uri() . '/assets/js/nearby.js');
     }
 
     if (is_singular('column')) { // コラムの詳細ページのCSSの読み込み
@@ -174,16 +175,17 @@ function fs_script_files()
         wp_enqueue_style('awa-onsen-course', get_template_directory_uri() . '/assets/css/course.css');
     }
 
-    // 一覧ページ用のCSSの読み込み
+    // 一覧ページ用のCSSとJSの読み込み
     if (is_post_type_archive('spa')) { // 温泉一覧のCSSの読み込み
         wp_enqueue_style('awa-onsen-spa_list', get_template_directory_uri() . '/assets/css/spa_list.css');
+        wp_enqueue_script('awa-onsen-spa_list', get_template_directory_uri() . '/assets/js/accordion.js');
     }
 
-    if (is_tax('facility_type')) { // 周辺施設一覧のCSSの読み込み
+    if (is_tax('facility_type')) { // 周辺施設一覧のCSSとJSの読み込み
         wp_enqueue_style('awa-onsen-nearby_list', get_template_directory_uri() . '/assets/css/nearby_list.css');
     }
 
-    if (is_tax('column_type')) { // コラムの一覧ページのCSSとJSの読み込み
+    if (is_tax('column_type')) { // コラムの一覧ページのCSSの読み込み
         wp_enqueue_style('awa-onsen-column-list', get_template_directory_uri() . '/assets/css/column_list.css');
     }
 
@@ -204,11 +206,20 @@ function fs_script_files()
     // 固定ページ用のCSSとJSの読み込み
     if (is_page('mypage')) { // マイページのCSS,JSの読み込み
         wp_enqueue_style('awa-onsen-mypage', get_template_directory_uri() . '/assets/css/mypage.css');
-        wp_enqueue_script('food-science-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
+        wp_enqueue_script('awa-onsen-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
     }
 
     if (is_page('contact')) { // お問い合わせページのCSSの読み込み
         wp_enqueue_style('awa-onsen-form', get_template_directory_uri() . '/assets/css/form.css');
+        wp_enqueue_script(
+            'food-science-contact',
+            get_template_directory_uri() . '/assets/js/form.js',
+            null,
+            null,
+            true
+        );
+        // wp_enqueue_script('food-science-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
+
     }
 
     if (is_page('confirm')) { // お問合せ確認のCSSの読み込み
