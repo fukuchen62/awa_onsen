@@ -12,37 +12,33 @@
              <li>モデルコース</li>
          </ul>
 
-
          <!-- 温泉 -->
          <div class="contents">
-             <section>
-                 <!-- Area + Spa Type Form -->
+             <form role="search" method="get" id="searchform-spa" action="<?php echo home_url('/'); ?>">
+                 <input type="hidden" name="s">
                  <h3>地域</h3>
+                 <!-- Area + Spa Type Form -->
                  <div class="area">
-                     <form role="search" method="get" id="searchform-spa" action="<?php echo home_url('/'); ?>">
-                         <input type="hidden" name="s">
-                         <?php
-                            $area_terms = get_terms(array(
-                                'taxonomy' => 'area',
-                                'hide_empty' => false,
-                            ));
+                     <?php
+                        $area_terms = get_terms(array(
+                            'taxonomy' => 'area',
+                            'hide_empty' => false,
+                        ));
 
-                            if (!empty($area_terms) && !is_wp_error($area_terms)) :
-                                foreach ($area_terms as $term) :
-                                    $selected_area_terms = (array) get_query_var('area_spa');
-                            ?>
-                                 <label class="checkbox-item">
-                                     <input type="checkbox" name="area_spa[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
-                                     <?php echo esc_html($term->name); ?>
-                                 </label><br>
-                         <?php
-                                endforeach;
-                            endif;
-                            ?>
+                        if (!empty($area_terms) && !is_wp_error($area_terms)) :
+                            foreach ($area_terms as $term) :
+                                $selected_area_terms = (array) get_query_var('area_spa');
+                        ?>
+                             <label class="checkbox-item">
+                                 <input type="checkbox" name="area_spa[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
+                                 <span><?php echo esc_html($term->name); ?></span>
+                             </label>
+                     <?php
+                            endforeach;
+                        endif;
+                        ?>
                  </div>
-             </section>
 
-             <section>
                  <h3>効能</h3>
                  <div class="list">
                      <?php
@@ -57,8 +53,8 @@
                         ?>
                              <label class="checkbox-item">
                                  <input type="checkbox" name="spa_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_spa_type_terms)); ?>>
-                                 <?php echo esc_html($term->name); ?>
-                             </label><br>
+                                 <span><?php echo esc_html($term->name); ?></span>
+                             </label>
                      <?php
                             endforeach;
                         endif;
@@ -81,64 +77,57 @@
                          </button>
                      </label>
                  </div>
-                 </form>
-             </section>
+             </form>
          </div>
-
 
          <!-- 周辺施設 -->
          <div class="contents">
-             <section>
-                 <!-- Area + Facility Type Form -->
+             <form role="search" method="get" id="searchform-facility" action="<?php echo home_url('/'); ?>">
+                 <input type="hidden" name="s">
                  <h3>地域</h3>
                  <div class="area">
-                     <form role="search" method="get" id="searchform-facility" action="<?php echo home_url('/'); ?>">
-                         <input type="hidden" name="s">
-                         <div>
+                     <?php
+                        $area_terms = get_terms(array(
+                            'taxonomy' => 'area',
+                            'hide_empty' => false,
+                        ));
 
-                             <?php
-                                $area_terms = get_terms(array(
-                                    'taxonomy' => 'area',
-                                    'hide_empty' => false,
-                                ));
-
-                                if (!empty($area_terms) && !is_wp_error($area_terms)) :
-                                    foreach ($area_terms as $term) :
-                                        $selected_area_terms = (array) get_query_var('area_facility');
-                                ?>
-                                     <label class="checkbox-item">
-                                         <input type="checkbox" name="area_facility[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
-                                         <?php echo esc_html($term->name); ?>
-                                     </label><br>
-                             <?php
-                                    endforeach;
-                                endif;
-                                ?>
-
-                             <h3>分類</h3>
-                             <?php
-                                $facility_type_terms = get_terms(array(
-                                    'taxonomy' => 'facility_type',
-                                    'hide_empty' => false,
-                                ));
-
-                                if (!empty($facility_type_terms) && !is_wp_error($facility_type_terms)) :
-                                    foreach ($facility_type_terms as $term) :
-                                        $selected_facility_type_terms = (array) get_query_var('facility_type');
-                                ?>
-                                     <label class="checkbox-item">
-                                         <input type="checkbox" name="facility_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_facility_type_terms)); ?>>
-                                         <?php echo esc_html($term->name); ?>
-                                     </label><br>
-                             <?php
-                                    endforeach;
-                                endif;
-                                ?>
-                         </div>
+                        if (!empty($area_terms) && !is_wp_error($area_terms)) :
+                            foreach ($area_terms as $term) :
+                                $selected_area_terms = (array) get_query_var('area_facility');
+                        ?>
+                             <label class="checkbox-item">
+                                 <input type="checkbox" name="area_facility[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
+                                 <span><?php echo esc_html($term->name); ?></span>
+                             </label>
+                     <?php
+                            endforeach;
+                        endif;
+                        ?>
                  </div>
-             </section>
 
-             <section>
+                 <h3>分類</h3>
+                 <div class="list">
+                     <?php
+                        $facility_type_terms = get_terms(array(
+                            'taxonomy' => 'facility_type',
+                            'hide_empty' => false,
+                        ));
+
+                        if (!empty($facility_type_terms) && !is_wp_error($facility_type_terms)) :
+                            foreach ($facility_type_terms as $term) :
+                                $selected_facility_type_terms = (array) get_query_var('facility_type');
+                        ?>
+                             <label class="checkbox-item">
+                                 <input type="checkbox" name="facility_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_facility_type_terms)); ?>>
+                                 <span><?php echo esc_html($term->name); ?></span>
+                             </label>
+                     <?php
+                            endforeach;
+                        endif;
+                        ?>
+                 </div>
+
                  <div class="btn">
                      <!-- カスタム投稿タイプ指定 -->
                      <input type="hidden" name="post_type" value="facility" />
@@ -155,65 +144,57 @@
                          </button>
                      </label>
                  </div>
-                 </form>
-             </section>
+             </form>
          </div>
-
-
 
          <!-- モデルコース -->
          <div class="contents">
-             <section>
-                 <!-- Area + Course Type Form -->
+             <form role="search" method="get" id="searchform-course" action="<?php echo home_url('/'); ?>">
+                 <input type="hidden" name="s">
                  <h3>地域</h3>
                  <div class="area">
-                     <form role="search" method="get" id="searchform-course" action="<?php echo home_url('/'); ?>">
-                         <input type="hidden" name="s">
-                         <div>
+                     <?php
+                        $area_terms = get_terms(array(
+                            'taxonomy' => 'area',
+                            'hide_empty' => false,
+                        ));
 
-                             <?php
-                                $area_terms = get_terms(array(
-                                    'taxonomy' => 'area',
-                                    'hide_empty' => false,
-                                ));
-
-                                if (!empty($area_terms) && !is_wp_error($area_terms)) :
-                                    foreach ($area_terms as $term) :
-                                        $selected_area_terms = (array) get_query_var('area_course');
-                                ?>
-                                     <label class="checkbox-item">
-                                         <input type="checkbox" name="area_course[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
-                                         <?php echo esc_html($term->name); ?>
-                                     </label><br>
-                             <?php
-                                    endforeach;
-                                endif;
-                                ?>
-
-                             <h3>分類</h3>
-                             <?php
-                                $course_type_terms = get_terms(array(
-                                    'taxonomy' => 'course_type',
-                                    'hide_empty' => false,
-                                ));
-
-                                if (!empty($course_type_terms) && !is_wp_error($course_type_terms)) :
-                                    foreach ($course_type_terms as $term) :
-                                        $selected_course_type_terms = (array) get_query_var('course_type');
-                                ?>
-                                     <label class="checkbox-item">
-                                         <input type="checkbox" name="course_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_course_type_terms)); ?>>
-                                         <?php echo esc_html($term->name); ?>
-                                     </label><br>
-                             <?php
-                                    endforeach;
-                                endif;
-                                ?>
-                         </div>
+                        if (!empty($area_terms) && !is_wp_error($area_terms)) :
+                            foreach ($area_terms as $term) :
+                                $selected_area_terms = (array) get_query_var('area_course');
+                        ?>
+                             <label class="checkbox-item">
+                                 <input type="checkbox" name="area_course[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
+                                 <span><?php echo esc_html($term->name); ?></span>
+                             </label>
+                     <?php
+                            endforeach;
+                        endif;
+                        ?>
                  </div>
-             </section>
 
-             <section>
+                 <h3>分類</h3>
+                 <div class="list">
+                     <?php
+                        $course_type_terms = get_terms(array(
+                            'taxonomy' => 'course_type',
+                            'hide_empty' => false,
+                        ));
+
+                        if (!empty($course_type_terms) && !is_wp_error($course_type_terms)) :
+                            foreach ($course_type_terms as $term) :
+                                $selected_course_type_terms = (array) get_query_var('course_type');
+                        ?>
+                             <label class="checkbox-item">
+                                 <input type="checkbox" name="course_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_course_type_terms)); ?>>
+                                 <span><?php echo esc_html($term->name); ?></span>
+                             </label>
+                     <?php
+                            endforeach;
+                        endif;
+                        ?>
+                 </div>
+
                  <div class="btn">
                      <!-- カスタム投稿タイプ指定 -->
                      <input type="hidden" name="post_type" value="course" />
@@ -230,6 +211,5 @@
                          </button>
                      </label>
                  </div>
-                 </form>
-             </section>
+             </form>
          </div>

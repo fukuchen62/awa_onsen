@@ -1,6 +1,6 @@
 <?php get_search_form() ?>
 
-<section id="search-results">
+<section>
     <h4 class="lined-title">検索結果</h4>
     <div class="article_all">
 
@@ -31,28 +31,19 @@
             $spa_search_query = new WP_Query($spa_query_args);
 
             if ($spa_search_query->have_posts()) :
-                echo '<div class="search-results-container">';
-                echo '<h2>SPA Results</h2>';
-                while ($spa_search_query->have_posts()) : $spa_search_query->the_post();
-        ?>
+                while ($spa_search_query->have_posts()) : $spa_search_query->the_post(); ?>
                     <article class="card">
                         <a href="<?php the_permalink(); ?>">
                             <div>
                                 <span></span>
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                <?php else : ?>
-                                    <img src="../assets/images/onsen_img.jpg" alt="Default Image" />
                                 <?php endif; ?>
                             </div>
                             <h3><?php the_title(); ?></h3>
                         </a>
                     </article>
-        <?php
-                endwhile;
-                echo '</div>';
-            else :
-                echo '<p>No SPA posts found.</p>';
+        <?php endwhile;
             endif;
 
             wp_reset_postdata();
@@ -86,28 +77,19 @@
             $course_search_query = new WP_Query($course_query_args);
 
             if ($course_search_query->have_posts()) :
-                echo '<div class="search-results-container">';
-                echo '<h2>Course Results</h2>';
-                while ($course_search_query->have_posts()) : $course_search_query->the_post();
-        ?>
+                while ($course_search_query->have_posts()) : $course_search_query->the_post(); ?>
                     <article class="card">
                         <a href="<?php the_permalink(); ?>">
                             <div>
                                 <span></span>
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                <?php else : ?>
-                                    <img src="../assets/images/onsen_img.jpg" alt="Default Image" />
                                 <?php endif; ?>
                             </div>
                             <h3><?php the_title(); ?></h3>
                         </a>
                     </article>
-        <?php
-                endwhile;
-                echo '</div>';
-            else :
-                echo '<p>No Course posts found.</p>';
+        <?php endwhile;
             endif;
 
             wp_reset_postdata();
@@ -141,28 +123,19 @@
             $facility_search_query = new WP_Query($facility_query_args);
 
             if ($facility_search_query->have_posts()) :
-                echo '<div class="search-results-container">';
-                echo '<h2>Facility Results</h2>';
-                while ($facility_search_query->have_posts()) : $facility_search_query->the_post();
-        ?>
+                while ($facility_search_query->have_posts()) : $facility_search_query->the_post(); ?>
                     <article class="card">
                         <a href="<?php the_permalink(); ?>">
                             <div>
                                 <span></span>
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                <?php else : ?>
-                                    <img src="../assets/images/onsen_img.jpg" alt="Default Image" />
                                 <?php endif; ?>
                             </div>
                             <h3><?php the_title(); ?></h3>
                         </a>
                     </article>
-        <?php
-                endwhile;
-                echo '</div>';
-            else :
-                echo '<p>No Facility posts found.</p>';
+        <?php endwhile;
             endif;
 
             wp_reset_postdata();
@@ -170,9 +143,35 @@
         ?>
     </div>
 </section>
-<button class="back_btn" onclick="history.back">
-    <span><i class="fa-solid fa-arrow-left"></i>back</span>
-</button>
+<?php
+// 現在のページのURLを取得
+$current_url = home_url(add_query_arg(array(), $wp->request));
+
+// リファラー(前のページ)のURLを取得
+$referer_url = wp_get_referer();
+
+// back_btnを表示するかどうかのフラグ
+$show_back_btn = false;
+
+// リファラーのURLが取得できた場合
+if ($referer_url) {
+    // リファラーのURLとの比較
+    if (strpos($referer_url, home_url()) !== false) {
+        // リファラーのURLがサイト内のURLだった場合
+        $back_url = $referer_url;
+        $show_back_btn = true;
+    }
+}
+
+// back_btnを表示する場合のみ出力
+if ($show_back_btn) {
+?>
+    <button class="back_btn" onclick="window.location.href='<?php echo $back_url; ?>'">
+        <span><i class="fa-solid fa-arrow-left"></i>back</span>
+    </button>
+<?php
+}
+?>
 </div>
 </main>
 

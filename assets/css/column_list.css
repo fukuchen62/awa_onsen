@@ -44,11 +44,3 @@ a {
 span.current {
     border: 1px;
 }
-
-span {
-    display: inline-block;
-}
-
-.breadcrumb_inner {
-    display: flex
-}
