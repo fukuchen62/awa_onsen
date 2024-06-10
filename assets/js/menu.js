@@ -4,14 +4,16 @@ $(function () {
 
     let nav = $("#pc_nav .navlist");
     nav.addClass("isactive");
+    let footer = $(".footer_wrap");
 
     // メニューのアニメーション
     if ($(window).width() > 1200) {
         $(window).scroll(function () {
-            let columnSection = $(".footer_wrap");
-            let threshold2 = columnSection.offset().top - 500;
+            let scrollTop = $(window).scrollTop(); // ここでscrollTopを取得
+            let windowHeight = $(window).height();
+            let footerTop = footer.offset().top;
 
-            if ($(window).scrollTop() >= threshold2) {
+            if (scrollTop + windowHeight > footerTop) {
                 nav.removeClass("isactive");
             } else {
                 nav.addClass("isactive");
