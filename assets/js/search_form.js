@@ -10,10 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault(); // デフォルトのフォーム送信を防止
             let formData = new FormData(spaForm);
             let searchParams = new URLSearchParams(formData).toString();
+            history.replaceState(null, null, spaForm.action + '?' + searchParams);
             window.location.href = spaForm.action + '?' + searchParams;
-            setTimeout(function () {
-                window.location.href = spaForm.action; // クエリパラメータをクリア
-            }, 1000);
         });
     }
 
@@ -22,10 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             let formData = new FormData(facilityForm);
             let searchParams = new URLSearchParams(formData).toString();
+            history.replaceState(null, null, facilityForm.action + '?' + searchParams);
             window.location.href = facilityForm.action + '?' + searchParams;
-            setTimeout(function () {
-                window.location.href = facilityForm.action;
-            }, 1000);
         });
     }
 
@@ -34,10 +30,15 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             let formData = new FormData(courseForm);
             let searchParams = new URLSearchParams(formData).toString();
+            history.replaceState(null, null, courseForm.action + '?' + searchParams);
             window.location.href = courseForm.action + '?' + searchParams;
-            setTimeout(function () {
-                window.location.href = courseForm.action;
-            }, 1000);
         });
     }
+
+    // クエリパラメータを削除
+    window.addEventListener('load', function () {
+        if (window.location.search) {
+            history.replaceState(null, null, window.location.pathname);
+        }
+    });
 });
