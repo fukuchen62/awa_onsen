@@ -101,7 +101,7 @@
                                     </article>
                             <?php
                                 endwhile;
-                                // wp_reset_postdata();
+                            // wp_reset_postdata();
                             endif;
                             ?>
 
@@ -135,25 +135,25 @@
                         <?php if ($the_query->have_posts()) : ?>
                             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                        <li class="slider_content">
-                            <a href="<?php the_permalink(); ?>">
-                                <!-- 温泉の写真 -->
-                                <div class="slider_img">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                    <?php else : ?>
-                                        <img src="path/to/default-image.jpg" alt="Default Image" />
-                                    <?php endif; ?>
-                                    <span></span>
-                                </div>
-                                <!-- 温泉の名前 -->
-                                <h3><?php the_title(); ?></h3>
-                            </a>
-                        </li>
+                                <li class="slider_content">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <!-- 温泉の写真 -->
+                                        <div class="slider_img">
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                            <?php else : ?>
+                                                <img src="path/to/default-image.jpg" alt="Default Image" />
+                                            <?php endif; ?>
+                                            <span></span>
+                                        </div>
+                                        <!-- 温泉の名前 -->
+                                        <h3><?php the_title(); ?></h3>
+                                    </a>
+                                </li>
                         <?php
                             endwhile;
-                            endif;
-                            ?>
+                        endif;
+                        ?>
                     </ul>
                     <!-- 温泉情報一覧ボタン -->
                     <a class="spa_btn btn shadow section_btn" href="<?php echo home_url('/spa/'); ?>">温泉情報一覧へ<i class="fa-solid fa-list"></i></a>
@@ -176,32 +176,41 @@
                             "order" => "rand", //日付順に並べる
                         );
 
+                        // メニューの種類で絞り込む
+                        $taxquerysp = ["relation" => "AND"];
+                        $taxquerysp[] = [
+                            "taxonomy" => "play",
+                            "terms" => $play->slug,
+                            "field" => "slug",
+                        ];
+
                         //WP_Queryオブジェクトを作成
+                        $args["tax_query"] = $taxquerysp;
                         $the_query = new WP_Query($args);
                         ?>
 
                         <?php if ($the_query->have_posts()) : ?>
                             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                        <li class="slider_content">
-                            <a href="<?php the_permalink(); ?>">
-                                <!-- 温泉の写真 -->
-                                <div class="slider_img">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                    <?php else : ?>
-                                        <img src="path/to/default-image.jpg" alt="Default Image" />
-                                    <?php endif; ?>
-                                    <span></span>
-                                </div>
-                                <!-- 温泉の名前 -->
-                                <h3><?php the_title(); ?></h3>
-                            </a>
-                        </li>
+                                <li class="slider_content">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <!-- 温泉の写真 -->
+                                        <div class="slider_img">
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                            <?php else : ?>
+                                                <img src="path/to/default-image.jpg" alt="Default Image" />
+                                            <?php endif; ?>
+                                            <span></span>
+                                        </div>
+                                        <!-- 温泉の名前 -->
+                                        <h3><?php the_title(); ?></h3>
+                                    </a>
+                                </li>
                         <?php
                             endwhile;
-                            endif;
-                            ?>
+                        endif;
+                        ?>
                     </ul>
                     <!-- 周辺情報一覧へボタン -->
                     <a class="facility_btn btn shadow section_btn" href="<?php echo home_url('facility_type/play/'); ?>">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
@@ -216,8 +225,8 @@
                 <div class="section_content">
                     <ul class="slider">
 
-                                            <!-- カード型 -->
-                                            <?php
+                        <!-- カード型 -->
+                        <?php
                         $args = array(
                             "post_type" => "facility", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
@@ -227,10 +236,13 @@
                         // メニューの種類で絞り込む
                         $taxquerysp = ["relation" => "AND"];
                         $taxquerysp[] = [
-                            "taxonomy" => "shopping",
-                            "terms" => $shopping->slug,
-                            
-                        ]
+                            "taxonomy" => "gourmet",
+                            "terms" => $gourmet->slug,
+                            "field" => "slug",
+                        ];
+
+                        $args["tax_query"] = $taxquerysp;
+                        $the_query = new WP_Query($args);
 
                         //WP_Queryオブジェクトを作成
                         $the_query = new WP_Query($args);
@@ -239,25 +251,25 @@
                         <?php if ($the_query->have_posts()) : ?>
                             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                        <li class="slider_content">
-                            <a href="<?php the_permalink(); ?>">
-                                <!-- 温泉の写真 -->
-                                <div class="slider_img">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                    <?php else : ?>
-                                        <img src="path/to/default-image.jpg" alt="Default Image" />
-                                    <?php endif; ?>
-                                    <span></span>
-                                </div>
-                                <!-- 温泉の名前 -->
-                                <h3><?php the_title(); ?></h3>
-                            </a>
-                        </li>
+                                <li class="slider_content">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <!-- 温泉の写真 -->
+                                        <div class="slider_img">
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                            <?php else : ?>
+                                                <img src="path/to/default-image.jpg" alt="Default Image" />
+                                            <?php endif; ?>
+                                            <span></span>
+                                        </div>
+                                        <!-- 温泉の名前 -->
+                                        <h3><?php the_title(); ?></h3>
+                                    </a>
+                                </li>
                         <?php
                             endwhile;
-                            endif;
-                            ?>
+                        endif;
+                        ?>
                     </ul>
                     <!-- 周辺情報一覧ボタン -->
                     <a class="facility_btn btn shadow section_btn" href="<?php echo home_url('facility_type/gourmet/'); ?>">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
@@ -267,7 +279,7 @@
             <!-- 映え -->
             <section class="section-wrap photo facility">
                 <div class="sticky_note">
-                    <h2 class="section_ttl">映え</h2>
+                    <h2 class="section_ttl">ショッピング</h2>
                 </div>
                 <div class="section_content">
                     <ul class="slider">
