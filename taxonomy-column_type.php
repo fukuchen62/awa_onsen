@@ -30,36 +30,36 @@
                         <?php the_post(); ?>
 
                         <article <?php post_class('news_card'); ?>>
-                            <!-- コラム画像getここから -->
-                            <?php
-                            $pic = get_field('column_pic');
-                            $pic_url = $pic['sizes']['thumbnail'];
-                            ?>
-
-                            <!-- コラム画像getここまで-->
-                            <a href=" <?php the_permalink(); ?>"><img src="<?php echo $pic_url; ?>" alt=""></a>
-                            <div class="news_cintents">
-                                <a href="<?php the_permalink(); ?>">
-                                    <p class="date fugaz-one-regular"><?php echo get_post_time('Y.m.d.D H:i'); ?></p>
-                                    <h6 class="title"><?php the_title(); ?></h6>
-                                </a>
-                                <!-- ハッシュタグ取得記述をする -->
-
-                                <?php
-                                $categories = get_the_category();
-                                if ($categories) : ?>
-
-                                    <div class="hashtag_list">
-
-                                        <?php foreach ($categories as $category) : ?>
-
-                                            <a href="https://fontawesome.com/" class="hashtag"><?php echo $category->name; ?>#fontawesome</a>
-                                            <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
-                                            <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
+                            <!-- アイキャッチ画像表示 -->
+                            <a href=" <?php the_permalink(); ?>">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?php the_title(); ?>"></a>
+                            <!-- アイキャッチ画像ないとき -->
+                        <?php else : ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-thumbnail.jpg" alt="<?php the_title(); ?>" />
                         <?php endif; ?>
+                        <div class="news_cintents">
+                            <a href="<?php the_permalink(); ?>">
+                                <p class="date fugaz-one-regular"><?php echo get_post_time('Y.m.d.D H:i'); ?></p>
+                                <h6 class="title"><?php the_title(); ?></h6>
+                            </a>
+                            <!-- ハッシュタグ取得記述をする -->
+
+                            <?php
+                            $categories = get_the_category();
+                            if ($categories) : ?>
+
+                                <div class="hashtag_list">
+
+                                    <?php foreach ($categories as $category) : ?>
+
+                                        <a href="https://fontawesome.com/" class="hashtag"><?php echo $category->name; ?></a>
+                                        <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
+                                        <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
                         </article>
                     <?php endwhile; ?>
                     <!-- 一つの記事ここまで -->
