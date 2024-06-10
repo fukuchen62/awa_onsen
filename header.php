@@ -20,15 +20,10 @@
                 <!-- headerの左側 -->
                 <!-- 常時表示サイトロゴ -->
                 <a class="logo" href="<?php echo home_url(); ?>">
-                    <img src="<?php echo get_template_directory_uri() ?> ./assets/images/logo.svg" alt="あわあわ温泉ぶらり">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/logo.svg" alt="あわあわ温泉ぶらり">
                 </a>
                 <!-- 上にスクロールするボタン -->
-                <div class="top_button">
-                    <div class="circle">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-                </div>
+                <div class="top_button"></div>
 
                 <!-- sp&tbnav -->
                 <div class="hamburger sp_tb_only"></div>
