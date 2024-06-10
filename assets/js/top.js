@@ -15,12 +15,15 @@ $(function () {
     let top = $(".top_button");
     let aboutSection = $(".about");
     let threshold = aboutSection.offset().top - 50; // ナビゲーションを表示するセクションの位置
-    let columnSection = $(".footer_wrap");
-    let threshold2 = columnSection.offset().top - 500;
+    let footer = $(".footer_wrap");
 
     // メニューのアニメーション
     $(window).scroll(function () {
-        if ($(window).scrollTop() >= threshold) {
+        let scrollTop = $(window).scrollTop(); // ここでscrollTopを取得
+        let windowHeight = $(window).height();
+        let footerTop = footer.offset().top;
+
+        if (scrollTop >= threshold) {
             logo.addClass("isactive");
             top.addClass("isactive");
         } else {
@@ -30,9 +33,9 @@ $(function () {
 
         // 1200px超えたときの指定
         if ($(window).width() > 1200) {
-            if ($(window).scrollTop() >= threshold2) {
+            if (scrollTop + windowHeight > footerTop) {
                 nav.removeClass("isactive");
-            } else if ($(window).scrollTop() >= threshold) {
+            } else if (scrollTop >= threshold) {
                 nav.addClass("isactive");
                 logo.addClass("isactive");
                 top.addClass("isactive");
