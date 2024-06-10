@@ -36,7 +36,7 @@
                     <div class="about_img">
                         <img src="<?php echo get_template_directory_uri() ?>./assets/images/onsen_saru.svg" alt="おさる">
                     </div>
-                    <a class="about_btn btn shadow section_btn" href="about.html">もっと詳しく<i class="fa-solid fa-list"></i></a>
+                    <a class="about_btn btn shadow section_btn" href="<?php echo home_url('/about/'); ?>"">もっと詳しく<i class=" fa-solid fa-list"></i></a>
                 </div>
             </section>
 
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <!-- お知らせ一覧ボタン -->
-                    <a class="about_btn btn shadow section_btn" href="news_list.html">お知らせ一覧へ<i class="fa-solid fa-list"></i></a>
+                    <a class="about_btn btn shadow section_btn" href="<?php echo home_url('/category/news/'); ?>">お知らせ一覧へ<i class=" fa-solid fa-list"></i></a>
                 </div>
             </section>
 
@@ -147,7 +147,7 @@
                         </li>
                     </ul>
                     <!-- 温泉情報一覧ボタン -->
-                    <a class="spa_btn btn shadow section_btn" href="spa_list.html">温泉情報一覧へ<i class="fa-solid fa-list"></i></a>
+                    <a class="spa_btn btn shadow section_btn" href="<?php echo home_url('/spa/'); ?>">温泉情報一覧へ<i class="fa-solid fa-list"></i></a>
                 </div>
             </section>
 
@@ -204,7 +204,7 @@
                         </li>
                     </ul>
                     <!-- 周辺情報一覧へボタン -->
-                    <a class="facility_btn btn shadow section_btn" href="nearby_list.html">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
+                    <a class="facility_btn btn shadow section_btn" href="<?php echo home_url('facility_type/play/'); ?>">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
                 </div>
             </section>
 
@@ -261,7 +261,7 @@
                         </li>
                     </ul>
                     <!-- 周辺情報一覧ボタン -->
-                    <a class="facility_btn btn shadow section_btn" href="nearby_list.html">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
+                    <a class="facility_btn btn shadow section_btn" href="<?php echo home_url('facility_type/gourmet/'); ?>">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
                 </div>
             </section>
 
@@ -318,7 +318,7 @@
                         </li>
                     </ul>
                     <!-- 周辺情報一覧ボタン -->
-                    <a class="facility_btn btn shadow section_btn" href="nearby_list.html">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
+                    <a class="facility_btn btn shadow section_btn" href="<?php echo home_url('facility_type/photogenic/'); ?>">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
                 </div>
             </section>
 
@@ -375,7 +375,7 @@
                         </li>
                     </ul>
                     <!-- モデルコース一覧へ -->
-                    <a class="course_btn btn shadow section_btn" href="course_list.html">モデルコース一覧へ<i class="fa-solid fa-list"></i></a>
+                    <a class="course_btn btn shadow section_btn" href="<?php echo home_url('facility_type/tour/'); ?>">モデルコース一覧へ<i class="fa-solid fa-list"></i></a>
                 </div>
             </section>
 
@@ -446,7 +446,7 @@
                         </div>
                     </div>
                     <!-- お知らせ一覧ボタン -->
-                    <a class="column_btn btn shadow section_btn" href="column_list.html">コラム一覧へ<i class="fa-solid fa-list"></i></a>
+                    <a class="column_btn btn shadow section_btn" href="<?php echo home_url('column_type/spa-column/'); ?>">コラム一覧へ<i class="fa-solid fa-list"></i></a>
                 </div>
             </section>
         </div>

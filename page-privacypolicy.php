@@ -3,7 +3,7 @@
 
 <main class="container">
 
-    <h2 class="under_line">プライバシーポリシー</h2>
+    <h2 class="under_line"><?php the_title(); ?></h2>
 
     <!-- パンくずリスト -->
     <?php get_template_part('template-parts/breadcrumb') ?>
