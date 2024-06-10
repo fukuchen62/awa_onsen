@@ -391,6 +391,7 @@ h2 {
 }
 
 .card a:hover>div img {
+    aspect-ratio: 1/1;
     transform: translate(-3%, 3%);
 }
 
@@ -426,6 +427,28 @@ h2 {
     /* ここはそれぞれのカラー指定 */
     /* background-color: #6BDE4E; */
 }
+
+/* 丸形カード各種bgc */
+
+/* 温泉 */
+.spa span,
+.spa h3 {
+    background-color: #EB97A8;
+}
+
+/* モデルコース */
+.course span,
+.course h3 {
+    background-color: #6BDE4E;
+}
+
+/* 周辺 */
+.facility span,
+.facility h3 {
+    background-color: #F5A200;
+}
+
+
 
 @media (width>=1201px) {
     .article_all {
@@ -546,6 +569,11 @@ h5 {
         line-height: 50px;
         font-size: 1.5rem;
     }
+}
+
+/* 関連するコラム、お知らせ */
+.connection_column {
+    margin-top: 80px;
 }
 
 /*========== header ==========*/

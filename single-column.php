@@ -26,43 +26,40 @@
 
             </div>
 
-            <!-- ハッシュタグ -->
-            <div class=" hashtag_list">
 
+            <!-- ハッシュタグ -->
+            <div class="hashtag_list">
                 <?php
                 // 現在の投稿のIDを取得
-                $post_id = get_the_ID(); ?>
+                $post_id = get_the_ID();
 
-                <?php
                 // 投稿タイプを取得
-                $post_type = get_post_type($post_id); ?>
+                $post_type = get_post_type($post_id);
 
-                <?php
                 // 投稿タイプに関連するタクソノミーを取得
-                $taxonomies = get_object_taxonomies($post_type); ?>
+                $taxonomies = get_object_taxonomies($post_type);
 
-                <?php
-                if (!empty($taxonomies)) : ?>
-                    <?php foreach ($taxonomies as $taxonomy) : ?>
-
-                        <?php
+                if (!empty($taxonomies)) {
+                    foreach ($taxonomies as $taxonomy) {
                         // タクソノミーに関連するタームを取得
                         $terms = get_the_terms($post_id, $taxonomy);
-                        ?>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-                <?php
-                if ($terms && !is_wp_error($terms)) : ?>
-                    <?php
-                    foreach ($terms as $term) : ?>
-                        <a class="hashtag" href="<?php echo "#" . esc_html($term->name); ?>"></a>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-                <!-- <a class="hashtag" href="#">#ああああああ</a>
-                <a class="hashtag" href="#">#ああああああ</a>
-                <a class="hashtag" href="#">#ああああああ</a> -->
-            </div>
 
+                        if ($terms && !is_wp_error($terms)) {
+                            echo '<ul>';
+                            foreach ($terms as $term) {
+                                // echo '<li>';
+                ?>
+                                <a href="https://www.yahoo.co.jp/" class="hashtag"><?php echo '#' . esc_html($term->name); ?></a>
+                <?php
+                            }
+                            echo '</ul>';
+                        } else {
+                        }
+                    }
+                } else {
+                }
+                ?>
+            </div>
 
             <!-- 記事内容 -->
             <p class="column_text"><?php the_field('column_description'); ?></p>
@@ -80,54 +77,6 @@
                 <!-- <textarea rows="10" cols="80" name="comment" id="comment"></textarea><br> -->
             </div>
 
-            <!-- 送信ボタン -->
-            <div class="item">
-                <!-- <input type="submit" value="コメントを送信"> -->
-            </div>
-
-            <div class="item comment_content">
-                <!-- アイコン -->
-                <div class="flex">
-                    <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
-                    <div class="flex_item">
-                        <!-- コメント者名 -->
-                        <p>matsuo saki</p>
-                        <!-- コメント内容 -->
-                        <p>整いました★</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item comment_content">
-                <!-- アイコン -->
-                <div class="flex">
-                    <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
-                    <div class="flex_item">
-                        <!-- コメント者名 -->
-                        <p>yamashita sawaka</p>
-                        <!-- コメント内容 -->
-                        <p>ゆったりできました～</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item comment_content">
-                <!-- アイコン -->
-                <div class="flex">
-                    <img src="../assets/images/user_icon.jpeg" width="30" height="30" alt="アイコン画像">
-                    <div class="flex_item">
-                        <!-- コメント者名 -->
-                        <p>sakuragi sumire</p>
-                        <!-- コメント内容 -->
-                        <p>最高です！</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- もっと見るボタン -->
-            <div class="item more_button">
-                <a href="#">もっと見る▼</a>
-            </div>
 
         </div>
 
@@ -237,26 +186,46 @@
         <!-- ナビゲーション -->
 
         <div class="nav-links">
-            <!-- パージナビゲーション -->
-            <?php if (function_exists('wp_pagenavi')) : ?>
-                <div class="pagination">
-                    <?php wp_pagenavi(); ?>
-                </div>
-            <?php endif; ?>
-            <a class="nav-previous" href="">＜＜前の記事</a>
-            <a class="nav-next" href="">次の記事＞＞</a>
-        </div>
-        <br>
+            <!-- 関連リンクの作成 -->
+            <div class="prevNext flex">
+                <?php
+                $previous_post = get_previous_post();
+                if ($previous_post) :
+                ?>
+                    <div class="prevNext_item prevNext_item-prev">
+                        <a href="<?php the_permalink($previous_post); ?>">
 
+                            <span>
+                                << 前の記事</span>
+                        </a>
+                    </div>
+                <?php endif; ?>
+
+                <div class="prevNext_item prevNext_item-next">
+                    <?php
+                    $next_post = get_next_post();
+                    if ($next_post) :
+                    ?>
+                        <a href="<?php the_permalink($next_post); ?>">
+                            <span>次の記事 >></span>
+
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
         <!-- 前に戻るボタン -->
-        <button class="back_btn" onclick="history.back">
-            <span>
-                <i class="fa-solid fa-arrow-left"></i>back
-            </span>
-        </button>
-    </div>
+        <div>
+            <button class="back_btn" onclick="history.back">
+                <span>
+                    <i class="fa-solid fa-arrow-left"></i>back
+                </span>
+            </button>
+        </div>
+
+
 </main>
 </div>
 
-<!-- footer.phpを読み込む -->
+<!-- footer.phpを読み込む次の記事
 <?php get_footer(); ?>
