@@ -18,13 +18,19 @@
                 <!-- タグ -->
                 <?php
                 // 特定のタクソノミーを指定
-                $taxonomy = 'course_type'; // ここにタクソノミーの名前を指定
+                $taxonomy = 'column_type'; // ここにタクソノミーの名前を指定
 
                 // タクソノミーに属するすべてのタームを取得
                 $terms = get_terms(array(
                     'taxonomy' => $taxonomy,
                     'hide_empty' => false,
                 ));
+
+                // var_dumpで$area_termsを表示
+                echo '<pre>';
+                var_dump($area_terms);
+                echo '</pre>';
+
 
                 if (!empty($terms) && !is_wp_error($terms)) :
                 ?>
