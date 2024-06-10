@@ -40,7 +40,7 @@
         </div>
 
         <div class="btn">
-            <a href="">
+            <a href="<?php echo home_url() ?>/sauna_type/sauna/">
                 <div class="square">
                     サウナのある温泉
                 </div>
@@ -81,48 +81,5 @@
     </div>
 </main>
 
-<footer class="footer_wrap">
-    <div class="footer_container">
-        <ul class="footer_list">
-            <li class="footer_item">
-                <a href="about.html">
-                    <span class="material-symbols-outlined">
-                        bubble_chart
-                    </span>このサイトについて
-                </a>
-            </li>
-            <li class="footer_item">
-                <a href="news_list.html">
-                    <span class="material-symbols-outlined">
-                        fiber_new
-                    </span>お知らせ一覧へ
-                </a>
-            </li>
-            <li class="footer_item">
-                <a href="privacypolicy.html">
-                    <span class="material-symbols-outlined">
-                        verified_user
-                    </span>
-                    <div>免責事項・<br>プライバシーポリシー</div>
-                </a>
-            </li>
-            <li class="footer_item">
-                <a href="form.html">
-                    <span class="material-symbols-outlined">
-                        mail
-                    </span>お問い合わせ(企業様)
-                </a>
-            </li>
-        </ul>
-        <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
-    </div>
-</footer>
-</div>
-<script src="../assets/js/vendor/jquery-3.6.0.min.js"></script>
-
-<script src="../assets/js/common.js"></script>
-<script src="../assets/js/menu.js"></script>
-
-</body>
-
-</html>
+<!-- footer.phpを読み込む -->
+<?php get_footer(); ?>
