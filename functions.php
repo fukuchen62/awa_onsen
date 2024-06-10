@@ -116,6 +116,13 @@ function fs_script_files()
         "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
     );
 
+
+    // 日付に使用するフォントの読み込み
+    wp_enqueue_style(
+        "google-web-fonts-Fugaz",
+        "https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
+    );
+
     // CSSファイルの読み込み
     wp_enqueue_style("awa-onsen-destyle", get_template_directory_uri() . "/assets/css/destyle.css");
     wp_enqueue_style("awa-onsen-common", get_template_directory_uri() . "/assets/css/common.css");
