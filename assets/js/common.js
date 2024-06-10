@@ -23,7 +23,7 @@ $(function () {
 
     // ハンバーガーメニューがアクティブじゃないときにメニューを非表示にする
     nav.addClass("isactive");
-    if ($('.hamburger').hasClass('isactive')){
+    if ($('.hamburger').hasClass('isactive')) {
         nav.addClass("isactive");
     } else {
         nav.removeClass("isactive");
@@ -142,7 +142,7 @@ $(document).ready(function () {
             height: `${size}px`
         });
 
-        const $img = $('<img>').attr('src', '../assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
+        const $img = $('<img>').attr('src', 'awa_onsen/wp-content/themes/assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
             width: '100%',
             height: '100%'
         });

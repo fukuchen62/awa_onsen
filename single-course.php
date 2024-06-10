@@ -101,20 +101,24 @@
                 </div>
                 <div class="model_course1">
                     <!-- 1 -->
-                    <div class="photo">
-                        <div class="clock"><?php the_field('start_time1_1'); ?><br>START</div>
+                    <div class="photo"><a href="<?php the_permalink(); ?>">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('medium'); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.png" alt="<?php the_title(); ?>">
+                            <?php endif; ?>
+                            <h4><?php the_title(); ?></h4>
+                            <!-- スポットの説明 -->
+                            <p><?php the_post_excerpt(); ?></p>
+                        </a>
                     </div>
+
+                    <div class="clock"><?php the_field('start_time1_1'); ?><br>START</div>
                     <div class="square_white"></div>
                     <div class="flex">
                         <div class="time"><?php the_field('stay_time1_1'); ?></div>
-                        <div>
-                            <!-- <p>苔や植物で癒される</p> ※コンテンツ班に要確認-->
-                            <!-- <h4><?php the_field('関数が必要？'); ?></h4> -->
-                        </div>
                     </div>
-                    <p>
-                        <!-- 詳細から文章を持ってくる -->
-                    </p>
+
                     <div class="flex_car">
                         <div class="square_green"></div>
                         <p class="car_tx">徳島駅から車で<?php the_field('move_time1_1'); ?></p>
@@ -148,17 +152,7 @@
                     <div class="flex">
                         <div class="time"><?php the_field('stay_time1_2'); ?></div>
                         <div>
-                            <a href="<?php the_permalink(); ?>">
-                                <div>
-                                    <span></span>
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <?php the_post_thumbnail('medium'); ?>
-                                    <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.png" alt="<?php the_title(); ?>">
-                                    <?php endif; ?>
-                                </div>
-                                <h3><?php the_title(); ?></h3>
-                            </a>
+
                         </div>
                     </div>
                     <p>
@@ -481,6 +475,40 @@
                         }
                         ?>
         </section>
+        <!-- 関連するコラム、お知らせ -->
+        <section class="connection_column">
+            <h5>関連コラム、情報
+            </h5>
+            <article class="news_card column">
+                <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92"><img src="../assets/images/bike.jpg" alt=""></a>
+                <div class="news_cintents">
+                    <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
+                        <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
+                        <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
+                    </a>
+                    <div class="hashtag_list">
+                        <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
+                        <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
+                        <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
+                    </div>
+                </div>
+            </article>
+            <article class="news_card news">
+                <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92"><img src="../assets/images/bike.jpg" alt=""></a>
+                <div class="news_cintents">
+                    <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
+                        <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
+                        <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
+                    </a>
+                    <div class="hashtag_list">
+                        <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
+                        <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
+                        <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
         <!-- バックボタン -->
         <?php
         // 現在のページのURLを取得

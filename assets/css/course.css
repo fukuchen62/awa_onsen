@@ -90,8 +90,8 @@ h4 {
 
 /* photo/photoの白四角の設定 */
 .photo {
-    background-image: url(../images/tooling.jpg);
-    background-size: cover;
+    /* background-image: url(../images/tooling.jpg); */
+    /* background-size: cover; */
     position: relative;
     aspect-ratio: 16/9;
     margin: auto;
