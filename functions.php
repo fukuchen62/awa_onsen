@@ -209,6 +209,7 @@ function fs_script_files()
     if (is_search()) {
         wp_enqueue_style('search-style', get_template_directory_uri() . '/assets/css/search.css');
         wp_enqueue_script('tag-list-script', get_template_directory_uri() . '/assets/js/tag_list.js');
+        wp_enqueue_script('form-script', get_template_directory_uri() . '/assets/js/form.js');
     }
 
     // 固定ページ用のCSSとJSの読み込み
