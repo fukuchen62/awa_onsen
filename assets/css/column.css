@@ -116,3 +116,13 @@ h5 {
     height: 40px;
     width: 65px;
 }
+
+.wpulike,
+.comment-meta,
+.says {
+    display: none;
+}
+
+.children {
+    margin-left: 100px;
+}

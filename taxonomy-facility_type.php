@@ -11,16 +11,41 @@
             <!-- パンくずリスト -->
             <?php get_template_part('template-parts/breadcrumb') ?>
 
+            <?php
+            // 特定のタクソノミーを指定
+            $taxonomy = 'facility_type'; // ここにタクソノミーの名前を指定
+
+            // タクソノミーに属するすべてのタームを取得
+            $terms = get_terms(array(
+                'taxonomy' => $taxonomy,
+                'hide_empty' => false,
+            ));
+
+            if (!empty($terms) && !is_wp_error($terms)) :
+            ?>
+                <ul class="tag element04">
+                    <?php foreach ($terms as $term) :
+                        // タームのリンクを取得
+                        $term_link = get_term_link($term);
+                        // 現在のタームと一致するか確認
+                        $is_active = (is_tax($taxonomy, $term->term_id)) ? 'active' : '';
+                    ?>
+                        <li class="<?php echo esc_attr($is_active); ?>">
+                            <a href="<?php echo esc_url($term_link); ?>"><?php echo esc_html($term->name); ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php
+            endif;
+            ?>
             <!-- タグメニュー(更新松尾) -->
-            <ul class="tag element04">
+            <!-- <ul class="tag element04">
                 <li><a href="<?php echo home_url('/facility_type/shopping/'); ?>">ショッピング</a></li>
                 <li><a href="<?php echo home_url('/facility_type/gourmet/'); ?>">グルメ</a></li>
                 <li><a href="<?php echo home_url('/facility_type/play/'); ?>">遊ぶ</a></li>
                 <li><a href="<?php echo home_url('/facility_type/stay/'); ?>">泊まる</a></li>
-            </ul>
+            </ul> -->
 
-            <!-- アコーディオン -->
-            <!-- アコーディオン -->
             <?php
             // カテゴリーごとに投稿を表示
             $categories = array('east');

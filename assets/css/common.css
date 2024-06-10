@@ -393,8 +393,9 @@ h2 {
     position: relative;
     object-fit: cover;
     object-position: center center;
-    aspect-ratio: 1/1;
     width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     transition: 0.7s;
 }
@@ -825,7 +826,7 @@ h5 {
 }
 
 .footer_list {
-    width: 240px;
+    width: 250px;
     margin: 0 auto;
 }
 
