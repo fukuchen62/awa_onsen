@@ -64,16 +64,16 @@
                  <div class="btn">
                      <!-- カスタム投稿タイプ指定 -->
                      <input type="hidden" name="post_type" value="spa" />
-                     <!-- 検索 -->
-                     <label class="submit">
-                         <button type="submit" id="searchsubmit">
-                             <span><i class="fa-solid fa-magnifying-glass"></i>検索</span>
-                         </button>
-                     </label>
                      <!-- リセット -->
                      <label class="reset">
                          <button type="button" onclick="document.getElementById('searchform-spa').reset();">
                              <span>リセット</span>
+                         </button>
+                     </label>
+                     <!-- 検索 -->
+                     <label class="submit">
+                         <button type="submit" id="searchsubmit">
+                             <span><i class="fa-solid fa-magnifying-glass"></i>検索</span>
                          </button>
                      </label>
                  </div>
@@ -131,16 +131,16 @@
                  <div class="btn">
                      <!-- カスタム投稿タイプ指定 -->
                      <input type="hidden" name="post_type" value="facility" />
-                     <!-- 検索 -->
-                     <label class="submit">
-                         <button type="submit" id="searchsubmit">
-                             <span><i class="fa-solid fa-magnifying-glass"></i>検索</span>
-                         </button>
-                     </label>
                      <!-- リセット -->
                      <label class="reset">
                          <button type="button" onclick="document.getElementById('searchform-facility').reset();">
                              <span>リセット</span>
+                         </button>
+                     </label>
+                     <!-- 検索 -->
+                     <label class="submit">
+                         <button type="submit" id="searchsubmit">
+                             <span><i class="fa-solid fa-magnifying-glass"></i>検索</span>
                          </button>
                      </label>
                  </div>
@@ -166,7 +166,7 @@
                              <label class="checkbox-item">
                                  <input type="checkbox" name="area_course[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
                                  <span><?php echo esc_html($term->name); ?></span>
-                             </label>
+                             </label><br>
                      <?php
                             endforeach;
                         endif;
@@ -188,7 +188,7 @@
                              <label class="checkbox-item">
                                  <input type="checkbox" name="course_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_course_type_terms)); ?>>
                                  <span><?php echo esc_html($term->name); ?></span>
-                             </label>
+                             </label><br>
                      <?php
                             endforeach;
                         endif;
@@ -198,16 +198,16 @@
                  <div class="btn">
                      <!-- カスタム投稿タイプ指定 -->
                      <input type="hidden" name="post_type" value="course" />
-                     <!-- 検索 -->
-                     <label class="submit">
-                         <button type="submit" id="searchsubmit">
-                             <span><i class="fa-solid fa-magnifying-glass"></i>検索</span>
-                         </button>
-                     </label>
                      <!-- リセット -->
                      <label class="reset">
                          <button type="button" onclick="document.getElementById('searchform-course').reset();">
                              <span>リセット</span>
+                         </button>
+                     </label>
+                     <!-- 検索 -->
+                     <label class="submit">
+                         <button type="submit" id="searchsubmit">
+                             <span><i class="fa-solid fa-magnifying-glass"></i>検索</span>
                          </button>
                      </label>
                  </div>

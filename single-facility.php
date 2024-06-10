@@ -177,52 +177,62 @@
 
         <section>
             <h5>こちらもいかがでしょうか？</h5>
-            <div class="recommend_list">
-                <article class="card">
-                    <a href="#">
-                        <div>
-                            <span></span>
-                            <img src="../assets/images/onsen_img.jpg" alt="">
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                    </a>
-                </article>
-                <article class="card">
-                    <a href="#">
-                        <div>
-                            <span></span>
-                            <img src="../assets/images/onsen_img.jpg" alt="">
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                    </a>
-                </article>
-                <article class="card">
-                    <a href="#">
-                        <div>
-                            <span></span>
-                            <img src="../assets/images/onsen_img.jpg" alt="">
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                    </a>
-                </article>
-                <article class="card">
-                    <a href="#">
-                        <div>
-                            <span></span>
-                            <img src="../assets/images/onsen_img.jpg" alt="">
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                    </a>
-                </article>
-                <article class="card">
-                    <a href="#">
-                        <div>
-                            <span></span>
-                            <img src="../assets/images/onsen_img.jpg" alt="">
-                        </div>
-                        <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
-                    </a>
-                </article>
+            <!-- カード型 -->
+            <div class="article_all">
+                <?php
+                // ループの回数を定義
+                $loop_count = 4;
+
+                // すべてのカスタム投稿タイプを取得
+                $custom_post_types = get_post_types(array('_builtin' => false));
+
+                for ($i = 1; $i <= $loop_count; $i++) {
+                    // カスタムフィールドの名前を生成
+                    $field_name = 'url' . $i;
+                    $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
+
+                    if ($slug) {
+                        // カスタムクエリで投稿を検索
+                        $args = array(
+                            'name' => $slug,
+                            'post_type' => $custom_post_types,
+                            'post_status' => 'publish',
+                            'numberposts' => 1
+                        );
+
+                        $posts = get_posts($args);
+
+                        if (!empty($posts)) {
+                            $post = $posts[0]; // 最初の投稿を取得
+                            setup_postdata($post);
+
+                            // 投稿情報を取得
+                            $post_id = $post->ID;
+                            $post_title = get_the_title($post_id);
+                            $post_link = get_permalink($post_id);
+                            $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+                ?>
+                            <article class="card">
+                                <a href="<?php echo esc_url($post_link); ?>">
+                                    <div>
+                                        <span></span>
+                                        <?php if ($post_thumbnail) : ?>
+                                            <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                        <?php endif; ?>
+                                    </div>
+                                    <h3><?php echo esc_html($post_title); ?></h3>
+                                </a>
+                            </article>
+                <?php
+                            wp_reset_postdata();
+                        } else {
+                            echo '<p>No posts found.</p>';
+                        }
+                    } else {
+                    }
+                }
+                ?>
+
             </div>
         </section>
 

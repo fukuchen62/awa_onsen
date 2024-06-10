@@ -101,46 +101,43 @@
                 </div>
                 <div class="model_course1">
                     <!-- 1 -->
-                    <div class="photo"><a href="<?php the_permalink(); ?>">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('medium'); ?>
-                            <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.png" alt="<?php the_title(); ?>">
-                            <?php endif; ?>
-                            <h4><?php the_title(); ?></h4>
-                            <!-- スポットの説明 -->
-                            <p><?php the_excerpt(); ?></p>
+                    <div class="block">
+                        <a href="<?php the_permalink(); ?>">
+                            <img src="<?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('medium'); ?>" alt="<?php the_title(); ?>">
+                        <?php else : ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.png" alt="<?php the_title(); ?>">
+                        <?php endif; ?>
+                        <h4><?php the_title(); ?></h4>
+                        <!-- スポットの説明 -->
+                        <p><?php the_excerpt(); ?></p>
                         </a>
                     </div>
 
                     <div class="clock"><?php the_field('start_time1_1'); ?><br>START</div>
                     <div class="square_white"></div>
-                    <div class="flex">
+                    <div class="flex_left">
                         <div class="time"><?php the_field('stay_time1_1'); ?></div>
                     </div>
 
                     <div class="flex_car">
                         <div class="square_green"></div>
                         <p class="car_tx">徳島駅から車で<?php the_field('move_time1_1'); ?></p>
-                    </div>
-                    <div class="flex_car">
-                        <div class="square_green"></div>
-                        <p class="car_tx">公式HP：
-                            <?php
-                            // カスタムフィールドの値を取得
-                            $official_website = get_field('course_url1');
+                        <p>公式HP：<?php
+                                // カスタムフィールドの値を取得
+                                $official_website = get_field('course_url1');
 
-                            // 公式HPがあれば、リンクを表示
-                            if (!empty($official_website)) {
-                                echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
-                            } else {
-                                // 公式HPがなければ、メッセージを表示
-                                echo '<p>公式HPはありません。</p>';
-                            }
-                            ?></p>
-                    </div>
+                                // 公式HPがあれば、リンクを表示
+                                if (!empty($official_website)) {
+                                    echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
+                                } else {
+                                    // 公式HPがなければ、メッセージを表示
+                                    echo '<p>公式HPはありません。</p>';
+                                }
+                                ?></p>
+                    </div>0
 
-                    <!-- 2 -->
+                    <!-- 2
                     <div class="flex">
                         <div class="car_green"></div>
                         <p class="car_10">車で<?php the_field('move_time1_2'); ?></p>
@@ -151,31 +148,30 @@
                     <div class="square_white"></div>
                     <div class="flex">
                         <div class="time"><?php the_field('stay_time1_2'); ?></div>
-                        <div>
 
-                        </div>
                     </div>
-                    <p>
-                        ここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
-                    </p>
+                </div>
+                <p>
+                    ここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
+                </p>
 
-                    <div class="flex_car">
-                        <div class="square_green"></div>
-                        <p class="car_tx">公式HP：<?php
-                                                // カスタムフィールドの値を取得
-                                                $official_website = get_field('course_url2');
+                <div class="flex_car">
+                    <div class="square_green"></div>
+                    <p class="car_tx">公式HP：<?php
+                                            // カスタムフィールドの値を取得
+                                            $official_website = get_field('course_url2');
 
-                                                // 公式HPがあれば、リンクを表示
-                                                if (!empty($official_website)) {
-                                                    echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
-                                                } else {
-                                                    // 公式HPがなければ、メッセージを表示
-                                                    echo '<p>公式HPはありません。</p>';
-                                                }
-                                                ?></p>
-                    </div>
+                                            // 公式HPがあれば、リンクを表示
+                                            if (!empty($official_website)) {
+                                                echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
+                                            } else {
+                                                // 公式HPがなければ、メッセージを表示
+                                                echo '<p>公式HPはありません。</p>';
+                                            }
+                                            ?></p>
+                </div>
 
-                    <!-- 3 -->
+                <!-- 3 -->
                     <div class="flex">
                         <div class="car_green"></div>
                         <p class="car_10">車で<?php the_field('move_time1_3'); ?></p>
@@ -419,7 +415,7 @@
                     <!-- 関連店舗 -->
                     <h5>今回の関連店舗はこちら</h5>
                     <!-- カード型 -->
-                    <article class="card orange">
+                    <div class="article_all">
                         <?php
                         // ループの回数を定義
                         $loop_count = 4;
@@ -474,9 +470,11 @@
                             }
                         }
                         ?>
-        </section>
+
+                    </div>
+        </section> -->
         <!-- 関連するコラム、お知らせ -->
-        <section class="connection_column">
+        <!-- <section class="connection_column">
             <h5>関連コラム、情報
             </h5>
             <article class="news_card column">
@@ -507,7 +505,7 @@
                     </div>
                 </div>
             </article>
-        </section>
+        </section> -->
 
         <!-- バックボタン -->
         <?php
