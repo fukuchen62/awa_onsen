@@ -40,7 +40,7 @@
         </div>
 
         <div class="btn">
-            <a href="<?php echo home_url('ac_sauna') ?>">
+            <a href="<?php echo home_url() ?>/sauna_type/sauna/">
                 <div class="square">
                     サウナのある温泉
                 </div>
