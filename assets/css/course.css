@@ -88,14 +88,8 @@ h4 {
     left: 120%;
 }
 
-/* photo/photoの白四角の設定 */
-.photo {
-    /* background-image: url(../images/tooling.jpg); */
-    /* background-size: cover; */
-    position: relative;
+.block img {
     aspect-ratio: 16/9;
-    margin: auto;
-    z-index: 1;
 }
 
 .position {

@@ -12,8 +12,12 @@
             <!-- パンくずリスト -->
             <?php get_template_part('template-parts/breadcrumb'); ?>
 
+
+
             <!-- WordPressのルールの開始 -->
             <?php if (have_posts()) : ?>
+
+
 
                 <!-- タグ -->
                 <?php
@@ -25,11 +29,6 @@
                     'taxonomy' => $taxonomy,
                     'hide_empty' => false,
                 ));
-
-                // var_dumpで$area_termsを表示
-                echo '<pre>';
-                var_dump($area_terms);
-                echo '</pre>';
 
 
                 if (!empty($terms) && !is_wp_error($terms)) :
