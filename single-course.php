@@ -124,7 +124,7 @@
                         <p class="car_tx">公式HP：
                             <?php
                             // カスタムフィールドの値を取得
-                            $official_website = get_field('カスタムフィールド名');
+                            $official_website = get_field('course_url1');
 
                             // 公式HPがあれば、リンクを表示
                             if (!empty($official_website)) {
@@ -148,8 +148,17 @@
                     <div class="flex">
                         <div class="time"><?php the_field('stay_time1_2'); ?></div>
                         <div>
-                            <p>苔や植物で癒される</p>
-                            <h4>こんまい屋</h4>
+                            <a href="<?php the_permalink(); ?>">
+                                <div>
+                                    <span></span>
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('medium'); ?>
+                                    <?php else : ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.png" alt="<?php the_title(); ?>">
+                                    <?php endif; ?>
+                                </div>
+                                <h3><?php the_title(); ?></h3>
+                            </a>
                         </div>
                     </div>
                     <p>
@@ -160,7 +169,7 @@
                         <div class="square_green"></div>
                         <p class="car_tx">公式HP：<?php
                                                 // カスタムフィールドの値を取得
-                                                $official_website = get_field('カスタムフィールド名');
+                                                $official_website = get_field('course_url2');
 
                                                 // 公式HPがあれば、リンクを表示
                                                 if (!empty($official_website)) {
@@ -196,7 +205,7 @@
                         <div class="square_green"></div>
                         <p class="car_tx">公式HP：<?php
                                                 // カスタムフィールドの値を取得
-                                                $official_website = get_field('カスタムフィールド名');
+                                                $official_website = get_field('course_url3');
 
                                                 // 公式HPがあれば、リンクを表示
                                                 if (!empty($official_website)) {
@@ -232,7 +241,7 @@
                         <div class="square_green"></div>
                         <p class="car_tx">公式HP：<?php
                                                 // カスタムフィールドの値を取得
-                                                $official_website = get_field('カスタムフィールド名');
+                                                $official_website = get_field('course_url4');
 
                                                 // 公式HPがあれば、リンクを表示
                                                 if (!empty($official_website)) {
@@ -268,7 +277,7 @@
                         <div class="square_green"></div>
                         <p class="car_tx">公式HP：<?php
                                                 // カスタムフィールドの値を取得
-                                                $official_website = get_field('カスタムフィールド名');
+                                                $official_website = get_field('course_url5');
 
                                                 // 公式HPがあれば、リンクを表示
                                                 if (!empty($official_website)) {
