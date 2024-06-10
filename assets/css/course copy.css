@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+* {
+    border: 1px solid red;
+}
+
+
+/* -----------------------
+base
+-------------------------- */
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-top: 32px;
+}
+
+/* タグ */
+.hashtag_list {
+    margin: 20px 0;
+    justify-content: flex-start;
+}
+
+/* Bold */
+h3 {
+    font-weight: 900;
+}
+
+h3::after,
+h3::before {
+    content: "";
+    display: block;
+    border-bottom: 1px solid black;
+}
+
+h4 {
+    font-weight: 900;
+}
+
+.day1 {
+    display: flex;
+}
+
+/* テスト */
+.time_schedule {
+    width: 30%;
+    background-color: gray;
+}
+
+.spot_list {
+    width: 70%;
+    padding: 20px;
+}
+
+/* カード型 */
+.spot_card {
+    background-color: pink;
+    margin-top: 32px;
+}
+
+.spot_card dl dt::before,
+.spot_card p:nth-of-type(2)::before {
+    content: '';
+    background-color: #6BDE4E;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.spot_card * {
+    margin: 4px;
+}
+
+/*
+.spot_card dl dt {
+    display: inline;
+    background-color: #6BDE4E;
+} */
+
+.spot_card img {
+    aspect-ratio: 16/9;
+    margin: 0 auto;
+}
+
+.ttl_list {
+    display: flex;
+}
+
+.ttl_list>.time {
+    background-color: #6BDE4E;
+    height: 64px;
+    aspect-ratio: 1/1;
+    text-align: center;
+    line-height: 64px;
+    color: white;
+    margin-right: 16px;
+    border-radius: 10px;
+}
+
+.ttl_list h4>span {
+    display: block;
+    font-weight: normal;
+}
+
+.icon {
+    text-align: center;
+    margin-top: 32px;
+
+    /* 車アイコンの基準 */
+    position: relative;
+}
+
+.icon::before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/car.svg);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+
+}

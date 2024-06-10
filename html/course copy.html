@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ラフティングコース</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- googleicon CDN -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- slick CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="../assets/css/destyle.css">
+    <!-- common.css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- top.css -->
+    <link rel="stylesheet" href="../assets/css/course copy.css">
+</head>
+
+<body>
+    <div class="bubble_background">
+        <!-- header -->
+        <header class="header_wrap">
+            <div class="header_container">
+                <!-- headerの左側 -->
+                <!-- 常時表示サイトロゴ -->
+                <a class="logo" href="index.html">
+                    <img src="../assets/images/logo.svg" alt="あわあわ温泉ぶらり">
+                </a>
+                <!-- 上にスクロールするボタン -->
+                <div class="top_button">
+                    <div class="circle">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <!-- sp&tbnav -->
+                <div class="hamburger sp_tb_only"></div>
+            </div>
+            <!-- menu -->
+            <nav class="sp_nav sp_tb_only">
+                <div class="navlist">
+                    <div class="nav_bg"></div>
+                    <ul class="navlist_container">
+                        <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                                    bubble_chart
+                                </span>TOP</a></li>
+                        <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                                    bath_outdoor
+                                </span>温泉一覧</a></li>
+                        <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                                    pin_drop
+                                </span>周辺一覧</a></li>
+                        <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                                    directions_walk
+                                </span>モデルコース</a></li>
+                        <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                                    sauna
+                                </span>サ活</a></li>
+                        <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                                    border_color
+                                </span>コラム</a></li>
+                        <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                                    search
+                                </span>検索</a></li>
+                        <li class="navlist_item"><a href="mypage.html"><span class="material-symbols-outlined">
+                                    home
+                                </span>マイページ</a></li>
+                    </ul>
+                    <div class="nav_bg"></div>
+                </div>
+            </nav>
+            <!-- pcnav -->
+            <div class="pc_inner">
+                <nav class="g_nav pc_only" id="pc_nav">
+                    <div class="navlist">
+                        <div class="nav_bg"></div>
+                        <ul class="navlist_container">
+                            <li class="navlist_item"><a href="index.html"><span class="material-symbols-outlined">
+                                        bubble_chart
+                                    </span>TOP</a></li>
+                            <li class="navlist_item"><a href="spa_list.html"><span class="material-symbols-outlined">
+                                        bath_outdoor
+                                    </span>温泉一覧</a></li>
+                            <li class="navlist_item"><a href="nearby_list.html"><span class="material-symbols-outlined">
+                                        pin_drop
+                                    </span>周辺一覧</a></li>
+                            <li class="navlist_item"><a href="course_list.html"><span class="material-symbols-outlined">
+                                        directions_walk
+                                    </span>モデルコース</a></li>
+                            <li class="navlist_item"><a href="sauna.html"><span class="material-symbols-outlined">
+                                        sauna
+                                    </span>サ活</a></li>
+                            <li class="navlist_item"><a href="column_list.html"><span class="material-symbols-outlined">
+                                        border_color
+                                    </span>コラム</a></li>
+                            <li class="navlist_item"><a href="search.html"><span class="material-symbols-outlined">
+                                        search
+                                    </span>検索</a></li>
+                            <li class="navlist_item"><a href="mypage.html"><span class="material-symbols-outlined">
+                                        home
+                                    </span>マイページ</a></li>
+                        </ul>
+                        <div class="nav_bg"></div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+
+        <!-- パンくずリスト -->
+        <main class="pc_inner">
+            <div class="container">
+
+
+                <!-- タイムスケジュール始まり -->
+
+
+                <!-- タイトル -->
+                <div class="flex">
+                    <h2 class="under_line">ラフティングコース</h2>
+                </div>
+
+                <!-- マップ -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3304.8244127699095!2d134.5490914740415!3d34.07401511658322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x35536d61db2c1d09%3A0x71e52b4aae9d02c!2z5b6z5bO255yM5b6z5bO25biC5a-65bO25pys55S66KW_77yR5LiB55uuIOW-s-WztumnhQ!3m2!1d34.0744574!2d134.5513574!4m5!1s0x35536d61a9b3083f%3A0x55449d0bb908b4b2!2z44CSNzcwLTA4MzIg5b6z5bO255yM5b6z5bO25biC5a-65bO25pys55S65p2x77yT5LiB55uu77yR77yS4oiS77yYIOOCr-ODquODg-ODl--8iO-8se-8rO-8qe-8sO-8ieODl-ODreOCsOODqeODn-ODs-OCsOOCueOCr-ODvOODqw!3m2!1d34.073564!2d134.552449!5e0!3m2!1sja!2sjp!4v1717580281958!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+                <!-- タグ -->
+                <div class="hashtag_list">
+                    <a class="hashtag">#ああああああ</a>
+                    <a class="hashtag">#ああああああ</a>
+                    <a class="hashtag">#ああああああ</a>
+                    <a class="hashtag">#ああああああ</a>
+                </div>
+
+                <!-- 概要 -->
+                <div class="summary">
+                    <h3>Summary</h3>
+                    <p>ここにモデルコースの概要説明が入ります。ここにモデルコースの概要説明が入ります。ここにモデルコースの概要説明が入ります。ここにモデルコースの概要説明が入ります。ここにモデルコースの概要説明が入ります。ここにモデルコースの概要説明が入ります。ここにモデルコースの概要説明が入ります。</p>
+                </div>
+
+                <!-- 1日目 -->
+                <h3>DAY1</h3>
+                <div class="day1">
+                    <!-- PC幅の時に表示される左側の時間軸 -->
+                    <div class="time_schedule"></div>
+
+                    <!-- １日目の訪問場所 -->
+                    <div class="spot_list">
+
+                        <!-- カード型 -->
+                        <article class="spot_card">
+
+                            <!-- 画像 -->
+                            <img src="../assets/images/onsen_img.jpg" alt="">
+
+                            <!-- タイトル -->
+                            <div class="ttl_list">
+                                <div class="time">60分</div>
+                                <h4><span>苔や植物で癒される</span>こんまい屋</h4>
+                            </div>
+
+                            <!-- 説明 -->
+                            <p>ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。</p>
+
+                            <!-- 1件目のスポットのみ -->
+                            <p>徳島駅から車で２０分</p>
+                            <dl>
+                                <!-- 公式HPあれば表示 -->
+                                <dt>公式HP</dt>
+                                <dd><a href="https://www.youtube.com/@shimashimarisu">https://www.youtube.com/@shimashimarisu</a></dd>
+                            </dl>
+
+                            <!-- 次に向かうスポットがあれば表示 -->
+                            <p class="icon">車で１０分</p>
+
+                        </article>
+
+                        <!-- カード型 -->
+                        <article class="spot_card">
+
+                            <!-- 画像 -->
+                            <img src="../assets/images/onsen_img.jpg" alt="">
+
+                            <!-- タイトル -->
+                            <div class="ttl_list">
+                                <div class="time">60分</div>
+                                <h4><span>苔や植物で癒される</span>こんまい屋</h4>
+                            </div>
+
+                            <!-- 説明 -->
+                            <p>ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。</p>
+
+                            <!-- 1件目のスポットのみ -->
+                            <p>徳島駅から車で２０分</p>
+                            <dl>
+                                <!-- 公式HPあれば表示 -->
+                                <dt>公式HP</dt>
+                                <dd><a href="https://www.youtube.com/@shimashimarisu">https://www.youtube.com/@shimashimarisu</a></dd>
+                            </dl>
+
+                            <!-- 次に向かうスポットがあれば表示 -->
+                            <p class="icon">車で１０分</p>
+
+                        </article>
+
+                        <!-- カード型 -->
+                        <article class="spot_card">
+
+                            <!-- 画像 -->
+                            <img src="../assets/images/onsen_img.jpg" alt="">
+
+                            <!-- タイトル -->
+                            <div class="ttl_list">
+                                <div class="time">60分</div>
+                                <h4><span>苔や植物で癒される</span>こんまい屋</h4>
+                            </div>
+
+                            <!-- 説明 -->
+                            <p>ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。ここにこんまい屋の説明が入ります。</p>
+
+                            <!-- 1件目のスポットのみ -->
+                            <p>徳島駅から車で２０分</p>
+                            <dl>
+                                <!-- 公式HPあれば表示 -->
+                                <dt>公式HP</dt>
+                                <dd><a href="https://www.youtube.com/@shimashimarisu">https://www.youtube.com/@shimashimarisu</a></dd>
+                            </dl>
+
+                            <!-- 次に向かうスポットがあれば表示 -->
+                            <p class="icon">車で１０分</p>
+
+                        </article>
+                    </div>
+                </div>
+
+
+
+
+                <!-- 関連するコラム、お知らせ -->
+                <section class=" connection_column">
+                    <h5>関連コラム、情報
+                                    </h5>
+                    <article class="news_card column">
+                        <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92"><img src="../assets/images/bike.jpg" alt=""></a>
+                        <div class="news_cintents">
+                            <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
+                                <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
+                                <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
+                            </a>
+                            <div class="hashtag_list">
+                                <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
+                                <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
+                                <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="news_card news">
+                        <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92"><img src="../assets/images/bike.jpg" alt=""></a>
+                        <div class="news_cintents">
+                            <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
+                                <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
+                                <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
+                            </a>
+                            <div class="hashtag_list">
+                                <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
+                                <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
+                                <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- 戻るボタン -->
+                <button class="back_btn" onclick="history.back">
+                    <span><i class="fa-solid fa-arrow-left"></i>back</span>
+                </button>
+            </div>
+        </main>
+
+        <footer class="footer_wrap">
+            <div class="footer_container">
+                <ul class="footer_list">
+                    <li class="footer_item">
+                        <a href="about.html">
+                            <span class="material-symbols-outlined">
+                                bubble_chart
+                            </span>このサイトについて
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="news_list.html">
+                            <span class="material-symbols-outlined">
+                                fiber_new
+                            </span>お知らせ一覧へ
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="privacypolicy.html">
+                            <span class="material-symbols-outlined">
+                                verified_user
+                            </span>
+                            <div>免責事項・<br>プライバシーポリシー</div>
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="form.html">
+                            <span class="material-symbols-outlined">
+                                mail
+                            </span>お問い合わせ(企業様)
+                        </a>
+                    </li>
+                </ul>
+                <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+            </div>
+        </footer>
+
+
+    </div>
+    <!-- javascriptの読み込み -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/menu.js"></script>
+
+</body>
+</html>
