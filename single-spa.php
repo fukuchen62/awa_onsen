@@ -352,6 +352,43 @@
                 </article>
             </div>
         </section>
+
+        <!-- 関連するコラム、お知らせ -->
+        <section class="connection_column">
+            <h5>関連コラム、情報
+            </h5>
+            <article class="news_card column">
+                <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
+                    <img src="<?php echo get_template_directory_uri() ?>" alt=""></a>
+                <div class="news_cintents">
+                    <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
+                        <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
+                        <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
+                    </a>
+                    <div class="hashtag_list">
+                        <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
+                        <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
+                        <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
+                    </div>
+                </div>
+            </article>
+            <article class="news_card news">
+                <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92"><img src="<?php echo get_template_directory_uri() ?>" alt=""></a>
+                <div class="news_cintents">
+                    <a href="http://bzclass.bizan.com/adm/mainte.asp?comp_id=1&koza_id=92">
+                        <p class="date fugaz-one-regular">2024.06.05.mon 10:00</p>
+                        <h6 class="title">講習会管理システムのログイン画面にいきます！</h6>
+                    </a>
+                    <div class="hashtag_list">
+                        <a href="https://fontawesome.com/" class="hashtag">#fontawesome</a>
+                        <a href="https://cdnjs.com/" class="hashtag">#cdn</a>
+                        <a href="https://tech-unlimited.com/color.html" class="hashtag">#ジェネレーター</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+
         <?php
         // 現在のページのURLを取得
         $current_url = home_url(add_query_arg(array(), $wp->request));
