@@ -49,6 +49,10 @@ li>a {
     border-radius: 50px;
 }
 
+.tag li:nth-child(1) {
+    letter-spacing: -0.2rem;
+}
+
 @media(width>=757px) {
 
     li>a {
