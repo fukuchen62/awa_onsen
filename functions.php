@@ -143,8 +143,11 @@ function fs_script_files()
     // );
 
     wp_enqueue_script("awa-onsen-common", get_template_directory_uri() . "/assets/js/common.js");
-    wp_enqueue_script("awa-onsen-menu", get_template_directory_uri() . "/assets/js/menu.js");
 
+    // toppageだけ読み込みたくない
+    if (!is_front_page()) {
+        wp_enqueue_script("awa-onsen-menu", get_template_directory_uri() . "/assets/js/menu.js");
+    }
 
     // フロントページ用のCSSとJSを読み込む
     if (is_front_page()) {

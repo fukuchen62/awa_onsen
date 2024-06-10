@@ -305,7 +305,7 @@
         <section>
             <h3>こちらもいかがでしょうか？</h3>
             <div class="recommend_list">
-                <article class="card">
+                <article class="card spa">
                     <a href="#">
                         <div>
                             <span></span>
@@ -314,7 +314,7 @@
                         <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
                     </a>
                 </article>
-                <article class="card">
+                <article class="card spa">
                     <a href="#">
                         <div>
                             <span></span>
@@ -323,7 +323,7 @@
                         <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
                     </a>
                 </article>
-                <article class="card">
+                <article class="card course">
                     <a href="#">
                         <div>
                             <span></span>
@@ -332,7 +332,7 @@
                         <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
                     </a>
                 </article>
-                <article class="card">
+                <article class="card facility">
                     <a href="#">
                         <div>
                             <span></span>
@@ -341,7 +341,7 @@
                         <h3>峡谷の湯宿 大歩危峡まんなか 大歩危温泉</h3>
                     </a>
                 </article>
-                <article class="card">
+                <article class="card facility">
                     <a href="#">
                         <div>
                             <span></span>
