@@ -1,7 +1,7 @@
 <!-- header.phpを読み込む -->
 <?php get_header(); ?>
 
-<main class="pc_innner">
+<main class="pc_inner">
     <div class="container">
 
         <section>
