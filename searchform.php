@@ -166,7 +166,7 @@
                              <label class="checkbox-item">
                                  <input type="checkbox" name="area_course[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
                                  <span><?php echo esc_html($term->name); ?></span>
-                             </label><br>
+                             </label>
                      <?php
                             endforeach;
                         endif;
@@ -188,7 +188,7 @@
                              <label class="checkbox-item">
                                  <input type="checkbox" name="course_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_course_type_terms)); ?>>
                                  <span><?php echo esc_html($term->name); ?></span>
-                             </label><br>
+                             </label>
                      <?php
                             endforeach;
                         endif;
