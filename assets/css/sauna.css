@@ -76,6 +76,8 @@ base
     right: -3%;
 }
 
+
+
 /* 小見出しとpタグの位置 */
 .box {
     display: flex;
@@ -185,6 +187,7 @@ logo
 
     .right {
         flex-direction: row-reverse;
+        margin-top: 50px;
     }
 
     .left {
