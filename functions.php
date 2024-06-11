@@ -301,6 +301,20 @@ add_action('wp_enqueue_scripts', 'fs_script_files');
 // );
 ?>
 
+<!-- お気に入り -->
+<?php
+function get_user_favorites_post_ids()
+{
+    if (function_exists('get_user_favorites')) {
+        $user_favorites = get_user_favorites();
+        if (!empty($user_favorites)) {
+            return $user_favorites;
+        }
+    }
+    return [];
+}
+?>
+
 <?php
 /**
  * Contact form 7のときには、整形機能をOffにする

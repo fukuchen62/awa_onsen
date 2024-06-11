@@ -17,7 +17,6 @@ get_header();
         <!-- 最初の本文を表示 -->
         <p><?php the_content(); ?></p>
 
-
     </div>
 </main>
 
