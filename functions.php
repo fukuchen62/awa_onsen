@@ -269,6 +269,8 @@ if (is_404()) { // 404のCSSの読み込み
     wp_enqueue_style('awa-onsen-404', get_template_directory_uri() . '/assets/css/notfound.css');
 }
 
+wp_enqueue_style('awa-onsen-404', get_template_directory_uri() . '/assets/css/notfound.css');
+
 
 add_action('wp_enqueue_scripts', 'fs_script_files');
 ?>
