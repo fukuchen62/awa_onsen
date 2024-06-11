@@ -821,6 +821,17 @@ h5 {
 
 /* ========== footer ========== */
 
+.footer_wrap::before {
+    content: "";
+    display: block;
+    height: 200px;
+    background: url(../images/footer_saru.svg) no-repeat center center;
+    background-size: contain;
+    position: relative;
+    top: 25px;
+    right: 0px;
+}
+
 .footer_container {
     color: #fff;
     background-color: #4272A2;
@@ -864,6 +875,11 @@ h5 {
 
 @media(width>=757px) {
 
+    .footer_wrap::before {
+        height: 300px;
+        top: 38px;
+    }
+
     .footer_container {
         padding: 64px 0;
         margin: 0 16px 16px 16px;
@@ -885,6 +901,12 @@ h5 {
 }
 
 @media(width>=1201px) {
+    .footer_wrap::before {
+        height: 350px;
+        top: 44px;
+        right: -280px;
+    }
+
     .footer_container {
         padding: 72px 0;
     }
