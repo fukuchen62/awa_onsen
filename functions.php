@@ -271,10 +271,7 @@ if (is_404()) { // 404のCSSの読み込み
 
 
 add_action('wp_enqueue_scripts', 'fs_script_files');
-?>
 
-
-<?php
 // function fs_pre_get_posts($query)
 // {
 //     // 管理画面とメインクエリでない場合を処理対象外とする
@@ -299,23 +296,20 @@ add_action('wp_enqueue_scripts', 'fs_script_files');
 //     'pre_get_posts', //関数の呼び出すタイミング
 //     'fs_pre_get_posts' //呼び出す関数名
 // );
-?>
 
-<!-- お気に入り -->
-<?php
-function get_user_favorites_post_ids()
-{
-    if (function_exists('get_user_favorites')) {
-        $user_favorites = get_user_favorites();
-        if (!empty($user_favorites)) {
-            return $user_favorites;
-        }
-    }
-    return [];
-}
-?>
 
-<?php
+// function get_user_favorites_post_ids()
+// {
+//     if (function_exists('get_user_favorites')) {
+//         $user_favorites = get_user_favorites();
+//         if (!empty($user_favorites)) {
+//             return $user_favorites;
+//         }
+//     }
+//     return [];
+// }
+
+
 /**
  * Contact form 7のときには、整形機能をOffにする
  *
@@ -329,14 +323,3 @@ add_filter(
     'wpcf7_autop_or_not', // 関数の呼び出すタイミング
     'fs_wpcf7_autop' // 呼び出す関数名
 );
-
-function the_company_name()
-{
-    echo "株式会社ＱＬＩＰインタナショナル";
-}
-
-function get_company_name()
-{
-    return "株式会社ＱＬＩＰインタナショナル";
-}
-?>
