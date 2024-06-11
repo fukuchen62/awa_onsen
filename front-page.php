@@ -377,11 +377,11 @@
                 <div class="section_content">
                     <div class="sauna_content">
                         <!-- サル -->
-                        <a href="sauna.html" class="slider_img sauna_img">
+                        <a href="<?php echo home_url('/sauna/'); ?>" class="slider_img sauna_img">
                             <img src="<?php echo get_template_directory_uri() ?>/assets/images/sauna_saru.jpg" alt="サウナ">
                             <span></span>
                         </a>
-                        <a href="sauna.html" class="sauna_btn btn shadow">サ活とは？<i class="fa-solid fa-list"></i></a>
+                        <a href="<?php echo home_url('/sauna/'); ?>" class="sauna_btn btn shadow">サ活とは？<i class="fa-solid fa-list"></i></a>
                     </div>
                 </div>
             </section>
