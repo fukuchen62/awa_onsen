@@ -438,9 +438,6 @@
                                 <!-- アイキャッチ取得 -->
                                 <?php if ($post_thumbnail) : ?>
                                     <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
-                                <?php else : ?>
-                                    <!-- もし画像がないとき -->
-                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/path/to/default-image.jpg" alt="<?php echo esc_attr($post_title); ?>">
                                 <?php endif; ?>
                             </a>
                             <div class="news_contents">

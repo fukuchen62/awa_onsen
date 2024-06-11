@@ -62,9 +62,6 @@
                             <a href=" <?php the_permalink(); ?>">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?php the_title(); ?>"></a>
-                            <!-- アイキャッチ画像ないとき -->
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-thumbnail.jpg" alt="<?php the_title(); ?>" />
                         <?php endif; ?>
                         <div class="news_cintents">
                             <a href="<?php the_permalink(); ?>">
