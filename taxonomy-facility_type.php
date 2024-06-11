@@ -87,7 +87,6 @@
                                 <?php endwhile;
                                 wp_reset_postdata();
                                 ?>
-                                <p>このエリアには投稿がありません。</p>
                             <?php endif; ?>
                         </div>
                     </div>
