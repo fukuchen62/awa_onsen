@@ -227,7 +227,7 @@ function fs_script_files()
         wp_enqueue_script('awa-onsen-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
         wp_enqueue_script(
             'tag-list-script',
-            get_template_directory_uri() . '/js/tag_list.js'
+            get_template_directory_uri() . '/assets/js/tag_list.js'
         );
     }
 
