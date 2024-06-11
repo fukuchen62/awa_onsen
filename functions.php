@@ -198,6 +198,7 @@ function fs_script_files()
 
     if (is_tax('facility_type')) { // 周辺施設一覧のCSSとJSの読み込み
         wp_enqueue_style('awa-onsen-nearby_list', get_template_directory_uri() . '/assets/css/nearby_list.css');
+        wp_enqueue_script('awa-onsen-nearby_list', get_template_directory_uri() . '/assets/js/accordion.js');
     }
 
     if (is_tax('column_type')) { // コラムの一覧ページのCSSの読み込み
@@ -206,6 +207,7 @@ function fs_script_files()
 
     if (is_tax('course_type')) { // モデルコース一覧のCSSの読み込み
         wp_enqueue_style('awa-onsen-course_list', get_template_directory_uri() . '/assets/css/course_list.css');
+        wp_enqueue_script('awa-onsen-course_list', get_template_directory_uri() . '/assets/js/accordion.js');
     }
 
     if (is_category()) { // 新着一覧のCSSの読み込み
