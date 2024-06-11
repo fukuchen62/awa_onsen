@@ -127,7 +127,7 @@
                     <!-- 宿泊 -->
                     <div class="yellowgreen_square">
                         <h4>本日のホテルと温泉</h4>
-                        <article class="card pink">
+                        <article class="card">
                             <a href="<?php the_permalink(); ?>">
                                 <div>
                                     <span></span>
