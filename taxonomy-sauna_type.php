@@ -10,7 +10,9 @@
         <!-- アコーディオン -->
         <?php
         $current_term = get_queried_object();
+        ?>
 
+        <?php
         // カテゴリーごとに投稿を表示
         $categories = array('east');
         foreach ($categories as $category) :
@@ -26,9 +28,9 @@
                         'terms' => $current_term->slug, // 現在のターム
                     ),
                     array(
-                        'taxonomy' => 'sauna_type', // カスタムタクソノミー 'area'
+                        'taxonomy' => 'sauna_type', // カスタムタクソノミー 'sauna'
                         'field' => 'slug',
-                        'terms' => 'sauna', // 分類分けしたい 'area' タクソノミーのスラッグ
+                        'terms' => 'sauna', // 分類分けしたい 'sauna_type' タクソノミーのスラッグ
                     ),
                 ),
             );
@@ -38,29 +40,30 @@
             <details class="details js-details">
                 <summary class="details-summary js-details-summary"><span class="btn"></span>
                     <h3 class="acco_title">東部</h3>
-                    <!-- <h3 class="acco_title"><?php echo $category; ?></h3> -->
                 </summary>
                 <div class="details-content js-details-content">
                     <div class="article_all">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                 <article class="card">
                                     <a href="<?php the_permalink(); ?>">
-                                        <div">
+                                        <div>
                                             <span></span>
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium'); ?>
                                             <?php else : ?>
                                                 <img src="path/to/default-image.jpg" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
-                    </div>
-                    <h3 class="card-title"><?php the_title(); ?></h3>
-                    </a>
-                    </article>
-            <?php endwhile;
+                                        </div>
+                                        <h3 class="card-title"><?php the_title(); ?></h3>
+                                    </a>
+                                </article>
+                        <?php endwhile;
                             wp_reset_postdata();
                         endif; ?>
+                    </div>
                 </div>
             </details>
+
         <?php endforeach; ?>
 
 
