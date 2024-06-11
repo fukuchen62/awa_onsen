@@ -127,3 +127,8 @@ h5 {
 .children {
     margin-left: 100px;
 }
+
+.commentlist,
+p {
+    width: 100%;
+}
