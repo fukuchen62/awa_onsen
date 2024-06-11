@@ -16,16 +16,6 @@ li>a {
     margin-top: 50px;
 }
 
-.card span {
-    /* ここはそれぞれのカラー指定 */
-    background-color: #A7E099;
-}
-
-.card h3 {
-    /* ここはそれぞれのカラー指定 */
-    background-color: #6BDE4E;
-}
-
 .pagination {
     margin: 50px;
     text-align: center;

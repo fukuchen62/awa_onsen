@@ -5,16 +5,6 @@
     color: #DBF500;
 }
 
-.card span {
-    background-color: #EB97A8;
-}
-
-.card h3 {
-    background-color: #EB97A8;
-}
-
-
-
 /* ============================== */
 
 /* =========フォントサイズ========= */
@@ -118,6 +108,10 @@ dt>h3 {
 
 .details-summary::-webkit-details-marker {
     display: none;
+}
+
+.details:nth-of-type(1) {
+    margin-top: 64px;
 }
 
 

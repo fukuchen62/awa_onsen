@@ -227,7 +227,7 @@ function fs_script_files()
         wp_enqueue_script('awa-onsen-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
         wp_enqueue_script(
             'tag-list-script',
-            get_template_directory_uri() . '/js/tag_list.js'
+            get_template_directory_uri() . '/assets/js/tag_list.js'
         );
     }
 
@@ -273,6 +273,7 @@ function fs_script_files()
         wp_enqueue_style('awa-onsen-404', get_template_directory_uri() . '/assets/css/notfound.css');
     }
 }
+
 add_action('wp_enqueue_scripts', 'fs_script_files');
 
 // function fs_pre_get_posts($query)
