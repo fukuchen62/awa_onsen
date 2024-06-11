@@ -46,10 +46,9 @@
         <section>
             <h5 class="mt32">関連情報</h5>
             <div class="article_all">
-
                 <?php
                 // ループの回数を定義
-                $loop_count = 10;
+                $loop_count = 4;
 
                 // すべてのカスタム投稿タイプを取得
                 $custom_post_types = get_post_types(array('_builtin' => false));
@@ -79,8 +78,9 @@
                             $post_title = get_the_title($post_id);
                             $post_link = get_permalink($post_id);
                             $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+                            $post_type = get_post_type($post_id); // カスタム投稿タイプ名を取得
                 ?>
-                            <article class="card">
+                            <article class="card <?php echo esc_attr($post_type); ?>">
                                 <a href="<?php echo esc_url($post_link); ?>">
                                     <div>
                                         <span></span>
@@ -98,39 +98,41 @@
                 }
                 ?>
 
-
             </div>
-        </section>
 
-        <?php
-        // 現在のページのURLを取得
-        $current_url = home_url(add_query_arg(array(), $wp->request));
 
-        // リファラー(前のページ)のURLを取得
-        $referer_url = wp_get_referer();
+    </div>
+    </section>
 
-        // back_btnを表示するかどうかのフラグ
-        $show_back_btn = false;
+    <?php
+    // 現在のページのURLを取得
+    $current_url = home_url(add_query_arg(array(), $wp->request));
 
-        // リファラーのURLが取得できた場合
-        if ($referer_url) {
-            // リファラーのURLとの比較
-            if (strpos($referer_url, home_url()) !== false) {
-                // リファラーのURLがサイト内のURLだった場合
-                $back_url = $referer_url;
-                $show_back_btn = true;
-            }
+    // リファラー(前のページ)のURLを取得
+    $referer_url = wp_get_referer();
+
+    // back_btnを表示するかどうかのフラグ
+    $show_back_btn = false;
+
+    // リファラーのURLが取得できた場合
+    if ($referer_url) {
+        // リファラーのURLとの比較
+        if (strpos($referer_url, home_url()) !== false) {
+            // リファラーのURLがサイト内のURLだった場合
+            $back_url = $referer_url;
+            $show_back_btn = true;
         }
+    }
 
-        // back_btnを表示する場合のみ出力
-        if ($show_back_btn) {
-        ?>
-            <button class="back_btn" onclick="window.location.href='<?php echo $back_url; ?>'">
-                <span><i class="fa-solid fa-arrow-left"></i>back</span>
-            </button>
-        <?php
-        }
-        ?>
+    // back_btnを表示する場合のみ出力
+    if ($show_back_btn) {
+    ?>
+        <button class="back_btn" onclick="window.location.href='<?php echo $back_url; ?>'">
+            <span><i class="fa-solid fa-arrow-left"></i>back</span>
+        </button>
+    <?php
+    }
+    ?>
     </div>
 </main>
 

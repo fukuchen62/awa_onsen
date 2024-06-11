@@ -1,16 +1,20 @@
 @charset "utf-8";
+
 .navlist_item:nth-child(3) {
     color: #dbf500;
 }
+
 /* タイトル */
 
 .lined-title {
     font-size: 1.125rem;
     margin-bottom: 10px;
 }
-.container > * {
+
+.container>* {
     margin-bottom: 30px;
 }
+
 /* メディアクエリ */
 
 @media (width>=757px) {
@@ -89,12 +93,12 @@ checkbox-item {
     cursor: pointer;
 }
 
-.checkbox-item input[type="checkbox"]:checked + .favorite_btn {
+.checkbox-item input[type="checkbox"]:checked+.favorite_btn {
     /*      border: 5px solid black; */
     background-color: rgba(235, 151, 168, 1);
 }
 
-.checkbox-item input[type="checkbox"]:checked + .favorite_btn i:nth-child(1) {
+.checkbox-item input[type="checkbox"]:checked+.favorite_btn i:nth-child(1) {
     color: red;
 }
 
@@ -140,14 +144,6 @@ iframe {
 
 h5 {
     margin-top: 30px;
-}
-
-.card span {
-    background-color: #f5a200;
-}
-
-.card h3 {
-    background-color: #f5a200;
 }
 
 /* 戻るボタン */

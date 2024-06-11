@@ -225,6 +225,10 @@ function fs_script_files()
     if (is_page('mypage')) { // マイページのCSS,JSの読み込み
         wp_enqueue_style('awa-onsen-mypage', get_template_directory_uri() . '/assets/css/mypage.css');
         wp_enqueue_script('awa-onsen-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
+        wp_enqueue_script(
+            'tag-list-script',
+            get_template_directory_uri() . '/assets/js/tag_list.js'
+        );
     }
 
     if (is_page('contact')) { // お問い合わせページのCSSの読み込み
@@ -269,6 +273,7 @@ function fs_script_files()
         wp_enqueue_style('awa-onsen-404', get_template_directory_uri() . '/assets/css/notfound.css');
     }
 }
+
 add_action('wp_enqueue_scripts', 'fs_script_files');
 
 // function fs_pre_get_posts($query)
@@ -297,16 +302,16 @@ add_action('wp_enqueue_scripts', 'fs_script_files');
 // );
 
 
-// function get_user_favorites_post_ids()
-// {
-//     if (function_exists('get_user_favorites')) {
-//         $user_favorites = get_user_favorites();
-//         if (!empty($user_favorites)) {
-//             return $user_favorites;
-//         }
-//     }
-//     return [];
-// }
+function get_user_favorites_post_ids()
+{
+    if (function_exists('get_user_favorites')) {
+        $user_favorites = get_user_favorites();
+        if (!empty($user_favorites)) {
+            return $user_favorites;
+        }
+    }
+    return [];
+}
 
 
 /**

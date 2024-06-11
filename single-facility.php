@@ -52,7 +52,8 @@
                     <?php endif; ?>
                 <?php endif; ?>
             </ul>
-            <label class="checkbox-item">
+            <!-- 後でこちらの画像に紐づけるか、新しくコード作りたい -->
+            <!-- <label class="checkbox-item">
                 <input type="checkbox" name="options" value="nice" />
                 <span class="nice_btn">
                     <i class="fa-regular fa-thumbs-up"></i><br />
@@ -61,13 +62,12 @@
             </label>
             <label class="checkbox-item">
                 <input type="checkbox" name="options" value="favorite" />
-                <span class="favorite_btn"><i class="fa-solid fa-heart"></i> <i class="fa-regular fa-heart"></i></span>
+                <span class="favorite_btn"><i class="fa-solid fa-heart"></i> <i class="fa-regular fa-heart"></i></span> -->
 
-                <!-- お気に入りプラグイン -->
-                <div class="favorite-button">
-                    <?php the_favorites_button(); ?>
-                </div>
-
+            <!-- お気に入りプラグイン -->
+            <div class="favorite-button">
+                <?php the_favorites_button(); ?>
+            </div>
             </label>
         </div>
 
@@ -217,8 +217,9 @@
                             $post_title = get_the_title($post_id);
                             $post_link = get_permalink($post_id);
                             $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+                            $post_type = get_post_type($post_id); // カスタム投稿タイプ名を取得
                 ?>
-                            <article class="card">
+                            <article class="card <?php echo esc_attr($post_type); ?>">
                                 <a href="<?php echo esc_url($post_link); ?>">
                                     <div>
                                         <span></span>
@@ -231,10 +232,7 @@
                             </article>
                 <?php
                             wp_reset_postdata();
-                        } else {
-                            echo '<p>No posts found.</p>';
                         }
-                    } else {
                     }
                 }
                 ?>
