@@ -13,21 +13,23 @@
             $pic_url = $pic['sizes']['large'];
             ?>
             <img src="<?php echo $pic_url; ?>" alt="メイン画像">
-            <label class="checkbox-item">
+            <!-- 後でこちらの画像に紐づけるか、新しくコード作りたい -->
+            <!-- <label class="checkbox-item">
                 <input type="checkbox" name="options" value="nice" />
                 <span class="nice_btn">
                     <i class="fa-regular fa-thumbs-up"></i><br />
                     <span>11</span>
                 </span>
-            </label>
-            <label class="checkbox-item">
+            </label> -->
+            <!-- 後でこちらの画像に紐づけるか、新しくコード作りたい -->
+            <!-- <label class="checkbox-item">
                 <input type="checkbox" name="options" value="favorite" />
-                <span class="favorite_btn"><i class="fa-solid fa-heart"></i> <i class="fa-regular fa-heart"></i></span>
+                <span class="favorite_btn"><i class="fa-solid fa-heart"></i> <i class="fa-regular fa-heart"></i></span> -->
 
-                <!-- お気に入りプラグイン -->
-                <div class="favorite-button">
-                    <?php the_favorites_button(); ?>
-                </div>
+            <!-- お気に入りプラグイン -->
+            <div class="favorite-button">
+                <?php the_favorites_button(); ?>
+            </div>
 
             </label>
         </div>
