@@ -302,18 +302,98 @@
                 </li>
             <?php endif; ?>
         </ul>
-        <section>
-            <h3>こちらもいかがでしょうか？</h3>
+        <section class="recommend">
+            <h5>こちらもいかがでしょうか？</h5>
+            <!-- カード型 -->
+            <div class="article_all">
+                <?php
+                // ループの回数を定義
+                $loop_count = 6;
+
+                // すべてのカスタム投稿タイプを取得
+                $custom_post_types = get_post_types(array('_builtin' => false));
+
+                for ($i = 1; $i <= $loop_count; $i++) {
+                    // カスタムフィールドの名前を生成
+                    $field_name = 'url' . $i;
+                    $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
+
+                    if ($slug) {
+                        // カスタムクエリで投稿を検索
+                        $args = array(
+                            'name' => $slug,
+                            'post_type' => $custom_post_types,
+                            'post_status' => 'publish',
+                            'numberposts' => 1
+                        );
+
+                        $posts = get_posts($args);
+
+                        if (!empty($posts)) {
+                            $post = $posts[0]; // 最初の投稿を取得
+                            setup_postdata($post);
+
+                            // 投稿情報を取得
+                            $post_id = $post->ID;
+                            $post_title = get_the_title($post_id);
+                            $post_link = get_permalink($post_id);
+                            $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+                ?>
+                            <article class="card">
+                                <a href="<?php echo esc_url($post_link); ?>">
+                                    <div>
+                                        <span></span>
+                                        <?php if ($post_thumbnail) : ?>
+                                            <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                        <?php endif; ?>
+                                    </div>
+                                    <h3><?php echo esc_html($post_title); ?></h3>
+                                </a>
+                            </article>
+                <?php
+                            wp_reset_postdata();
+                        }
+                    }
+                }
+                ?>
+        </section>
+
+        <!-- 関連するコラム、お知らせ -->
+        <section class="connection_column">
+            <h5>関連コラム、情報
+            </h5>
             <?php
+            // カスタム投稿タイプ 'column' から投稿を取得(記事全部もってきちゃうからだめ)
+            // $args = array(
+            //     'post_type' => 'column', // カスタム投稿タイプ 'column'
+            //     'posts_per_page' => -1, // すべての投稿を取得
+            // );
+            // $column_query = new WP_Query($args);
+            //         if ($column_query->have_posts()) :
+            //             while ($column_query->have_posts()) : $column_query->the_post();
+            //                 // アイキャッチ画像のURLを取得
+            //                 $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); // サムネイルサイズを小さく設定
+            //                 // 投稿の日付を取得
+            //                 $post_date = get_the_date('Y.m.d D H:i');
+            //                 // 投稿のタイトルを取得
+            //                 $post_title = get_the_title();
+            //                 // 投稿のパーマリンクを取得
+            //                 $post_permalink = get_permalink();
+            //                 // 投稿のタクソノミースラッグを取得
+            //                 $tags = get_the_terms(get_the_ID(), 'column_type');
+            //
+
+            //新しいロジック
             // ループの回数を定義
-            $loop_count = 10;
+            // カスタムフィールドを4つ作ってるので4回設定
+            $loop_count = 4;
 
             // すべてのカスタム投稿タイプを取得
             $custom_post_types = get_post_types(array('_builtin' => false));
-
             for ($i = 1; $i <= $loop_count; $i++) {
-                // カスタムフィールドの名前を生成
-                $field_name = 'url' . $i;
+                // カスタムフィールドで設定したフィールド名＋カウントの数字
+                // 重複しないようにcolumn∔1~4の形で設定
+                $field_name = 'column' . $i;
                 $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
 
                 if ($slug) {
@@ -324,97 +404,61 @@
                         'post_status' => 'publish',
                         'numberposts' => 1
                     );
-
                     $posts = get_posts($args);
-
-                    if (!empty($posts)) {
+                    if (!empty($posts)) { //記事があるとき
                         $post = $posts[0]; // 最初の投稿を取得
                         setup_postdata($post);
-
                         // 投稿情報を取得
                         $post_id = $post->ID;
+                        // 投稿のタイトルを取得
                         $post_title = get_the_title($post_id);
+                        // 投稿のパーマリンクを取得
                         $post_link = get_permalink($post_id);
-                        $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+                        // 投稿の日付を取得
+                        $post_date = get_the_date('Y.m.d D H:i');
+                        // アイキャッチ画像のURLを取得
+                        $post_thumbnail = get_the_post_thumbnail_url($post_id, 'thumbnail');
+                        // 投稿のタクソノミースラッグを取得
+                        $tags = get_the_terms(get_the_ID(), 'column_type');
             ?>
-                        <article class="card">
+                        <!-- ページ下部の関係コラム枠 -->
+                        <article class="news_card news">
+                            <!-- コラムへのリンク -->
                             <a href="<?php echo esc_url($post_link); ?>">
-                                <div>
-                                    <span></span>
-                                    <?php if ($post_thumbnail) : ?>
-                                        <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                <!-- アイキャッチ取得 -->
+                                <?php if ($post_thumbnail) : ?>
+                                    <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
+                                <?php else : ?>
+                                    <!-- もし画像がないとき -->
+                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/path/to/default-image.jpg" alt="<?php echo esc_attr($post_title); ?>">
+                                <?php endif; ?>
+                            </a>
+                            <div class="news_contents">
+                                <a href="<?php echo esc_url($$post_link); ?>">
+                                    <!-- 日付と時間 -->
+                                    <p class="date fugaz-one-regular"><?php echo esc_html($post_date); ?></p>
+                                    <!-- 記事タイトル -->
+                                    <h6 class="title"><?php echo esc_html($post_title); ?></h6>
+                                </a>
+                                <!-- ハッシュタグ -->
+                                <div class="hashtag_list">
+                                    <?php if ($tags && !is_wp_error($tags)) : ?>
+                                        <?php foreach ($tags as $tag) : ?>
+                                            <a href="<?php echo esc_url(get_term_link($tag)); ?>" class="hashtag">#<?php echo esc_html($tag->name); ?></a>
+                                        <?php endforeach; ?>
                                     <?php endif; ?>
                                 </div>
-                                <h3><?php echo esc_html($post_title); ?></h3>
-                            </a>
+                            </div>
                         </article>
             <?php
                         wp_reset_postdata();
+                    } else {
+                        // 記事が見つからない場合の代替メッセージを表示
+                        echo '<p>コラム、情報はまだありません。</p>';
                     }
                 }
             }
             ?>
-        </section>
-
-        <!-- 関連するコラム、お知らせ -->
-        <section class="connection_column">
-            <h5>関連コラム、情報
-            </h5>
-
-            <?php
-            // カスタム投稿タイプ 'column' から投稿を取得
-            $args = array(
-                'post_type' => 'column', // カスタム投稿タイプ 'column'
-                'posts_per_page' => -1, // すべての投稿を取得
-            );
-            $column_query = new WP_Query($args);
-
-            if ($column_query->have_posts()) :
-                while ($column_query->have_posts()) : $column_query->the_post();
-                    // アイキャッチ画像のURLを取得
-                    $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); // サムネイルサイズを小さく設定
-                    // 投稿の日付を取得
-                    $post_date = get_the_date('Y.m.d D H:i');
-                    // 投稿のタイトルを取得
-                    $post_title = get_the_title();
-                    // 投稿のパーマリンクを取得
-                    $post_permalink = get_permalink();
-                    // 投稿のタグとカテゴリを取得
-                    // $terms = get_the_terms(get_the_ID(), array('post_tag', 'category'));
-
-            ?>
-
-                    <article class="news_card news">
-                        <a href="<?php echo esc_url($post_permalink); ?>">
-                            <?php if ($thumbnail_url) : ?>
-                                <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($post_title); ?>">
-                            <?php else : ?>
-                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/path/to/default-image.jpg" alt="<?php echo esc_attr($post_title); ?>">
-                            <?php endif; ?>
-                        </a>
-                        <div class="news_cintents">
-                            <a href="<?php echo esc_url($post_permalink); ?>">
-                                <p class="date fugaz-one-regular"><?php echo esc_html($post_date); ?></p>
-                                <h6 class="title"><?php echo esc_html($post_title); ?></h6>
-                            </a>
-                            <!-- <div class="hashtag_list">
-                                <?php if ($terms && !is_wp_error($terms)) : ?>
-                                    <?php foreach ($terms as $term) : ?>
-                                        <a href="<?php echo esc_url(get_term_link($term)); ?>" class="hashtag">#<?php echo esc_html($term->name); ?></a>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </div> -->
-                        </div>
-                    </article>
-
-            <?php
-                endwhile;
-                wp_reset_postdata();
-            else :
-                echo '<p>コラムの投稿がありません。</p>';
-            endif;
-            ?>
-
 
             <?php
             // 現在のページのURLを取得
