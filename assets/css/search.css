@@ -105,15 +105,6 @@ form {
     background-color: #EB97A8;
 }
 
-/* 検索結果 */
-.card span {
-    background-color: #EB97A8;
-}
-
-.card h3 {
-    background-color: #EB97A8;
-}
-
 /* フォントサイズのみ */
 @media(width>=431px) {
 

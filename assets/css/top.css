@@ -175,10 +175,6 @@ a {
     text-align: center;
 }
 
-.section-wrap:last-child {
-    margin-bottom: 72px;
-}
-
 .section_btn {
     width: 80%;
     font-size: 1.25rem;
@@ -240,9 +236,6 @@ a {
 
 /* ========== section共通メディアクエリ ========== */
 @media(width>=757px) {
-    .section-wrap:last-child {
-        margin-bottom: 120px;
-    }
 
     .section_btn {
         width: 60%;
@@ -276,7 +269,7 @@ a {
 
 @media(width>=1201px) {
     .section-wrap:last-child {
-        margin-bottom: 120px;
+        margin-bottom: 0;
     }
 
     .sticky_note {
