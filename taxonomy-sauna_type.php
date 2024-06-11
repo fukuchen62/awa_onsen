@@ -50,8 +50,6 @@
                                             <span></span>
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium'); ?>
-                                            <?php else : ?>
-                                                <img src="path/to/default-image.jpg" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                         </div>
                                         <h3 class="card-title"><?php the_title(); ?></h3>
@@ -104,8 +102,7 @@
                                             <span></span>
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium'); ?>
-                                            <?php else : ?>
-                                                <img src="path/to/default-image.jpg" alt="<?php the_title(); ?>" />
+
                                             <?php endif; ?>
                                         </div>
                                         <h3 class="card-title"><?php the_title(); ?></h3>
@@ -159,9 +156,6 @@
                                             <span></span>
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium'); ?>
-                                            <?php else : ?>
-                                                <span></span>
-                                                <img src="path/to/default-image.jpg" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                         </div>
                                         <h3 class="card-title"><?php the_title(); ?></h3>
