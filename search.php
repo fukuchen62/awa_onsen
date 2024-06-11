@@ -32,7 +32,7 @@
 
             if ($spa_search_query->have_posts()) :
                 while ($spa_search_query->have_posts()) : $spa_search_query->the_post(); ?>
-                    <article class="card">
+                    <article class="card <?php echo esc_attr($post_type); ?>">
                         <a href="<?php the_permalink(); ?>">
                             <div>
                                 <span></span>
@@ -78,7 +78,7 @@
 
             if ($course_search_query->have_posts()) :
                 while ($course_search_query->have_posts()) : $course_search_query->the_post(); ?>
-                    <article class="card">
+                    <article class="card" <?php echo esc_attr($post_type); ?>>
                         <a href="<?php the_permalink(); ?>">
                             <div>
                                 <span></span>
@@ -124,7 +124,7 @@
 
             if ($facility_search_query->have_posts()) :
                 while ($facility_search_query->have_posts()) : $facility_search_query->the_post(); ?>
-                    <article class="card">
+                    <article class="card <?php echo esc_attr($post_type); ?>">
                         <a href="<?php the_permalink(); ?>">
                             <div>
                                 <span></span>
