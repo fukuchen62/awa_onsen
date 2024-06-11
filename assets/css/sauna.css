@@ -27,6 +27,14 @@ base
 }
 
 /* -----------------------
+パンくずリスト
+-------------------------- */
+
+.breadcrumb {
+    margin-bottom: 50px;
+}
+
+/* -----------------------
 サ活説明
 -------------------------- */
 
@@ -187,7 +195,6 @@ logo
 
     .right {
         flex-direction: row-reverse;
-        margin-top: 50px;
     }
 
     .left {
@@ -202,6 +209,7 @@ logo
 
     .margin_left {
         margin-right: 20px;
+
     }
 
     .margin_right {
