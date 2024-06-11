@@ -42,7 +42,7 @@
                         <li class="navlist_item"><a href="<?php echo home_url(); ?>"><span class="material-symbols-outlined">
                                     bubble_chart
                                 </span>TOP</a></li>
-                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>">
+                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span>
                                 bath_outdoor
                                 </span>温泉一覧</a></li>
                         <li class="navlist_item"><a href="<?php echo home_url('/facility_type/shopping/'); ?>"><span class="material-symbols-outlined">
