@@ -393,3 +393,17 @@ DAY1/DAY2
         transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
     }
 }
+
+/* 下層ページに追加 */
+.bubble_background {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+@media(width>=757px) {
+
+    /* ボーダーの色は下層ページよって可変（トップページを参照）、ボーダーの太さは8→10pxに。 */
+    .container {
+        border: 10px solid #EB97A8;
+    }
+}

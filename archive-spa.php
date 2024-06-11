@@ -27,14 +27,13 @@
                 <div class="details-content js-details-content">
                     <div class="article_all">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-                                <article class="card">
+                                <article class="card spa">
                                     <a href="<?php the_permalink(); ?>">
                                         <div>
                                             <span></span>
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium'); ?>
-                                            <?php else : ?>
-                                                <img src="path/to/default-image.jpg" alt="<?php the_title(); ?>" />
+
                                             <?php endif; ?>
                                         </div>
                                         <h3 class="card-title"><?php the_title(); ?></h3>
@@ -67,7 +66,7 @@
                 <div class="details-content js-details-content">
                     <div class="article_all">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-                                <article class="card">
+                                <article class="card spa">
                                     <a href="<?php the_permalink(); ?>">
                                         <div>
                                             <span></span>
@@ -107,7 +106,7 @@
                 <div class="details-content js-details-content">
                     <div class="article_all">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-                                <article class="card">
+                                <article class="card spa">
                                     <a href="<?php the_permalink(); ?>">
                                         <div>
                                             <span></span>

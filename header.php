@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="「あわあわ温泉ぶらり」では徳島県全域の温泉をご紹介。ツーリング、ラフティング、映えスポットや宿泊、日帰りコース等のコンテンツも。湯ったりほっと、一息つきませんか？
-">
+    <meta name="description" content="「あわあわ温泉ぶらり」では徳島県全域の温泉をご紹介。ツーリング、ラフティング、映えスポットや宿泊、日帰りコース等のコンテンツも。湯ったりほっと、一息つきませんか？">
     <meta name="keywords" content="徳島県,温泉,映え,遊ぶ,宿泊,サウナ,ツーリング,ラフティング,ハイキング,登山,キャンプ">
 
     <!-- 「get_template_directory_uri();」を変数「path」に代入 -->
@@ -42,8 +41,8 @@
                         <li class="navlist_item"><a href="<?php echo home_url(); ?>"><span class="material-symbols-outlined">
                                     bubble_chart
                                 </span>TOP</a></li>
-                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span>
-                                bath_outdoor
+                        <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span class="material-symbols-outlined">
+                                    bath_outdoor
                                 </span>温泉一覧</a></li>
                         <li class="navlist_item"><a href="<?php echo home_url('/facility_type/shopping/'); ?>"><span class="material-symbols-outlined">
                                     pin_drop
