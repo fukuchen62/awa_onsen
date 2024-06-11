@@ -104,7 +104,7 @@
                             <?php
                             //スポットのスラッグをを読み込む
                             $spot_slug = get_field('spot_1_' . $i);
-                            if ($spot_slug != "") :
+                            if ($spot_slug != "") {
 
                                 $type = substr($spot_slug, 0, 1);
 
@@ -114,12 +114,18 @@
                                 } else {
                                     $spot_id = get_page_by_path($spot_slug, OBJECT, 'facility')->ID;
                                 }
+                                }
+
                                 // 投稿ID
                                 $spot_info = get_post($spot_id);
-                                // print_r($spot_info);
+
                                 // 温泉名
-                                $spot_name = get_post_meta($spot_id, 'spa_name',  TRUE);
-                                // print_r($spot_name);
+                                $spa_name = get_post_meta($spot_id, 'spa_name',  TRUE);
+                                if ($spa_name != "") :
+                                // 周辺施設
+                                $facility_name = get_post_meta($spot_id, 'facility_name',  TRUE);
+                                if ($facility_name != "") :
+
                                 // アイキャッチ画像
                                 $thumb_id = get_post_thumbnail_id();
                                 $thumb = wp_get_attachment_image_src($thumb_id, 'full'); ?>
