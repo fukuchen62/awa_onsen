@@ -130,14 +130,14 @@
                                 // 温泉紹介文
                                 $spot_description = get_post_meta($spot_id, 'description',  TRUE);
                                 // 温泉写真
-                                $spot_pic = get_post_meta($spot_id, 'main_pic1',  TRUE);
+                                $spot_pic = get_post_meta($spot_id, 'main_pic1',  false);
                             } else {
                                 // 施設名
                                 $spot_name = get_post_meta($spot_id, 'facility_name',  TRUE);
                                 // 施設紹介文
                                 $spot_description = get_post_meta($spot_id, 'facility_description',  TRUE);
                                 // 施設写真
-                                $spot_pic = get_post_meta($spot_id, 'facility_pic1', TRUE);
+                                $spot_pic = get_post_meta($spot_id, 'facility_pic1', false);
                             }
                         }
 
@@ -167,11 +167,8 @@
                                     <h4><?php echo $spot_name ?></h4>
                                 </div>
                             </div>
+                            <p class="tx"><?php the_field('activity1_' . $i); ?></p>
 
-                            <!-- 紹介文 -->
-                            <p class="tx">
-                                <?php echo $spot_description; ?>
-                            </p>
                         </div>
 
                         <div class="flex_car">
@@ -224,7 +221,10 @@
                         <?php endif; ?>
                     </div>
                     <h3><?php the_title(); ?></h3>
-                    <p><?php the_content(); ?></p>
+                    <!-- 紹介文 -->
+                    <p class="tx">
+                        <?php echo $spot_description; ?>
+                    </p>
                 </a>
             </article>
         </div>
