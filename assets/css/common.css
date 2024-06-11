@@ -99,7 +99,15 @@ p {
 .breadcrumb_inner {
     display: flex;
     margin-top: 16px;
+    display: none;
 }
+
+@media (width>=756px) {
+    .breadcrumb_inner {
+        display: block;
+    }
+}
+
 
 /* 本サイトの共通スタイルシート */
 .bubble_background {
@@ -246,6 +254,7 @@ p {
     margin: 0 auto;
     border-radius: 50px;
     margin-top: 30px;
+    /* background-color: rgba(255, 255, 255, 0.2); */
 }
 
 @media (width>=757px) {
