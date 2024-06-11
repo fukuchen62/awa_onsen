@@ -3,33 +3,38 @@
 
 <main class="pc_inner">
     <div class="container">
+
         <div class="flex">
             <h2 class="under_line">サ活</h2>
+
             <!-- パンくずリスト -->
             <?php get_template_part('template-parts/breadcrumb') ?>
         </div>
+
         <div class="box right">
+            <!-- 2 -->
             <img class="sauna_photo margin_right" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna1.png" alt="サ活写真">
+
+            <!-- 1 -->
             <div class="sauna_box">
                 <h3 class="sauna_ttl">サ活について</h3>
                 <p>
                     サ活（サウナ活動）は、サウナで心身をリフレッシュさせることが目的です。サウナで汗を流し、その後に外気浴や冷水で体を冷やす「交代浴」を繰り返すことで、血行が促進されリフレッシュできます。近年ではサウナ専用の施設やテントサウナなどのスポットが増加しており、全国的にもサ活はブームとなっています。
                 </p>
             </div>
-        </div>
 
-        <div class="box left">
+            <!-- 3 -->
             <img class="sauna_photo margin_left" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna2.png" alt="整い方写真">
+
             <div class="sauna_box">
                 <h3 class="sauna_ttl">整い方</h3>
                 <p>
                     「整う」とは、サウナと水風呂、そして外気浴を繰り返すことでメンタル的にリフレッシュした状態のことを指します。サウナで10分ほど発汗した後、水風呂で1-2分冷却し、次に5-10分の外気浴でリラックス。これを数セット繰り返すと、心地よい浮遊感と爽快感が体感できます。一方で急激な気温の変化を体感するため、その時の体調にも気を付けることがサ活を楽しむ上でも必要です。
                 </p>
             </div>
-        </div>
 
-        <div class="box right">
             <img class="sauna_photo margin_right" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna3.png" alt="持ち物・注意事項写真">
+
             <div class="sauna_box">
                 <h3 class="sauna_ttl">持ち物や注意事項</h3>
                 <p>
@@ -38,13 +43,11 @@
             </div>
         </div>
 
-        <div class="btn">
-            <a href="<?php echo home_url() ?>/sauna_type/sauna/">
-                <div class="square">
-                    サウナのある温泉
-                </div>
-            </a>
-        </div>
+
+        <a href="<?php echo home_url() ?>/sauna_type/sauna/" class="btn">
+            サウナのある温泉
+        </a>
+
 
         <!-- バックボタン -->
         <?php
