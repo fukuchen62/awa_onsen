@@ -98,76 +98,91 @@
 
                 <!-- 1日目・日帰り1～5 -->
                 <div class="model_course1">
-                    <div class="block">
-                        <?php for ($i = 1; $i <= 5; $i++) : ?>
 
-                            <?php
-                            //スポットのスラッグをを読み込む
-                            $spot_slug = get_field('spot_1_' . $i);
-                            if ($spot_slug != "") {
+                    <?php for ($i = 1; $i <= 5; $i++) : ?>
 
-                                $type = substr($spot_slug, 0, 1);
+                        <?php
+                        //スポットのスラッグをを読み込む
+                        $spot_slug = get_field('spot_1_' . $i);
+                        if ($spot_slug != "") {
 
-                                // 該当スポットの詳細を所見込む
-                                if ($type == "s") {
-                                    $spot_id = get_page_by_path($spot_slug, OBJECT, 'spa')->ID;
-                                } else {
-                                    $spot_id = get_page_by_path($spot_slug, OBJECT, 'facility')->ID;
-                                }
-                                }
+                            $type = substr($spot_slug, 0, 1);
 
-                                // 投稿ID
-                                $spot_info = get_post($spot_id);
+                            // 該当スポットの詳細を所見込む
+                            if ($type == "s") {
+                                $spot_id = get_page_by_path($spot_slug, OBJECT, 'spa')->ID;
+                            } else {
+                                $spot_id = get_page_by_path($spot_slug, OBJECT, 'facility')->ID;
+                            }
+                            // 投稿ID
+                            $spot_info = get_post($spot_id);
+                            $url = get_the_permalink($spot_id);
 
+                            // print_r($spot_id);
+
+                            if ($type == "s") {
                                 // 温泉名
-                                $spa_name = get_post_meta($spot_id, 'spa_name',  TRUE);
-                                if ($spa_name != "") :
-                                // 周辺施設
-                                $facility_name = get_post_meta($spot_id, 'facility_name',  TRUE);
-                                if ($facility_name != "") :
+                                $spot_name = get_post_meta($spot_id, 'spa_name',  TRUE);
+                                // 温泉名
+                                $spot_description = get_post_meta($spot_id, 'description',  TRUE);
+                                // 温泉名
+                                $spot_pic = get_post_meta($spot_id, 'main_pic1',  TRUE);
+                            } else {
+                                // 施設名
+                                $spot_name = get_post_meta($spot_id, 'facility_name',  TRUE);
+                                // 施設名
+                                $spot_description = get_post_meta($spot_id, 'facility_description',  TRUE);
+                                // 施設名
+                                $spot_pic = get_post_meta($spot_id, 'facility_pic1',  TRUE);
+                            }
+                        }
 
-                                // アイキャッチ画像
-                                $thumb_id = get_post_thumbnail_id();
-                                $thumb = wp_get_attachment_image_src($thumb_id, 'full'); ?>
+                        ?>
+
+                        <!-- 表示処理 -->
 
 
-
-                                <!-- 表示させる -->
-                                <img src="<?php echo $thumb[0]; ?>" alt="<?php echo get_the_title(); ?>">
-
-
-
-
-
-                                <h4><?php echo get_the_title(); ?></h4>
-                                <!-- スポットの説明 -->
-                                <p><?php the_excerpt(); ?></p>
-                                <!-- そもそもの投稿にない？ -->
-                                </a>
-                    </div>
-                    <div class="clock"><?php the_field('start_time1_' . $i); ?><?php if ($i == 1) echo '<br>START'; ?></div>
-                    <div class="square_white"></div>
-                    <div class="flex_left">
-                        <div class="time"><?php the_field('stay_time1_' . $i); ?></div>
-                    </div>
-                    <div class="flex_car">
-                        <div class="square_green"></div>
-                        <p class="car_tx">車で<?php the_field('move_time1_' . $i); ?></p>
-                        <p>公式HP：
+                        <div class="block">
                             <?php
-                                $official_website = get_field('course_url' . $i);
-                                if (!empty($official_website)) {
-                                    echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
-                                } else {
-                                    echo '公式HPはありません。';
-                                }
-                            ?>
-                        </p>
-                    </div>
-                <?php endif; ?>
-            <?php endfor; ?>
-                </div>
 
+                            // print_r($spot_description);
+
+                            print_r($spot_pic);
+
+                            // $pic_url = $spot_pic['sizes']['large'];
+                            ?>
+
+                            <img src="<?php echo $pic_url; ?>" alt="">
+
+                            <!-- 紹介文 -->
+                            <p class="tx">
+                                <?php echo $spot_description; ?></p>
+
+
+                            <div class="square_white"></div>
+
+                            <div class="flex_left">
+                                <div class="time"><?php the_field('stay_time1_' . $i); ?></div>
+                            </div>
+                            <div class="flex_car">
+                                <div class="square_green"></div>
+                                <p class="car_tx">車で<?php the_field('move_time1_' . $i); ?></p>
+                                <p>公式HP：
+                                    <?php
+                                    $official_website = get_field('course_url' . $i);
+                                    if (!empty($official_website)) {
+                                        echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
+                                    } else {
+                                        echo '公式HPはありません。';
+                                    }
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+
+                    <?php endfor; ?>
+
+                </div>
             </div>
         </section>
 
@@ -242,10 +257,16 @@
                     <p>https://conmaiya.stores.jp/</p>
 
 
+
+
                     <div class="flex greencar">
                         <div class="car_green"></div>
                         <p class="car_10">車で10分</p>
                     </div>
+
+
+
+
                     <!-- 2 -->
                     <div class="block">
                         <img src="../assets/images/onsen_img.jpg" alt="">
