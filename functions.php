@@ -216,12 +216,19 @@ function fs_script_files()
     if (is_search()) {
         wp_enqueue_style('search-style', get_template_directory_uri() . '/assets/css/search.css');
         wp_enqueue_script('tag-list-script', get_template_directory_uri() . '/assets/js/tag_list.js');
+        wp_enqueue_script('form-script', get_template_directory_uri() . '/assets/js/form.js');
+        wp_enqueue_script('search-form-script', get_template_directory_uri() . '/assets/js/search_form.js');
     }
+
 
     // 固定ページ用のCSSとJSの読み込み
     if (is_page('mypage')) { // マイページのCSS,JSの読み込み
         wp_enqueue_style('awa-onsen-mypage', get_template_directory_uri() . '/assets/css/mypage.css');
         wp_enqueue_script('awa-onsen-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
+        wp_enqueue_script(
+            'tag-list-script',
+            get_template_directory_uri() . '/assets/js/tag_list.js'
+        );
     }
 
     if (is_page('contact')) { // お問い合わせページのCSSの読み込み
@@ -268,10 +275,7 @@ function fs_script_files()
 }
 
 add_action('wp_enqueue_scripts', 'fs_script_files');
-?>
 
-
-<?php
 // function fs_pre_get_posts($query)
 // {
 //     // 管理画面とメインクエリでない場合を処理対象外とする
@@ -296,9 +300,20 @@ add_action('wp_enqueue_scripts', 'fs_script_files');
 //     'pre_get_posts', //関数の呼び出すタイミング
 //     'fs_pre_get_posts' //呼び出す関数名
 // );
-?>
 
-<?php
+
+function get_user_favorites_post_ids()
+{
+    if (function_exists('get_user_favorites')) {
+        $user_favorites = get_user_favorites();
+        if (!empty($user_favorites)) {
+            return $user_favorites;
+        }
+    }
+    return [];
+}
+
+
 /**
  * Contact form 7のときには、整形機能をOffにする
  *
@@ -312,14 +327,3 @@ add_filter(
     'wpcf7_autop_or_not', // 関数の呼び出すタイミング
     'fs_wpcf7_autop' // 呼び出す関数名
 );
-
-function the_company_name()
-{
-    echo "株式会社ＱＬＩＰインタナショナル";
-}
-
-function get_company_name()
-{
-    return "株式会社ＱＬＩＰインタナショナル";
-}
-?>

@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+* {
+    /* border: 1px solid red; */
+}
+
+.mt48 {
+    margin-top: 48px;
+}
+
+
+/* -----------------------
+base
+-------------------------- */
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-top: 32px;
+}
+
+/* タグ */
+.hashtag_list {
+    margin: 20px 0;
+    justify-content: flex-start;
+}
+
+h4 {
+    font-weight: 900;
+}
+
+.summary h3 {
+    margin-bottom: 16px;
+}
+
+.day {
+    display: flex;
+}
+
+
+/* カード型 */
+.spot_card {
+    /* background-color: pink; */
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contents {
+    width: 90%;
+
+    /* sp_timeの基準 */
+    position: relative;
+}
+
+.sp_time {
+    background-color: #fff;
+    text-align: center;
+    width: 100px;
+    height: 60px;
+    border-radius: 10%;
+    line-height: 60px;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+.time {
+    width: 100px;
+    text-align: center;
+    padding-top: 20px;
+    /* padding: 10px; */
+
+    /* before疑似要素の基準 */
+    position: relative;
+    z-index: 10;
+}
+
+.time::before {
+    content: "";
+    width: 100px;
+    height: 60px;
+    border-radius: 10%;
+    background-color: rgb(215, 215, 215);
+    /* border: 5px solid gray; */
+
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: -10;
+}
+
+.time::after {
+    content: "";
+    height: 110%;
+    width: 10px;
+    background-color: rgb(215, 215, 215);
+    display: block;
+    margin: 0 auto;
+}
+
+.spot_list .spot_card:last-child .time::after {
+    height: 90%;
+}
+
+.sp_none {
+    display: none;
+}
+
+
+.spot_card dl dt::before,
+.spot_card p:nth-of-type(2)::before {
+    content: '';
+    background-color: #6BDE4E;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* .spot_card dl dd {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.contents>* {
+    margin: 4px;
+}
+
+.spot_card img {
+    aspect-ratio: 16/9;
+    margin: 0 auto;
+}
+
+.ttl_list {
+    display: flex;
+}
+
+.ttl_list>.duration {
+    background-color: #6BDE4E;
+    height: 64px;
+    aspect-ratio: 1/1;
+    text-align: center;
+    line-height: 64px;
+    color: white;
+    margin-right: 8px;
+    border-radius: 10px;
+}
+
+.ttl_list h4 {
+    margin-top: 10px;
+}
+
+.ttl_list h4>span {
+    display: block;
+    font-weight: normal;
+}
+
+.icon {
+    text-align: center;
+    margin-top: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon::before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/car.svg);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+/* 宿泊 */
+.hotel p {
+    max-width: 475px;
+    margin: 0 auto;
+}
+
+@media (width>=757px) {
+    .duration {
+        margin-right: 16px;
+    }
+
+    .sp_none {
+        display: block;
+    }
+
+    .contents {
+        width: 60%;
+    }
+
+    .sp_time {
+        display: none;
+    }
+}
+
+/* フォントサイズ */
+.lined-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.ttl_list h4 {
+    font-size: 1.125rem;
+}
+
+.ttl_list h4>span {
+    font-size: 1rem;
+}
+
+@media (width>=431px) {
+    .lined-title {
+        font-size: 1.5rem;
+    }
+
+    .ttl_list h4 {
+        font-size: 1.5rem;
+    }
+}

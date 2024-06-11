@@ -70,7 +70,7 @@ get_header();
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-thumbnail.jpg" alt="<?php the_title(); ?>" />
                                     <?php endif; ?>
                                     <div class="news_contents">
-                                        <p class="date fugaz-one-regular"><?php the_time('Y.m.d H:i'); ?></p>
+                                        <p class="date fugaz-one-regular"><?php echo get_the_date("Y.m.d") . "" . date("D H:i", strtotime(get_the_date("Y-m-d H:i:s"))); ?></p>
                                         <h6 class="title"><?php the_title(); ?></h6>
                                 </a>
 
@@ -88,8 +88,13 @@ get_header();
                                         }
                                         ?>
                                     </div>
-
                             </article>
+                            <!-- ページネーションの表示 -->
+                            <?php if (function_exists('wp_pagenavi')) : ?>
+                                <div class="pagination">
+                                    <?php wp_pagenavi(); ?>
+                                </div>
+                            <?php endif; ?>
                 <?php
                         endwhile;
                     endif;
@@ -98,20 +103,6 @@ get_header();
                 ?>
             </div>
 
-            <!-- ページネーションの表示 -->
-            <div class="pagination">
-                <?php
-                $pagination_args = array(
-                    'total' => $category_query->max_num_pages,
-                    'current' => max(1, get_query_var('paged')),
-                    'prev_text' => '<<',
-                    'next_text' => '>>',
-                    'end_size' => 1,
-                    'mid_size' => 2,
-                );
-                echo paginate_links($pagination_args);
-                ?>
-            </div>
         </section>
         <?php
         // 現在のページのURLを取得

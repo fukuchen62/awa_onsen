@@ -120,6 +120,10 @@ dt>h3 {
     display: none;
 }
 
+.details:nth-of-type(1) {
+    margin-top: 64px;
+}
+
 
 @media(width>=757px) {
 

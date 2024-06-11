@@ -45,6 +45,10 @@ img {
     display: block;
 }
 
+p {
+    line-height: 1.5rem;
+}
+
 /* tablet */
 @media (width>=757px) {
     .sp_only {
@@ -280,6 +284,7 @@ img {
     border-style: solid;
     border-width: 5px;
     border-radius: 30px;
+    margin-top: 40px;
 }
 
 .back_btn span {
