@@ -225,6 +225,10 @@ function fs_script_files()
     if (is_page('mypage')) { // マイページのCSS,JSの読み込み
         wp_enqueue_style('awa-onsen-mypage', get_template_directory_uri() . '/assets/css/mypage.css');
         wp_enqueue_script('awa-onsen-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
+        wp_enqueue_script(
+            'tag-list-script',
+            get_template_directory_uri() . '/js/tag_list.js'
+        );
     }
 
     if (is_page('contact')) { // お問い合わせページのCSSの読み込み
