@@ -56,6 +56,8 @@ a {
     background-image: url(../images/kv_bg.svg);
     background-size: contain;
     background-repeat: no-repeat;
+    background-origin: border-box;
+    background-clip: border-box;
     position: absolute;
     bottom: -1px;
 }
@@ -80,6 +82,8 @@ a {
     background-image: url(../images/bubble_left.svg);
     background-size: contain;
     background-repeat: no-repeat;
+    background-origin: border-box;
+    background-clip: border-box;
     margin-left: -20px;
 }
 
@@ -89,6 +93,8 @@ a {
     background-image: url(../images/bubble_right.svg);
     background-size: contain;
     background-repeat: no-repeat;
+    background-origin: border-box;
+    background-clip: border-box;
     margin-right: -25px;
 }
 
@@ -206,6 +212,8 @@ a {
     background-image: url(../images/sticky_note.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-origin: border-box;
+    background-clip: border-box;
     transform: rotate(-7deg) translateY(50%);
     position: relative;
     margin-left: 24px;
@@ -497,6 +505,8 @@ a {
     height: 20px;
     background-image: url(../images/arrow_back.svg);
     background-size: contain;
+    background-origin: border-box;
+    background-clip: border-box;
     left: 10%;
 }
 
@@ -505,6 +515,8 @@ a {
     height: 20px;
     background-image: url(../images/arrow_forward.svg);
     background-size: contain;
+    background-origin: border-box;
+    background-clip: border-box;
     right: 10%;
 }
 
@@ -725,7 +737,7 @@ button {
     .sauna_btn {
         width: 60%;
         height: auto;
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding: 8px 0;
         margin-top: 56px;
     }
