@@ -44,7 +44,7 @@
                 <div class="details-content js-details-content">
                     <div class="article_all">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-                                <article class="card">
+                                <article class="card spa">
                                     <a href="<?php the_permalink(); ?>">
                                         <div>
                                             <span></span>
@@ -98,7 +98,7 @@
                 <div class="details-content js-details-content">
                     <div class="article_all">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-                                <article class="card">
+                                <article class="card spa">
                                     <a href="<?php the_permalink(); ?>">
                                         <div>
                                             <span></span>
@@ -153,7 +153,7 @@
                 <div class="details-content js-details-content">
                     <div class="article_all">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-                                <article class="card">
+                                <article class="card spa">
                                     <a href="<?php the_permalink(); ?>">
                                         <div>
                                             <span></span>
