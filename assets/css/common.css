@@ -97,7 +97,8 @@ p {
 }
 
 .breadcrumb_inner {
-    display: flex
+    display: flex;
+    margin-top: 16px;
 }
 
 /* 本サイトの共通スタイルシート */
@@ -318,7 +319,6 @@ h2 {
     position: relative;
     z-index: 10;
     font-size: 1.25rem;
-    margin-bottom: 16px;
 }
 
 .under_line::after {

@@ -9,7 +9,7 @@ h4 {
     margin-bottom: 16px;
 }
 
-.container >*{
+.container>* {
     margin-bottom: 30px;
 }
 
@@ -101,6 +101,7 @@ checkbox-item {
 }
 
 /* 写真スリック */
+
 
 .slider img {
     aspect-ratio: 16/9;
