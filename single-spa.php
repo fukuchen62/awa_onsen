@@ -23,6 +23,12 @@
             <label class="checkbox-item">
                 <input type="checkbox" name="options" value="favorite" />
                 <span class="favorite_btn"><i class="fa-solid fa-heart"></i> <i class="fa-regular fa-heart"></i></span>
+
+                <!-- お気に入りプラグイン -->
+                <div class="favorite-button">
+                    <?php the_favorites_button(); ?>
+                </div>
+
             </label>
         </div>
 
