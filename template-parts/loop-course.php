@@ -1,4 +1,4 @@
-<article class="card">
+<article class="card course">
     <a href="<?php the_permalink(); ?>">
         <div>
             <span></span>
