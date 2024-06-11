@@ -29,7 +29,7 @@
             </ul>
 
             <!-- 温泉お気に入り一覧 -->
-            <div class="contents onsen">
+            <div class="contents spa">
                 <!-- <p>現在お気に入り登録<br class="sp_only">されている温泉</p> -->
                 <div class="article_all">
                     <!-- 　ループの開始 -->
@@ -48,7 +48,7 @@
                         $favorites_query = new WP_Query($args);
                         if ($favorites_query->have_posts()) : ?>
                             <?php while ($favorites_query->have_posts()) : $favorites_query->the_post(); ?>
-                                <article class="card <?php echo esc_attr($post_type); ?>">
+                                <article class="card" ;>
                                     <a href="<?php the_permalink(); ?>">
                                         <div>
                                             <span></span>
