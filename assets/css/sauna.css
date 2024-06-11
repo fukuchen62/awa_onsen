@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+* {
+    /* border: 1px solid red; */
+}
+
 .bubble_background {
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -16,49 +20,13 @@
 }
 
 /* -----------------------
-base
--------------------------- */
-/* デベロッパーツール対策 */
-.container {
-    z-index: 1;
-}
-
-/* -----------------------
-タイトル
--------------------------- */
-
-/* タイトルのmargin */
-.under_line {
-    margin-bottom: 40px;
-}
-
-/* タイトル下ライン */
-.under_line::before {
-    bottom: -15%;
-}
-
-/* -----------------------
-パンくずリスト
--------------------------- */
-
-.breadcrumb {
-    margin-bottom: 50px;
-}
-
-/* -----------------------
 サ活説明
 -------------------------- */
 
 /* fontサイズ */
-.sauna_ttl {
-    font-size: 1.125rem;
-    margin: auto;
-}
-
 .box p {
     font-size: 1rem;
-    /* width: 80%; */
-    margin: 32px auto;
+    margin: 0 auto;
 }
 
 /* 小見出しの下のライン */
@@ -69,14 +37,12 @@ base
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 36px;
-    margin-bottom: 16px;
+    font-size: 1.125rem;
+    margin: 8px auto;
 }
 
 .sauna_ttl::before,
 .sauna_ttl::after {
-    /* display: inline-block; */
-    /* margin: 0 3px 0 8px; */
     content: '';
     width: 8px;
     height: 8px;
@@ -95,45 +61,30 @@ base
     right: -3%;
 }
 
-
-
-/* 小見出しとpタグの位置 */
-.box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.box p {
-    margin-bottom: 16px;
-}
-
-/* サウナのある温泉ボタン */
-.square {
-    background-color: #DBF500;
-    width: 200px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25rem;
+/* 写真 */
+.sauna_photo {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-top: 24px;
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    margin-top: 43px;
-    margin-bottom: 60px;
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    margin: 40px auto 0;
+    background-color: #DBF500;
+
+    box-shadow: 5px 5px #757e22;
+    transition: 0.7s;
 }
 
-/* -----------------------
-logo
--------------------------- */
-.logo {
-    position: absolute;
-    width: 100px;
-    top: 32px;
-    left: 32px;
+.btn:hover {
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px #757e22;
+    color: white;
+    font-weight: bold;
 }
 
 /* -----------------------
@@ -144,33 +95,37 @@ logo
     /* 小見出し */
     .sauna_ttl {
         font-size: 1.25rem;
-        margin-top: 89px;
+        /* margin-top: 24px; */
     }
+
+    .box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 8px;
+    }
+
 
     /* 文章 */
     .box p {
         font-size: 1.25rem;
-        margin-bottom: 140px;
+        padding: 20px;
     }
 
-    /* サウナのある温泉ボタン */
-    .square {
-        width: 615px;
-        height: 125px;
-        font-size: 2.25rem;
+    .sauna_box {
+        margin-top: 24px;
     }
 
-
-    /* 写真 */
     .sauna_photo {
-        width: 864px;
-        height: 486px;
+        aspect-ratio: 1/1;
     }
 
-    /* タイトル下ライン */
-    .under_line::before {
-        z-index: 1;
+    .btn {
+        padding: 20px;
+        font-size: 1.5rem;
     }
+
 }
 
 /* -----------------------
@@ -178,20 +133,14 @@ logo
 -------------------------- */
 @media(width>=1201px) {
 
-    /* containerの幅調節 */
-    .container {
-        padding-left: 30px;
-        padding-right: 32px;
-    }
-
     /* 文章 */
     .box p {
-        font-size: 1rem;
-        width: 370px;
-        height: 300px;
-        margin-bottom: 0;
-        margin-top: 17px;
-        margin-bottom: 50px;
+        /* font-size: 1rem; */
+        /* width: 370px; */
+        /* height: 300px; */
+        /* margin-bottom: 0; */
+        /* margin-top: 17px; */
+        /* margin-bottom: 50px; */
         font-size: 1.25rem;
     }
 
@@ -200,36 +149,16 @@ logo
         margin: 0 auto;
     }
 
-    .box {
-        display: flex;
+    .box .sauna_box:nth-child(1) {
+        order: 1;
     }
 
-    .right {
-        flex-direction: row-reverse;
+    .box img:nth-child(1) {
+        order: 2;
     }
 
-    .left {
-        flex-direction: row;
-    }
-
-    /* 写真 */
-    .sauna_photo {
-        width: 340px;
-        height: 340px;
-    }
-
-    .margin_left {
-        margin-right: 20px;
-
-    }
-
-    .margin_right {
-        margin-left: 20px;
-    }
-
-    /* サウナのある温泉ボタン */
-    .square {
-        font-size: 2.25rem;
+    .box img:nth-child(2) {
+        order: 3;
     }
 
 }

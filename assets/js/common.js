@@ -30,7 +30,14 @@ $(function () {
     }
 
     // topへボタンをクリックしたら上までスクロールさせる
-    $(".top_button").on("click", function (e) { e.preventDefault(); $("html, body").animate({ scrollTop: 0 }, 2200); });
+    $(".top_button").on("click", function (e) {
+        e.preventDefault();
+        let $button = $(this);
+        $button.css("pointer-events", "none"); //ボタンを無効化
+        $("html, body").animate({ scrollTop: 0 }, 2200, function () {
+            $button.css("pointer-events", "auto"); //アニメーション完了時ボタン無効化
+        });
+    });
 
 });
 
@@ -184,3 +191,4 @@ $(document).ready(function () {
     io.POLL_INTERVAL = 100;
     io.observe($section[0]);
 });
+

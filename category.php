@@ -9,11 +9,7 @@ get_header();
             <h2 class="under_line">お知らせ一覧</h2>
 
             <!-- パンくずリスト -->
-            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-                <?php if (function_exists('bcn_display')) {
-                    bcn_display();
-                } ?>
-            </div>
+            <?php get_template_part('template-parts/breadcrumb'); ?>
 
             <!-- タグ -->
             <?php
@@ -66,8 +62,6 @@ get_header();
                                 <a href="<?php the_permalink(); ?>">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>" />
-                                    <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-thumbnail.jpg" alt="<?php the_title(); ?>" />
                                     <?php endif; ?>
                                     <div class="news_contents">
                                         <p class="date fugaz-one-regular"><?php echo get_the_date("Y.m.d") . "" . date("D H:i", strtotime(get_the_date("Y-m-d H:i:s"))); ?></p>
