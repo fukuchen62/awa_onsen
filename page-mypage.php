@@ -38,7 +38,6 @@ if (!empty($post_ids)) {
     <?php endif; ?>
 <?php
 }
-
 ?>
 
 <h1>周辺施設</h1>
@@ -70,7 +69,6 @@ if (!empty($post_ids)) {
     <?php endif; ?>
 <?php
 }
-
 ?>
 
 <!-- ループのテストおわり -->

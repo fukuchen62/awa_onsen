@@ -45,6 +45,10 @@ img {
     display: block;
 }
 
+p {
+    line-height: 1.5rem;
+}
+
 /* tablet */
 @media (width>=757px) {
     .sp_only {
