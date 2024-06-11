@@ -48,7 +48,7 @@
                         $favorites_query = new WP_Query($args);
                         if ($favorites_query->have_posts()) : ?>
                             <?php while ($favorites_query->have_posts()) : $favorites_query->the_post(); ?>
-                                <article class="card">
+                                <article class="card <?php echo esc_attr($post_type); ?>">
                                     <a href="<?php the_permalink(); ?>">
                                         <div>
                                             <span></span>

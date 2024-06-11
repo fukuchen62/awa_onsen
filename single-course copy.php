@@ -66,30 +66,21 @@
         </div>
         <p><?php the_field('course_description'); ?></p>
 
-        <!-- コースの詳細 -->
+
         <!-- DAY1 -->
         <section class="day1">
             <div class="flex">
                 <h3 class="course_day">DAY1</h3>
             </div>
-
             <div class="layer">
                 <div class="time_schedule tb_only pc_only">
                     <div class="flow_design12">
                         <!-- 画面左側の開始時刻1～5-->
                         <ul class="flow12">
                             <?php for ($i = 1; $i <= 5; $i++) : ?>
-                                <?php
-                                $st = get_field('start_time1_' . $i);
-                                if ($st != "") :
-                                ?>
-                                    <li>
-                                        <p class="icon12">
-                                            <?php echo $st; ?>
-                                            <?php if ($i == 1) echo '<br>START'; ?>
-                                        </p>
-                                    </li>
-                                <?php endif; ?>
+                                <li>
+                                    <p class="icon12"><?php the_field('start_time1_' . $i); ?><?php if ($i == 1) echo '<br>START'; ?></p>
+                                </li>
                             <?php endfor; ?>
                         </ul>
                     </div>
@@ -98,80 +89,45 @@
 
                 <!-- 1日目・日帰り1～5 -->
                 <div class="model_course1">
-                    <div class="block">
-                        <?php for ($i = 1; $i <= 5; $i++) : ?>
+                    <?php for ($i = 1; $i <= 5; $i++) : ?>
+                        <div class="block">
+                            <a class="thumbnail" href="<?php the_field('spot_1_' . $i); ?>">
+                                <?php
+                                $som_thumb_id = get_post_thumbnail_id();
+                                $som_thumb = wp_get_attachment_image_src($som_thumb_id, 'full'); ?>
+                                <img src="<?php echo $som_thumb[0]; ?>" alt="<?php echo get_the_title(); ?>">
+                            </a>
 
-                            <?php
-                            //スポットのスラッグをを読み込む
-                            $spot_slug = get_field('spot_1_' . $i);
-                            if ($spot_slug != "") {
-
-                                $type = substr($spot_slug, 0, 1);
-
-                                // 該当スポットの詳細を所見込む
-                                if ($type == "s") {
-                                    $spot_id = get_page_by_path($spot_slug, OBJECT, 'spa')->ID;
-                                } else {
-                                    $spot_id = get_page_by_path($spot_slug, OBJECT, 'facility')->ID;
-                                }
-                                }
-
-                                // 投稿ID
-                                $spot_info = get_post($spot_id);
-
-                                // 温泉名
-                                $spa_name = get_post_meta($spot_id, 'spa_name',  TRUE);
-                                if ($spa_name != "") :
-                                // 周辺施設
-                                $facility_name = get_post_meta($spot_id, 'facility_name',  TRUE);
-                                if ($facility_name != "") :
-
-                                // アイキャッチ画像
-                                $thumb_id = get_post_thumbnail_id();
-                                $thumb = wp_get_attachment_image_src($thumb_id, 'full'); ?>
-
-
-
-                                <!-- 表示させる -->
-                                <img src="<?php echo $thumb[0]; ?>" alt="<?php echo get_the_title(); ?>">
-
-
-
-
-
-                                <h4><?php echo get_the_title(); ?></h4>
-                                <!-- スポットの説明 -->
-                                <p><?php the_excerpt(); ?></p>
-                                <!-- そもそもの投稿にない？ -->
-                                </a>
-                    </div>
-                    <div class="clock"><?php the_field('start_time1_' . $i); ?><?php if ($i == 1) echo '<br>START'; ?></div>
-                    <div class="square_white"></div>
-                    <div class="flex_left">
-                        <div class="time"><?php the_field('stay_time1_' . $i); ?></div>
-                    </div>
-                    <div class="flex_car">
-                        <div class="square_green"></div>
-                        <p class="car_tx">車で<?php the_field('move_time1_' . $i); ?></p>
-                        <p>公式HP：
-                            <?php
+                            <h4><?php echo get_the_title(); ?></h4>
+                            <!-- スポットの説明 -->
+                            <p><?php the_excerpt(); ?></p>
+                            <!-- そもそもの投稿にない？ -->
+                            </a>
+                        </div>
+                        <div class="clock"><?php the_field('start_time1_' . $i); ?><?php if ($i == 1) echo '<br>START'; ?></div>
+                        <div class="square_white"></div>
+                        <div class="flex_left">
+                            <div class="time"><?php the_field('stay_time1_' . $i); ?></div>
+                        </div>
+                        <div class="flex_car">
+                            <div class="square_green"></div>
+                            <p class="car_tx">車で<?php the_field('move_time1_' . $i); ?></p>
+                            <p>公式HP：
+                                <?php
                                 $official_website = get_field('course_url' . $i);
                                 if (!empty($official_website)) {
                                     echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
                                 } else {
                                     echo '公式HPはありません。';
                                 }
-                            ?>
-                        </p>
-                    </div>
-                <?php endif; ?>
-            <?php endfor; ?>
+                                ?>
+                            </p>
+                        </div>
+                    <?php endfor; ?>
                 </div>
 
             </div>
         </section>
-
-
         <!-- 宿泊 -->
         <div class="yellowgreen_square">
             <h4>本日のホテルと温泉</h4>

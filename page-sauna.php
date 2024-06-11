@@ -3,11 +3,10 @@
 
 <main class="pc_inner">
     <div class="container">
-        <!-- パンくずリスト -->
-        <?php get_template_part('template-parts/breadcrumb') ?>
-
         <div class="flex">
             <h2 class="under_line">サ活</h2>
+            <!-- パンくずリスト -->
+            <?php get_template_part('template-parts/breadcrumb') ?>
         </div>
         <div class="box right">
             <img class="sauna_photo margin_right" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna1.png" alt="サ活写真">
