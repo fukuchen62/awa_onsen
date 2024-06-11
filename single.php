@@ -10,11 +10,7 @@
             </div>
 
             <!-- パンくずリスト CSS未適用 -->
-            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-                <?php if (function_exists('bcn_display')) {
-                    bcn_display();
-                } ?>
-            </div>
+            <?php get_template_part('template-parts/breadcrumb'); ?>
 
             <?php if (has_post_thumbnail()) : ?>
                 <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="mt32">
