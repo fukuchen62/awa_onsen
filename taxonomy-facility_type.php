@@ -79,8 +79,6 @@
                                                 <span></span>
                                                 <?php if (has_post_thumbnail()) : ?>
                                                     <?php the_post_thumbnail('medium'); ?>
-                                                <?php else : ?>
-                                                    <img src="path/to/default-image.jpg" alt="<?php the_title(); ?>" />
                                                 <?php endif; ?>
                                             </div>
                                             <h3 class="card-title"><?php the_title(); ?></h3>
@@ -88,8 +86,7 @@
                                     </article>
                                 <?php endwhile;
                                 wp_reset_postdata();
-                            else : ?>
-                                <p>このエリアには投稿がありません。</p>
+                                ?>
                             <?php endif; ?>
                         </div>
                     </div>
