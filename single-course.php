@@ -127,16 +127,16 @@
                             if ($type == "s") {
                                 // 温泉名
                                 $spot_name = get_post_meta($spot_id, 'spa_name',  TRUE);
-                                // 温泉名
+                                // 温泉紹介文
                                 $spot_description = get_post_meta($spot_id, 'description',  TRUE);
-                                // 温泉名
+                                // 温泉写真
                                 $spot_pic = get_post_meta($spot_id, 'main_pic1',  TRUE);
                             } else {
                                 // 施設名
                                 $spot_name = get_post_meta($spot_id, 'facility_name',  TRUE);
-                                // 施設名
+                                // 施設紹介文
                                 $spot_description = get_post_meta($spot_id, 'facility_description',  TRUE);
-                                // 施設名
+                                // 施設写真
                                 $spot_pic = get_post_meta($spot_id, 'facility_pic1', TRUE);
                             }
                         }
