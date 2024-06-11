@@ -1,6 +1,80 @@
 <!-- header.phpを読み込む -->
 <?php get_header(); ?>
 
+
+
+<!-- ループのテスト -->
+<h1>温泉</h1>
+<?php
+
+
+// お気に入り投稿IDを取得
+$post_ids = get_user_favorites_post_ids();
+
+if (!empty($post_ids)) {
+    // 投稿を取得
+    $args = array(
+        'post_type' => 'spa',
+        'post__in' => $post_ids,
+        'orderby' => 'post__in'
+    );
+    $favorites_query = new WP_Query($args);
+    if ($favorites_query->have_posts()) : ?>
+        <?php while ($favorites_query->have_posts()) : $favorites_query->the_post(); ?>
+            <article class="card">
+                <a href="<?php the_permalink(); ?>">
+                    <div>
+                        <span></span>
+                        <?php if (has_post_thumbnail()) : ?>
+                            <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title_attribute(); ?>">
+                        <?php endif; ?>
+                    </div>
+                    <h3><?php the_title(); ?></h3>
+                </a>
+            </article>
+        <?php endwhile; ?>
+
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
+<?php
+}
+
+?>
+
+<h1>周辺施設</h1>
+<?php
+if (!empty($post_ids)) {
+    // 投稿を取得
+    $args = array(
+        'post_type' => 'facility',
+        'post__in' => $post_ids,
+        'orderby' => 'post__in'
+    );
+    $favorites_query = new WP_Query($args);
+    if ($favorites_query->have_posts()) : ?>
+        <?php while ($favorites_query->have_posts()) : $favorites_query->the_post(); ?>
+            <article class="card">
+                <a href="<?php the_permalink(); ?>">
+                    <div>
+                        <span></span>
+                        <?php if (has_post_thumbnail()) : ?>
+                            <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title_attribute(); ?>">
+                        <?php endif; ?>
+                    </div>
+                    <h3><?php the_title(); ?></h3>
+                </a>
+            </article>
+        <?php endwhile; ?>
+
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
+<?php
+}
+
+?>
+
+<!-- ループのテストおわり -->
+
 <main class="pc_inner">
     <div class="container">
         <section>
@@ -15,6 +89,7 @@
             </div>
 
             <h3 class="mypage_list">お気に入り一覧</h3>
+
 
             <!-- タグ -->
             <ul class="tag element02">
