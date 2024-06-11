@@ -120,7 +120,7 @@ h5 {
 }
 
 .wpulike,
-.comment-meta,
+.comment-meta a,
 .says {
     display: none;
 }
@@ -129,9 +129,8 @@ h5 {
     margin-left: 100px;
 }
 
-.commentlist,
-p {
-    width: 100%;
+.commentlist p {
+    /* width: 80%; */
 }
 
 /* 下層ページに追加 */
