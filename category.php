@@ -9,11 +9,7 @@ get_header();
             <h2 class="under_line">お知らせ一覧</h2>
 
             <!-- パンくずリスト -->
-            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-                <?php if (function_exists('bcn_display')) {
-                    bcn_display();
-                } ?>
-            </div>
+            <?php get_template_part('template-parts/breadcrumb'); ?>
 
             <!-- タグ -->
             <?php

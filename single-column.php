@@ -53,10 +53,8 @@
                 <?php
                             }
                             echo '</ul>';
-                        } else {
                         }
                     }
-                } else {
                 }
                 ?>
             </div>
