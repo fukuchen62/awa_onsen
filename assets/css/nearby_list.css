@@ -4,16 +4,6 @@
     color: #DBF500;
 }
 
-/* カード型背景 */
-
-.card span {
-    background-color: #F5A200;
-}
-
-.card h3 {
-    background-color: #F5A200;
-}
-
 
 .details:nth-of-type(1) {
     margin-top: 64px;
