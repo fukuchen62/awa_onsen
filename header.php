@@ -39,7 +39,7 @@
                     <div class="nav_bg"></div>
                     <ul class="navlist_container">
                         <li class="navlist_item"><a href="<?php echo home_url(); ?>"><span class="material-symbols-outlined">
-                                    bubble_chart
+                                    <span>bubble_chart
                                 </span>TOP</a></li>
                         <li class="navlist_item"><a href="<?php echo home_url('/spa/'); ?>"><span>
                                     bath_outdoor
