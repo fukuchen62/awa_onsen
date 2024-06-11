@@ -49,18 +49,8 @@ tabのcss
 
 
 /* -----------------------
-カード型h3の背景
+カード型
 -------------------------- */
-.contents.onsen .card h3,
-.contents.onsen .card span {
-    background-color: #EB97A8;
-}
-
-.contents.facility .card h3,
-.contents.facility .card span {
-    background-color: #F5A200;
-}
-
 .contents p {
     text-align: center;
     margin: 50px;
