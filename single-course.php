@@ -3,15 +3,15 @@
 <main class="pc_inner">
     <div class="container">
 
-        <!-- Title -->
+        <!-- コース名 -->
         <div class="flex">
             <h2 class="under_line"><?php the_title(); ?></h2>
         </div>
 
-        <!-- Breadcrumb -->
+        <!-- パンくず -->
         <?php get_template_part('template-parts/breadcrumb'); ?>
 
-        <!-- Map -->
+        <!-- マップ -->
         <?php if (function_exists('get_field')) : ?>
             <?php if ($iframe_code = get_field('iframe')) : ?>
                 <?php echo $iframe_code; ?>
@@ -22,7 +22,7 @@
             <p>該当する地図が見つかりませんでした。</p>
         <?php endif; ?>
 
-        <!-- Tags -->
+        <!-- タグ -->
         <div class="hashtag_list">
             <?php
             $post_id = get_the_ID();
@@ -55,11 +55,11 @@
                 <h3 class="course_day">DAY1</h3>
             </div>
 
-            <!-- 開始時刻1～5 -->
             <div class="layer">
                 <div class="time_schedule tb_only pc_only">
                     <div class="flow_design12">
                         <ul class="flow12">
+                            <!-- 開始時刻1～5 -->
                             <?php for ($i = 1; $i <= 5; $i++) : ?>
                                 <?php if ($st = get_field('start_time1_' . $i)) : ?>
                                     <li>
@@ -149,32 +149,48 @@
 
         <!-- 宿泊 -->
         <!-- 1日目のラストから宿泊施設までの移動時間 -->
-        <div class="yellowgreen_square">
-            <h4>本日のホテルと温泉</h4>
-            <article class="card spa">
-                <a href="<?php echo $url ?>">
-                    <div>
-                        <span></span>
-                        <?php if (has_post_thumbnail()) : the_post_thumbnail('medium'); ?>
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.jpg" alt="<?php echo $spot_name ?>">
-                        <?php endif; ?>
-                    </div>
-                </a>
-                <h3><?php echo $spot_name ?></h3>
-                <!-- 紹介文 -->
-                <p class="tx">
-                    <?php echo $spot_description; ?>
-                </p>
-            </article>
-        </div>
+        <?php
+        // 宿泊のタクソノミーが選択されているかを確認
+        if (has_term('stay-course', '宿泊')) : // 宿泊にチェックが入っていたら表示させる
+            if ($url && $spot_name && $spot_description) : ?>
+                <div class="yellowgreen_square">
+                    <h4>本日のホテルと温泉</h4>
+                    <article class="card spa">
+                        <a href="<?php echo $url; ?>">
+                            <div>
+                                <span></span>
+                                <?php if (has_post_thumbnail()) :
+                                    the_post_thumbnail('medium');
+                                else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.jpg" alt="<?php echo $spot_name; ?>">
+                                <?php endif; ?>
+                            </div>
+                        </a>
+                        <h3><?php echo $spot_name; ?></h3>
+                        <!-- 紹介文 -->
+                        <p class="tx">
+                            <?php echo $spot_description; ?>
+                        </p>
+                    </article>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+
+
+
 
 
         <!-- 2日目 -->
         <section class="day1">
-            <div class="flex">
-                <h3 class="course_day">DAY2</h3>
-            </div>
+            <?php
+            // 宿泊のタクソノミーが選択されているか
+            if (has_term('stay-course', '宿泊')) : // 宿泊にチェックが入っていたら表示させる
+            ?>
+                <div class="flex">
+                    <h3 class="course_day">DAY2</h3>
+                </div>
+            <?php endif; ?>
+
 
             <!-- 開始時刻2_1～5 -->
             <div class="layer">
