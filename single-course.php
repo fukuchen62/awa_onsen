@@ -184,17 +184,15 @@
                         </div>
                         <div class="flex_car">
                             <div class="square_green"></div>
-                            <p>公式HP：</p>
+                            <p>公式HP：<?php
+                                    $official_website = get_field('course_url' . $i);
+                                    if (!empty($official_website)) {
+                                        echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
+                                    } else {
+                                        echo '公式HPはありません。';
+                                    }
+                                    ?></p>
                         </div>
-                        <p><?php
-                            $official_website = get_field('course_url' . $i);
-                            if (!empty($official_website)) {
-                                echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
-                            } else {
-                                echo '公式HPはありません。';
-                            }
-                            ?>
-                        </p>
 
                         <div class="flex greencar">
                             <div class="car_green"></div>
@@ -211,16 +209,16 @@
         <!-- 宿泊 -->
         <div class="yellowgreen_square">
             <h4>本日のホテルと温泉</h4>
-            <article class="card">
+            <article class="card spa">
                 <a href="<?php the_permalink(); ?>">
                     <div>
                         <span></span>
                         <?php if (has_post_thumbnail()) : the_post_thumbnail('medium'); ?>
                         <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.png" alt="<?php the_title(); ?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.png" alt="<?php echo $spot_name ?>">
                         <?php endif; ?>
                     </div>
-                    <h3><?php the_title(); ?></h3>
+                    <h3><?php echo $spot_name ?></h3>
                     <!-- 紹介文 -->
                     <p class="tx">
                         <?php echo $spot_description; ?>
@@ -237,7 +235,7 @@
             <div class="layer">
                 <div class="time_schedule tb_only pc_only">
                     <div class="flow_design12">
-                        <!-- 画面左側の開始時刻1～5-->
+                        <!-- 画面左側の開始時刻2日目の1～5-->
                         <ul class="flow12">
                             <?php for ($i = 1; $i <= 5; $i++) : ?>
                                 <li>
@@ -248,128 +246,274 @@
                     </div>
 
                 </div>
+
+                <!-- 2 -->
                 <div class="model_course1">
-                    <!-- 2 -->
 
-                    <div class="block">
-                        <img src="../assets/images/onsen_img.jpg" alt="">
-                        <div class="clock">
-                            <span>10 : 30<br>START</span>
-                        </div>
-                        <div class="square_white"></div>
+                    <?php for ($i = 1; $i <= 5; $i++) : ?>
 
-                        <div class="flex_left">
-                            <p class="time">60分</p>
-                            <div>
-                                <p>苔や植物で癒される</p>
-                                <h4>こんまい屋</h4>
+                        <?php
+                        //スポットのスラッグをを読み込む
+                        $spot_slug = get_field('spot_1_' . $i);
+                        if ($spot_slug != "") {
+
+                            $type = substr($spot_slug, 0, 1);
+
+                            // 該当スポットの詳細を所見込む
+                            if ($type == "s") {
+                                $spot_id = get_page_by_path($spot_slug, OBJECT, 'spa')->ID;
+                            } else {
+                                $spot_id = get_page_by_path($spot_slug, OBJECT, 'facility')->ID;
+                            }
+                            // 投稿ID
+                            $spot_info = get_post($spot_id);
+
+                            // print_r($spot_info);
+
+
+                            $url = get_the_permalink($spot_id);
+
+                            // print_r($spot_id);
+
+                            if ($type == "s") {
+                                // 温泉名
+                                $spot_name = get_post_meta($spot_id, 'spa_name',  TRUE);
+                                // 温泉紹介文
+                                $spot_description = get_post_meta($spot_id, 'description',  TRUE);
+                                // 温泉写真
+                                $spot_pic = get_post_meta($spot_id, 'main_pic1',  TRUE);
+                            } else {
+                                // 施設名
+                                $spot_name = get_post_meta($spot_id, 'facility_name',  TRUE);
+                                // 施設紹介文
+                                $spot_description = get_post_meta($spot_id, 'facility_description',  TRUE);
+                                // 施設写真
+                                $spot_pic = get_post_meta($spot_id, 'facility_pic1', TRUE);
+                            }
+                        }
+
+                        ?>
+
+                        <!-- 表示処理 -->
+
+                        <div class="block">
+                            <?php
+
+                            // print_r($spot_description);
+                            $img = wp_get_attachment_image_src($spot_pic, 'large')[0];
+
+                            // print_r($img);
+
+                            // $pic_url = $spot_pic['sizes']['large'];
+                            ?>
+
+                            <img src="<?php echo $img; ?>" alt="<?php the_title(); ?>">
+
+                            <div class="square_white"></div>
+
+                            <div class="flex_left">
+                                <p class="time"><?php the_field('stay_time1_' . $i); ?></p>
+                                <div>
+                                    <!-- 温泉・周辺の名前 -->
+                                    <h4><?php echo $spot_name ?></h4>
+                                </div>
                             </div>
+                            <p class="tx"><?php the_field('activity1_' . $i); ?></p>
+
                         </div>
-                        <p class="tx">
-                            ここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
-                        </p>
-                    </div>
 
-                    <div class="flex_car">
-                        <div class="square_green"></div>
-                        <p class="car_tx">徳島駅から車で60分</p>
-                    </div>
-                    <div class="flex_car">
-                        <div class="square_green"></div>
-                        <p>公式HP：</p>
-                    </div>
-                    <p>https://conmaiya.stores.jp/</p>
-
-
-
-
-                    <div class="flex greencar">
-                        <div class="car_green"></div>
-                        <p class="car_10">車で10分</p>
-                    </div>
-
-
-
-
-                    <!-- 2 -->
-                    <div class="block">
-                        <img src="../assets/images/onsen_img.jpg" alt="">
-                        <div class="clock">
-                            <span>10 : 30<br>START</span>
+                        <div class="flex_car">
+                            <div class="square_green"></div>
+                            <p class="car_tx"><?php
+                                                $move_time = get_field('move_time1_' . $i);
+                                                if ($i == 1) {
+                                                    echo '徳島駅から車で' . esc_html($move_time);
+                                                } else {
+                                                    echo esc_html($move_time);
+                                                }
+                                                ?></p>
                         </div>
-                        <div class="square_white"></div>
-
-                        <div class="flex_left">
-                            <p class="time">60分</p>
-                            <div>
-                                <p>苔や植物で癒される</p>
-                                <h4>こんまい屋</h4>
-                            </div>
+                        <div class="flex_car">
+                            <div class="square_green"></div>
+                            <p>公式HP：<?php
+                                    $official_website = get_field('course_url' . $i);
+                                    if (!empty($official_website)) {
+                                        echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
+                                    } else {
+                                        echo '公式HPはありません。';
+                                    }
+                                    ?></p>
                         </div>
-                        <p class="tx">
-                            ここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
-                        </p>
-                    </div>
-                    <div class="flex_car">
-                        <div class="square_green"></div>
-                        <p class="car_tx">徳島駅から車で60分</p>
-                    </div>
-                    <div class="flex_car">
-                        <div class="square_green"></div>
-                        <p>公式HP：</p>
-                    </div>
-                    <p>https://conmaiya.stores.jp/</p>
 
-
-                    <div class="flex greencar">
-                        <div class="car_green"></div>
-                        <p class="car_10">車で10分</p>
-                    </div>
-                    <!-- 3 -->
-                    <div class="block">
-                        <img src="../assets/images/onsen_img.jpg" alt="">
-                        <div class="clock">
-                            <span>10 : 30<br>START</span>
+                        <div class="flex greencar">
+                            <div class="car_green"></div>
+                            <p class="car_10">車で<?php the_field('move_time1_' . $i); ?></p>
                         </div>
-                        <div class="square_white"></div>
 
-                        <div class="flex_left">
-                            <p class="time">60分</p>
-                            <div>
-                                <p>苔や植物で癒される</p>
-                                <h4>こんまい屋</h4>
-                            </div>
-                        </div>
-                        <p class="tx">
-                            ここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおここにテキストおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
-                        </p>
-                    </div>
+                    <?php endfor; ?>
 
-                    <div class="flex_car">
-                        <div class="square_green"></div>
-                        <p class="car_tx">徳島駅から車で60分</p>
-                    </div>
-                    <div class="flex_car">
-                        <div class="square_green"></div>
-                        <p>公式HP：</p>
-                    </div>
-                    <p>https://conmaiya.stores.jp/</p>
-
-                    <div class="flex greencar">
-                        <div class="car_green"></div>
-                        <p class="car_10">車で10分</p>
-                    </div>
-                    <div class="green_square">
-                    </div>
                 </div>
             </div>
-
         </section>
 
         <!-- 関連店舗 -->
         <h5>今回の関連店舗はこちら</h5>
-        <!-- カード -->
+        <!-- カード型 -->
         <div class="article_all">
+            <?php
+            // ループの回数を定義
+            $loop_count = 4;
+
+            // すべてのカスタム投稿タイプを取得
+            $custom_post_types = get_post_types(array('_builtin' => false));
+
+            for ($i = 1; $i <= $loop_count; $i++) {
+                // カスタムフィールドの名前を生成
+                $field_name = 'url' . $i;
+                $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
+
+                if ($slug) {
+                    // カスタムクエリで投稿を検索
+                    $args = array(
+                        'name' => $slug,
+                        'post_type' => $custom_post_types,
+                        'post_status' => 'publish',
+                        'numberposts' => 1
+                    );
+
+                    $posts = get_posts($args);
+
+                    if (!empty($posts)) {
+                        $post = $posts[0]; // 最初の投稿を取得
+                        setup_postdata($post);
+
+                        // 投稿情報を取得
+                        $post_id = $post->ID;
+                        $post_title = get_the_title($post_id);
+                        $post_link = get_permalink($post_id);
+                        $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+                        $post_type = get_post_type($post_id); // カスタム投稿タイプ名を取得
+            ?>
+                        <article class="card <?php echo esc_attr($post_type); ?>">
+                            <a href="<?php echo esc_url($post_link); ?>">
+                                <div>
+                                    <span></span>
+                                    <?php if ($post_thumbnail) : ?>
+                                        <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                    <?php endif; ?>
+                                </div>
+                                <h3><?php echo esc_html($post_title); ?></h3>
+                            </a>
+                        </article>
+            <?php
+                        wp_reset_postdata();
+                    }
+                }
+            }
+            ?>
+
+        </div>
+        </section>
+
+        <!-- 関連するコラム、お知らせ -->
+        <section class="connection_column">
+            <h5>関連コラム、情報
+            </h5>
+            <?php
+            // カスタム投稿タイプ 'column' から投稿を取得
+            // $args = array(
+            //     'post_type' => 'column', // カスタム投稿タイプ 'column'
+            //     'posts_per_page' => -1, // すべての投稿を取得
+            // );
+            // $column_query = new WP_Query($args);
+
+            // if ($column_query->have_posts()) :
+            //     while ($column_query->have_posts()) : $column_query->the_post();
+            //         // アイキャッチ画像のURLを取得
+            //         $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); // サムネイルサイズを小さく設定
+            //         // 投稿の日付を取得
+            //         $post_date = get_the_date('Y.m.d D H:i');
+            //         // 投稿のタイトルを取得
+            //         $post_title = get_the_title();
+            //         // 投稿のパーマリンクを取得
+            //         $post_permalink = get_permalink();
+            //         // 投稿のタクソノミースラッグを取得
+            //         $tags = get_the_terms(get_the_ID(), 'column_type');
+
+            //
+            //新しいロジック
+            // ループの回数を定義
+            // カスタムフィールドを4つ作ってるので4回設定
+            $loop_count = 4;
+
+            // すべてのカスタム投稿タイプを取得
+            $custom_post_types = get_post_types(array('_builtin' => false));
+            for ($i = 1; $i <= $loop_count; $i++) {
+                // カスタムフィールドで設定したフィールド名＋カウントの数字
+                // 重複しないようにcolumn∔1~4の形で設定
+                $field_name = 'column' . $i;
+                $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
+
+                if ($slug) {
+                    // カスタムクエリで投稿を検索
+                    $args = array(
+                        'name' => $slug,
+                        'post_type' => $custom_post_types,
+                        'post_status' => 'publish',
+                        'numberposts' => 1
+                    );
+                    $posts = get_posts($args);
+                    if (!empty($posts)) { //記事があるとき
+                        $post = $posts[0]; // 最初の投稿を取得
+                        setup_postdata($post);
+                        // 投稿情報を取得
+                        $post_id = $post->ID;
+                        // 投稿のタイトルを取得
+                        $post_title = get_the_title($post_id);
+                        // 投稿のパーマリンクを取得
+                        $post_link = get_permalink($post_id);
+                        // 投稿の日付を取得
+                        $post_date = get_the_date('Y.m.d D H:i');
+                        // アイキャッチ画像のURLを取得
+                        $post_thumbnail = get_the_post_thumbnail_url($post_id, 'thumbnail');
+                        // 投稿のタクソノミースラッグを取得
+                        $tags = get_the_terms(get_the_ID(), 'column_type');
+            ?>
+                        <!-- ページ下部の関係コラム枠 -->
+                        <article class="news_card news">
+                            <!-- コラムへのリンク -->
+                            <a href="<?php echo esc_url($post_link); ?>">
+                                <!-- アイキャッチ取得 -->
+                                <?php if ($post_thumbnail) : ?>
+                                    <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
+                                <?php endif; ?>
+                            </a>
+                            <div class="news_contents">
+                                <a href="<?php echo esc_url($$post_link); ?>">
+                                    <!-- 日付と時間 -->
+                                    <p class="date fugaz-one-regular"><?php echo esc_html($post_date); ?></p>
+                                    <!-- 記事タイトル -->
+                                    <h6 class="title"><?php echo esc_html($post_title); ?></h6>
+                                </a>
+                                <!-- ハッシュタグ -->
+                                <div class="hashtag_list">
+                                    <?php if ($tags && !is_wp_error($tags)) : ?>
+                                        <?php foreach ($tags as $tag) : ?>
+                                            <a href="<?php echo esc_url(get_term_link($tag)); ?>" class="hashtag">#<?php echo esc_html($tag->name); ?></a>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </article>
+            <?php
+                        wp_reset_postdata();
+                    } else {
+                        // 記事が見つからない場合の代替メッセージを表示
+                        echo '<p>コラム、情報はまだありません。</p>';
+                    }
+                }
+            }
+            ?>
 
             <!-- バックボタン -->
             <?php
@@ -401,7 +545,7 @@
             <?php
             }
             ?>
-        </div>
+    </div>
 </main>
 
 <!-- footer.phpを読み込む -->

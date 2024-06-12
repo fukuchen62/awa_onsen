@@ -365,7 +365,7 @@
 
                     </ul>
                     <!-- モデルコース一覧へ -->
-                    <a class="course_btn btn shadow section_btn" href="<?php echo home_url('facility_type/tour/'); ?>">モデルコース一覧へ<i class="fa-solid fa-list"></i></a>
+                    <a class="course_btn btn shadow section_btn" href="<?php echo home_url('/course_type/tour/'); ?>">モデルコース一覧へ<i class="fa-solid fa-list"></i></a>
                 </div>
             </section>
 
