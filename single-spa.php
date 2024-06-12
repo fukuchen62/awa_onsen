@@ -54,7 +54,9 @@
                     if ($terms && !is_wp_error($terms)) {
                         foreach ($terms as $term) {
             ?>
-                            <a href="" class="hashtag"><?php echo esc_html($term->name); ?></a>
+                            <span class="hashtag">
+                                <?php echo esc_html($term->name); ?>
+                            </span>
             <?php
                         }
                     }
@@ -64,90 +66,91 @@
         </div>
 
         <!-- 温泉紹介 -->
-        <section>
+        <section class="spa_detail">
             <h4 class="lined-title">温泉の紹介</h4>
-            <?php the_field('description'); ?>
+            <p><?php the_field('description'); ?></p>
+            <div class="other_img">
+                <ul class="slider">
+                    <?php if ($pic = get_field('spa_pic1')) : ?>
+                        <?php $pic_url = $pic['sizes']['large']; ?>
+                        <?php if ($pic_url) : ?>
+                            <li class="slider-img">
+                                <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像1">
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                    <?php if ($pic = get_field('spa_pic2')) : ?>
+                        <?php $pic_url = $pic['sizes']['large']; ?>
+                        <?php if ($pic_url) : ?>
+                            <li class="slider-img">
+                                <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像2">
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                    <?php if ($pic = get_field('spa_pic3')) : ?>
+                        <?php $pic_url = $pic['sizes']['large']; ?>
+                        <?php if ($pic_url) : ?>
+                            <li class="slider-img">
+                                <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像3">
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                    <?php if ($pic = get_field('spa_pic4')) : ?>
+                        <?php $pic_url = $pic['sizes']['large']; ?>
+                        <?php if ($pic_url) : ?>
+                            <li class="slider-img">
+                                <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像4">
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </ul>
+
+                <ul class="thumbnail">
+                    <?php if ($pic = get_field('spa_pic1')) : ?>
+                        <?php $pic_url = $pic['sizes']['thumbnail']; ?>
+                        <?php if ($pic_url) : ?>
+                            <li class="thumbnail-img">
+                                <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像1">
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                    <?php if ($pic = get_field('spa_pic2')) : ?>
+                        <?php $pic_url = $pic['sizes']['thumbnail']; ?>
+                        <?php if ($pic_url) : ?>
+                            <li class="thumbnail-img">
+                                <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像2">
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                    <?php if ($pic = get_field('spa_pic3')) : ?>
+                        <?php $pic_url = $pic['sizes']['thumbnail']; ?>
+                        <?php if ($pic_url) : ?>
+                            <li class="thumbnail-img">
+                                <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像3">
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                    <?php if ($pic = get_field('spa_pic4')) : ?>
+                        <?php $pic_url = $pic['sizes']['thumbnail']; ?>
+                        <?php if ($pic_url) : ?>
+                            <li class="thumbnail-img">
+                                <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像4">
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </ul>
+            </div>
         </section>
-        <div class="other_img">
-            <ul class="slider">
-                <?php if ($pic = get_field('spa_pic1')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slider-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像1">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
 
-                <?php if ($pic = get_field('spa_pic2')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slider-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像2">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-
-                <?php if ($pic = get_field('spa_pic3')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slider-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像3">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-
-                <?php if ($pic = get_field('spa_pic4')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slider-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像4">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-            </ul>
-
-            <ul class="thumbnail">
-                <?php if ($pic = get_field('spa_pic1')) : ?>
-                    <?php $pic_url = $pic['sizes']['thumbnail']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="thumbnail-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像1">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-
-                <?php if ($pic = get_field('spa_pic2')) : ?>
-                    <?php $pic_url = $pic['sizes']['thumbnail']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="thumbnail-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像2">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-
-                <?php if ($pic = get_field('spa_pic3')) : ?>
-                    <?php $pic_url = $pic['sizes']['thumbnail']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="thumbnail-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像3">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-
-                <?php if ($pic = get_field('spa_pic4')) : ?>
-                    <?php $pic_url = $pic['sizes']['thumbnail']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="thumbnail-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像4">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-            </ul>
-        </div>
         <section>
             <h4 class="lined-title">温泉の水の性質は？</h4>
-            <?php the_field('spa_description'); ?>
+            <p><?php the_field('spa_description'); ?></p>
         </section>
 
         <?php
@@ -189,35 +192,6 @@
                 <dd>
                     <?php echo nl2br(esc_html(get_field('price'))); ?>
                 </dd>
-                <dt>決済方法</dt>
-                <dd>
-                    <?php echo nl2br(esc_html(get_field('ayment_description'))); ?>
-                </dd>
-                <dt>予約</dt>
-                <dd>
-                    <?php echo nl2br(esc_html(get_field('reserve_description'))); ?>
-                </dd>
-                <dt>トイレ</dt>
-                <dd>
-                    <?php echo nl2br(esc_html(get_field('toilet_description'))); ?>
-                </dd>
-                <dt>分煙</dt>
-                <dd>
-                    <?php echo nl2br(esc_html(get_field('smoking_description'))); ?>
-                </dd>
-                <dt>駐車場</dt>
-                <dd>
-                    <?php echo nl2br(esc_html(get_field('parking_description'))); ?>
-                </dd>
-                <dt>Wi-Fi</dt>
-                <dd>
-                    <?php echo nl2br(esc_html(get_field('wifi_description'))); ?>
-
-                </dd>
-                <dt>浴室小物</dt>
-                <dd>
-                    <?php echo nl2br(esc_html(get_field('facility'))); ?>
-                </dd>
                 <dt>住所</dt>
                 <dd>
                     <?php echo nl2br(esc_html(get_field('address1'))); ?>
@@ -231,14 +205,6 @@
                 <dd>
                     <?php echo nl2br(esc_html(get_field('fax'))); ?>
                 </dd>
-                <!-- <dt>Email</dt> 6/12 枠不要 コメントアウト
-                <dd>
-                    <?php echo nl2br(esc_html(get_field('email'))); ?>
-                </dd> -->
-                <dt>最寄り駅</dt>
-                <dd>
-                    <?php echo nl2br(esc_html(get_field('station'))); ?>
-                </dd>
                 <dt>SNS</dt>
                 <dd>
                     <?php echo nl2br(esc_html(get_field('sns_url'))); ?>
@@ -249,21 +215,48 @@
                         <?php echo get_field('official_url') ?>
                     </a>
                 </dd>
+                <dt>駐車場</dt>
+                <dd>
+                    <?php echo nl2br(esc_html(get_field('parking_description'))); ?>
+                </dd>
+                <dt>最寄り駅</dt>
+                <dd>
+                    <?php echo nl2br(esc_html(get_field('station'))); ?>
+                </dd>
+                <dt>決済方法</dt>
+                <dd>
+                    <?php echo nl2br(esc_html(get_field('ayment_description'))); ?>
+                </dd>
+                <dt>浴室小物</dt>
+                <dd>
+                    <?php echo nl2br(esc_html(get_field('facility'))); ?>
+                </dd>
+
+                <!-- ========== 不要と感じたのでコメントアウトしました ========== -->
+                <!-- <dt>予約</dt>
+                <dd>
+                    <?php echo nl2br(esc_html(get_field('reserve_description'))); ?>
+                </dd> -->
+                <!-- <dt>トイレ</dt>
+                <dd>
+                    <?php echo nl2br(esc_html(get_field('toilet_description'))); ?>
+                </dd> -->
+                <!-- <dt>分煙</dt>
+                <dd>
+                    <?php echo nl2br(esc_html(get_field('smoking_description'))); ?>
+                </dd> -->
+                <!-- <dt>Wi-Fi</dt>
+                <dd>
+                    <?php echo nl2br(esc_html(get_field('wifi_description'))); ?>
+                </dd> -->
+                <!-- <dt>Email</dt>
+                <dd>
+                    <?php echo nl2br(esc_html(get_field('email'))); ?>
+                </dd> -->
+                <!-- ==================== -->
             </dl>
         </section>
-        <?php
 
-        if (function_exists('get_field')) {
-            $iframe_code = get_field('iframe'); // 'iframe' フィールド名を指定
-            if ($iframe_code) {
-                echo $iframe_code;
-            } else {
-                echo 'カスタムフィールドが見つかりませんでした。';
-            }
-        } else {
-            echo 'get_field 関数が見つかりませんでした。';
-        }
-        ?>
         <ul class="icon_list">
             <?php if (get_field('reserve')) : ?>
                 <li>
@@ -301,7 +294,30 @@
                     <p>駐車場</p>
                 </li>
             <?php endif; ?>
+
+            <!-- ========== バックエンド班へ。追加しました ========== -->
+            <?php if (get_field('toilet')) : ?>
+                <li>
+                    <span class="material-symbols-outlined">wc</span>
+                    <p>トイレ</p>
+                </li>
+            <?php endif; ?>
+            <!-- ==================== -->
         </ul>
+        <?php
+
+        if (function_exists('get_field')) {
+            $iframe_code = get_field('iframe'); // 'iframe' フィールド名を指定
+            if ($iframe_code) {
+                echo $iframe_code;
+            } else {
+                echo 'カスタムフィールドが見つかりませんでした。';
+            }
+        } else {
+            echo 'get_field 関数が見つかりませんでした。';
+        }
+        ?>
+
         <section class="recommend">
             <h5>こちらもいかがでしょうか？</h5>
             <!-- カード型 -->
@@ -458,38 +474,12 @@
                 }
             }
             ?>
-
-            <?php
-            // 現在のページのURLを取得
-            $current_url = home_url(add_query_arg(array(), $wp->request));
-
-            // リファラー(前のページ)のURLを取得
-            $referer_url = wp_get_referer();
-
-            // back_btnを表示するかどうかのフラグ
-            $show_back_btn = false;
-
-            // リファラーのURLが取得できた場合
-            if ($referer_url) {
-                // リファラーのURLとの比較
-                if (strpos($referer_url, home_url()) !== false) {
-                    // リファラーのURLがサイト内のURLだった場合
-                    $back_url = $referer_url;
-                    $show_back_btn = true;
-                }
-            }
-
-            // back_btnを表示する場合のみ出力
-            if ($show_back_btn) {
-            ?>
-                <button class="back_btn" onclick="window.location.href='<?php echo $back_url; ?>'">
-                    <span><i class="fa-solid fa-arrow-left"></i>back</span>
-                </button>
-            <?php
-            }
-            ?>
-
         </section>
+
+        <button class="back_btn" onclick="window.location.href='<?php echo home_url('/spa/'); ?>'">
+            <span><i class="fa-solid fa-arrow-left"></i>back</span>
+        </button>
+
     </div>
 </main>
 

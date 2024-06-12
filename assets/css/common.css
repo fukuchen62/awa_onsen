@@ -206,10 +206,16 @@ p {
 
 /* ----------------アヒル ---------------------------*/
 
+.duck:hover {
+    animation-play-state: paused;
+}
+
+/* .duckクラスの調整：z-indexを高くし、ブロック要素として表示 */
 .duck {
     display: block;
     position: fixed;
-    z-index: -20;
+    z-index: 100;
+    /* 他の要素より高くする */
     bottom: -50px;
     animation: duck 8s linear infinite;
 }
@@ -256,7 +262,7 @@ p {
     z-index: -10;
     min-height: 100vh;
     /* background-color: rgba(255, 255, 255, 0.2); */
-    padding: 100px 5% 0 5%;
+    padding: 100px 5%;
     margin: 0 auto;
     border-radius: 50px;
     margin-top: 30px;
@@ -610,6 +616,13 @@ h5 {
 }
 
 /*========== header ==========*/
+
+.sp_nav {
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    position: fixed;
+}
 
 .pc_inner {
     max-width: 1200px;

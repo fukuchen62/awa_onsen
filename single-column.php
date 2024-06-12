@@ -43,13 +43,10 @@
                     foreach ($taxonomies as $taxonomy) {
                         // タクソノミーに関連するタームを取得
                         $terms = get_the_terms($post_id, $taxonomy);
-
                         if ($terms && !is_wp_error($terms)) {
-                            echo '<ul>';
                             foreach ($terms as $term) {
-                                // echo '<li>';
                 ?>
-                                <a href="https://www.yahoo.co.jp/" class="hashtag"><?php echo '#' . esc_html($term->name); ?></a>
+                                <span class="hashtag"><?php echo esc_html($term->name); ?></span>
                 <?php
                             }
                             echo '</ul>';
@@ -170,10 +167,18 @@
         </div>
         <!-- 前に戻るボタン -->
 
-        <button class="back_btn" onclick="window.location.href='<?php echo home_url('/column_type/spa-column/'); ?>'">
-            <span><i class="fa-solid fa-arrow-left"></i>back</span>
-        </button>
+        <?php
+        // 現在の投稿のタームを取得
+        $terms = get_the_terms(get_the_ID(), 'facility_type');
+        $term_slug = '';
 
+        if ($terms && !is_wp_error($terms)) {
+            // 最初のタームのスラッグを取得
+            $term_slug = $terms[0]->slug;
+        }
+        ?>
+
+        <button class="back_btn" onclick="window.location.href='<?php echo home_url('/column_type/' . $term_slug . '/'); ?>'"><span><i class="fa-solid fa-arrow-left"></i>back</span></button>
 
 
 </main>

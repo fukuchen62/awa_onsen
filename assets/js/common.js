@@ -140,39 +140,38 @@ $(document).ready(function () {
 // アヒルの出現
 $(document).ready(function () {
     const $section = $('.bubble_background');
-
     const createDuck = () => {
-        const $duckEl = $('<span>').addClass('duck');
-        const size = 40;
+        const $duckEl = $('<a>').addClass('duck').attr('href', 'https://awa-onsen.com/spa/spa05/'); // aタグに変更し、hrefを追加
+        const size = 50;
         $duckEl.css({
             width: `${size}px`,
             height: `${size}px`
         });
-
-        const $img = $('<img>').attr('src', path + '/assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
+        const $img = $('<img>').attr('src', '/assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
             width: '100%',
             height: '100%'
         });
         $duckEl.append($img);
-
-        console.log("duck:" + $img);
-
         $duckEl.css({
             left: Math.random() * window.innerWidth + 'px'
         });
         $section.append($duckEl);
-
         setTimeout(() => {
             $duckEl.remove();
         }, 8000);
+        // ホバー時にアニメーションを停止
+        $duckEl.on('mouseenter', function () {
+            $(this).css('animation-play-state', 'paused');
+        });
+        // ホバーが外れたらアニメーションを再開
+        $duckEl.on('mouseleave', function () {
+            $(this).css('animation-play-state', 'running');
+        });
     };
-
     let activeDuck = null;
-
     const stopDuck = () => {
         clearInterval(activeDuck);
     };
-
     const cb = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -182,13 +181,10 @@ $(document).ready(function () {
             }
         });
     };
-
     const options = {
         rootMargin: "100px 0px"
     };
-
     const io = new IntersectionObserver(cb, options);
-    io.POLL_INTERVAL = 100;
+    io.POLL_INTERVAL = 20000;
     io.observe($section[0]);
 });
-
