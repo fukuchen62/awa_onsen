@@ -230,7 +230,7 @@
                     <?php echo nl2br(esc_html(get_field('facility'))); ?>
                 </dd>
 
-<!-- ========== 不要と感じたのでコメントアウトしました ========== -->
+                <!-- ========== 不要と感じたのでコメントアウトしました ========== -->
                 <!-- <dt>予約</dt>
                 <dd>
                     <?php echo nl2br(esc_html(get_field('reserve_description'))); ?>
@@ -251,7 +251,7 @@
                 <dd>
                     <?php echo nl2br(esc_html(get_field('email'))); ?>
                 </dd> -->
-<!-- ==================== -->
+                <!-- ==================== -->
             </dl>
         </section>
 
@@ -292,13 +292,15 @@
                     <p>駐車場</p>
                 </li>
             <?php endif; ?>
-            <!-- ==========　バックエンド班へ。 -->
-            <?php if (get_field('parking')) : ?>
+
+<!-- ========== バックエンド班へ。追加しました ========== -->
+            <?php if (get_field('toilet')) : ?>
                 <li>
-                    <span class="material-symbols-outlined">local_parking</span>
-                    <p>駐車場</p>
+                    <span class="material-symbols-outlined">wc</span>
+                    <p>トイレ</p>
                 </li>
             <?php endif; ?>
+<!-- ==================== -->
         </ul>
         <?php
 
