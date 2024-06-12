@@ -51,16 +51,12 @@
                 foreach ($taxonomies as $taxonomy) {
                     // タクソノミーに関連するタームを取得
                     $terms = get_the_terms($post_id, $taxonomy);
-
                     if ($terms && !is_wp_error($terms)) {
-                        echo '<ul>';
                         foreach ($terms as $term) {
-                            // echo '<li>';
             ?>
-                            <a href="https://www.yahoo.co.jp/" class="hashtag"><?php echo '#' . esc_html($term->name); ?></a>
+                            <a href="" class="hashtag"><?php echo esc_html($term->name); ?></a>
             <?php
                         }
-                        echo '</ul>';
                     }
                 }
             }
@@ -237,10 +233,10 @@
                 <dd>
                     <?php echo nl2br(esc_html(get_field('fax'))); ?>
                 </dd>
-                <dt>Email</dt>
+                <!-- <dt>Email</dt> 6/12 枠不要 コメントアウト
                 <dd>
                     <?php echo nl2br(esc_html(get_field('email'))); ?>
-                </dd>
+                </dd> -->
                 <dt>最寄り駅</dt>
                 <dd>
                     <?php echo nl2br(esc_html(get_field('station'))); ?>
@@ -251,7 +247,7 @@
                 </dd>
                 <dt>公式ホームページ</dt>
                 <dd>
-                    <a href="<?php the_field('official_url'); ?>">
+                    <a href="<?php the_field('official_url'); ?>" target="_blank">
                         <?php echo get_field('official_url') ?>
                     </a>
                 </dd>

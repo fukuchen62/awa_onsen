@@ -93,7 +93,7 @@
                         echo '<ul>';
                         foreach ($terms as $term) {
             ?>
-                            <a href="https://www.yahoo.co.jp/" class="hashtag"><?php echo '#' . esc_html($term->name); ?></a>
+                            <a href="" class="hashtag"><?php echo esc_html($term->name); ?></a>
             <?php
                         }
                         echo '</ul>';
