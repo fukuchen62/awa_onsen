@@ -25,23 +25,32 @@
         <!-- タグ -->
         <div class="hashtag_list">
             <?php
+            // 現在の投稿のIDを取得
             $post_id = get_the_ID();
-            $taxonomies = get_object_taxonomies(get_post_type($post_id));
 
-            if ($taxonomies) :
-                foreach ($taxonomies as $taxonomy) :
-                    if ($terms = get_the_terms($post_id, $taxonomy)) :
+            // 投稿タイプを取得
+            $post_type = get_post_type($post_id);
+
+            // 投稿タイプに関連するタクソノミーを取得
+            $taxonomies = get_object_taxonomies($post_type);
+
+            if (!empty($taxonomies)) {
+                foreach ($taxonomies as $taxonomy) {
+                    // タクソノミーに関連するタームを取得
+                    $terms = get_the_terms($post_id, $taxonomy);
+
+                    if ($terms && !is_wp_error($terms)) {
                         echo '<ul>';
-                        foreach ($terms as $term) :
-                            echo '<li><a href="https://www.yahoo.co.jp/" class="hashtag">#' . esc_html($term->name) . '</a></li>';
-                        endforeach;
+                        foreach ($terms as $term) {
+            ?>
+                            <span class="hashtag"><?php echo esc_html($term->name); ?></span>
+            <?php }
                         echo '</ul>';
-                    endif;
-                endforeach;
-            endif;
+                    }
+                }
+            }
             ?>
         </div>
-
         <!-- コースの説明 -->
         <div class="flex">
             <h3 class="course_day_summary">Summary</h3>
