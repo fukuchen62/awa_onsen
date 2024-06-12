@@ -26,6 +26,7 @@
             <!-- 3 -->
             <img class="sauna_photo margin_left" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna2.png" alt="整い方写真">
 
+            <!-- 4 -->
             <div class="sauna_box">
                 <h3 class="sauna_ttl">整い方</h3>
                 <p>
@@ -33,6 +34,7 @@
                 </p>
             </div>
 
+            <!-- 5 -->
             <img class="sauna_photo margin_right" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna3.png" alt="持ち物・注意事項写真">
 
             <div class="sauna_box">
