@@ -108,9 +108,21 @@
 
         </section>
 
-        <button class="back_btn" onclick="window.location.href='<?php echo home_url('/category/news/'); ?>'">
+        <?php
+        // 現在の投稿のカテゴリーを取得
+        $categories = get_the_category();
+        $category_slug = '';
+
+        if ($categories && !is_wp_error($categories)) {
+            // 最初のカテゴリーのスラッグを取得
+            $category_slug = $categories[0]->slug;
+        }
+        ?>
+
+        <button class="back_btn" onclick="window.location.href='<?php echo home_url('/category/' . $category_slug . '/'); ?>'">
             <span><i class="fa-solid fa-arrow-left"></i>back</span>
         </button>
+
 
     </div>
 </main>
