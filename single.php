@@ -48,6 +48,7 @@
             $custom_post_types = get_post_types(array('_builtin' => false));
 
             $posts_exist = false;
+            $posts_data = array();
 
             for ($i = 1; $i <= $loop_count; $i++) {
                 // カスタムフィールドの名前を生成
@@ -67,7 +68,7 @@
 
                     if (!empty($posts)) {
                         $posts_exist = true;
-                        break;
+                        $posts_data[] = $posts[0]; // 投稿データを保存
                     }
                 }
             }
@@ -77,53 +78,33 @@
                 <h5 class="mt32">関連情報</h5>
                 <div class="article_all">
                     <?php
-                    for ($i = 1; $i <= $loop_count; $i++) {
-                        // カスタムフィールドの名前を生成
-                        $field_name = 'url' . $i;
-                        $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
+                    foreach ($posts_data as $post) {
+                        setup_postdata($post);
 
-                        if ($slug) {
-                            // カスタムクエリで投稿を検索
-                            $args = array(
-                                'name' => $slug,
-                                'post_type' => $custom_post_types,
-                                'post_status' => 'publish',
-                                'numberposts' => 1
-                            );
-
-                            $posts = get_posts($args);
-
-                            if (!empty($posts)) {
-                                $post = $posts[0]; // 最初の投稿を取得
-                                setup_postdata($post);
-
-                                // 投稿情報を取得
-                                $post_id = $post->ID;
-                                $post_title = get_the_title($post_id);
-                                $post_link = get_permalink($post_id);
-                                $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
-                                $post_type = get_post_type($post_id); // カスタム投稿タイプ名を取得
+                        // 投稿情報を取得
+                        $post_id = $post->ID;
+                        $post_title = get_the_title($post_id);
+                        $post_link = get_permalink($post_id);
+                        $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+                        $post_type = get_post_type($post_id); // カスタム投稿タイプ名を取得
                     ?>
-                                <article class="card <?php echo esc_attr($post_type); ?>">
-                                    <a href="<?php echo esc_url($post_link); ?>">
-                                        <div>
-                                            <span></span>
-                                            <?php if ($post_thumbnail) : ?>
-                                                <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
-                                            <?php endif; ?>
-                                        </div>
-                                        <h3><?php echo esc_html($post_title); ?></h3>
-                                    </a>
-                                </article>
+                        <article class="card <?php echo esc_attr($post_type); ?>">
+                            <a href="<?php echo esc_url($post_link); ?>">
+                                <div>
+                                    <span></span>
+                                    <?php if ($post_thumbnail) : ?>
+                                        <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                    <?php endif; ?>
+                                </div>
+                                <h3><?php echo esc_html($post_title); ?></h3>
+                            </a>
+                        </article>
                     <?php
-                                wp_reset_postdata();
-                            }
-                        }
+                        wp_reset_postdata();
                     }
                     ?>
                 </div>
             <?php endif; ?>
-
 
         </section>
 
@@ -159,8 +140,6 @@
 
     </div>
 </main>
-
-
 
 
 <?php get_footer(); ?>
