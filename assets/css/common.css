@@ -206,10 +206,16 @@ p {
 
 /* ----------------アヒル ---------------------------*/
 
+.duck:hover {
+    animation-play-state: paused;
+}
+
+/* .duckクラスの調整：z-indexを高くし、ブロック要素として表示 */
 .duck {
     display: block;
     position: fixed;
-    z-index: -20;
+    z-index: 100;
+    /* 他の要素より高くする */
     bottom: -50px;
     animation: duck 8s linear infinite;
 }
