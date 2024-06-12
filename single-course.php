@@ -99,10 +99,10 @@
                 <!-- 1日目・日帰り1～5 -->
                 <div class="model_course1">
 
-                    <?php for ($i = 1; $i <= 5; $i++) : ?>
+                    <?php for ($i = 1; $i <= 6; $i++) : ?>
 
                         <?php
-                        //スポットのスラッグをを読み込む
+                        //スポットのスラッグを読み込む
                         $spot_slug = get_field('spot_1_' . $i);
                         if ($spot_slug != "") {
 
@@ -130,7 +130,7 @@
                                 // 温泉紹介文
                                 $spot_description = get_post_meta($spot_id, 'description',  TRUE);
                                 // 温泉写真
-                                $spot_pic = get_post_meta($spot_id, 'main_pic1',  TRUE);
+                                $spot_pic = get_post_meta($spot_id, 'main_pic',  TRUE);
                             } else {
                                 // 施設名
                                 $spot_name = get_post_meta($spot_id, 'facility_name',  TRUE);
@@ -140,23 +140,20 @@
                                 $spot_pic = get_post_meta($spot_id, 'facility_pic1', TRUE);
                             }
                         }
-
                         ?>
 
                         <!-- 表示処理 -->
-
                         <div class="block">
                             <?php
-
                             // print_r($spot_description);
                             $img = wp_get_attachment_image_src($spot_pic, 'large')[0];
-
                             // print_r($img);
-
                             // $pic_url = $spot_pic['sizes']['large'];
                             ?>
 
-                            <img src="<?php echo $img; ?>" alt="<?php the_title(); ?>">
+                            <a href="<?php echo $url ?>">
+                                <img src="<?php echo $img; ?>" alt="<?php echo $spot_name ?>">
+                            </a>
 
                             <div class="square_white"></div>
 
@@ -171,17 +168,15 @@
 
                         </div>
 
-                        <div class="flex_car">
-                            <div class="square_green"></div>
-                            <p class="car_tx"><?php
+                        <div class="flex_car"><?php
                                                 $move_time = get_field('move_time1_' . $i);
                                                 if ($i == 1) {
-                                                    echo '徳島駅から車で' . esc_html($move_time);
-                                                } else {
-                                                    echo esc_html($move_time);
+                                                    echo '<div class="square_green"></div>'
+                                                        . esc_html($move_time);
                                                 }
-                                                ?></p>
+                                                ?>
                         </div>
+
                         <div class="flex_car">
                             <div class="square_green"></div>
                             <p>公式HP：<?php
@@ -189,18 +184,16 @@
                                     if (!empty($official_website)) {
                                         echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
                                     } else {
-                                        echo '公式HPはありません。';
+                                        echo '-';
                                     }
                                     ?></p>
                         </div>
 
                         <div class="flex greencar">
                             <div class="car_green"></div>
-                            <p class="car_10">車で<?php the_field('move_time1_' . $i); ?></p>
+                            <p class="car_10">車で<?php the_field('move_time1_' . ($i + 1)); ?></p>
                         </div>
-
                     <?php endfor; ?>
-
                 </div>
             </div>
         </section>
@@ -210,7 +203,7 @@
         <div class="yellowgreen_square">
             <h4>本日のホテルと温泉</h4>
             <article class="card spa">
-                <a href="<?php the_permalink(); ?>">
+                <a href="<?php echo $url ?>">
                     <div>
                         <span></span>
                         <?php if (has_post_thumbnail()) : the_post_thumbnail('medium'); ?>
@@ -218,12 +211,12 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.png" alt="<?php echo $spot_name ?>">
                         <?php endif; ?>
                     </div>
-                    <h3><?php echo $spot_name ?></h3>
-                    <!-- 紹介文 -->
-                    <p class="tx">
-                        <?php echo $spot_description; ?>
-                    </p>
                 </a>
+                <h3><?php echo $spot_name ?></h3>
+                <!-- 紹介文 -->
+                <p class="tx">
+                    <?php echo $spot_description; ?>
+                </p>
             </article>
         </div>
 
