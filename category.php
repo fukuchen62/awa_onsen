@@ -16,6 +16,7 @@ get_header();
             $args = [
                 'hide_empty' => false,
                 'orderby' => 'ID',
+                'order' => 'DESC',
             ];
             $categories = get_categories($args); ?>
 
