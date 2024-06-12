@@ -39,7 +39,10 @@
             <p class="mt32"><?php the_content(); ?></p>
         </section>
 
+
+
         <section>
+
             <?php
             // ループの回数を定義
             $loop_count = 4;

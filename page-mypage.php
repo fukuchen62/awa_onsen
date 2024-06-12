@@ -107,9 +107,6 @@
                 </div>
             </div>
         </section>
-        <button class="back_btn" onclick="history.back">
-            <span><i class="fa-solid fa-arrow-left"></i>back</span>
-        </button>
     </div>
 </main>
 
