@@ -176,3 +176,8 @@ h5 {
         background-color: #fff;
     }
 }
+
+/* commentページログイン時に出るワードを非表示にします。 */
+.logged-in-as {
+    display: none;
+}
