@@ -13,7 +13,12 @@ get_header();
 
             <!-- タグ -->
             <?php
-            $categories = get_categories(array('hide_empty' => false)); ?>
+            $args = [
+                'hide_empty' => false,
+                'orderby' => 'ID',
+                'order' => 'DESC',
+            ];
+            $categories = get_categories($args); ?>
 
             <?php if (!empty($categories)) : ?>
                 <ul class="tag element04">
