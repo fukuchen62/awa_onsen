@@ -23,8 +23,14 @@
 }
 
 h4 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
+    margin-top: 80px;
     margin-bottom: 16px;
+}
+
+p{
+    font-size: 1.125rem;
+    line-height: 2rem;
 }
 
 .container>* {
@@ -37,6 +43,10 @@ h4 {
 
     h4 {
         font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.25rem;
     }
 }
 
@@ -144,7 +154,7 @@ checkbox-item {
 
 /* 基本情報 */
 .basic_information dt {
-    padding: 3px;
+    font-size: 1.125rem;
     color: #fff;
 }
 
@@ -158,10 +168,16 @@ checkbox-item {
 
 .basic_information dt {
     background-color: #eb97a8;
+    padding: 8px 0;
+}
+
+.basic_information dd:not(:first-child) {
+    padding: 8px 0;
 }
 
 .basic_information table th {
     text-align: center;
+    padding: 8px 0;
 }
 
 .basic_information table tr+tr {
@@ -180,6 +196,11 @@ checkbox-item {
 
 .basic_information table td {
     width: 70%;
+    padding: 8px 0;
+}
+
+.basic_information table td {
+    padding: 8px 0;
 }
 
 .test {
@@ -223,6 +244,18 @@ iframe {
 @media (width>=757px) {
     .back_btn {
         display: inline;
+    }
+
+    .basic_information table th {
+        font-size: 1.125rem;
+    }
+
+    .basic_information table td {
+        font-size: 1.125rem;
+    }
+
+    .basic_information dd:not(:first-child) {
+        font-size: 1.125rem;
     }
 }
 

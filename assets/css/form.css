@@ -78,16 +78,25 @@ small {
 
 /* 入力部 */
 .form_item input {
-    background-color: rgb(228, 228, 228);
+    background-color: #fff;
     width: 100%;
     margin: 10px 0;
+    border: 2px solid #bbb;
+    border-radius: 8px;
 }
 
 
 .form_item textarea {
-    background-color: rgb(228, 228, 228);
+    background-color: #fff;
     width: 100%;
     margin: 10px 0;
+    border: 2px solid #bbb;
+    border-radius: 8px;
+}
+
+.form_item input:focus,
+.form_item textarea:focus {
+    background-color: #fffbf3;
 }
 
 
@@ -155,14 +164,28 @@ small {
 
 /* ボタン */
 #submit_button {
-    /* border: 2px solid #fff; */
-    color: #fff;
-    margin: 20px;
-    background-color: #DBF500;
-    border-radius: 25px;
     width: 55%;
-    height: 10vh;
     font-size: 1.125rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #DBF500;
+    margin: 20px;
+    padding: 8px 0;
+    border-radius: 24px;
+    transition: all 0.4s;
+}
+
+#submit_button:hover {
+    opacity: 0.8;
+}
+
+.wpcf7-spinner {
+    display: none;
+}
+
+.confirmation {
+    width: 100%;
+    text-align: center;
 }
 
 /* レスポンシブ */
@@ -172,9 +195,7 @@ small {
 
 
     #submit_button {
-
         font-size: 2rem;
-
     }
 
 }
@@ -190,11 +211,8 @@ small {
     #submit_button {
         border: 2px solid #fff;
         color: #fff;
-        margin: 20px;
         background-color: #538FCB;
-        border-radius: 25px;
         width: 50%;
-        height: 10vh;
         /* margin: 20px auto; */
     }
 
