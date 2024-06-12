@@ -54,7 +54,9 @@
                     if ($terms && !is_wp_error($terms)) {
                         foreach ($terms as $term) {
             ?>
-                            <span class="hashtag"><?php echo esc_html($term->name); ?></span>
+                            <span class="hashtag">
+                                <?php echo esc_html($term->name); ?>
+                            </span>
             <?php
                         }
                     }
