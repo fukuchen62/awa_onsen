@@ -99,8 +99,8 @@
                 <!-- 1日目・日帰り1～5 -->
                 <div class="model_course1">
 
-                    <?php for ($i = 1; $i <= 6; $i++) : ?>
-
+                    <?php for ($i = 1, $j = 2; $i <= 5, $j <= 6; $i++, $j++) :
+                    ?>
                         <?php
                         //スポットのスラッグを読み込む
                         $spot_slug = get_field('spot_1_' . $i);
@@ -151,7 +151,7 @@
                             // $pic_url = $spot_pic['sizes']['large'];
                             ?>
 
-                            <a href="<?php echo $url ?>">
+                            <a href="<?php echo $url ?>" target="_blank">
                                 <img src="<?php echo $img; ?>" alt="<?php echo $spot_name ?>">
                             </a>
 
@@ -191,7 +191,7 @@
 
                         <div class="flex greencar">
                             <div class="car_green"></div>
-                            <p class="car_10">車で<?php the_field('move_time1_' . ($i + 1)); ?></p>
+                            <p class="car_10">車で<?php the_field('move_time1_' . $j); ?></p>
                         </div>
                     <?php endfor; ?>
                 </div>
@@ -200,6 +200,7 @@
 
 
         <!-- 宿泊 -->
+        <!-- 1日目のラストから宿泊施設までの移動時間 -->
         <div class="yellowgreen_square">
             <h4>本日のホテルと温泉</h4>
             <article class="card spa">
@@ -208,7 +209,7 @@
                         <span></span>
                         <?php if (has_post_thumbnail()) : the_post_thumbnail('medium'); ?>
                         <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.png" alt="<?php echo $spot_name ?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.jpg" alt="<?php echo $spot_name ?>">
                         <?php endif; ?>
                     </div>
                 </a>
@@ -219,6 +220,8 @@
                 </p>
             </article>
         </div>
+
+
 
         <!-- DAY2 -->
         <section class="day2">
@@ -240,14 +243,14 @@
 
                 </div>
 
-                <!-- 2 -->
+
                 <div class="model_course1">
 
                     <?php for ($i = 1; $i <= 5; $i++) : ?>
 
                         <?php
                         //スポットのスラッグをを読み込む
-                        $spot_slug = get_field('spot_1_' . $i);
+                        $spot_slug = get_field('spot_2_' . $i);
                         if ($spot_slug != "") {
 
                             $type = substr($spot_slug, 0, 1);
@@ -290,6 +293,10 @@
                         <!-- 表示処理 -->
 
                         <div class="block">
+                            <div class="flex greencar">
+                                <div class="car_green"></div>
+                                <p class="car_10">車で<?php the_field('move_time2_' . $i); ?></p>
+                            </div>
                             <?php
 
                             // print_r($spot_description);
@@ -300,47 +307,30 @@
                             // $pic_url = $spot_pic['sizes']['large'];
                             ?>
 
-                            <img src="<?php echo $img; ?>" alt="<?php the_title(); ?>">
+                            <img src="<?php echo $img; ?>" alt="<?php echo $spot_name ?>">
 
                             <div class="square_white"></div>
 
                             <div class="flex_left">
-                                <p class="time"><?php the_field('stay_time1_' . $i); ?></p>
+                                <p class="time"><?php the_field('stay_time2_' . $i); ?></p>
                                 <div>
                                     <!-- 温泉・周辺の名前 -->
                                     <h4><?php echo $spot_name ?></h4>
                                 </div>
                             </div>
-                            <p class="tx"><?php the_field('activity1_' . $i); ?></p>
-
+                            <p class="tx"><?php the_field('activity2_' . $i); ?></p>
                         </div>
 
-                        <div class="flex_car">
-                            <div class="square_green"></div>
-                            <p class="car_tx"><?php
-                                                $move_time = get_field('move_time1_' . $i);
-                                                if ($i == 1) {
-                                                    echo '徳島駅から車で' . esc_html($move_time);
-                                                } else {
-                                                    echo esc_html($move_time);
-                                                }
-                                                ?></p>
-                        </div>
                         <div class="flex_car">
                             <div class="square_green"></div>
                             <p>公式HP：<?php
-                                    $official_website = get_field('course_url' . $i);
+                                    $official_website = get_field('course_url2_' . $i);
                                     if (!empty($official_website)) {
                                         echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
                                     } else {
                                         echo '公式HPはありません。';
                                     }
                                     ?></p>
-                        </div>
-
-                        <div class="flex greencar">
-                            <div class="car_green"></div>
-                            <p class="car_10">車で<?php the_field('move_time1_' . $i); ?></p>
                         </div>
 
                     <?php endfor; ?>
@@ -508,36 +498,6 @@
             }
             ?>
 
-            <!-- バックボタン -->
-            <?php
-            // 現在のページのURLを取得
-            $current_url = home_url(add_query_arg(array(), $wp->request));
-
-            // リファラー(前のページ)のURLを取得
-            $referer_url = wp_get_referer();
-
-            // back_btnを表示するかどうかのフラグ
-            $show_back_btn = false;
-
-            // リファラーのURLが取得できた場合
-            if ($referer_url) {
-                // リファラーのURLとの比較
-                if (strpos($referer_url, home_url()) !== false) {
-                    // リファラーのURLがサイト内のURLだった場合
-                    $back_url = $referer_url;
-                    $show_back_btn = true;
-                }
-            }
-
-            // back_btnを表示する場合のみ出力
-            if ($show_back_btn) {
-            ?>
-                <button class="back_btn" onclick="window.location.href='<?php echo $back_url; ?>'">
-                    <span><i class="fa-solid fa-arrow-left"></i>back</span>
-                </button>
-            <?php
-            }
-            ?>
     </div>
 </main>
 
