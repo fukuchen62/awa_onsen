@@ -8,15 +8,14 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-@media(width>=757px) {
-
+@media (width>=757px) {
     .container {
-        border: 10px solid #F5A200;
+        border: 10px solid #f5a200;
     }
 }
 
 .navlist_item:nth-child(5) {
-    color: #DBF500;
+    color: #dbf500;
 }
 
 /* -----------------------
@@ -43,7 +42,7 @@
 
 .sauna_ttl::before,
 .sauna_ttl::after {
-    content: '';
+    content: "";
     width: 8px;
     height: 8px;
     background-color: black;
@@ -74,7 +73,7 @@
     width: fit-content;
     padding: 10px;
     margin: 40px auto 0;
-    background-color: #DBF500;
+    background-color: #dbf500;
 
     box-shadow: 5px 5px #757e22;
     transition: 0.7s;
@@ -90,22 +89,12 @@
 /* -----------------------
 レスポンシブ tablet 1200-757
 -------------------------- */
-@media(width>=757px) {
-
+@media (width>=757px) {
     /* 小見出し */
     .sauna_ttl {
         font-size: 1.25rem;
         /* margin-top: 24px; */
     }
-
-    .box {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 8px;
-    }
-
 
     /* 文章 */
     .box p {
@@ -117,22 +106,25 @@
         margin-top: 24px;
     }
 
-    .sauna_photo {
-        aspect-ratio: 1/1;
-    }
-
     .btn {
         padding: 20px;
         font-size: 1.5rem;
     }
-
 }
 
 /* -----------------------
 レスポンシブ 1201-
 -------------------------- */
-@media(width>=1201px) {
-
+@media (width>=1201px) {
+    .sauna_photo {
+        aspect-ratio: 1/1;
+    }
+    .box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 8px;
+    }
     /* 文章 */
     .box p {
         /* font-size: 1rem; */
@@ -148,17 +140,22 @@
     .sauna_box h3 {
         margin: 0 auto;
     }
-
-    .box .sauna_box:nth-child(1) {
+    .order_1 {
         order: 1;
     }
-
-    .box img:nth-child(1) {
+    .order_2 {
         order: 2;
     }
-
-    .box img:nth-child(2) {
+    .order_3 {
         order: 3;
     }
-
+    .order_4 {
+        order: 4;
+    }
+    .order_5 {
+        order: 5;
+    }
+    .order_6 {
+        order: 6;
+    }
 }

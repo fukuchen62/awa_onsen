@@ -35,11 +35,12 @@
                 ),
             );
             $query = new WP_Query($args);
+            $post_count = $query->found_posts; // 投稿の件数を取得
         ?>
 
             <details class="details js-details">
                 <summary class="details-summary js-details-summary"><span class="btn"></span>
-                    <h3 class="acco_title">東部</h3>
+                    <h3 class="acco_title">東部(<?php echo $post_count; ?>件)</h3>
                 </summary>
                 <div class="details-content js-details-content">
                     <div class="article_all">
@@ -88,10 +89,11 @@
                 ),
             );
             $query = new WP_Query($args);
+            $post_count = $query->found_posts; // 投稿の件数を取得
         ?>
             <details class="details js-details">
                 <summary class="details-summary js-details-summary"><span class="btn"></span>
-                    <h3 class="acco_title">西部</h3>
+                    <h3 class="acco_title">西部 (<?php echo $post_count; ?>件)</h3>
                 </summary>
                 <div class="details-content js-details-content">
                     <div class="article_all">
@@ -140,11 +142,12 @@
                 ),
             );
             $query = new WP_Query($args);
+            $post_count = $query->found_posts; // 投稿の件数を取得
         ?>
 
             <details class="details js-details">
                 <summary class="details-summary js-details-summary"><span class="btn"></span>
-                    <h3 class="acco_title">南部</h3>
+                    <h3 class="acco_title">南部(<?php echo $post_count; ?> 件)</h3>
                     <!-- <h3 class="acco_title"><?php echo $category; ?></h3> -->
                 </summary>
                 <div class="details-content js-details-content">

@@ -64,11 +64,12 @@
                     'posts_per_page' => -1 // 全ての投稿を取得
                 );
                 $query = new WP_Query($args);
+                $post_count = $query->found_posts; // 投稿の件数を取得
             ?>
                 <!-- アコーディオン設定 -->
                 <details class="details js-details">
                     <summary class="details-summary js-details-summary"><span class="btn"></span>
-                        <h3 class="acco_title"><?php echo $area_name; ?></h3>
+                        <h3 class="acco_title"><?php echo $area_name; ?>(<?php echo $post_count; ?>件)</h3>
                     </summary>
                     <div class="details-content js-details-content">
                         <div class="article_all">
