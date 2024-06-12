@@ -129,6 +129,10 @@ li>a {
     display: none;
 }
 
+.acco_title span {
+    font-size: 1rem;
+}
+
 /* 下層ページに追加 */
 .bubble_background {
     background-color: rgba(255, 255, 255, 0.2);

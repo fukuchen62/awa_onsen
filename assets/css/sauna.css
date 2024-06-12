@@ -9,6 +9,12 @@
 }
 
 @media (width>=757px) {
+
+    /* 背景を濃くする */
+    .bubble_background {
+        background-color: transparent;
+    }
+
     .container {
         border: 10px solid #f5a200;
     }
@@ -90,6 +96,7 @@
 レスポンシブ tablet 1200-757
 -------------------------- */
 @media (width>=757px) {
+
     /* 小見出し */
     .sauna_ttl {
         font-size: 1.25rem;
@@ -119,12 +126,14 @@
     .sauna_photo {
         aspect-ratio: 1/1;
     }
+
     .box {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 8px;
     }
+
     /* 文章 */
     .box p {
         /* font-size: 1rem; */
@@ -140,21 +149,27 @@
     .sauna_box h3 {
         margin: 0 auto;
     }
+
     .order_1 {
         order: 1;
     }
+
     .order_2 {
         order: 2;
     }
+
     .order_3 {
         order: 3;
     }
+
     .order_4 {
         order: 4;
     }
+
     .order_5 {
         order: 5;
     }
+
     .order_6 {
         order: 6;
     }

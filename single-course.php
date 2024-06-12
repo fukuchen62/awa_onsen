@@ -99,30 +99,27 @@
                 <!-- 1日目・日帰り1～5 -->
                 <div class="model_course1">
 
-                    <?php for ($i = 1, $j = 2; $i <= 5, $j <= 6; $i++, $j++) :
-                    ?>
+                    <?php for ($i = 1; $i <= 5; $i++) : ?>
                         <?php
                         //スポットのスラッグを読み込む
                         $spot_slug = get_field('spot_1_' . $i);
+                        print_r($spot_slug);
                         if ($spot_slug != "") {
 
                             $type = substr($spot_slug, 0, 1);
 
-                            // 該当スポットの詳細を所見込む
+                            // 該当スポットの詳細を読み込む
                             if ($type == "s") {
                                 $spot_id = get_page_by_path($spot_slug, OBJECT, 'spa')->ID;
-                            } else {
+                            } elseif ($type == "f") {
                                 $spot_id = get_page_by_path($spot_slug, OBJECT, 'facility')->ID;
                             }
+                            break;
+
                             // 投稿ID
                             $spot_info = get_post($spot_id);
-
                             // print_r($spot_info);
-
-
                             $url = get_the_permalink($spot_id);
-
-                            // print_r($spot_id);
 
                             if ($type == "s") {
                                 // 温泉名
@@ -144,21 +141,31 @@
 
                         <!-- 表示処理 -->
                         <div class="block">
-                            <?php
-                            // print_r($spot_description);
-                            $img = wp_get_attachment_image_src($spot_pic, 'large')[0];
-                            // print_r($img);
-                            // $pic_url = $spot_pic['sizes']['large'];
-                            ?>
 
-                            <a href="<?php echo $url ?>" target="_blank">
-                                <img src="<?php echo $img; ?>" alt="<?php echo $spot_name ?>">
-                            </a>
+                            <?php
+                            if (!empty($spot_id)) {
+                                $img = wp_get_attachment_image_src($spot_pic, 'large')[0];
+                                if (!empty($img)) {
+                                    echo '<a href="' . esc_url($url) . '" target="_blank">';
+                                    echo '<img src="' . esc_url($img) . '" alt="' . esc_attr($spot_name) . '">';
+                                    echo '</a>';
+                                }
+                            } else {
+                                $img == null;
+                            }
+                            ?>
 
                             <div class="square_white"></div>
 
                             <div class="flex_left">
-                                <p class="time"><?php the_field('stay_time1_' . $i); ?></p>
+
+                                <?php
+                                $stay_time = get_field('stay_time1_' . $i);
+                                if (!empty($stay_time)) {
+                                    echo '<p class="time">' . esc_html($stay_time) . '</p>';
+                                }
+                                ?>
+
                                 <div>
                                     <!-- 温泉・周辺の名前 -->
                                     <h4><?php echo $spot_name ?></h4>
@@ -168,31 +175,36 @@
 
                         </div>
 
-                        <div class="flex_car"><?php
-                                                $move_time = get_field('move_time1_' . $i);
-                                                if ($i == 1) {
-                                                    echo '<div class="square_green"></div>'
-                                                        . esc_html($move_time);
-                                                }
-                                                ?>
-                        </div>
-
+                        <!-- 移動時間 -->
                         <div class="flex_car">
-                            <div class="square_green"></div>
-                            <p>公式HP：<?php
-                                    $official_website = get_field('course_url' . $i);
-                                    if (!empty($official_website)) {
-                                        echo '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
-                                    } else {
-                                        echo '-';
-                                    }
-                                    ?></p>
+                            <?php
+                            $move_time = the_field('move_time1_' . $i);
+                            if ($i == 1) {
+                                if (!empty($move_time)) {
+                                    echo '<div class="square_green"></div>' . esc_html($move_time);
+                                }
+                            } else {
+                                $move_time_other = get_field('move_time1_' . $i);
+                                if (!empty($move_time_other)) {
+                                    echo '<div class="flex greencar">
+                <div class="car_green"></div>
+                <p class="car_10">車で' . esc_html($move_time_other) . '</p>
+            </div>';
+                                }
+                            }
+                            ?>
                         </div>
 
-                        <div class="flex greencar">
-                            <div class="car_green"></div>
-                            <p class="car_10">車で<?php the_field('move_time1_' . $j); ?></p>
+                        <!-- 公式HPがある場合は表示させる -->
+                        <div class="flex_car">
+                            <p><?php
+                                $official_website = get_field('course_url' . $i);
+                                if (!empty($official_website)) {
+                                    echo '<div class="square_green"></div>' . '公式HP：' . '<a href="' . esc_url($official_website) . '" target="_blank" rel="noopener noreferrer">' . esc_html($official_website) . '</a>';
+                                }
+                                ?></p>
                         </div>
+
                     <?php endfor; ?>
                 </div>
             </div>
@@ -396,7 +408,7 @@
             ?>
 
         </div>
-        </section>
+
 
         <!-- 関連するコラム、お知らせ -->
         <section class="connection_column">
@@ -497,7 +509,7 @@
                 }
             }
             ?>
-
+        </section>
     </div>
 </main>
 

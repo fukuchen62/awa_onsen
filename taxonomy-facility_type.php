@@ -69,7 +69,8 @@
                 <!-- アコーディオン設定 -->
                 <details class="details js-details">
                     <summary class="details-summary js-details-summary"><span class="btn"></span>
-                        <h3 class="acco_title"><?php echo $area_name; ?>(<?php echo $post_count; ?>件)</h3>
+                        <h3 class="acco_title"><?php echo $area_name; ?>
+                        <span>(<?php echo $post_count; ?>件)</span></h3>
                     </summary>
                     <div class="details-content js-details-content">
                         <div class="article_all">
@@ -94,35 +95,6 @@
                 </details>
             <?php
             endforeach;
-            ?>
-            <?php
-            // 現在のページのURLを取得
-            $current_url = home_url(add_query_arg(array(), $wp->request));
-
-            // リファラー(前のページ)のURLを取得
-            $referer_url = wp_get_referer();
-
-            // back_btnを表示するかどうかのフラグ
-            $show_back_btn = false;
-
-            // リファラーのURLが取得できた場合
-            if ($referer_url) {
-                // リファラーのURLとの比較
-                if (strpos($referer_url, home_url()) !== false) {
-                    // リファラーのURLがサイト内のURLだった場合
-                    $back_url = $referer_url;
-                    $show_back_btn = true;
-                }
-            }
-
-            // back_btnを表示する場合のみ出力
-            if ($show_back_btn) {
-            ?>
-                <button class="back_btn" onclick="window.location.href='<?php echo $back_url; ?>'">
-                    <span><i class="fa-solid fa-arrow-left"></i>back</span>
-                </button>
-            <?php
-            }
             ?>
 
         </div>
