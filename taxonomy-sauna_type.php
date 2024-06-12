@@ -34,8 +34,8 @@
                     ),
                 ),
             );
-            $post_count = $query->found_posts; // 投稿の件数を取得
             $query = new WP_Query($args);
+            $post_count = $query->found_posts; // 投稿の件数を取得
         ?>
 
             <details class="details js-details">
