@@ -149,23 +149,21 @@
             <h4 class="lined-title">温泉の水の性質は？</h4>
             <?php the_field('spa_description'); ?>
         </section>
-        <section class="museum_map">
-            <h4 class="lined-title">館内マップ</h4>
-            <?php
-            $pic = get_field('house_map');
 
-            // 画像が設定されているかを確認
-            if ($pic && isset($pic['sizes']['large'])) {
-                $pic_url = $pic['sizes']['large'];
-            ?>
+        <?php
+        $pic = get_field('house_map');
+        // 画像が設定されているかを確認 ない場合はsectionごと表示しない。
+        if ($pic && isset($pic['sizes']['large'])) {
+            $pic_url = $pic['sizes']['large'];
+        ?>
+            <section class="museum_map">
+                <h4 class="lined-title">館内マップ</h4>
                 <img src="<?php echo esc_url($pic_url); ?>" alt="館内マップ">
-            <?php
-            } else {
-                // 画像がない場合は代わりに他のコンテンツを表示するなどの処理を追加できます
-                echo '<p>館内マップは現在利用できません。</p>';
-            }
-            ?>
-            <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/bike.jpg" alt="" /> -->
+            </section>
+        <?php
+        }
+        ?>
+
         </section>
         <section class="basic_information">
             <h4 class="lined-title">基本情報</h4>
