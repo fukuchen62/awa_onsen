@@ -52,6 +52,11 @@ span.current {
 
 @media(width>=757px) {
 
+    /* 背景を濃くする */
+    .bubble_background {
+        background-color: transparent;
+    }
+
     /* ボーダーの色は下層ページよって可変（トップページを参照）、ボーダーの太さは8→10pxに。 */
     .container {
         border: 10px solid #DBF500;

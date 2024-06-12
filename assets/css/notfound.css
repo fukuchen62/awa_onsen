@@ -11,6 +11,11 @@
 
 @media(width>=757px) {
 
+    /* 背景を濃くする */
+    .bubble_background {
+        background-color: transparent;
+    }
+
     .container {
         border: 10px solid #DBF500;
     }

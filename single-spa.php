@@ -51,16 +51,12 @@
                 foreach ($taxonomies as $taxonomy) {
                     // タクソノミーに関連するタームを取得
                     $terms = get_the_terms($post_id, $taxonomy);
-
                     if ($terms && !is_wp_error($terms)) {
-                        echo '<ul>';
                         foreach ($terms as $term) {
-                            // echo '<li>';
             ?>
-                            <a href="https://www.yahoo.co.jp/" class="hashtag"><?php echo '#' . esc_html($term->name); ?></a>
+                            <a href="" class="hashtag"><?php echo esc_html($term->name); ?></a>
             <?php
                         }
-                        echo '</ul>';
                     }
                 }
             }
@@ -153,23 +149,21 @@
             <h4 class="lined-title">温泉の水の性質は？</h4>
             <?php the_field('spa_description'); ?>
         </section>
-        <section class="museum_map">
-            <h4 class="lined-title">館内マップ</h4>
-            <?php
-            $pic = get_field('house_map');
 
-            // 画像が設定されているかを確認
-            if ($pic && isset($pic['sizes']['large'])) {
-                $pic_url = $pic['sizes']['large'];
-            ?>
+        <?php
+        $pic = get_field('house_map');
+        // 画像が設定されているかを確認 ない場合はsectionごと表示しない。
+        if ($pic && isset($pic['sizes']['large'])) {
+            $pic_url = $pic['sizes']['large'];
+        ?>
+            <section class="museum_map">
+                <h4 class="lined-title">館内マップ</h4>
                 <img src="<?php echo esc_url($pic_url); ?>" alt="館内マップ">
-            <?php
-            } else {
-                // 画像がない場合は代わりに他のコンテンツを表示するなどの処理を追加できます
-                echo '<p>館内マップは現在利用できません。</p>';
-            }
-            ?>
-            <!-- <img src="<?php echo get_template_directory_uri() ?> . /assets/images/bike.jpg" alt="" /> -->
+            </section>
+        <?php
+        }
+        ?>
+
         </section>
         <section class="basic_information">
             <h4 class="lined-title">基本情報</h4>
@@ -237,10 +231,10 @@
                 <dd>
                     <?php echo nl2br(esc_html(get_field('fax'))); ?>
                 </dd>
-                <dt>Email</dt>
+                <!-- <dt>Email</dt> 6/12 枠不要 コメントアウト
                 <dd>
                     <?php echo nl2br(esc_html(get_field('email'))); ?>
-                </dd>
+                </dd> -->
                 <dt>最寄り駅</dt>
                 <dd>
                     <?php echo nl2br(esc_html(get_field('station'))); ?>
@@ -251,7 +245,7 @@
                 </dd>
                 <dt>公式ホームページ</dt>
                 <dd>
-                    <a href="<?php the_field('official_url'); ?>">
+                    <a href="<?php the_field('official_url'); ?>" target="_blank">
                         <?php echo get_field('official_url') ?>
                     </a>
                 </dd>
