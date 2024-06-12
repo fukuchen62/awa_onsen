@@ -94,7 +94,6 @@ p {
 }
 
 #send_button {
-    height: 70px;
     width: 100%;
 
 }
@@ -109,6 +108,7 @@ p {
 #back_button {
     height: 70px;
     width: 100%;
+    color: #538FCB;
 }
 
 .back {
