@@ -9,8 +9,10 @@ $(function () {
 
         if ($(".sp_nav .navlist").hasClass("isactive")) {
             $(".hamburger").addClass("isactive");
+            $(".sp_nav").addClass("isactive");
         } else {
             $(".hamburger").removeClass("isactive");
+            $("sp_nav").removeClass("isactive");
         }
     });
     // メニューの中をクリックしたら、メニューを閉じる
