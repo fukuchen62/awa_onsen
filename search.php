@@ -42,6 +42,8 @@
                                 <span></span>
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                 <?php endif; ?>
                             </div>
                             <h3><?php the_title(); ?></h3>
@@ -95,6 +97,8 @@
                                 <span></span>
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                 <?php endif; ?>
                             </div>
                             <h3><?php the_title(); ?></h3>
@@ -148,6 +152,8 @@
                                 <span></span>
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                 <?php endif; ?>
                             </div>
                             <h3><?php the_title(); ?></h3>

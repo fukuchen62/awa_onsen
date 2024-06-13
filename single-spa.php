@@ -206,11 +206,12 @@
                     <?php echo nl2br(esc_html(get_field('fax'))); ?>
                 </dd>
                 <dt>SNS</dt>
-                <dd>
-                    <?php echo nl2br(esc_html(get_field('sns_url'))); ?>
+                <dd class="url">
+                    <a href="<?php echo nl2br(esc_html(get_field('sns_url'))); ?>" target="_blank">
+                    </a>
                 </dd>
                 <dt>公式ホームページ</dt>
-                <dd>
+                <dd class="url">
                     <a href="<?php the_field('official_url'); ?>" target="_blank">
                         <?php echo get_field('official_url') ?>
                     </a>

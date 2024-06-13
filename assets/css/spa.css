@@ -265,3 +265,8 @@ iframe {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+.url {
+    word-wrap: break-word;
+    word-break: break-all;
+}
