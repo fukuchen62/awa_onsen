@@ -227,7 +227,7 @@
                 </dd>
                 <dt>決済方法</dt>
                 <dd>
-                    <?php the_field('ayment_description'); ?>
+                    <?php the_field('payment_description'); ?>
                 </dd>
                 <dt>浴室小物</dt>
                 <dd>
