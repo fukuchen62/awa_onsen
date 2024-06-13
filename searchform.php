@@ -1,4 +1,4 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
 <main class="pc_inner">
     <div class="container">
@@ -25,9 +25,10 @@
                         'hide_empty' => false,
                     ));
 
+                    $selected_area_terms = isset($_GET['area_spa']) ? (array) $_GET['area_spa'] : array();
+
                     if (!empty($area_terms) && !is_wp_error($area_terms)) :
                         foreach ($area_terms as $term) :
-                            $selected_area_terms = (array) get_query_var('area_spa');
                     ?>
                             <label class="checkbox-item">
                                 <input type="checkbox" name="area_spa[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
@@ -47,9 +48,10 @@
                         'hide_empty' => false,
                     ));
 
+                    $selected_spa_type_terms = isset($_GET['spa_type']) ? (array) $_GET['spa_type'] : array();
+
                     if (!empty($spa_type_terms) && !is_wp_error($spa_type_terms)) :
                         foreach ($spa_type_terms as $term) :
-                            $selected_spa_type_terms = (array) get_query_var('spa_type');
                     ?>
                             <label class="checkbox-item">
                                 <input type="checkbox" name="spa_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_spa_type_terms)); ?>>
@@ -92,9 +94,10 @@
                         'hide_empty' => false,
                     ));
 
+                    $selected_area_terms = isset($_GET['area_facility']) ? (array) $_GET['area_facility'] : array();
+
                     if (!empty($area_terms) && !is_wp_error($area_terms)) :
                         foreach ($area_terms as $term) :
-                            $selected_area_terms = (array) get_query_var('area_facility');
                     ?>
                             <label class="checkbox-item">
                                 <input type="checkbox" name="area_facility[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
@@ -114,9 +117,10 @@
                         'hide_empty' => false,
                     ));
 
+                    $selected_facility_type_terms = isset($_GET['facility_type']) ? (array) $_GET['facility_type'] : array();
+
                     if (!empty($facility_type_terms) && !is_wp_error($facility_type_terms)) :
                         foreach ($facility_type_terms as $term) :
-                            $selected_facility_type_terms = (array) get_query_var('facility_type');
                     ?>
                             <label class="checkbox-item">
                                 <input type="checkbox" name="facility_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_facility_type_terms)); ?>>
@@ -159,9 +163,10 @@
                         'hide_empty' => false,
                     ));
 
+                    $selected_area_terms = isset($_GET['area_course']) ? (array) $_GET['area_course'] : array();
+
                     if (!empty($area_terms) && !is_wp_error($area_terms)) :
                         foreach ($area_terms as $term) :
-                            $selected_area_terms = (array) get_query_var('area_course');
                     ?>
                             <label class="checkbox-item">
                                 <input type="checkbox" name="area_course[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
@@ -181,9 +186,10 @@
                         'hide_empty' => false,
                     ));
 
+                    $selected_course_type_terms = isset($_GET['course_type']) ? (array) $_GET['course_type'] : array();
+
                     if (!empty($course_type_terms) && !is_wp_error($course_type_terms)) :
                         foreach ($course_type_terms as $term) :
-                            $selected_course_type_terms = (array) get_query_var('course_type');
                     ?>
                             <label class="checkbox-item">
                                 <input type="checkbox" name="course_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_course_type_terms)); ?>>

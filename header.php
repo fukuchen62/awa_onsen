@@ -1,3 +1,22 @@
+<!-- アヒルの飛ぶ先取得 -->
+<?php
+$args = array(
+    "post_type" => "spa", //通常の投稿タイプ
+    // "posts_per_page" => -1, //表示する投稿数
+    "orderby" => "rand", //ランダム
+);
+//WP_Queryオブジェクトを作成
+$the_query = new WP_Query($args);
+if ($the_query->have_posts()) {
+    while ($the_query->have_posts()) {
+        $the_query->the_post();
+        $onsen_url = get_the_permalink();
+        break;
+    }
+}
+wp_reset_postdata();
+?>
+
 <!DOCTYPE html>
 <html lang="<?php bloginfo('language'); ?>">
 
@@ -10,6 +29,7 @@
     <!-- 「get_template_directory_uri();」を変数「path」に代入 -->
     <script>
         var path = "<?php echo get_template_directory_uri(); ?>";
+        var onsen_url = "<?php echo $onsen_url; ?>";
     </script>
 
 

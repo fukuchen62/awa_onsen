@@ -135,6 +135,8 @@
 
             </div>
 
+
+            <!--  -->
             <?php
             // ACFからカスタムフィールドの値を取得
             $string = get_field('column_url');
@@ -156,7 +158,7 @@
             <?php if (!empty($external_url) && !empty($link_text)) : ?>
                 <h5 class="mt32">関連ウェブサイト</h5>
                 <p>関連ウェブサイト:
-                    <a href="<?php echo esc_url($external_url); ?>"><?php echo esc_html($link_text); ?></a>
+                    <a href="<?php echo esc_url($external_url); ?>" target="_blank"><?php echo esc_html($link_text); ?></a>
                 </p>
 
             <?php endif; ?>
