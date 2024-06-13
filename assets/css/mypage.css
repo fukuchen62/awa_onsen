@@ -45,10 +45,7 @@ tabのcss
     display: block;
 }
 
-/* タグがホバーされた時 */
-.tag li:hover {
-    cursor: pointer;
-}
+
 
 
 /* -----------------------
@@ -82,8 +79,8 @@ tabのcss
         font-size: 1.5rem;
     }
 
-}
 
+}
 
 /* 下層ページに追加 */
 .bubble_background {

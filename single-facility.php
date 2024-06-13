@@ -107,62 +107,62 @@
             <dl>
                 <dt>施設名</dt>
                 <dd>
-                    <?php echo esc_html(get_field('facility_name')); ?>
+                    <?php the_field('facility_name'); ?>
                 </dd>
                 <dt>施設紹介</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('facility_description'))); ?>
+                    <?php the_field('facility_description'); ?>
                 </dd>
                 <dt>住所</dt>
                 <dd>
-                    <?php echo esc_html(get_field('address1')); ?>
+                    <?php the_field('address1'); ?>
                 </dd>
                 <dd>
-                    <?php echo esc_html(get_field('address2')); ?>
+                    <?php the_field('address2'); ?>
                 </dd>
                 <dt>電話番号</dt>
                 <dd>
-                    <?php echo esc_html(get_field('tel')); ?>
+                    <?php the_field('tel'); ?>
                 </dd>
                 <dt>営業時間</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('business_time'))); ?>
+                    <?php the_field('business_time'); ?>
                 </dd>
                 <dt>定休日</dt>
                 <dd>
-                    <?php echo esc_html(get_field('closed')); ?>
+                    <?php the_field('closed'); ?>
                 </dd>
                 <dt>料金</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('price'))); ?>
+                    <?php the_field('price'); ?>
                 </dd>
                 <dt>決済方法</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('payment_description'))); ?>
+                    <?php the_field('payment_description'); ?>
                 </dd>
                 <dt>予約</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('reserve_description'))); ?>
+                    <?php the_field('reserve_description'); ?>
                 </dd>
                 <dt>トイレ</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('toilet_description'))); ?>
+                    <?php the_field('toilet_description'); ?>
                 </dd>
                 <dt>分煙</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('smoking_description'))); ?>
+                    <?php the_field('smoking_description'); ?>
                 </dd>
                 <dt>駐車場</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('parking_description'))); ?>
+                    <?php the_field('parking_description'); ?>
                 </dd>
                 <dt>Wi-Fi</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('wifi_description'))); ?>
+                    <?php the_field('wifi_description'); ?>
                 </dd>
                 <dt>公式ホームページ</dt>
                 <dd>
-                    <?php echo esc_html(get_field('url')); ?>
+                    <?php the_field('url'); ?>
                 </dd>
             </dl>
         </section>
@@ -223,8 +223,6 @@
                                         <span></span>
                                         <?php if ($post_thumbnail) : ?>
                                             <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
-                                        <?php else : ?>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                         <?php endif; ?>
                                     </div>
                                     <h3><?php echo esc_html($post_title); ?></h3>
@@ -311,8 +309,6 @@
                                 <!-- アイキャッチ取得 -->
                                 <?php if ($post_thumbnail) : ?>
                                     <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
-                                <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                 <?php endif; ?>
                             </a>
                             <div class="news_contents">

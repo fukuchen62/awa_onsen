@@ -10,7 +10,6 @@ $(function () {
     $tags.eq(0).addClass('active');
     $contents.slice(1).removeClass('active');
 
-
     // タグクリックイベントハンドラ
     $tags.on('click', function () {
         // 全てのコンテンツを非アクティブにする

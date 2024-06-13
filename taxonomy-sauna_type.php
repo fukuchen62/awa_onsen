@@ -41,8 +41,7 @@
             <details class="details js-details">
                 <summary class="details-summary js-details-summary"><span class="btn"></span>
                     <h3 class="acco_title">東部
-                        <span>(<?php echo $post_count; ?>件)</span>
-                    </h3>
+                        <span>(<?php echo $post_count; ?>件)</span></h3>
                 </summary>
                 <div class="details-content js-details-content">
                     <div class="article_all">
@@ -53,8 +52,6 @@
                                             <span></span>
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium'); ?>
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                         </div>
                                         <h3 class="card-title"><?php the_title(); ?></h3>
@@ -98,8 +95,7 @@
             <details class="details js-details">
                 <summary class="details-summary js-details-summary"><span class="btn"></span>
                     <h3 class="acco_title">西部
-                        <span>(<?php echo $post_count; ?>件)</span>
-                    </h3>
+                        <span>(<?php echo $post_count; ?>件)</span></h3>
                 </summary>
                 <div class="details-content js-details-content">
                     <div class="article_all">
@@ -110,8 +106,7 @@
                                             <span></span>
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium'); ?>
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+
                                             <?php endif; ?>
                                         </div>
                                         <h3 class="card-title"><?php the_title(); ?></h3>
@@ -155,8 +150,7 @@
             <details class="details js-details">
                 <summary class="details-summary js-details-summary"><span class="btn"></span>
                     <h3 class="acco_title">南部
-                        <span>(<?php echo $post_count; ?> 件)</span>
-                    </h3>
+                        <span>(<?php echo $post_count; ?> 件)</span></h3>
                     <!-- <h3 class="acco_title"><?php echo $category; ?></h3> -->
                 </summary>
                 <div class="details-content js-details-content">
@@ -168,8 +162,6 @@
                                             <span></span>
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium'); ?>
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                         </div>
                                         <h3 class="card-title"><?php the_title(); ?></h3>
