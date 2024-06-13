@@ -66,6 +66,8 @@ get_header();
                                 <a href="<?php the_permalink(); ?>">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>" />
+                                    <?php else : ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                     <?php endif; ?>
                                     <div class="news_contents">
                                         <p class="date fugaz-one-regular"><?php echo get_the_date("Y.m.d") . "" . date("D H:i", strtotime(get_the_date("Y-m-d H:i:s"))); ?></p>
