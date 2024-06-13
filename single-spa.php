@@ -235,23 +235,23 @@
                 <!-- ========== 不要と感じたのでコメントアウトしました ========== -->
                 <!-- <dt>予約</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('reserve_description'))); ?>
+                    <?php the_field('reserve_description'); ?>
                 </dd> -->
                 <!-- <dt>トイレ</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('toilet_description'))); ?>
+                    <?php the_field('toilet_description'); ?>
                 </dd> -->
                 <!-- <dt>分煙</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('smoking_description'))); ?>
+                    <?php the_field('smoking_description'); ?>
                 </dd> -->
                 <!-- <dt>Wi-Fi</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('wifi_description'))); ?>
+                    <?php the_field('wifi_description'); ?>
                 </dd> -->
                 <!-- <dt>Email</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('email'))); ?>
+                    <?php the_field('email'); ?>
                 </dd> -->
                 <!-- ==================== -->
             </dl>
