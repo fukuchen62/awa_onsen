@@ -36,7 +36,8 @@
                                             <span></span>
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium'); ?>
-
+                                            <?php else : ?>
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                         </div>
                                         <h3 class="card-title"><?php the_title(); ?></h3>
@@ -121,6 +122,8 @@
                                             <span></span>
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium'); ?>
+                                            <?php else : ?>
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                         </div>
                                         <h3 class="card-title"><?php the_title(); ?></h3>
