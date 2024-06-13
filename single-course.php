@@ -282,7 +282,6 @@
         </section>
 
         <!-- 関連店舗 -->
-        <h5>今回の関連店舗はこちら</h5>
         <!-- カード型 -->
         <div class="article_all">
             <?php
