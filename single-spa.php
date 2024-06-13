@@ -35,7 +35,7 @@
         </div>
 
 
-        <!-- ハッシュタグ -->
+        <!-- タグ -->
         <div class="hashtag_list">
             <?php
             // 現在の投稿のIDを取得
