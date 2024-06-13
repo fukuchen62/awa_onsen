@@ -26,4 +26,8 @@ $(function () {
             }
         })
     })
+
+    // if($(accordionSummary).hasClass("is-active")){
+
+    // }
 });
