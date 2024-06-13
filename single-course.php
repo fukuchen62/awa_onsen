@@ -157,7 +157,7 @@
         <!-- 1日目のラストから宿泊施設までの移動時間 -->
         <?php
         // 宿泊のタクソノミーが選択されているかを確認
-        if (has_term('stay-course', '宿泊')) : // 宿泊にチェックが入っていたら表示させる
+        if (has_term('stay_type', 'stay-course')) : // 宿泊にチェックが入っていたら表示させる
             if ($url && $spot_name && $spot_description) : ?>
                 <div class="yellowgreen_square">
                     <h4>本日のホテルと温泉</h4>
