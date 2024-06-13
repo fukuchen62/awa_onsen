@@ -64,8 +64,8 @@
                                 <p class="date fugaz-one-regular"><?php echo get_post_time('Y.m.d.D H:i'); ?></p>
                                 <h6 class="title"><?php the_title(); ?></h6>
                             </a>
-                            <!-- ハッシュタグ取得記述をする -->
-                            <!-- ハッシュタグ -->
+
+                            <!-- タグ -->
                             <div class="hashtag_list">
                                 <?php
                                 // 現在の投稿のIDを取得
@@ -87,7 +87,9 @@
                                             foreach ($terms as $term) {
                                                 // echo '<li>';
                                 ?>
-                                                <a href="https://www.yahoo.co.jp/" class="hashtag"><?php echo '#' . esc_html($term->name); ?></a>
+                                                <span class="hashtag">
+                                                    <?php echo ($term->name); ?>
+                                                </span>
                                 <?php
                                             }
                                             echo '</ul>';
