@@ -7,58 +7,15 @@ $(function () {
     // $(".hamburger").click(function () {
     //     $(".sp_nav .navlist").toggleClass("isactive");
 
-<<<<<<< HEAD
-    //     if ($(".sp_nav .navlist").hasClass("isactive")) {
-    //         $(".hamburger").addClass("isactive");
-    //     } else {
-    //         $(".hamburger").removeClass("isactive");
-    //     }
-    // });
-    // // メニューの中をクリックしたら、メニューを閉じる
-    // $(".navlist_item").click(function () {
-    //     $(".hamburger").removeClass("active");
-    //     $(".hamburger").removeClass("isactive");
-    // });
 
-    // let nav = $(".navlist");
+    if ($(".sp_nav .navlist").hasClass("isactive")) {
+        $(".hamburger").addClass("isactive");
+        $(".sp_nav").addClass("isactive");
+    } else {
+        $(".hamburger").removeClass("isactive");
+        $("sp_nav").removeClass("isactive");
 
-    // // ハンバーガーメニューがアクティブじゃないときにメニューを非表示にする
-    // nav.addClass("isactive");
-    // if ($('.hamburger').hasClass('isactive')) {
-    //     nav.addClass("isactive");
-    // } else {
-    //     nav.removeClass("isactive");
-    // }
-
-        // ハンバーガーメニューをクリックしたらメニューを表示・非表示
-        $(".hamburger").click(function () {
-            $(".sp_nav .navlist").toggleClass("isactive");
-            $(this).toggleClass("isactive");
-            $(".sp_nav").toggleClass("isactive");
-        });
-
-        // メニューの中をクリックしたら、メニューを閉じる
-        $(".navlist_item").click(function () {
-            $(".hamburger").removeClass("isactive");
-            $(".sp_nav .navlist").removeClass("isactive");
-        });
-
-        // ページロード時にハンバーガーメニューの状態をチェックしてメニューを非表示にする
-        let nav = $(".sp_nav .navlist");
-
-        if ($('.hamburger').hasClass('isactive')) {
-            nav.addClass("isactive");
-        } else {
-            nav.removeClass("isactive");
-=======
-        if ($(".sp_nav .navlist").hasClass("isactive")) {
-            $(".hamburger").addClass("isactive");
-            $(".sp_nav").addClass("isactive");
-        } else {
-            $(".hamburger").removeClass("isactive");
-            $("sp_nav").removeClass("isactive");
->>>>>>> parent of f8ffe19 (Merge branch 'main' of https://github.com/fukuchen62/awa_onsen)
-        }
+    }
 
     // topへボタンをクリックしたら上までスクロールさせる
     $(".top_button").on("click", function (e) {
