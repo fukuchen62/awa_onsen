@@ -78,11 +78,9 @@
                                         $terms = get_the_terms($post_id, $taxonomy);
 
                                         if ($terms && !is_wp_error($terms)) {
-                                            echo '<ul>';
                                             foreach ($terms as $term) {
-                                                // echo '<li>';
                                 ?>
-                                                <a href="https://www.yahoo.co.jp/" class="hashtag"><?php echo '#' . esc_html($term->name); ?></a>
+                                                <span class="hashtag"><?php echo esc_html($term->name); ?></span>
                                 <?php
                                             }
                                             echo '</ul>';
