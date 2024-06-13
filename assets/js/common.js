@@ -1,37 +1,36 @@
 "use strict";
 
 // header
-$(function () {
+$(document).ready(function () {
 
     // // ハンバーガーメニューをクリックしたらメニューを表示させる
-    // $(".hamburger").click(function () {
-    //     $(".sp_nav .navlist").toggleClass("isactive");
+    $(".hamburger").click(function () {
+        $(".sp_nav .navlist").toggleClass("isactive");
 
 
-    if ($(".sp_nav .navlist").hasClass("isactive")) {
-        $(".hamburger").addClass("isactive");
-        $(".sp_nav").addClass("isactive");
-    } else {
-        $(".hamburger").removeClass("isactive");
-        $("sp_nav").removeClass("isactive");
+        if ($(".sp_nav .navlist").hasClass("isactive")) {
+            $(".hamburger").addClass("isactive");
+            $(".sp_nav").addClass("isactive");
+        } else {
+            $(".hamburger").removeClass("isactive");
+            $(".sp_nav").removeClass("isactive");
 
-    }
+        }
+    });
 
     // topへボタンをクリックしたら上までスクロールさせる
     $(".top_button").on("click", function (e) {
         e.preventDefault();
         let $button = $(this);
         $button.css("pointer-events", "none"); //ボタンを無効化
-        $("html, body").animate({ scrollTop: 0 }, 2200, function () {
+        $("html, body").animate({ scrollTop: 0 }, 1000, function () {
             $button.css("pointer-events", "auto"); //アニメーション完了時ボタン無効化
         });
     });
-
 });
 
 
 // 泡の出現
-
 $(document).ready(function () {
     // コンテナを指定
     const $section = $('.bubble_background');
@@ -129,8 +128,9 @@ $(document).ready(function () {
 $(document).ready(function () {
     const $section = $('.bubble_background');
     const createDuck = () => {
-        const $duckEl = $('<a>').addClass('duck').attr('href', 'https://awa-onsen.com/spa/spa05/'); // aタグに変更し、hrefを追加
-        const size = 50;
+        // const $duckEl = $('<a>').addClass('duck').attr('href', 'https://awa-onsen.com/spa/spa05/'); // aタグに変更し、
+        const $duckEl = $('<a>').addClass('duck').attr('href', onsen_url); // aタグに変更し、hrefを追加hrefを追加
+        const size = 100;
         $duckEl.css({
             width: `${size}px`,
             height: `${size}px`
