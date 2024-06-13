@@ -158,41 +158,8 @@
 
             <?php endif; ?>
 
-
         </section>
 
-        <!-- ナビゲーション -->
-
-        <div class="nav-links">
-            <!-- 関連リンクの作成 -->
-            <div class="prevNext flex">
-                <?php
-                $previous_post = get_previous_post();
-                if ($previous_post) :
-                ?>
-                    <div class="prevNext_item prevNext_item-prev">
-                        <a href="<?php the_permalink($previous_post); ?>">
-
-                            <span>
-                                << 前の記事</span>
-                        </a>
-                    </div>
-                <?php endif; ?>
-
-                <div class="prevNext_item prevNext_item-next">
-                    <?php
-                    $next_post = get_next_post();
-                    if ($next_post) :
-                    ?>
-                        <a href="<?php the_permalink($next_post); ?>">
-                            <span>次の記事 >></span>
-
-                        </a>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-        <!-- 前に戻るボタン -->
 
         <?php
         // 現在の投稿のタームを取得
