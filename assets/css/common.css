@@ -104,7 +104,7 @@ p {
 .breadcrumb_inner {
     display: flex;
     margin-top: 32px;
-    font-size: 1.25px;
+    font-size: 1.25rem;
     display: none;
 }
 
