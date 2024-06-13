@@ -617,12 +617,12 @@ h5 {
 
 /*========== header ==========*/
 
-.sp_nav {
+/* .isactive {
     width: 100vw;
     height: 100vh;
     z-index: 5;
     position: fixed;
-}
+} */
 
 .pc_inner {
     max-width: 1200px;

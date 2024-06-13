@@ -3,31 +3,54 @@
 // header
 $(function () {
 
-    // ハンバーガーメニューをクリックしたらメニューを表示させる
-    $(".hamburger").click(function () {
-        $(".sp_nav .navlist").toggleClass("isactive");
+    // // ハンバーガーメニューをクリックしたらメニューを表示させる
+    // $(".hamburger").click(function () {
+    //     $(".sp_nav .navlist").toggleClass("isactive");
 
-        if ($(".sp_nav .navlist").hasClass("isactive")) {
-            $(".hamburger").addClass("isactive");
-        } else {
+    //     if ($(".sp_nav .navlist").hasClass("isactive")) {
+    //         $(".hamburger").addClass("isactive");
+    //     } else {
+    //         $(".hamburger").removeClass("isactive");
+    //     }
+    // });
+    // // メニューの中をクリックしたら、メニューを閉じる
+    // $(".navlist_item").click(function () {
+    //     $(".hamburger").removeClass("active");
+    //     $(".hamburger").removeClass("isactive");
+    // });
+
+    // let nav = $(".navlist");
+
+    // // ハンバーガーメニューがアクティブじゃないときにメニューを非表示にする
+    // nav.addClass("isactive");
+    // if ($('.hamburger').hasClass('isactive')) {
+    //     nav.addClass("isactive");
+    // } else {
+    //     nav.removeClass("isactive");
+    // }
+
+    $(function () {
+        // ハンバーガーメニューをクリックしたらメニューを表示・非表示
+        $(".hamburger").click(function () {
+            $(".sp_nav .navlist").toggleClass("isactive");
+            $(this).toggleClass("isactive");
+        });
+
+        // メニューの中をクリックしたら、メニューを閉じる
+        $(".navlist_item").click(function () {
             $(".hamburger").removeClass("isactive");
+            $(".sp_nav .navlist").removeClass("isactive");
+        });
+
+        // ページロード時にハンバーガーメニューの状態をチェックしてメニューを非表示にする
+        let nav = $(".sp_nav .navlist");
+
+        if ($('.hamburger').hasClass('isactive')) {
+            nav.addClass("isactive");
+        } else {
+            nav.removeClass("isactive");
         }
     });
-    // メニューの中をクリックしたら、メニューを閉じる
-    $(".navlist_item").click(function () {
-        $(".hamburger").removeClass("active");
-        $(".hamburger").removeClass("isactive");
-    });
-
-    let nav = $(".navlist");
-
-    // ハンバーガーメニューがアクティブじゃないときにメニューを非表示にする
-    nav.addClass("isactive");
-    if ($('.hamburger').hasClass('isactive')) {
-        nav.addClass("isactive");
-    } else {
-        nav.removeClass("isactive");
-    }
 
     // topへボタンをクリックしたら上までスクロールさせる
     $(".top_button").on("click", function (e) {
