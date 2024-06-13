@@ -38,14 +38,11 @@
                 foreach ($taxonomies as $taxonomy) {
                     // タクソノミーに関連するタームを取得
                     $terms = get_the_terms($post_id, $taxonomy);
-
                     if ($terms && !is_wp_error($terms)) {
-                        echo '<ul>';
                         foreach ($terms as $term) {
             ?>
                             <span class="hashtag"><?php echo esc_html($term->name); ?></span>
             <?php }
-                        echo '</ul>';
                     }
                 }
             }
