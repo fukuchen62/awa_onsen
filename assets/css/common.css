@@ -306,7 +306,7 @@ p {
     text-align: right;
     padding: 10px;
     aspect-ratio: 13/3;
-    /* width:80px ; */
+    width: 115px;
     background-color: white;
     border-color: #538fcb;
     border-style: solid;
@@ -432,7 +432,7 @@ h2 {
     transition: 0.4s;
 }
 
-.card a:hover > div img {
+.card a:hover>div img {
     aspect-ratio: 1/1;
     transform: translate(-3%, 3%);
 }

@@ -324,3 +324,13 @@ add_filter(
     'wpcf7_autop_or_not', // 関数の呼び出すタイミング
     'fs_wpcf7_autop' // 呼び出す関数名
 );
+
+//コメントのHTMLタグを禁止する
+function html_to_text($comment_content)
+{
+    if (get_comment_type() !== 'comment') {
+        $comment_content = htmlspecialchars($comment_content, ENT_QUOTES);
+    }
+    return $comment_content;
+}
+add_filter('comment_text', 'html_to_text', 9);
