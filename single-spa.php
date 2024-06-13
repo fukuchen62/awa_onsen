@@ -115,6 +115,10 @@
                             <li class="thumbnail-img">
                                 <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像1">
                             </li>
+                        <?php else : ?>
+                            <li class="thumbnail-img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+                            </li>
                         <?php endif; ?>
                     <?php endif; ?>
 
@@ -123,6 +127,10 @@
                         <?php if ($pic_url) : ?>
                             <li class="thumbnail-img">
                                 <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像2">
+                            </li>
+                        <?php else : ?>
+                            <li class="thumbnail-img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                             </li>
                         <?php endif; ?>
                     <?php endif; ?>
@@ -133,6 +141,10 @@
                             <li class="thumbnail-img">
                                 <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像3">
                             </li>
+                        <?php else : ?>
+                            <li class="thumbnail-img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+                            </li>
                         <?php endif; ?>
                     <?php endif; ?>
 
@@ -141,6 +153,10 @@
                         <?php if ($pic_url) : ?>
                             <li class="thumbnail-img">
                                 <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像4">
+                            </li>
+                        <?php else : ?>
+                            <li class="thumbnail-img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                             </li>
                         <?php endif; ?>
                     <?php endif; ?>
@@ -362,6 +378,8 @@
                                         <span></span>
                                         <?php if ($post_thumbnail) : ?>
                                             <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                        <?php else : ?>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                         <?php endif; ?>
                                     </div>
                                     <h3><?php echo esc_html($post_title); ?></h3>
@@ -446,6 +464,8 @@
                                 <!-- アイキャッチ取得 -->
                                 <?php if ($post_thumbnail) : ?>
                                     <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                 <?php endif; ?>
                             </a>
                             <div class="news_contents">
