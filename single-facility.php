@@ -180,7 +180,6 @@
         ?>
 
         <section>
-            <h5>こちらもいかがでしょうか？</h5>
             <!-- カード型 -->
             <div class="article_all">
                 <?php
@@ -189,6 +188,9 @@
 
                 // すべてのカスタム投稿タイプを取得
                 $custom_post_types = get_post_types(array('_builtin' => false));
+
+                // 投稿があるかどうかのフラグ
+                $has_posts = false;
 
                 for ($i = 1; $i <= $loop_count; $i++) {
                     // カスタムフィールドの名前を生成
@@ -207,6 +209,12 @@
                         $posts = get_posts($args);
 
                         if (!empty($posts)) {
+                            if (!$has_posts) {
+                                $has_posts = true;
+                                echo '<h5>こちらもいかがでしょうか？</h5>';
+                                echo '<div class="article_all">';
+                            }
+
                             $post = $posts[0]; // 最初の投稿を取得
                             setup_postdata($post);
 
@@ -233,47 +241,27 @@
                         }
                     }
                 }
-                ?>
 
-            </div>
+                if ($has_posts) {
+                    echo '</div>';
+                }
+                ?>
         </section>
 
         <!-- 関連するコラム、お知らせ -->
         <section class="connection_column">
-            <h5>関連コラム、情報
-            </h5>
             <?php
-            // カスタム投稿タイプ 'column' から投稿を取得
-            // $args = array(
-            //     'post_type' => 'column', // カスタム投稿タイプ 'column'
-            //     'posts_per_page' => -1, // すべての投稿を取得
-            // );
-            // $column_query = new WP_Query($args);
-
-            // if ($column_query->have_posts()) :
-            //     while ($column_query->have_posts()) : $column_query->the_post();
-            //         // アイキャッチ画像のURLを取得
-            //         $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); // サムネイルサイズを小さく設定
-            //         // 投稿の日付を取得
-            //         $post_date = get_the_date('Y.m.d D H:i');
-            //         // 投稿のタイトルを取得
-            //         $post_title = get_the_title();
-            //         // 投稿のパーマリンクを取得
-            //         $post_permalink = get_permalink();
-            //         // 投稿のタクソノミースラッグを取得
-            //         $tags = get_the_terms(get_the_ID(), 'column_type');
-
-            //
-            //新しいロジック
-            // ループの回数を定義
             // カスタムフィールドを4つ作ってるので4回設定
             $loop_count = 4;
 
             // すべてのカスタム投稿タイプを取得
             $custom_post_types = get_post_types(array('_builtin' => false));
+
+            // コラムがあるかどうかのフラグ
+            $has_columns = false;
+
             for ($i = 1; $i <= $loop_count; $i++) {
                 // カスタムフィールドで設定したフィールド名＋カウントの数字
-                // 重複しないようにcolumn∔1~4の形で設定
                 $field_name = 'column' . $i;
                 $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
 
@@ -286,7 +274,12 @@
                         'numberposts' => 1
                     );
                     $posts = get_posts($args);
-                    if (!empty($posts)) { //記事があるとき
+                    if (!empty($posts)) {
+                        if (!$has_columns) {
+                            $has_columns = true;
+                            echo '<h5>関連コラム、情報</h5>';
+                        }
+
                         $post = $posts[0]; // 最初の投稿を取得
                         setup_postdata($post);
                         // 投稿情報を取得
@@ -312,7 +305,7 @@
                                 <?php endif; ?>
                             </a>
                             <div class="news_contents">
-                                <a href="<?php echo esc_url($$post_link); ?>">
+                                <a href="<?php echo esc_url($post_link); ?>">
                                     <!-- 日付と時間 -->
                                     <p class="date fugaz-one-regular"><?php echo esc_html($post_date); ?></p>
                                     <!-- 記事タイトル -->
@@ -330,13 +323,11 @@
                         </article>
             <?php
                         wp_reset_postdata();
-                    } else {
-                        // 記事が見つからない場合の代替メッセージを表示
-                        echo '<p>コラム、情報はまだありません。</p>';
                     }
                 }
             }
             ?>
+
         </section>
         <?php
         // 現在の投稿のタームを取得
