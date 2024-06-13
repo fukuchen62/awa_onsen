@@ -9,10 +9,8 @@ $(function () {
 
         if ($(".sp_nav .navlist").hasClass("isactive")) {
             $(".hamburger").addClass("isactive");
-            $(".sp_nav").addClass("isactive");
         } else {
             $(".hamburger").removeClass("isactive");
-            $("sp_nav").removeClass("isactive");
         }
     });
     // メニューの中をクリックしたら、メニューを閉じる
@@ -149,7 +147,7 @@ $(document).ready(function () {
             width: `${size}px`,
             height: `${size}px`
         });
-        const $img = $('<img>').attr('src', path + '/assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
+        const $img = $('<img>').attr('src', '/assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
             width: '100%',
             height: '100%'
         });

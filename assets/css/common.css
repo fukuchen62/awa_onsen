@@ -22,11 +22,6 @@ img {
     max-width: 100%;
 }
 
-a:hover {
-    transition: all 0.4s;
-    cursor: pointer;
-}
-
 .shadow {
     box-shadow: 4px 4px 6px 0 #343a3e33;
 }
@@ -104,7 +99,6 @@ p {
 .breadcrumb_inner {
     display: flex;
     margin-top: 32px;
-    font-size: 1.25rem;
     display: none;
 }
 
@@ -113,6 +107,7 @@ p {
         display: block;
     }
 }
+
 
 /* 本サイトの共通スタイルシート */
 .bubble_background {
@@ -282,6 +277,7 @@ p {
     }
 }
 
+
 /* ---------- */
 /* pc */
 @media (width>=1201px) {
@@ -299,7 +295,7 @@ p {
 
 /* 戻るボタン */
 .back_btn {
-    font-size: 1.25rem;
+    font-size: 24px;
     box-sizing: border-box;
     color: #538fcb;
     font-weight: bold;
@@ -369,6 +365,7 @@ h2 {
     }
 }
 
+
 /* 一覧のカード型の設定 */
 .news_card {
     display: flex;
@@ -432,7 +429,7 @@ h2 {
     transition: 0.7s;
 }
 
-.card a:hover > div img {
+.card a:hover>div img {
     aspect-ratio: 1/1;
     transform: translate(-3%, 3%);
 }
@@ -475,20 +472,22 @@ h2 {
 /* 温泉 */
 .spa span,
 .spa h3 {
-    background-color: #eb97a8;
+    background-color: #EB97A8;
 }
 
 /* モデルコース */
 .course span,
 .course h3 {
-    background-color: #6bde4e;
+    background-color: #6BDE4E;
 }
 
 /* 周辺 */
 .facility span,
 .facility h3 {
-    background-color: #f5a200;
+    background-color: #F5A200;
 }
+
+
 
 @media (width>=1201px) {
     .article_all {
@@ -553,13 +552,13 @@ h2 {
     line-height: 40px;
     height: 40px;
     text-align: center;
-    background-color: #d9d9d9;
+    background-color: #D9D9D9;
     border-radius: 50px;
 }
 
 /* 選択されたタグ */
 li.active {
-    background-color: #538fcb;
+    background-color: #538FCB;
     color: #dbf500;
 }
 
@@ -570,6 +569,7 @@ li.active {
 }
 
 @media (width>=757px) {
+
     .element02 {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -588,6 +588,7 @@ li.active {
         line-height: 80px;
     }
 }
+
 
 /* おすすめ一覧 */
 h5 {
@@ -616,7 +617,7 @@ h5 {
 
 /*========== header ==========*/
 
-.sp_nav.isactive {
+.sp_nav {
     width: 100vw;
     height: 100vh;
     z-index: 5;
@@ -710,7 +711,7 @@ h5 {
 .navlist {
     width: 250px;
     color: #fff;
-    background-color: #4272a2;
+    background-color: #4272A2;
     border: 4px dashed #fff;
     border-radius: 12px;
     z-index: 20;
@@ -769,7 +770,7 @@ h5 {
 
 /* ========== headerメディアクエリ ========== */
 
-@media (width>=757px) {
+@media(width>=757px) {
     .logo {
         width: 120px;
         top: 32px;
@@ -822,9 +823,11 @@ h5 {
     .navlist_item {
         font-size: 1.5rem;
     }
+
 }
 
-@media (width>=1201px) {
+@media(width>=1201px) {
+
     #pc_nav {
         display: flex;
         justify-content: end;
@@ -844,6 +847,7 @@ h5 {
         transform: translateX(0) translateY(50%);
         transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
     }
+
 }
 
 /* ========== footer ========== */
@@ -861,7 +865,7 @@ h5 {
 
 .footer_container {
     color: #fff;
-    background-color: #4272a2;
+    background-color: #4272A2;
     border: 4px dashed #fff;
     border-radius: 12px;
     padding: 72px 0;
@@ -900,7 +904,8 @@ h5 {
 
 /* ========== footerメディアクエリ ========== */
 
-@media (width>=757px) {
+@media(width>=757px) {
+
     .footer_wrap::before {
         height: 300px;
         top: 38px;
@@ -926,7 +931,7 @@ h5 {
     }
 }
 
-@media (width>=1201px) {
+@media(width>=1201px) {
     .footer_wrap::before {
         height: 350px;
         top: 44px;
@@ -944,4 +949,5 @@ h5 {
         gap: 48px;
         justify-content: center;
     }
+
 }
