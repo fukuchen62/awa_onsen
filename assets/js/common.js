@@ -29,11 +29,11 @@ $(function () {
     //     nav.removeClass("isactive");
     // }
 
-    $(function () {
         // ハンバーガーメニューをクリックしたらメニューを表示・非表示
         $(".hamburger").click(function () {
             $(".sp_nav .navlist").toggleClass("isactive");
             $(this).toggleClass("isactive");
+            $(".sp_nav").toggleClass("isactive");
         });
 
         // メニューの中をクリックしたら、メニューを閉じる
@@ -50,7 +50,6 @@ $(function () {
         } else {
             nav.removeClass("isactive");
         }
-    });
 
     // topへボタンをクリックしたら上までスクロールさせる
     $(".top_button").on("click", function (e) {
