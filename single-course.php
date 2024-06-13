@@ -164,9 +164,9 @@
                     <a href="<?php echo $url; ?>">
                         <div>
                             <span></span>
-                            <?php if (has_post_thumbnail()) :
-                                the_post_thumbnail('medium');
-                            else : ?>
+                            <?php if ($img = wp_get_attachment_image_src($spot_pic, 'large')[0]) : ?>
+                                <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($spot_name); ?>">
+                            <?php else : ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.jpg" alt="<?php echo $spot_name; ?>">
                             <?php endif; ?>
                         </div>
