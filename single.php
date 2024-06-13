@@ -109,6 +109,32 @@
                 </div>
             <?php endif; ?>
 
+            <?php
+            // ACFからカスタムフィールドの値を取得
+            $string = get_field('post_url');
+
+            // 初期化
+            $external_url = '';
+            $link_text = '';
+
+            // explode関数を使用して文字列を分割し、分割した結果の要素数をチェック
+            if ($string) {
+                $parts = explode(",", $string);
+                if (count($parts) == 2) {
+                    $external_url = $parts[0];
+                    $link_text = $parts[1];
+                }
+            }
+            ?>
+
+            <?php if (!empty($external_url) && !empty($link_text)) : ?>
+                <h5 class="mt32">関連ウェブサイト</h5>
+                <p>関連ウェブサイト:
+                    <a href="<?php echo esc_url($external_url); ?>"><?php echo esc_html($link_text); ?></a>
+                </p>
+
+            <?php endif; ?>
+
         </section>
 
         <?php
