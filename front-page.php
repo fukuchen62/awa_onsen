@@ -53,8 +53,8 @@
                             $args = array(
                                 "post_type" => "post", //通常の投稿タイプ
                                 "posts_per_page" => 3, //表示する投稿数
-                                "order" => "date", //日付順に並べる
-                                "orderby" => "DESC" //降順（新しい順）
+                                "orderby" => "date", //日付順に並べる
+                                "order" => "DESC" //降順（新しい順）
                             );
 
                             //WP_Queryオブジェクトを作成
@@ -62,26 +62,26 @@
                             ?>
 
                             <?php if ($the_query->have_posts()) : ?>
-                                <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                                    <article class="top_news_card">
-                                        <a class="top_news_img" href="<?php the_permalink(); ?>">
-                                            <!-- 画像の表示 -->
-                                            <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
-                                            <?php endif; ?>
-                                        </a>
-                                        <div class="top_news_contents">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <!-- 日付の表示。曜日は英語で表記する -->
-                                                <p class="date"><?php echo get_the_date("Y.m.d") . "" . date("D H:i", strtotime(get_the_date("Y-m-d H:i:s"))); ?></p>
-                                                <p class="title"><?php the_title(); ?></p>
-                                            </a>
-                                            <div class="hashtag_list">
-                                                <!-- カテゴリーの表示 -->
-                                                <?php
+                            <article class="top_news_card">
+                                <a class="top_news_img" href="<?php the_permalink(); ?>">
+                                    <!-- 画像の表示 -->
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                    <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+                                    <?php endif; ?>
+                                </a>
+                                <div class="top_news_contents">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <!-- 日付の表示。曜日は英語で表記する -->
+                                        <p class="date"><?php echo get_the_date("Y.m.d") . "" . date("D H:i", strtotime(get_the_date("Y-m-d H:i:s"))); ?></p>
+                                        <p class="title"><?php the_title(); ?></p>
+                                    </a>
+                                    <div class="hashtag_list">
+                                        <!-- カテゴリーの表示 -->
+                                        <?php
                                                 $categories = get_the_category();
                                                 if (!empty($categories)) {
                                                     foreach ($categories as $category) {
@@ -96,9 +96,9 @@
                                                     }
                                                 }
                                                 ?>
-                                            </div>
-                                        </div>
-                                    </article>
+                                    </div>
+                                </div>
+                            </article>
                             <?php
                                 endwhile;
                             // wp_reset_postdata();
@@ -125,7 +125,7 @@
                         $args = array(
                             "post_type" => "spa", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
-                            "order" => "rand", //ランダム
+                            "orderby" => "rand", //ランダム
                         );
 
                         //WP_Queryオブジェクトを作成
@@ -133,23 +133,23 @@
                         ?>
 
                         <?php if ($the_query->have_posts()) : ?>
-                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                                <li class="slider_content">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <!-- 施設の写真 -->
-                                        <div class="slider_img">
-                                            <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
-                                            <?php endif; ?>
-                                            <span></span>
-                                        </div>
-                                        <!-- 施設の名前 -->
-                                        <h3><?php the_title(); ?></h3>
-                                    </a>
-                                </li>
+                        <li class="slider_content">
+                            <a href="<?php the_permalink(); ?>">
+                                <!-- 施設の写真 -->
+                                <div class="slider_img">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                    <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+                                    <?php endif; ?>
+                                    <span></span>
+                                </div>
+                                <!-- 施設の名前 -->
+                                <h3><?php the_title(); ?></h3>
+                            </a>
+                        </li>
                         <?php
                             endwhile;
                         endif;
@@ -174,7 +174,7 @@
                         $args = array(
                             "post_type" => "facility", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
-                            "order" => "rand", //ランダム
+                            "orderby" => "rand", //ランダム
                         );
 
                         // メニューの種類で絞り込む
@@ -191,23 +191,23 @@
                         ?>
 
                         <?php if ($the_query->have_posts()) : ?>
-                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                                <li class="slider_content">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <!-- 温泉の写真 -->
-                                        <div class="slider_img">
-                                            <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
-                                            <?php endif; ?>
-                                            <span></span>
-                                        </div>
-                                        <!-- 温泉の名前 -->
-                                        <h3><?php the_title(); ?></h3>
-                                    </a>
-                                </li>
+                        <li class="slider_content">
+                            <a href="<?php the_permalink(); ?>">
+                                <!-- 温泉の写真 -->
+                                <div class="slider_img">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                    <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+                                    <?php endif; ?>
+                                    <span></span>
+                                </div>
+                                <!-- 温泉の名前 -->
+                                <h3><?php the_title(); ?></h3>
+                            </a>
+                        </li>
                         <?php
                             endwhile;
                         endif;
@@ -231,7 +231,7 @@
                         $args = array(
                             "post_type" => "facility", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
-                            "order" => "rand", //ランダム
+                            "orderby" => "rand", //ランダム
                         );
 
                         // メニューの種類で絞り込む
@@ -248,23 +248,23 @@
                         ?>
 
                         <?php if ($the_query->have_posts()) : ?>
-                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                                <li class="slider_content">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <!-- 温泉の写真 -->
-                                        <div class="slider_img">
-                                            <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
-                                            <?php endif; ?>
-                                            <span></span>
-                                        </div>
-                                        <!-- 温泉の名前 -->
-                                        <h3><?php the_title(); ?></h3>
-                                    </a>
-                                </li>
+                        <li class="slider_content">
+                            <a href="<?php the_permalink(); ?>">
+                                <!-- 温泉の写真 -->
+                                <div class="slider_img">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                    <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+                                    <?php endif; ?>
+                                    <span></span>
+                                </div>
+                                <!-- 温泉の名前 -->
+                                <h3><?php the_title(); ?></h3>
+                            </a>
+                        </li>
                         <?php
                             endwhile;
                         endif;
@@ -288,7 +288,7 @@
                         $args = array(
                             "post_type" => "facility", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
-                            "order" => "rand", //ランダム
+                            "orderby" => "rand", //ランダム
                         );
 
                         // メニューの種類で絞り込む
@@ -305,23 +305,23 @@
                         ?>
 
                         <?php if ($the_query->have_posts()) : ?>
-                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                                <li class="slider_content">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <!-- 温泉の写真 -->
-                                        <div class="slider_img">
-                                            <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
-                                            <?php endif; ?>
-                                            <span></span>
-                                        </div>
-                                        <!-- 温泉の名前 -->
-                                        <h3><?php the_title(); ?></h3>
-                                    </a>
-                                </li>
+                        <li class="slider_content">
+                            <a href="<?php the_permalink(); ?>">
+                                <!-- 温泉の写真 -->
+                                <div class="slider_img">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                    <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+                                    <?php endif; ?>
+                                    <span></span>
+                                </div>
+                                <!-- 温泉の名前 -->
+                                <h3><?php the_title(); ?></h3>
+                            </a>
+                        </li>
                         <?php
                             endwhile;
                         endif;
@@ -345,7 +345,7 @@
                         $args = array(
                             "post_type" => "course", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
-                            "order" => "rand", //ランダム
+                            "orderby" => "rand", //ランダム
                         );
 
                         //WP_Queryオブジェクトを作成
@@ -353,23 +353,23 @@
                         ?>
 
                         <?php if ($the_query->have_posts()) : ?>
-                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                                <li class="slider_content">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <!-- 施設の写真 -->
-                                        <div class="slider_img">
-                                            <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
-                                            <?php endif; ?>
-                                            <span></span>
-                                        </div>
-                                        <!-- 施設の名前 -->
-                                        <h3><?php the_title(); ?></h3>
-                                    </a>
-                                </li>
+                        <li class="slider_content">
+                            <a href="<?php the_permalink(); ?>">
+                                <!-- 施設の写真 -->
+                                <div class="slider_img">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                    <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+                                    <?php endif; ?>
+                                    <span></span>
+                                </div>
+                                <!-- 施設の名前 -->
+                                <h3><?php the_title(); ?></h3>
+                            </a>
+                        </li>
                         <?php
                             endwhile;
                         endif;
@@ -412,8 +412,8 @@
                             $args = array(
                                 "post_type" => "column", //通常の投稿タイプ
                                 "posts_per_page" => 3, //表示する投稿数
-                                "order" => "date", //日付順に並べる
-                                "orderby" => "DESC" //降順（新しい順）
+                                "orderby" => "date", //日付順に並べる
+                                "order" => "DESC" //降順（新しい順）
                             );
 
                             //WP_Queryオブジェクトを作成
@@ -421,26 +421,26 @@
                             ?>
 
                             <?php if ($the_query->have_posts()) : ?>
-                                <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                                    <article class="top_news_card">
-                                        <a class="top_news_img" href="<?php the_permalink(); ?>">
-                                            <!-- 画像の表示 -->
-                                            <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
-                                            <?php endif; ?>
-                                        </a>
-                                        <div class="top_news_contents">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <!-- 日付の表示。曜日は英語で表記する -->
-                                                <p class="date"><?php echo get_the_date("Y.m.d") . "" . date("D H:i", strtotime(get_the_date("Y-m-d H:i:s"))); ?></p>
-                                                <p class="title"><?php the_title(); ?></p>
-                                            </a>
-                                            <div class="hashtag_list">
-                                                <!-- カテゴリーの表示 -->
-                                                <?php
+                            <article class="top_news_card">
+                                <a class="top_news_img" href="<?php the_permalink(); ?>">
+                                    <!-- 画像の表示 -->
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                    <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+                                    <?php endif; ?>
+                                </a>
+                                <div class="top_news_contents">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <!-- 日付の表示。曜日は英語で表記する -->
+                                        <p class="date"><?php echo get_the_date("Y.m.d") . "" . date("D H:i", strtotime(get_the_date("Y-m-d H:i:s"))); ?></p>
+                                        <p class="title"><?php the_title(); ?></p>
+                                    </a>
+                                    <div class="hashtag_list">
+                                        <!-- カテゴリーの表示 -->
+                                        <?php
                                                 $categories = get_the_category();
                                                 if (!empty($categories)) {
                                                     foreach ($categories as $category) {
@@ -455,9 +455,9 @@
                                                     }
                                                 }
                                                 ?>
-                                            </div>
-                                        </div>
-                                    </article>
+                                    </div>
+                                </div>
+                            </article>
                             <?php
                                 endwhile;
                                 wp_reset_postdata();
