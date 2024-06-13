@@ -14,6 +14,8 @@
 
             <?php if (has_post_thumbnail()) : ?>
                 <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="mt32">
+            <?php else : ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
             <?php endif; ?>
 
             <div class="hashtag_list mt32">
@@ -39,7 +41,10 @@
             <p class="mt32"><?php the_content(); ?></p>
         </section>
 
+
+
         <section>
+
             <?php
             // ループの回数を定義
             $loop_count = 4;
@@ -94,6 +99,8 @@
                                     <span></span>
                                     <?php if ($post_thumbnail) : ?>
                                         <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                    <?php else : ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                     <?php endif; ?>
                                 </div>
                                 <h3><?php echo esc_html($post_title); ?></h3>
@@ -104,32 +111,6 @@
                     }
                     ?>
                 </div>
-            <?php endif; ?>
-
-            <?php
-            // ACFからカスタムフィールドの値を取得
-            $string = get_field('post_url');
-
-            // 初期化
-            $external_url = '';
-            $link_text = '';
-
-            // explode関数を使用して文字列を分割し、分割した結果の要素数をチェック
-            if ($string) {
-                $parts = explode(",", $string);
-                if (count($parts) == 2) {
-                    $external_url = $parts[0];
-                    $link_text = $parts[1];
-                }
-            }
-            ?>
-
-            <?php if (!empty($external_url) && !empty($link_text)) : ?>
-                <h5 class="mt32">関連ウェブサイト</h5>
-                <p>関連ウェブサイト:
-                    <a href="<?php echo esc_url($external_url); ?>"><?php echo esc_html($link_text); ?></a>
-                </p>
-
             <?php endif; ?>
 
         </section>
