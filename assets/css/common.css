@@ -315,6 +315,22 @@ p {
     margin-top: 40px;
 }
 
+/* 最新のsafari用 */
+_::-webkit-full-page-media,
+_:future,
+:root .back_btn {
+    width: 115px;
+}
+
+/* 古いsafari用 */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    ::i-block-chrome,
+    .back_btn {
+        width: 115px;
+    }
+}
+
 .back_btn span {
     position: relative;
     display: block;
@@ -432,7 +448,7 @@ h2 {
     transition: 0.4s;
 }
 
-.card a:hover > div img {
+.card a:hover>div img {
     aspect-ratio: 1/1;
     transform: translate(-3%, 3%);
 }
