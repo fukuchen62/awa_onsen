@@ -34,7 +34,7 @@
 
                 if (!empty($terms) && !is_wp_error($terms)) :
                 ?>
-                    <ul class="tag element03">
+                    <ul class="tag element04">
                         <?php foreach ($terms as $term) :
                             // タームのリンクを取得
                             $term_link = get_term_link($term);
