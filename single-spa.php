@@ -213,8 +213,8 @@
                 </dd>
                 <dt>公式ホームページ</dt>
                 <dd class="url">
-                    <a href="<?php the_field('url'); ?>" target="_blank">
-                        <?php echo get_field('url') ?>
+                    <a href="<?php the_field('official_url'); ?>" target="_blank">
+                        <?php echo get_field('official_url') ?>
                     </a>
                 </dd>
                 <dt>駐車場</dt>

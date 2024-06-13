@@ -224,6 +224,7 @@
                         $post_type = get_post_type($post_id); // カスタム投稿タイプ名を取得
             ?>
                         <article class="card facility <?php echo esc_attr($post_type); ?>">
+
                             <a href="<?php echo esc_url($post_link); ?>">
                                 <div>
                                     <span></span>
