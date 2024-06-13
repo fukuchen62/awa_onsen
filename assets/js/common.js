@@ -7,6 +7,7 @@ $(function () {
     // $(".hamburger").click(function () {
     //     $(".sp_nav .navlist").toggleClass("isactive");
 
+<<<<<<< HEAD
     //     if ($(".sp_nav .navlist").hasClass("isactive")) {
     //         $(".hamburger").addClass("isactive");
     //     } else {
@@ -29,11 +30,11 @@ $(function () {
     //     nav.removeClass("isactive");
     // }
 
-    $(function () {
         // ハンバーガーメニューをクリックしたらメニューを表示・非表示
         $(".hamburger").click(function () {
             $(".sp_nav .navlist").toggleClass("isactive");
             $(this).toggleClass("isactive");
+            $(".sp_nav").toggleClass("isactive");
         });
 
         // メニューの中をクリックしたら、メニューを閉じる
@@ -49,8 +50,15 @@ $(function () {
             nav.addClass("isactive");
         } else {
             nav.removeClass("isactive");
+=======
+        if ($(".sp_nav .navlist").hasClass("isactive")) {
+            $(".hamburger").addClass("isactive");
+            $(".sp_nav").addClass("isactive");
+        } else {
+            $(".hamburger").removeClass("isactive");
+            $("sp_nav").removeClass("isactive");
+>>>>>>> parent of f8ffe19 (Merge branch 'main' of https://github.com/fukuchen62/awa_onsen)
         }
-    });
 
     // topへボタンをクリックしたら上までスクロールさせる
     $(".top_button").on("click", function (e) {
@@ -170,7 +178,7 @@ $(document).ready(function () {
             width: `${size}px`,
             height: `${size}px`
         });
-        const $img = $('<img>').attr('src', '/assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
+        const $img = $('<img>').attr('src', path + '/assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
             width: '100%',
             height: '100%'
         });

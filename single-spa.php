@@ -115,10 +115,6 @@
                             <li class="thumbnail-img">
                                 <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像1">
                             </li>
-                        <?php else : ?>
-                            <li class="thumbnail-img">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
-                            </li>
                         <?php endif; ?>
                     <?php endif; ?>
 
@@ -127,10 +123,6 @@
                         <?php if ($pic_url) : ?>
                             <li class="thumbnail-img">
                                 <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像2">
-                            </li>
-                        <?php else : ?>
-                            <li class="thumbnail-img">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                             </li>
                         <?php endif; ?>
                     <?php endif; ?>
@@ -141,10 +133,6 @@
                             <li class="thumbnail-img">
                                 <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像3">
                             </li>
-                        <?php else : ?>
-                            <li class="thumbnail-img">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
-                            </li>
                         <?php endif; ?>
                     <?php endif; ?>
 
@@ -153,10 +141,6 @@
                         <?php if ($pic_url) : ?>
                             <li class="thumbnail-img">
                                 <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像4">
-                            </li>
-                        <?php else : ?>
-                            <li class="thumbnail-img">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                             </li>
                         <?php endif; ?>
                     <?php endif; ?>
@@ -193,81 +177,82 @@
                         <tr>
                             <th>基本</th>
                             <td>
-                                <?php the_field('business_time'); ?>
+                                <?php echo esc_html(get_field('business_time')); ?>
                             </td>
                         </tr>
                         <tr>
                             <th>定休日</th>
                             <td>
-                                <?php the_field('closed'); ?>
+                                <?php echo esc_html(get_field('closed')); ?>
                             </td>
                         </tr>
                     </table>
                 </dd>
                 <dt>基本料金</dt>
                 <dd>
-                    <?php the_field('price'); ?>
+                    <?php echo nl2br(esc_html(get_field('price'))); ?>
                 </dd>
                 <dt>住所</dt>
                 <dd>
-                    <?php the_field('address1'); ?>
-                    <?php the_field('address2'); ?>
+                    <?php echo nl2br(esc_html(get_field('address1'))); ?>
+                    <?php echo nl2br(esc_html(get_field('address2'))); ?>
                 </dd>
                 <dt>TEL</dt>
                 <dd>
-                    <?php the_field('tel'); ?>
+                    <?php echo nl2br(esc_html(get_field('tel'))); ?>
                 </dd>
                 <dt>FAX</dt>
                 <dd>
-                    <?php the_field('fax'); ?>
+                    <?php echo nl2br(esc_html(get_field('fax'))); ?>
                 </dd>
                 <dt>SNS</dt>
-                <dd>
-                    <?php the_field('sns_url'); ?>
+                <dd class="url">
+                    <a href="<?php echo nl2br(esc_html(get_field('sns_url'))); ?>" target="_blank">
+                    </a>
                 </dd>
                 <dt>公式ホームページ</dt>
-                <dd>
+                <dd class="url">
                     <a href="<?php the_field('official_url'); ?>" target="_blank">
                         <?php echo get_field('official_url') ?>
                     </a>
                 </dd>
                 <dt>駐車場</dt>
                 <dd>
-                    <?php the_field('parking_description'); ?>
+                    <?php echo nl2br(esc_html(get_field('parking_description'))); ?>
                 </dd>
                 <dt>最寄り駅</dt>
                 <dd>
-                    <?php the_field('station'); ?>
+                    <?php echo nl2br(esc_html(get_field('station'))); ?>
                 </dd>
                 <dt>決済方法</dt>
                 <dd>
-                    <?php the_field('payment_description'); ?>
+                    <?php echo nl2br(esc_html(get_field('ayment_description'))); ?>
                 </dd>
                 <dt>浴室小物</dt>
                 <dd>
-                    <?php the_field('facility'); ?>
+                    <?php echo nl2br(esc_html(get_field('facility'))); ?>
                 </dd>
 
                 <!-- ========== 不要と感じたのでコメントアウトしました ========== -->
                 <!-- <dt>予約</dt>
                 <dd>
-                    <?php the_field('reserve_description'); ?>
+                    <?php echo nl2br(esc_html(get_field('reserve_description'))); ?>
                 </dd> -->
                 <!-- <dt>トイレ</dt>
                 <dd>
-                    <?php the_field('toilet_description'); ?>
+                    <?php echo nl2br(esc_html(get_field('toilet_description'))); ?>
                 </dd> -->
                 <!-- <dt>分煙</dt>
                 <dd>
-                    <?php the_field('smoking_description'); ?>
+                    <?php echo nl2br(esc_html(get_field('smoking_description'))); ?>
                 </dd> -->
                 <!-- <dt>Wi-Fi</dt>
                 <dd>
-                    <?php the_field('wifi_description'); ?>
+                    <?php echo nl2br(esc_html(get_field('wifi_description'))); ?>
                 </dd> -->
                 <!-- <dt>Email</dt>
                 <dd>
-                    <?php the_field('email'); ?>
+                    <?php echo nl2br(esc_html(get_field('email'))); ?>
                 </dd> -->
                 <!-- ==================== -->
             </dl>
@@ -335,6 +320,70 @@
         ?>
 
         <section class="recommend">
+<<<<<<< HEAD
+=======
+            <h5>こちらもいかがでしょうか？</h5>
+            <!-- カード型 -->
+            <div class="article_all">
+                <?php
+                // ループの回数を定義
+                $loop_count = 6;
+
+                // すべてのカスタム投稿タイプを取得
+                $custom_post_types = get_post_types(array('_builtin' => false));
+
+                for ($i = 1; $i <= $loop_count; $i++) {
+                    // カスタムフィールドの名前を生成
+                    $field_name = 'url' . $i;
+                    $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
+
+                    if ($slug) {
+                        // カスタムクエリで投稿を検索
+                        $args = array(
+                            'name' => $slug,
+                            'post_type' => $custom_post_types,
+                            'post_status' => 'publish',
+                            'numberposts' => 1
+                        );
+
+                        $posts = get_posts($args);
+
+                        if (!empty($posts)) {
+                            $post = $posts[0]; // 最初の投稿を取得
+                            setup_postdata($post);
+
+                            // 投稿情報を取得
+                            $post_id = $post->ID;
+                            $post_title = get_the_title($post_id);
+                            $post_link = get_permalink($post_id);
+                            $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
+                            $post_type = get_post_type($post_id); // カスタム投稿タイプ名を取得
+                ?>
+                            <article class="card <?php echo esc_attr($post_type); ?>">
+                                <a href="<?php echo esc_url($post_link); ?>">
+                                    <div>
+                                        <span></span>
+                                        <?php if ($post_thumbnail) : ?>
+                                            <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                        <?php endif; ?>
+                                    </div>
+                                    <h3><?php echo esc_html($post_title); ?></h3>
+                                </a>
+                            </article>
+                <?php
+                            wp_reset_postdata();
+                        }
+                    }
+                }
+                ?>
+            </div>
+        </section>
+
+        <!-- 関連するコラム、お知らせ -->
+        <section class="connection_column">
+            <h5>関連コラム、情報
+            </h5>
+>>>>>>> parent of f8ffe19 (Merge branch 'main' of https://github.com/fukuchen62/awa_onsen)
             <?php
             // ループの回数を定義
             $loop_count = 6;
@@ -380,12 +429,33 @@
             ?>
                         <article class="card <?php echo esc_attr($post_type); ?>">
                             <a href="<?php echo esc_url($post_link); ?>">
+<<<<<<< HEAD
                                 <div>
                                     <span></span>
                                     <?php if ($post_thumbnail) : ?>
                                         <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
                                     <?php else : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
+=======
+                                <!-- アイキャッチ取得 -->
+                                <?php if ($post_thumbnail) : ?>
+                                    <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
+                                <?php endif; ?>
+                            </a>
+                            <div class="news_contents">
+                                <a href="<?php echo esc_url($$post_link); ?>">
+                                    <!-- 日付と時間 -->
+                                    <p class="date fugaz-one-regular"><?php echo esc_html($post_date); ?></p>
+                                    <!-- 記事タイトル -->
+                                    <h6 class="title"><?php echo esc_html($post_title); ?></h6>
+                                </a>
+                                <!-- ハッシュタグ -->
+                                <div class="hashtag_list">
+                                    <?php if ($tags && !is_wp_error($tags)) : ?>
+                                        <?php foreach ($tags as $tag) : ?>
+                                            <a href="<?php echo esc_url(get_term_link($tag)); ?>" class="hashtag">#<?php echo esc_html($tag->name); ?></a>
+                                        <?php endforeach; ?>
+>>>>>>> parent of f8ffe19 (Merge branch 'main' of https://github.com/fukuchen62/awa_onsen)
                                     <?php endif; ?>
                                 </div>
                                 <h3><?php echo esc_html($post_title); ?></h3>

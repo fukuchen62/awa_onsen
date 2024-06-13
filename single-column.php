@@ -119,6 +119,8 @@
                                         <span></span>
                                         <?php if ($post_thumbnail) : ?>
                                             <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                        <?php else : ?>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                         <?php endif; ?>
                                     </div>
                                     <h3><?php echo esc_html($post_title); ?></h3>
@@ -130,7 +132,9 @@
                     }
                 }
                 ?>
+
             </div>
+<<<<<<< HEAD
 
             <?php
             // ACFからカスタムフィールドの値を取得
@@ -158,6 +162,8 @@
 
             <?php endif; ?>
 
+=======
+>>>>>>> parent of f8ffe19 (Merge branch 'main' of https://github.com/fukuchen62/awa_onsen)
         </section>
 
 

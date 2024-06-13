@@ -156,30 +156,28 @@
         <!-- 宿泊 -->
         <!-- 1日目のラストから宿泊施設までの移動時間 -->
         <?php
-        // 宿泊のタクソノミーが選択されているかを確認
-        if (has_term('stay-course', '宿泊')) : // 宿泊にチェックが入っていたら表示させる
-            if ($url && $spot_name && $spot_description) : ?>
-                <div class="yellowgreen_square">
-                    <h4>本日のホテルと温泉</h4>
-                    <article class="card spa">
-                        <a href="<?php echo $url; ?>">
-                            <div>
-                                <span></span>
-                                <?php if (has_post_thumbnail()) :
-                                    the_post_thumbnail('medium');
-                                else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.jpg" alt="<?php echo $spot_name; ?>">
-                                <?php endif; ?>
-                            </div>
-                        </a>
-                        <h3><?php echo $spot_name; ?></h3>
-                        <!-- 紹介文 -->
-                        <p class="tx">
-                            <?php echo $spot_description; ?>
-                        </p>
-                    </article>
-                </div>
-            <?php endif; ?>
+        $stay = get_field('spot_stay');
+        if ($url && $spot_name && $spot_description) : ?>
+            <div class="yellowgreen_square">
+                <h4>本日のホテルと温泉</h4>
+                <article class="card spa">
+                    <a href="<?php echo $url; ?>">
+                        <div>
+                            <span></span>
+                            <?php if (has_post_thumbnail()) :
+                                the_post_thumbnail('medium');
+                            else : ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.jpg" alt="<?php echo $spot_name; ?>">
+                            <?php endif; ?>
+                        </div>
+                    </a>
+                    <h3><?php echo $spot_name; ?></h3>
+                    <!-- 紹介文 -->
+                    <p class="tx">
+                        <?php echo $spot_description; ?>
+                    </p>
+                </article>
+            </div>
         <?php endif; ?>
 
 
