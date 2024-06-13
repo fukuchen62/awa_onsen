@@ -48,11 +48,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // クエリパラメータを削除
-    window.addEventListener('load', function () {
-        if (window.location.search) {
-            history.replaceState(null, null, window.location.pathname);
-        }
+    let forms = document.querySelectorAll('form[role="search"]');
+    forms.forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            let formData = new FormData(form);
+            let params = new URLSearchParams(formData).toString();
+            fetch(form.action + '?' + params)
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('.results').innerHTML = data;
+                    // URLのクエリパラメータをクリア
+                    history.replaceState(null, null, window.location.pathname);
+                });
+        });
     });
+
 
     // フォームのチェックボックスが1つ以上チェックされているか確認
     function isFormValid(form) {

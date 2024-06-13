@@ -7,9 +7,14 @@
         <!-- パンくず -->
 
         <ul class="tag element03">
-            <li class="active">温泉</li>
+
+            <li class="<?php $post_type == 'spa'  ? 'active' : ''; ?>">温泉</li>
+            <li class="<?php $post_type == 'facility'  ? 'active' : ''; ?>">周辺施設</li>
+            <li class="<?php $post_type == 'course'  ? 'active' : ''; ?>">モデルコース</li>
+
+            <!-- <li class='active'>周辺施設</li>
             <li>周辺施設</li>
-            <li>モデルコース</li>
+            <li>モデルコース</li> -->
         </ul>
 
         <!-- 温泉 -->
