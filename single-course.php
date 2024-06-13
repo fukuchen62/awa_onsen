@@ -183,9 +183,6 @@
         <?php endif; ?>
 
 
-
-
-
         <!-- 2日目 -->
         <section class="day1">
             <?php

@@ -1,8 +1,6 @@
 <!-- header.phpを読み込む -->
 <?php get_header(); ?>
 
-
-
 <main class="pc_inner">
     <div class="container">
 
@@ -12,48 +10,41 @@
             <!-- パンくずリスト -->
             <?php get_template_part('template-parts/breadcrumb'); ?>
 
+            <!-- タグ -->
+            <?php
+            // 特定のタクソノミーを指定
+            $taxonomy = 'column_type'; // ここにタクソノミーの名前を指定
+
+            // タクソノミーに属するすべてのタームを取得
+            $terms = get_terms(array(
+                'taxonomy' => $taxonomy,
+                'order' => 'DESC',
+                'hide_empty' => false,
+            ));
 
 
-            <!-- WordPressのルールの開始 -->
-            <?php if (have_posts()) : ?>
+            if (!empty($terms) && !is_wp_error($terms)) :
+            ?>
+                <ul class="tag element04">
+                    <?php foreach ($terms as $term) :
+                        // タームのリンクを取得
+                        $term_link = get_term_link($term);
+                        // 現在のタームと一致するか確認
+                        $is_active = (is_tax($taxonomy, $term->term_id)) ? 'active' : '';
+                    ?>
+                        <li class="<?php echo esc_attr($is_active); ?>">
+                            <a href="<?php echo esc_url($term_link); ?>"><?php echo esc_html($term->name); ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php
+            endif;
+            ?>
 
-
-
-                <!-- タグ -->
-                <?php
-                // 特定のタクソノミーを指定
-                $taxonomy = 'column_type'; // ここにタクソノミーの名前を指定
-
-                // タクソノミーに属するすべてのタームを取得
-                $terms = get_terms(array(
-                    'taxonomy' => $taxonomy,
-                    'order' => 'DESC',
-                    'hide_empty' => false,
-                ));
-
-
-                if (!empty($terms) && !is_wp_error($terms)) :
-                ?>
-                    <ul class="tag element04">
-                        <?php foreach ($terms as $term) :
-                            // タームのリンクを取得
-                            $term_link = get_term_link($term);
-                            // 現在のタームと一致するか確認
-                            $is_active = (is_tax($taxonomy, $term->term_id)) ? 'active' : '';
-                        ?>
-                            <li class="<?php echo esc_attr($is_active); ?>">
-                                <a href="<?php echo esc_url($term_link); ?>"><?php echo esc_html($term->name); ?></a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php
-                endif;
-                ?>
-
-                <!-- 一覧 -->
-                <div class="news_list">
-
-                    <!-- 記事があるとき -->
+            <!-- 一覧 -->
+            <div class="news_list">
+                <!-- WordPressのルールの開始 -->
+                <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : ?>
                         <?php the_post(); ?>
 
@@ -106,7 +97,7 @@
                     <?php endwhile; ?>
                     <!-- 一つの記事ここまで -->
 
-                </div>
+            </div>
         </section>
     <?php endif; ?>
 

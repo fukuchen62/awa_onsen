@@ -130,42 +130,36 @@
                     }
                 }
                 ?>
-
             </div>
+
+            <?php
+            // ACFからカスタムフィールドの値を取得
+            $string = get_field('column_url');
+
+            // 初期化
+            $external_url = '';
+            $link_text = '';
+
+            // explode関数を使用して文字列を分割し、分割した結果の要素数をチェック
+            if ($string) {
+                $parts = explode(",", $string);
+                if (count($parts) == 2) {
+                    $external_url = $parts[0];
+                    $link_text = $parts[1];
+                }
+            }
+            ?>
+
+            <?php if (!empty($external_url) && !empty($link_text)) : ?>
+                <h5 class="mt32">関連ウェブサイト</h5>
+                <p>関連ウェブサイト:
+                    <a href="<?php echo esc_url($external_url); ?>"><?php echo esc_html($link_text); ?></a>
+                </p>
+
+            <?php endif; ?>
+
         </section>
 
-        <!-- ナビゲーション -->
-
-        <div class="nav-links">
-            <!-- 関連リンクの作成 -->
-            <div class="prevNext flex">
-                <?php
-                $previous_post = get_previous_post();
-                if ($previous_post) :
-                ?>
-                    <div class="prevNext_item prevNext_item-prev">
-                        <a href="<?php the_permalink($previous_post); ?>">
-
-                            <span>
-                                << 前の記事</span>
-                        </a>
-                    </div>
-                <?php endif; ?>
-
-                <div class="prevNext_item prevNext_item-next">
-                    <?php
-                    $next_post = get_next_post();
-                    if ($next_post) :
-                    ?>
-                        <a href="<?php the_permalink($next_post); ?>">
-                            <span>次の記事 >></span>
-
-                        </a>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-        <!-- 前に戻るボタン -->
 
         <?php
         // 現在の投稿のタームを取得
