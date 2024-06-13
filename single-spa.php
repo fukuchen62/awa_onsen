@@ -383,96 +383,96 @@
                 }
             }
             ?>
-    </div>
-    </section>
 
-    <!-- 関連するコラム、お知らせ -->
-    <section class="connection_column">
-        <?php
-        // カスタムフィールドを4つ作ってるので4回設定
-        $loop_count = 4;
+        </section>
 
-        // すべてのカスタム投稿タイプを取得
-        $custom_post_types = get_post_types(array('_builtin' => false));
+        <!-- 関連するコラム、お知らせ -->
+        <section class="connection_column">
+            <?php
+            // カスタムフィールドを4つ作ってるので4回設定
+            $loop_count = 4;
 
-        // コラムがあるかどうかのフラグ
-        $has_columns = false;
+            // すべてのカスタム投稿タイプを取得
+            $custom_post_types = get_post_types(array('_builtin' => false));
 
-        for ($i = 1; $i <= $loop_count; $i++) {
-            // カスタムフィールドで設定したフィールド名＋カウントの数字
-            $field_name = 'column' . $i;
-            $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
+            // コラムがあるかどうかのフラグ
+            $has_columns = false;
 
-            if ($slug) {
-                // カスタムクエリで投稿を検索
-                $args = array(
-                    'name' => $slug,
-                    'post_type' => $custom_post_types,
-                    'post_status' => 'publish',
-                    'numberposts' => 1
-                );
-                $posts = get_posts($args);
-                if (!empty($posts)) {
-                    if (!$has_columns) {
-                        $has_columns = true;
-                        echo '<h5>関連コラム、情報</h5>';
-                    }
+            for ($i = 1; $i <= $loop_count; $i++) {
+                // カスタムフィールドで設定したフィールド名＋カウントの数字
+                $field_name = 'column' . $i;
+                $slug = get_field($field_name); // ここにカスタムフィールドの値が入る
 
-                    $post = $posts[0]; // 最初の投稿を取得
-                    setup_postdata($post);
-                    // 投稿情報を取得
-                    $post_id = $post->ID;
-                    // 投稿のタイトルを取得
-                    $post_title = get_the_title($post_id);
-                    // 投稿のパーマリンクを取得
-                    $post_link = get_permalink($post_id);
-                    // 投稿の日付を取得
-                    $post_date = get_the_date('Y.m.d D H:i');
-                    // アイキャッチ画像のURLを取得
-                    $post_thumbnail = get_the_post_thumbnail_url($post_id, 'thumbnail');
-                    // 投稿のタクソノミースラッグを取得
-                    $tags = get_the_terms(get_the_ID(), 'column_type');
-        ?>
-                    <!-- ページ下部の関係コラム枠 -->
-                    <article class="news_card news">
-                        <!-- コラムへのリンク -->
-                        <a href="<?php echo esc_url($post_link); ?>">
-                            <!-- アイキャッチ取得 -->
-                            <?php if ($post_thumbnail) : ?>
-                                <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
-                            <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
-                            <?php endif; ?>
-                        </a>
-                        <div class="news_contents">
+                if ($slug) {
+                    // カスタムクエリで投稿を検索
+                    $args = array(
+                        'name' => $slug,
+                        'post_type' => $custom_post_types,
+                        'post_status' => 'publish',
+                        'numberposts' => 1
+                    );
+                    $posts = get_posts($args);
+                    if (!empty($posts)) {
+                        if (!$has_columns) {
+                            $has_columns = true;
+                            echo '<h5>関連コラム、情報</h5>';
+                        }
+
+                        $post = $posts[0]; // 最初の投稿を取得
+                        setup_postdata($post);
+                        // 投稿情報を取得
+                        $post_id = $post->ID;
+                        // 投稿のタイトルを取得
+                        $post_title = get_the_title($post_id);
+                        // 投稿のパーマリンクを取得
+                        $post_link = get_permalink($post_id);
+                        // 投稿の日付を取得
+                        $post_date = get_the_date('Y.m.d D H:i');
+                        // アイキャッチ画像のURLを取得
+                        $post_thumbnail = get_the_post_thumbnail_url($post_id, 'thumbnail');
+                        // 投稿のタクソノミースラッグを取得
+                        $tags = get_the_terms(get_the_ID(), 'column_type');
+            ?>
+                        <!-- ページ下部の関係コラム枠 -->
+                        <article class="news_card news">
+                            <!-- コラムへのリンク -->
                             <a href="<?php echo esc_url($post_link); ?>">
-                                <!-- 日付と時間 -->
-                                <p class="date fugaz-one-regular"><?php echo ($post_date); ?></p>
-                                <!-- 記事タイトル -->
-                                <h6 class="title"><?php echo ($post_title); ?></h6>
-                            </a>
-                            <!-- ハッシュタグ -->
-                            <div class="hashtag_list">
-                                <?php if ($tags && !is_wp_error($tags)) : ?>
-                                    <?php foreach ($tags as $tag) : ?>
-                                        <span class="hashtag"><?php echo ($tag->name); ?></span>
-                                    <?php endforeach; ?>
+                                <!-- アイキャッチ取得 -->
+                                <?php if ($post_thumbnail) : ?>
+                                    <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                 <?php endif; ?>
+                            </a>
+                            <div class="news_contents">
+                                <a href="<?php echo esc_url($post_link); ?>">
+                                    <!-- 日付と時間 -->
+                                    <p class="date fugaz-one-regular"><?php echo ($post_date); ?></p>
+                                    <!-- 記事タイトル -->
+                                    <h6 class="title"><?php echo ($post_title); ?></h6>
+                                </a>
+                                <!-- ハッシュタグ -->
+                                <div class="hashtag_list">
+                                    <?php if ($tags && !is_wp_error($tags)) : ?>
+                                        <?php foreach ($tags as $tag) : ?>
+                                            <span class="hashtag"><?php echo ($tag->name); ?></span>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-        <?php
-                    wp_reset_postdata();
+                        </article>
+            <?php
+                        wp_reset_postdata();
+                    }
                 }
             }
-        }
-        ?>
+            ?>
 
-    </section>
+        </section>
 
-    <button class="back_btn" onclick="window.location.href='<?php echo home_url('/spa/'); ?>'">
-        <span><i class="fa-solid fa-arrow-left"></i>back</span>
-    </button>
+        <button class="back_btn" onclick="window.location.href='<?php echo home_url('/spa/'); ?>'">
+            <span><i class="fa-solid fa-arrow-left"></i>back</span>
+        </button>
 
     </div>
 </main>
