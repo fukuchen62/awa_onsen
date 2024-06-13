@@ -11,7 +11,7 @@
     margin-bottom: 10px;
 }
 
-.container>* {
+.container > * {
     margin-bottom: 30px;
 }
 
@@ -46,79 +46,6 @@
 
 /* お気に入り登録 */
 
-.favorite_btn i {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.6rem;
-}
-
-.favorite_btn i:nth-child(1) {
-    color: aliceblue;
-}
-
-/* いいねボタン */
-
-.nice_btn {
-    position: absolute;
-    background-color: #d9d9d9;
-    top: 8px;
-    right: 65px;
-    width: 55px;
-    height: 55px;
-    padding: 5px;
-    border-radius: 50%;
-    text-align: center;
-}
-
-.nice_btn i {
-    font-size: 1.6rem;
-}
-
-.nice_btn div p {
-    font-size: 1rem;
-    text-align: center;
-}
-
-checkbox-item {
-    background-color: white;
-    text-align: center;
-    position: relative;
-}
-
-.checkbox-item input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.checkbox-item input[type="checkbox"]:checked+.favorite_btn {
-    /*      border: 5px solid black; */
-    background-color: rgba(235, 151, 168, 1);
-}
-
-.checkbox-item input[type="checkbox"]:checked+.favorite_btn i:nth-child(1) {
-    color: red;
-}
-
-.checkbox-item .favorite_btn {
-    position: absolute;
-    top: 0;
-    right: 5px;
-    display: block;
-    width: 55px;
-    height: 76px;
-    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 70%, 0% 100%);
-    background-color: rgba(235, 151, 168, 0.5);
-}
-
-.hashtag_list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
 /* 店舗情報 */
 
 dt,
@@ -145,7 +72,9 @@ iframe {
 h5 {
     margin-top: 30px;
 }
-
+.text {
+    text-align: start;
+}
 /* 戻るボタン */
 .back_btn {
     display: none;
@@ -163,8 +92,7 @@ h5 {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-@media(width>=757px) {
-
+@media (width>=757px) {
     /* 背景を濃くする */
     .bubble_background {
         background-color: transparent;
@@ -172,6 +100,6 @@ h5 {
 
     /* ボーダーの色は下層ページよって可変（トップページを参照）、ボーダーの太さは8→10pxに。 */
     .container {
-        border: 10px solid #6BDE4E;
+        border: 10px solid #6bde4e;
     }
 }

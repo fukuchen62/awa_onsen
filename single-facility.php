@@ -110,7 +110,7 @@
                     <?php echo esc_html(get_field('facility_name')); ?>
                 </dd>
                 <dt>施設紹介</dt>
-                <dd>
+                <dd class="text">
                     <?php echo nl2br(esc_html(get_field('facility_description'))); ?>
                 </dd>
                 <dt>住所</dt>
