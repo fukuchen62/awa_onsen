@@ -22,6 +22,11 @@ img {
     max-width: 100%;
 }
 
+a:hover {
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
 .shadow {
     box-shadow: 4px 4px 6px 0 #343a3e33;
 }
@@ -617,7 +622,7 @@ h5 {
 
 /*========== header ==========*/
 
-.sp_nav {
+.sp_nav.isactive {
     width: 100vw;
     height: 100vh;
     z-index: 5;
