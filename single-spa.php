@@ -455,7 +455,7 @@
                             <div class="hashtag_list">
                                 <?php if ($tags && !is_wp_error($tags)) : ?>
                                     <?php foreach ($tags as $tag) : ?>
-                                        <a href="<?php echo esc_url(get_term_link($tag)); ?>" class="hashtag">#<?php echo ($tag->name); ?></a>
+                                        <span class="hashtag"><?php echo ($tag->name); ?></span>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                             </div>
