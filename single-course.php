@@ -347,7 +347,7 @@
         <section class="connection_column">
             <?php
             // ループの回数を定義
-            $loop_count = 6;
+            $loop_count = 4;
 
             // すべてのカスタム投稿タイプを取得
             $custom_post_types = get_post_types(array('_builtin' => false));
