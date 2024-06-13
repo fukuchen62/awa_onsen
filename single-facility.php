@@ -314,11 +314,11 @@
                                     <!-- 記事タイトル -->
                                     <h6 class="title"><?php echo esc_html($post_title); ?></h6>
                                 </a>
-                                <!-- ハッシュタグ -->
+                                <!-- タグ -->
                                 <div class="hashtag_list">
                                     <?php if ($tags && !is_wp_error($tags)) : ?>
                                         <?php foreach ($tags as $tag) : ?>
-                                            <a href="<?php echo esc_url(get_term_link($tag)); ?>" class="hashtag">#<?php echo esc_html($tag->name); ?></a>
+                                            <a href="<?php echo esc_url(get_term_link($tag)); ?>" class="hashtag"><?php echo esc_html($tag->name); ?></a>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </div>
