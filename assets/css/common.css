@@ -33,7 +33,7 @@ a:hover {
 
 .article_hover:hover {
     opacity: 0.7;
-    transition: all 0.7s;
+    transition: all 0.4s;
 }
 
 /* レスポンシブ */
@@ -429,7 +429,7 @@ h2 {
     height: 100%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    transition: 0.7s;
+    transition: 0.4s;
 }
 
 .card a:hover > div img {
@@ -449,7 +449,7 @@ h2 {
 
     /* ここはそれぞれのカラー指定 */
     /* background-color: #A7E099; */
-    transition: 0.7s;
+    transition: 0.4s;
 }
 
 .card h3 {
