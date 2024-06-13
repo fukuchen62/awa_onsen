@@ -177,37 +177,37 @@
                         <tr>
                             <th>基本</th>
                             <td>
-                                <?php echo esc_html(get_field('business_time')); ?>
+                                <?php the_field('business_time'); ?>
                             </td>
                         </tr>
                         <tr>
                             <th>定休日</th>
                             <td>
-                                <?php echo esc_html(get_field('closed')); ?>
+                                <?php the_field('closed'); ?>
                             </td>
                         </tr>
                     </table>
                 </dd>
                 <dt>基本料金</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('price'))); ?>
+                    <?php the_field('price'); ?>
                 </dd>
                 <dt>住所</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('address1'))); ?>
-                    <?php echo nl2br(esc_html(get_field('address2'))); ?>
+                    <?php the_field('address1'); ?>
+                    <?php the_field('address2'); ?>
                 </dd>
                 <dt>TEL</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('tel'))); ?>
+                    <?php the_field('tel'); ?>
                 </dd>
                 <dt>FAX</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('fax'))); ?>
+                    <?php the_field('fax'); ?>
                 </dd>
                 <dt>SNS</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('sns_url'))); ?>
+                    <?php the_field('sns_url'); ?>
                 </dd>
                 <dt>公式ホームページ</dt>
                 <dd>
@@ -217,19 +217,19 @@
                 </dd>
                 <dt>駐車場</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('parking_description'))); ?>
+                    <?php the_field('parking_description'); ?>
                 </dd>
                 <dt>最寄り駅</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('station'))); ?>
+                    <?php the_field('station'); ?>
                 </dd>
                 <dt>決済方法</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('ayment_description'))); ?>
+                    <?php the_field('payment_description'); ?>
                 </dd>
                 <dt>浴室小物</dt>
                 <dd>
-                    <?php echo nl2br(esc_html(get_field('facility'))); ?>
+                    <?php the_field('facility'); ?>
                 </dd>
 
                 <!-- ========== 不要と感じたのでコメントアウトしました ========== -->
