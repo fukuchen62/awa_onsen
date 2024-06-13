@@ -187,9 +187,8 @@
         <!-- 2日目 -->
         <section class="day1">
             <?php
-            // 宿泊のタクソノミーが選択されているか
-            if (has_term('stay-course', '宿泊')) : // 宿泊にチェックが入っていたら表示させる
-            ?>
+            $day2 = get_field('spot_2_1');
+            if ($day2) : ?>
                 <div class="flex">
                     <h3 class="course_day">DAY2</h3>
                 </div>
