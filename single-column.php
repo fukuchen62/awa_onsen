@@ -134,7 +134,6 @@
                 ?>
 
             </div>
-<<<<<<< HEAD
 
             <?php
             // ACFからカスタムフィールドの値を取得
@@ -162,8 +161,6 @@
 
             <?php endif; ?>
 
-=======
->>>>>>> parent of f8ffe19 (Merge branch 'main' of https://github.com/fukuchen62/awa_onsen)
         </section>
 
 
