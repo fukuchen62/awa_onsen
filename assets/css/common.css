@@ -541,7 +541,7 @@ h2 {
 /* 下層ページの上部のタブ */
 /* ========================== */
 .tag {
-    width: 90%;
+    width: 100%;
     margin: 50px auto 0;
     display: grid;
     gap: 5px;
@@ -583,11 +583,20 @@ li.active {
     }
 
     .tag li {
+        font-size: 1.25rem;
         border-radius: 30px 30px 0 0;
         height: 80px;
         line-height: 80px;
     }
 }
+
+@media (width>=1201px) {
+    .tag li {
+        font-size: 1.5rem;
+    }
+}
+
+
 
 /* おすすめ一覧 */
 h5 {
@@ -756,7 +765,6 @@ h5 {
 
 .navlist_item:hover {
     color: #eb97a8;
-    transition: all 0.7s;
 }
 
 .navlist_item:last-child {
@@ -882,7 +890,6 @@ h5 {
 
 .footer_item:hover {
     color: #eb97a8;
-    transition: all 0.7s;
 }
 
 .footer_item span {
