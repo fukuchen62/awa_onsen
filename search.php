@@ -4,12 +4,9 @@
     <h4 class="lined-title">検索結果</h4>
 
     <?php
-
-    $post_type = 'spa';
-
     // Spa の検索結果を表示するクエリパラメータ
     if (isset($_GET['post_type']) && $_GET['post_type'] == 'spa') {
-        $post_type = $_GET['post_type'];
+
         $spa_query_args = array(
             'post_type' => 'spa',
             'tax_query' => array('relation' => 'AND')
@@ -65,7 +62,7 @@
 
     // Course の検索結果を表示するクエリパラメータ
     if (isset($_GET['post_type']) && $_GET['post_type'] == 'course') {
-        $post_type = $_GET['post_type'];
+
         $course_query_args = array(
             'post_type' => 'course',
             'tax_query' => array('relation' => 'AND')
@@ -115,15 +112,12 @@
             <p>検索結果はありませんでした。</p>
         <?php
         endif;
-
-        echo $post_type;
-
         wp_reset_postdata();
     }
 
     // Facility の検索結果を表示するクエリパラメータ
     if (isset($_GET['post_type']) && $_GET['post_type'] == 'facility') {
-        $post_type = $_GET['post_type'];
+
         $facility_query_args = array(
             'post_type' => 'facility',
             'tax_query' => array('relation' => 'AND')
@@ -177,6 +171,7 @@
         wp_reset_postdata();
     }
     ?>
+
 </section>
 
 </div>
