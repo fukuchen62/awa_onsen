@@ -134,7 +134,7 @@
                                     <?php endif; ?>
 
                                     <div>
-                                        <h4><?php echo $spot_name; ?></h4>
+                                        <h4><a href="<?php echo esc_url($url); ?>" target="_blank"><?php echo $spot_name; ?></a></h4>
                                     </div>
                                 </div>
                                 <p class="tx"><?php the_field('activity1_' . $i); ?></p>
