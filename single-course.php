@@ -156,29 +156,52 @@
         <!-- 宿泊 -->
         <!-- 1日目のラストから宿泊施設までの移動時間 -->
         <?php
-        $stay = get_field('spot_stay');
-        if ($url && $spot_name && $spot_description) : ?>
-            <div class="yellowgreen_square">
-                <h4>本日のホテルと温泉</h4>
-                <article class="card spa">
-                    <a href="<?php echo $url; ?>">
-                        <div>
-                            <span></span>
-                            <?php if ($img = wp_get_attachment_image_src($spot_pic, 'large')[0]) : ?>
-                                <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($spot_name); ?>">
-                            <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.jpg" alt="<?php echo $spot_name; ?>">
-                            <?php endif; ?>
-                        </div>
-                    </a>
-                    <h3><?php echo $spot_name; ?></h3>
-                    <!-- 紹介文 -->
-                    <p class="tx">
-                        <?php echo $spot_description; ?>
-                    </p>
-                </article>
-            </div>
-        <?php endif; ?>
+        $stay_slug = get_field('spot_stay');
+
+        if ($stay_slug) {
+            // カスタム投稿タイプが 'spot' であると仮定
+            $args = array(
+                'name'        => $stay_slug,
+                'post_type'   => 'spa',
+                'post_status' => 'publish',
+                'numberposts' => 1
+            );
+
+            $stay_post = get_posts($args);
+
+            if ($stay_post) {
+                $stay_post = $stay_post[0];
+                $stay_url = get_permalink($stay_post->ID);
+                $stay_name = get_the_title($stay_post->ID);
+                $stay_description = get_field('description', $stay_post->ID);
+
+                if ($stay_url && $stay_name && $stay_description) : ?>
+                    <div class="yellowgreen_square">
+                        <h4>本日のホテルと温泉</h4>
+                        <article class="card spa">
+                            <a href="<?php echo $stay_url; ?>">
+                                <div>
+                                    <span></span>
+                                    <?php if (has_post_thumbnail($stay_post->ID)) :
+                                        echo get_the_post_thumbnail($stay_post->ID, 'medium');
+                                    else : ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
+                                    <?php endif; ?>
+                                </div>
+                            </a>
+                            <h3><?php echo $stay_name; ?></h3>
+                            <!-- 紹介文 -->
+                            <p class="tx">
+                                <?php echo $stay_description; ?>
+                            </p>
+                        </article>
+                    </div>
+        <?php endif;
+            }
+        }
+        ?>
+
+
 
 
         <!-- 2日目 -->
