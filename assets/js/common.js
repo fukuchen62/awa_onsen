@@ -202,7 +202,7 @@ $(document).ready(function () {
     const createDuckWithHukidashi = () => {
         const $duckEl = $('<a>').addClass('duck'); // aタグのまま
 
-        const size = 100;
+        const size = 80;
         $duckEl.css({
             width: `${size}px`,
             height: `${size}px`
@@ -258,7 +258,7 @@ $(document).ready(function () {
     function cb(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                activeDuck = setInterval(createDuckWithHukidashi, 20000);
+                activeDuck = setInterval(createDuckWithHukidashi, 200);
             } else {
                 stopDuck();
             }
@@ -269,6 +269,6 @@ $(document).ready(function () {
         rootMargin: "100px 0px"
     };
     const io = new IntersectionObserver(cb, options);
-    io.POLL_INTERVAL = 30000;
+    io.POLL_INTERVAL = 3000;
     io.observe($section[0]);
 });
