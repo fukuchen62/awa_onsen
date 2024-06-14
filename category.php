@@ -46,9 +46,7 @@ get_header();
                     $args = array(
                         'category_name' => $current_category->slug, // 現在のカテゴリーのスラッグ
                         'posts_per_page' => 5, // 表示する投稿数
-                        'paged' => get_query_var('paged') ? get_query_var('paged') : 1 // ページネーション
                     );
-
                     // WP_Queryオブジェクトを作成
                     $category_query = new WP_Query($args);
 
