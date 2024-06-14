@@ -32,7 +32,7 @@
                 </a>
             </li>
         </ul>
-        <p>&copy;あわあわ温泉めぐり All Rights Reserved.</p>
+        <p>&copy;あわあわ温泉ぶらり All Rights Reserved.</p>
     </div>
 </footer>
 
