@@ -339,7 +339,7 @@ h2 {
     font-size: 1.25rem;
     margin: auto;
     font-weight: bold;
-    z-index: -1 !important;
+    z-index: 0 !important;
 }
 
 .under_line {
@@ -821,7 +821,7 @@ h5 {
     .nav_bg {
         width: 230px;
         height: 43px;
-        margin: 24px auto;
+        margin: 16px auto;
     }
 
     .navlist_container {
