@@ -6,6 +6,12 @@ p {
     margin: 32px auto;
 }
 
+.about_img {
+    width: 80%;
+    padding: 40px 0;
+    margin: 0 auto;
+}
+
 /* フォントサイズのみ */
 @media(width>=431px) {
 

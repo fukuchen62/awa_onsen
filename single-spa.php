@@ -10,9 +10,19 @@
         <div class="img_box">
             <?php
             $pic = get_field('main_pic');
-            $pic_url = $pic['sizes']['large'];
+            if ($pic) {
+                $pic_url = $pic['sizes']['large'];
+                $name = get_field('slug');
             ?>
-            <img src="<?php echo $pic_url; ?>" alt="メイン画像">
+                <img src="<?php echo $pic_url; ?>" alt="メイン画像">
+            <?php
+            } else {
+            ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo esc_attr(get_the_title()); ?>" />
+            <?php
+            }
+            ?>
+            <!-- 以下、お気に入りとイイネボタン -->
             <!-- 後でこちらの画像に紐づけるか、新しくコード作りたい -->
             <!-- <label class="checkbox-item">
                 <input type="checkbox" name="options" value="nice" />
@@ -237,23 +247,23 @@
                 <!-- ========== 不要と感じたのでコメントアウトしました ========== -->
                 <!-- <dt>予約</dt>
                 <dd>
-                    <?php echo nl2br((get_field('reserve_description'))); ?>
+                    <?php the_field('reserve_description'); ?>
                 </dd> -->
                 <!-- <dt>トイレ</dt>
                 <dd>
-                    <?php echo nl2br((get_field('toilet_description'))); ?>
+                    <?php the_field('toilet_description'); ?>
                 </dd> -->
                 <!-- <dt>分煙</dt>
                 <dd>
-                    <?php echo nl2br((get_field('smoking_description'))); ?>
+                    <?php the_field('smoking_description'); ?>
                 </dd> -->
                 <!-- <dt>Wi-Fi</dt>
                 <dd>
-                    <?php echo nl2br((get_field('wifi_description'))); ?>
+                    <?php the_field('wifi_description'); ?>
                 </dd> -->
                 <!-- <dt>Email</dt>
                 <dd>
-                    <?php echo nl2br((get_field('email'))); ?>
+                    <?php the_field('email'); ?>
                 </dd> -->
                 <!-- ==================== -->
             </dl>
@@ -313,10 +323,11 @@
             if ($iframe_code) {
                 echo $iframe_code;
             } else {
-                echo 'カスタムフィールドが見つかりませんでした。';
+                echo '地図がみつかりませんでした。
+                ';
             }
         } else {
-            echo 'get_field 関数が見つかりませんでした。';
+            echo '地図がみつかりませんでした';
         }
         ?>
 
@@ -364,7 +375,7 @@
                         $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
                         $post_type = get_post_type($post_id); // カスタム投稿タイプ名を取得
             ?>
-                        <article class="card spa <?php echo esc_attr($post_type); ?>">
+                        <article class="card <?php echo esc_attr($post_type); ?>">
                             <a href="<?php echo esc_url($post_link); ?>">
                                 <div>
                                     <span></span>
@@ -471,7 +482,7 @@
         </section>
 
         <button class="back_btn" onclick="window.location.href='<?php echo home_url('/spa/'); ?>'">
-            <span><i class="fa-solid fa-arrow-left"></i>back</span>
+            <span><i class="fa-solid fa-arrow-left"></i>一覧へ</span>
         </button>
 
     </div>
