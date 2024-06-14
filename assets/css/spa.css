@@ -47,6 +47,7 @@ p {
 }
 
 .img_box {
+    text-align: center;
     position: relative;
 }
 
@@ -57,6 +58,10 @@ p {
 
 .hashtag_list {
     margin: 16px 0 32px 0;
+}
+
+.favorite-button {
+    text-align: left;
 }
 
 /* 写真スリック */
