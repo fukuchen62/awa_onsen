@@ -133,9 +133,7 @@
                                         <p class="time"><?php echo esc_html($stay_time); ?></p>
                                     <?php endif; ?>
 
-                                    <div>
-                                        <h4><?php echo $spot_name; ?></h4>
-                                    </div>
+                                        <h4><a href="<?php echo esc_url($url); ?>" target="_blank"><?php echo $spot_name; ?></a></h4>
                                 </div>
                                 <p class="tx"><?php the_field('activity1_' . $i); ?></p>
                             </div>
@@ -155,6 +153,14 @@
 
         <!-- 宿泊 -->
         <!-- 1日目のラストから宿泊施設までの移動時間 -->
+        <?php
+        if ($move_time_stay = get_field('move_time_stay')) : ?>
+            <div class="flex greencar">
+                <div class="car_green"></div>
+                <p class="car_10">車で<?php echo esc_html($move_time_stay); ?></p>
+            </div>
+        <?php endif; ?>
+
         <?php
         $stay_slug = get_field('spot_stay');
 
@@ -451,6 +457,11 @@
             }
             ?>
         </section>
+
+        <button class="back_btn" onclick="window.location.href='<?php echo home_url('/facility_type/' . $term_slug . '/'); ?>'">
+            <span><i class="fa-solid fa-arrow-left"></i>一覧へ</span>
+        </button>
+
     </div>
 </main>
 

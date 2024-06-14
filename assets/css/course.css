@@ -27,6 +27,7 @@ h3 {
 
 h4 {
     font-weight: 900;
+    vertical-align: middle;
 }
 
 /* Summary */
@@ -119,11 +120,12 @@ h4 {
 .flex_left {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
-.flex_left div {
-    padding: 13px;
-
+.flex_left h4 {
+    display: flex;
+    padding-left: 16px;
 }
 
 /* -----------------------

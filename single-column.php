@@ -8,7 +8,7 @@
             <h2 class="under_line"><?php the_title(); ?></h2>
 
             <!-- コラム内容 -->
-            <p class="date"><?php echo esc_html(get_post_time('Y.m.d.(D)')); ?></p>
+            <p class="column_date"><?php echo esc_html(get_post_time('Y.m.d.(D)')); ?></p>
 
             <!-- パンくず -->
             <?php get_template_part('template-parts/breadcrumb'); ?>
