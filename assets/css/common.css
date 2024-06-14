@@ -508,7 +508,7 @@ h2 {
 }
 
 /* コラム */
-.card .column span,
+.card.column span,
 .column h3 {
     background-color: #4272a2;
 }
