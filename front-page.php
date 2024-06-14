@@ -328,7 +328,7 @@
                         ?>
                     </ul>
                     <!-- 周辺情報一覧ボタン -->
-                    <a class="facility_btn btn shadow section_btn" href="<?php echo home_url('facility_type/photogenic/'); ?>">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
+                    <a class="facility_btn btn shadow section_btn" href="<?php echo home_url('facility_type/shopping/'); ?>">周辺情報一覧へ<i class="fa-solid fa-list"></i></a>
                 </div>
             </section>
 
