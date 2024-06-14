@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     // topへボタンをクリックしたら上までスクロールさせる
     $(".top_button").on("click", function (e) {
-        if($(window).scrollTop() === 0) {
+        if ($(window).scrollTop() === 0) {
             //画面が一番上の時にボタンがクリックできないようにする
             return;
         }
@@ -129,54 +129,146 @@ $(document).ready(function () {
 });
 
 // アヒルの出現
+// $(document).ready(function () {
+//     const $section = $('.bubble_background');
+//     const createDuck = () => {
+//         // const $duckEl = $('<a>').addClass('duck').attr('href', 'https://awa-onsen.com/spa/spa05/'); // aタグに変更し、
+//         const $duckEl = $('<a>').addClass('duck').attr('href', onsen_url); // aタグに変更し、hrefを追加hrefを追加
+//         const size = 100;
+//         $duckEl.css({
+//             width: `${size}px`,
+//             height: `${size}px`
+//         });
+//         const $img = $('<img>').attr('src', path + '/assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
+//             width: '100%',
+//             height: '100%'
+//         });
+//         $duckEl.append($img);
+//         $duckEl.css({
+//             left: Math.random() * window.innerWidth + 'px'
+//         });
+//         $section.append($duckEl);
+//         setTimeout(() => {
+//             $duckEl.remove();
+//         }, 8000);
+//         // ホバー時にアニメーションを停止
+//         $duckEl.on('mouseenter', function () {
+//             $(this).css('animation-play-state', 'paused');
+//         });
+//         // ホバーが外れたらアニメーションを再開
+//         $duckEl.on('mouseleave', function () {
+//             $(this).css('animation-play-state', 'running');
+//         });
+//     };
+//     let activeDuck = null;
+//     const stopDuck = () => {
+//         clearInterval(activeDuck);
+//     };
+//     const cb = (entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 activeDuck = setInterval(createDuck, 20000);
+//             } else {
+//                 stopDuck();
+//             }
+//         });
+//     };
+//     const options = {
+//         rootMargin: "100px 0px"
+//     };
+//     const io = new IntersectionObserver(cb, options);
+//     io.POLL_INTERVAL = 20000;
+//     io.observe($section[0]);
+// });
+
+// アヒルと吹き出し
 $(document).ready(function () {
     const $section = $('.bubble_background');
-    const createDuck = () => {
-        // const $duckEl = $('<a>').addClass('duck').attr('href', 'https://awa-onsen.com/spa/spa05/'); // aタグに変更し、
-        const $duckEl = $('<a>').addClass('duck').attr('href', onsen_url); // aタグに変更し、hrefを追加hrefを追加
+
+    // ランダムURL生成関数
+    const generateRandomUrl = () => {
+        const urls = [
+            // ランダムに飛ぶURLを配列で定義
+            "https://awa-onsen.com",
+            "https://awa-onsen.com/spa/",
+            "https://awa-onsen.com/facility_type/shopping/",
+            // ...
+        ];
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        return urls[randomIndex];
+    };
+
+    // アヒル画像とPタグ（クラス名: hukidashi）を生成する関数
+    const createDuckWithHukidashi = () => {
+        const $duckEl = $('<a>').addClass('duck'); // aタグのまま
+
         const size = 100;
         $duckEl.css({
             width: `${size}px`,
             height: `${size}px`
         });
-        const $img = $('<img>').attr('src', path + '/assets/images/duck.svg').attr('alt', 'アヒルの画像').css({
+
+        const $img = $('<img>').attr('src', 'duck.svg').attr('alt', 'アヒルの画像').css({
             width: '100%',
             height: '100%'
         });
         $duckEl.append($img);
+
+        // ランダムURLを設定
+        $duckEl.attr('href', generateRandomUrl());
+
+        // Pタグ（クラス名: hukidashi）を作成
+        const $hukidashi = $('<p>').addClass('hukidashi');
+
+        // Pタグ内にランダムなテキストを設定
+        // そのうち温泉名に変更
+        const randomText = onsen_name;
+        $hukidashi.text(randomText);
+
+        // Pタグをアヒル画像に追加
+        $duckEl.append($hukidashi);
+
         $duckEl.css({
             left: Math.random() * window.innerWidth + 'px'
         });
         $section.append($duckEl);
+
+        // アヒルが消えるタイム
         setTimeout(() => {
             $duckEl.remove();
-        }, 8000);
+        }, 30000);
+
         // ホバー時にアニメーションを停止
         $duckEl.on('mouseenter', function () {
             $(this).css('animation-play-state', 'paused');
         });
+
         // ホバーが外れたらアニメーションを再開
         $duckEl.on('mouseleave', function () {
             $(this).css('animation-play-state', 'running');
         });
     };
+
     let activeDuck = null;
     const stopDuck = () => {
         clearInterval(activeDuck);
     };
-    const cb = (entries) => {
+
+    // N秒に一回出現
+    function cb(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                activeDuck = setInterval(createDuck, 20000);
+                activeDuck = setInterval(createDuckWithHukidashi, 2000);
             } else {
                 stopDuck();
             }
         });
-    };
+    }
+
     const options = {
         rootMargin: "100px 0px"
     };
     const io = new IntersectionObserver(cb, options);
-    io.POLL_INTERVAL = 20000;
+    io.POLL_INTERVAL = 30000;
     io.observe($section[0]);
 });
