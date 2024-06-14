@@ -313,10 +313,11 @@
             if ($iframe_code) {
                 echo $iframe_code;
             } else {
-                echo 'カスタムフィールドが見つかりませんでした。';
+                echo '地図がみつかりませんでした。
+                ';
             }
         } else {
-            echo 'get_field 関数が見つかりませんでした。';
+            echo '地図がみつかりませんでした';
         }
         ?>
 
