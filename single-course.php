@@ -156,6 +156,14 @@
         <!-- 宿泊 -->
         <!-- 1日目のラストから宿泊施設までの移動時間 -->
         <?php
+        if ($move_time_stay = get_field('move_time_stay')) : ?>
+            <div class="flex greencar">
+                <div class="car_green"></div>
+                <p class="car_10">車で<?php echo esc_html($move_time_stay); ?></p>
+            </div>
+        <?php endif; ?>
+
+        <?php
         $stay_slug = get_field('spot_stay');
 
         if ($stay_slug) {
