@@ -205,6 +205,8 @@
                 <dt>住所</dt>
                 <dd>
                     <?php the_field('address1'); ?>
+                </dd>
+                <dd>
                     <?php the_field('address2'); ?>
                 </dd>
                 <dt>TEL</dt>

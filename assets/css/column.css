@@ -11,8 +11,8 @@ p {
 }
 
 /* コラム内容 */
-.date {
-    margin-top: 32px;
+.column_date {
+    margin-top: 24px;
     text-align: right;
 }
 
