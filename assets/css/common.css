@@ -977,7 +977,7 @@ h5 {
 }
 .basic_information a::after,
 .shop_information a::after{
-    content: '🔗';
+    content: url(../images/external_link_icon.svg);
     display: inline-block;
 }
 
