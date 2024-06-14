@@ -52,7 +52,10 @@ dt,
 dd {
     padding: 3px;
 }
-
+.shop_information dd:not(:first-child) {
+    padding: 8px 16px;
+    text-align: left;
+}
 dl {
     background-color: white;
     border-bottom: 2px dotted #f5a200;
