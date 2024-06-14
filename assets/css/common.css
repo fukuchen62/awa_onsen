@@ -507,6 +507,11 @@ h2 {
     background-color: #f5a200;
 }
 
+.column span,
+.column h3 {
+    background-color: #4272a2;
+}
+
 @media (width>=1201px) {
     .article_all {
         display: grid;
