@@ -117,7 +117,6 @@
     </div>
 </main>
 
-</div>
 
 <!-- footer.phpを読み込む -->
 <?php get_footer(); ?>
