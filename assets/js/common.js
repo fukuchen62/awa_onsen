@@ -185,19 +185,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     const $section = $('.bubble_background');
 
-    // ランダムURL生成関数
-    const generateRandomUrl = () => {
-        const urls = [
-            // ランダムに飛ぶURLを配列で定義
-            "https://awa-onsen.com",
-            "https://awa-onsen.com/spa/",
-            "https://awa-onsen.com/facility_type/shopping/",
-            // ...
-        ];
-        const randomIndex = Math.floor(Math.random() * urls.length);
-        return urls[randomIndex];
-    };
-
     // アヒル画像とPタグ（クラス名: hukidashi）を生成する関数
     const createDuckWithHukidashi = () => {
         const $duckEl = $('<a>').addClass('duck'); // aタグのまま
@@ -220,8 +207,8 @@ $(document).ready(function () {
         // Pタグ（クラス名: hukidashi）を作成
         const $hukidashi = $('<p>').addClass('hukidashi');
 
-        // Pタグ内にランダムなテキストを設定
-        // そのうち温泉名に変更
+        // Pタグ内温泉名に変更
+
         const randomText = onsen_name;
         $hukidashi.text(randomText);
 
@@ -236,7 +223,7 @@ $(document).ready(function () {
         // アヒルが消えるタイム
         setTimeout(() => {
             $duckEl.remove();
-        }, 30000);
+        }, 3000);
 
         // ホバー時にアニメーションを停止
         $duckEl.on('mouseenter', function () {
@@ -258,7 +245,7 @@ $(document).ready(function () {
     function cb(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                activeDuck = setInterval(createDuckWithHukidashi, 200);
+                activeDuck = setInterval(createDuckWithHukidashi, 30000);
             } else {
                 stopDuck();
             }
@@ -269,6 +256,6 @@ $(document).ready(function () {
         rootMargin: "100px 0px"
     };
     const io = new IntersectionObserver(cb, options);
-    io.POLL_INTERVAL = 3000;
+    io.POLL_INTERVAL = 30000;
     io.observe($section[0]);
 });
