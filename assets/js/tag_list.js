@@ -16,10 +16,6 @@ $(function () {
             //対象の要素にclassがある場合
             $contents.eq(index).addClass('active');
             console.log(element.textContent);
-        } else {
-            $contents.eq(0).addClass('active');
-            $tags.eq(0).addClass('active');
-            $contents.slice(1).removeClass('active');
         }
     })
     // 2024-06-14 fukushima mod e
