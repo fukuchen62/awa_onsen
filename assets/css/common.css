@@ -339,12 +339,13 @@ h2 {
     font-size: 1.25rem;
     margin: auto;
     font-weight: bold;
+    z-index: -1 !important;
 }
 
 .under_line {
     width: fit-content;
     position: relative;
-    z-index: 10;
+    z-index: 5;
     font-size: 1.25rem;
 }
 
@@ -639,7 +640,7 @@ h5 {
 
 .header_container {
     position: fixed;
-    z-index: 10;
+    z-index: 100;
 }
 
 .logo {
@@ -722,7 +723,7 @@ h5 {
     background-color: #4272a2;
     border: 4px dashed #fff;
     border-radius: 12px;
-    z-index: 20;
+    z-index: 100;
     position: fixed;
     bottom: 72px;
 }
@@ -734,6 +735,7 @@ h5 {
 
 .sp_nav .navlist.isactive {
     right: 0;
+    z-index: 20;
 }
 
 .nav_bg {
