@@ -975,6 +975,12 @@ h5 {
     color: #538fcb;
     font-weight: bold;
 }
+.basic_information a::after,
+.shop_information a::after{
+    content: '🔗';
+    display: inline-block;
+}
+
 .basic_information a:hover,
 .shop_information a:hover {
     border-bottom: 2px solid #538fcb;
