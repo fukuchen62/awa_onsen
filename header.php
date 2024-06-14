@@ -10,6 +10,8 @@ $the_query = new WP_Query($args);
 if ($the_query->have_posts()) {
     while ($the_query->have_posts()) {
         $the_query->the_post();
+
+        $onsen_name = get_the_title();
         $onsen_url = get_the_permalink();
         break;
     }
@@ -30,8 +32,8 @@ wp_reset_postdata();
     <script>
         var path = "<?php echo get_template_directory_uri(); ?>";
         var onsen_url = "<?php echo $onsen_url; ?>";
+        var onsen_name = "<?php echo $onsen_name; ?>";
     </script>
-
 
     <?php wp_head(); ?>
 </head>
