@@ -267,7 +267,7 @@ p {
     z-index: -10;
     min-height: 100vh;
     /* background-color: rgba(255, 255, 255, 0.2); */
-    padding: 100px 5%;
+    padding: 100px 5% 40px;
     margin: 0 auto;
     border-radius: 50px;
     margin-top: 30px;
@@ -323,7 +323,7 @@ p {
 .back_btn span i {
     position: absolute;
     top: -15px;
-    left: -15px;
+    left: -32px;
     padding: 12px;
     color: white;
     background-color: #538fcb;
@@ -953,4 +953,16 @@ h5 {
         gap: 48px;
         justify-content: center;
     }
+}
+/* ========================== */
+/* 詳細ページのaタグの指定 */
+/* ========================== */
+.basic_information a,
+.shop_information a {
+    color: #538fcb;
+    font-weight: bold;
+}
+.basic_information a:hover,
+.shop_information a:hover {
+    border-bottom: 2px solid #538fcb;
 }
