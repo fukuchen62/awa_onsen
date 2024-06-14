@@ -223,7 +223,7 @@
                         $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
                         $post_type = get_post_type($post_id); // カスタム投稿タイプ名を取得
             ?>
-                        <article class="card facility <?php echo esc_attr($post_type); ?>">
+                        <article class="card <?php echo esc_attr($post_type); ?>">
 
                             <a href="<?php echo esc_url($post_link); ?>">
                                 <div>
