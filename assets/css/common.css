@@ -739,7 +739,7 @@ h5 {
 .nav_bg {
     width: 200px;
     height: 38px;
-    margin: 16px auto;
+    margin: 8px auto;
     background-image: url(../images/nav_bg.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -756,7 +756,7 @@ h5 {
 
 .navlist_item {
     font-size: 1.25rem;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .navlist_item span {
