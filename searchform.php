@@ -1,3 +1,12 @@
+<?php
+// カスタマ投稿タイプを取得
+$post_type = 'spa';
+if (isset($_GET['post_type'])) {
+    $post_type = $_GET['post_type'];
+}
+// echo $post_type;
+?>
+
 <?php get_header(); ?>
 
 <main class="pc_inner">
@@ -8,9 +17,9 @@
 
         <ul class="tag element03">
 
-            <li class="<?php $post_type == 'spa'  ? 'active' : ''; ?>">温泉</li>
-            <li class="<?php $post_type == 'facility'  ? 'active' : ''; ?>">周辺施設</li>
-            <li class="<?php $post_type == 'course'  ? 'active' : ''; ?>">モデルコース</li>
+            <li class="<?php echo $post_type == 'spa'  ? 'active' : ''; ?>">温泉</li>
+            <li class="<?php echo $post_type == 'facility'  ? 'active' : ''; ?>">周辺施設</li>
+            <li class="<?php echo $post_type == 'course'  ? 'active' : ''; ?>">モデルコース</li>
 
             <!-- <li class='active'>周辺施設</li>
             <li>周辺施設</li>
@@ -35,10 +44,10 @@
                     if (!empty($area_terms) && !is_wp_error($area_terms)) :
                         foreach ($area_terms as $term) :
                     ?>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="area_spa[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
-                                <span><?php echo esc_html($term->name); ?></span>
-                            </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="area_spa[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
+                        <span><?php echo esc_html($term->name); ?></span>
+                    </label>
                     <?php
                         endforeach;
                     endif;
@@ -58,10 +67,10 @@
                     if (!empty($spa_type_terms) && !is_wp_error($spa_type_terms)) :
                         foreach ($spa_type_terms as $term) :
                     ?>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="spa_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_spa_type_terms)); ?>>
-                                <span><?php echo esc_html($term->name); ?></span>
-                            </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="spa_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_spa_type_terms)); ?>>
+                        <span><?php echo esc_html($term->name); ?></span>
+                    </label>
                     <?php
                         endforeach;
                     endif;
@@ -104,10 +113,10 @@
                     if (!empty($area_terms) && !is_wp_error($area_terms)) :
                         foreach ($area_terms as $term) :
                     ?>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="area_facility[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
-                                <span><?php echo esc_html($term->name); ?></span>
-                            </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="area_facility[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
+                        <span><?php echo esc_html($term->name); ?></span>
+                    </label>
                     <?php
                         endforeach;
                     endif;
@@ -127,10 +136,10 @@
                     if (!empty($facility_type_terms) && !is_wp_error($facility_type_terms)) :
                         foreach ($facility_type_terms as $term) :
                     ?>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="facility_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_facility_type_terms)); ?>>
-                                <span><?php echo esc_html($term->name); ?></span>
-                            </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="facility_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_facility_type_terms)); ?>>
+                        <span><?php echo esc_html($term->name); ?></span>
+                    </label>
                     <?php
                         endforeach;
                     endif;
@@ -173,10 +182,10 @@
                     if (!empty($area_terms) && !is_wp_error($area_terms)) :
                         foreach ($area_terms as $term) :
                     ?>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="area_course[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
-                                <span><?php echo esc_html($term->name); ?></span>
-                            </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="area_course[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
+                        <span><?php echo esc_html($term->name); ?></span>
+                    </label>
                     <?php
                         endforeach;
                     endif;
@@ -196,10 +205,10 @@
                     if (!empty($course_type_terms) && !is_wp_error($course_type_terms)) :
                         foreach ($course_type_terms as $term) :
                     ?>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="course_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_course_type_terms)); ?>>
-                                <span><?php echo esc_html($term->name); ?></span>
-                            </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="course_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_course_type_terms)); ?>>
+                        <span><?php echo esc_html($term->name); ?></span>
+                    </label>
                     <?php
                         endforeach;
                     endif;

@@ -71,6 +71,7 @@
                     <summary class="details-summary js-details-summary"><span class="btn"></span>
                         <h3 class="acco_title"><?php echo $area_name; ?>
                             <span>(<?php echo $post_count; ?>件)</span>
+                            <span class="icon"><i class="fas fa-plus"></i></span>
                         </h3>
                     </summary>
                     <div class="details-content js-details-content">

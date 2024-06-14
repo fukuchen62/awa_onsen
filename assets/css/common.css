@@ -258,7 +258,7 @@ p {
 
     100% {
         transform: translateY(-110vh);
-        opacity: 0.3;
+
     }
 }
 
@@ -269,8 +269,11 @@ p {
     padding: 10px;
     background-color: white;
     position: relative;
-    top: -170px;
+    top: -150px;
+    right: 50px;
     color: red;
+    width: 200px;
+    text-align: center;
 }
 
 
@@ -967,6 +970,7 @@ h5 {
         justify-content: center;
     }
 }
+
 /* ========================== */
 /* 詳細ページのaタグの指定 */
 /* ========================== */
@@ -975,9 +979,10 @@ h5 {
     color: #538fcb;
     font-weight: bold;
 }
+
 .basic_information a::after,
-.shop_information a::after{
-    content: '🔗';
+.shop_information a::after {
+    content: url(../images/external_link_icon.svg);
     display: inline-block;
 }
 
