@@ -365,7 +365,7 @@
                         $post_thumbnail = get_the_post_thumbnail($post_id, 'full'); // フルサイズのアイキャッチ画像を取得
                         $post_type = get_post_type($post_id); // カスタム投稿タイプ名を取得
             ?>
-                        <article class="card spa <?php echo esc_attr($post_type); ?>">
+                        <article class="card <?php echo esc_attr($post_type); ?>">
                             <a href="<?php echo esc_url($post_link); ?>">
                                 <div>
                                     <span></span>
@@ -472,7 +472,7 @@
         </section>
 
         <button class="back_btn" onclick="window.location.href='<?php echo home_url('/spa/'); ?>'">
-            <span><i class="fa-solid fa-arrow-left"></i>back</span>
+            <span><i class="fa-solid fa-arrow-left"></i>一覧へ</span>
         </button>
 
     </div>

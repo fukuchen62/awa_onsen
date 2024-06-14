@@ -157,7 +157,7 @@
         ?>
 
         <button class="back_btn" onclick="window.location.href='<?php echo home_url('/category/' . $category_slug . '/'); ?>'">
-            <span><i class="fa-solid fa-arrow-left"></i>back</span>
+            <span><i class="fa-solid fa-arrow-left"></i>一覧へ</span>
         </button>
 
 

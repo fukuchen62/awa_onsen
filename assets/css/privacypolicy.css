@@ -15,6 +15,7 @@
     .container {
         border: 10px solid #DBF500;
     }
+
 }
 
 /* 本文 */
@@ -48,12 +49,22 @@ hr {
 /* フォントサイズのみ */
 @media(width>=431px) {
 
+    h2 {
+        letter-spacing: -4px;
+    }
+
     h4.privacy_title {
         font-size: 1.5rem;
     }
 
     p.privacy_text {
         font-size: 1.25rem;
+    }
+}
+
+@media(width>=757px) {
+    h2 {
+        letter-spacing: normal;
     }
 }
 
