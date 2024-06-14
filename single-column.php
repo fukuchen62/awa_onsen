@@ -73,9 +73,9 @@
         </div>
 
         <!-- 関連情報 -->
-        <section>
-            <h5>関連情報</h5>
-            <div class="article_all">
+        <!-- <section> -->
+        <!-- <h5>関連情報</h5> -->
+        <!-- <div class="article_all">
                 <?php
                 // ループの回数を定義
                 $loop_count = 4;
@@ -123,25 +123,27 @@
                     }
                 }
                 ?>
-            </div>
+            </div> -->
 
-            <!-- フロント班へ 以下関連ウェブサイトがあった場合表示される項目 -->
-            <?php
-            // ACFからカスタムフィールドの値を取得
-            $string = get_field('column_url');
-            // 初期化
-            $external_url = '';
-            $link_text = '';
-            // explode関数を使用して文字列を分割し、分割した結果の要素数をチェック
-            if ($string) {
-                $parts = explode(",", $string);
-                if (count($parts) == 2) {
-                    $external_url = $parts[0];
-                    $link_text = $parts[1];
+        <!-- フロント班へ 以下関連ウェブサイトがあった場合表示される項目 -->
+        <!-- <?php
+                // ACFからカスタムフィールドの値を取得
+                $string = get_field('column_url');
+                // 初期化
+                $external_url = '';
+                $link_text = '';
+                // explode関数を使用して文字列を分割し、分割した結果の要素数をチェック
+                if ($string) {
+                    $parts = explode(",", $string);
+                    if (count($parts) == 2) {
+                        $external_url = $parts[0];
+                        $link_text = $parts[1];
+                    }
                 }
-            }
-            ?>
+                ?> -->
+        <!-- </section> -->
 
+        <section>
             <?php if (!empty($external_url) && !empty($link_text)) : ?>
                 <h5 class="mt32">関連ウェブサイト</h5>
                 <p>関連ウェブサイト:
