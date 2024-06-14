@@ -81,7 +81,7 @@ li>a {
         transform-origin: center center;
         transition-duration: 0.2s;
 
-        &:before,
+        /* &:before,
         &:after {
             content: "";
             background-color: #000;
@@ -100,7 +100,7 @@ li>a {
             top: 0;
             right: 7px;
             background-color: black;
-        }
+        } */
     }
 
     &.is-active {
@@ -123,6 +123,17 @@ li>a {
             }
         }
     }
+}
+
+.icon {
+    width: 24px;
+    position: absolute;
+    top: 23px;
+    right: 20px;
+}
+
+.icon i {
+    font-size: 1.5rem;
 }
 
 .details-summary::-webkit-details-marker {
