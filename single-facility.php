@@ -103,24 +103,13 @@
         <section class="shop_information">
             <h3 class="lined-title">店舗情報</h3>
             <dl>
-                <dt>施設名</dt>
+                <!-- <dt>施設名</dt>
                 <dd>
                     <?php the_field('facility_name'); ?>
-                </dd>
+                </dd> -->
                 <dt>施設紹介</dt>
                 <dd class="text">
                     <?php the_field('facility_description'); ?>
-                </dd>
-                <dt>住所</dt>
-                <dd>
-                    <?php the_field('address1'); ?>
-                </dd>
-                <dd>
-                    <?php the_field('address2'); ?>
-                </dd>
-                <dt>電話番号</dt>
-                <dd>
-                    <?php the_field('tel'); ?>
                 </dd>
                 <dt>営業時間</dt>
                 <dd>
@@ -134,29 +123,16 @@
                 <dd>
                     <?php the_field('price'); ?>
                 </dd>
-                <dt>決済方法</dt>
+                <dt>住所</dt>
                 <dd>
-                    <?php the_field('payment_description'); ?>
+                    <?php the_field('address1'); ?>
                 </dd>
-                <dt>予約</dt>
                 <dd>
-                    <?php the_field('reserve_description'); ?>
+                    <?php the_field('address2'); ?>
                 </dd>
-                <dt>トイレ</dt>
+                <dt>TEL</dt>
                 <dd>
-                    <?php the_field('toilet_description'); ?>
-                </dd>
-                <dt>分煙</dt>
-                <dd>
-                    <?php the_field('smoking_description'); ?>
-                </dd>
-                <dt>駐車場</dt>
-                <dd>
-                    <?php the_field('parking_description'); ?>
-                </dd>
-                <dt>Wi-Fi</dt>
-                <dd>
-                    <?php the_field('wifi_description'); ?>
+                    <?php the_field('tel'); ?>
                 </dd>
                 <dt>公式ホームページ</dt>
                 <dd>
@@ -164,6 +140,31 @@
                         <?php echo get_field('url') ?>
                     </a>
                 </dd>
+                <dt>駐車場</dt>
+                <dd>
+                    <?php the_field('parking_description'); ?>
+                </dd>
+                <dt>決済方法</dt>
+                <dd>
+                    <?php the_field('payment_description'); ?>
+                </dd>
+                <!-- <dt>予約</dt>
+                <dd>
+                    <?php the_field('reserve_description'); ?>
+                </dd> -->
+                <!-- <dt>トイレ</dt>
+                <dd>
+                    <?php the_field('toilet_description'); ?>
+                </dd> -->
+                <!-- <dt>分煙</dt>
+                <dd>
+                    <?php the_field('smoking_description'); ?>
+                </dd> -->
+                <!-- <dt>Wi-Fi</dt>
+                <dd>
+                    <?php the_field('wifi_description'); ?>
+                </dd> -->
+
             </dl>
         </section>
         <?php
