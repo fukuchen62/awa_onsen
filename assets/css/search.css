@@ -21,6 +21,17 @@
     color: #DBF500;
 }
 
+.navlist_item:nth-child(2) {
+    color: #fff;
+}
+.navlist_item:nth-child(3) {
+    color: #fff;
+}
+
+.navlist_item:nth-child(4) {
+    color: #fff;
+}
+
 h3 {
     margin: 13px;
 }
