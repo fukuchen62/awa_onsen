@@ -133,9 +133,7 @@
                                         <p class="time"><?php echo esc_html($stay_time); ?></p>
                                     <?php endif; ?>
 
-                                    <div>
                                         <h4><a href="<?php echo esc_url($url); ?>" target="_blank"><?php echo $spot_name; ?></a></h4>
-                                    </div>
                                 </div>
                                 <p class="tx"><?php the_field('activity1_' . $i); ?></p>
                             </div>
@@ -459,6 +457,11 @@
             }
             ?>
         </section>
+
+        <button class="back_btn" onclick="window.location.href='<?php echo home_url('/facility_type/' . $term_slug . '/'); ?>'">
+            <span><i class="fa-solid fa-arrow-left"></i>一覧へ</span>
+        </button>
+
     </div>
 </main>
 
