@@ -472,7 +472,7 @@
         </section>
 
         <button class="back_btn" onclick="window.location.href='<?php echo home_url('/spa/'); ?>'">
-            <span><i class="fa-solid fa-arrow-left"></i>back</span>
+            <span><i class="fa-solid fa-arrow-left"></i>一覧へ</span>
         </button>
 
     </div>
