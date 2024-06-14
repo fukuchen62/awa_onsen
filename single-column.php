@@ -23,6 +23,10 @@
                 ?>
                     <img src="<?php echo esc_url($pic_url); ?>" alt="<?php echo esc_attr($name); ?>">
                 <?php
+                } else {
+                ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                <?php
                 }
                 ?>
             </div>

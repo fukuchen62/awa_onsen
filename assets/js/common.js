@@ -20,6 +20,10 @@ $(document).ready(function () {
 
     // topへボタンをクリックしたら上までスクロールさせる
     $(".top_button").on("click", function (e) {
+        if($(window).scrollTop() === 0) {
+            //画面が一番上の時にボタンがクリックできないようにする
+            return;
+        }
         e.preventDefault();
         let $button = $(this);
         $button.css("pointer-events", "none"); //ボタンを無効化
