@@ -262,6 +262,19 @@ p {
     }
 }
 
+/* 吹き出し */
+.hukidashi {
+    border: thick double #555555;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: white;
+    position: relative;
+    top: -170px;
+    color: red;
+}
+
+
+
 /* バックグラウンドの設定 */
 .container {
     z-index: -10;
