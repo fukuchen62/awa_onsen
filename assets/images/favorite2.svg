@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 60 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="アートボード1" transform="matrix(0.599985,0,0,0.873171,0,0)">
+        <rect x="0" y="0" width="100" height="100" style="fill:none;"/>
+        <g transform="matrix(1,0,0,1,-0.15423,-0.0887592)">
+            <g transform="matrix(1.66671,0,0,1.14525,-8.3252,-6.71939)">
+                <path d="M7.406,90.825L7.122,90.825L7.122,8.381L63.052,8.381L63.052,90.825L62.779,90.825L35.087,71.149L7.406,90.825Z" style="fill:rgb(235,187,235);stroke:black;stroke-width:2.85px;"/>
+            </g>
+            <g transform="matrix(2.03341,0,0,1.40543,-51.069,-13.2004)">
+                <path d="M49.78,33.784C51.894,30.307 56.123,30.307 58.237,32.046C60.352,33.784 60.352,37.26 58.237,40.737C56.757,43.344 52.951,45.951 49.78,47.69C46.608,45.951 42.803,43.344 41.323,40.737C39.208,37.26 39.208,33.784 41.323,32.046C43.437,30.307 47.666,30.307 49.78,33.784Z" style="fill:rgb(234,30,93);stroke:black;stroke-width:1.63px;"/>
+            </g>
+        </g>
+    </g>
+</svg>
