@@ -228,7 +228,7 @@
 
         <?php
         // 現在の投稿のタームを取得
-        $terms = get_the_terms(get_the_ID(), 'facility_type');
+        $terms = get_the_terms(get_the_ID(), 'column_type');
         $term_slug = '';
         if ($terms && !is_wp_error($terms)) {
             // 最初のタームのスラッグを取得
