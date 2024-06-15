@@ -4,7 +4,20 @@ $post_type = 'spa';
 if (isset($_GET['post_type'])) {
     $post_type = $_GET['post_type'];
 }
-// echo $post_type;
+
+if ($post_type == "spa") {
+    $tab = 1;
+} elseif ($post_type == "facility") {
+    $tab = 2;
+} elseif ($post_type == "course") {
+    $tab = 3;
+}
+
+
+if (isset($_GET['s']) && $_GET['s'] != "") {
+    $tab = $_GET['s'];
+}
+
 ?>
 
 <?php get_header(); ?>
@@ -18,9 +31,9 @@ if (isset($_GET['post_type'])) {
 
         <ul class="tag element03">
 
-            <li class="<?php echo $post_type == 'spa'  ? 'active' : ''; ?>">温泉</li>
-            <li class="<?php echo $post_type == 'facility'  ? 'active' : ''; ?>">周辺施設</li>
-            <li class="<?php echo $post_type == 'course'  ? 'active' : ''; ?>">モデルコース</li>
+            <li class="<?php echo $tab == '1'  ? 'active' : ''; ?>">温泉</li>
+            <li class="<?php echo $tab == '2'  ? 'active' : ''; ?>">周辺施設</li>
+            <li class="<?php echo $tab == '3'  ? 'active' : ''; ?>">モデルコース</li>
 
             <!-- <li class='active'>周辺施設</li>
             <li>周辺施設</li>
@@ -83,8 +96,7 @@ if (isset($_GET['post_type'])) {
                     <input type="hidden" name="post_type" value="spa" />
                     <!-- リセット -->
                     <label class="reset">
-                        <button type="button" onclick="resetForm();">
-                            <span>リセット</span>
+                        <button type="button" onclick="resetForm('<?php echo home_url('/?s=1'); ?>')"><span>リセット</span>
                         </button>
                     </label>
                     <!-- 検索 -->
@@ -152,7 +164,7 @@ if (isset($_GET['post_type'])) {
                     <input type="hidden" name="post_type" value="facility" />
                     <!-- リセット -->
                     <label class="reset">
-                        <button type="button" onclick="resetForm();">
+                        <button type="button" onclick="resetForm('<?php echo home_url('/?s=2'); ?>');">
                             <span>リセット</span>
                         </button>
                     </label>
@@ -221,7 +233,7 @@ if (isset($_GET['post_type'])) {
                     <input type="hidden" name="post_type" value="course" />
                     <!-- リセット -->
                     <label class="reset">
-                        <button type="button" onclick="document.getElementById('searchform-course').reset();">
+                        <button type="button" onclick="resetForm('<?php echo home_url('/?s=3'); ?>')">
                             <span>リセット</span>
                         </button>
                     </label>

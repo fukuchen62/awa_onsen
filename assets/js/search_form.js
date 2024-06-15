@@ -78,20 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function resetForm() {
-    // チェックボックスのチェックを外す
-
-    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(function (checkbox) {
-        console.log("checks");
-        checkbox.checked = false;
-    });
-
-    let formIds = ['searchform-facility', 'searchform-spa', 'searchform-course'];
-    formIds.forEach(function (formId) {
-        let form = document.getElementById(formId);
-        if (form) {
-            form.reset();
-        }
-    });
+function resetForm(url) {
+    // ホームページにリダイレクト
+    window.location.href = url;
 }
