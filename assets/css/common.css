@@ -269,7 +269,7 @@ p {
     padding: 10px;
     background-color: white;
     position: relative;
-    top: -150px;
+    top: -180px;
     right: 50px;
     color: red;
     width: 200px;
@@ -508,7 +508,7 @@ h2 {
 }
 
 /* コラム */
-.column span,
+.card.column span,
 .column h3 {
     background-color: #4272a2;
 }
@@ -680,7 +680,7 @@ h5 {
     position: fixed;
     bottom: 0px;
     left: 16px;
-    background-image: url(../images/scrolltop.svg);
+    background-image: url(../images/scrolltop.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -729,13 +729,13 @@ h5 {
     bottom: 16px;
     right: 16px;
     cursor: pointer;
-    background-image: url(../images/hamburger.svg);
+    background-image: url(../images/hamburger.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .hamburger.isactive {
-    background-image: url(../images/close.svg);
+    background-image: url(../images/close.png);
 }
 
 /* header中身 */
@@ -884,10 +884,10 @@ h5 {
     content: "";
     display: block;
     height: 200px;
-    background: url(../images/footer_saru.svg) no-repeat center center;
+    background: url(../images/footer_saru.png) no-repeat center center;
     background-size: contain;
     position: relative;
-    top: 25px;
+    top: 44px;
     right: 0px;
 }
 
@@ -934,7 +934,7 @@ h5 {
 @media (width>=757px) {
     .footer_wrap::before {
         height: 300px;
-        top: 38px;
+        top: 67px;
     }
 
     .footer_container {
@@ -960,7 +960,7 @@ h5 {
 @media (width>=1201px) {
     .footer_wrap::before {
         height: 350px;
-        top: 44px;
+        top: 77px;
         right: -280px;
     }
 
