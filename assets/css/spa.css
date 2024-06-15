@@ -55,7 +55,11 @@ p {
     object-fit: cover;
     aspect-ratio: 16/9;
 }
-
+.favorite-button {
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
 .hashtag_list {
     margin: 16px 0 32px 0;
 }
