@@ -34,7 +34,7 @@
         $post_count = $spa_search_query->found_posts;
 
         if ($post_count > 0) : ?>
-            <p><?php echo $post_count; ?> 件の結果が見つかりました。</p>
+            <p class="search_result"><?php echo $post_count; ?> 件の結果が見つかりました。</p>
             <div class="article_all">
                 <?php
                 while ($spa_search_query->have_posts()) : $spa_search_query->the_post(); ?>

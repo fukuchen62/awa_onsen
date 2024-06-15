@@ -516,7 +516,7 @@ a {
     position: absolute;
     bottom: -16px;
     width: 0;
-    z-index: 10;
+    /* z-index: 10; */
 }
 
 .prev-arrow {
