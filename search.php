@@ -9,6 +9,7 @@
 
         $spa_query_args = array(
             'post_type' => 'spa',
+            'posts_per_page' => 100,
             'tax_query' => array('relation' => 'AND')
         );
 
@@ -65,6 +66,7 @@
 
         $course_query_args = array(
             'post_type' => 'course',
+            'posts_per_page' => 100,
             'tax_query' => array('relation' => 'AND')
         );
 
@@ -120,6 +122,7 @@
 
         $facility_query_args = array(
             'post_type' => 'facility',
+            'posts_per_page' => 100,
             'tax_query' => array('relation' => 'AND')
         );
 
