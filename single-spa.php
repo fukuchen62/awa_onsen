@@ -41,7 +41,7 @@
                 <?php the_favorites_button(); ?>
             </div>
 
-            </label>
+            <!-- </label> -->
         </div>
 
 
