@@ -238,10 +238,27 @@
                 </dd>
                 <dt>公式ホームページ</dt>
                 <dd class="url">
+                    <?php
+                    $sns_urls = get_field('official_url');
+                    if ($sns_urls) {
+                        // URLをカンマで分割して配列に変換
+                        $urls = explode(',', $sns_urls);
+
+                        // 各URLをリンクとして表示
+                        foreach ($urls as $url) {
+                            $trimmed_url = trim($url); // URLの前後の空白を除去
+                            if (!empty($trimmed_url)) {
+                                echo '<a href="' . esc_url($trimmed_url) . '" target="_blank">' . esc_html($trimmed_url) . '</a><br>';
+                            }
+                        }
+                    }
+                    ?>
+                </dd>
+                <!-- <dd class="url">
                     <a href="<?php the_field('official_url'); ?>" target="_blank">
                         <?php echo get_field('official_url') ?>
                     </a>
-                </dd>
+                </dd> -->
                 <dt>駐車場</dt>
                 <dd>
                     <?php the_field('parking_description'); ?>
