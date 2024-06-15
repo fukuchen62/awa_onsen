@@ -14,6 +14,7 @@ if (isset($_GET['post_type'])) {
         <h2 class="under_line">検索</h2>
 
         <!-- パンくず -->
+        <?php get_template_part('template-parts/breadcrumb'); ?>
 
         <ul class="tag element03">
 
