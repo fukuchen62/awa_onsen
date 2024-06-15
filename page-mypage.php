@@ -7,6 +7,7 @@
             <h2 class="under_line">マイページ</h2>
 
             <!-- パンくずリスト -->
+            <?php get_template_part('template-parts/breadcrumb') ?>
             <div class="mypage_container">
                 <h3>マイページについて</h3>
                 <p>・本マイページは温泉詳細や周辺詳細でブックマークした情報が表示されます。</p>

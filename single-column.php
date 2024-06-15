@@ -236,7 +236,7 @@
         }
         ?>
 
-        <button class="back_btn" onclick="window.location.href='<?php echo home_url('/column_type/' . $term_slug . '/'); ?>'">
+        <button class="back_btn" onclick="window.location.href='<?php echo home_url('column_type/' . $term_slug . '/'); ?>'">
             <span><i class="fa-solid fa-arrow-left"></i>一覧へ</span>
         </button>
 

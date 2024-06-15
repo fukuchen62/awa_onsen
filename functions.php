@@ -155,11 +155,13 @@ function fs_script_files()
     // フロントページ用のCSSとJSを読み込む
     if (is_front_page()) {
         wp_enqueue_style('top-style', get_template_directory_uri() . '/assets/css/top.css');
+        wp_enqueue_style('loading-style', get_template_directory_uri() . '/assets/css/loading.css');
         wp_enqueue_script(
             "slick-carousel",
             "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
         );
         wp_enqueue_script('top-script', get_template_directory_uri() . '/assets/js/top.js');
+        wp_enqueue_script('loading-script', get_template_directory_uri() . '/assets/js/loading.js');
     }
 
     // 詳細ページ用のCSSとJSの読み込み
@@ -336,9 +338,9 @@ function html_to_text($comment_content)
 add_filter('comment_text', 'html_to_text', 9);
 
 //コメントを入力する下の名前、メール、サイトのサイトを消す
-function comment_field_custom($fields)
+function my_comment_form_remove($arg)
 {
-    $fields['url'] = '';
-    return $fields;
+    $arg['url'] = '';
+    return $arg;
 }
-add_filter('comment_form_fields', 'comment_field_custom');
+add_filter('comment_form_default_fields', 'my_comment_form_remove');

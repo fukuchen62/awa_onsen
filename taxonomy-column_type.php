@@ -59,7 +59,7 @@
                         <?php else : ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/0-^noimage.png" alt="<?php the_title(); ?>" />
                         <?php endif; ?>
-                        <div class="news_cintents">
+                        <div class="news_contents">
                             <a href="<?php the_permalink(); ?>">
                                 <p class="date fugaz-one-regular"><?php echo get_post_time('Y.m.d.D H:i'); ?></p>
                                 <h6 class="title"><?php the_title(); ?></h6>
