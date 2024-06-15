@@ -513,6 +513,12 @@ h2 {
     background-color: #4272a2;
 }
 
+@media (width>=757px) {
+    .news_card .date {
+        -webkit-text-stroke: 1px #4272a2;
+    }
+}
+
 @media (width>=1201px) {
     .article_all {
         display: grid;
