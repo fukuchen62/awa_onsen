@@ -53,7 +53,7 @@
 
                         <article <?php post_class('news_card'); ?>>
                             <!-- アイキャッチ画像表示 -->
-                            <a href=" <?php the_permalink(); ?>">
+                            <a class="news_img" href=" <?php the_permalink(); ?>">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?php the_title(); ?>"></a>
                         <?php else : ?>

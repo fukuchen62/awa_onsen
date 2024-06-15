@@ -403,6 +403,10 @@ h2 {
     flex-direction: column;
 }
 
+.news_img {
+    width: 30%;
+}
+
 .news_card img {
     aspect-ratio: 1/1;
     /* max-width: 140px; */
