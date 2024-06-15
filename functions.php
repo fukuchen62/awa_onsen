@@ -336,9 +336,9 @@ function html_to_text($comment_content)
 add_filter('comment_text', 'html_to_text', 9);
 
 //コメントを入力する下の名前、メール、サイトのサイトを消す
-function comment_field_custom($fields)
+function my_comment_form_remove($arg)
 {
-    $fields['url'] = '';
-    return $fields;
+    $arg['url'] = '';
+    return $arg;
 }
-add_filter('comment_form_fields', 'comment_field_custom');
+add_filter('comment_form_default_fields', 'my_comment_form_remove');
