@@ -1,0 +1,77 @@
+@charset "utf-8";
+.loader_loading {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    width: 100vw;
+    height: 100svh;
+    z-index: 1000;
+}
+
+.bubble_loading {
+    position: absolute;
+    bottom: -100px; /* 泡のスタート位置をさらに下げる */
+    border-radius: 50%;
+    opacity: 0;
+    animation: bubble_loading 3s infinite;
+}
+
+@keyframes bubble_loading {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-80vh); /* 泡が画面の上まで上がるように調整 */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh); /* 泡が画面外まで上がるように調整 */
+        opacity: 0;
+    }
+}
+
+.hidden_loading {
+    display: none;
+}
+
+#progressbar {
+    height: 26px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    background: rgba(159, 159, 159, 0.5);
+    border-radius: 10px;
+    margin: -20px 0 0 -100px;
+    padding: 2px;
+    z-index: 500;
+}
+#loading {
+    transition: all 500ms ease;
+    height: 20px;
+    width: calc(100% - 10px);
+    border-radius: 8px;
+    background: #dbf500;
+    position: absolute;
+    margin: 3px;
+    display: inline-block;
+    animation: load 5s ease forwards;
+}
+#load {
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -30px;
+}
+
+@keyframes load {
+    0% {
+        width: 2%;
+    }
+    10% {
+        width: 10%;
+    }
+}

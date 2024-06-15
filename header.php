@@ -40,6 +40,14 @@ wp_reset_postdata();
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+    <?php if (is_front_page()) : ?>
+        <div class="loader_loading" id="loader_loading">
+            <div id="progressbar">
+                <span id="loading"></span>
+                <div id="load">loading</div>
+            </div>
+        </div>
+    <?php endif; ?>
     <div class="bubble_background">
         <!-- header -->
         <header class="header_wrap">
