@@ -6,7 +6,7 @@
         <section>
             <div class="ttl">
                 <h2 class="under_line"><?php the_title(); ?></h2>
-                <p><?php the_time('Y.m.d H:i'); ?></p>
+                <p class="date_time"><?php the_time('Y.m.d H:i'); ?></p>
             </div>
 
             <!-- パンくずリスト CSS未適用 -->
