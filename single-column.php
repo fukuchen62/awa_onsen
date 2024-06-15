@@ -8,7 +8,7 @@
             <h2 class="under_line"><?php the_title(); ?></h2>
 
             <!-- コラム内容 -->
-            <p class="column_date"><?php echo esc_html(get_post_time('Y.m.d.(D)')); ?></p>
+            <p class="date_time"><?php echo esc_html(get_post_time('Y.m.d.(D)')); ?></p>
 
             <!-- パンくず -->
             <?php get_template_part('template-parts/breadcrumb'); ?>
@@ -214,6 +214,13 @@
                         wp_reset_postdata();
                     }
                 }
+            }
+            // 力技で一旦動かしてる。今後関連部分は全体的に修正必要
+            //投稿がない場合レイアウトが崩れるのでsectionごと非表示
+            if ($has_posts) {
+                echo '</div>'; // .article_allを閉じる
+            } else {
+                echo '<style>section.recommend { display: none; }</style>';
             }
             ?>
 

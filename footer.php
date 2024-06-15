@@ -36,7 +36,7 @@
     </div>
 </footer>
 
-
+<!-- ヘッダーのbubble_backgroundの閉じタグ -->
 </div>
 <?php wp_footer(); ?>
 </body>

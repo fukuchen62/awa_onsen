@@ -45,7 +45,11 @@
 }
 
 /* お気に入り登録 */
-
+.favorite-button {
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
 /* 店舗情報 */
 
 dt,
