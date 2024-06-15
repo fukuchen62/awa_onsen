@@ -195,7 +195,8 @@
                                         <span></span>
                                         <?php if (has_post_thumbnail($stay_post->ID)) :
                                             echo get_the_post_thumbnail($stay_post->ID, 'medium');
-                                        else : ?>
+                                        ?>
+                                        <?php else : ?>
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
                                         <?php endif; ?>
                                     </div>
@@ -365,6 +366,8 @@
                                         <span></span>
                                         <?php if ($post_thumbnail) : ?>
                                             <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
+                                        <?php else : ?>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
                                         <?php endif; ?>
                                     </div>
                                     <h3><?php echo esc_html($post_title); ?></h3>
@@ -436,6 +439,8 @@
                                     <!-- アイキャッチ取得 -->
                                     <?php if ($post_thumbnail) : ?>
                                         <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
+                                    <?php else : ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
                                     <?php endif; ?>
                                 </a>
                                 <div class="news_contents">
