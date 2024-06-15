@@ -11,10 +11,10 @@ p {
 }
 
 /* コラム内容 */
-.column_date {
+/* .column_date {
     margin-top: 24px;
     text-align: right;
-}
+} */
 
 .column_img,
 .column_text,
@@ -37,9 +37,16 @@ p {
 
 textarea {
     width: 100%;
-    border-top: 1px solid #D9D9D9;
-    border: 1px solid #D9D9D9;a5
-    a
+    /* border-top: 1px solid #D9D9D9; */
+    border: 1px solid #D9D9D9;
+    padding: 5px;
+    resize: none;
+}
+
+.comment-body p {
+    width: 100%;
+    /* border-top: 1px solid #D9D9D9; */
+    border: 1px solid #D9D9D9;
     padding: 5px;
     resize: none;
 }
@@ -68,11 +75,6 @@ input[type="submit"] {
 .comment_content {
     padding: 5px;
     border-bottom: 1px solid #D9D9D9;
-}
-
-/* 関連情報 */
-h5 {
-    letter-spacing: 1rem;
 }
 
 /* カード(丸形) */
@@ -164,7 +166,7 @@ h5 {
     border: 3px solid #F5A200;
     border-radius: 24px;
     transition: all 0.4s;
-    margin-top: 32px;
+    margin: 32px 0;
 }
 
 .form-submit input:hover {
