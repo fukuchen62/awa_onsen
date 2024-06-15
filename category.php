@@ -40,11 +40,14 @@ get_header();
                 <?php
                 // 現在のカテゴリーを取得
                 $current_category = get_queried_object();
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
                 if ($current_category) :
                     // クエリパラメータを設定
                     $args = array(
                         'category_name' => $current_category->slug, // 現在のカテゴリーのスラッグ
+                        // 'posts_per_page' => 5,
+                        'paged' => $paged // 現在のページ番号
                     );
                     // WP_Queryオブジェクトを作成
                     $category_query = new WP_Query($args);
