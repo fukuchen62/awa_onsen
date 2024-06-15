@@ -218,10 +218,23 @@
                     <?php the_field('fax'); ?>
                 </dd>
                 <dt>SNS</dt>
+                <!-- 複数ある場合、カンマ区切りで個別に表示 -->
                 <dd class="url">
-                    <a href="<?php the_field('sns_url'); ?>" target="_blank">
-                        <?php echo get_field('sns_url') ?>
-                    </a>
+                    <?php
+                    $sns_urls = get_field('sns_url');
+                    if ($sns_urls) {
+                        // URLをカンマで分割して配列に変換
+                        $urls = explode(',', $sns_urls);
+
+                        // 各URLをリンクとして表示
+                        foreach ($urls as $url) {
+                            $trimmed_url = trim($url); // URLの前後の空白を除去
+                            if (!empty($trimmed_url)) {
+                                echo '<a href="' . esc_url($trimmed_url) . '" target="_blank">' . esc_html($trimmed_url) . '</a><br>';
+                            }
+                        }
+                    }
+                    ?>
                 </dd>
                 <dt>公式ホームページ</dt>
                 <dd class="url">
