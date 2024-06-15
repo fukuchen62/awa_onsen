@@ -516,7 +516,7 @@
 
                         </div>
                     </div>
-                    <!-- お知らせ一覧ボタン -->
+                    <!-- コラム一覧ボタン -->
                     <a class="column_btn btn shadow section_btn" href="<?php echo home_url('column_type/spa-column/'); ?>">コラム一覧へ<i class="fa-solid fa-list"></i></a>
                 </div>
             </section>

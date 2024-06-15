@@ -38,9 +38,25 @@ p {
 textarea {
     width: 100%;
     /* border-top: 1px solid #D9D9D9; */
+    background-color: #fff;
     border: 1px solid #D9D9D9;
+    border-radius: 8px;
     padding: 5px;
     resize: none;
+}
+
+#author {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+}
+
+#email {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
 }
 
 .comment-body p {
