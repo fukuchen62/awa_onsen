@@ -381,6 +381,13 @@
             if ($has_posts) {
                 echo '</div>';
             }
+            // 力技で一旦動かしてる。今後関連部分は全体的に修正必要
+            //投稿がない場合レイアウトが崩れるのでsectionごと非表示
+            if ($has_posts) {
+                echo '</div>'; // .article_allを閉じる
+            } else {
+                echo '<style>section.recommend { display: none; }</style>';
+            }
             ?>
         </section>
 
@@ -463,6 +470,11 @@
                         wp_reset_postdata();
                     }
                 }
+            }
+            // 力技で一旦動かしてる。今後関連部分は全体的に修正必要
+            //投稿がない場合レイアウトが崩れるのでsectionごと非表示
+            if (!$has_columns) {
+                echo '<style>section.connection_column { display: none; }</style>';
             }
             ?>
         </section>
