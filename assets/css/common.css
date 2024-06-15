@@ -513,6 +513,12 @@ h2 {
     background-color: #4272a2;
 }
 
+@media (width>=757px) {
+    .news_card .date {
+        -webkit-text-stroke: 1px #4272a2;
+    }
+}
+
 @media (width>=1201px) {
     .article_all {
         display: grid;
@@ -887,7 +893,7 @@ h5 {
     background: url(../images/footer_saru.png) no-repeat center center;
     background-size: contain;
     position: relative;
-    top: 25px;
+    top: 44px;
     right: 0px;
 }
 
@@ -934,7 +940,7 @@ h5 {
 @media (width>=757px) {
     .footer_wrap::before {
         height: 300px;
-        top: 38px;
+        top: 67px;
     }
 
     .footer_container {
@@ -960,7 +966,7 @@ h5 {
 @media (width>=1201px) {
     .footer_wrap::before {
         height: 350px;
-        top: 44px;
+        top: 77px;
         right: -280px;
     }
 
