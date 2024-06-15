@@ -69,7 +69,7 @@
                             <?php for ($i = 1; $i <= 5; $i++) : ?>
                                 <?php if ($st = get_field('start_time1_' . $i)) : ?>
                                     <li>
-                                        <p class="icon12"><?php echo $st; ?><?php if ($i == 1) echo '<br>START'; ?></p>
+                                        <p class="icon12"><?php echo $st; ?><?php if ($i == 1) echo '<br>1st'; ?></p>
                                     </li>
                                 <?php endif; ?>
                             <?php endfor; ?>
