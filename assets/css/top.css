@@ -30,12 +30,31 @@ a {
 /*========== キービジュアル ==========*/
 .kv {
     width: 100vw;
-    height: 100svh;
-    background-image: url(../images/kv.jpg);
-    background-size: cover;
-    background-position: center center;
+    height: 100vh;
+    /* background-image: url(../images/kv.jpg); */
+    /* background-size: cover;
+    background-position: center center; */
     position: relative;
     margin-bottom: 72px;
+}
+
+.single-item {
+    width: 100%;
+    height: 100%;
+}
+
+.single-item li {
+    width: 100%;
+    height: 100%;
+}
+
+.slick-img img {
+    height: 100vh;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
 }
 
 .top_ttl {
@@ -135,15 +154,15 @@ a {
     }
 
     .kv_bubble_left {
-        width: 500px;
-        height: 500px;
+        width: 400px;
+        height: 400px;
         margin-left: -100px;
-        transform: rotate(-20deg);
+        /* transform: rotate(-20deg); */
     }
 
     .kv_bubble_right {
-        width: 500px;
-        height: 500px;
+        width: 400px;
+        height: 400px;
         margin-right: -110px;
     }
 }
@@ -390,7 +409,7 @@ a {
     margin-bottom: 4px;
 }
 
-.hashtag_list{
+.hashtag_list {
     margin-top: 8px;
 }
 
@@ -534,6 +553,7 @@ button {
     /* position: absolute; */
     transform: translateY(-8px);
 }
+
 .slick-dots li.slick-active button:before {
     color: #DBF500;
 }
@@ -800,6 +820,7 @@ button {
     transform: translateX(0);
     transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
 }
+
 /* ======== ナビのtopを黄色にする ========== */
 .navlist_item:nth-child(1) {
     color: #DBF500;

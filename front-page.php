@@ -5,6 +5,15 @@
 <main>
     <!-- キービジュアルはbgで表示 -->
     <section class="kv">
+        <div class="kv_img">
+            <ul class="single-item">
+                <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv1.jpg" alt="祖谷温泉"></li>
+                <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv2.jpg" alt="祖谷温泉"></li>
+                <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv4.jpg" alt="月ケ谷温泉"></li>
+                <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv6.jpg" alt="徳島天然温泉あらたえの湯"></li>
+                <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv7.jpg" alt="天然温泉えびすの湯"></li>
+            </ul>
+        </div>
         <h1 class="top_ttl">
             <img src="<?php echo get_template_directory_uri() ?>/assets/images/logo.svg" alt="あわあわ温泉ぶらり">
         </h1>

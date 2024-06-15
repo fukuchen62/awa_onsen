@@ -2,6 +2,10 @@
 
 $(function () {
     // slick
+    $(".single-item").slick({
+        autoplay: true,
+        fade: true
+    });
     $(".slider").slick({
         autoplay: true,
         dots: true,
