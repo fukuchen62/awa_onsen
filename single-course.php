@@ -124,6 +124,8 @@
                                     <a href="<?php echo esc_url($url); ?>" target="_blank">
                                         <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($spot_name); ?>">
                                     </a>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
                                 <?php endif; ?>
 
                                 <div class="square_white"></div>
@@ -282,6 +284,8 @@
                                     <a href="<?php echo esc_url($url); ?>" target="_blank">
                                         <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($spot_name); ?>">
                                     </a>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
                                 <?php endif; ?>
 
                                 <div class="square_white"></div>
