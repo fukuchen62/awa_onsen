@@ -680,7 +680,7 @@ h5 {
     position: fixed;
     bottom: 0px;
     left: 16px;
-    background-image: url(../images/scrolltop.svg);
+    background-image: url(../images/scrolltop.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -729,13 +729,13 @@ h5 {
     bottom: 16px;
     right: 16px;
     cursor: pointer;
-    background-image: url(../images/hamburger.svg);
+    background-image: url(../images/hamburger.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .hamburger.isactive {
-    background-image: url(../images/close.svg);
+    background-image: url(../images/close.png);
 }
 
 /* header中身 */
@@ -884,7 +884,7 @@ h5 {
     content: "";
     display: block;
     height: 200px;
-    background: url(../images/footer_saru.svg) no-repeat center center;
+    background: url(../images/footer_saru.png) no-repeat center center;
     background-size: contain;
     position: relative;
     top: 25px;

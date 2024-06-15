@@ -79,7 +79,7 @@ a {
 .kv_bubble_left {
     width: 180px;
     height: 180px;
-    background-image: url(../images/bubble_left.svg);
+    background-image: url(../images/bubble_left.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: border-box;
@@ -90,7 +90,7 @@ a {
 .kv_bubble_right {
     width: 180px;
     height: 180px;
-    background-image: url(../images/bubble_right.svg);
+    background-image: url(../images/bubble_right.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: border-box;
@@ -209,7 +209,7 @@ a {
 .sticky_note {
     width: 200px;
     height: 41px;
-    background-image: url(../images/sticky_note.svg);
+    background-image: url(../images/sticky_note.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-origin: border-box;
