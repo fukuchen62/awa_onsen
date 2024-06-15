@@ -33,6 +33,7 @@
                     // 投稿を取得
                     $args = array(
                         'post_type' => 'spa',
+                        'posts_per_page' => 100,
                         'post__in' => $post_ids,
                         'orderby' => 'post__in'
                     );
@@ -76,6 +77,7 @@
                     // 投稿を取得
                     $args = array(
                         'post_type' => 'facility',
+                        'posts_per_page' => 100,
                         'post__in' => $post_ids,
                         'orderby' => 'post__in'
                     );
@@ -111,11 +113,6 @@
                 <?php } ?>
             </div>
         </section>
-        <?php if (function_exists('wp_pagenavi')) : ?>
-            <div class="pagination">
-                <?php wp_pagenavi(); ?>
-            </div>
-        <?php endif; ?>
     </div>
 </main>
 

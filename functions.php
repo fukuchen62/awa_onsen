@@ -334,3 +334,11 @@ function html_to_text($comment_content)
     return $comment_content;
 }
 add_filter('comment_text', 'html_to_text', 9);
+
+//コメントを入力する下の名前、メール、サイトのサイトを消す
+function comment_field_custom($fields)
+{
+    $fields['url'] = '';
+    return $fields;
+}
+add_filter('comment_form_fields', 'comment_field_custom');
