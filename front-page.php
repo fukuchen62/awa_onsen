@@ -7,52 +7,34 @@
     <section class="kv">
         <div class="kv_img">
             <ul class="single-item">
-                <!-- <?php if ($pic = get_field('kv1')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slick-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="祖谷温泉">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <?php if ($pic = get_field('kv2')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slick-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="祖谷温泉">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <?php if ($pic = get_field('kv3')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slick-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="月ケ谷温泉">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <?php if ($pic = get_field('kv4')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slick-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="徳島天然温泉あらたえの湯">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <?php if ($pic = get_field('kv5')) : ?>
-                    <?php $pic_url = $pic['sizes']['large']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slick-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="天然温泉えびすの湯">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?> -->
-                <!-- ワードプレス側から更新できるように作業中 -->
-                <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv1.jpg" alt="祖谷温泉"></li>
+                <?php
+                $args = array(
+                    'post_type' => 'main_visual', // カスタム投稿タイプ
+                    'posts_per_page' => -1 // すべての投稿を取得
+                );
+                $query = new WP_Query($args);
+                // KVがある分だけループ
+                if ($query->have_posts()) :
+                    while ($query->have_posts()) : $query->the_post();
+                        $kv_image = get_field('kv');
+                        if ($kv_image) :
+                ?>
+                            <li class="slick-img">
+                                <img src="<?php echo esc_url($kv_image['url']); ?>" alt="<?php the_title(); ?>">
+                            </li>
+                <?php
+                        endif;
+                    endwhile;
+                    wp_reset_postdata();
+                endif;
+                ?>
+
+                <!-- WP動かなかった時の保険 -->
+                <!-- <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv1.jpg" alt="祖谷温泉"></li>
                 <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv2.jpg" alt="祖谷温泉"></li>
                 <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv3.jpg" alt="月ケ谷温泉"></li>
                 <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv4.jpg" alt="徳島天然温泉あらたえの湯"></li>
-                <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv5.jpg" alt="天然温泉えびすの湯"></li>
+                <li class="slick-img"><img src="<?php echo get_template_directory_uri() ?>/assets/images/kv5.jpg" alt="天然温泉えびすの湯"></li> -->
             </ul>
         </div>
         <h1 class="top_ttl">
@@ -516,7 +498,7 @@
 
                         </div>
                     </div>
-                    <!-- コラム一覧ボタン -->
+                    <!-- お知らせ一覧ボタン -->
                     <a class="column_btn btn shadow section_btn" href="<?php echo home_url('column_type/spa-column/'); ?>">コラム一覧へ<i class="fa-solid fa-list"></i></a>
                 </div>
             </section>
