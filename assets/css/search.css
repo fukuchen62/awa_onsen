@@ -78,6 +78,9 @@ form {
         padding: 0 50px;
     }
 }
+.tag li {
+    cursor: pointer;
+}
 
 .list {
     display: grid;
@@ -130,6 +133,10 @@ form {
 
 .btn .submit {
     background-color: #EB97A8;
+}
+
+p {
+    font-size: 1rem;
 }
 
 /* フォントサイズのみ */

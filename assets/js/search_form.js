@@ -76,3 +76,9 @@ document.addEventListener('DOMContentLoaded', function () {
         return false;
     }
 });
+
+
+function resetForm(url) {
+    // ホームページにリダイレクト
+    window.location.href = url;
+}

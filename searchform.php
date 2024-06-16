@@ -4,7 +4,20 @@ $post_type = 'spa';
 if (isset($_GET['post_type'])) {
     $post_type = $_GET['post_type'];
 }
-// echo $post_type;
+
+if ($post_type == "spa") {
+    $tab = 1;
+} elseif ($post_type == "facility") {
+    $tab = 2;
+} elseif ($post_type == "course") {
+    $tab = 3;
+}
+
+
+if (isset($_GET['s']) && $_GET['s'] != "") {
+    $tab = $_GET['s'];
+}
+
 ?>
 
 <?php get_header(); ?>
@@ -14,12 +27,13 @@ if (isset($_GET['post_type'])) {
         <h2 class="under_line">検索</h2>
 
         <!-- パンくず -->
+        <?php get_template_part('template-parts/breadcrumb'); ?>
 
         <ul class="tag element03">
 
-            <li class="<?php echo $post_type == 'spa'  ? 'active' : ''; ?>">温泉</li>
-            <li class="<?php echo $post_type == 'facility'  ? 'active' : ''; ?>">周辺施設</li>
-            <li class="<?php echo $post_type == 'course'  ? 'active' : ''; ?>">モデルコース</li>
+            <li class="<?php echo $tab == '1'  ? 'active' : ''; ?>">温泉</li>
+            <li class="<?php echo $tab == '2'  ? 'active' : ''; ?>">周辺施設</li>
+            <li class="<?php echo $tab == '3'  ? 'active' : ''; ?>">モデルコース</li>
 
             <!-- <li class='active'>周辺施設</li>
             <li>周辺施設</li>
@@ -44,10 +58,10 @@ if (isset($_GET['post_type'])) {
                     if (!empty($area_terms) && !is_wp_error($area_terms)) :
                         foreach ($area_terms as $term) :
                     ?>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="area_spa[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
-                        <span><?php echo esc_html($term->name); ?></span>
-                    </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="area_spa[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
+                                <span><?php echo esc_html($term->name); ?></span>
+                            </label>
                     <?php
                         endforeach;
                     endif;
@@ -67,10 +81,10 @@ if (isset($_GET['post_type'])) {
                     if (!empty($spa_type_terms) && !is_wp_error($spa_type_terms)) :
                         foreach ($spa_type_terms as $term) :
                     ?>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="spa_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_spa_type_terms)); ?>>
-                        <span><?php echo esc_html($term->name); ?></span>
-                    </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="spa_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_spa_type_terms)); ?>>
+                                <span><?php echo esc_html($term->name); ?></span>
+                            </label>
                     <?php
                         endforeach;
                     endif;
@@ -82,8 +96,7 @@ if (isset($_GET['post_type'])) {
                     <input type="hidden" name="post_type" value="spa" />
                     <!-- リセット -->
                     <label class="reset">
-                        <button type="button" onclick="document.getElementById('searchform-spa').reset();">
-                            <span>リセット</span>
+                        <button type="button" onclick="resetForm('<?php echo home_url('/?s=1'); ?>')"><span>リセット</span>
                         </button>
                     </label>
                     <!-- 検索 -->
@@ -113,10 +126,10 @@ if (isset($_GET['post_type'])) {
                     if (!empty($area_terms) && !is_wp_error($area_terms)) :
                         foreach ($area_terms as $term) :
                     ?>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="area_facility[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
-                        <span><?php echo esc_html($term->name); ?></span>
-                    </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="area_facility[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
+                                <span><?php echo esc_html($term->name); ?></span>
+                            </label>
                     <?php
                         endforeach;
                     endif;
@@ -136,10 +149,10 @@ if (isset($_GET['post_type'])) {
                     if (!empty($facility_type_terms) && !is_wp_error($facility_type_terms)) :
                         foreach ($facility_type_terms as $term) :
                     ?>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="facility_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_facility_type_terms)); ?>>
-                        <span><?php echo esc_html($term->name); ?></span>
-                    </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="facility_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_facility_type_terms)); ?>>
+                                <span><?php echo esc_html($term->name); ?></span>
+                            </label>
                     <?php
                         endforeach;
                     endif;
@@ -151,7 +164,7 @@ if (isset($_GET['post_type'])) {
                     <input type="hidden" name="post_type" value="facility" />
                     <!-- リセット -->
                     <label class="reset">
-                        <button type="button" onclick="document.getElementById('searchform-facility').reset();">
+                        <button type="button" onclick="resetForm('<?php echo home_url('/?s=2'); ?>');">
                             <span>リセット</span>
                         </button>
                     </label>
@@ -182,10 +195,10 @@ if (isset($_GET['post_type'])) {
                     if (!empty($area_terms) && !is_wp_error($area_terms)) :
                         foreach ($area_terms as $term) :
                     ?>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="area_course[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
-                        <span><?php echo esc_html($term->name); ?></span>
-                    </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="area_course[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_area_terms)); ?>>
+                                <span><?php echo esc_html($term->name); ?></span>
+                            </label>
                     <?php
                         endforeach;
                     endif;
@@ -205,10 +218,10 @@ if (isset($_GET['post_type'])) {
                     if (!empty($course_type_terms) && !is_wp_error($course_type_terms)) :
                         foreach ($course_type_terms as $term) :
                     ?>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="course_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_course_type_terms)); ?>>
-                        <span><?php echo esc_html($term->name); ?></span>
-                    </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="course_type[]" value="<?php echo esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $selected_course_type_terms)); ?>>
+                                <span><?php echo esc_html($term->name); ?></span>
+                            </label>
                     <?php
                         endforeach;
                     endif;
@@ -220,7 +233,7 @@ if (isset($_GET['post_type'])) {
                     <input type="hidden" name="post_type" value="course" />
                     <!-- リセット -->
                     <label class="reset">
-                        <button type="button" onclick="document.getElementById('searchform-course').reset();">
+                        <button type="button" onclick="resetForm('<?php echo home_url('/?s=3'); ?>')">
                             <span>リセット</span>
                         </button>
                     </label>

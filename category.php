@@ -40,11 +40,14 @@ get_header();
                 <?php
                 // 現在のカテゴリーを取得
                 $current_category = get_queried_object();
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
                 if ($current_category) :
                     // クエリパラメータを設定
                     $args = array(
                         'category_name' => $current_category->slug, // 現在のカテゴリーのスラッグ
+                        // 'posts_per_page' => 5,
+                        'paged' => $paged // 現在のページ番号
                     );
                     // WP_Queryオブジェクトを作成
                     $category_query = new WP_Query($args);
@@ -59,10 +62,10 @@ get_header();
                             $tags = get_the_category($post_id);
                             ?>
 
-                            <article class="news_card">
+                            <article <?php post_class('news_card'); ?>>
                                 <a href="<?php the_permalink(); ?>">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>" />
+                                        <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?php the_title(); ?>" />
                                     <?php else : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                     <?php endif; ?>
