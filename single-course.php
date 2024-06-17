@@ -145,8 +145,10 @@
                             <!-- 公式HPがあれば表示させる-->
                             <div class="flex_car">
                                 <?php if ($official_website = get_field('course_url1_' . $i)) : ?>
-                                    <p>
-                                    <div class="square_green"></div>公式HP：<a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($official_website); ?></a></p>
+                                    <div>
+                                        <div class="square_green"></div>
+                                        <div class="official_site">公式HP：</div><a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($official_website); ?></a>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -307,8 +309,13 @@
                             <!--公式HPがあれば表示させる-->
                             <div class="flex_car">
                                 <?php if ($official_website = get_field('course_url2_' . $i)) : ?>
-                                    <p>
-                                    <div class="square_green"></div>公式HP：<a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($official_website); ?></a></p>
+                                    <div>
+                                        <div class="square_green"></div>
+                                        <div class="official_site">公式HP：
+                                            <a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer">
+                                            <?php echo esc_html($official_website); ?></a>
+                                        </div>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>

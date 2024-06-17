@@ -68,7 +68,7 @@
                     <div class="about_img">
                         <img src="<?php echo get_template_directory_uri() ?>/assets/images/onsen_saru.svg" alt="おさる">
                     </div>
-                    <a class="about_btn btn shadow section_btn" href="<?php echo home_url('/about/'); ?>"">もっと詳しく<i class=" fa-solid fa-list"></i></a>
+                    <a class="about_btn btn shadow section_btn" href="<?php echo home_url('/about/'); ?>">もっと詳しく<i class=" fa-solid fa-list"></i></a>
                 </div>
             </section>
 
@@ -168,19 +168,21 @@
                             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                                 <li class="slider_content">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <!-- 施設の写真 -->
-                                        <div class="slider_img">
+                                    <div class="slider_a">
+                                        <a class="slider_img" href="<?php the_permalink(); ?>">
+                                            <!-- 施設の写真 -->
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                             <span></span>
-                                        </div>
+                                        </a>
                                         <!-- 施設の名前 -->
-                                        <h3><?php the_title(); ?></h3>
-                                    </a>
+                                        <a href="<?php the_permalink(); ?>">
+                                            <h3><?php the_title(); ?></h3>
+                                        </a>
+                                    </div>
                                 </li>
                         <?php
                             endwhile;
@@ -226,19 +228,21 @@
                             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                                 <li class="slider_content">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <!-- 温泉の写真 -->
-                                        <div class="slider_img">
+                                    <div class="slider_a">
+                                        <a class="slider_img" href="<?php the_permalink(); ?>">
+                                            <!-- 温泉の写真 -->
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                             <span></span>
-                                        </div>
-                                        <!-- 温泉の名前 -->
-                                        <h3><?php the_title(); ?></h3>
-                                    </a>
+                                        </a>
+                                        <!-- 施設の名前 -->
+                                        <a href="<?php the_permalink(); ?>">
+                                            <h3><?php the_title(); ?></h3>
+                                        </a>
+                                    </div>
                                 </li>
                         <?php
                             endwhile;
@@ -283,19 +287,21 @@
                             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                                 <li class="slider_content">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <!-- 温泉の写真 -->
-                                        <div class="slider_img">
+                                    <div class="slider_a">
+                                        <a class="slider_img" href="<?php the_permalink(); ?>">
+                                            <!-- 施設の写真 -->
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                             <span></span>
-                                        </div>
-                                        <!-- 温泉の名前 -->
-                                        <h3><?php the_title(); ?></h3>
-                                    </a>
+                                        </a>
+                                        <!-- 施設の名前 -->
+                                        <a href="<?php the_permalink(); ?>">
+                                            <h3><?php the_title(); ?></h3>
+                                        </a>
+                                    </div>
                                 </li>
                         <?php
                             endwhile;
@@ -340,19 +346,21 @@
                             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                                 <li class="slider_content">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <!-- 温泉の写真 -->
-                                        <div class="slider_img">
+                                    <div class="slider_a">
+                                        <a class="slider_img" href="<?php the_permalink(); ?>">
+                                            <!-- 温泉の写真 -->
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                             <span></span>
-                                        </div>
+                                        </a>
                                         <!-- 温泉の名前 -->
-                                        <h3><?php the_title(); ?></h3>
-                                    </a>
+                                        <a href="<?php the_permalink(); ?>">
+                                            <h3><?php the_title(); ?></h3>
+                                        </a>
+                                    </div>
                                 </li>
                         <?php
                             endwhile;
@@ -388,19 +396,21 @@
                             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                                 <li class="slider_content">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <!-- 施設の写真 -->
-                                        <div class="slider_img">
+                                    <div class="slider_a">
+                                        <a class="slider_img" href="<?php the_permalink(); ?>">
+                                            <!-- 施設の写真 -->
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
                                             <span></span>
-                                        </div>
+                                        </a>
                                         <!-- 施設の名前 -->
-                                        <h3><?php the_title(); ?></h3>
-                                    </a>
+                                        <a href="<?php the_permalink(); ?>">
+                                            <h3><?php the_title(); ?></h3>
+                                        </a>
+                                    </div>
                                 </li>
                         <?php
                             endwhile;

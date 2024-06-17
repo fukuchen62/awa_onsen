@@ -177,7 +177,8 @@ DAY1/DAY2
 /* 車移動時間アイコン */
 .car_green {
     background-image: url(../images/car.svg);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     position: relative;
     width: 50px;
     height: 50px;
@@ -413,4 +414,19 @@ DAY1/DAY2
     .container {
         border: 10px solid #EB97A8;
     }
+}
+
+
+
+.official_site a{
+    font-weight: bold;
+}
+
+.official_site a::after{
+    content: url(../images/external_link_icon.svg);
+    display: inline-block;
+}
+
+.official_site a:hover{
+    border-bottom: 2px solid ;
 }
