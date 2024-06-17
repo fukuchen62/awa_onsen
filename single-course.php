@@ -69,7 +69,7 @@
                             <?php for ($i = 1; $i <= 5; $i++) : ?>
                                 <?php if ($st = get_field('start_time1_' . $i)) : ?>
                                     <li>
-                                        <p class="icon12"><?php echo $st; ?><?php if ($i == 1) echo '<br>1st'; ?></p>
+                                        <p class="icon12"><?php echo $st; ?></p>
                                     </li>
                                 <?php endif; ?>
                             <?php endfor; ?>
@@ -203,8 +203,9 @@
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
                                     <?php endif; ?>
                                 </div>
+                                <h3><?php echo $stay_name; ?></h3>
                             </a>
-                            <h3><?php echo $stay_name; ?></h3>
+
                             <!-- 紹介文 -->
                             <p class="tx">
                                 <?php echo $short_description; ?>
@@ -238,7 +239,7 @@
                             <?php for ($i = 1; $i <= 5; $i++) : ?>
                                 <?php if ($st = get_field('start_time2_' . $i)) : ?>
                                     <li>
-                                        <p class="icon12"><?php echo $st; ?><?php if ($i == 1) echo '<br>START'; ?></p>
+                                        <p class="icon12"><?php echo $st; ?></p>
                                     </li>
                                 <?php endif; ?>
                             <?php endfor; ?>
@@ -304,8 +305,6 @@
                                 <p class="tx"><?php the_field('activity2_' . $i); ?></p>
                             </div>
 
-
-
                             <!--公式HPがあれば表示させる-->
                             <div class="flex_car">
                                 <?php if ($official_website = get_field('course_url2_' . $i)) : ?>
@@ -313,7 +312,7 @@
                                         <div class="square_green"></div>
                                         <div class="official_site">公式HP：
                                             <a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer">
-                                            <?php echo esc_html($official_website); ?></a>
+                                                <?php echo esc_html($official_website); ?></a>
                                         </div>
                                     </div>
                                 <?php endif; ?>
@@ -324,9 +323,8 @@
             </div>
         </section>
 
-
         <!-- 関連する内部リンク -->
-        <section class="connection_column">
+        <section class="recommend">
             <?php
             // ループの回数を定義
             $loop_count = 4;
@@ -377,20 +375,16 @@
                                     <?php if ($post_thumbnail) : ?>
                                         <img src="<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'full')); ?>" alt="<?php echo esc_attr($post_title); ?>" />
                                     <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                     <?php endif; ?>
                                 </div>
-                                <h3><?php echo esc_html($post_title); ?></h3>
+                                <h3><?php echo ($post_title); ?></h3>
                             </a>
                         </article>
             <?php
                         wp_reset_postdata();
                     }
                 }
-            }
-
-            if ($has_posts) {
-                echo '</div>';
             }
             // 力技で一旦動かしてる。今後関連部分は全体的に修正必要
             //投稿がない場合レイアウトが崩れるのでsectionごと非表示
@@ -400,7 +394,10 @@
                 echo '<style>section.recommend { display: none; }</style>';
             }
             ?>
+
         </section>
+
+
 
         <!-- 関連するコラム、お知らせ -->
         <section class="connection_column">
@@ -457,21 +454,21 @@
                                 <?php if ($post_thumbnail) : ?>
                                     <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                 <?php endif; ?>
                             </a>
                             <div class="news_contents">
                                 <a href="<?php echo esc_url($post_link); ?>">
                                     <!-- 日付と時間 -->
-                                    <p class="date fugaz-one-regular"><?php echo esc_html($post_date); ?></p>
+                                    <p class="date fugaz-one-regular"><?php echo ($post_date); ?></p>
                                     <!-- 記事タイトル -->
-                                    <h6 class="title"><?php echo esc_html($post_title); ?></h6>
+                                    <h6 class="title"><?php echo ($post_title); ?></h6>
                                 </a>
                                 <!-- ハッシュタグ -->
                                 <div class="hashtag_list">
                                     <?php if ($tags && !is_wp_error($tags)) : ?>
                                         <?php foreach ($tags as $tag) : ?>
-                                            <a href="<?php echo esc_url(get_term_link($tag)); ?>" class="hashtag">#<?php echo esc_html($tag->name); ?></a>
+                                            <span class="hashtag"><?php echo ($tag->name); ?></span>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </div>
@@ -488,7 +485,24 @@
                 echo '<style>section.connection_column { display: none; }</style>';
             }
             ?>
+
         </section>
+
+        <!-- 一覧に戻るボタン -->
+        <?php
+        // 現在の投稿のタームを取得
+        $terms = get_the_terms(get_the_ID(), 'course_type');
+        $term_slug = '';
+        if ($terms && !is_wp_error($terms)) {
+            // 最初のタームのスラッグを取得
+            $term_slug = $terms[0]->slug;
+        }
+        ?>
+
+        <button class="back_btn" onclick="window.location.href='<?php echo home_url('course_type/' . $term_slug . '/'); ?>'">
+            <span><i class="fa-solid fa-arrow-left"></i>一覧へ</span>
+        </button>
+
     </div>
 </main>
 

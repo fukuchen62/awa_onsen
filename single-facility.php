@@ -317,7 +317,7 @@
                         // 投稿のパーマリンクを取得
                         $post_link = get_permalink($post_id);
                         // 投稿の日付を取得
-                        $post_date = get_the_date('Y.m.d D H:i');
+                        $post_date = get_post_time('Y.m.d D H:i');
                         // アイキャッチ画像のURLを取得
                         $post_thumbnail = get_the_post_thumbnail_url($post_id, 'thumbnail');
                         // 投稿のタクソノミースラッグを取得

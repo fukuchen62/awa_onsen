@@ -216,7 +216,7 @@ p {
 .duck {
     display: block;
     position: fixed;
-    /* z-index: 100; */
+    z-index: -10;
     /* 他の要素より高くする */
     bottom: -50px;
     animation: duck 8s linear infinite;
@@ -396,11 +396,12 @@ h2 {
     display: flex;
     max-width: 625px;
     /* font-size: 1.5rem; */
-    padding: 14px 0;
+    padding: 14px;
     border-bottom-color: #dbf500;
     border-bottom-style: dashed;
     border-bottom-width: 4px;
     margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.01);
 }
 
 .news_card a {
@@ -421,7 +422,9 @@ h2 {
     border-radius: 16px;
     /* margin-right: 30px; */
 }
-
+.news_card:hover {
+	filter: brightness(0.9);
+}
 .news_contents {
     width: 60%;
 }
