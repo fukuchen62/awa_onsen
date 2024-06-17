@@ -11,7 +11,7 @@
     margin-bottom: 10px;
 }
 
-.container > * {
+.container>* {
     margin-bottom: 30px;
 }
 
@@ -50,16 +50,19 @@
     top: 0;
     right: 15px;
 }
+
 /* 店舗情報 */
 
 dt,
 dd {
     padding: 8px;
 }
+
 .shop_information dd:not(:first-child) {
     padding: 8px 16px;
     text-align: left;
 }
+
 dl {
     background-color: white;
     border-bottom: 2px dotted #f5a200;
@@ -79,20 +82,11 @@ iframe {
 h5 {
     margin-top: 30px;
 }
+
 .text {
     text-align: start;
 }
-/* 戻るボタン */
-.back_btn {
-    display: none;
-}
 
-/* タブレット */
-@media (width>=757px) {
-    .back_btn {
-        display: inline;
-    }
-}
 
 /* 下層ページに追加 */
 .bubble_background {
@@ -100,6 +94,7 @@ h5 {
 }
 
 @media (width>=757px) {
+
     /* 背景を濃くする */
     .bubble_background {
         background-color: transparent;
