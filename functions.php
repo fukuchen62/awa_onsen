@@ -348,15 +348,16 @@ add_filter(
     'fs_wpcf7_autop' // 呼び出す関数名
 );
 
-//コメントのHTMLタグを禁止する
+//コメントの表示する前の処理
 function html_to_text($comment_content)
 {
-    if (get_comment_type() !== 'comment') {
-        $comment_content = htmlspecialchars($comment_content, ENT_QUOTES);
+    if (get_comment_type() !== '') {
+        // $comment_content = htmlspecialchars($comment_content, ENT_QUOTES);
+        $comment_content = strip_tags($comment_content);
     }
     return $comment_content;
 }
-add_filter('comment_text', 'html_to_text', 9);
+add_filter('comment_text', 'html_to_text');
 
 //コメントを入力する下の名前、メール、サイトのサイトを消す
 function my_comment_form_remove($arg)
@@ -366,10 +367,13 @@ function my_comment_form_remove($arg)
 }
 add_filter('comment_form_default_fields', 'my_comment_form_remove');
 
-// テーマの functions.php に以下のコードを追加
-function escape_comment_content($commentdata) {
+// テーマの functions.php に以下のコードを追加コメント入れる前に処理
+function escape_comment_content($commentdata)
+{
     // コメント内容をエスケープ
-    $commentdata['comment_content'] = htmlspecialchars($commentdata['comment_content'], ENT_QUOTES, 'UTF-8');
+    // $commentdata['comment_content'] = htmlspecialchars($commentdata['comment_content'], ENT_QUOTES, 'UTF-8');
+    // return $commentdata;
+    $commentdata['comment_content'] = strip_tags($commentdata['comment_content']);
     return $commentdata;
 }
 add_filter('preprocess_comment', 'escape_comment_content');
