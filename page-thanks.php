@@ -16,9 +16,6 @@
                 <p>送信が完了しました。<br>確認次第返信いたしますので、しばらくお待ちください。</p>
             </section>
         </div>
-        <button class="back_btn" onclick="history.back">
-            <span><i class="fa-solid fa-arrow-left"></i>back</span>
-        </button>
     </div>
 
 </main>
