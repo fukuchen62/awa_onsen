@@ -13,7 +13,15 @@
 
         <div class="box">
             <!-- 2 -->
-            <img class="sauna_photo margin_right order_2" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna1.png" alt="サ活写真">
+            <!-- 元のコード -->
+            <!-- <img class="sauna_photo margin_right order_2" src="<?php echo esc_url($pic_url); ?>" alt="サ活写真"> -->
+
+            <?php if ($pic = get_field('sauna_pic1')) : ?>
+                <?php $pic_url = $pic['sizes']['large']; ?>
+                <?php if ($pic_url) : ?>
+                    <img class="sauna_photo margin_right order_2" src="<?php echo esc_url($pic_url); ?>" alt="サ活写真">
+                <?php endif; ?>
+            <?php endif; ?>
 
             <!-- 1 -->
             <div class="sauna_box order_1">
@@ -24,7 +32,14 @@
             </div>
 
             <!-- 3 -->
-            <img class="sauna_photo margin_left order_3" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna2.png" alt="整い方写真">
+            <!-- 元のコード -->
+            <!-- <img class="sauna_photo margin_left order_3" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna2.png" alt="整い方写真"> -->
+            <?php if ($pic = get_field('sauna_pic2')) : ?>
+                <?php $pic_url = $pic['sizes']['large']; ?>
+                <?php if ($pic_url) : ?>
+                    <img class="sauna_photo margin_right order_3" src="<?php echo esc_url($pic_url); ?>" alt="サ活写真">
+                <?php endif; ?>
+            <?php endif; ?>
 
             <!-- 4 -->
             <div class="sauna_box order_4">
@@ -35,7 +50,14 @@
             </div>
 
             <!-- 6 -->
-            <img class="sauna_photo margin_right order_6" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna3.png" alt="持ち物・注意事項写真">
+            <!-- 元のコード -->
+            <!-- <img class="sauna_photo margin_left order_6" src="<?php echo get_template_directory_uri() ?>/assets/images/sauna3.png" alt="整い方写真"> -->
+            <?php if ($pic = get_field('sauna_pic3')) : ?>
+                <?php $pic_url = $pic['sizes']['large']; ?>
+                <?php if ($pic_url) : ?>
+                    <img class="sauna_photo margin_right order_6" src="<?php echo esc_url($pic_url); ?>" alt="サ活写真">
+                <?php endif; ?>
+            <?php endif; ?>
             <!-- 5 -->
             <div class="sauna_box order_5">
                 <h3 class="sauna_ttl">持ち物や注意事項</h3>
