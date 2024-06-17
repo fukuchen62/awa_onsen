@@ -78,9 +78,10 @@
                     // 投稿を取得
                     $args = array(
                         'post_type' => 'facility',
-                        'posts_per_page' => 100,
+                        'posts_per_page' => -1,
                         'post__in' => $post_ids,
-                        'orderby' => 'post__in'
+                        'orderby' => 'date',
+                        'order' => 'DESC'
                     );
                     $favorites_query = new WP_Query($args);
                     $post_count = $favorites_query->found_posts;
