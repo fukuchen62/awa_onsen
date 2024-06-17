@@ -218,47 +218,66 @@
                     <?php the_field('fax'); ?>
                 </dd>
                 <dt>SNS</dt>
-                <!-- 複数ある場合、カンマ区切りで個別に表示 -->
+                <!-- SNSは複数ある場合、カンマ区切りで個別に表示 -->
                 <dd class="url">
                     <?php
                     $sns_urls = get_field('sns_url');
                     if ($sns_urls) {
                         // URLをカンマで分割して配列に変換
                         $urls = explode(',', $sns_urls);
+                        $valid_urls = [];
 
-                        // 各URLをリンクとして表示
+                        // 各URLを検証して、URLのみを配列に追加
                         foreach ($urls as $url) {
                             $trimmed_url = trim($url); // URLの前後の空白を除去
-                            if (!empty($trimmed_url)) {
-                                echo '<a href="' . esc_url($trimmed_url) . '" target="_blank">' . esc_html($trimmed_url) . '</a><br>';
+                            if (!empty($trimmed_url) && filter_var($trimmed_url, FILTER_VALIDATE_URL)) {
+                                $valid_urls[] = $trimmed_url;
                             }
                         }
+                        // 有効なURLがある場合はリンクとして表示、ない場合は「無し」を表示
+                        if (!empty($valid_urls)) {
+                            foreach ($valid_urls as $valid_url) {
+                                echo '<a href="' . esc_url($valid_url) . '" target="_blank">' . esc_html($valid_url) . '</a><br>';
+                            }
+                        } else {
+                            echo '<p>無し</p>';
+                        }
+                    } else {
+                        echo '<p>無し</p>';
                     }
                     ?>
                 </dd>
                 <dt>公式ホームページ</dt>
+                <!-- 公式HPは複数ある場合、カンマ区切りで個別に表示 -->
                 <dd class="url">
                     <?php
                     $sns_urls = get_field('official_url');
                     if ($sns_urls) {
                         // URLをカンマで分割して配列に変換
                         $urls = explode(',', $sns_urls);
+                        $valid_urls = [];
 
-                        // 各URLをリンクとして表示
+                        // 各URLを検証して、URLのみを配列に追加
                         foreach ($urls as $url) {
                             $trimmed_url = trim($url); // URLの前後の空白を除去
-                            if (!empty($trimmed_url)) {
-                                echo '<a href="' . esc_url($trimmed_url) . '" target="_blank">' . esc_html($trimmed_url) . '</a><br>';
+                            if (!empty($trimmed_url) && filter_var($trimmed_url, FILTER_VALIDATE_URL)) {
+                                $valid_urls[] = $trimmed_url;
                             }
                         }
+
+                        // 有効なURLがある場合はリンクとして表示、ない場合は「無し」を表示
+                        if (!empty($valid_urls)) {
+                            foreach ($valid_urls as $valid_url) {
+                                echo '<a href="' . esc_url($valid_url) . '" target="_blank">' . esc_html($valid_url) . '</a><br>';
+                            }
+                        } else {
+                            echo '<p>無し</p>';
+                        }
+                    } else {
+                        echo '<p>無し</p>';
                     }
                     ?>
                 </dd>
-                <!-- <dd class="url">
-                    <a href="<?php the_field('official_url'); ?>" target="_blank">
-                        <?php echo get_field('official_url') ?>
-                    </a>
-                </dd> -->
                 <dt>駐車場</dt>
                 <dd>
                     <?php the_field('parking_description'); ?>
