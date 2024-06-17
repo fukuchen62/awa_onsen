@@ -128,6 +128,7 @@ p {
 }
 
 .back {
+    border: 2px solid red;
     -webkit-text-stroke: 0.1px #DBF500;
     color: #574d4d;
     margin: 20px;
