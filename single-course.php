@@ -69,7 +69,7 @@
                             <?php for ($i = 1; $i <= 5; $i++) : ?>
                                 <?php if ($st = get_field('start_time1_' . $i)) : ?>
                                     <li>
-                                        <p class="icon12"><?php echo $st; ?><?php if ($i == 1) echo '<br>1st'; ?></p>
+                                        <p class="icon12"><?php echo $st; ?></p>
                                     </li>
                                 <?php endif; ?>
                             <?php endfor; ?>
@@ -203,8 +203,9 @@
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
                                     <?php endif; ?>
                                 </div>
+                                <h3><?php echo $stay_name; ?></h3>
                             </a>
-                            <h3><?php echo $stay_name; ?></h3>
+
                             <!-- 紹介文 -->
                             <p class="tx">
                                 <?php echo $short_description; ?>
@@ -238,7 +239,7 @@
                             <?php for ($i = 1; $i <= 5; $i++) : ?>
                                 <?php if ($st = get_field('start_time2_' . $i)) : ?>
                                     <li>
-                                        <p class="icon12"><?php echo $st; ?><?php if ($i == 1) echo '<br>START'; ?></p>
+                                        <p class="icon12"><?php echo $st; ?></p>
                                     </li>
                                 <?php endif; ?>
                             <?php endfor; ?>
@@ -313,7 +314,7 @@
                                         <div class="square_green"></div>
                                         <div class="official_site">公式HP：
                                             <a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer">
-                                            <?php echo esc_html($official_website); ?></a>
+                                                <?php echo esc_html($official_website); ?></a>
                                         </div>
                                     </div>
                                 <?php endif; ?>
@@ -489,6 +490,22 @@
             }
             ?>
         </section>
+
+        <!-- 一覧に戻るボタン -->
+        <?php
+        // 現在の投稿のタームを取得
+        $terms = get_the_terms(get_the_ID(), 'course_type');
+        $term_slug = '';
+        if ($terms && !is_wp_error($terms)) {
+            // 最初のタームのスラッグを取得
+            $term_slug = $terms[0]->slug;
+        }
+        ?>
+
+        <button class="back_btn" onclick="window.location.href='<?php echo home_url('course_type/' . $term_slug . '/'); ?>'">
+            <span><i class="fa-solid fa-arrow-left"></i>一覧へ</span>
+        </button>
+
     </div>
 </main>
 
