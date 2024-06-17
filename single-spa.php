@@ -40,11 +40,8 @@
             <div class="favorite-button">
                 <?php the_favorites_button(); ?>
             </div>
-
             <!-- </label> -->
         </div>
-
-
         <!-- タグ -->
         <div class="hashtag_list">
             <?php
@@ -74,7 +71,6 @@
             }
             ?>
         </div>
-
         <!-- 温泉紹介 -->
         <section class="spa_detail">
             <h4 class="lined-title">温泉の紹介</h4>
@@ -256,7 +252,6 @@
                         // URLをカンマで分割して配列に変換
                         $urls = explode(',', $sns_urls);
                         $valid_urls = [];
-
                         // 各URLを検証して、URLのみを配列に追加
                         foreach ($urls as $url) {
                             $trimmed_url = trim($url); // URLの前後の空白を除去
@@ -264,7 +259,6 @@
                                 $valid_urls[] = $trimmed_url;
                             }
                         }
-
                         // 有効なURLがある場合はリンクとして表示、ない場合は「無し」を表示
                         if (!empty($valid_urls)) {
                             foreach ($valid_urls as $valid_url) {
