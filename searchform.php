@@ -35,9 +35,6 @@ if (isset($_GET['s']) && $_GET['s'] != "") {
             <li class="<?php echo $tab == '2'  ? 'active' : ''; ?>">周辺施設</li>
             <li class="<?php echo $tab == '3'  ? 'active' : ''; ?>">モデルコース</li>
 
-            <!-- <li class='active'>周辺施設</li>
-            <li>周辺施設</li>
-            <li>モデルコース</li> -->
         </ul>
 
         <!-- 温泉 -->
