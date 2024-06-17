@@ -95,7 +95,7 @@ p {
     border-radius: 25px;
     text-align: center;
     width: 55%;
-    /* padding: 16px 0; */
+    padding: 16px 0;
     margin: 20px auto;
     color: #fff;
 }
@@ -121,14 +121,15 @@ p {
 #back_button {
     width: 100%;
     color: #538FCB;
-    padding: 16px 0;
+    /* padding: 16px 0; */
     color: #FFF;
     background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 22px;
+    border-radius: 25px;
 }
 
 .back {
     -webkit-text-stroke: 0.1px #DBF500;
+    color: #574d4d;
     margin: 20px;
 }
 
