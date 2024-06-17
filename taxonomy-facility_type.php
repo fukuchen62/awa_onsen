@@ -61,6 +61,7 @@
                             'terms' => $area_slug, // 地域のタームスラッグ
                         ),
                     ),
+                    'post_status' => 'publish', // 公開された投稿のみ
                     'posts_per_page' => -1 // 全ての投稿を取得
                 );
                 $query = new WP_Query($args);
