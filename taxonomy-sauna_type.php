@@ -19,6 +19,7 @@
             $args = array(
                 'post_type' => 'spa', // カスタム投稿タイプの指定
                 'area' => $category, // カテゴリーを指定
+                'post_status' => 'publish', // 公開された投稿のみ
                 'posts_per_page' => -1, // 取得する投稿数 (-1で全ての投稿を取得)
                 'tax_query' => array(
                     'relation' => 'AND', // タクソノミー条件をANDで組み合わせる
@@ -77,6 +78,7 @@
             $args = array(
                 'post_type' => 'spa', // カスタム投稿タイプの指定
                 'area' => $category, // カテゴリーを指定
+                'post_status' => 'publish', // 公開された投稿のみ
                 'posts_per_page' => -1, // 取得する投稿数 (-1で全ての投稿を取得)
                 'tax_query' => array(
                     'relation' => 'AND', // タクソノミー条件をANDで組み合わせる
@@ -133,6 +135,7 @@
             $args = array(
                 'post_type' => 'spa', // カスタム投稿タイプの指定
                 'area' => $category, // カテゴリーを指定
+                'post_status' => 'publish', // 公開された投稿のみ
                 'posts_per_page' => -1, // 取得する投稿数 (-1で全ての投稿を取得)
                 'tax_query' => array(
                     'relation' => 'AND', // タクソノミー条件をANDで組み合わせる

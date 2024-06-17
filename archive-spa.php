@@ -13,6 +13,7 @@
         foreach ($categories as $category) :
             $args = array(
                 'post_type' => 'spa', // カスタム投稿タイプの指定
+                'post_status' => 'publish', // 公開された投稿のみ
                 'area' => $category, // カテゴリーを指定
                 'posts_per_page' => -1 // 取得する投稿数 (-1で全ての投稿を取得)
             );
@@ -58,6 +59,7 @@
         foreach ($categories as $category) :
             $args = array(
                 'post_type' => 'spa', // カスタム投稿タイプの指定
+                'post_status' => 'publish',    // 公開された投稿のみ
                 'area' => $category, // カテゴリーを指定
                 'posts_per_page' => -1 // 取得する投稿数 (-1で全ての投稿を取得)
             );
@@ -100,6 +102,7 @@
         foreach ($categories as $category) :
             $args = array(
                 'post_type' => 'spa', // カスタム投稿タイプの指定
+                'post_status' => 'publish',    // 公開された投稿のみ
                 'area' => $category, // カテゴリーを指定
                 'posts_per_page' => -1 // 取得する投稿数 (-1で全ての投稿を取得)
             );
