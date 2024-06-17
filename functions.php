@@ -365,3 +365,11 @@ function my_comment_form_remove($arg)
     return $arg;
 }
 add_filter('comment_form_default_fields', 'my_comment_form_remove');
+
+// テーマの functions.php に以下のコードを追加
+function escape_comment_content($commentdata) {
+    // コメント内容をエスケープ
+    $commentdata['comment_content'] = htmlspecialchars($commentdata['comment_content'], ENT_QUOTES, 'UTF-8');
+    return $commentdata;
+}
+add_filter('preprocess_comment', 'escape_comment_content');
