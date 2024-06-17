@@ -312,6 +312,27 @@ function get_user_favorites_post_ids()
     return [];
 }
 
+function bistrocalme_document_title_parts($title)
+{
+    if (is_search()) {
+        $title['title'] = '検索ページ';
+        // 必要に応じてキャッチフレーズも設定できます
+        $title['tagline'] = '絞り込み検索ページです';
+    }
+    return $title;
+}
+add_filter('document_title_parts', 'bistrocalme_document_title_parts');
+
+
+add_filter('bcn_breadcrumb_title', 'my_custom_breadcrumb_navxt_title', 10, 3);
+function my_custom_breadcrumb_navxt_title($title, $type, $id)
+{
+    if (is_search() && $type[0] === 'search') {
+        $title =  '温泉,周辺施設,モデルコース';
+    }
+    return $title;
+}
+
 
 /**
  * Contact form 7のときには、整形機能をOffにする
