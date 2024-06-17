@@ -113,6 +113,11 @@ p {
 
 }
 
+.wpcf7-spinner {
+    /* 送信ボタンの下余白の原因消去 */
+    display: none;
+}
+
 #back_button {
     width: 100%;
     color: #538FCB;
