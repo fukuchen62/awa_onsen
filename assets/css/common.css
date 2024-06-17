@@ -219,7 +219,7 @@ p {
 .duck {
     display: block;
     position: fixed;
-    z-index: 100;
+    /* z-index: 100; */
     /* 他の要素より高くする */
     bottom: -50px;
     animation: duck 8s linear infinite;
@@ -263,7 +263,7 @@ p {
 }
 
 /* 吹き出し */
-.hukidashi {
+/* .hukidashi {
     border: thick double #555555;
     border-radius: 50%;
     padding: 10px;
@@ -274,7 +274,7 @@ p {
     color: red;
     width: 200px;
     text-align: center;
-}
+} */
 
 
 
