@@ -261,3 +261,34 @@ $(document).ready(function () {
 //     io.POLL_INTERVAL = 30000;
 //     io.observe($section[0]);
 // });
+
+
+// エスケープ処理
+// function escapeHTML(str) {
+//     return str.replace(/[&<>"']/g, function(match) {
+//         const escape = {
+//             '&': '&amp;',
+//             '<': '&lt;',
+//             '>': '&gt;',
+//             '"': '&quot;',
+//             "'": '&#039;'
+//         };
+//         return escape[match];
+//     });
+// }
+
+// $(document).ready(function() {
+//     $('#contactForm').on('input'&& "textarea", function(event) {
+//         event.preventDefault(); // デフォルトの送信を防ぐ
+
+//         // テキストエリアの内容をエスケープ
+//         let userInput = $('#user_input').val();
+//         userInput = escapeHTML(userInput);
+
+//         // エスケープされた内容をテキストエリアにセット
+//         $('#user_input').val(userInput);
+
+//         // フォームを送信
+//         this.submit();
+//     });
+// });

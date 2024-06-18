@@ -17,8 +17,6 @@
         <div class="content_form">
             <!-- 投稿した固定ページの中身を表示 -->
             <?php the_content(); ?>
-
-
         </div>
 
     </div>
