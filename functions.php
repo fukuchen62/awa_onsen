@@ -367,7 +367,7 @@ function my_comment_form_remove($arg)
 }
 add_filter('comment_form_default_fields', 'my_comment_form_remove');
 
-// テーマの functions.php に以下のコードを追加コメント入れる前に処理
+// テーマの functions.php に以下のコードを追加コメント入れる前に処理kfsjfk
 function escape_comment_content($commentdata)
 {
     // コメント内容をエスケープ

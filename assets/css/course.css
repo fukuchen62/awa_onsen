@@ -1,8 +1,13 @@
 @charset "UTF-8";
 
-/* * {
-    border: 1px solid red;
-} */
+* {
+    /* border: 1px solid red; */
+}
+
+.mt48 {
+    margin-top: 48px;
+}
+
 
 /* -----------------------
 base
@@ -20,413 +25,205 @@ iframe {
     justify-content: flex-start;
 }
 
-/* Bold */
-h3 {
-    font-weight: 900;
-}
-
 h4 {
     font-weight: 900;
-    vertical-align: middle;
 }
 
-/* Summary */
-.course_day_summary {
-    font-size: 1.125rem;
-    position: relative;
-    margin-top: 44px;
-    margin-bottom: 31px;
+.summary h3 {
+    margin-bottom: 16px;
 }
 
-.course_day_summary::before,
-.course_day_summary::after {
-    content: '';
-    background-color: black;
-    width: 100%;
-    height: 2px;
-    position: absolute;
-}
-
-.course_day_summary::before {
-    top: 12px;
-    right: 110%;
-}
-
-.course_day_summary::after {
-    top: 12px;
-    left: 110%;
-}
-
-/* DAY1 */
-.flex {
+.day {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 32px;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
-.course_day {
-    font-size: 1.125rem;
+
+/* カード型 */
+.spot_card {
+    /* background-color: pink; */
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid blue; */
+}
+
+.contents {
+    width: 90%;
+
+    /* sp_timeの基準 */
     position: relative;
-    margin-top: 65px;
-    margin-bottom: 32px;
+    /* border: 1px solid red; */
 }
 
-.course_day::before,
-.course_day::after {
-    content: '';
-    background-color: black;
-    width: 200%;
-    height: 2px;
-    position: absolute;
-    top: 12px;
-}
-
-.course_day::before {
-    right: 120%;
-}
-
-.course_day::after {
-    left: 120%;
-}
-
-.block img {
-    aspect-ratio: 16/9;
-}
-
-.position {
-    position: relative;
-}
-
-.clock {
-    font-weight: 900;
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    z-index: 333;
-    border-radius: 3px;
-    background-color: white;
-    height: 40px;
-    width: 65px;
+.sp_time {
+    background-color: #fff;
     text-align: center;
+    width: 100px;
+    height: 60px;
+    border-radius: 10%;
+    line-height: 60px;
+    position: absolute;
+    top: 0%;
+    right: 0%;
 }
 
-.block>* {
-    padding-bottom: 10px;
-}
-
-.flex_left {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.flex_left h4 {
-    display: flex;
-    padding-left: 16px;
-}
-
-/* -----------------------
-DAY1/DAY2
--------------------------- */
 .time {
-    color: #fff;
-    background-color: #6BDE4E;
-    width: 85px;
-    height: 69px;
-    border-radius: 5px;
+    width: 100px;
     text-align: center;
-    line-height: 69px;
+    padding-top: 20px;
+    /* padding: 10px; */
+
+    /* before疑似要素の基準 */
+    position: relative;
+    z-index: 10;
+    /* border: 1px solid yellow; */
 }
 
-.square_green {
-    /* display: inline; */
+.time::before {
+    content: "";
+    width: 100px;
+    height: 60px;
+    border-radius: 10%;
+    background-color: rgb(215, 215, 215);
+    /* border: 5px solid gray; */
+
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: -10;
+}
+
+.time::after {
+    content: "";
+    height: 110%;
+    width: 10px;
+    background-color: rgb(215, 215, 215);
+    display: block;
+    margin: 0 auto;
+}
+
+.spot_list .spot_card:last-child .time::after {
+    height: 90%;
+}
+
+.sp_none {
+    display: none;
+}
+
+
+.spot_card dl dt::before,
+.spot_card p:nth-of-type(2)::before {
+    content: '';
     background-color: #6BDE4E;
     width: 10px;
     height: 10px;
-    /* margin-left: 15px; */
-    margin-right: 3px;
-    border-radius: 3px;
+    display: inline-block;
+    margin-right: 8px;
 }
 
-.flex_car {
+/* .spot_card dl dd {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.contents>* {
+    margin: 4px;
+}
+
+.spot_card img {
+    aspect-ratio: 16/9;
+    margin: 0 auto;
+}
+
+.ttl_list {
+    display: flex;
+}
+
+.ttl_list>.duration {
+    background-color: #6BDE4E;
+    height: 64px;
+    aspect-ratio: 1/1;
+    text-align: center;
+    line-height: 64px;
+    color: white;
+    margin-right: 8px;
+    border-radius: 10px;
+}
+
+.ttl_list h4 {
+    margin-top: 5px;
+}
+
+.ttl_list h4>span {
+    display: block;
+    font-weight: normal;
+}
+
+.icon {
+    text-align: center;
+    margin-top: 32px;
+
     display: flex;
     align-items: center;
-    margin: 0;
+    justify-content: center;
 }
 
-/* カード */
-.card.orange span {
-    background-color: #F5A200;
-}
-
-.card.orange h3 {
-    background-color: #F5A200;
-}
-
-.card.pink span {
-    background-color: #EB97A8;
-}
-
-.card.pink h3 {
-    background-color: #EB97A8;
-}
-
-/* 車移動時間アイコン */
-.car_green {
+.icon::before {
+    content: "";
+    display: inline-block;
     background-image: url(../images/car.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    margin: 0;
-    z-index: 1;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
 }
 
-.greencar {
-    margin: 10%;
-}
-
-.car_10 {
-    margin-left: 15px;
-}
-
-.margintop {
-    margin-top: 10px;
-}
-
-/* 黄緑の四角 */
-.yellowgreen_square {
-    width: 90%;
-    height: auto;
-    background-color: #A7E099;
-    border-radius: 20px;
+/* 宿泊 */
+.hotel p {
+    max-width: 475px;
     margin: 0 auto;
-    position: relative;
 }
 
-.yellowgreen_square h4 {
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    margin-left: 0;
-    padding-top: 35px;
-}
-
-.yellowgreen_square::before,
-.yellowgreen_square::after {
-    content: '';
-    background-color: white;
-    width: 10%;
-    height: 3px;
-    position: absolute;
-    top: 45px;
-}
-
-.yellowgreen_square::before {
-    right: 10px;
-}
-
-.yellowgreen_square::after {
-    left: 10px;
-}
-
-.yellowgreen_square p {
-    margin-left: 0;
-    text-align: center;
-    padding: 0 28px;
-    padding-bottom: 34px;
-}
-
-/* メニューの文字色 */
-.navlist_item:nth-child(4) {
-    color: #DBF500;
-}
-
-/* -----------------------
-レスポンシブ tablet
--------------------------- */
 @media (width>=757px) {
-    .clock {
+    .duration {
+        margin-right: 16px;
+    }
+
+    .sp_none {
+        display: block;
+    }
+
+    .contents {
+        width: 60%;
+    }
+
+    .sp_time {
         display: none;
     }
-
-    .photo::before {
-        display: none;
-    }
-
-    /* タイムスケジュール */
-    .flow12>li {
-        list-style-type: none;
-        position: relative;
-        padding-bottom: 50px;
-        display: flex;
-        align-items: flex-start;
-        width: 130px;
-    }
-
-    /* それぞれの線の長さ */
-    .flow12>li:nth-child(1) {
-        padding-bottom: 520%;
-    }
-
-    .flow12>li:nth-child(2) {
-        padding-bottom: 550%;
-    }
-
-    .flow12>li:nth-child(3) {
-        padding-bottom: 470%;
-    }
-
-    .flow12>li:nth-of-type(even)::after {
-        content: "";
-        position: absolute;
-        left: 40%;
-        top: 0;
-        width: 0;
-        height: 100%;
-        border-left: 5px dashed #d4d4d4;
-    }
-
-    .flow12>li:nth-of-type(odd)::before {
-        content: "";
-        position: absolute;
-        left: 50px;
-        top: -40px;
-        width: 20%;
-        height: 40px;
-    }
-
-    .flow12>li:nth-of-type(odd)::after {
-        content: "";
-        position: absolute;
-        left: 40%;
-        top: 50px;
-        width: 20%;
-        height: calc(100% - 50px);
-        border-left: 5px dashed #d4d4d4;
-    }
-
-    .flow12>li:first-of-type::before,
-    .flow12>li:last-of-type::after {
-        content: unset;
-    }
-
-    .flow12>li .icon12 {
-        display: inline-block;
-        margin: 0;
-        width: 200px;
-        height: auto;
-        border-radius: 20px;
-        margin-right: 20px;
-        text-align: center;
-        font-weight: bold;
-        vertical-align: middle;
-        font-size: 1rem;
-        background: #fff;
-        border: 5px solid #D9D9D9;
-        position: relative;
-        z-index: 1;
-        padding: 10px;
-    }
-
-    .layer {
-        display: flex;
-        justify-content: center
-    }
-
-    .model_course1 {
-        width: 450px;
-    }
-
-    .photo {
-        width: 100%;
-    }
-
-    .yellowgreen_square::before,
-    .yellowgreen_square::after {
-        width: 20%;
-    }
-
-    /* フォントサイズ */
-    .course_day,
-    .course_day_summary,
-    h4 {
-        font-size: 1.5rem;
-    }
-
-    .container p {
-        font-size: 1.25rem;
-    }
 }
 
-/* -----------------------
-レスポンシブ pc
--------------------------- */
-@media (width>=1201px) {
-
-    /* フォントサイズ */
-    .course_day_summary {
-        font-size: 1.5rem;
-    }
-}
-
-/* -----------------------
-レスポンシブ フォントサイズのみ
--------------------------- */
-/* フォントサイズのみ */
-@media (width>=431px) {
-    /* =================================
-ここは各自のCSSファイルで設定（サンプル）
-================================= */
-}
-
-.sp_nav .navlist.isactive {
-    right: 0;
-}
-
-@media (width >=1201px) {
-    .navlist.isactive {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0) translateY(50%);
-        transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
-    }
-}
-
-/* 下層ページに追加 */
-.bubble_background {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-
-@media(width>=757px) {
-
-    /* 背景を濃くする */
-    .bubble_background {
-        background-color: transparent;
-    }
-
-    /* ボーダーの色は下層ページよって可変（トップページを参照）、ボーダーの太さは8→10pxに。 */
-    .container {
-        border: 10px solid #EB97A8;
-    }
-}
-
-
-
-.official_site a{
+/* フォントサイズ */
+.lined-title {
+    font-size: 1.125rem;
     font-weight: bold;
 }
 
-.official_site a::after{
-    content: url(../images/external_link_icon.svg);
-    display: inline-block;
+.ttl_list h4 {
+    font-size: 1.125rem;
 }
 
-.official_site a:hover{
-    border-bottom: 2px solid ;
+.ttl_list h4>span {
+    font-size: 1rem;
+}
+
+@media (width>=431px) {
+    .lined-title {
+        font-size: 1.5rem;
+    }
+
+    .ttl_list h4 {
+        font-size: 1.5rem;
+    }
 }
