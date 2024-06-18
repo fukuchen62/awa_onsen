@@ -81,7 +81,8 @@
                         'posts_per_page' => -1,
                         'post__in' => $post_ids,
                         'orderby' => 'date',
-                        'order' => 'DESC'
+                        'order' => 'DESC',
+                        'post_status' => 'publish' // 公開された投稿のみを表示
                     );
                     $favorites_query = new WP_Query($args);
                     $post_count = $favorites_query->found_posts;

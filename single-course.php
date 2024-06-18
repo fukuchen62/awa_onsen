@@ -1,3 +1,4 @@
+<!-- header.phpの読み込み -->
 <?php get_header(); ?>
 
 <main class="pc_inner">
@@ -8,7 +9,7 @@
             <h2 class="under_line"><?php the_title(); ?></h2>
         </div>
 
-        <!-- パンくず -->
+        <!-- パンくずリスト -->
         <?php get_template_part('template-parts/breadcrumb'); ?>
 
         <!-- マップ -->
@@ -32,141 +33,121 @@
             $post_type = get_post_type($post_id);
 
             // 投稿タイプに関連するタクソノミーを取得
-            $taxonomies = get_object_taxonomies($post_type);
+            $taxonomies = get_object_taxonomies($post_type); ?>
 
-            if (!empty($taxonomies)) {
-                foreach ($taxonomies as $taxonomy) {
+            <?php if (!empty($taxonomies)) : ?>
+                <?php foreach ($taxonomies as $taxonomy) : ?>
+                    <?php
                     // タクソノミーに関連するタームを取得
                     $terms = get_the_terms($post_id, $taxonomy);
-                    if ($terms && !is_wp_error($terms)) {
-                        foreach ($terms as $term) {
-            ?>
-                            <span class="hashtag"><?php echo esc_html($term->name); ?></span>
-            <?php }
-                    }
-                }
-            }
-            ?>
+
+                    if ($terms && !is_wp_error($terms)) :
+                    ?>
+                        <?php foreach ($terms as $term) : ?>
+                            <span class="hashtag"><?php echo ($term->name); ?></span>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
-        <!-- コースの説明 -->
-        <div class="flex">
-            <h3 class="course_day_summary">Summary</h3>
+
+        <!-- 概要 -->
+        <div class="summary mt48">
+            <h3 class="lined-title">Summary</h3>
+            <p>
+                <?php the_field('course_description'); ?>
+            </p>
         </div>
-        <p><?php the_field('course_description'); ?></p>
 
+        <!-- 1日目 -->
+        <h3 class="lined-title mt48">DAY1</h3>
+        <div class="day">
 
-        <!-- 1日目・日帰り -->
-        <section class="day1">
-            <div class="flex">
-                <h3 class="course_day">DAY1</h3>
-            </div>
-
-            <div class="layer">
-                <div class="time_schedule tb_only pc_only">
-                    <div class="flow_design12">
-                        <ul class="flow12">
-                            <!-- 開始時刻1～5 -->
-                            <?php for ($i = 1; $i <= 5; $i++) : ?>
-                                <?php if ($st = get_field('start_time1_' . $i)) : ?>
-                                    <li>
-                                        <p class="icon12"><?php echo $st; ?></p>
-                                    </li>
-                                <?php endif; ?>
-                            <?php endfor; ?>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 施設ごとの呼び出し -->
-                <div class="model_course1">
-                    <?php for ($i = 1; $i <= 5; $i++) : ?>
-                        <?php if ($spot_slug = get_field('spot_1_' . $i)) : ?>
-                            <?php
-                            $type = substr($spot_slug, 0, 1);
-                            $spot_id = $type == 's' ? get_page_by_path($spot_slug, OBJECT, 'spa')->ID : get_page_by_path($spot_slug, OBJECT, 'facility')->ID;
-
-                            if ($spot_id) :
-                                $spot_info = get_post($spot_id);
-                                $url = get_the_permalink($spot_id);
-
-                                if ($type == 's') :
-                                    $spot_name = get_post_meta($spot_id, 'spa_name', true);
-                                    $spot_description = get_post_meta($spot_id, 'description', true);
-                                    $spot_pic = get_post_meta($spot_id, 'main_pic', true);
-                                else :
-                                    $spot_name = get_post_meta($spot_id, 'facility_name', true);
-                                    $spot_description = get_post_meta($spot_id, 'facility_description', true);
-                                    $spot_pic = get_post_meta($spot_id, 'facility_pic1', true);
-                                endif;
-                            endif;
-                            ?>
-
-                            <!-- 移動時間 -->
-                            <div class="flex_car">
-                                <?php if ($i == 1) : ?>
-                                    <?php if ($move_time = get_field('move_time1_' . $i)) : ?>
-                                        <div class="square_green"></div><?php echo esc_html($move_time); ?>
-                                    <?php endif; ?>
-                                <?php else : ?>
-                                    <?php if ($move_time_other = get_field('move_time1_' . $i)) : ?>
-                                        <div class="flex greencar">
-                                            <div class="car_green"></div>
-                                            <p class="car_10">車で<?php echo esc_html($move_time_other); ?></p>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php endif; ?>
-                            </div>
-
-                            <!-- 施設ごとの表示 -->
-                            <div class="block">
-                                <!-- 施設の写真を表示させてリンクをつなげる -->
-                                <?php if ($img = wp_get_attachment_image_src($spot_pic, 'large')[0]) : ?>
-                                    <a href="<?php echo esc_url($url); ?>" target="_blank">
-                                        <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($spot_name); ?>">
-                                    </a>
-                                <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
-                                <?php endif; ?>
-
-                                <div class="square_white"></div>
-                                <!-- 滞在時間1～5 -->
-                                <div class="flex_left">
-                                    <?php if ($stay_time = get_field('stay_time1_' . $i)) : ?>
-                                        <p class="time"><?php echo esc_html($stay_time); ?></p>
-                                    <?php endif; ?>
-
-                                    <div>
-                                        <h4><a href="<?php echo esc_url($url); ?>" target="_blank"><?php echo $spot_name; ?></a></h4>
-                                    </div>
+            <!-- １日目の訪問場所 -->
+            <div class="spot_list">
+                <!-- カード型 -->
+                <?php for ($i = 1; $i <= 5; $i++) : ?>
+                    <?php if ($spot_slug = get_field('spot_1_' . $i)) : ?>
+                        <article class="spot_card">
+                            <?php if ($st = get_field('start_time1_' . $i)) : ?>
+                                <div class="time sp_none">
+                                    <?php echo $st; ?>
                                 </div>
-                                <p class="tx"><?php the_field('activity1_' . $i); ?></p>
-                            </div>
+                            <?php endif; ?>
+                            <div class="contents">
+                                <?php
+                                $type = substr($spot_slug, 0, 1);
+                                $page = ($type == 's') ? get_page_by_path($spot_slug, OBJECT, 'spa') : get_page_by_path($spot_slug, OBJECT, 'facility');
+                                $spot_id = $page ? $page->ID : null;
 
-                            <!-- 公式HPがあれば表示させる-->
-                            <div class="flex_car">
-                                <?php if ($official_website = get_field('course_url1_' . $i)) : ?>
-                                    <div>
-                                        <div class="square_green"></div>
-                                        <div class="official_site">公式HP：</div><a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($official_website); ?></a>
-                                    </div>
+                                if ($spot_id) :
+                                    $spot_info = get_post($spot_id);
+                                    $url = get_the_permalink($spot_id);
+
+                                    if ($type == 's') :
+                                        $spot_name = get_post_meta($spot_id, 'spa_name', true);
+                                        $spot_kana = get_post_meta($spot_id, 'spa_kana', true);
+                                        $spot_description = get_post_meta($spot_id, 'description', true);
+                                        $spot_pic = get_post_meta($spot_id, 'main_pic', true);
+                                    else :
+                                        $spot_name = get_post_meta($spot_id, 'facility_name', true);
+                                        $spot_kana = get_post_meta($spot_id, 'facility_kana', true);
+                                        $spot_description = get_post_meta($spot_id, 'facility_description', true);
+                                        $spot_pic = get_post_meta($spot_id, 'facility_pic1', true);
+                                    endif;
+                                endif;
+                                ?>
+
+                                <!-- 画像 -->
+                                <?php if ($spot_pic) : ?>
+                                    <?php if ($img = wp_get_attachment_image_src($spot_pic, 'large')[0]) : ?>
+                                        <a href="<?php echo esc_url($url); ?>" target="_blank">
+                                            <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($spot_name); ?>">
+                                        </a>
+                                    <?php else : ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo esc_attr($spot_name); ?>">
+                                    <?php endif; ?>
                                 <?php endif; ?>
+
+                                <div class="sp_time">
+                                    <?php if ($st = get_field('start_time1_' . $i)) : ?>
+                                        <?php echo $st; ?>
+                                    <?php endif; ?>
+                                </div>
+
+                                <!-- タイトル -->
+                                <div class="ttl_list">
+                                    <div class="duration">
+                                        <?php if ($stay_time = get_field('stay_time1_' . $i)) : ?>
+                                            <?php echo ($stay_time); ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <h4><span><?php echo ($spot_kana); ?></span><?php echo ($spot_name); ?></h4>
+                                </div>
+
+                                <!-- 説明 -->
+                                <p><?php echo ($spot_description); ?></p>
+
+                                <!-- 1件目のスポットのみ -->
+                                <?php if ($move_time = get_field('move_time1_' . $i)) : ?>
+                                    <p><?php echo ($move_time); ?></p>
+                                <?php endif; ?>
+
+                                <dl>
+                                    <!-- 公式HPあれば表示 -->
+                                    <dt>公式HP</dt>
+                                    <?php if ($official_website = get_field('course_url1_' . $i)) : ?>
+                                        <dd><a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer"><?php echo ($official_website); ?></a></dd>
+                                    <?php endif; ?>
+                                </dl>
                             </div>
-                        <?php endif; ?>
-                    <?php endfor; ?>
-                </div>
+                        </article>
+                    <?php endif; ?>
+                <?php endfor; ?>
             </div>
-        </section>
+        </div>
 
-        <!-- 宿泊 -->
-        <!-- 1日目のラストから宿泊施設までの移動時間 -->
-        <?php
-        if ($move_time_stay = get_field('move_time_stay')) : ?>
-            <div class="flex greencar">
-                <div class="car_green"></div>
-                <p class="car_10">車で<?php echo esc_html($move_time_stay); ?></p>
-            </div>
-        <?php endif; ?>
-
+        <!-- 2日目がある場合宿泊を表示 -->
         <?php
         $stay_slug = get_field('spot_stay');
 
@@ -190,144 +171,124 @@
                 if ($stay_url && $stay_name && $stay_description) :
                     // 説明文の表示を100文字まで、続きがある場合は...
                     $short_description = mb_strimwidth($stay_description, 0, 200, '...'); ?>
-                    <div class="yellowgreen_square">
-                        <h4>本日のホテルと温泉</h4>
+
+                    <div class="hotel mt48">
+                        <h3 class="lined-title">本日のホテルと温泉</h3>
                         <article class="card spa">
-                            <a href="<?php echo $stay_url; ?>">
+                            <a href="<?php echo esc_url($stay_url); ?>">
                                 <div>
                                     <span></span>
-                                    <?php if (has_post_thumbnail($stay_post->ID)) :
-                                        echo get_the_post_thumbnail($stay_post->ID, 'medium');
-                                    ?>
+                                    <?php if (has_post_thumbnail($stay_post->ID)) : ?>
+                                        <?php $thumbnail_url = get_the_post_thumbnail_url($stay_post->ID, 'medium'); ?>
+                                        <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr(get_the_title($stay_post->ID)); ?>">
                                     <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo esc_attr($stay_name); ?>">
                                     <?php endif; ?>
                                 </div>
                                 <h3><?php echo $stay_name; ?></h3>
                             </a>
-
-                            <!-- 紹介文 -->
-                            <p class="tx">
-                                <?php echo $short_description; ?>
-                            </p>
                         </article>
+                        <p> <?php echo $short_description; ?></p>
                     </div>
-        <?php endif;
-            }
-        }
-        ?>
+                <?php endif; ?>
+        <?php }
+        } ?>
 
-
-
-
-        <!-- 2日目 -->
-        <section class="day1">
-            <?php
-            $day2 = get_field('spot_2_1');
-            if ($day2) : ?>
-                <div class="flex">
-                    <h3 class="course_day">DAY2</h3>
-                </div>
-            <?php endif; ?>
-
-
-            <!-- 開始時刻2_1～5 -->
-            <div class="layer">
-                <div class="time_schedule tb_only pc_only">
-                    <div class="flow_design12">
-                        <ul class="flow12">
-                            <?php for ($i = 1; $i <= 5; $i++) : ?>
-                                <?php if ($st = get_field('start_time2_' . $i)) : ?>
-                                    <li>
-                                        <p class="icon12"><?php echo $st; ?></p>
-                                    </li>
-                                <?php endif; ?>
-                            <?php endfor; ?>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 施設ごとの呼び出し -->
-                <div class="model_course1">
+        <!-- 2日目がある場合訪問場所を表示 -->
+        <?php if ($stay_slug) : ?>
+            <h3 class="lined-title mt48">DAY2</h3>
+            <div class="day">
+                <!-- 2日目の訪問場所 -->
+                <div class="spot_list">
                     <?php for ($i = 1; $i <= 5; $i++) : ?>
                         <?php if ($spot_slug = get_field('spot_2_' . $i)) : ?>
-                            <?php
-                            $type = substr($spot_slug, 0, 1);
-                            $spot_id = $type == 's' ? get_page_by_path($spot_slug, OBJECT, 'spa')->ID : get_page_by_path($spot_slug, OBJECT, 'facility')->ID;
-
-                            if ($spot_id) :
-                                $spot_info = get_post($spot_id);
-                                $url = get_the_permalink($spot_id);
-
-                                if ($type == 's') :
-                                    $spot_name = get_post_meta($spot_id, 'spa_name', true);
-                                    $spot_description = get_post_meta($spot_id, 'description', true);
-                                    $spot_pic = get_post_meta($spot_id, 'main_pic', true);
-                                else :
-                                    $spot_name = get_post_meta($spot_id, 'facility_name', true);
-                                    $spot_description = get_post_meta($spot_id, 'facility_description', true);
-                                    $spot_pic = get_post_meta($spot_id, 'facility_pic1', true);
-                                endif;
-                            endif;
-                            ?>
-
-                            <!-- 移動時間 -->
-                            <div class="flex_car">
-                                <?php ($move_time = get_field('move_time2_' . $i)); ?>
-                                <div class="flex greencar">
-                                    <div class="car_green"></div>
-                                    <p class="car_10">車で<?php echo esc_html($move_time); ?></p>
-                                </div>
-                            </div>
-
-                            <!-- 施設ごとの表示 -->
-                            <div class="block">
-                                <!-- 施設の写真を表示させてリンクをつなげる -->
-                                <?php if ($img = wp_get_attachment_image_src($spot_pic, 'large')[0]) : ?>
-                                    <a href="<?php echo esc_url($url); ?>" target="_blank">
-                                        <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($spot_name); ?>">
-                                    </a>
-                                <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo $spot_name; ?>">
+                            <article class="spot_card">
+                                <?php if ($st = get_field('start_time2_' . $i)) : ?>
+                                    <div class="time sp_none">
+                                        <?php echo $st; ?>
+                                    </div>
                                 <?php endif; ?>
+                                <div class="contents">
+                                    <?php
+                                    $type = substr($spot_slug, 0, 1);
+                                    $page = ($type == 's') ? get_page_by_path($spot_slug, OBJECT, 'spa') : get_page_by_path($spot_slug, OBJECT, 'facility');
+                                    $spot_id = $page ? $page->ID : null;
 
-                                <div class="square_white"></div>
-                                <!-- 滞在時間1～5 -->
-                                <div class="flex_left">
-                                    <?php if ($stay_time = get_field('stay_time2_' . $i)) : ?>
-                                        <p class="time"><?php echo esc_html($stay_time); ?></p>
+                                    if ($spot_id) :
+                                        $spot_info = get_post($spot_id);
+                                        $url = get_the_permalink($spot_id);
+
+                                        if ($type == 's') :
+                                            $spot_name = get_post_meta($spot_id, 'spa_name', true);
+                                            $spot_kana = get_post_meta($spot_id, 'spa_kana', true);
+                                            $spot_description = get_post_meta($spot_id, 'description', true);
+                                            $spot_pic = get_post_meta($spot_id, 'main_pic', true);
+                                        else :
+                                            $spot_name = get_post_meta($spot_id, 'facility_name', true);
+                                            $spot_kana = get_post_meta($spot_id, 'facility_kana', true);
+                                            $spot_description = get_post_meta($spot_id, 'facility_description', true);
+                                            $spot_pic = get_post_meta($spot_id, 'facility_pic1', true);
+                                        endif;
+                                    endif;
+                                    ?>
+
+                                    <!-- 画像 -->
+                                    <?php if ($spot_pic) : ?>
+                                        <?php if ($img = wp_get_attachment_image_src($spot_pic, 'large')[0]) : ?>
+                                            <a href="<?php echo esc_url($url); ?>" target="_blank">
+                                                <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($spot_name); ?>">
+                                            </a>
+                                        <?php else : ?>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php echo esc_attr($spot_name); ?>">
+                                        <?php endif; ?>
                                     <?php endif; ?>
 
-                                    <div>
-                                        <h4><?php echo $spot_name; ?></h4>
+                                    <div class="sp_time">
+                                        <?php if ($st = get_field('start_time2_' . $i)) : ?>
+                                            <?php echo $st; ?>
+                                        <?php endif; ?>
                                     </div>
-                                </div>
-                                <p class="tx"><?php the_field('activity2_' . $i); ?></p>
-                            </div>
 
-                            <!--公式HPがあれば表示させる-->
-                            <div class="flex_car">
-                                <?php if ($official_website = get_field('course_url2_' . $i)) : ?>
-                                    <div>
-                                        <div class="square_green"></div>
-                                        <div class="official_site">公式HP：
-                                            <a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer">
-                                                <?php echo esc_html($official_website); ?></a>
+                                    <!-- タイトル -->
+                                    <div class="ttl_list">
+                                        <div class="duration">
+                                            <?php if ($stay_time = get_field('stay_time2_' . $i)) : ?>
+                                                <?php echo ($stay_time); ?>
+                                            <?php endif; ?>
                                         </div>
+                                        <h4><span><?php echo ($spot_kana); ?></span><?php echo ($spot_name); ?></h4>
                                     </div>
-                                <?php endif; ?>
-                            </div>
+
+                                    <!-- 説明 -->
+                                    <p><?php echo ($spot_description); ?></p>
+
+                                    <!-- 1件目のスポットのみ -->
+                                    <?php if ($i == 1) : ?>
+                                        <?php if ($move_time = get_field('move_time2_' . $i)) : ?>
+                                            <p><?php echo ($move_time); ?></p>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+
+                                    <dl>
+                                        <!-- 公式HPあれば表示 -->
+                                        <dt>公式HP</dt>
+                                        <?php if ($official_website = get_field('course_url2_' . $i)) : ?>
+                                            <dd><a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer"><?php echo ($official_website); ?></a></dd>
+                                        <?php endif; ?>
+                                    </dl>
+                                </div>
+                            </article>
                         <?php endif; ?>
                     <?php endfor; ?>
                 </div>
             </div>
-        </section>
+        <?php endif; ?>
 
-        <!-- 関連する内部リンク -->
+
         <section class="recommend">
             <?php
             // ループの回数を定義
-            $loop_count = 4;
+            $loop_count = 6;
 
             // すべてのカスタム投稿タイプを取得
             $custom_post_types = get_post_types(array('_builtin' => false));
@@ -386,18 +347,14 @@
                     }
                 }
             }
-            // 力技で一旦動かしてる。今後関連部分は全体的に修正必要
-            //投稿がない場合レイアウトが崩れるのでsectionごと非表示
+            // 投稿がない場合レイアウトが崩れるのでsectionごと非表示
             if ($has_posts) {
                 echo '</div>'; // .article_allを閉じる
             } else {
                 echo '<style>section.recommend { display: none; }</style>';
             }
             ?>
-
         </section>
-
-
 
         <!-- 関連するコラム、お知らせ -->
         <section class="connection_column">
@@ -440,7 +397,7 @@
                         // 投稿のパーマリンクを取得
                         $post_link = get_permalink($post_id);
                         // 投稿の日付を取得
-                        $post_date = get_the_date('Y.m.d D H:i');
+                        $post_date = get_post_time('Y.m.d D H:i');
                         // アイキャッチ画像のURLを取得
                         $post_thumbnail = get_the_post_thumbnail_url($post_id, 'thumbnail');
                         // 投稿のタクソノミースラッグを取得
@@ -479,13 +436,11 @@
                     }
                 }
             }
-            // 力技で一旦動かしてる。今後関連部分は全体的に修正必要
-            //投稿がない場合レイアウトが崩れるのでsectionごと非表示
+            // 投稿がない場合レイアウトが崩れるのでsectionごと非表示
             if (!$has_columns) {
                 echo '<style>section.connection_column { display: none; }</style>';
             }
             ?>
-
         </section>
 
         <!-- 一覧に戻るボタン -->
@@ -498,11 +453,9 @@
             $term_slug = $terms[0]->slug;
         }
         ?>
-
         <button class="back_btn" onclick="window.location.href='<?php echo home_url('course_type/' . $term_slug . '/'); ?>'">
             <span><i class="fa-solid fa-arrow-left"></i>一覧へ</span>
         </button>
-
     </div>
 </main>
 
