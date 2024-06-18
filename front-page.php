@@ -159,7 +159,7 @@
                             "post_type" => "spa", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
                             "orderby" => "rand", //ランダム
-                            'post_status' => 'publish',//公開するものだけ
+                            'post_status' => 'publish'//公開するものだけ
                         );
 
                         //WP_Queryオブジェクトを作成
@@ -211,7 +211,7 @@
                             "post_type" => "facility", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
                             "orderby" => "rand", //ランダム
-                            'post_status' => 'publish',//公開するものだけ
+                            'post_status' => 'publish'//公開するものだけ
                         );
 
                         // メニューの種類で絞り込む
@@ -271,7 +271,7 @@
                             "post_type" => "facility", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
                             "orderby" => "rand", //ランダム
-                            'post_status' => 'publish',//公開するものだけ
+                            'post_status' => 'publish'//公開するものだけ
                         );
 
                         // メニューの種類で絞り込む
@@ -331,7 +331,7 @@
                             "post_type" => "facility", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
                             "orderby" => "rand", //ランダム
-                            'post_status' => 'publish',//公開するものだけ
+                            'post_status' => 'publish'//公開するものだけ
                         );
 
                         // メニューの種類で絞り込む
@@ -391,7 +391,7 @@
                             "post_type" => "course", //通常の投稿タイプ
                             "posts_per_page" => 4, //表示する投稿数
                             "orderby" => "rand", //ランダム
-                            'post_status' => 'publish',//公開するものだけ
+                            'post_status' => 'publish'//公開するものだけ
                         );
 
                         //WP_Queryオブジェクトを作成
@@ -461,8 +461,8 @@
                                 "post_type" => "column", //通常の投稿タイプ
                                 "posts_per_page" => 3, //表示する投稿数
                                 "orderby" => "date", //日付順に並べる
-                                "order" => "DESC" //降順（新しい順）
-                                'post_status' => 'publish',//公開するものだけ
+                                "order" => "DESC", //降順（新しい順）
+                                'post_status' => 'publish'//公開するものだけ
                             );
 
                             //WP_Queryオブジェクトを作成
