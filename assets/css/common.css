@@ -216,7 +216,7 @@ p {
 .duck {
     display: block;
     position: fixed;
-    z-index: -15;
+    z-index: -19;
     /* 他の要素より高くする */
     bottom: -50px;
     animation: duck 8s linear infinite;
