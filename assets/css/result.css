@@ -131,11 +131,15 @@ p {
 .back {
     /* border: 2px solid red; */
     -webkit-text-stroke: 0.3px #DBF500;
-    color: #DBF500;
     /* padding: 16px 0; */
     background-color: rgba(255, 255, 255, 0.8);
     margin: 20px;
 }
+
+.wpcf7-form-control wpcf7-previous btn {
+    display: block;
+}
+
 
 /* レスポンシブ */
 
