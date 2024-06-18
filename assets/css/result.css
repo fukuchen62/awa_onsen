@@ -137,7 +137,8 @@ p {
 }
 
 .wpcf7-form-control wpcf7-previous btn {
-    display: block;
+    display: block important;
+
 }
 
 
