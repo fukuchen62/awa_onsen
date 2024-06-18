@@ -217,14 +217,14 @@ p {
     display: block;
     position: fixed;
     z-index: -19;
-    /* 他の要素より高くする */
+
     bottom: -50px;
     animation: duck 8s linear infinite;
 }
 
 @keyframes duck {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
 
         opacity: 1;
     }
@@ -254,7 +254,7 @@ p {
     }
 
     100% {
-        transform: translateY(-110vh);
+        transform: translateY(-110vh) rotate(0deg);
 
     }
 }
