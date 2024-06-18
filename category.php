@@ -47,6 +47,7 @@ get_header();
                     $args = array(
                         'category_name' => $current_category->slug, // 現在のカテゴリーのスラッグ
                         // 'posts_per_page' => 5,
+                        'post_status' => 'publish', // 公開された投稿のみを表示
                         'paged' => $paged // 現在のページ番号
                     );
                     // WP_Queryオブジェクトを作成

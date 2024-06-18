@@ -9,6 +9,7 @@
 
         $spa_query_args = array(
             'post_type' => 'spa',
+            'post_status' => 'publish', // 公開された投稿のみを表示
             'posts_per_page' => 100,
             'tax_query' => array('relation' => 'AND')
         );
@@ -66,6 +67,7 @@
 
         $course_query_args = array(
             'post_type' => 'course',
+            'post_status' => 'publish', // 公開された投稿のみを表示
             'posts_per_page' => 100,
             'tax_query' => array('relation' => 'AND')
         );
@@ -122,6 +124,7 @@
 
         $facility_query_args = array(
             'post_type' => 'facility',
+            'post_status' => 'publish', // 公開された投稿のみを表示
             'posts_per_page' => 100,
             'tax_query' => array('relation' => 'AND')
         );

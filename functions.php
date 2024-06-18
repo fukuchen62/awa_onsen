@@ -42,6 +42,21 @@ add_filter(
 );
 
 
+function fs_pre_get_posts($query)
+{
+    // 管理画面とメインクエリでない場合を処理対象外とする
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+    // 公開する記事だけを対象とする
+    $query->set('post_status', 'publish');
+    return;
+}
+add_action(
+    'pre_get_posts',     //関数の呼び出すタイミング
+    'fs_pre_get_posts'  //呼び出す関数名
+);
+
 /**
  * Scriptファイルを読みこむ処理
  *
@@ -367,7 +382,7 @@ function my_comment_form_remove($arg)
 }
 add_filter('comment_form_default_fields', 'my_comment_form_remove');
 
-// テーマの functions.php に以下のコードを追加コメント入れる前に処理kfsjfk
+// テーマの functions.php に以下のコードを追加コメント入れる前に処理
 function escape_comment_content($commentdata)
 {
     // コメント内容をエスケープ

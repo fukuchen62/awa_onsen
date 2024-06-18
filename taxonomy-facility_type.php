@@ -48,6 +48,7 @@
             foreach ($areas as $area_slug => $area_name) :
                 $args = array(
                     'post_type' => 'facility', // カスタム投稿facilityを指定
+                    'post_status' => 'publish', // 公開された投稿のみを表示
                     'tax_query' => array(
                         'relation' => 'AND',
                         array(
