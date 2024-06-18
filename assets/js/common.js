@@ -167,7 +167,7 @@ $(document).ready(function () {
     const cb = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                activeDuck = setInterval(createDuck, 20000);
+                activeDuck = setInterval(createDuck, 50000);
             } else {
                 stopDuck();
             }
