@@ -101,7 +101,7 @@
                                         <a class="top_news_img" href="<?php the_permalink(); ?>">
                                             <!-- 画像の表示 -->
                                             <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                                <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
@@ -174,7 +174,7 @@
                                         <a class="slider_img" href="<?php the_permalink(); ?>">
                                             <!-- 施設の写真 -->
                                             <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                                <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
@@ -235,7 +235,7 @@
                                         <a class="slider_img" href="<?php the_permalink(); ?>">
                                             <!-- 温泉の写真 -->
                                             <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                                <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
@@ -295,7 +295,7 @@
                                         <a class="slider_img" href="<?php the_permalink(); ?>">
                                             <!-- 施設の写真 -->
                                             <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                                <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
@@ -355,7 +355,7 @@
                                         <a class="slider_img" href="<?php the_permalink(); ?>">
                                             <!-- 温泉の写真 -->
                                             <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                                <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
@@ -406,7 +406,7 @@
                                         <a class="slider_img" href="<?php the_permalink(); ?>">
                                             <!-- 施設の写真 -->
                                             <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                                <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
@@ -476,7 +476,7 @@
                                         <a class="top_news_img" href="<?php the_permalink(); ?>">
                                             <!-- 画像の表示 -->
                                             <?php if (has_post_thumbnail()) : ?>
-                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                                <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                                             <?php else : ?>
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png" alt="<?php the_title(); ?>" />
                                             <?php endif; ?>
