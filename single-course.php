@@ -282,7 +282,7 @@
                                     </div>
 
                                     <!-- 説明 -->
-                                    <p><?php the_field('activity1_' . $i); ?></p>
+                                    <p><?php the_field('activity2_' . $i); ?></p>
 
 
                                     <!-- 移動時間 -->
