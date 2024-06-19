@@ -59,9 +59,10 @@ h4 {
     background-color: #fff;
     text-align: center;
     width: 100px;
-    height: 60px;
-    border-radius: 10%;
-    line-height: 60px;
+    /* height: 60px; */
+    border-radius: 10px;
+    /* line-height: 60px; */
+    padding: 5px;
     position: absolute;
     top: 0%;
     right: 0%;
@@ -70,8 +71,8 @@ h4 {
 .time {
     width: 100px;
     text-align: center;
-    padding-top: 20px;
-    /* padding: 10px; */
+    /* padding-top: 20px; */
+    padding: 10px;
 
     /* before疑似要素の基準 */
     position: relative;
@@ -150,6 +151,7 @@ h4 {
     color: white;
     margin-right: 8px;
     border-radius: 10px;
+    font-size: 0.85rem;
 }
 
 .ttl_list h4 {
