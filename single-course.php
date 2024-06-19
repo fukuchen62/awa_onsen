@@ -111,9 +111,18 @@
 
                                 <div class="sp_time">
                                     <?php if ($st = get_field('start_time1_' . $i)) : ?>
-                                        <?php echo $st; ?>
+                                        <?php
+                                        // <br>タグの位置を探す
+                                        $br_pos = strpos($st, '<br>');
+                                        // <br>タグが見つかった場合、その位置までの文字列を取得
+                                        if ($br_pos !== false) {
+                                            $st = substr($st, 0, $br_pos);
+                                        }
+                                        echo $st;
+                                        ?>
                                     <?php endif; ?>
                                 </div>
+
 
                                 <!-- タイトル -->
                                 <div class="ttl_list">
