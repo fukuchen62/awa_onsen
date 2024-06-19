@@ -136,7 +136,7 @@
                                 </div>
 
                                 <!-- 説明 -->
-                                <p><?php echo ($spot_description); ?></p>
+                                <p><?php the_field('activity1_' . $i); ?></p>
 
                                 <!-- 移動時間 -->
                                 <?php if ($move_time = get_field('move_time1_' . $i)) : ?>
@@ -182,7 +182,7 @@
                 $stay_description = get_field('description', $stay_post->ID);
 
                 if ($stay_url && $stay_name && $stay_description) :
-                    // 説明文の表示を100文字まで、続きがある場合は...
+                    // 説明文の表示を200文字まで、続きがある場合は...
                     $short_description = mb_strimwidth($stay_description, 0, 200, '...'); ?>
 
                     <div class="hotel mt48">
@@ -201,7 +201,7 @@
                                 <h3><?php echo $stay_name; ?></h3>
                             </a>
                         </article>
-                        <p> <?php echo $short_description; ?></p>
+                        <p><?php echo $short_description; ?></p>
                     </div>
                 <?php endif; ?>
         <?php }
@@ -282,7 +282,7 @@
                                     </div>
 
                                     <!-- 説明 -->
-                                    <p><?php echo ($spot_description); ?></p>
+                                    <p><?php the_field('activity1_' . $i); ?></p>
 
 
                                     <!-- 移動時間 -->
