@@ -188,6 +188,26 @@ h4 {
     margin: 0 auto;
 }
 
+/* ========================== */
+/* 詳細ページのaタグの指定 */
+/* ========================== */
+dd a,
+.shop_information a {
+    color: #538fcb;
+    font-weight: bold;
+}
+
+dd a::after,
+.shop_information a::after {
+    content: url(../images/external_link_icon.svg);
+    display: inline-block;
+}
+
+dd a:hover,
+.shop_information a:hover {
+    border-bottom: 2px solid #538fcb;
+}
+
 @media (width>=757px) {
     .duration {
         margin-right: 16px;
