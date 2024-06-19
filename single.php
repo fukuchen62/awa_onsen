@@ -9,7 +9,7 @@
                 <p class="date_time"><?php the_time('Y.m.d H:i'); ?></p>
             </div>
 
-            <!-- パンくずリスト CSS未適用 -->
+            <!-- パンくずリスト -->
             <?php get_template_part('template-parts/breadcrumb'); ?>
 
             <?php if (has_post_thumbnail()) : ?>

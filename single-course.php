@@ -257,7 +257,7 @@
                                     <?php endif; ?>
 
                                     <div class="sp_time">
-                                        <?php if ($st = get_field('start_time1_' . $i)) : ?>
+                                        <?php if ($st = get_field('start_time2_' . $i)) : ?>
                                             <?php
                                             // <br>タグの位置を探す
                                             $br_pos = strpos($st, '<br>');
