@@ -149,11 +149,36 @@
 
                                 <dl>
                                     <!-- 公式HPあれば表示 -->
-                                    <?php if ($official_website = get_field('course_url1_' . $i)) : ?>
-                                        <dt>公式HP</dt>
-                                        <dd><a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer"><?php echo ($official_website); ?></a></dd>
-                                    <?php endif; ?>
+                                    <dt>公式HP</dt>
+                                    <dd>
+                                        <?php
+                                        $f_url_urls = get_field('course_url1_' . $i);
+                                        if ($f_url_urls) {
+                                            // URLをカンマで分割して配列に変換
+                                            $urls = explode(',', $f_url_urls);
+                                            $valid_urls = [];
+                                            // 各URLを検証して、URLのみを配列に追加
+                                            foreach ($urls as $url) {
+                                                $trimmed_url = trim($url); // URLの前後の空白を除去
+                                                if (!empty($trimmed_url) && filter_var($trimmed_url, FILTER_VALIDATE_URL)) {
+                                                    $valid_urls[] = $trimmed_url;
+                                                }
+                                            }
+                                            // 有効なURLがある場合はリンクとして表示、ない場合は「無し」を表示
+                                            if (!empty($valid_urls)) {
+                                                foreach ($valid_urls as $valid_url) {
+                                                    echo '<a href="' . esc_url($valid_url) . '" target="_blank" rel="noopener noreferrer">' . esc_html($valid_url) . '</a><br>';
+                                                }
+                                            } else {
+                                                echo '無し';
+                                            }
+                                        } else {
+                                            echo '無し';
+                                        }
+                                        ?>
+                                    </dd>
                                 </dl>
+
                             </div>
                         </article>
                     <?php endif; ?>
