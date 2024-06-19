@@ -102,8 +102,7 @@ p {
 
 #send_button {
     width: 100%;
-    /* padding: 16px 0; */
-
+    padding: 16px 0px;
 }
 
 .send {
@@ -128,17 +127,21 @@ p {
     border-radius: 25px;
 }
 
+
+/* リストの設定 */
 .back {
     /* border: 2px solid red; */
-    -webkit-text-stroke: 0.3px #DBF500;
-    /* padding: 16px 0; */
-    background-color: rgba(255, 255, 255, 0.8);
+    padding: 16px 0;
+    background-color: rgba(255, 255, 255, 0.418);
     margin: 20px;
 }
 
-.wpcf7-form-control wpcf7-previous btn {
-    display: block important;
-
+/* 戻る */
+.back_button {
+    width: 100%;
+    text-align: center;
+    padding: 16px 0px;
+    color: #DBF500;
 }
 
 
@@ -189,6 +192,11 @@ p {
         -webkit-text-stroke: 0.1px #538FCB;
 
         margin: 20px;
+    }
+
+    .back_button {
+        color: #538FCB;
+
     }
 
 }
