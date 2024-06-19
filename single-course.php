@@ -109,11 +109,21 @@
                                     <?php endif; ?>
                                 <?php endif; ?>
 
+                                <!-- スマホの開始時間 -->
                                 <div class="sp_time">
                                     <?php if ($st = get_field('start_time1_' . $i)) : ?>
-                                        <?php echo $st; ?>
+                                        <?php
+                                        // <br>タグの位置を探す
+                                        $br_pos = strpos($st, '<br>');
+                                        // <br>タグが見つかった場合、その位置までの文字列を取得
+                                        if ($br_pos !== false) {
+                                            $st = substr($st, 0, $br_pos);
+                                        }
+                                        echo $st;
+                                        ?>
                                     <?php endif; ?>
                                 </div>
+
 
                                 <!-- タイトル -->
                                 <div class="ttl_list">
@@ -247,10 +257,19 @@
                                     <?php endif; ?>
 
                                     <div class="sp_time">
-                                        <?php if ($st = get_field('start_time2_' . $i)) : ?>
-                                            <?php echo $st; ?>
+                                        <?php if ($st = get_field('start_time1_' . $i)) : ?>
+                                            <?php
+                                            // <br>タグの位置を探す
+                                            $br_pos = strpos($st, '<br>');
+                                            // <br>タグが見つかった場合、その位置までの文字列を取得
+                                            if ($br_pos !== false) {
+                                                $st = substr($st, 0, $br_pos);
+                                            }
+                                            echo $st;
+                                            ?>
                                         <?php endif; ?>
                                     </div>
+
 
                                     <!-- タイトル -->
                                     <div class="ttl_list">
@@ -291,6 +310,7 @@
         <?php endif; ?>
 
 
+        <!-- 関連の温泉、周辺施設 -->
         <section class="recommend">
             <?php
             // ループの回数を定義
