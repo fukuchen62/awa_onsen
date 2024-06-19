@@ -128,15 +128,19 @@
                                 <!-- 説明 -->
                                 <p><?php echo ($spot_description); ?></p>
 
-                                <!-- 1件目のスポットのみ -->
+                                <!-- 移動時間 -->
                                 <?php if ($move_time = get_field('move_time1_' . $i)) : ?>
-                                    <p><?php echo ($move_time); ?></p>
+                                    <?php if ($i >= 2) : ?>
+                                        <p>車で<?php echo ($move_time); ?></p>
+                                    <?php else : ?>
+                                        <p><?php echo ($move_time); ?></p>
+                                    <?php endif; ?>
                                 <?php endif; ?>
 
                                 <dl>
                                     <!-- 公式HPあれば表示 -->
-                                    <dt>公式HP</dt>
                                     <?php if ($official_website = get_field('course_url1_' . $i)) : ?>
+                                        <dt>公式HP</dt>
                                         <dd><a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer"><?php echo ($official_website); ?></a></dd>
                                     <?php endif; ?>
                                 </dl>
@@ -147,12 +151,11 @@
             </div>
         </div>
 
-        <!-- 2日目がある場合宿泊を表示 -->
+        <!-- 宿泊がある場合表示 -->
         <?php
         $stay_slug = get_field('spot_stay');
 
         if ($stay_slug) {
-            // カスタム投稿タイプが 'spot' であると仮定
             $args = array(
                 'name'        => $stay_slug,
                 'post_type'   => 'spa',
@@ -262,17 +265,20 @@
                                     <!-- 説明 -->
                                     <p><?php echo ($spot_description); ?></p>
 
-                                    <!-- 1件目のスポットのみ -->
-                                    <?php if ($i == 1) : ?>
-                                        <?php if ($move_time = get_field('move_time2_' . $i)) : ?>
+
+                                    <!-- 移動時間 -->
+                                    <?php if ($move_time = get_field('move_time2_' . $i)) : ?>
+                                        <?php if ($i >= 2) : ?>
+                                            <p>車で<?php echo ($move_time); ?></p>
+                                        <?php else : ?>
                                             <p><?php echo ($move_time); ?></p>
                                         <?php endif; ?>
                                     <?php endif; ?>
 
                                     <dl>
                                         <!-- 公式HPあれば表示 -->
-                                        <dt>公式HP</dt>
                                         <?php if ($official_website = get_field('course_url2_' . $i)) : ?>
+                                            <dt>公式HP</dt>
                                             <dd><a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer"><?php echo ($official_website); ?></a></dd>
                                         <?php endif; ?>
                                     </dl>
@@ -288,7 +294,7 @@
         <section class="recommend">
             <?php
             // ループの回数を定義
-            $loop_count = 6;
+            $loop_count = 4;
 
             // すべてのカスタム投稿タイプを取得
             $custom_post_types = get_post_types(array('_builtin' => false));
