@@ -10,8 +10,12 @@ $(function () {
         autoplay: true,
         dots: true,
         adaptiveHeight: true,
+        arrows: true,
         prevArrow: '<button class="slide-arrow prev-arrow"></button>',
         nextArrow: '<button class="slide-arrow next-arrow"></button>'
+    });
+    $(document).on('click', '.slide-arrow', function(event) {
+        event.stopPropagation();
     });
 
     let nav = $("#pc_nav .navlist");

@@ -459,6 +459,10 @@ a {
 
 /*========== slider共通 ==========*/
 
+.slider {
+    position: relative;
+}
+
 .slider_content {
     width: 60%;
 }
@@ -524,11 +528,14 @@ a {
 
 /* sliderの矢印 */
 .slide-arrow {
-    margin: auto;
+    height: 20px;
+    /* margin: auto; */
     position: absolute;
-    bottom: -16px;
-    width: 0;
-    /* z-index: 10; */
+    bottom: -10px;
+    /* bottom: 50%;
+    transform: translateY(50%); */
+    cursor: pointer;
+    z-index: 1;
 }
 
 .prev-arrow {
@@ -536,9 +543,7 @@ a {
     height: 20px;
     background-image: url(../images/arrow_back.svg);
     background-size: contain;
-    background-origin: border-box;
-    background-clip: border-box;
-    left: 10%;
+    /* left: 10%; */
 }
 
 .next-arrow {
@@ -546,18 +551,16 @@ a {
     height: 20px;
     background-image: url(../images/arrow_forward.svg);
     background-size: contain;
-    background-origin: border-box;
-    background-clip: border-box;
-    right: 10%;
+    /* right: 10%; */
 }
 
-button {
+/* button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     outline: none;
     padding: 0;
-}
+} */
 
 /* sliderのドット */
 
