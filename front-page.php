@@ -435,14 +435,15 @@
                     <h2 class="section_ttl">整う！</h2>
                 </div>
                 <div class="section_content">
-                    <div class="sauna_content">
+                    <div class="sauna_content slider_a">
                         <!-- サル -->
                         <a href="<?php echo home_url('/sauna/'); ?>" class="slider_img sauna_img">
                             <img src="<?php echo get_template_directory_uri() ?>/assets/images/sauna_saru.jpg" alt="サウナ">
                             <span></span>
                         </a>
-                        <a href="<?php echo home_url('/sauna/'); ?>" class="sauna_btn btn shadow">サ活とは？<i class="fa-solid fa-list"></i></a>
                     </div>
+                    <a href="<?php echo home_url('/sauna/'); ?>" class="sauna_btn btn shadow">サ活とは？<i class="fa-solid fa-list"></i></a>
+
                 </div>
             </section>
 
