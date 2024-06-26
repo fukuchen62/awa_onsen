@@ -529,11 +529,12 @@ a {
 /* sliderの矢印 */
 .slide-arrow {
     height: 20px;
-    /* margin: auto; */
+    margin: auto;
+    /* margin-bottom: 10px; */
     position: absolute;
     bottom: -10px;
-    /* bottom: 50%;
-    transform: translateY(50%); */
+    /* bottom: 50%; */
+    transform: translateY(50%);
     cursor: pointer;
     z-index: 1;
 }
@@ -543,7 +544,7 @@ a {
     height: 20px;
     background-image: url(../images/arrow_back.svg);
     background-size: contain;
-    /* left: 10%; */
+    left: 10%;
 }
 
 .next-arrow {
@@ -551,7 +552,7 @@ a {
     height: 20px;
     background-image: url(../images/arrow_forward.svg);
     background-size: contain;
-    /* right: 10%; */
+    right: 10%;
 }
 
 /* button {
@@ -562,11 +563,14 @@ a {
     padding: 0;
 } */
 
+
+
 /* sliderのドット */
 
 .slick-dots {
     /* position: absolute; */
     transform: translateY(-8px);
+
 }
 
 .slick-dots li.slick-active button:before {
@@ -596,10 +600,6 @@ a {
         height: 56px;
         font-size: 1.25rem;
         padding: 0 4px;
-    }
-
-    .slide-arrow {
-        bottom: -25px;
     }
 
     .prev-arrow {
