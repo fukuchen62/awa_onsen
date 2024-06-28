@@ -75,8 +75,6 @@
         </div>
 
         <!-- 関連情報 -->
-        <!-- <section> -->
-        <!-- <h5>関連情報</h5> -->
         <!-- フロント班へ 以下関連ウェブサイトがあった場合表示される項目 -->
         <!-- <?php
                 // ACFからカスタムフィールドの値を取得
@@ -93,13 +91,10 @@
                     }
                 }
                 ?> -->
-        <!-- </section> -->
-
         <section>
             <?php if (!empty($external_url) && !empty($link_text)) : ?>
                 <h5 class="mt32">関連ウェブサイト</h5>
-                <p>関連ウェブサイト:
-                    <a href="<?php echo esc_url($external_url); ?>" target="_blank"><?php echo esc_html($link_text); ?></a>
+                <p><a href="<?php echo esc_url($external_url); ?>" target="_blank"><?php echo esc_html($link_text); ?></a>
                 </p>
             <?php endif; ?>
 
