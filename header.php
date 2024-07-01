@@ -35,6 +35,7 @@ wp_reset_postdata();
         var onsen_name = "<?php echo $onsen_name; ?>";
     </script>
 
+
     <?php wp_head(); ?>
 </head>
 

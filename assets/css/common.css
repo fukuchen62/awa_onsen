@@ -216,7 +216,7 @@ p {
 .duck {
     display: block;
     position: fixed;
-    z-index: -19;
+    z-index: 5;
 
     bottom: -50px;
     animation: duck 8s linear infinite;
@@ -230,11 +230,11 @@ p {
     }
 
     10% {
-        transform: translateY(-10vh) rotate(20deg);
+        transform: translateY(-10vh) rotate(30deg);
     }
 
     30% {
-        transform: translateY(-30vh) translateX(20px) rotate(-20deg);
+        transform: translateY(-30vh) translateX(20px) rotate(-40deg);
     }
 
     40% {
@@ -242,7 +242,7 @@ p {
     }
 
     50% {
-        transform: translateY(-50vh) rotate(20deg);
+        transform: translateY(-50vh) rotate(30deg);
     }
 
     70% {
@@ -250,7 +250,7 @@ p {
     }
 
     90% {
-        transform: translateY(-98vh) translateX(20px) rotate(-20deg);
+        transform: translateY(-98vh) translateX(20px) rotate(-30deg);
     }
 
     100% {
