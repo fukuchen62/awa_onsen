@@ -45,7 +45,8 @@ section p {
 
 .dummy {
     text-align: left;
-    padding: 2px;
+    padding: 0px 4px;
+    height: 30px;
     background-color: rgb(228, 228, 228);
 
 
@@ -87,12 +88,12 @@ p {
 /* ボタン */
 .button {
     margin: 30px;
-    font-size: 2rem;
+    font-size: 1.5rem;
 
 }
 
 .button li {
-    border: 2px solid #DBF500;
+    border: 2px solid #f5a200;
     border-radius: 24px;
     text-align: center;
     width: 55%;
@@ -106,20 +107,20 @@ p {
 #send_button {
     width: 100%;
     padding: 8px 0px;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 
 .send {
     border: 2px solid #FFF;
-    background-color: #DBF500;
+    background-color: #f5a200;
     margin: 20px;
 
 }
 
 
 .send:hover {
-    color: #DBF500;
+    color: #f5a200;
     /* background-color: rgba(255, 255, 255, 0.418); */
     background-color: #FFF;
     border-radius: 24px;
@@ -154,14 +155,14 @@ p {
     width: 100%;
     text-align: center;
     padding: 8px 0px;
-    color: #DBF500;
+    color: #f5a200;
 
 }
 
 .back_button:hover {
     color: #fff;
     /* border: 2px solid #538FCB; */
-    background-color: #DBF500;
+    background-color: #f5a200;
     border-radius: 24px;
     transition: all 0.4s;
 
@@ -171,80 +172,10 @@ p {
 /* レスポンシブ */
 
 /* フォントサイズのみ */
-@media(width>=431px) {
-
-
-    #send_button {
-        font-size: 2rem;
-
-    }
-
-    .back_button {
-        font-size: 2rem;
-    }
-
-}
+@media(width>=431px) {}
 
 /* tablet */
-@media(width>=757px) {
-
-    .content_form {
-        margin: 0;
-    }
-
-    .button li {
-        border: 2px solid #538FCB;
-        color: #fff;
-        width: 55%;
-    }
-
-    #send_button {
-        width: 100%;
-
-    }
-
-    .send {
-        background-color: #538FCB;
-        margin: 20px;
-
-    }
-
-    .send:hover {
-        color: #538FCB;
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 24px;
-        transition: all 0.4s;
-
-    }
-
-    #back_button {
-        width: 100%;
-
-    }
-
-    .back {
-        /* -webkit-text-stroke: 0.1px #538FCB; */
-
-        margin: 20px;
-    }
-
-    .back_button {
-        color: #538FCB;
-
-    }
-
-
-    .back_button:hover {
-        color: #fff;
-        /* border: 2px solid #538FCB; */
-        background-color: #538FCB;
-        border-radius: 24px;
-        transition: all 0.4s;
-
-    }
-
-    /*  */
-}
+@media(width>=757px) {}
 
 /* ---------- */
 /* pc */
