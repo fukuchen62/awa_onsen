@@ -32,7 +32,7 @@ $(function () {
     // 初期状態の設定
     $(contact_sbmit).css("pointer-events", "none");
     $(contact_sbmit).css("background", "#D9D9D9");
-    $(contact_sbmit).css("border", "#D9D9D9");
+    $(contact_sbmit).css("border", "2px solid #D9D9D9");
 
 
     // チェックボックスクリック時のイベント処理
@@ -40,9 +40,13 @@ $(function () {
         if ($(this).prop("checked")) {
             $(contact_sbmit).css("pointer-events", "auto");
             $(contact_sbmit).css("background", "#538fcb");
+            $(contact_sbmit).css("border", "2px solid #538fcb");
+
         } else {
             $(contact_sbmit).css("pointer-events", "none");
             $(contact_sbmit).css("background", "#D9D9D9");
+            $(contact_sbmit).css("border", "2px solid #D9D9D9");
+
         }
     });
 
@@ -66,6 +70,8 @@ $(function () {
 
             } else {
                 $(contact_sbmit).css("background", "#D9D9D9");
+                $(contact_sbmit).css("border", "2px solid #D9D9D9");
+
             }
         }
     );
