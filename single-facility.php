@@ -7,50 +7,23 @@
 
         <!-- パンくず -->
         <?php get_template_part('template-parts/breadcrumb') ?>
-
         <!-- 外観写真 -->
         <div class="img_box">
             <ul class="slider">
-                <?php if ($pic = get_field('facility_pic1')) : ?>
-                    <?php $pic_url = $pic['sizes']['medium']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slider-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像1">
-                        </li>
+                <?php for ($i = 1; $i <= 5; $i++) : ?>
+                    <?php if ($pic = get_field('facility_pic' . $i)) : ?>
+                        <?php $pic_url = $pic['sizes']['medium']; ?>
+                        <?php $caption = get_field('facility_pic' . $i . '_caption'); ?>
+                        <?php if ($pic_url) : ?>
+                            <li class="slider-img">
+                                <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像<?php echo $i; ?>">
+                                <?php if ($caption) : ?>
+                                    <div><?php echo esc_html($caption); ?></div>
+                                <?php endif; ?>
+                            </li>
+                        <?php endif; ?>
                     <?php endif; ?>
-                <?php endif; ?>
-                <?php if ($pic = get_field('facility_pic2')) : ?>
-                    <?php $pic_url = $pic['sizes']['medium']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slider-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像2">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <?php if ($pic = get_field('facility_pic3')) : ?>
-                    <?php $pic_url = $pic['sizes']['medium']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slider-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像3">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <?php if ($pic = get_field('facility_pic4')) : ?>
-                    <?php $pic_url = $pic['sizes']['medium']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slider-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像4">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <?php if ($pic = get_field('facility_pic5')) : ?>
-                    <?php $pic_url = $pic['sizes']['medium']; ?>
-                    <?php if ($pic_url) : ?>
-                        <li class="slider-img">
-                            <img src="<?php echo esc_url($pic_url); ?>" alt="周辺施設画像5">
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
+                <?php endfor; ?>
             </ul>
             <!-- 後でこちらの画像に紐づけるか、新しくコード作りたい -->
             <!-- <label class="checkbox-item">
