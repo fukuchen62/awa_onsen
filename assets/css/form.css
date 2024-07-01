@@ -161,45 +161,39 @@ small {
     /* border: 2px solid #000; */
     width: 80%;
     padding: 8px 0;
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     color: #fff;
-    background-color: #D9D9D9;
     margin: 20px;
-
     border-radius: 24px;
-    transition: all 0.4s;
-
+    font-family: "Zen Maru Gothic", serif;
 }
 
 #submit_button:hover {
-    opacity: 0.8;
+
+    border-radius: 24px;
+    transition: all 0.4s;
 }
 
 .wpcf7-spinner {
+
     display: none;
 }
 
 .confirmation {
     width: 100%;
+
     text-align: center;
 }
 
 .contact_form_btns_sbmit {
     cursor: pointer;
-    padding: 16px 0;
+    /* padding: 16px 0; */
 }
 
 /* レスポンシブ */
 
 /* フォントサイズのみ */
-@media(width>=431px) {
-
-
-    #submit_button {
-        font-size: 1rem;
-    }
-
-}
+@media(width>=431px) {}
 
 /* レスポンシブ */
 
