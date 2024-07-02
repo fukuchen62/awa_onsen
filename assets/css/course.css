@@ -226,6 +226,17 @@ dd a:hover,
     }
 }
 
+dd a,
+.shop_information a {
+    color: #fff;
+
+}
+
+dd a:hover,
+.shop_information a:hover {
+    border-bottom: 2px solid #fff;
+}
+
 /* フォントサイズ */
 .lined-title {
     font-size: 1.125rem;
