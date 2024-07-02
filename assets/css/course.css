@@ -72,16 +72,37 @@ h4 {
     width: 100px;
     text-align: center;
     font-weight: bold;
-    color: #A7E099;
-    background-color: white;
+    color: white;
     padding: 12px;
+
     /* before疑似要素の基準 */
     position: relative;
-    z-index: 100;
-    /* border: 1px solid yellow; */
+    z-index: 10;
+
+}
+
+.spot_card:first-of-type .time {
+    line-height: 60px;
+    padding: 0;
 }
 
 .time::before {
+    content: "";
+    width: 100px;
+    height: 60px;
+    border-radius: 20px;
+    /* border: 3px solid #A7E099; */
+    background-color: #A7E099;
+    /* border: 5px solid gray; */
+
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -9;
+}
+
+.time::after {
     content: "";
     height: 110%;
     width: 70px;
@@ -90,31 +111,9 @@ h4 {
     /* background-color: rgb(215, 215, 215); */
     display: block;
     margin: 0 auto;
-    /* z-index: -11; */
-
-
 }
 
-.time::after {
-    content: "";
-    width: 100px;
-    height: 60px;
-    border-radius: 20px;
-    border: 3px solid #A7E099;
-    background-color: white;
-    /* border: 5px solid gray; */
-
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    /* z-index: -10; */
-
-
-}
-
-.spot_list .spot_card:last-child .time::before {
+.spot_list .spot_card:last-child .time::after {
     height: 90%;
 }
 
@@ -124,7 +123,7 @@ h4 {
 
 
 .spot_card dl dt::before,
-.spot_card p:nth-of-type(2)::before {
+.list_mark::before {
     content: '';
     background-color: #6BDE4E;
     width: 10px;

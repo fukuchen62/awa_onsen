@@ -66,7 +66,7 @@
             <!-- １日目の訪問場所 -->
             <div class="spot_list">
                 <!-- カード型 -->
-                <?php for ($i = 1; $i <= 5; $i++) : ?>
+                <?php for ($i = 1, $j = 2; $i <= 5; $i++, $j++) : ?>
                     <?php if ($spot_slug = get_field('spot_1_' . $i)) : ?>
                         <article class="spot_card">
                             <?php if ($st = get_field('start_time1_' . $i)) : ?>
@@ -142,10 +142,8 @@
 
                                 <!-- 移動時間 -->
                                 <?php if ($move_time = get_field('move_time1_' . $i)) : ?>
-                                    <?php if ($i >= 2) : ?>
-                                        <p>車で<?php echo ($move_time); ?></p>
-                                    <?php else : ?>
-                                        <p><?php echo ($move_time); ?></p>
+                                    <?php if ($i == 1) : ?>
+                                        <p class="list_mark">車で<?php echo ($move_time); ?></p>
                                     <?php endif; ?>
                                 <?php endif; ?>
 
@@ -182,7 +180,13 @@
                                 </dl>
 
                                 <!-- 次に向かうスポットがあれば表示 -->
-                                <p class="icon">車で１０分</p>
+                                <?php if ($move_time = get_field('move_time1_' . $j)) : ?>
+                                    <?php if ($j >= 2) : ?>
+                                        <p class="icon">車で<?php echo ($move_time); ?></p>
+                                    <?php else : ?>
+                                        <p><?php echo ($move_time); ?></p>
+                                    <?php endif; ?>
+                                <?php endif; ?>
 
                             </div>
                         </article>
@@ -243,7 +247,7 @@
             <div class="day">
                 <!-- 2日目の訪問場所 -->
                 <div class="spot_list">
-                    <?php for ($i = 1; $i <= 5; $i++) : ?>
+                    <?php for ($i = 1, $j = 2; $i <= 5; $i++, $j++) : ?>
                         <?php if ($spot_slug = get_field('spot_2_' . $i)) : ?>
                             <article class="spot_card">
                                 <?php if ($st = get_field('start_time2_' . $i)) : ?>
@@ -317,20 +321,49 @@
 
                                     <!-- 移動時間 -->
                                     <?php if ($move_time = get_field('move_time2_' . $i)) : ?>
-                                        <?php if ($i >= 2) : ?>
-                                            <p>車で<?php echo ($move_time); ?></p>
-                                        <?php else : ?>
-                                            <p><?php echo ($move_time); ?></p>
+                                        <?php if ($i == 1) : ?>
+                                            <p>宿泊場所から車で<?php echo ($move_time); ?></p>
                                         <?php endif; ?>
                                     <?php endif; ?>
 
                                     <dl>
                                         <!-- 公式HPあれば表示 -->
-                                        <?php if ($official_website = get_field('course_url2_' . $i)) : ?>
-                                            <dt>公式HP</dt>
-                                            <dd><a href="<?php echo esc_url($official_website); ?>" target="_blank" rel="noopener noreferrer"><?php echo ($official_website); ?></a></dd>
-                                        <?php endif; ?>
+                                        <dt>公式HP</dt>
+                                        <dd><?php
+                                            $f_url_urls = get_field('course_url2_' . $i);
+                                            if ($f_url_urls) {
+
+                                                $urls = explode(',', $f_url_urls);
+                                                $valid_urls = [];
+
+                                                foreach ($urls as $url) {
+                                                    $trimmed_url = trim($url);
+                                                    if (!empty($trimmed_url) && filter_var($trimmed_url, FILTER_VALIDATE_URL)) {
+                                                        $valid_urls[] = $trimmed_url;
+                                                    }
+                                                }
+                                                // 有効なURLがある場合はリンクとして表示、ない場合は「無し」を表示
+                                                if (!empty($valid_urls)) {
+                                                    foreach ($valid_urls as $valid_url) {
+                                                        echo '<a href="' . esc_url($valid_url) . '" target="_blank" rel="noopener noreferrer">' . esc_html($valid_url) . '</a><br>';
+                                                    }
+                                                } else {
+                                                    echo '無し';
+                                                }
+                                            } else {
+                                                echo '無し';
+                                            }
+                                            ?></a></dd>
                                     </dl>
+                                    <!-- 次に向かうスポットがあれば表示 -->
+                                    <?php if ($move_time = get_field('move_time2_' . $j)) : ?>
+                                        <?php if ($j >= 2) : ?>
+                                            <p class="icon">車で<?php echo ($move_time); ?></p>
+                                        <?php else : ?>
+                                            <p><?php echo ($move_time); ?></p>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+
                                 </div>
                             </article>
                         <?php endif; ?>
