@@ -153,6 +153,7 @@ h4 {
 
 .ttl_list>.duration {
     background-color: #6BDE4E;
+    min-width: 64px;
     height: 64px;
     aspect-ratio: 1/1;
     text-align: center;
@@ -170,6 +171,7 @@ h4 {
 .ttl_list h4>span {
     display: block;
     font-weight: normal;
+    /* font-size: 0.85rem; */
 }
 
 .icon {
@@ -259,7 +261,7 @@ dd a:hover,
 }
 
 .ttl_list h4>span {
-    font-size: 1rem;
+    font-size: 0.75rem;
 }
 
 @media (width>=431px) {
@@ -268,6 +270,7 @@ dd a:hover,
     }
 
     .ttl_list h4 {
+        margin-top: 8px;
         font-size: 1.5rem;
     }
 }

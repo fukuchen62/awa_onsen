@@ -128,9 +128,11 @@
                                 <!-- タイトル -->
                                 <div class="ttl_list">
                                     <div class="duration">
+
                                         <?php if ($stay_time = get_field('stay_time1_' . $i)) : ?>
                                             <?php echo ($stay_time); ?>
                                         <?php endif; ?>
+
                                     </div>
                                     <h4><span><?php echo ($spot_kana); ?></span><?php echo ($spot_name); ?></h4>
                                 </div>
