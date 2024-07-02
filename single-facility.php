@@ -10,6 +10,7 @@
         <!-- 外観写真 -->
         <div class="img_box">
             <ul class="slider">
+                <!-- カスタムフィールドを5個まで設定してる。増やす場合はここを増やしてください -->
                 <?php for ($i = 1; $i <= 5; $i++) : ?>
                     <?php if ($pic = get_field('facility_pic' . $i)) : ?>
                         <?php $pic_url = $pic['sizes']['medium']; ?>

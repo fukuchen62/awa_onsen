@@ -76,80 +76,34 @@
             <h4 class="lined-title">温泉の紹介</h4>
             <p><?php the_field('description'); ?></p>
             <div class="other_img">
+                <?php
+                // 画像を増やしたい場合、この配列のspa_picを増やしてください
+                $pictures = ['spa_pic1', 'spa_pic2', 'spa_pic3', 'spa_pic4'];
+                ?>
                 <ul class="slider">
-                    <?php if ($pic = get_field('spa_pic1')) : ?>
-                        <?php $pic_url = $pic['sizes']['large']; ?>
-                        <?php if ($pic_url) : ?>
-                            <li class="slider-img">
-                                <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像1">
-                            </li>
+                    <?php foreach ($pictures as $index => $picture) : ?>
+                        <?php if ($pic = get_field($picture)) : ?>
+                            <?php $pic_url = $pic['sizes']['large']; ?>
+                            <?php if ($pic_url) : ?>
+                                <li class="slider-img">
+                                    <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像<?php echo $index + 1; ?>">
+                                </li>
+                            <?php endif; ?>
                         <?php endif; ?>
-                    <?php endif; ?>
-
-                    <?php if ($pic = get_field('spa_pic2')) : ?>
-                        <?php $pic_url = $pic['sizes']['large']; ?>
-                        <?php if ($pic_url) : ?>
-                            <li class="slider-img">
-                                <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像2">
-                            </li>
-                        <?php endif; ?>
-                    <?php endif; ?>
-
-                    <?php if ($pic = get_field('spa_pic3')) : ?>
-                        <?php $pic_url = $pic['sizes']['large']; ?>
-                        <?php if ($pic_url) : ?>
-                            <li class="slider-img">
-                                <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像3">
-                            </li>
-                        <?php endif; ?>
-                    <?php endif; ?>
-
-                    <?php if ($pic = get_field('spa_pic4')) : ?>
-                        <?php $pic_url = $pic['sizes']['large']; ?>
-                        <?php if ($pic_url) : ?>
-                            <li class="slider-img">
-                                <img src="<?php echo esc_url($pic_url); ?>" alt="スライダー画像4">
-                            </li>
-                        <?php endif; ?>
-                    <?php endif; ?>
+                    <?php endforeach; ?>
                 </ul>
 
                 <ul class="thumbnail">
-                    <?php if ($pic = get_field('spa_pic1')) : ?>
-                        <?php $pic_url = $pic['sizes']['thumbnail']; ?>
-                        <?php if ($pic_url) : ?>
-                            <li class="thumbnail-img">
-                                <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像1">
-                            </li>
+                    <?php foreach ($pictures as $index => $picture) : ?>
+                        <?php if ($pic = get_field($picture)) : ?>
+                            <?php $pic_url = $pic['sizes']['thumbnail']; ?>
+                            <?php if ($pic_url) : ?>
+                                <li class="thumbnail-img">
+                                    <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像<?php echo $index + 1; ?>">
+                                </li>
+                            <?php endif; ?>
                         <?php endif; ?>
-                    <?php endif; ?>
-
-                    <?php if ($pic = get_field('spa_pic2')) : ?>
-                        <?php $pic_url = $pic['sizes']['thumbnail']; ?>
-                        <?php if ($pic_url) : ?>
-                            <li class="thumbnail-img">
-                                <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像2">
-                            </li>
-                        <?php endif; ?>
-                    <?php endif; ?>
-
-                    <?php if ($pic = get_field('spa_pic3')) : ?>
-                        <?php $pic_url = $pic['sizes']['thumbnail']; ?>
-                        <?php if ($pic_url) : ?>
-                            <li class="thumbnail-img">
-                                <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像3">
-                            </li>
-                        <?php endif; ?>
-                    <?php endif; ?>
-
-                    <?php if ($pic = get_field('spa_pic4')) : ?>
-                        <?php $pic_url = $pic['sizes']['thumbnail']; ?>
-                        <?php if ($pic_url) : ?>
-                            <li class="thumbnail-img">
-                                <img src="<?php echo esc_url($pic_url); ?>" alt="サムネイル画像4">
-                            </li>
-                        <?php endif; ?>
-                    <?php endif; ?>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </section>
