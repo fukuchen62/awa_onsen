@@ -179,6 +179,19 @@
                                     </dd>
                                 </dl>
 
+                                <!-- 次に向かうスポットがあれば表示 -->
+                                <!-- <p class="icon">車で１０分</p> -->
+
+                                <!-- 移動時間 -->
+                                <?php if ($move_time = get_field('move_time1_' . $i + 1)) : ?>
+                                    <?php if ($i >= 2) : ?>
+                                        <p>車で<?php echo ($move_time); ?></p>
+                                    <?php else : ?>
+                                        <p class="icon"><?php echo ($move_time); ?></p>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+
+
                             </div>
                         </article>
                     <?php endif; ?>
