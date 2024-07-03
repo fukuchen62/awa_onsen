@@ -105,6 +105,11 @@ p {
     display: none;
 }
 
+/* ホバー時のリンク色 */
+.breadcrumb_inner a:hover {
+    color: #eb97a8;
+}
+
 @media (width>=756px) {
     .breadcrumb_inner {
         display: block;
