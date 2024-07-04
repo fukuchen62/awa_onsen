@@ -57,22 +57,30 @@ h4 {
 
 .sp_time {
     background-color: #fff;
+    border: 3px solid #F5A200;
+    color: #F5A200;
+    font-weight: bold;
     text-align: center;
     width: 100px;
     /* height: 60px; */
     border-radius: 10px;
     /* line-height: 60px; */
-    padding: 5px;
+    padding: 8px;
     position: absolute;
     top: 0%;
     right: 0%;
+}
+
+.fa-solid {
+    margin-right: 10px;
+    font-size: 1.125rem;
 }
 
 .time {
     width: 100px;
     text-align: center;
     font-weight: bold;
-    color: white;
+    color: #F5A200;
     padding: 12px;
 
     /* before疑似要素の基準 */
@@ -81,10 +89,11 @@ h4 {
 
 }
 
-.spot_card:first-of-type .time {
+/* .spot_card:first-of-type .time {
     line-height: 60px;
     padding: 0;
-}
+} */
+
 
 .time::before {
     content: "";
@@ -92,8 +101,8 @@ h4 {
     height: 60px;
     border-radius: 20px;
     /* border: 3px solid #A7E099; */
-    background-color: #A7E099;
-    /* border: 5px solid gray; */
+    background-color: white;
+    border: 5px solid #F5A200;
 
     position: absolute;
     top: 0%;
@@ -106,9 +115,8 @@ h4 {
     content: "";
     height: 110%;
     width: 70px;
-    background-image: url(../images/timeline.png);
-    /* background-repeat: no-repeat; */
-    /* background-color: rgb(215, 215, 215); */
+    background-size: contain;
+    background-image: url(../images/orange_line.svg);
     display: block;
     margin: 0 auto;
 }

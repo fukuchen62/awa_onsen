@@ -118,9 +118,8 @@
                                         // <br>タグが見つかった場合、その位置までの文字列を取得
                                         if ($br_pos !== false) {
                                             $st = substr($st, 0, $br_pos);
-                                        }
-                                        echo $st;
-                                        ?>
+                                        } ?>
+                                        <p><i class="fa-solid fa-clock" style="color: #f5a200;"></i><?php echo $st; ?></p>
                                     <?php endif; ?>
                                 </div>
 
@@ -298,9 +297,8 @@
                                             // <br>タグが見つかった場合、その位置までの文字列を取得
                                             if ($br_pos !== false) {
                                                 $st = substr($st, 0, $br_pos);
-                                            }
-                                            echo $st;
-                                            ?>
+                                            } ?>
+                                            <p><i class="fa-solid fa-clock" style="color: #f5a200;"></i><?php echo $st; ?></p>
                                         <?php endif; ?>
                                     </div>
 
