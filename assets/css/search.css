@@ -21,9 +21,14 @@
     color: #DBF500;
 }
 
+.navlist_container li:nth-child(7) a i {
+    color: #DBF500 !important;
+}
+
 .navlist_item:nth-child(2) {
     color: #fff;
 }
+
 .navlist_item:nth-child(3) {
     color: #fff;
 }
@@ -78,6 +83,7 @@ form {
         padding: 0 50px;
     }
 }
+
 .tag li {
     cursor: pointer;
 }

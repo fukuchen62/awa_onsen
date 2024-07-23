@@ -69,7 +69,9 @@ wp_reset_postdata();
                     <div class="nav_bg"></div>
                     <form role="search" method="post" class="searchform" action="<?php echo home_url('/search'); ?>">
                         <input type="text" class="search-input" name="search-query" placeholder="検索ワード" />
-                        <input type="submit" class="searchsubmit" value="検索" />
+                        <button type="submit" class="searchsubmit">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                        </button>
                     </form>
                     <ul class="navlist_container">
                         <li class="navlist_item"><a href="<?php echo home_url(); ?>"><span class="material-symbols-outlined">
@@ -90,9 +92,11 @@ wp_reset_postdata();
                         <li class="navlist_item"><a href="<?php echo home_url('/column_type/spa-column/'); ?>"><span class="material-symbols-outlined">
                                     border_color
                                 </span>コラム</a></li>
-                        <li class="navlist_item"><a href="<?php echo home_url('/?s='); ?>"><span class="material-symbols-outlined">
-                                    search
-                                </span>検索</a></li>
+                        <li class="navlist_item">
+                            <a href="<?php echo home_url('/?s='); ?>">
+                                <i class="fa-solid fa-square-check" style="color: #ffffff;"></i>
+                                条件検索</a>
+                        </li>
                         <li class="navlist_item"><a href="<?php echo home_url('/mypage/'); ?>"><span class="material-symbols-outlined">
                                     home
                                 </span>マイページ</a></li>
@@ -110,7 +114,10 @@ wp_reset_postdata();
 
                         <form role="search" method="post" class="searchform" action="<?php echo home_url('/search'); ?>">
                             <input type="text" class="search-input" name="search-query" placeholder="検索ワード" />
-                            <input type="submit" class="searchsubmit" value="検索" />
+
+                            <button type="submit" class="searchsubmit">
+                                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                            </button>
                         </form>
 
                         <ul class="navlist_container">
@@ -132,9 +139,11 @@ wp_reset_postdata();
                             <li class="navlist_item"><a href="<?php echo home_url('column_type/spa-column/'); ?>"><span class="material-symbols-outlined">
                                         border_color
                                     </span>コラム</a></li>
-                            <li class="navlist_item"><a href="<?php echo home_url('?s='); ?>"><span class="material-symbols-outlined">
-                                        search
-                                    </span>検索</a></li>
+                            <li class="navlist_item">
+                                <a href="<?php echo home_url('?s='); ?>">
+                                    <i class="fa-solid fa-square-check" style="color: #ffffff;"></i>条件検索
+                                </a>
+                            </li>
                             <li class="navlist_item"><a href="<?php echo home_url('/mypage/'); ?>"><span class="material-symbols-outlined">
                                         home
                                     </span>マイページ</a></li>

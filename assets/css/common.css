@@ -703,17 +703,50 @@ h5 {
     left: 16px;
 }
 
+/* .navlist * {
+    border: 1px solid red;
+} */
+
 .navlist>form {
     width: 180px;
     margin: 0 auto 16px;
-}
-
-.search-input {
     border: 1px solid white;
-    width: 140px;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     padding: 5px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-input {
+    flex-grow: 1;
+    margin-right: 5px;
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.searchsubmit {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.fa-square-check {
+    margin-right: 8px;
+}
+
+@media (max-width>=757px) {
+    .navlist>form {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 /* topへ戻るボタン */
@@ -799,6 +832,12 @@ h5 {
 
 .navlist_item:hover {
     color: #eb97a8;
+}
+
+.navlist_item:hover a i,
+.navlist_item a:hover i {
+    color: #eb97a8 !important;
+    transition: color 0.3s ease;
 }
 
 .navlist_item:last-child {
