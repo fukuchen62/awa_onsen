@@ -35,7 +35,6 @@ wp_reset_postdata();
         var onsen_name = "<?php echo $onsen_name; ?>";
     </script>
 
-
     <?php wp_head(); ?>
 </head>
 
@@ -68,6 +67,10 @@ wp_reset_postdata();
             <nav class="sp_nav sp_tb_only">
                 <div class="navlist">
                     <div class="nav_bg"></div>
+                    <form role="search" method="post" class="searchform" action="<?php echo home_url('/search'); ?>">
+                        <input type="text" class="search-input" name="search-query" placeholder="検索ワード" />
+                        <input type="submit" class="searchsubmit" value="検索" />
+                    </form>
                     <ul class="navlist_container">
                         <li class="navlist_item"><a href="<?php echo home_url(); ?>"><span class="material-symbols-outlined">
                                     bubble_chart
@@ -93,7 +96,9 @@ wp_reset_postdata();
                         <li class="navlist_item"><a href="<?php echo home_url('/mypage/'); ?>"><span class="material-symbols-outlined">
                                     home
                                 </span>マイページ</a></li>
+
                     </ul>
+
                     <div class="nav_bg"></div>
                 </div>
             </nav>
@@ -102,6 +107,12 @@ wp_reset_postdata();
                 <nav class="g_nav pc_only" id="pc_nav">
                     <div class="navlist">
                         <div class="nav_bg"></div>
+
+                        <form role="search" method="post" class="searchform" action="<?php echo home_url('/search'); ?>">
+                            <input type="text" class="search-input" name="search-query" placeholder="検索ワード" />
+                            <input type="submit" class="searchsubmit" value="検索" />
+                        </form>
+
                         <ul class="navlist_container">
                             <li class="navlist_item"><a href="<?php echo home_url(); ?>"><span class="material-symbols-outlined">
                                         bubble_chart
@@ -127,7 +138,10 @@ wp_reset_postdata();
                             <li class="navlist_item"><a href="<?php echo home_url('/mypage/'); ?>"><span class="material-symbols-outlined">
                                         home
                                     </span>マイページ</a></li>
+
+
                         </ul>
+
                         <div class="nav_bg"></div>
                     </div>
                 </nav>

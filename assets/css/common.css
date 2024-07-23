@@ -703,6 +703,19 @@ h5 {
     left: 16px;
 }
 
+.navlist>form {
+    width: 180px;
+    margin: 0 auto 16px;
+}
+
+.search-input {
+    border: 1px solid white;
+    width: 140px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    padding: 5px;
+}
+
 /* topへ戻るボタン */
 .top_button {
     width: 80px;
