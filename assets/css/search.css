@@ -1,166 +1,161 @@
 @charset "utf-8";
 
 .bubble_background {
-    background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-@media(width>=757px) {
+@media (width>=757px) {
+  /* 背景を濃くする */
+  .bubble_background {
+    background-color: transparent;
+  }
 
-    /* 背景を濃くする */
-    .bubble_background {
-        background-color: transparent;
-    }
-
-    .container {
-        border: 10px solid #DBF500;
-    }
+  .container {
+    border: 10px solid #dbf500;
+  }
 }
 
 /* ヘッダー */
 .navlist_item:nth-child(7) {
-    color: #DBF500;
+  color: #dbf500;
 }
 
 .navlist_container li:nth-child(7) a i {
-    color: #DBF500 !important;
+  color: #dbf500 !important;
 }
 
 .navlist_item:nth-child(2) {
-    color: #fff;
+  color: #fff;
 }
 
 .navlist_item:nth-child(3) {
-    color: #fff;
+  color: #fff;
 }
 
 .navlist_item:nth-child(4) {
-    color: #fff;
+  color: #fff;
 }
 
 h3 {
-    margin: 13px;
+  margin: 13px;
 }
 
 h4 {
-    font-size: 1.125rem;
-    margin: 13px;
+  font-size: 1.125rem;
+  margin: 13px;
 }
-
-form {
-    font-size: 1rem;
-    font-weight: bolder;
-}
-
-@media(width>=757px) {
-    h3 {
-        margin: 16px;
-    }
-}
-
-.contents {
-    display: none;
-}
-
-.contents h3 {
-    font-size: 1.125rem;
-}
-
-.contents.active {
-    display: block;
-}
-
-.area {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-
+main form {
+  font-size: 1rem;
+  font-weight: bolder;
 }
 
 @media (width>=757px) {
+  h3 {
+    margin: 16px;
+  }
+}
 
-    .area,
-    .list {
-        padding: 0 50px;
-    }
+.contents {
+  display: none;
+}
+
+.contents h3 {
+  font-size: 1.125rem;
+}
+
+.contents.active {
+  display: block;
+}
+
+.area {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (width>=757px) {
+  .area,
+  .list {
+    padding: 0 50px;
+  }
 }
 
 .tag li {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .checkbox-item {
-    background-color: white;
-    text-align: center;
-    position: relative;
+  background-color: white;
+  text-align: center;
+  position: relative;
 }
 
 .checkbox-item input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
 }
 
-.checkbox-item input[type="checkbox"]:checked+span {
-    border: 5px solid black;
+.checkbox-item input[type="checkbox"]:checked + span {
+  border: 5px solid black;
 }
 
 .checkbox-item span {
-    display: block;
-    border: 5px dashed #d6d6d6;
-    padding: 20px 0;
-    box-sizing: border-box;
+  display: block;
+  border: 5px dashed #d6d6d6;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
 /* 送信リセットボタン */
 .btn {
-    margin: 30px auto;
-    display: flex;
-    flex-wrap: nowrap;
-    max-width: 320px;
-    justify-content: space-between;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 320px;
+  justify-content: space-between;
 }
 
 .btn label {
-    width: 150px;
-    padding: 20px 0;
-    text-align: center;
-    border-radius: 100px;
+  width: 150px;
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 100px;
 }
 
 .btn .reset {
-    background-color: #d9d9d9;
+  background-color: #d9d9d9;
 }
 
 .btn .submit {
-    background-color: #EB97A8;
+  background-color: #eb97a8;
 }
 
 p {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 /* フォントサイズのみ */
-@media(width>=431px) {
+@media (width>=431px) {
+  .contents h3 {
+    font-size: 1.5rem;
+  }
 
-    .contents h3 {
-        font-size: 1.5rem;
-    }
+  h4 {
+    font-size: 1.5rem;
+  }
 
-    h4 {
-        font-size: 1.5rem;
-    }
+  main form {
+    font-size: 1.5rem;
+  }
 
-    form {
-        font-size: 1.5rem;
-    }
-
-    .tag li {
-        font-size: 1.5rem;
-    }
+  .tag li {
+    font-size: 1.5rem;
+  }
 }

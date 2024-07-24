@@ -280,11 +280,6 @@ function fs_script_files()
 
     if (is_page('search')) { // キーワード検索のCSS,JSの読み込み
         wp_enqueue_style('awa-onsen-mypage', get_template_directory_uri() . '/assets/css/keyword_search.css');
-        wp_enqueue_script('awa-onsen-mypage', get_template_directory_uri() . '/assets/js/mypage.js');
-        wp_enqueue_script(
-            'tag-list-script',
-            get_template_directory_uri() . '/assets/js/tag_list.js'
-        );
     }
 
     // 新着情報のCSSの読み込み
