@@ -2,241 +2,214 @@
 
 /* タイトル */
 .inner {
-    /* border: 2px solid black; */
-    text-align: center;
-    margin: 10px;
+  /* border: 2px solid black; */
+  text-align: center;
+  margin: 10px;
 }
 
 /* 下層ページに追加 */
 .bubble_background {
-    background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-@media(width>=757px) {
+@media (width>=757px) {
+  /* 背景を濃くする */
+  .bubble_background {
+    background-color: transparent;
+  }
 
-    /* 背景を濃くする */
-    .bubble_background {
-        background-color: transparent;
-    }
-
-    /* ボーダーの色は下層ページよって可変（トップページを参照）、ボーダーの太さは8→10pxに。 */
-    .container {
-        border: 10px solid #eb97a8;
-    }
+  /* ボーダーの色は下層ページよって可変（トップページを参照）、ボーダーの太さは8→10pxに。 */
+  .container {
+    border: 10px solid #eb97a8;
+  }
 }
-
 
 /* メイン */
 h4 {
-    font-size: 1.125rem;
-    font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.125rem;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 /* テキスト */
 p {
-    font-size: 1rem;
-    overflow-wrap: normal;
-    font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  overflow-wrap: normal;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 section p {
-    /* border: 2px solid red; */
-    text-align: left;
-    margin: 30px 0;
+  /* border: 2px solid red; */
+  text-align: left;
+  margin: 30px 0;
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }
 
-input,
+main input,
 textarea {
-    padding: 5px;
+  padding: 5px;
 }
-
-
 
 /* レスポンシブ */
 
 /* フォントサイズのみ */
-@media(width>=431px) {
+@media (width>=431px) {
+  h4 {
+    font-size: 1.5rem;
+  }
 
-
-    h4 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1.25rem;
-    }
-
-
-
+  p {
+    font-size: 1.25rem;
+  }
 }
 
 /* -入力欄- */
 
 .content_form {
-    /* border: 2px solid red; */
-    margin: 20px 0;
+  /* border: 2px solid red; */
+  margin: 20px 0;
 }
 
 .form_item {
-    text-align: left;
-    margin: 10px 0;
+  text-align: left;
+  margin: 10px 0;
 }
 
 /* 文章 */
 small {
-    color: #ECC1C9;
+  color: #ecc1c9;
 }
 
 /* 入力部 */
 .form_item input {
-    background-color: #fff;
-    width: 100%;
-    margin: 10px 0;
-    border: 2px solid #bbb;
-    border-radius: 8px;
+  background-color: #fff;
+  width: 100%;
+  margin: 10px 0;
+  border: 2px solid #bbb;
+  border-radius: 8px;
 }
 
-
 .form_item textarea {
-    background-color: #fff;
-    width: 100%;
-    margin: 10px 0;
-    border: 2px solid #bbb;
-    border-radius: 8px;
+  background-color: #fff;
+  width: 100%;
+  margin: 10px 0;
+  border: 2px solid #bbb;
+  border-radius: 8px;
 }
 
 .form_item input:focus,
 .form_item textarea:focus {
-    background-color: #fffbf3;
+  background-color: #fffbf3;
 }
-
-
-
-
 
 /* 注意書き */
 .privacypolicy p {
-    font-size: 1rem;
-    text-align: left;
-    margin: 30px 0;
+  font-size: 1rem;
+  text-align: left;
+  margin: 30px 0;
 }
 
 .privacypolicy a {
-
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .agree label {
-    font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 
 .agree p {
-    text-align: center;
+  text-align: center;
 }
 
 /* チェックボックス */
 #privacy {
-    appearance: none;
-    height: 24px;
-    width: 24px;
-    margin: 4px;
-    border: 1px solid #000000;
-    border-radius: 4px;
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  margin: 4px;
+  border: 1px solid #000000;
+  border-radius: 4px;
 }
 
 #privacy:checked {
-    border: 1px solid #000000;
-    background-color: #15679e;
+  border: 1px solid #000000;
+  background-color: #15679e;
 }
 
 #privacy:checked::before {
-    content: "";
-    display: block;
-    position: relative;
-    left: 3px;
-    top: 0;
-    width: 6px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
+  content: "";
+  display: block;
+  position: relative;
+  left: 3px;
+  top: 0;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 
 #privacy:focus-visible {
-    outline: 2px solid #15679e;
-    outline-offset: 2px;
+  outline: 2px solid #15679e;
+  outline-offset: 2px;
 }
-
-
-
 
 /* ボタン */
 #submit_button {
-    /* border: 2px solid #538fcb; */
-    width: 80%;
-    padding: 8px 0;
-    font-size: 1.5rem;
-    color: #fff;
-    /* background-color: #538fcb; */
-    margin: 20px;
-    border-radius: 24px;
-    font-family: "Zen Maru Gothic", serif;
+  /* border: 2px solid #538fcb; */
+  width: 80%;
+  padding: 8px 0;
+  font-size: 1.5rem;
+  color: #fff;
+  /* background-color: #538fcb; */
+  margin: 20px;
+  border-radius: 24px;
+  font-family: "Zen Maru Gothic", serif;
 }
 
-
 .wpcf7-spinner {
-
-    display: none;
+  display: none;
 }
 
 .confirmation {
-    width: 100%;
+  width: 100%;
 
-    text-align: center;
+  text-align: center;
 }
 
 .contact_form_btns_sbmit {
-    cursor: pointer;
-    /* padding: 16px 0; */
+  cursor: pointer;
+  /* padding: 16px 0; */
 }
 
 /* レスポンシブ */
 
 /* フォントサイズのみ */
-@media(width>=431px) {}
+@media (width>=431px) {
+}
 
 /* レスポンシブ */
 
-
 /* tablet */
-@media(width>=757px) {
+@media (width>=757px) {
+  /* ボタン */
+  #submit_button {
+    /* border: 2px solid #fff; */
+    color: #fff;
+  }
 
-
-    /* ボタン */
-    #submit_button {
-        /* border: 2px solid #fff; */
-        color: #fff;
-
-    }
-
-    .agree label {
-        font-size: 1.25rem;
-    }
+  .agree label {
+    font-size: 1.25rem;
+  }
 }
 
 /* ---------- */
 /* pc */
-@media(width>=1201px) {
-
-    /* 入力欄幅 */
-    .content_form {
-
-        margin: 0;
-    }
-
-
+@media (width>=1201px) {
+  /* 入力欄幅 */
+  .content_form {
+    margin: 0;
+  }
 }
